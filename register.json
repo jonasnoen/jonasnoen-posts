@@ -12,11 +12,16 @@
     "caption": "Dein Prompt ist lang, aber das Ergebnis passt trotzdem nicht? Schreib diesen einen Satz unter deine Aufgabe:\n\n„Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.“\n\nClaude fragt dann nach Zielgruppe, Länge oder Tonfall, statt zu raten. Du antwortest kurz, und erst dann legt es los.\n\nSpeicher dir den Tipp für deinen nächsten Prompt.\n#Claude #KI #PromptTipps #KIProjekte #JonasNoen",
     "platforms": {
       "instagram": {
-        "status": "sending"
+        "status": "scheduled",
+        "metricoolPostId": 409523025,
+        "scheduledFor": "2026-10-29T00:26:00+01:00"
       },
       "tiktok": {
-        "status": "sending"
+        "status": "scheduled",
+        "metricoolPostId": 409523025,
+        "scheduledFor": "2026-10-29T00:26:00+01:00"
       }
-    }
+    },
+    "tiktokTitle": "Der eine Satz vor jedem Claude-Prompt"
   }
 ]
