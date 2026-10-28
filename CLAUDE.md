@@ -59,6 +59,21 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
     Unklare Antwort beim Posten → Status `unknown`, NICHT erneut senden, Jonas per
     Push-Nachricht bitten, in Metricool nachzusehen. Mit dem nächsten Thema normal weitermachen.
 
+## Clips aus Jonas' YouTube-Videos
+
+**NUR der Kanal „JONAS NØEN“, @jonasnoen, Channel-ID `UC2fWOn9AWZjHZyHaxoXS3wQ`.**
+Das vidIQ-Konto hat auch den Kanal „Cryptocat-Guru“ (`UC09Itc3_iZi9BCNp-oZ21Kg`).
+Davon NIEMALS Videos, Clips, Titel oder Inhalte verwenden. Vor jedem Clip die Channel-ID
+des Quellvideos prüfen; passt sie nicht exakt, abbrechen.
+
+1. Neueste Long-Form-Videos des Kanals holen (`vidiq_channel_videos`, channelId oben).
+2. Ein Video wählen, aus dem noch kein Clip in `register.json` steht.
+3. `vidiq_generate_clips` mit dem YouTube-Link (kostet 9 vidIQ-Credits pro Minute Video;
+   bei langen Videos mit `processingStartSeconds/EndSeconds` einen Abschnitt wählen).
+4. Den bestbewerteten Clip nehmen, der noch nicht gepostet wurde, herunterladen,
+   ins Repo legen (`clips/C###/clip.mp4`), Eintrag mit `sourceVideoId` und `channelId`.
+5. Über Metricool wie ein Reel posten.
+
 ## Caption
 
 Deutsch, 3–5 kurze Absätze: Problem → der konkrete Tipp (wörtlich zum Abschreiben) → was dann
