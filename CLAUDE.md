@@ -134,5 +134,5 @@ ElevenLabs-Stimme ca. 7 US-Cent, Transkription praktisch 0. Rendern, GitHub, Met
 - Jonas' Design Guidelines (lokal auf seinem Mac, nicht hier): Manrope, Video-Hintergrund
   `#030616`, Purple `#AD72FF`. Für Reels gilt aber der freigegebene Look oben (Vorlage R001),
   weil der Nutzer ihn ausdrücklich bevorzugt.
-- Karussells: noch nicht eingerichtet. Altes Karussell-System lag lokal unter
-  `z_JN_tiktok:insta` (Buffer + WordPress) und ist nicht mehr aktiv.
+- Altes Karussell-System lag lokal unter `z_JN_tiktok:insta` (Buffer + WordPress) und ist
+  nicht mehr aktiv. Karussells laufen jetzt über den Ablauf oben.
