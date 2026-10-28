@@ -104,8 +104,10 @@ Bevorzugt: **bereits auf YouTube veröffentlichte Shorts** von Jonas wiederverwe
 (vom Nutzer so gewünscht). Ablauf:
 1. `vidiq_user_videos` mit `channelId: "UC2fWOn9AWZjHZyHaxoXS3wQ"`, `videoType: ["short"]`,
    `privacyStatus: ["public"]`. Nur Videos aus genau dieser Liste sind erlaubt.
-2. Einen Short wählen, der noch nicht in `register.json` steht (Feld `sourceVideoId`).
-   Bevorzugt die mit den meisten YouTube-Aufrufen. Schon vorher auf Instagram gepostet:
+2. Einen Short wählen, der noch nicht in `register.json` steht (Feld `sourceVideoId`)
+   **und dessen `publishedAt` höchstens 14 Tage zurückliegt** (Vorgabe des Nutzers).
+   Gibt es keinen solchen Short, an diesem Tag ein animiertes Tipp-Reel posten.
+   Unter den passenden bevorzugt den mit den meisten YouTube-Aufrufen. Schon vorher auf Instagram gepostet:
    Reel vom 28.09.2026 „Strategie für den Sales-Erfolg mit KI!“ (vermutlich der Sales-Short
    `Xdgfbc4q7rQ`) – nicht doppelt posten.
 3. `vidiq_video_upload` mit dem Shorts-Link (kostenlos), per `vidiq_job_poll` warten,
