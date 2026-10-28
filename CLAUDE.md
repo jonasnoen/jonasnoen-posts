@@ -66,13 +66,22 @@ Das vidIQ-Konto hat auch den Kanal „Cryptocat-Guru“ (`UC09Itc3_iZi9BCNp-oZ21
 Davon NIEMALS Videos, Clips, Titel oder Inhalte verwenden. Vor jedem Clip die Channel-ID
 des Quellvideos prüfen; passt sie nicht exakt, abbrechen.
 
-1. Neueste Long-Form-Videos des Kanals holen (`vidiq_channel_videos`, channelId oben).
-2. Ein Video wählen, aus dem noch kein Clip in `register.json` steht.
-3. `vidiq_generate_clips` mit dem YouTube-Link (kostet 9 vidIQ-Credits pro Minute Video;
-   bei langen Videos mit `processingStartSeconds/EndSeconds` einen Abschnitt wählen).
-4. Den bestbewerteten Clip nehmen, der noch nicht gepostet wurde, herunterladen,
-   ins Repo legen (`clips/C###/clip.mp4`), Eintrag mit `sourceVideoId` und `channelId`.
-5. Über Metricool wie ein Reel posten.
+Bevorzugt: **bereits auf YouTube veröffentlichte Shorts** von Jonas wiederverwenden
+(vom Nutzer so gewünscht). Ablauf:
+1. `vidiq_user_videos` mit `channelId: "UC2fWOn9AWZjHZyHaxoXS3wQ"`, `videoType: ["short"]`,
+   `privacyStatus: ["public"]`. Nur Videos aus genau dieser Liste sind erlaubt.
+2. Einen Short wählen, der noch nicht in `register.json` steht (Feld `sourceVideoId`).
+   Bevorzugt die mit den meisten YouTube-Aufrufen. Schon vorher auf Instagram gepostet:
+   Reel vom 28.09.2026 „Strategie für den Sales-Erfolg mit KI!“ (vermutlich der Sales-Short
+   `Xdgfbc4q7rQ`) – nicht doppelt posten.
+3. `vidiq_video_upload` mit dem Shorts-Link (kostenlos), per `vidiq_job_poll` warten,
+   die zurückgegebene `videoUrl` herunterladen.
+4. Ins Repo legen (`clips/C###/clip.mp4`), Eintrag mit `type: "clip"`, `sourceVideoId`,
+   `channelId`, Titel. Dann über Metricool wie ein Reel posten (eigene Caption auf Deutsch,
+   TikTok-Titel nicht vergessen). `isAiGenerated` nur setzen, wenn der Short KI-Inhalte zeigt.
+
+Alternative, falls keine passenden Shorts mehr übrig sind: `vidiq_generate_clips` mit dem
+YouTube-Link eines Long-Form-Videos desselben Kanals (9 vidIQ-Credits pro Minute).
 
 ## Caption
 
