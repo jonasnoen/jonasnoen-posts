@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "R001",
+    "type": "reel",
+    "createdAt": "2026-10-29",
+    "topic": "Claude vor dem Start Rückfragen stellen lassen",
+    "angle": "Ein Satz unter dem Prompt: 'Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.'",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "file": "reels/R001/reel.mp4",
+    "sha256": "a862eee15c67fe74f38f9e2f0b217353f7ea1348c78b8855c50ecbbdb9c67189",
+    "durationSec": 23.1,
+    "caption": "Dein Prompt ist lang, aber das Ergebnis passt trotzdem nicht? Schreib diesen einen Satz unter deine Aufgabe:\n\n„Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.“\n\nClaude fragt dann nach Zielgruppe, Länge oder Tonfall, statt zu raten. Du antwortest kurz, und erst dann legt es los.\n\nSpeicher dir den Tipp für deinen nächsten Prompt.\n#Claude #KI #PromptTipps #KIProjekte #JonasNoen",
+    "platforms": {
+      "instagram": {
+        "status": "sending"
+      },
+      "tiktok": {
+        "status": "sending"
+      }
+    }
+  }
+]
