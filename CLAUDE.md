@@ -7,6 +7,40 @@ auch eine geplante Aufgabe, liest zuerst diese Datei und `register.json`.
 **Alles ist öffentlich.** Keine Zugangsdaten, Tokens, Passwörter, Entwürfe oder privaten Daten
 hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der Animationen.
 
+## Wochenplan (tägliche Aufgabe, ein Post pro Tag, Zeitzone Europe/Berlin)
+
+| Mo | Di | Mi | Do | Fr | Sa | So |
+|---|---|---|---|---|---|---|
+| Tipp-Reel | YouTube-Short | Tipp-Reel | Karussell | Tipp-Reel | YouTube-Short | Tipp-Reel |
+
+- Veröffentlichungszeit: **18:30 Uhr** (über Metricool planen, autoPublish).
+- **Höchstens ein Post pro Tag.** Vorher prüfen, ob heute schon etwas in `register.json` oder
+  in Metricool geplant/veröffentlicht ist. Wenn ja: nichts tun.
+- **Niemals Duplikate:** Kein Short, dessen `sourceVideoId` schon in `register.json` steht.
+  Kein Reel/Karussell mit gleichem Thema UND Blickwinkel wie ein bestehender Eintrag.
+- **Fallback:** Findet sich an einem Short-Tag kein passender, noch nicht geposteter Short,
+  oder klappt der Download nicht, stattdessen ein animiertes Tipp-Reel posten. Gleiches gilt,
+  wenn an einem Karussell-Tag etwas schiefgeht.
+- Ein fertiges, noch nicht gepostetes Element mit Status `ready` in `register.json`
+  (z. B. K001) wird bevorzugt verwendet, wenn sein Typ an dem Tag dran ist.
+
+## Ablauf eines Karussells
+
+1. Thema wie beim Reel prüfen (keine Duplikate, Fakten mit offizieller Quelle, keine
+   erfundenen Zahlen). 7 Slides: Cover mit Jonas-Figur → Problem → 3–4 Schritte mit einem
+   durchgehenden konkreten Beispiel → Zusammenfassung „Zum Speichern“ mit ehrlichem
+   Praxischeck und einer Frage an die Zuschauer. Absender „JONAS NOEN“, Slide-Nummer.
+2. Vorlage: `carousels/K001/source/slides.html` (gleicher Look wie die Reels, Anton-
+   Überschriften, Manrope-Text, helle Karten, farbige Akzente, Figur aus `guy.js`).
+3. Rendern: `NODE_PATH=/opt/npm-tools/node_modules node engine/carousel/shot.cjs slides.html <outdir>`
+   (Schriften per `npm i` aus `engine/package.json` als `node_modules` neben `slides.html`).
+   Ergibt `ig-01..07.png` (1080×1350) und `tt-01..07.png` (1080×1920, TikTok-sichere Ränder).
+   Alle 14 Bilder ansehen: nichts abgeschnitten, nichts überlappt.
+4. Ins Repo unter `carousels/K###/`, Eintrag in `register.json` mit `type: "carousel"`.
+5. Metricool: ZWEI Posts (Formate unterscheiden sich):
+   - Instagram: `media` = die 7 `ig-0X.png` Raw-URLs (mit Commit-SHA), `instagramData.type: "POST"`.
+   - TikTok: `media` = die 7 `tt-0X.png`, `tiktokData.title` Pflicht, `privacyOption: "PUBLIC_TO_EVERYONE"`.
+
 ## Ablauf eines Reels
 
 1. **Abgleich zuerst.** `register.json` lesen. In Metricool (`getScheduledPosts`, Marke

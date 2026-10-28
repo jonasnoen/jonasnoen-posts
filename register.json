@@ -25,5 +25,44 @@
       }
     },
     "tiktokTitle": "Der eine Satz vor jedem Claude-Prompt"
+  },
+  {
+    "id": "K001",
+    "type": "carousel",
+    "createdAt": "2026-10-29",
+    "status": "ready",
+    "topic": "Prompt in vier Bausteinen",
+    "angle": "Ziel, Kontext, Beispiel, Format – durchgehendes Café-Beispiel",
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (geprüft 2026-10-29)",
+    "files": {
+      "instagram": [
+        "carousels/K001/ig-01.png",
+        "carousels/K001/ig-02.png",
+        "carousels/K001/ig-03.png",
+        "carousels/K001/ig-04.png",
+        "carousels/K001/ig-05.png",
+        "carousels/K001/ig-06.png",
+        "carousels/K001/ig-07.png"
+      ],
+      "tiktok": [
+        "carousels/K001/tt-01.png",
+        "carousels/K001/tt-02.png",
+        "carousels/K001/tt-03.png",
+        "carousels/K001/tt-04.png",
+        "carousels/K001/tt-05.png",
+        "carousels/K001/tt-06.png",
+        "carousels/K001/tt-07.png"
+      ]
+    },
+    "caption": "Der Prompt, der beim ersten Mal sitzt: Ziel, Kontext, Beispiel, Format.\n\nWer nur das Thema nennt, bekommt etwas Allgemeines. Mit diesen vier Bausteinen weiß Claude, was am Ende herauskommen soll, für wen, wie es klingen soll und wie es aussehen soll.\n\nDas Café-Beispiel ist ein illustratives Beispiel, kein dokumentierter Test. Ergebnis trotzdem selbst prüfen.\n\nWelchen Baustein vergisst du am häufigsten?\n\nGrundlage: Anthropics offizielle Prompting-Empfehlungen, geprüft am 29.10.2026.\n#Claude #KI #PromptTipps #KIProjekte #JonasNoen",
+    "tiktokTitle": "Der Prompt, der beim ersten Mal sitzt",
+    "platforms": {
+      "instagram": {
+        "status": "not_posted"
+      },
+      "tiktok": {
+        "status": "not_posted"
+      }
+    }
   }
 ]
