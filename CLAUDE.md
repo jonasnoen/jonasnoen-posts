@@ -75,9 +75,10 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
      kurzem Abblenden ins Dunkle (`rgba(23,20,31,…)`). KEINE weißen Blitze.
    - **Avatar = lippensynchrones Video aus Gesten-Loops (Standard):**
      `AVP` legt pro Phrase einen Loop fest: `loop:think` (Problem/Frage), `loop:explain` (offene
-     Hände, Erklärung), `loop:talk` (Zeigefinger, Schritte), `loop:neutral` (ruhig, Merksatz/Outro).
+     Hände, Erklärung), `loop:talk` (Zeigefinger, Schritte), `loop:neutral` (ruhig, Merksatz),
+     `loop:happy` (lacht, winkt – **immer fürs Outro**, nicht ernst enden).
      Ablauf pro Reel (ca. 13 Cent):
-     1. `node render.cjs track base.mp4` → Avatar-Spur (Greenscreen) aus den Loops, weich überblendet.
+     1. `node render.cjs track base.mp4` → Avatar-Spur (Greenscreen) aus den Loops, harter Schnitt pro Phrase.
      2. `base.mp4` und `voice.mp3` nach `reels/R###/source/` committen + pushen, beide per
         `creative_attach_reference_file` (Raw-URL mit Commit-SHA) auf einen ElevenLabs-Flow legen.
      3. `creative_generate_in_flow` mit `node_type: video-generation`, `model_id: veed-lipsync`,
@@ -87,7 +88,8 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
      Klappt Lipsync nicht: ohne `lipsync.mp4` rendern (Loops ohne Lippensynchronität) und in der
      Push-Nachricht erwähnen. Standbild-Posen (`surprised`, `thumbs`, `wave`, `think`, `point`) nur
      als Notlösung; deren Mund folgt dezent der Lautstärke. **Nie** die Figur skalieren/pulsieren
-     lassen (wirkt wie Zittern). Posenwechsel weich überblenden, kein Pop.
+     lassen (wirkt wie Zittern). Posenwechsel als harter Schnitt beim Phrasenwechsel – **kein Überblenden**
+     (sieht verwaschen aus, vom Nutzer abgelehnt) und kein Pop.
    - Farben: lila Grundton (`#1f1a2c → #110e17`, violetter Schein, Lampe, Staub), helle Karten
      `#f6efe4` / Chat `#f7f3fb` mit dunkler Schrift, Akzente Violett `#8b6cf0`/`#b9a6ff`, sparsam
      Gelb `#ffc65c`, Grün `#3ccf8e`, Rot `#ef5a4c`. **Nicht nur Lila.**

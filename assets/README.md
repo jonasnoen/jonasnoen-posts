@@ -47,7 +47,8 @@ Erzeugt mit ElevenLabs `eleven_music_v2_5` (ca. 15 Cent pro Track), rein instrum
 | `talk.mp4` | Zeigefinger oben | `loop:talk` – Schritte |
 | `think.mp4` | Hand am Kinn | `loop:think` – Problem, Frage |
 | `explain.mp4` | offene Hände, erklärt | `loop:explain` – Erklärung, Trick |
-| `neutral.mp4` | ruhig, Hände unten | `loop:neutral` – Merksatz, Outro |
+| `neutral.mp4` | ruhig, Hände unten | `loop:neutral` – Merksatz |
+| `happy.mp4` | lacht, winkt | `loop:happy` – Outro (immer) |
 
 Alle 10 s, Greenscreen. Erzeugt mit HeyGen Avatar 4 über ElevenLabs (ca. 1 US-Dollar je Loop, einmalig) aus den Posen und
 `loopsrc/talk10.mp3`. Der Renderer stellt den Loop frei (`engine/avatar/key_loop.py`), spielt ihn

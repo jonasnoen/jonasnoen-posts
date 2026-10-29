@@ -219,10 +219,10 @@ function p8(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.
   font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText('FOLGEN FÜR MEHR',470,660);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',470,770);});
   if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=L(C.violetL,C.violet);g.textAlign='center';g.fillText('@jonas.noen',470,940);});}}
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8];
-// Avatar pro Phrase. 'loop:<name>' = Sprech-Loop aus assets/avatar/loops (neutral, explain, talk=Zeigen, think);
+// Avatar pro Phrase. 'loop:<name>' = Sprech-Loop aus assets/avatar/loops (neutral, explain, talk=Zeigen, think, happy=lachend fürs Outro);
 // sonst Standbild-Pose (surprised, thumbs, wave, think, point). Mit lipsync.mp4 (siehe CLAUDE.md) wird alles
 // durch das lippensynchrone Avatar-Video ersetzt, das aus genau diesen Loops gebaut wurde.
-const AVP=['loop:think','loop:explain','loop:talk','loop:talk','loop:neutral','loop:explain','loop:talk','loop:think','loop:neutral'];
+const AVP=['loop:think','loop:explain','loop:talk','loop:talk','loop:neutral','loop:explain','loop:talk','loop:think','loop:happy'];
 // Fortschritts-Karte + Zähler (pro Reel anpassen)
 const PROGRESS={kicker:'dein Claude-Stil',title:'Stil-Kopie',counter:'SCHRITT',items:[
   {label:'KOPIEREN',t:()=>KW('kopier')},{label:'DAZU',t:()=>KW('und')-.05},{label:'ERGEBNIS',t:()=>KW('claude',2)}]};
@@ -241,9 +241,8 @@ function avatar(t,k){const bob=Math.sin(t*1.6)*4;g.save();g.translate(0,bob);
   if(window.SYNC){if(LOOPIMG)drawAv(LOOPIMG,null,0,ease(t/.2));g.restore();return;}
   const get=i=>{const p=AVP[i];return p.startsWith('loop:')?[LOOPIMG,null,0]:[IM[p],IM[p+'_talk'],mouthOpen(t)];};
   const t0=k===0?0:WORDS[PH[k].a].start-.12,a=ease((t-t0)/.3),changed=k>0&&AVP[k]!==AVP[k-1];
-  // weiche Überblendung zwischen Posen (statt Pop)
-  if(changed&&a<1){const pv=get(k-1);if(pv[0]&&!AVP[k-1].startsWith('loop:'))drawAv(pv[0],pv[1],pv[2],1-a);}
-  const cur=get(k);if(cur[0])drawAv(cur[0],cur[1],cur[2],k===0?ease(t/.2):(changed?a:1));g.restore();}
+  // Posenwechsel als harter Schnitt (mit dem kurzen Abdunkeln beim Phrasenwechsel), kein Überblenden
+  const cur=get(k);if(cur[0])drawAv(cur[0],cur[1],cur[2],k===0?ease(t/.2):1);g.restore();}
 // ---- Sound-Cues: render.cjs mischt diese Effekte aus assets/sfx unter die Stimme ----
 function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
   add(0,'impact',.9);

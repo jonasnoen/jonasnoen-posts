@@ -27,7 +27,7 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   // dann pro Frame das passende Einzelbild an die Szene geben. Pose 'loop:<name>' in AVP nutzt sie.
   const loops={};const ldir=A+'/avatar/loops';const seed=(parseInt((process.env.REEL||'').replace(/\D/g,''))||0)*97;
   if(mode==='track'){ // ---- Avatar-Spur: Loops pro Phrase aneinanderhängen, 0,3 s weich überblendet ----
-    const plan=await p.evaluate(()=>window.avatarPlan());await b.close();const F=0.3;const segs=[];
+    const plan=await p.evaluate(()=>window.avatarPlan());await b.close();const F=0;const segs=[]; // harter Schnitt beim Phrasenwechsel (Überblenden sah verwaschen aus)
     plan.forEach(s=>{if(segs.length&&segs[segs.length-1].loop===s.loop)return;segs.push({...s});});
     segs.forEach((s,i)=>{s.d=(i+1<segs.length?segs[i+1].t:END)-s.t;});
     const inputs=[];let fc='';segs.forEach((s,i)=>{const pp=`${dir}/_pp_${s.loop}.mp4`;
@@ -35,8 +35,7 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
       const len=parseFloat(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',pp]).toString());
       const need=s.d+(i+1<segs.length?F:0),off=need<len-.1?((seed*0.37+i*3.1)%(len-need)):0;
       inputs.push('-stream_loop','-1','-ss',off.toFixed(2),'-t',need.toFixed(3),'-i',pp);fc+=`[${i}:v]fps=30,scale=1920:1080,setsar=1,format=yuv420p,settb=AVTB[s${i}];`;});
-    let last='[s0]';let acc=0;for(let i=1;i<segs.length;i++){acc+=segs[i-1].d;fc+=`${last}[s${i}]xfade=transition=fade:duration=${F}:offset=${acc.toFixed(3)}[x${i}];`;last=`[x${i}]`;}
-    fc=fc.replace(/;$/,'');
+    fc+=segs.map((_,i)=>`[s${i}]`).join('')+`concat=n=${segs.length}:v=1:a=0[cat]`;const last='[cat]';
     await run(['-y','-v','error',...inputs,'-filter_complex',fc,'-map',last,'-an','-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-r','30','-t',END.toFixed(3),out]);
     console.log('Avatar-Spur',out,segs.map(s=>s.loop+'@'+s.t.toFixed(2)).join(' '));return;}
   const SYNC=fs.existsSync(dir+'/lipsync.mp4');if(SYNC)await p.evaluate(()=>{window.SYNC=true;});
