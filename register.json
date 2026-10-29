@@ -30,7 +30,7 @@
     "id": "K001",
     "type": "carousel",
     "createdAt": "2026-10-29",
-    "status": "ready",
+    "status": "sending",
     "topic": "Prompt in vier Bausteinen",
     "angle": "Ziel, Kontext, Beispiel, Format – durchgehendes Café-Beispiel",
     "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (geprüft 2026-10-29)",
