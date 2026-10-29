@@ -260,8 +260,8 @@ function bubble(t){const r=330,cx=1080-r-30,cy=1560;const a=back(t,0,.45);if(a<=
     const sm=SMP.getContext('2d',{willReadFrequently:true});sm.drawImage(im,im.width*.72,0,im.width*.2,im.height*.12,0,0,4,4);const px=sm.getImageData(0,0,4,4).data;let R=0,G=0,B=0;for(let i=0;i<64;i+=4){R+=px[i];G+=px[i+1];B+=px[i+2];}
     const col=`rgb(${R/16|0},${G/16|0},${B/16|0})`;g.fillStyle=col;g.fillRect(cx-r,cy-r,D,D);
     // Vordergrund: volle Videohöhe = Bubble-Durchmesser, um 20 % nach unten versetzt, oberer Rand weich ausgeblendet
-    // Kopfgröße wie Referenz (Zoom 1,0), Augen bei ~37 % der Kreishöhe; nur ein schmaler Streifen oben wird mit Wandfarbe gefüllt
-    BOFF.width=D;BOFF.height=D;const o=BOFF.getContext('2d');o.clearRect(0,0,D,D);const Z=1.0,s=D/im.height*Z,dw=im.width*s,dh=im.height*s,dy=Math.max(0,D*.37-im.height*.19*s);
+    // Kopfgröße wie Referenz (Zoom 1,0), Augen bei ~28 % der Kreishöhe (vom Nutzer gewählt, Option C); nur ein schmaler Streifen oben wird mit Wandfarbe gefüllt
+    BOFF.width=D;BOFF.height=D;const o=BOFF.getContext('2d');o.clearRect(0,0,D,D);const Z=1.0,s=D/im.height*Z,dw=im.width*s,dh=im.height*s,dy=Math.max(0,D*.28-im.height*.19*s);
     o.drawImage(im,D/2-dw*.5,dy,dw,dh);o.globalCompositeOperation='destination-in';const gr=o.createLinearGradient(0,dy,0,dy+14);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,1)');o.fillStyle=gr;o.fillRect(0,0,D,D);o.globalCompositeOperation='source-over';
     g.drawImage(BOFF,cx-r,cy-r);}
   g.restore();}
