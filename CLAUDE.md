@@ -98,8 +98,9 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
    - Alter Stil (Cartoon-`guy()` + große Untertitel) liegt in `reels/R001/source/` – nur noch Archiv.
    - **Alternative Stil „reel4“ (Bubble):** Vorlage `engine/reel4/scene.html` – Layout wie reel2, Jonas als
      große runde Facecam unten rechts. Gesichtsspur pro Reel: `node render.cjs facebase facebase.mp4`
-     (HeyGen-Zwilling `assets/face/twin.mp4` + lächelndes Outro `assets/face/outro.mp4` ab letzter Phrase),
-     dann Veed-Lipsync → `face.mp4`. Optional `BIG_OUTRO=1`: Bubble wächst im Outro zur Großaufnahme.
+     (nur echter HeyGen-Zwilling `assets/face/twin.mp4`; **kein KI-Lächeln** – wirkt unnatürlich, vom Nutzer
+     abgelehnt), dann Veed-Lipsync → `face.mp4`. Schluss: Bubble blendet aus, große Folgen-Karte mit 👋 und
+     @jonas.noen. Bubble: Kopf groß (Zoom 1,3), nur schmaler Wandfarben-Streifen über dem Kopf.
    - **Alternative Stil „reel3“ (Split, echter Jonas) – nur nutzen, wenn Jonas ihn als Standard freigibt:**
      Vorlage `engine/reel3/scene.html`. `SEG` pro Phrase: `split` (oben Code-Grafik, unten Jonas,
      Einzelwort-Untertitel auf der Trennlinie), `full` (Grafik + großes kursives Wort). **Keine

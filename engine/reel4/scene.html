@@ -260,16 +260,24 @@ function bubble(t){const r=330,cx=1080-r-30,cy=1560;const a=back(t,0,.45);if(a<=
     const sm=SMP.getContext('2d',{willReadFrequently:true});sm.drawImage(im,im.width*.72,0,im.width*.2,im.height*.12,0,0,4,4);const px=sm.getImageData(0,0,4,4).data;let R=0,G=0,B=0;for(let i=0;i<64;i+=4){R+=px[i];G+=px[i+1];B+=px[i+2];}
     const col=`rgb(${R/16|0},${G/16|0},${B/16|0})`;g.fillStyle=col;g.fillRect(cx-r,cy-r,D,D);
     // Vordergrund: volle Videohöhe = Bubble-Durchmesser, um 20 % nach unten versetzt, oberer Rand weich ausgeblendet
-    BOFF.width=D;BOFF.height=D;const o=BOFF.getContext('2d');o.clearRect(0,0,D,D);const s=D/im.height,dw=im.width*s,dy=D*.17;
-    o.drawImage(im,D/2-dw*.5,dy,dw,D);o.globalCompositeOperation='destination-in';const gr=o.createLinearGradient(0,dy,0,dy+110);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,1)');o.fillStyle=gr;o.fillRect(0,0,D,D);o.globalCompositeOperation='source-over';
+    // Kopf größer (Zoom 1,3), Augen bei ~34 % der Kreishöhe; nur ein schmaler Streifen oben wird mit Wandfarbe gefüllt
+    BOFF.width=D;BOFF.height=D;const o=BOFF.getContext('2d');o.clearRect(0,0,D,D);const Z=1.3,s=D/im.height*Z,dw=im.width*s,dh=im.height*s,dy=Math.max(0,D*.34-im.height*.19*s);
+    o.drawImage(im,D/2-dw*.5,dy,dw,dh);o.globalCompositeOperation='destination-in';const gr=o.createLinearGradient(0,dy,0,dy+20);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,1)');o.fillStyle=gr;o.fillRect(0,0,D,D);o.globalCompositeOperation='source-over';
     g.drawImage(BOFF,cx-r,cy-r);}
   g.restore();}
+function outroCard(t,t0){const a=back(t,t0+.15,.45);if(a<=0)return;scaleAt(540,950,a,()=>{g.save();g.shadowColor='rgba(0,0,0,.35)';g.shadowBlur=40;g.shadowOffsetY=14;rr(110,700,860,520,44);g.fillStyle=C.violet;g.fill();g.restore();
+  const wv=Math.sin((t-t0)*9)*.35;g.save();g.translate(540,810);g.rotate(wv);font(400,110);g.textAlign='center';g.fillText('👋',0,40);g.restore();
+  font(400,96,'Anton');g.textAlign='center';g.fillStyle='#fff';g.fillText('FOLG MIR FÜR MEHR',540,1000);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',540,1105);
+  font(800,46);g.fillStyle='rgba(255,255,255,.85)';g.fillText('@jonas.noen',540,1178);});}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
-  const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);scaleAt(470,800,push,()=>PROPS[k](t));
+  const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);if(window.BIG_OUTRO||k<PH.length-1)scaleAt(470,800,push,()=>PROPS[k](t));
   // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild
   if(window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.4),r=330+(1200-330)*e,cx=720+(540-720)*e,cy=1560+(960-1560)*e;
     g.save();g.beginPath();g.arc(cx,cy,r,0,7);g.clip();face(0,0,W,H,1.0);g.restore();if(e<1){g.beginPath();g.arc(cx,cy,r,0,7);g.lineWidth=10;g.strokeStyle='#fff';g.stroke();}
     caption(t,k,1500,true);font(800,44);g.textAlign='center';g.fillStyle='#fff';g.fillText('@jonas.noen',540,1650);return;}
+  // Standard-Schluss (natürlich, ohne KI-Lächeln): Bubble ploppt im Outro weg, große Folgen-Karte übernimmt
+  if(!window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.3);if(e<1){g.save();g.globalAlpha=1-e;bubble(t);g.restore();}headline(t,k);outroCard(t,t0);
+    const d=t-t0;if(d>=0&&d<.12){g.fillStyle=`rgba(23,20,31,${.55*(1-d/.12)})`;g.fillRect(0,0,W,H);}return;}
   bubble(t);headline(t,k);
   const d=t-t0;if(k>0&&d>=0&&d<.12){g.fillStyle=`rgba(23,20,31,${.55*(1-d/.12)})`;g.fillRect(0,0,W,H);}}
 window.avatarPlan=()=>[];
