@@ -262,7 +262,7 @@ function outroCard(t,t0){const a=back(t,t0+.15,.45);if(a<=0)return;scaleAt(540,9
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);if(window.BIG_OUTRO||k<PH.length-1){g.save();g.translate(30,125);scaleAt(470,805,1.1*push,()=>PROPS[k](t));g.restore();}
   // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild
-  if(window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.4),r=330+(1200-330)*e,cx=720+(540-720)*e,cy=1560+(960-1560)*e;
+  if(window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.4),r=180+(1200-180)*e,cx=840+(540-840)*e,cy=1550+(960-1550)*e;
     g.save();g.beginPath();g.arc(cx,cy,r,0,7);g.clip();face(0,0,W,H,1.0);g.restore();if(e<1){g.beginPath();g.arc(cx,cy,r,0,7);g.lineWidth=10;g.strokeStyle='#fff';g.stroke();}
     caption(t,k,1500,true);font(800,44);g.textAlign='center';g.fillStyle='#fff';g.fillText('@jonas.noen',540,1650);return;}
   // Standard-Schluss (natürlich, ohne KI-Lächeln): Bubble ploppt im Outro weg, große Folgen-Karte übernimmt
