@@ -266,6 +266,10 @@ function bubble(t){const r=330,cx=1080-r-30,cy=1560;const a=back(t,0,.45);if(a<=
   g.restore();}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);scaleAt(470,800,push,()=>PROPS[k](t));
+  // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild
+  if(window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.4),r=330+(1200-330)*e,cx=720+(540-720)*e,cy=1560+(960-1560)*e;
+    g.save();g.beginPath();g.arc(cx,cy,r,0,7);g.clip();face(0,0,W,H,1.0);g.restore();if(e<1){g.beginPath();g.arc(cx,cy,r,0,7);g.lineWidth=10;g.strokeStyle='#fff';g.stroke();}
+    caption(t,k,1500,true);font(800,44);g.textAlign='center';g.fillStyle='#fff';g.fillText('@jonas.noen',540,1650);return;}
   bubble(t);headline(t,k);
   const d=t-t0;if(k>0&&d>=0&&d<.12){g.fillStyle=`rgba(23,20,31,${.55*(1-d/.12)})`;g.fillRect(0,0,W,H);}}
 window.avatarPlan=()=>[];

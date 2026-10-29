@@ -21,7 +21,7 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   const sorted=[...env].sort((x,y)=>x-y),ref=sorted[Math.floor(sorted.length*.95)]||1;
   let lv=0;const ENV=env.map(v=>{const x=Math.min(1,v/ref);lv=x>lv?lv+(x-lv)*.7:lv+(x-lv)*.35;return +lv.toFixed(3);});
   const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
-  await p.addInitScript(([d,e,f])=>{window.AVDATA=d;window.ENV=e;window.FPS=f;},[av,ENV,FPS]);
+  await p.addInitScript(([d,e,f,bo])=>{window.AVDATA=d;window.ENV=e;window.FPS=f;window.BIG_OUTRO=bo;},[av,ENV,FPS,process.env.BIG_OUTRO==='1']);
   await p.goto('file://'+dir+'/scene.html');await p.evaluate(()=>document.fonts.ready);
   await p.evaluate(async()=>{await Promise.all(['800 40px Manrope','500 40px Manrope','40px Anton',"italic 40px 'Instrument Serif'"].map(f=>document.fonts.load(f)))});
   const END=await p.evaluate(w=>setup(w),words);await p.waitForFunction(()=>window.IMGS_READY===true,null,{timeout:30000});
