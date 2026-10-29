@@ -27,8 +27,13 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   if(fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
     if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(A,'..','engine','avatar','key_loop.py'),`${ldir}/${f}`,cache],{stdio:'inherit'});
     loops[nm]=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
+  // Lippensynchrones Avatar-Video dieses Reels (lipsync.mp4 im Arbeitsordner, Greenscreen, startet bei t=0):
+  // Pose 'loop:sync' zeigt exakt den Frame zur aktuellen Zeit.
+  if(fs.existsSync(dir+'/lipsync.mp4')){const cache=`${dir}/_loop_sync`;
+    if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(A,'..','engine','avatar','key_loop.py'),dir+'/lipsync.mp4',cache],{stdio:'inherit'});
+    loops.sync=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
   // Ping-Pong (vor, zurück, vor ...) mit zufälligem Startpunkt je Reel -> keine sichtbare Naht, nie identisch
-  const pick=(nm,t)=>{const L=loops[nm];if(!L)return null;const n=L.length,i=(seed+Math.round(t*30))%(2*n-2);return L[i<n?i:2*n-2-i];};
+  const pick=(nm,t)=>{const L=loops[nm];if(!L)return null;if(nm==='sync')return L[Math.min(L.length-1,Math.round(t*30))];const n=L.length,i=(seed+Math.round(t*30))%(2*n-2);return L[i<n?i:2*n-2-i];};
   const frameAt=async(t)=>{const nm=await p.evaluate(t=>window.loopNeeded?window.loopNeeded(t):null,t);const f=nm&&pick(nm,t);
     return p.evaluate(async([t,d])=>{if(d)await window.setLoop(d);return render(t);},[t,f?'data:image/png;base64,'+fs.readFileSync(f).toString('base64'):null]);};
   if(mode==='stills'){const ts=(process.env.TS||'0.1,1.5,3.6,5.3,8.9,10.5,12.6,15,17.8').split(',').map(Number);for(const t of ts){fs.writeFileSync(`${out}/s_${t}.jpg`,dec(await frameAt(t)));}await b.close();return;}
