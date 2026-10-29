@@ -7,6 +7,7 @@
 // Optional: MUSIC=<datei in assets/music> (sonst wird abwechselnd nach Reel-Nummer REEL=R003 gewählt), MUSIC_VOL=0.10
 const {chromium}=require('playwright');const fs=require('fs');const path=require('path');const {spawn,execFileSync}=require('child_process');
 const A=process.env.ASSETS||path.join(__dirname,'..','..','assets');
+const seedNum=()=>parseInt((process.env.REEL||'').replace(/\D/g,''))||0;
 // 25 fps = Takt der Avatar-Videos (HeyGen/Veed). Bei 30 fps würde jedes 5. Bild doppelt gezeigt -> Ruckeln.
 const FPS=+(process.env.FPS||25);
 const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['ignore','inherit','inherit']});p.on('close',c=>c?rej(new Error('ffmpeg '+c)):res());});
@@ -28,6 +29,13 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   // ---- Sprech-Loops (assets/avatar/loops/<name>.mp4, Greenscreen): einmal freistellen (Cache im Arbeitsordner),
   // dann pro Frame das passende Einzelbild an die Szene geben. Pose 'loop:<name>' in AVP nutzt sie.
   const loops={};const ldir=A+'/avatar/loops';const seed=(parseInt((process.env.REEL||'').replace(/\D/g,''))||0)*97;
+  if(mode==='facebase'){ // ---- Gesichtsspur für Stil reel3/reel4: HeyGen-Zwilling + (falls vorhanden) Lächel-Outro ab letzter Phrase
+    const T=await p.evaluate(()=>WORDS[PH[PH.length-1].a].start-.12);await b.close();const tw=A+'/face/twin.mp4',ou=A+'/face/outro.mp4';
+    const len=parseFloat(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',tw]).toString());
+    const off=((seedNum()*3.7)%Math.max(.1,len-T-.5));const fc=`[0:v]fps=${FPS},scale=1280:720,setsar=1[a]`+(fs.existsSync(ou)?`;[1:v]fps=${FPS},scale=1280:720,setsar=1[b];[a][b]concat=n=2:v=1:a=0[v]`:';[a]null[v]');
+    const ins=['-ss',off.toFixed(2),'-t',T.toFixed(3),'-i',tw];if(fs.existsSync(ou))ins.push('-stream_loop','-1','-t',(END-T+.2).toFixed(3),'-i',ou);
+    await run(['-y','-v','error',...ins,'-filter_complex',fc,'-map','[v]','-an','-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-r',''+FPS,'-t',END.toFixed(3),out]);
+    console.log('Gesichtsspur',out,'Outro ab',T.toFixed(2));return;}
   if(mode==='track'){ // ---- Avatar-Spur: Loops pro Phrase aneinanderhängen, 0,3 s weich überblendet ----
     const plan=await p.evaluate(()=>window.avatarPlan());await b.close();const F=0;const segs=[]; // harter Schnitt beim Phrasenwechsel (Überblenden sah verwaschen aus)
     plan.forEach(s=>{if(segs.length&&segs[segs.length-1].loop===s.loop)return;segs.push({...s});});
