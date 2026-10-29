@@ -251,7 +251,7 @@ function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(
 // Jonas als runde Facecam-Bubble unten rechts (lippensynchrones face.mp4).
 function bubble(t){const cx=780,cy=1560,r=255;const a=back(t,0,.45);if(a<=0)return;g.save();g.translate(cx,cy);g.scale(a,a);g.translate(-cx,-cy);
   g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=50;g.shadowOffsetY=16;g.beginPath();g.arc(cx,cy,r+8,0,7);g.fillStyle=L('#2a2338','#ffffff');g.fill();g.shadowColor='transparent';
-  g.beginPath();g.arc(cx,cy,r,0,7);g.clip();face(cx-r,cy-r,2*r,2*r,1.25);g.restore();}
+  g.beginPath();g.arc(cx,cy,r,0,7);g.clip();face(cx-r,cy-r,2*r,2*r,1.0);g.restore();}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);scaleAt(470,800,push,()=>PROPS[k](t));
   bubble(t);headline(t,k);

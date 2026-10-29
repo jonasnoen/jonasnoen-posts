@@ -94,12 +94,14 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
      `#f6efe4` / Chat `#f7f3fb` mit dunkler Schrift, Akzente Violett `#8b6cf0`/`#b9a6ff`, sparsam
      Gelb `#ffc65c`, Grün `#3ccf8e`, Rot `#ef5a4c`. **Nicht nur Lila.**
    - Kein Roboterkopf, keine erfundenen echten Produkt-Screenshots, keine fremden Logos.
-   - 1080×1920, 30 fps. Kerninhalte nicht ganz rechts oben (Plattform-UI), Text nicht hinter Avatar.
+   - 1080×1920, **25 fps** (Takt der Avatar-Videos; 30 fps ließ den Avatar ruckeln). Kerninhalte nicht ganz rechts oben (Plattform-UI), Text nicht hinter Avatar.
    - Alter Stil (Cartoon-`guy()` + große Untertitel) liegt in `reels/R001/source/` – nur noch Archiv.
+   - **Alternative Stil „reel4“ (Bubble):** Vorlage `engine/reel4/scene.html` – Layout wie reel2, Jonas als
+     runde Facecam unten rechts (gleiches `face.mp4`, kein Zoom).
    - **Alternative Stil „reel3“ (Split, echter Jonas) – nur nutzen, wenn Jonas ihn als Standard freigibt:**
      Vorlage `engine/reel3/scene.html`. `SEG` pro Phrase: `split` (oben Code-Grafik, unten Jonas,
-     Einzelwort-Untertitel auf der Trennlinie), `full` (Grafik + großes kursives Wort), `face` (Jonas
-     im Vollbild). Gesicht = Vorschau-Video seines HeyGen-Zwillings (`assets/face/twin.mp4`), pro
+     Einzelwort-Untertitel auf der Trennlinie), `full` (Grafik + großes kursives Wort). **Keine
+     Nahaufnahmen** (kein Punch-in, kein Vollbild-Gesicht) – sonst merkt man, dass es KI ist. Gesicht = Vorschau-Video seines HeyGen-Zwillings (`assets/face/twin.mp4`), pro
      Reel mit Veed-Lipsync an die Stimme angepasst und als `face.mp4` in den Arbeitsordner gelegt.
 7. **Sound.** Effekte und Musik liegen fertig in `assets/sfx/` und `assets/music/` und werden
    **immer wiederverwendet**. Nur wenn ein benötigter Sound fehlt: einmal mit ElevenLabs

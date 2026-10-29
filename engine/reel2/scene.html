@@ -229,7 +229,7 @@ const PROGRESS={kicker:'dein Claude-Stil',title:'Stil-Kopie',counter:'SCHRITT',i
 // ---- Avatar: Posen aus assets/avatar (render.cjs liefert sie als window.AVDATA, data-URIs) ----
 const IM={};window.IMGS_READY=false;Promise.all(Object.keys(window.AVDATA||{}).map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
 // Standbilder: Mund folgt der Lautstärke, aber dezent (max. 55 % der offenen Version)
-function mouthOpen(t){const E=window.ENV||[];const i=Math.round(t*30);const v=E[i]||0;const x=Math.min(1,Math.max(0,(v-.18)/.5));return .55*x*x*(3-2*x);}
+function mouthOpen(t){const E=window.ENV||[];const i=Math.round(t*(window.FPS||25));const v=E[i]||0;const x=Math.min(1,Math.max(0,(v-.18)/.5));return .55*x*x*(3-2*x);}
 let LOOPIMG=null;window.setLoop=d=>new Promise(r=>{const i=new Image();i.onload=()=>{LOOPIMG=i;r();};i.src=d;});
 window.loopNeeded=t=>{if(window.SYNC)return 'sync';const p=AVP[phraseAt(t)];return p.startsWith('loop:')?p.slice(5):null;};
 // Für render.cjs "track": welche Loops in welcher Zeit (Standbild-Posen -> neutral)

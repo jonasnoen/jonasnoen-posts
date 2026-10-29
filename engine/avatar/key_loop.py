@@ -14,6 +14,7 @@ from key import key  # noqa: E402
 
 src, out = sys.argv[1], sys.argv[2]
 H = int(sys.argv[3]) if len(sys.argv) > 3 else 760
+FPS = sys.argv[4] if len(sys.argv) > 4 else '25'  # nativer Takt der Avatar-Videos
 os.makedirs(out, exist_ok=True)
 probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'json', src]))
 w, h = probe['streams'][0]['width'], probe['streams'][0]['height']
@@ -21,7 +22,7 @@ fs = w * h * 3
 
 
 def frames():
-    p = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', src, '-vf', 'fps=30', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
+    p = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', src, '-vf', f'fps={FPS}', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
     while True:
         buf = p.stdout.read(fs)
         if len(buf) < fs:

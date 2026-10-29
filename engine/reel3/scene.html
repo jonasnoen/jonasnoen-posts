@@ -221,8 +221,8 @@ function p8(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8];
 // ================= Stil reel3: geteilter Bildschirm (oben Grafik, unten echtes Gesicht) =================
 // SEG pro Phrase: 'split' = oben Grafik / unten Gesicht, Einzelwort-Untertitel auf der Trennlinie;
-// 'full' = Grafik im Vollbild + großes kursives Wort; 'face' = Gesicht im Vollbild.
-const SEG=['split','full','split','split','full','split','split','full','face'];
+// 'full' = Grafik im Vollbild + großes kursives Wort; 'face' = Gesicht im Vollbild (nicht nutzen: Nahaufnahme verrät KI).
+const SEG=['split','full','split','split','full','split','split','full','split'];
 const AVP=SEG.map(()=> 'loop:face');
 const PROGRESS={kicker:'',title:'',counter:'SCHRITT',items:[{label:'1',t:()=>KW('kopier')},{label:'2',t:()=>KW('und')-.05},{label:'3',t:()=>KW('claude',2)}]};
 const IM={};window.IMGS_READY=false;Promise.all(Object.keys(window.AVDATA||{}).map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
@@ -247,10 +247,11 @@ function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(
   (window.EXTRA_CUES?window.EXTRA_CUES():[]).forEach(c=>add(c.t,c.name,c.vol));
   q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=false;const seg=SEG[k];const t0=k===0?0:WORDS[PH[k].a].start-.12;
-  const zoom=k%2?1.16:1.0;
-  if(seg==='split'){g.save();g.beginPath();g.rect(0,0,W,960);g.clip();bgStudio(t);
-      g.translate(540,k===0?600:520);g.scale(k===0?.8:.88,k===0?.8:.88);g.translate(-490,-800);PROPS[k](t);g.restore();if(k===0)hookText(t);
-    face(0,960,W,960,zoom);caption(t,k,962,false);}
+  const zoom=1.0; // keine Nahaufnahmen/Punch-ins: KI-Gesicht soll nicht groß wirken
+  const FY=1160; // Trennlinie: Gesichtsbereich nur 760 px hoch -> Video kaum vergrößert
+  if(seg==='split'){g.save();g.beginPath();g.rect(0,0,W,FY);g.clip();bgStudio(t);
+      g.translate(540,k===0?690:620);g.scale(.95,.95);g.translate(-490,-800);PROPS[k](t);g.restore();if(k===0)hookText(t);
+    face(0,FY,W,H-FY,zoom);caption(t,k,FY+2,false);}
   else if(seg==='full'){bgStudio(t);const push=1+.03*Math.min(Math.max((t-t0)/2,0),1);scaleAt(470,760,push,()=>PROPS[k](t));caption(t,k,1430,true);}
   else{face(0,0,W,H,1.0);caption(t,k,1480,true);font(800,44);g.textAlign='center';g.fillStyle='#fff';g.fillText('@jonas.noen',540,1640);}
   if(stepsDone(t)>0)counter(t);}
