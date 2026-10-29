@@ -58,29 +58,46 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
    kürzen, ohne die Stimme weiter zu beschleunigen.
 5. **Wort-Zeitstempel.** ElevenLabs `creative_transcribe_audio` (scribe) auf die
    ORIGINAL-Audiodatei, dann alle Zeiten durch 1,15 teilen → `words.json`.
-6. **Animation.** Vorlage ist `reels/R001/source/scene.html` (vom Nutzer freigegebener Look).
-   Für jedes neue Thema eigene Szenen bauen, aber Stil, Figur und Untertitel beibehalten:
-   - Lila Grundton: Verlauf `#1f1a2c → #110e17`, weicher violetter Schein, Lampe mit warmem
-     Lichtkegel, Schreibtisch, dezente Staubpartikel.
-   - Helle Flächen für Inhalte (Chatfenster `#f7f3fb`, Karten Warm White `#f6efe4`) mit
-     dunkler Schrift. Violett `#8b6cf0` / `#b9a6ff` als Hauptakzent, dazu sparsam Gelb
-     `#ffc65c`, Grün `#3ccf8e` (richtig/gut) und Rot `#ef5a4c` (falsch). **Nicht nur Lila** –
-     der Nutzer findet reine Lila-Optik langweilig.
-   - Untertitel: Anton, GROSSBUCHSTABEN, ~100 px, dunkle Kontur, max. 3 Wörter, aktives Wort
-     abwechselnd Gelb / Lavendel, zu lange Zeilen automatisch verkleinern. Position y≈1440.
-   - Figur = Jonas als Cartoon: kurze dunkelbraune Haare mit strubbeligem Oberkopf und
-     Geheimratsecken, kurze Seiten, dünne silberne Brille mit doppeltem Steg, Bartstoppeln,
-     schwarzes T-Shirt. Funktion `guy()` in der Vorlage wiederverwenden.
-   - Szenenwechsel: KEINE weißen Blitze. Nur kurzes Abblenden ins Dunkle (`rgba(23,20,31,…)`).
+6. **Animation – Stil „reel2“ (aktueller Standard, Vorbild adilet.fndr).**
+   Vorlage: `engine/reel2/scene.html` (Beispiel-Thema „Zeig Claude deinen Stil“). Für jedes neue
+   Thema `PH` (Phrasen), die Szenen `p0…pN`, `AVP` (Posen) und `EXTRA_CUES` (Sounds) neu
+   schreiben; Hintergrund, Überschrift, Avatar, Übergänge und Mischung beibehalten.
+   - **Aufbau:** Oben Label (`// SCHRITT 1 · KOPIEREN`) + große Überschrift (Manrope 800, 68 px),
+     Wörter erscheinen synchron zur Stimme, 1–3 Schlüsselwörter pro Phrase farbig unterstrichen
+     (abwechselnd Gelb / Lavendel). Mitte (y≈450–1180): eine klare Grafik pro Phrase mit
+     nummerierten Badges (1/2/3), Stempeln, Karten, Mini-Chatfenster. Unten rechts: großer Avatar.
+   - **Hook:** In Phrase 0 steht die komplette Überschrift ab Frame 0 und knallt mit `impact` rein,
+     Avatar startet mit der Pose `surprised`. Keine langsame Einblendung am Anfang.
+   - **Schnelle Schnitte:** neue Phrase alle 1–3 Sekunden, leichter Push-in, Wechsel nur per
+     kurzem Abblenden ins Dunkle (`rgba(23,20,31,…)`). KEINE weißen Blitze.
+   - **Avatar:** Posen aus `assets/avatar/` (siehe `assets/README.md`): `point`, `think`,
+     `surprised`, `thumbs`, `wave`, jeweils mit `_talk`-Version (Mund offen). Der Mund wechselt im
+     0,1-s-Takt nur während gesprochener Wörter. **Nie** die Figur skalieren/pulsieren lassen
+     (wirkt wie Zittern) – nur sanftes Auf-und-ab `sin(t*1.6)*4` und Pop beim Posenwechsel.
+     Typische Zuordnung: Problem → `surprised`/`think`, Schritte → `point`, Ergebnis → `thumbs`,
+     Outro → `wave`. Bilder kommen als data-URIs über `render.cjs` (keine file://-Bilder im Canvas).
+   - Farben: lila Grundton (`#1f1a2c → #110e17`, violetter Schein, Lampe, Staub), helle Karten
+     `#f6efe4` / Chat `#f7f3fb` mit dunkler Schrift, Akzente Violett `#8b6cf0`/`#b9a6ff`, sparsam
+     Gelb `#ffc65c`, Grün `#3ccf8e`, Rot `#ef5a4c`. **Nicht nur Lila.**
    - Kein Roboterkopf, keine erfundenen echten Produkt-Screenshots, keine fremden Logos.
-   - 1080×1920, 30 fps. Kerninhalte nicht unter y≈1500 und nicht ganz rechts (Plattform-UI).
-7. **Rendern.** In einem Arbeitsordner: `scene.html`, `words.json`, `voice.mp3` (beschleunigt)
-   und `engine/render.cjs` zusammenlegen, `npm i` mit `engine/package.json` (Schriften), dann
-   `NODE_PATH=/opt/npm-tools/node_modules node render.cjs stills stills` (Kontrollbilder,
-   Zeiten über `TS=1.5,4,...`) und `node render.cjs full reel.mp4`. Danach Lautheit
-   normalisieren: `ffmpeg -i reel.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart final.mp4`.
-8. **Prüfen.** Kontrollbilder ansehen: Text abgeschnitten? Überlappungen? Figur verdeckt Text?
-   Untertitel synchron? Weiße Blitze? Erst dann weiter.
+   - 1080×1920, 30 fps. Kerninhalte nicht ganz rechts oben (Plattform-UI), Text nicht hinter Avatar.
+   - Alter Stil (Cartoon-`guy()` + große Untertitel) liegt in `reels/R001/source/` – nur noch Archiv.
+7. **Sound.** Effekte und Musik liegen fertig in `assets/sfx/` und `assets/music/` und werden
+   **immer wiederverwendet**. Nur wenn ein benötigter Sound fehlt: einmal mit ElevenLabs
+   erzeugen (`eleven_text_to_sound_v2`, ca. 0,3 Cent; Musik `eleven_music_v2_5`, ca. 15 Cent,
+   nur instrumental), kurz schneiden, normalisieren, in `assets/` ablegen, in `assets/README.md`
+   eintragen und committen. `render.cjs` legt `whoosh` auf jeden Phrasenwechsel und `impact` auf
+   Sekunde 0; weitere Effekte über `EXTRA_CUES` in der Szene. Musik läuft bei ca. 10 % Lautstärke
+   unter der Stimme, Track wechselt automatisch nach Reel-Nummer.
+8. **Rendern.** Arbeitsordner mit `scene.html`, `words.json`, `voice.mp3` (beschleunigt) und
+   `engine/reel2/render.cjs`; Schriften per `npm i` mit `engine/package.json` (oder `node_modules`
+   verlinken). Dann
+   `NODE_PATH=/opt/npm-tools/node_modules ASSETS=<repo>/assets node render.cjs stills stills`
+   (Kontrollbilder, Zeiten über `TS=0.1,1.5,...`) und
+   `REEL=R### NODE_PATH=/opt/npm-tools/node_modules ASSETS=<repo>/assets node render.cjs full final.mp4`
+   – das mischt Stimme, Musik und Effekte und normalisiert die Lautheit (-14 LUFS) in einem Schritt.
+   **Prüfen:** Kontrollbilder ansehen: Text abgeschnitten? Überlappungen? Avatar verdeckt Text?
+   Wörter synchron? Mund offen in Sprechpassagen? Weiße Blitze? Erst dann weiter.
 9. **Ablegen.** `reels/R###/reel.mp4` + `reels/R###/source/` committen und pushen. Den
    Eintrag in `register.json` VOR dem Posten mit Status `sending` anlegen.
 10. **Posten über Metricool** (`createScheduledPost`, `blogId 7001759`), Medien-URL:
@@ -127,7 +144,8 @@ Engagement-Bait, keine Reichweitenversprechen.
 
 ## Kosten pro Reel
 
-ElevenLabs-Stimme ca. 7 US-Cent, Transkription praktisch 0. Rendern, GitHub, Metricool: 0.
+ElevenLabs-Stimme ca. 7 US-Cent, Transkription ca. 1–3 Cent. Avatar, Sounds, Musik: 0 (liegen in
+`assets/`, einmalig ca. 1,05 US-Dollar). Rendern, GitHub, Metricool: 0.
 
 ## Weitere Referenzen
 
