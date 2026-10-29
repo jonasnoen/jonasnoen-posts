@@ -267,9 +267,9 @@ function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t
     caption(t,k,1500,true);font(800,44);g.textAlign='center';g.fillStyle='#fff';g.fillText('@jonas.noen',540,1650);return;}
   // Standard-Schluss (natürlich, ohne KI-Lächeln): Bubble ploppt im Outro weg, große Folgen-Karte übernimmt
   if(!window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.3);if(e<1){g.save();g.globalAlpha=1-e;bubble(t);g.restore();}headline(t,k);outroCard(t,t0);
-    const d=t-t0;if(d>=0&&d<.12){g.fillStyle=`rgba(23,20,31,${.3*(1-d/.12)})`;g.fillRect(0,0,W,H);}return;}
+    const d=t-t0;if(d>=0&&d<.12){}return;}
   bubble(t);headline(t,k);
-  const d=t-t0;if(k>0&&d>=0&&d<.12){g.fillStyle=`rgba(23,20,31,${.3*(1-d/.12)})`;g.fillRect(0,0,W,H);}}
+  const d=t-t0;if(k>0&&d>=0&&d<.12){}}
 window.avatarPlan=()=>[];
 // Themenspezifische Effekte (pro Reel anpassen): Pop bei Schritt-Badges, Ding bei Haken, Tippen beim Prompt, Klick bei Stempeln
 window.EXTRA_CUES=()=>[
