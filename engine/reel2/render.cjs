@@ -1,6 +1,8 @@
 // Reel-Renderer, Stil "reel2" (Text oben, KI-Avatar unten rechts, Sounds + Musik).
 // Aufruf im Arbeitsordner (scene.html, words.json, voice.mp3, node_modules mit Schriften):
 //   NODE_PATH=/opt/npm-tools/node_modules ASSETS=<repo>/assets node render.cjs stills <dir>     (Kontrollbilder, Zeiten über TS=1,4.5,...)
+//   NODE_PATH=/opt/npm-tools/node_modules ASSETS=<repo>/assets node render.cjs track base.mp4  (Avatar-Spur aus den Loops laut AVP, Greenscreen,
+//      für Veed-Lipsync; Ergebnis als lipsync.mp4 in den Arbeitsordner legen)
 //   NODE_PATH=/opt/npm-tools/node_modules ASSETS=<repo>/assets node render.cjs full final.mp4  (fertiges Reel inkl. Ton)
 // Optional: MUSIC=<datei in assets/music> (sonst wird abwechselnd nach Reel-Nummer REEL=R003 gewählt), MUSIC_VOL=0.10
 const {chromium}=require('playwright');const fs=require('fs');const path=require('path');const {spawn,execFileSync}=require('child_process');
@@ -18,13 +20,27 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
   await p.addInitScript(([d,e])=>{window.AVDATA=d;window.ENV=e;},[av,ENV]);
   await p.goto('file://'+dir+'/scene.html');await p.evaluate(()=>document.fonts.ready);
-  await p.evaluate(async()=>{await Promise.all(['800 40px Manrope','500 40px Manrope','40px Anton'].map(f=>document.fonts.load(f)))});
+  await p.evaluate(async()=>{await Promise.all(['800 40px Manrope','500 40px Manrope','40px Anton',"italic 40px 'Instrument Serif'"].map(f=>document.fonts.load(f)))});
   const END=await p.evaluate(w=>setup(w),words);await p.waitForFunction(()=>window.IMGS_READY===true,null,{timeout:30000});
   const dec=d=>Buffer.from(d.split(',')[1],'base64');
   // ---- Sprech-Loops (assets/avatar/loops/<name>.mp4, Greenscreen): einmal freistellen (Cache im Arbeitsordner),
   // dann pro Frame das passende Einzelbild an die Szene geben. Pose 'loop:<name>' in AVP nutzt sie.
   const loops={};const ldir=A+'/avatar/loops';const seed=(parseInt((process.env.REEL||'').replace(/\D/g,''))||0)*97;
-  if(fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
+  if(mode==='track'){ // ---- Avatar-Spur: Loops pro Phrase aneinanderhängen, 0,3 s weich überblendet ----
+    const plan=await p.evaluate(()=>window.avatarPlan());await b.close();const F=0.3;const segs=[];
+    plan.forEach(s=>{if(segs.length&&segs[segs.length-1].loop===s.loop)return;segs.push({...s});});
+    segs.forEach((s,i)=>{s.d=(i+1<segs.length?segs[i+1].t:END)-s.t;});
+    const inputs=[];let fc='';segs.forEach((s,i)=>{const pp=`${dir}/_pp_${s.loop}.mp4`;
+      if(!fs.existsSync(pp))execFileSync('ffmpeg',['-v','error','-y','-i',`${ldir}/${s.loop}.mp4`,'-filter_complex','[0:v]fps=30,split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1:a=0[v]','-map','[v]','-an','-c:v','libx264','-preset','veryfast','-crf','16','-pix_fmt','yuv420p',pp]);
+      const len=parseFloat(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',pp]).toString());
+      const need=s.d+(i+1<segs.length?F:0),off=need<len-.1?((seed*0.37+i*3.1)%(len-need)):0;
+      inputs.push('-stream_loop','-1','-ss',off.toFixed(2),'-t',need.toFixed(3),'-i',pp);fc+=`[${i}:v]fps=30,scale=1920:1080,setsar=1,format=yuv420p,settb=AVTB[s${i}];`;});
+    let last='[s0]';let acc=0;for(let i=1;i<segs.length;i++){acc+=segs[i-1].d;fc+=`${last}[s${i}]xfade=transition=fade:duration=${F}:offset=${acc.toFixed(3)}[x${i}];`;last=`[x${i}]`;}
+    fc=fc.replace(/;$/,'');
+    await run(['-y','-v','error',...inputs,'-filter_complex',fc,'-map',last,'-an','-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-r','30','-t',END.toFixed(3),out]);
+    console.log('Avatar-Spur',out,segs.map(s=>s.loop+'@'+s.t.toFixed(2)).join(' '));return;}
+  const SYNC=fs.existsSync(dir+'/lipsync.mp4');if(SYNC)await p.evaluate(()=>{window.SYNC=true;});
+  if(!SYNC&&fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
     if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(A,'..','engine','avatar','key_loop.py'),`${ldir}/${f}`,cache],{stdio:'inherit'});
     loops[nm]=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
   // Lippensynchrones Avatar-Video dieses Reels (lipsync.mp4 im Arbeitsordner, Greenscreen, startet bei t=0):

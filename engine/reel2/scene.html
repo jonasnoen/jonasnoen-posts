@@ -2,6 +2,7 @@
 <style>
 @font-face{font-family:Manrope;font-weight:500;src:url(node_modules/@fontsource/manrope/files/manrope-latin-500-normal.woff2)}
 @font-face{font-family:Manrope;font-weight:800;src:url(node_modules/@fontsource/manrope/files/manrope-latin-800-normal.woff2)}
+@font-face{font-family:'Instrument Serif';font-style:italic;src:url(node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2)}
 @font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2)}
 html,body{margin:0;background:#000}canvas{display:block}
 </style></head><body>
@@ -17,7 +18,11 @@ function rr(x,y,w,h,r){g.beginPath();g.roundRect(x,y,w,h,r);}
 function speaking(t){return WORDS.some(w=>t>=w.start&&t<=w.end);}
 function font(w,s,f='Manrope'){g.font=`${w} ${s}px ${f}`;}
 
+let LIGHT=false;const L=(dark,light)=>LIGHT?light:dark;const TXT=()=>LIGHT?C.ink:'#fff';
 function bgStudio(t){
+  if(LIGHT){const gr=g.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#f4efe7');gr.addColorStop(1,'#e8e0d4');g.fillStyle=gr;g.fillRect(0,0,W,H);
+    const rg=g.createRadialGradient(540,760,40,540,760,760);rg.addColorStop(0,'rgba(139,108,240,.10)');rg.addColorStop(1,'rgba(139,108,240,0)');g.fillStyle=rg;g.fillRect(0,0,W,H);
+    g.fillStyle='rgba(60,40,30,.05)';for(let y=12;y<H;y+=24)for(let x=(y/24%2)*12;x<W;x+=24){g.fillRect(x,y,2,2);}return;}
   const gr=g.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#1f1a2c');gr.addColorStop(1,'#110e17');g.fillStyle=gr;g.fillRect(0,0,W,H);
   // soft violet glow
   const rg=g.createRadialGradient(540,700,50,540,700,700);rg.addColorStop(0,'rgba(139,108,240,.22)');rg.addColorStop(1,'rgba(139,108,240,0)');g.fillStyle=rg;g.fillRect(0,0,W,H);
@@ -128,31 +133,46 @@ function docCard(x,y,w,h,lines,glowc){if(glowc){g.save();g.shadowColor=glowc;g.s
   for(let i=0;i<lines;i++){rr(x+30,y+40+i*36,(i%3==2?w*0.45:w-70),13,6);g.fillStyle='#c9bfd8';g.fill();}}
 // ---------- R002 v2: Text oben, große Figur unten rechts, nummerierte Schritte, schnelle Beats ----------
 const PH=[
- {a:0,b:5,label:'// 01 · DAS PROBLEM',acc:['stil']},
- {a:6,b:9,label:'// 02 · DER TRICK',acc:['beschreib']},
- {a:10,b:11,label:'// 02 · DER TRICK',acc:['zeig']},
+ {a:0,b:5,light:true,label:'// 01 · DAS PROBLEM',acc:['stil']},
+ {a:6,b:9,light:true,label:'// 02 · DER TRICK',acc:['beschreib']},
+ {a:10,b:11,light:true,label:'// 02 · DER TRICK',acc:['zeig']},
  {a:12,b:23,label:'// SCHRITT 1 · KOPIEREN',acc:['selbst','texte']},
  {a:24,b:26,label:'// SCHRITT 2 · DAZUSCHREIBEN',acc:['dazu']},
  {a:27,b:33,label:'// SCHRITT 2 · DAZUSCHREIBEN',acc:['gleichen','stil']},
  {a:34,b:44,label:'// SCHRITT 3 · ERGEBNIS',acc:['satzlänge','ton','wörter']},
- {a:45,b:52,label:'// MERKSATZ',acc:['beispiel','adjektive']},
- {a:53,b:57,label:'// MEHR DAVON',acc:['claude-tipps']}];
+ {a:45,b:52,light:true,label:'// MERKSATZ',acc:['beispiel','adjektive']},
+ {a:53,b:57,light:true,label:'// MEHR DAVON',acc:['claude-tipps']}];
 const clean=s=>s.replace(/[.,?:!]/g,'').toLowerCase();
 function phraseAt(t){let k=0;for(let i=0;i<PH.length;i++){if(t>=WORDS[PH[i].a].start-.12)k=i;}return k;}
 // Hook: in Phrase 0 steht die ganze Überschrift ab Frame 0 und "knallt" rein (mit impact-Sound). Danach Wort für Wort.
 function headline(t,k){const hook=k===0;if(hook){const s=1+.22*(1-ease(t/.28));g.save();g.translate(540,300);g.scale(s,s);g.translate(-540,-300);}
   const p=PH[k];const ws=WORDS.slice(p.a,p.b+1);
-  font(800,30);g.fillStyle=C.violetL;g.textAlign='left';g.fillText(p.label.toUpperCase(),70,170);
-  font(800,68);const maxW=940,lh=84;let x=70,y=262,ai=0;
-  ws.forEach(w=>{const txt=w.text;const wd=g.measureText(txt+' ').width;if(x+g.measureText(txt).width>70+maxW){x=70;y+=lh;}
-    const a=hook?ease(t/.12):ease((t-w.start+.06)/.14);const isAcc=p.acc.includes(clean(txt));
-    if(a>0){withAlpha(a,()=>{g.save();g.translate(0,(1-a)*14);
-      if(isAcc){const col=ai%2?C.violetL:C.amber;const tw=g.measureText(txt.replace(/[.,?:!]$/,'')).width;g.fillStyle=col;g.globalAlpha*=.28;rr(x-6,y+12,tw+12,14,7);g.fill();g.globalAlpha/=.28;g.fillStyle=col;}
-      else g.fillStyle='#fff';
-      g.fillText(txt,x,y);g.restore();});}
-    if(isAcc)ai++;x+=wd;});if(hook)g.restore();}
+  font(800,30);g.fillStyle=L(C.violetL,'#6b55d9');g.textAlign='left';g.fillText(p.label.toUpperCase(),70,170);
+  counter(t);
+  const maxW=940,lh=86;let x=70,y=262,ai=0;
+  // Akzentwörter: kursive Serifenschrift, farbig (dunkel: Gelb/Lavendel, hell: Rot/Violett)
+  const setF=acc=>acc?g.font="italic 400 84px 'Instrument Serif'":font(800,68);
+  ws.forEach(w=>{const txt=w.text;const isAcc=p.acc.includes(clean(txt));setF(isAcc);const tw=g.measureText(txt).width;setF(false);const sp=g.measureText(' ').width;
+    if(x+tw>70+maxW){x=70;y+=lh;}
+    const a=hook?ease(t/.12):ease((t-w.start+.06)/.14);
+    if(a>0){withAlpha(a,()=>{g.save();g.translate(0,(1-a)*14);setF(isAcc);
+      g.fillStyle=isAcc?(ai%2?L(C.violetL,C.violet):L(C.amber,C.red)):TXT();
+      g.fillText(txt,x,y+(isAcc?4:0));g.restore();});}
+    if(isAcc)ai++;x+=tw+sp;});if(hook)g.restore();}
+// Zähler oben rechts: Fortschritt der Schritte (aus PROGRESS)
+function stepsDone(t){return PROGRESS.items.filter(it=>t>=it.t()).length;}
+function counter(t){font(800,28);g.textAlign='right';g.fillStyle=L('rgba(255,255,255,.55)','rgba(20,16,25,.5)');g.fillText(`${PROGRESS.counter} ${stepsDone(t)}/${PROGRESS.items.length}`,1010,170);g.textAlign='left';}
+// Fortschritts-Karte unten links: füllt sich, sobald ein Schritt erreicht ist
+function progressCard(t){const x=40,y=1300,w=470,h=176,n=PROGRESS.items.length;
+  g.save();g.shadowColor='rgba(0,0,0,.35)';g.shadowBlur=26;g.shadowOffsetY=10;rr(x,y,w,h,22);g.fillStyle='#f7f3fb';g.fill();g.restore();
+  font(800,22);g.fillStyle='#8a7fa6';g.textAlign='left';g.fillText('// '+PROGRESS.kicker,x+24,y+38);
+  font(800,30);g.fillStyle=C.ink;g.fillText(PROGRESS.title,x+24,y+74);
+  const live=stepsDone(t)>0;g.fillStyle=live?C.green:'#c9bfd8';g.beginPath();g.arc(x+w-92,y+34,7,0,7);g.fill();font(800,20);g.fillStyle='#5b4bb8';g.fillText(live?'läuft':'bereit',x+w-78,y+41);
+  const sw=(w-48-(n-1)*14)/n;PROGRESS.items.forEach((it,i)=>{const sx=x+24+i*(sw+14),sy=y+92,on=t>=it.t();const s=on?back(t,it.t(),.35):1;
+    scaleAt(sx+sw/2,sy+24,s,()=>{rr(sx,sy,sw,50,14);if(on){g.fillStyle=[C.amber,C.violet,C.green,C.red][i%4];g.fill();}else{g.setLineDash([6,6]);g.lineWidth=3;g.strokeStyle='#c9bfd8';g.stroke();g.setLineDash([]);}
+      font(800,19);g.textAlign='center';g.fillStyle=on?C.ink:'#a79fbd';g.fillText((on?'✓ ':'')+it.label,sx+sw/2,sy+32);});});g.textAlign='left';}
 function badge(n,x,y,col,t0,t){if(t<t0)return;const s=back(t,t0,.35);scaleAt(x,y,s,()=>{g.fillStyle=col;g.beginPath();g.arc(x,y,54,0,7);g.fill();font(400,70,'Anton');g.fillStyle=C.ink;g.textAlign='center';g.fillText(String(n),x,y+25);});}
-function bigLabel(txt,x,y,t0,t,col='#fff',size=96){if(t<t0)return;const a=ease((t-t0)/.2);withAlpha(a,()=>{font(400,size,'Anton');g.textAlign='left';g.fillStyle=col;g.fillText(txt,x+(1-a)*-30,y);});}
+function bigLabel(txt,x,y,t0,t,col=null,size=96){if(t<t0)return;const a=ease((t-t0)/.2);withAlpha(a,()=>{font(400,size,'Anton');g.textAlign='left';g.fillStyle=col||TXT();g.fillText(txt,x+(1-a)*-30,y);});}
 function stamp(txt,x,y,rot,t0,t,col=C.red,size=56){if(t<t0)return;const s=back(t,t0,.3);scaleAt(x,y,1.6-.6*s,()=>{g.save();g.translate(x,y);g.rotate(rot);font(800,size);const w=g.measureText(txt).width+56;rr(-w/2,-size*.9,w,size*1.8,22);g.lineWidth=10;g.strokeStyle=col;g.stroke();g.fillStyle=col;g.textAlign='center';g.textBaseline='middle';g.fillText(txt,0,4);g.restore();g.textBaseline='alphabetic';});}
 function paper(x,y,w,h,rot,lines,title){g.save();g.translate(x+w/2,y+h/2);g.rotate(rot);g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=30;g.shadowOffsetY=12;card(-w/2,-h/2,w,h,C.warm);g.shadowColor='transparent';
   if(title){font(800,26);g.fillStyle='#5b4bb8';g.textAlign='left';g.fillText(title,-w/2+28,-h/2+44);}
@@ -168,10 +188,10 @@ function p0(t){paper(170,470,560,560,-.05,0,'Claude · Entwurf');font(500,40);g.
   stamp('NICHT DEIN STIL',520,860,-.16,KW('nicht'),t);}
 function p1(t){const adj=['locker','direkt','witzig','persönlich','klar','frech'];adj.forEach((w,i)=>{const t0=KW('beschreib')+i*.05;if(t<t0)return;const s=back(t,t0,.3);const x=90+(i%2)*400,y=480+Math.floor(i/2)*120;scaleAt(x+150,y+32,s,()=>pill(w,x,y));});
   const tn=KW('nicht',2);if(t>tn){const k=ease((t-tn)/.25);g.strokeStyle=C.red;g.lineWidth=16;g.lineCap='round';g.beginPath();g.moveTo(80,450);g.lineTo(80+760*k,450+380*k);g.stroke();}
-  bigLabel('ADJEKTIVE?',90,1010,KW('beschreib')+.3,t,C.grey,80);}
+  bigLabel('ADJEKTIVE?',90,1010,KW('beschreib')+.3,t,L(C.grey,'#8a7fa6'),80);}
 function p2(t){const t0=KW('zeig');const s=back(t,t0,.4);scaleAt(470,760,s,()=>{const gl=g.createRadialGradient(470,760,40,470,760,420);gl.addColorStop(0,'rgba(255,198,92,.4)');gl.addColorStop(1,'rgba(255,198,92,0)');g.fillStyle=gl;g.fillRect(50,340,840,840);
   paper(200,520,300,380,-.08,7,'Mein Text');paper(380,500,300,380,.06,7,'Mein Text');});
-  bigLabel('ZEIGEN',120,1100,t0+.15,t,C.amber,130);}
+  bigLabel('ZEIGEN',120,1100,t0+.15,t,L(C.amber,C.red),130);}
 function p3(t){badge(1,120,520,C.amber,KW('kopier'),t);bigLabel('KOPIEREN',200,548,KW('kopier')+.05,t,'#fff',84);
   const ks=[KW('zwei'),KW('drei'),KW('texte')];ks.forEach((k,i)=>{if(t<k)return;const s=ease((t-k)/.3);const tx=[90,330,570][i],ty=640;const chatIn=t>KW('chat')?ease((t-KW('chat'))/.35):0;
     const x=tx+(1-s)*-200+(chatIn*(260-tx)*.0),y=ty+(1-s)*60-chatIn*0;paper(x,y,260,330,[-.08,.03,.09][i],6,'Text '+(i+1));});
@@ -190,39 +210,48 @@ function p6(t){badge(3,120,520,C.green,KW('claude',2),t);bigLabel('ERGEBNIS',200
     font(400,64,'Anton');g.fillStyle=C.ink;g.textAlign='left';g.fillText(txt,230,y+86);font(800,40);g.fillStyle='#8a7fa6';g.textAlign='right';g.fillText(ic,810,y+76);});});}
 function p7(t){const k1=KW('beispiel'),k2=KW('zehn'),km=KW('mehr');
   if(t>k1){const s=back(t,k1,.35);scaleAt(250,760,s,()=>{paper(110,560,280,360,-.05,7,'1 Beispiel');});}
-  if(t>km){withAlpha(ease((t-km)/.2),()=>{font(400,170,'Anton');g.fillStyle=C.amber;g.textAlign='center';g.fillText('>',480,830);});}
+  if(t>km){withAlpha(ease((t-km)/.2),()=>{font(400,170,'Anton');g.fillStyle=L(C.amber,C.red);g.textAlign='center';g.fillText('>',480,830);});}
   if(t>k2){['locker','direkt','witzig','klar','nahbar','frech','ruhig','modern','ehrlich','kurz'].forEach((w,i)=>{const a=ease((t-k2-i*.035)/.18);withAlpha(a*.9,()=>{const x=560+(i%2)*190,y=520+Math.floor(i/2)*84;rr(x,y,172,62,31);g.fillStyle='#3a3155';g.fill();font(800,28);g.fillStyle=C.grey;g.textAlign='center';g.fillText(w,x+86,y+41);});});}}
 function p8(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.save();g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=30;g.shadowOffsetY=12;rr(80,520,780,330,34);g.fillStyle=C.violet;g.fill();g.restore();
   font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText('FOLGEN FÜR MEHR',470,660);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',470,770);});
-  if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=C.violetL;g.textAlign='center';g.fillText('@jonas.noen',470,940);});}}
+  if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=L(C.violetL,C.violet);g.textAlign='center';g.fillText('@jonas.noen',470,940);});}}
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8];
-const AVP=['surprised','loop:talk','loop:talk','loop:talk','loop:talk','loop:talk','thumbs','loop:talk','wave'];
+// Avatar pro Phrase. 'loop:<name>' = Sprech-Loop aus assets/avatar/loops (neutral, explain, talk=Zeigen, think);
+// sonst Standbild-Pose (surprised, thumbs, wave, think, point). Mit lipsync.mp4 (siehe CLAUDE.md) wird alles
+// durch das lippensynchrone Avatar-Video ersetzt, das aus genau diesen Loops gebaut wurde.
+const AVP=['loop:think','loop:explain','loop:talk','loop:talk','loop:neutral','loop:explain','loop:talk','loop:think','loop:neutral'];
+// Fortschritts-Karte + Zähler (pro Reel anpassen)
+const PROGRESS={kicker:'dein Claude-Stil',title:'Stil-Kopie',counter:'SCHRITT',items:[
+  {label:'KOPIEREN',t:()=>KW('kopier')},{label:'DAZU',t:()=>KW('und')-.05},{label:'ERGEBNIS',t:()=>KW('claude',2)}]};
 // ---- Avatar: Posen aus assets/avatar (render.cjs liefert sie als window.AVDATA, data-URIs) ----
-// Jede Pose gibt es zweimal: <pose>.png (Mund zu) und <pose>_talk.png (Mund offen, sonst pixelgleich).
 const IM={};window.IMGS_READY=false;Promise.all(Object.keys(window.AVDATA||{}).map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
-// Mund folgt der echten Lautstärke der Stimme (window.ENV, pro Frame, von render.cjs) und blendet
-// weich zwischen "zu" und "offen" über. Kein fester Takt, kein Skalieren -> kein Klappmaul, kein Zittern.
-function mouthOpen(t){const E=window.ENV||[];const i=Math.round(t*30);const v=E[i]||0;const x=Math.min(1,Math.max(0,(v-.18)/.5));return x*x*(3-2*x);}
-// Sprech-Loop: AVP-Eintrag 'loop:<name>' -> render.cjs liefert pro Frame das Einzelbild (window.setLoop)
+// Standbilder: Mund folgt der Lautstärke, aber dezent (max. 55 % der offenen Version)
+function mouthOpen(t){const E=window.ENV||[];const i=Math.round(t*30);const v=E[i]||0;const x=Math.min(1,Math.max(0,(v-.18)/.5));return .55*x*x*(3-2*x);}
 let LOOPIMG=null;window.setLoop=d=>new Promise(r=>{const i=new Image();i.onload=()=>{LOOPIMG=i;r();};i.src=d;});
-window.loopNeeded=t=>{const p=AVP[phraseAt(t)];return p.startsWith('loop:')?p.slice(5):null;};
-function avatar(t,k){const pose=AVP[k];const isLoop=pose.startsWith('loop:');const open=isLoop?0:mouthOpen(t);const im=isLoop?LOOPIMG:IM[pose],imT=isLoop?null:IM[pose+'_talk'];if(!im)return;const t0=k===0?0:WORDS[PH[k].a].start-.12;const changed=k===0||AVP[k]!==AVP[k-1];
-  const s0=changed?back(t,t0,.35):1;let h=760,w=im.width*h/im.height;if(w>960){w=960;h=im.height*w/im.width;}
-  const bob=Math.sin(t*1.6)*4;
-  const x=1095-w,y=1925-h+bob;g.save();g.translate(x+w/2,1925);g.scale(s0,s0);g.translate(-(x+w/2),-1925);
-  g.imageSmoothingQuality='high';g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=40;g.drawImage(im,x,y,w,h);
-  g.shadowColor='transparent';if(imT&&open>0.01){g.globalAlpha=open;g.drawImage(imT,x,y,w,h);g.globalAlpha=1;}g.restore();}
+window.loopNeeded=t=>{if(window.SYNC)return 'sync';const p=AVP[phraseAt(t)];return p.startsWith('loop:')?p.slice(5):null;};
+// Für render.cjs "track": welche Loops in welcher Zeit (Standbild-Posen -> neutral)
+window.avatarPlan=()=>PH.map((p,k)=>({t:k===0?0:WORDS[p.a].start-.12,loop:AVP[k].startsWith('loop:')?AVP[k].slice(5):'neutral'}));
+function drawAv(im,imT,open,alpha){let h=700,w=im.width*h/im.height;if(w>900){w=900;h=im.height*w/im.width;}
+  const x=1100-w,y=1925-h;g.save();g.globalAlpha=alpha;g.imageSmoothingQuality='high';g.shadowColor='rgba(0,0,0,.4)';g.shadowBlur=40;g.drawImage(im,x,y,w,h);
+  g.shadowColor='transparent';if(imT&&open>0.01){g.globalAlpha=alpha*open;g.drawImage(imT,x,y,w,h);}g.restore();}
+function avatar(t,k){const bob=Math.sin(t*1.6)*4;g.save();g.translate(0,bob);
+  if(window.SYNC){if(LOOPIMG)drawAv(LOOPIMG,null,0,ease(t/.2));g.restore();return;}
+  const get=i=>{const p=AVP[i];return p.startsWith('loop:')?[LOOPIMG,null,0]:[IM[p],IM[p+'_talk'],mouthOpen(t)];};
+  const t0=k===0?0:WORDS[PH[k].a].start-.12,a=ease((t-t0)/.3),changed=k>0&&AVP[k]!==AVP[k-1];
+  // weiche Überblendung zwischen Posen (statt Pop)
+  if(changed&&a<1){const pv=get(k-1);if(pv[0]&&!AVP[k-1].startsWith('loop:'))drawAv(pv[0],pv[1],pv[2],1-a);}
+  const cur=get(k);if(cur[0])drawAv(cur[0],cur[1],cur[2],k===0?ease(t/.2):(changed?a:1));g.restore();}
 // ---- Sound-Cues: render.cjs mischt diese Effekte aus assets/sfx unter die Stimme ----
 function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
   add(0,'impact',.9);
   for(let k=1;k<PH.length;k++)add(WORDS[PH[k].a].start-.2,'whoosh',.55);
   (window.EXTRA_CUES?window.EXTRA_CUES():[]).forEach(c=>add(c.t,c.name,c.vol));
   q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
-const POSE=[{frown:true},{},{point:true},{point:true},{},{},{},{point:true},{wave:true}];
-function frame(t){g.clearRect(0,0,W,H);bgStudio(t);const k=phraseAt(t);const p=PH[k];const t0=WORDS[p.a].start-.12;
+function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const p=PH[k];const t0=WORDS[p.a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);scaleAt(470,800,push,()=>PROPS[k](t));
   // big bust bottom right, gentle sway
   avatar(t,k);
+  progressCard(t);
   headline(t,k);
   const d=t-t0;if(k>0&&d>=0&&d<.12){g.fillStyle=`rgba(23,20,31,${.55*(1-d/.12)})`;g.fillRect(0,0,W,H);}}
 // Themenspezifische Effekte (pro Reel anpassen): Pop bei Schritt-Badges, Ding bei Haken, Tippen beim Prompt, Klick bei Stempeln
