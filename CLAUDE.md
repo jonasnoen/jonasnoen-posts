@@ -45,8 +45,9 @@ kein Hell/Dunkel-Wechsel), Grafik groß in der Mitte, oben großes Label und **n
 kursiv) – kein Wort-für-Wort-Mitschreiben; nur der Hook in Phrase 0 steht als ganzer Satz. Bubble ca. 1/3 Bildbreite
 unten rechts. **30 fps** (`FPS=30`, Takt des Raw Cuts). Schluss: Bubble blendet aus, Folgen-Karte, **Memoji `wave` winkt
 hinter der Karte hervor** (kein Emoji). Keine Großaufnahme am Schluss (Mund bewegt sich nach dem letzten Wort weiter, vom Nutzer verworfen).
-Gesichtsspur pro Reel: `FACE_SRC=raw_teil1.mp4 FPS=30 REEL=R### node render.cjs facebase facebase.mp4` (Ausschnitt läuft
-automatisch im Kreis durchs Material: Start = Reelnummer × 27 s; Wiederholungen sind ok), dann Veed-Lipsync mit der
+Gesichtsspur pro Reel: `FACE_SRC=raw_teil1.mp4 FPS=30 REEL=R### node render.cjs facebase facebase.mp4` (pro Phrase ein
+sauberes Stück, harter Schnitt beim Phrasenwechsel; Start läuft im Kreis durchs Material, Reelnummer × 27 s, Wiederholungen ok;
+**Sperrliste** `assets/face/raw_teil1.json` = Stellen mit Hand im Bild, werden nie verwendet; die genutzten Stücke stehen in `facebase.json`), dann Veed-Lipsync mit der
 Stimme → `face.mp4`. Rendern mit `FPS=30`. Neues Rohmaterial von Jonas: stumm, Kopf-Ausschnitt 720×720, 30 fps als
 `assets/face/raw_<name>.mp4` ablegen (niemals mit Originalton ins öffentliche Repo).
 
