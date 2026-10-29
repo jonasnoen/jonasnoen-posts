@@ -21,11 +21,21 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   await p.evaluate(async()=>{await Promise.all(['800 40px Manrope','500 40px Manrope','40px Anton'].map(f=>document.fonts.load(f)))});
   const END=await p.evaluate(w=>setup(w),words);await p.waitForFunction(()=>window.IMGS_READY===true,null,{timeout:30000});
   const dec=d=>Buffer.from(d.split(',')[1],'base64');
-  if(mode==='stills'){const ts=(process.env.TS||'0.1,1.5,3.6,5.3,8.9,10.5,12.6,15,17.8').split(',').map(Number);for(const t of ts){fs.writeFileSync(`${out}/s_${t}.jpg`,dec(await p.evaluate(t=>render(t),t)));}await b.close();return;}
+  // ---- Sprech-Loops (assets/avatar/loops/<name>.mp4, Greenscreen): einmal freistellen (Cache im Arbeitsordner),
+  // dann pro Frame das passende Einzelbild an die Szene geben. Pose 'loop:<name>' in AVP nutzt sie.
+  const loops={};const ldir=A+'/avatar/loops';const seed=(parseInt((process.env.REEL||'').replace(/\D/g,''))||0)*97;
+  if(fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
+    if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(__dirname,'..','avatar','key_loop.py'),`${ldir}/${f}`,cache],{stdio:'inherit'});
+    loops[nm]=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
+  // Ping-Pong (vor, zurück, vor ...) mit zufälligem Startpunkt je Reel -> keine sichtbare Naht, nie identisch
+  const pick=(nm,t)=>{const L=loops[nm];if(!L)return null;const n=L.length,i=(seed+Math.round(t*30))%(2*n-2);return L[i<n?i:2*n-2-i];};
+  const frameAt=async(t)=>{const nm=await p.evaluate(t=>window.loopNeeded?window.loopNeeded(t):null,t);const f=nm&&pick(nm,t);
+    return p.evaluate(async([t,d])=>{if(d)await window.setLoop(d);return render(t);},[t,f?'data:image/png;base64,'+fs.readFileSync(f).toString('base64'):null]);};
+  if(mode==='stills'){const ts=(process.env.TS||'0.1,1.5,3.6,5.3,8.9,10.5,12.6,15,17.8').split(',').map(Number);for(const t of ts){fs.writeFileSync(`${out}/s_${t}.jpg`,dec(await frameAt(t)));}await b.close();return;}
   const cues=await p.evaluate(()=>window.CUES||[]);
   const fps=30,dur=Math.round(END*30)/30,n=Math.round(fps*dur);const vid=dir+'/_video.mp4';
   const ff=spawn('ffmpeg',['-y','-v','error','-f','image2pipe','-framerate',''+fps,'-i','-','-c:v','libx264','-preset','veryfast','-crf','20','-pix_fmt','yuv420p',vid],{stdio:['pipe','inherit','inherit']});
-  for(let i=0;i<n;i++){const d=await p.evaluate(t=>render(t),i/fps);if(!ff.stdin.write(dec(d)))await new Promise(r=>ff.stdin.once('drain',r));}
+  for(let i=0;i<n;i++){const d=await frameAt(i/fps);if(!ff.stdin.write(dec(d)))await new Promise(r=>ff.stdin.once('drain',r));}
   ff.stdin.end();await new Promise(r=>ff.on('close',r));await b.close();
   // ---- Ton: Stimme + leise Musik (Loop, Ein-/Ausblenden) + Effekte an den Cues ----
   const tracks=fs.readdirSync(A+'/music').filter(f=>f.endsWith('.mp3')).sort();

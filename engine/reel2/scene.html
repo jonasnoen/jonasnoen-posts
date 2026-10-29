@@ -196,14 +196,17 @@ function p8(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.
   font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText('FOLGEN FÜR MEHR',470,660);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',470,770);});
   if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=C.violetL;g.textAlign='center';g.fillText('@jonas.noen',470,940);});}}
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8];
-const AVP=['surprised','think','point','point','think','point','thumbs','point','wave'];
+const AVP=['surprised','loop:talk','loop:talk','loop:talk','loop:talk','loop:talk','thumbs','loop:talk','wave'];
 // ---- Avatar: Posen aus assets/avatar (render.cjs liefert sie als window.AVDATA, data-URIs) ----
 // Jede Pose gibt es zweimal: <pose>.png (Mund zu) und <pose>_talk.png (Mund offen, sonst pixelgleich).
 const IM={};window.IMGS_READY=false;Promise.all(Object.keys(window.AVDATA||{}).map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
 // Mund folgt der echten Lautstärke der Stimme (window.ENV, pro Frame, von render.cjs) und blendet
 // weich zwischen "zu" und "offen" über. Kein fester Takt, kein Skalieren -> kein Klappmaul, kein Zittern.
 function mouthOpen(t){const E=window.ENV||[];const i=Math.round(t*30);const v=E[i]||0;const x=Math.min(1,Math.max(0,(v-.18)/.5));return x*x*(3-2*x);}
-function avatar(t,k){const pose=AVP[k];const open=mouthOpen(t);const im=IM[pose],imT=IM[pose+'_talk'];const t0=k===0?0:WORDS[PH[k].a].start-.12;const changed=k===0||AVP[k]!==AVP[k-1];
+// Sprech-Loop: AVP-Eintrag 'loop:<name>' -> render.cjs liefert pro Frame das Einzelbild (window.setLoop)
+let LOOPIMG=null;window.setLoop=d=>new Promise(r=>{const i=new Image();i.onload=()=>{LOOPIMG=i;r();};i.src=d;});
+window.loopNeeded=t=>{const p=AVP[phraseAt(t)];return p.startsWith('loop:')?p.slice(5):null;};
+function avatar(t,k){const pose=AVP[k];const isLoop=pose.startsWith('loop:');const open=isLoop?0:mouthOpen(t);const im=isLoop?LOOPIMG:IM[pose],imT=isLoop?null:IM[pose+'_talk'];if(!im)return;const t0=k===0?0:WORDS[PH[k].a].start-.12;const changed=k===0||AVP[k]!==AVP[k-1];
   const s0=changed?back(t,t0,.35):1;let h=760,w=im.width*h/im.height;if(w>960){w=960;h=im.height*w/im.width;}
   const bob=Math.sin(t*1.6)*4;
   const x=1095-w,y=1925-h+bob;g.save();g.translate(x+w/2,1925);g.scale(s0,s0);g.translate(-(x+w/2),-1925);
