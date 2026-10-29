@@ -9,8 +9,14 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
 (async()=>{const [mode,out]=process.argv.slice(2);const dir=process.cwd();const words=JSON.parse(fs.readFileSync(dir+'/words.json'));
   // Avatar-Posen als data-URIs (file://-Bilder würden das Canvas "verschmutzen")
   const av={};for(const f of fs.readdirSync(A+'/avatar')){if(f.endsWith('.png')&&f!=='reference.png')av[f.replace('.png','')]='data:image/png;base64,'+fs.readFileSync(A+'/avatar/'+f).toString('base64');}
+  // Lautstärke-Hüllkurve der Stimme pro Video-Frame (0..1): steuert, wie weit der Mund offen ist
+  const pcm=execFileSync('ffmpeg',['-v','error','-i',dir+'/voice.mp3','-ac','1','-ar','16000','-f','s16le','-'],{maxBuffer:1<<28});
+  const smp=new Int16Array(pcm.buffer,pcm.byteOffset,pcm.length>>1),hop=16000/30,env=[];
+  for(let i=0;i*hop<smp.length;i++){let s=0;const a=Math.floor(i*hop),e=Math.min(smp.length,Math.floor((i+1)*hop));for(let j=a;j<e;j++)s+=smp[j]*smp[j];env.push(Math.sqrt(s/Math.max(1,e-a)));}
+  const sorted=[...env].sort((x,y)=>x-y),ref=sorted[Math.floor(sorted.length*.95)]||1;
+  let lv=0;const ENV=env.map(v=>{const x=Math.min(1,v/ref);lv=x>lv?lv+(x-lv)*.7:lv+(x-lv)*.35;return +lv.toFixed(3);});
   const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
-  await p.addInitScript(d=>{window.AVDATA=d;},av);
+  await p.addInitScript(([d,e])=>{window.AVDATA=d;window.ENV=e;},[av,ENV]);
   await p.goto('file://'+dir+'/scene.html');await p.evaluate(()=>document.fonts.ready);
   await p.evaluate(async()=>{await Promise.all(['800 40px Manrope','500 40px Manrope','40px Anton'].map(f=>document.fonts.load(f)))});
   const END=await p.evaluate(w=>setup(w),words);await p.waitForFunction(()=>window.IMGS_READY===true,null,{timeout:30000});

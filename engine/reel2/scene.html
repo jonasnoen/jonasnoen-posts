@@ -200,13 +200,15 @@ const AVP=['surprised','think','point','point','think','point','thumbs','point',
 // ---- Avatar: Posen aus assets/avatar (render.cjs liefert sie als window.AVDATA, data-URIs) ----
 // Jede Pose gibt es zweimal: <pose>.png (Mund zu) und <pose>_talk.png (Mund offen, sonst pixelgleich).
 const IM={};window.IMGS_READY=false;Promise.all(Object.keys(window.AVDATA||{}).map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
-// Mund offen/zu im Silbentakt, nur während ein Wort gesprochen wird. Kein Skalieren -> kein Zittern.
-function mouthOpen(t){for(const w of WORDS){if(t>=w.start&&t<=w.end-.03){return Math.floor((t-w.start)/.1)%2===0;}}return false;}
-function avatar(t,k){const pose=AVP[k];const im=(mouthOpen(t)&&IM[pose+'_talk'])||IM[pose];const t0=k===0?0:WORDS[PH[k].a].start-.12;const changed=k===0||AVP[k]!==AVP[k-1];
+// Mund folgt der echten Lautstärke der Stimme (window.ENV, pro Frame, von render.cjs) und blendet
+// weich zwischen "zu" und "offen" über. Kein fester Takt, kein Skalieren -> kein Klappmaul, kein Zittern.
+function mouthOpen(t){const E=window.ENV||[];const i=Math.round(t*30);const v=E[i]||0;const x=Math.min(1,Math.max(0,(v-.18)/.5));return x*x*(3-2*x);}
+function avatar(t,k){const pose=AVP[k];const open=mouthOpen(t);const im=IM[pose],imT=IM[pose+'_talk'];const t0=k===0?0:WORDS[PH[k].a].start-.12;const changed=k===0||AVP[k]!==AVP[k-1];
   const s0=changed?back(t,t0,.35):1;let h=760,w=im.width*h/im.height;if(w>960){w=960;h=im.height*w/im.width;}
   const bob=Math.sin(t*1.6)*4;
   const x=1095-w,y=1925-h+bob;g.save();g.translate(x+w/2,1925);g.scale(s0,s0);g.translate(-(x+w/2),-1925);
-  g.imageSmoothingQuality='high';g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=40;g.drawImage(im,x,y,w,h);g.restore();}
+  g.imageSmoothingQuality='high';g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=40;g.drawImage(im,x,y,w,h);
+  g.shadowColor='transparent';if(imT&&open>0.01){g.globalAlpha=open;g.drawImage(imT,x,y,w,h);g.globalAlpha=1;}g.restore();}
 // ---- Sound-Cues: render.cjs mischt diese Effekte aus assets/sfx unter die Stimme ----
 function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
   add(0,'impact',.9);
