@@ -20,9 +20,8 @@ function font(w,s,f='Manrope'){g.font=`${w} ${s}px ${f}`;}
 
 let LIGHT=false;const L=(dark,light)=>LIGHT?light:dark;const TXT=()=>LIGHT?C.ink:'#fff';
 function bgStudio(t){
-  if(LIGHT){const gr=g.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#f4efe7');gr.addColorStop(1,'#e8e0d4');g.fillStyle=gr;g.fillRect(0,0,W,H);
-    const rg=g.createRadialGradient(540,760,40,540,760,760);rg.addColorStop(0,'rgba(139,108,240,.10)');rg.addColorStop(1,'rgba(139,108,240,0)');g.fillStyle=rg;g.fillRect(0,0,W,H);
-    g.fillStyle='rgba(60,40,30,.05)';for(let y=12;y<H;y+=24)for(let x=(y/24%2)*12;x<W;x+=24){g.fillRect(x,y,2,2);}return;}
+  if(LIGHT){g.fillStyle='#f6efe4';g.fillRect(0,0,W,H);return;} // einfarbig Creme, kein Verlauf
+
   const gr=g.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#1f1a2c');gr.addColorStop(1,'#110e17');g.fillStyle=gr;g.fillRect(0,0,W,H);
   // soft violet glow
   const rg=g.createRadialGradient(540,700,50,540,700,700);rg.addColorStop(0,'rgba(139,108,240,.22)');rg.addColorStop(1,'rgba(139,108,240,0)');g.fillStyle=rg;g.fillRect(0,0,W,H);
