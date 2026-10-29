@@ -1,1 +1,9 @@
-{"name":"jonasnoen-reel-engine","private":true,"dependencies":{"@fontsource/manrope":"5.1.0","@fontsource/anton":"5.1.0"}}
+{
+  "name": "jonasnoen-reel-engine",
+  "private": true,
+  "dependencies": {
+    "@fontsource/manrope": "5.1.0",
+    "@fontsource/anton": "5.1.0",
+    "@fontsource/instrument-serif": "5.1.0"
+  }
+}

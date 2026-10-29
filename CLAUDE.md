@@ -11,18 +11,35 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
 
 | Mo | Di | Mi | Do | Fr | Sa | So |
 |---|---|---|---|---|---|---|
-| Tipp-Reel | YouTube-Short | Tipp-Reel | Karussell | Tipp-Reel | YouTube-Short | Tipp-Reel |
+| Tipp-Reel | Tipp-Reel* | Tipp-Reel | Karussell | Tipp-Reel | Tipp-Reel* | Tipp-Reel |
+
+\* Gibt es einen **neuen YouTube-Short** von Jonas (≤ 14 Tage alt, noch nicht gepostet, siehe
+„Clips“ unten), ersetzt er an Di/Sa das Tipp-Reel. Sonst normales Tipp-Reel.
 
 - Veröffentlichungszeit: **18:30 Uhr** (über Metricool planen, autoPublish).
 - **Höchstens ein Post pro Tag.** Vorher prüfen, ob heute schon etwas in `register.json` oder
   in Metricool geplant/veröffentlicht ist. Wenn ja: nichts tun.
 - **Niemals Duplikate:** Kein Short, dessen `sourceVideoId` schon in `register.json` steht.
   Kein Reel/Karussell mit gleichem Thema UND Blickwinkel wie ein bestehender Eintrag.
-- **Fallback:** Findet sich an einem Short-Tag kein passender, noch nicht geposteter Short,
-  oder klappt der Download nicht, stattdessen ein animiertes Tipp-Reel posten. Gleiches gilt,
-  wenn an einem Karussell-Tag etwas schiefgeht.
+- **Fallback:** Klappt an einem Karussell-Tag etwas nicht, stattdessen ein Tipp-Reel posten.
 - Ein fertiges, noch nicht gepostetes Element mit Status `ready` in `register.json`
   (z. B. K001) wird bevorzugt verwendet, wenn sein Typ an dem Tag dran ist.
+
+## Format-Test (bis Auswertung am 19.11.2026)
+
+Tipp-Reels wechseln der Reihe nach zwischen drei Formaten – **Split → Bubble → Memoji → Split …**
+(nächstes Format = das auf das Format des letzten Tipp-Reels in `register.json` folgt; erstes Reel: Split):
+
+| Format | Vorlage | Avatar |
+|---|---|---|
+| `split` | `engine/reel3/scene.html` | Jonas (HeyGen-Zwilling) unten, Grafik oben, Einzelwort-Untertitel |
+| `bubble` | `engine/reel4/scene.html` | Jonas als runde Facecam unten rechts, Schluss mit Folgen-Karte |
+| `memoji` | `engine/reel2/scene.html` | Memoji mit Gesten-Loops |
+
+Alle drei mit Veed-Lipsync (ca. 13 Cent). Gesicht für split/bubble: `node render.cjs facebase facebase.mp4`
+(schnittfreies `assets/face/twin_clean.mp4`), dann Lipsync → `face.mp4`. Memoji: `track` → Lipsync →
+`lipsync.mp4`. Jeder Reel-Eintrag in `register.json` bekommt **`"format": "split"|"bubble"|"memoji"`**.
+Gleiche Hook-Regeln für alle Formate (siehe Skript). Nach dem Test: Gewinner wird Standard.
 
 ## Ablauf eines Karussells
 
@@ -50,8 +67,12 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
    Keine Duplikate: Thema UND Blickwinkel mit allen Einträgen in `register.json` vergleichen.
    Keine erfundenen Zahlen, Tests, Zeitersparnisse oder Ergebnisse. Aktuelle Produktaussagen
    mit einer frischen offiziellen Quelle prüfen.
-3. **Skript.** 20–30 Sekunden, ca. 60–75 Wörter. Starker Hook in den ersten 2 Sekunden
-   (Problem des Zuschauers). Ein Gedanke. Ende: „Folg mir für mehr Claude-Tipps.“
+3. **Skript.** 20–30 Sekunden, ca. 60–75 Wörter. Ende: „Folg mir für mehr Claude-Tipps.“
+   **Hook (aus viralen Reels abgeleitet):** eine Behauptung statt einer Frage, die Neugier weckt,
+   z. B. „3 Claude-Befehle, die kaum jemand kennt“, „Das kann Claude – und fast niemand nutzt es“,
+   „Hör auf, Claude so zu benutzen“. Zahl im Hook, wenn es passt. Serie: Titel/Label
+   **„Claude-Codes Teil N“** (N fortlaufend aus `register.json`, Feld `series`). Lieber 2–3 kurze,
+   sofort nachmachbare Tipps pro Reel als einer. Keine Clickbait-Versprechen, die das Reel nicht hält.
 4. **Stimme.** ElevenLabs, Jonas' eigener Klon **„Jonas Noen“, voice_id `74F3tCXf85gKkgYnJulQ`**,
    Modell `eleven_v4`, genau 1 Generation (ca. 7 US-Cent). Danach mit ffmpeg
    `atempo=1.15` beschleunigen (Jonas spricht sonst zu langsam). Pausen zwischen Sätzen
