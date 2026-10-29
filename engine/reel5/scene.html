@@ -283,6 +283,6 @@ window.EXTRA_CUES=()=>[
   {t:KW('claude',2),name:'pop',vol:.7},
   {t:KW('satzlänge'),name:'ding',vol:.5},{t:KW('ton'),name:'ding',vol:.5},{t:KW('wörter'),name:'ding',vol:.5},
   {t:KW('folg'),name:'pop',vol:.7}];
-window.setup=(words)=>{WORDS=words;K=i=>WORDS[i].start;KE=i=>WORDS[i].end;END=WORDS[WORDS.length-1].end+.7;window.CUES=buildCues();return END;};
+window.setup=(words)=>{WORDS=words;K=i=>WORDS[i].start;KE=i=>WORDS[i].end;END=WORDS[WORDS.length-1].end+.35;window.CUES=buildCues();return END;};
 window.render=(t)=>{frame(t);return c.toDataURL('image/jpeg',.9);};
 </script></body></html>
