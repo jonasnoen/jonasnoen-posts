@@ -46,19 +46,27 @@ Gleiche Hook-Regeln für alle Formate (siehe Skript). Nach dem Test: Gewinner wi
 ## Ablauf eines Karussells
 
 1. Thema wie beim Reel prüfen (keine Duplikate, Fakten mit offizieller Quelle, keine
-   erfundenen Zahlen). 7 Slides: Cover mit Jonas-Figur → Problem → 3–4 Schritte mit einem
-   durchgehenden konkreten Beispiel → Zusammenfassung „Zum Speichern“ mit ehrlichem
-   Praxischeck und einer Frage an die Zuschauer. Absender „JONAS NOEN“, Slide-Nummer.
-2. Vorlage: `carousels/K001/source/slides.html` (gleicher Look wie die Reels, Anton-
-   Überschriften, Manrope-Text, helle Karten, farbige Akzente, Figur aus `guy.js`).
+   erfundenen Zahlen). **8 Slides** (7–10 erlaubt), Serie **„Claude-Prompts Teil N“** (Feld `series`):
+   1. **Cover:** Behauptung als Hook, höchstens 10 Wörter, Zahl wenn passend (wie Reel-Hooks,
+      z. B. „Hör auf, Claude raten zu lassen.“), Memoji-Pose, Neugier-Element (leere Slots „?“), „Wischen →“.
+   2. **Problem (hell):** bestätigt das Cover-Versprechen und öffnet eine Lücke („Claude fehlen 4 Infos. Hier sind sie →“).
+   3. **3–4 Schritte (dunkel):** ein Gedanke pro Slide, Badge-Nummer, Beispielkarte aus einem durchgehenden
+      konkreten Beispiel, Fortschritts-Karte „DEIN PROMPT“, die sich mit Haken füllt.
+   4. **Speicher-Slide (hell):** etwas, das allein nützlich ist (Vorlage zum Ausfüllen, Checkliste).
+   5. **Schluss:** Rückbezug aufs Cover, ehrlicher Praxischeck, eine Frage an die Zuschauer, Memoji winkt, @jonas.noen.
+   Pro Slide höchstens ca. 40 Wörter. Kern-Inhalt oben/mittig, nichts Wichtiges ganz unten rechts.
+   Caption = „zweiter Post“: Hook wiederholen, Inhalt in neuen Worten, Aufforderung zum Speichern, Frage.
+2. Vorlage: `carousels/K001/source/slides.html` (v2, gleicher Look wie die Reels: Manrope 800, kursive
+   Akzentwörter in Instrument Serif, hell/dunkel im Wechsel, Label oben links `// …`, Zähler `N/8` oben rechts,
+   Memoji-Posen aus `assets/avatar/*.png`). Jede Slide: `<section class="slide [light]" id="sN"><div class="in">…`.
 3. Rendern: `NODE_PATH=/opt/npm-tools/node_modules node engine/carousel/shot.cjs slides.html <outdir>`
-   (Schriften per `npm i` aus `engine/package.json` als `node_modules` neben `slides.html`).
-   Ergibt `ig-01..07.png` (1080×1350) und `tt-01..07.png` (1080×1920, TikTok-sichere Ränder).
-   Alle 14 Bilder ansehen: nichts abgeschnitten, nichts überlappt.
+   (Schriften per `npm i` aus `engine/package.json` als `node_modules` neben `slides.html`, nicht committen).
+   Ergibt `ig-01..NN.png` (1080×1350) und `tt-01..NN.png` (1080×1920, Inhalt nach unten versetzt).
+   Alle Bilder ansehen: nichts abgeschnitten, nichts überlappt, Figur verdeckt keinen Text.
 4. Ins Repo unter `carousels/K###/`, Eintrag in `register.json` mit `type: "carousel"`.
 5. Metricool: ZWEI Posts (Formate unterscheiden sich):
-   - Instagram: `media` = die 7 `ig-0X.png` Raw-URLs (mit Commit-SHA), `instagramData.type: "POST"`.
-   - TikTok: `media` = die 7 `tt-0X.png`, `tiktokData.title` Pflicht, `privacyOption: "PUBLIC_TO_EVERYONE"`.
+   - Instagram: `media` = alle `ig-NN.png` Raw-URLs (mit Commit-SHA), `instagramData.type: "POST"`.
+   - TikTok: `media` = alle `tt-NN.png`, `tiktokData.title` Pflicht, `privacyOption: "PUBLIC_TO_EVERYONE"`.
 
 ## Ablauf eines Reels
 

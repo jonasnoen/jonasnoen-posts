@@ -1,118 +1,162 @@
 <!doctype html><html><head><meta charset="utf-8">
+<!-- Karussell-Vorlage v2 (Reel-Look): Manrope 800 + kursive Akzente (Instrument Serif), hell/dunkel im Wechsel,
+     Memoji-Posen aus assets/avatar. Je Slide <section class="slide [light]"><div class="in">…</div></section>.
+     shot.cjs rendert 1080×1350 (Instagram) und mit body.tt 1080×1920 (TikTok, Inhalt nach unten versetzt). -->
 <style>
 @font-face{font-family:Manrope;font-weight:500;src:url(node_modules/@fontsource/manrope/files/manrope-latin-500-normal.woff2)}
 @font-face{font-family:Manrope;font-weight:800;src:url(node_modules/@fontsource/manrope/files/manrope-latin-800-normal.woff2)}
-@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2)}
-:root{--ink:#141019;--warm:#f6efe4;--chat:#f7f3fb;--violet:#8b6cf0;--violetL:#b9a6ff;--amber:#ffc65c;--green:#3ccf8e;--red:#ef5a4c;--grey:#c9c4d4}
+@font-face{font-family:Serif;font-style:italic;src:url(node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2)}
+:root{--ink:#17141f;--warm:#f6efe4;--chat:#f7f3fb;--violet:#8b6cf0;--violetL:#b9a6ff;--amber:#ffc65c;--green:#3ccf8e;--red:#ef5a4c;--coral:#ff8f6b;--grey:#b8b1c8}
 *{box-sizing:border-box}html,body{margin:0;background:#000}
-.slide{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Manrope,sans-serif;color:var(--warm);
-  background:radial-gradient(700px 600px at 540px 520px,rgba(139,108,240,.24),rgba(139,108,240,0)),linear-gradient(#1f1a2c,#110e17);margin-bottom:20px}
-.lamp{position:absolute;left:470px;top:0;width:140px;height:160px}
-.lamp:before{content:"";position:absolute;left:66px;top:0;width:8px;height:100px;background:#2b2438}
-.lamp:after{content:"";position:absolute;left:0;top:96px;width:140px;height:56px;border-radius:30px;background:#3a3150}
-.cone{position:absolute;left:0;top:150px;width:1080px;height:900px;background:linear-gradient(rgba(255,214,150,.22),rgba(255,214,150,0));clip-path:polygon(44% 0,56% 0,85% 100%,15% 100%)}
-.pad{position:absolute;inset:0;padding:120px 90px 110px;display:flex;flex-direction:column;gap:34px}
-.kicker{font:800 30px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--violetL)}
-.h{font:400 104px/1.02 Anton;text-transform:uppercase;letter-spacing:.01em;color:#fff;text-wrap:balance;margin:0}
-.h .a{color:var(--amber)}.h .v{color:var(--violetL)}
-.sub{font:500 40px/1.4 Manrope;color:var(--grey);max-width:860px;margin:0}
-.card{background:var(--warm);color:var(--ink);border-radius:30px;padding:40px 44px;font:500 38px/1.42 Manrope;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Manrope,sans-serif;color:var(--warm);margin-bottom:20px;
+  background:radial-gradient(760px 640px at 540px 560px,rgba(139,108,240,.26),rgba(139,108,240,0)),linear-gradient(#1f1a2c,#110e17)}
+.slide.light{background:radial-gradient(800px 600px at 540px 500px,rgba(139,108,240,.10),rgba(139,108,240,0)),var(--warm);color:var(--ink)}
+.in{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.tt .slide{height:1920px}.tt .in{top:270px}.tt .av{bottom:-270px!important}.tt #s1 .swipe{visibility:hidden}
+.top{position:absolute;left:84px;right:84px;top:70px;display:flex;justify-content:space-between;align-items:center;font:800 26px Manrope;letter-spacing:.12em;text-transform:uppercase;color:var(--violetL)}
+.light .top{color:var(--violet)}
+.cnt{letter-spacing:.06em;padding:10px 20px;border-radius:30px;background:rgba(185,166,255,.16)}
+.light .cnt{background:rgba(139,108,240,.12)}
+.body{position:absolute;left:84px;right:84px;top:170px;display:flex;flex-direction:column;gap:34px}
+.h{font:800 92px/1.04 Manrope;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.s{font:400 1.14em/0.9 Serif;font-style:italic;letter-spacing:0;color:var(--amber)}
+.s.v{color:var(--violetL)}.s.g{color:var(--green)}.s.c{color:var(--coral)}
+.light .s{color:var(--red)}.light .s.v{color:var(--violet)}
+.sub{font:500 40px/1.38 Manrope;color:var(--grey);margin:0}
+.light .sub{color:#5d566d}
+.card{background:var(--warm);color:var(--ink);border-radius:30px;padding:42px 46px;font:500 44px/1.42 Manrope;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.light .card{background:#fff;box-shadow:0 16px 40px rgba(60,40,110,.14)}
 .card b{font-weight:800}
-.chat{background:var(--chat);color:var(--ink);border-radius:30px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)}
-.chat .bar{background:#ece5f7;padding:22px 30px;font:800 28px Manrope;color:#5b4bb8;display:flex;gap:12px;align-items:center}
+.chat{background:var(--chat);color:var(--ink);border-radius:30px;overflow:hidden;box-shadow:0 16px 40px rgba(60,40,110,.16)}
+.chat .bar{background:#ece5f7;padding:20px 30px;font:800 28px Manrope;color:#5b4bb8;display:flex;gap:12px;align-items:center}
 .dot{width:16px;height:16px;border-radius:50%}
-.chat .body{padding:34px;display:flex;flex-direction:column;gap:22px}
-.me{align-self:flex-end;background:var(--violet);color:#fff;border-radius:26px;padding:24px 30px;font:800 34px/1.35 Manrope;max-width:88%}
-.ai{background:#e9e3f3;border-radius:26px;padding:24px 30px;font:500 32px/1.4 Manrope;color:var(--ink);max-width:92%}
-.tag{display:inline-block;font:800 26px Manrope;letter-spacing:.08em;text-transform:uppercase;padding:10px 20px;border-radius:30px}
-.stamp{position:absolute;font:800 52px Manrope;color:var(--red);border:10px solid var(--red);border-radius:22px;padding:12px 28px;transform:rotate(-10deg)}
-.num{position:absolute;left:0;top:0;width:130px;height:130px;border-radius:50%;display:grid;place-items:center;font:400 84px Anton;color:var(--ink)}
-.foot{position:absolute;left:90px;right:90px;bottom:48px;display:flex;justify-content:space-between;font:800 26px Manrope;color:#8e86a3;letter-spacing:.04em}
-.swipe{font:800 32px Manrope;color:var(--amber)}
-canvas.guy{position:absolute}
-.big{font:800 46px/1.3 Manrope}
-.row{display:flex;gap:26px;align-items:flex-start}
-.stack{position:absolute;left:90px;right:90px;bottom:130px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.stack div{height:150px;border-radius:24px;border:4px dashed #4a4166;display:grid;place-items:center;font:400 40px Anton;letter-spacing:.03em;color:#6d6488}
-.stack div.on{border:none;color:var(--ink)}
-.stack-l{position:absolute;left:90px;bottom:300px;font:800 26px Manrope;letter-spacing:.14em;color:#8e86a3}
-.chk{flex:0 0 64px;height:64px;border-radius:50%;display:grid;place-items:center;font:800 38px Manrope;color:#fff}
+.chat .msgs{padding:32px;display:flex;flex-direction:column;gap:22px}
+.me{align-self:flex-end;background:var(--violet);color:#fff;border-radius:26px;padding:22px 28px;font:800 34px/1.35 Manrope;max-width:88%}
+.ai{background:#e9e3f3;border-radius:26px;padding:22px 28px;font:500 32px/1.4 Manrope;max-width:92%;color:#4a4458}
+.stamp{position:absolute;font:800 50px Manrope;color:var(--red);border:9px solid var(--red);border-radius:20px;padding:10px 26px;transform:rotate(-9deg);background:rgba(246,239,228,.85)}
+.badge{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;font:800 70px Manrope;color:var(--ink);flex:0 0 118px}
+.row{display:flex;gap:30px;align-items:center}
+.foot{z-index:2;position:absolute;left:84px;right:84px;bottom:52px;display:flex;justify-content:space-between;align-items:center;font:800 26px Manrope;letter-spacing:.08em;color:#8e86a3}
+.light .foot{color:#9a93a8}
+.swipe{color:var(--amber);font-size:32px;letter-spacing:.02em}
+.light .swipe{color:var(--red)}
+.av{position:absolute;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
+/* Fortschritts-Karte wie in den Reels */
+.prog{position:absolute;left:84px;right:84px;bottom:120px;background:rgba(255,255,255,.06);border:2px solid rgba(185,166,255,.22);border-radius:28px;padding:26px 30px}
+.prog .t{font:800 24px Manrope;letter-spacing:.14em;color:var(--violetL);margin-bottom:18px}
+.prog .g{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.prog .g div{height:92px;border-radius:20px;border:3px dashed #4a4166;display:flex;gap:10px;align-items:center;justify-content:center;font:800 27px Manrope;color:#6d6488}
+.prog .g div.on{border:none;color:var(--ink)}
+.prog .g div.now{outline:4px solid #fff;outline-offset:4px}
+.slots{display:grid;grid-template-columns:repeat(2,250px);gap:18px}
+.slots div{height:120px;border-radius:24px;border:4px dashed #5a5078;display:grid;place-items:center;font:800 64px Manrope;color:#8e86a3}
+.tpl{font:500 40px/1.55 Manrope}
+.tpl p{margin:0 0 22px}.tpl p:last-child{margin:0}
+.tpl b{font-weight:800}
+.blank{display:inline-block;min-width:120px;border-bottom:4px solid #c9c2d6;color:#9a93a8;text-align:center}
+.chk{flex:0 0 60px;height:60px;border-radius:50%;display:grid;place-items:center;font:800 36px Manrope;color:#fff}
 </style></head><body>
 
-<!-- 1 Cover -->
-<section class="slide" id="s1"><div class="lamp"></div><div class="cone"></div>
- <div class="pad" style="padding-top:220px">
-  <div class="kicker">Claude-Tipp · 4 Bausteine</div>
-  <h1 class="h">Der Prompt,<br>der beim <span class="a">ersten Mal</span><br>sitzt</h1>
-  <p class="sub">Ziel, Kontext, Beispiel, Format. Diese vier Teile machen aus einer vagen Bitte eine klare Aufgabe.</p>
+<!-- 1 Cover: Behauptung + leere Slots (Neugier) -->
+<section class="slide" id="s1"><div class="in">
+ <div class="top"><span>// Claude-Prompts · Teil 1</span><span class="cnt">1/8</span></div>
+ <div class="body" style="top:230px;gap:40px">
+  <h1 class="h" style="font-size:118px">Hör auf, Claude <span class="s">raten</span> zu lassen.</h1>
+  <p class="sub" style="font-size:44px;color:#e6dff5">4 Bausteine, die in<br>jeden Prompt gehören.</p>
+  <div class="slots"><div>?</div><div>?</div><div>?</div><div>?</div></div>
  </div>
- <canvas class="guy" data-pose="none" width="480" height="480" style="left:560px;top:720px"></canvas>
+ <img class="av" src="../../../assets/avatar/surprised.png" style="width:560px;right:-40px;bottom:0">
  <div class="foot"><span>JONAS NOEN</span><span class="swipe">Wischen →</span></div>
-</section>
+</div></section>
 
-<!-- 2 Problem -->
-<section class="slide" id="s2"><div class="pad">
-  <div class="kicker">Das Problem</div>
-  <h2 class="h" style="font-size:92px">Kurzer Prompt,<br><span class="a">Claude muss raten</span></h2>
-  <div class="chat" style="margin-top:20px"><div class="bar"><span class="dot" style="background:#ef5a4c"></span><span class="dot" style="background:#ffc65c"></span><span class="dot" style="background:#3ccf8e"></span>&nbsp;Claude</div>
-   <div class="body"><div class="me">Schreib einen Instagram-Post über unser Café.</div>
+<!-- 2 Problem (hell): Spannung aufbauen, Lücke öffnen -->
+<section class="slide light" id="s2"><div class="in">
+ <div class="top"><span>// Das Problem</span><span class="cnt">2/8</span></div>
+ <div class="body">
+  <h2 class="h" style="font-size:84px">Kurzer Prompt = <span class="s">austauschbare</span> Antwort.</h2>
+  <div class="chat"><div class="bar"><span class="dot" style="background:#ef5a4c"></span><span class="dot" style="background:#ffc65c"></span><span class="dot" style="background:#3ccf8e"></span>&nbsp;Claude</div>
+   <div class="msgs"><div class="me">Schreib einen Instagram-Post über unser Café.</div>
    <div class="ai">Willkommen in unserem gemütlichen Café! Bei uns erwartet dich leckerer Kaffee in entspannter Atmosphäre …</div></div></div>
-  <p class="sub">Für wen? Wozu? In welchem Ton? Fehlt das, kommt etwas Allgemeines heraus.</p>
+  <p class="h" style="font-size:54px;margin-top:44px">Claude fehlen <span class="s v" style="white-space:nowrap">4 Infos</span>.<br>Hier sind sie →</p>
  </div>
- <div class="stamp" style="right:130px;top:1120px">AUSTAUSCHBAR</div>
- <div class="foot"><span>JONAS NOEN</span><span>2/7</span></div>
-</section>
+ <div class="stamp" style="right:60px;top:812px">AUSTAUSCHBAR</div>
+ <div class="foot"><span>JONAS NOEN</span><span class="swipe">Wischen →</span></div>
+</div></section>
 
-<!-- 3-6 Bausteine -->
-<section class="slide" id="s3"><div class="pad">
-  <div style="position:relative;height:130px"><div class="num" style="background:var(--amber)">1</div><div style="position:absolute;left:160px;top:24px" class="h"><span style="font-size:96px">Ziel</span></div></div>
-  <p class="big" style="margin:0">Sag, was am Ende <span style="color:var(--amber)">herauskommen soll</span>, nicht nur das Thema.</p>
-  <div class="card">„Schreib einen Instagram-Post, der zu unserem <b>neuen Frühstücksangebot am Wochenende</b> einlädt.“</div>
-  <p class="sub">Je genauer das Ergebnis beschrieben ist, desto weniger muss Claude raten.</p>
- </div><div class="stack-l">DEIN PROMPT · 1/4</div><div class="stack"><div class="on" style="background:var(--amber)">ZIEL</div><div class="" style="">KONTEXT</div><div class="" style="">BEISPIEL</div><div class="" style="">FORMAT</div></div><div class="foot"><span>JONAS NOEN</span><span>3/7</span></div></section>
+<!-- 3–6 Bausteine (dunkel), Fortschritts-Karte füllt sich -->
+<section class="slide" id="s3"><div class="in">
+ <div class="top"><span>// Baustein 1 · Ziel</span><span class="cnt">3/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--amber)">1</div><h2 class="h" style="font-size:84px">Sag, was <span class="s">herauskommen</span> soll.</h2></div>
+  <div class="card">„Schreib einen Instagram-Post, der zu unserem <b>neuen Frühstück am Wochenende</b> einlädt.“</div>
+  <p class="sub" style="font-size:44px">Nicht nur das Thema nennen, sondern das Ergebnis.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN PROMPT</div><div class="g"><div class="on now" style="background:var(--amber)">✓ ZIEL</div><div>KONTEXT</div><div>BEISPIEL</div><div>FORMAT</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
 
-<section class="slide" id="s4"><div class="pad">
-  <div style="position:relative;height:130px"><div class="num" style="background:var(--violetL)">2</div><div style="position:absolute;left:160px;top:24px" class="h"><span style="font-size:96px">Kontext</span></div></div>
-  <p class="big" style="margin:0">Erklär <span style="color:var(--violetL)">für wen</span> und <span style="color:var(--violetL)">warum</span>.</p>
-  <div class="card">„Unsere Gäste sind Studierende und junge Familien aus dem Viertel. <b>Wir wollen, dass sie am Samstag früher kommen</b>, weil es mittags oft zu voll ist.“</div>
-  <p class="sub">Mit dem Grund kann Claude selbst entscheiden, was wichtig ist.</p>
- </div><div class="stack-l">DEIN PROMPT · 2/4</div><div class="stack"><div class="on" style="background:var(--amber)">ZIEL</div><div class="on" style="background:var(--violetL)">KONTEXT</div><div class="" style="">BEISPIEL</div><div class="" style="">FORMAT</div></div><div class="foot"><span>JONAS NOEN</span><span>4/7</span></div></section>
+<section class="slide" id="s4"><div class="in">
+ <div class="top"><span>// Baustein 2 · Kontext</span><span class="cnt">4/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--violetL)">2</div><h2 class="h" style="font-size:84px">Sag, <span class="s v">für wen</span> und <span class="s v">warum</span>.</h2></div>
+  <div class="card">„Unsere Gäste sind Studierende und junge Familien. <b>Sie sollen samstags früher kommen</b>, weil es mittags zu voll ist.“</div>
+  <p class="sub" style="font-size:44px">Mit dem Grund entscheidet Claude selbst, was wichtig ist.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN PROMPT</div><div class="g"><div class="on" style="background:var(--amber)">✓ ZIEL</div><div class="on now" style="background:var(--violetL)">✓ KONTEXT</div><div>BEISPIEL</div><div>FORMAT</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
 
-<section class="slide" id="s5"><div class="pad">
-  <div style="position:relative;height:130px"><div class="num" style="background:var(--green)">3</div><div style="position:absolute;left:160px;top:24px" class="h"><span style="font-size:96px">Beispiel</span></div></div>
-  <p class="big" style="margin:0">Zeig, <span style="color:var(--green)">wie es klingen soll</span>, statt es zu beschreiben.</p>
-  <div class="card">„So klingt ein Post von uns, den unsere Gäste mochten: <b>[alten Post einfügen]</b>. Schreib im gleichen Stil.“</div>
-  <p class="sub">Beispiele steuern Ton und Aufbau oft zuverlässiger als Adjektive wie „locker“ oder „witzig“.</p>
- </div><div class="stack-l">DEIN PROMPT · 3/4</div><div class="stack"><div class="on" style="background:var(--amber)">ZIEL</div><div class="on" style="background:var(--violetL)">KONTEXT</div><div class="on" style="background:var(--green)">BEISPIEL</div><div class="" style="">FORMAT</div></div><div class="foot"><span>JONAS NOEN</span><span>5/7</span></div></section>
+<section class="slide" id="s5"><div class="in">
+ <div class="top"><span>// Baustein 3 · Beispiel</span><span class="cnt">5/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--green)">3</div><h2 class="h" style="font-size:84px"><span class="s g">Zeig</span> den Ton, statt ihn zu beschreiben.</h2></div>
+  <div class="card">„So klingt ein Post von uns, der gut ankam: <b>[alten Post einfügen]</b>. Schreib im gleichen Stil.“</div>
+  <p class="sub" style="font-size:44px">Ein Beispiel sagt mehr als „locker“ oder „witzig“.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN PROMPT</div><div class="g"><div class="on" style="background:var(--amber)">✓ ZIEL</div><div class="on" style="background:var(--violetL)">✓ KONTEXT</div><div class="on now" style="background:var(--green)">✓ BEISPIEL</div><div>FORMAT</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
 
-<section class="slide" id="s6"><div class="pad">
-  <div style="position:relative;height:130px"><div class="num" style="background:#ff8f6b">4</div><div style="position:absolute;left:160px;top:24px" class="h"><span style="font-size:96px">Format</span></div></div>
-  <p class="big" style="margin:0">Leg fest, <span style="color:#ff8f6b">wie das Ergebnis aussieht</span>.</p>
-  <div class="card">„Maximal 80 Wörter, ein Emoji, am Ende eine Frage an die Gäste. <b>Gib mir drei Varianten.</b>“</div>
-  <p class="sub">Sag lieber, was du willst, als was du nicht willst.</p>
- </div><div class="stack-l">DEIN PROMPT · 4/4</div><div class="stack"><div class="on" style="background:var(--amber)">ZIEL</div><div class="on" style="background:var(--violetL)">KONTEXT</div><div class="on" style="background:var(--green)">BEISPIEL</div><div class="on" style="background:#ff8f6b">FORMAT</div></div><div class="foot"><span>JONAS NOEN</span><span>6/7</span></div></section>
+<section class="slide" id="s6"><div class="in">
+ <div class="top"><span>// Baustein 4 · Format</span><span class="cnt">6/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--coral)">4</div><h2 class="h" style="font-size:84px">Leg fest, <span class="s c">wie</span> es aussieht.</h2></div>
+  <div class="card">„Maximal 80 Wörter, ein Emoji, am Ende eine Frage. <b>Gib mir drei Varianten.</b>“</div>
+  <p class="sub" style="font-size:44px">Sag, was du willst – nicht, was du nicht willst.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN PROMPT</div><div class="g"><div class="on" style="background:var(--amber)">✓ ZIEL</div><div class="on" style="background:var(--violetL)">✓ KONTEXT</div><div class="on" style="background:var(--green)">✓ BEISPIEL</div><div class="on now" style="background:var(--coral)">✓ FORMAT</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
 
-<!-- 7 Zusammen + Praxischeck -->
-<section class="slide" id="s7"><div class="lamp"></div><div class="cone"></div><div class="pad" style="padding-top:200px;gap:28px">
-  <div class="kicker">Zum Speichern</div>
-  <h2 class="h" style="font-size:88px">Ziel · Kontext ·<br>Beispiel · <span class="a">Format</span></h2>
-  <div class="card" style="font-size:34px">
-   <div class="row"><div class="chk" style="background:var(--green)">✓</div><div>Vier Bausteine in einen Prompt, dann erst abschicken.</div></div>
-   <div class="row" style="margin-top:20px"><div class="chk" style="background:var(--amber);color:var(--ink)">!</div><div>Ehrlicher Check: Auch ein guter Prompt garantiert kein richtiges Ergebnis. Fakten und Zahlen selbst prüfen.</div></div>
+<!-- 7 Speicher-Slide (hell): Vorlage zum Ausfüllen -->
+<section class="slide light" id="s7"><div class="in">
+ <div class="top"><span>// Zum Speichern 📌</span><span class="cnt">7/8</span></div>
+ <div class="body">
+  <h2 class="h" style="font-size:88px">Die <span class="s">Vorlage</span> zum Kopieren</h2>
+  <div class="card tpl">
+   <p><b style="color:#c98a12">Ziel:</b> Schreib <span class="blank">___</span>, das <span class="blank">___</span> erreicht.</p>
+   <p><b style="color:var(--violet)">Kontext:</b> Für <span class="blank">___</span>, weil <span class="blank">___</span>.</p>
+   <p><b style="color:#1f9e66">Beispiel:</b> So soll es klingen: <span class="blank">___</span></p>
+   <p><b style="color:#e0603c">Format:</b> <span class="blank">___</span> Wörter, <span class="blank">___</span> Varianten.</p>
   </div>
-  <p class="big" style="margin:0;font-size:42px">Welchen Baustein vergisst du am häufigsten?</p>
+  <p class="sub" style="font-size:44px">Speichern und beim nächsten Prompt ausfüllen.</p>
  </div>
- <canvas class="guy" data-pose="none" width="340" height="340" style="left:720px;top:930px"></canvas>
- <div class="foot"><span>JONAS NOEN · @jonas.noen</span><span>7/7</span></div></section>
+ <div class="foot"><span>JONAS NOEN</span><span class="swipe">Noch eins →</span></div>
+</div></section>
 
-<script>
-const C={skin:'#f2c7a5',hair:'#3a2a22',ink:'#14101c'};
-let g;function rr(x,y,w,h,r){g.beginPath();g.roundRect(x,y,w,h,r);}
-function speaking(){return false}
-</script>
-<script src="guy.js"></script>
-<script>
-document.querySelectorAll('canvas.guy').forEach(cv=>{g=cv.getContext('2d');const s=cv.width/560;g.save();g.scale(s,s);
-  guy(280,380,1.05,0.5,{talk:false,wave:cv.dataset.pose==='wave',point:cv.dataset.pose==='point'});g.restore();});
-</script>
+<!-- 8 Praxischeck + Frage + Folgen (Rückbezug zum Cover) -->
+<section class="slide" id="s8"><div class="in">
+ <div class="top"><span>// Praxischeck</span><span class="cnt">8/8</span></div>
+ <div class="body" style="gap:30px">
+  <h2 class="h" style="font-size:86px">Jetzt muss Claude <span class="s">nicht mehr raten</span>.</h2>
+  <div class="card" style="font-size:34px;max-width:660px">
+   <div class="row" style="align-items:flex-start"><div class="chk" style="background:var(--green)">✓</div><div>Alle 4 Bausteine rein, dann erst abschicken.</div></div>
+   <div class="row" style="align-items:flex-start;margin-top:22px"><div class="chk" style="background:var(--amber);color:var(--ink)">!</div><div>Auch ein guter Prompt garantiert kein richtiges Ergebnis. Fakten selbst prüfen.</div></div>
+  </div>
+  <p class="h" style="font-size:50px;max-width:600px">Welchen Baustein <span class="s v">vergisst</span> du am häufigsten?</p>
+  <p class="sub" style="font-size:36px;max-width:560px;margin-top:-8px">Folg mir für mehr Claude-Tipps.</p>
+ </div>
+ <img class="av" src="../../../assets/avatar/wave.png" style="width:470px;right:-30px;bottom:0">
+ <div class="foot"><span>@jonas.noen</span><span></span></div>
+</div></section>
 </body></html>

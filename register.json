@@ -42,7 +42,8 @@
         "carousels/K001/ig-04.png",
         "carousels/K001/ig-05.png",
         "carousels/K001/ig-06.png",
-        "carousels/K001/ig-07.png"
+        "carousels/K001/ig-07.png",
+        "carousels/K001/ig-08.png"
       ],
       "tiktok": [
         "carousels/K001/tt-01.png",
@@ -51,11 +52,12 @@
         "carousels/K001/tt-04.png",
         "carousels/K001/tt-05.png",
         "carousels/K001/tt-06.png",
-        "carousels/K001/tt-07.png"
+        "carousels/K001/tt-07.png",
+        "carousels/K001/tt-08.png"
       ]
     },
-    "caption": "Der Prompt, der beim ersten Mal sitzt: Ziel, Kontext, Beispiel, Format.\n\nWer nur das Thema nennt, bekommt etwas Allgemeines. Mit diesen vier Bausteinen weiß Claude, was am Ende herauskommen soll, für wen, wie es klingen soll und wie es aussehen soll.\n\nDas Café-Beispiel ist ein illustratives Beispiel, kein dokumentierter Test. Ergebnis trotzdem selbst prüfen.\n\nWelchen Baustein vergisst du am häufigsten?\n\nGrundlage: Anthropics offizielle Prompting-Empfehlungen, geprüft am 29.10.2026.\n#Claude #KI #PromptTipps #KIProjekte #JonasNoen",
-    "tiktokTitle": "Der Prompt, der beim ersten Mal sitzt",
+    "caption": "Hör auf, Claude raten zu lassen.\n\nWenn im Prompt nur das Thema steht, muss Claude den Rest raten – und du bekommst etwas Austauschbares.\n\nVier Bausteine machen daraus eine klare Aufgabe: Ziel (was soll herauskommen), Kontext (für wen und warum), Beispiel (wie soll es klingen) und Format (wie soll es aussehen). Die Vorlage zum Ausfüllen findest du auf Slide 7.\n\nDas Café ist ein Beispiel zur Veranschaulichung, kein Test. Ergebnisse und Fakten trotzdem selbst prüfen.\n\nSpeicher dir das Karussell für deinen nächsten Prompt. Welchen Baustein vergisst du am häufigsten?\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+    "tiktokTitle": "Hör auf, Claude raten zu lassen",
     "platforms": {
       "instagram": {
         "status": "not_posted"
@@ -63,6 +65,10 @@
       "tiktok": {
         "status": "not_posted"
       }
-    }
+    },
+    "slides": 8,
+    "design": "v2-reel-look",
+    "series": "Claude-Prompts Teil 1",
+    "hook": "Hör auf, Claude raten zu lassen."
   }
 ]
