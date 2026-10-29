@@ -249,9 +249,21 @@ function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(
 // ================= Stil reel4: Bubble-Sprecher =================
 // Inhalt im Vollbild (Überschrift oben wie reel2, Grafik in der Mitte, hell/dunkel nach PH.light),
 // Jonas als runde Facecam-Bubble unten rechts (lippensynchrones face.mp4).
-function bubble(t){const cx=780,cy=1560,r=255;const a=back(t,0,.45);if(a<=0)return;g.save();g.translate(cx,cy);g.scale(a,a);g.translate(-cx,-cy);
+// Bubble wie im Referenz-Screenshot: groß, Kopf mittig mit Luft darüber, Schultern sichtbar, Mikro unten angeschnitten.
+// Das HeyGen-Video hat kaum Platz über dem Kopf -> Video nach unten versetzt, oben mit weichgezeichnetem Hintergrund aufgefüllt.
+const BOFF=document.createElement('canvas');const SMP=document.createElement('canvas');SMP.width=4;SMP.height=4;
+function bubble(t){const r=330,cx=1080-r-30,cy=1560;const a=back(t,0,.45);if(a<=0)return;const im=LOOPIMG;g.save();g.translate(cx,cy);g.scale(a,a);g.translate(-cx,-cy);
   g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=50;g.shadowOffsetY=16;g.beginPath();g.arc(cx,cy,r+8,0,7);g.fillStyle=L('#2a2338','#ffffff');g.fill();g.shadowColor='transparent';
-  g.beginPath();g.arc(cx,cy,r,0,7);g.clip();face(cx-r,cy-r,2*r,2*r,1.0);g.restore();}
+  g.beginPath();g.arc(cx,cy,r,0,7);g.clip();
+  if(im){const D=2*r;// Hintergrund: Bild stark vergrößert + weichgezeichnet
+    // Hintergrund oben: Wandfarbe aus dem Video (Ecke rechts oben gemessen), kein Bildausschnitt -> keine Geisterbilder
+    const sm=SMP.getContext('2d',{willReadFrequently:true});sm.drawImage(im,im.width*.72,0,im.width*.2,im.height*.12,0,0,4,4);const px=sm.getImageData(0,0,4,4).data;let R=0,G=0,B=0;for(let i=0;i<64;i+=4){R+=px[i];G+=px[i+1];B+=px[i+2];}
+    const col=`rgb(${R/16|0},${G/16|0},${B/16|0})`;g.fillStyle=col;g.fillRect(cx-r,cy-r,D,D);
+    // Vordergrund: volle Videohöhe = Bubble-Durchmesser, um 20 % nach unten versetzt, oberer Rand weich ausgeblendet
+    BOFF.width=D;BOFF.height=D;const o=BOFF.getContext('2d');o.clearRect(0,0,D,D);const s=D/im.height,dw=im.width*s,dy=D*.17;
+    o.drawImage(im,D/2-dw*.5,dy,dw,D);o.globalCompositeOperation='destination-in';const gr=o.createLinearGradient(0,dy,0,dy+110);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,1)');o.fillStyle=gr;o.fillRect(0,0,D,D);o.globalCompositeOperation='source-over';
+    g.drawImage(BOFF,cx-r,cy-r);}
+  g.restore();}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);scaleAt(470,800,push,()=>PROPS[k](t));
   bubble(t);headline(t,k);
