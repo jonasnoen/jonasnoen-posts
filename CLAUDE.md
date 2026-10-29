@@ -97,7 +97,9 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
    - 1080×1920, **25 fps** (Takt der Avatar-Videos; 30 fps ließ den Avatar ruckeln). Kerninhalte nicht ganz rechts oben (Plattform-UI), Text nicht hinter Avatar.
    - Alter Stil (Cartoon-`guy()` + große Untertitel) liegt in `reels/R001/source/` – nur noch Archiv.
    - **Alternative Stil „reel4“ (Bubble):** Vorlage `engine/reel4/scene.html` – Layout wie reel2, Jonas als
-     runde Facecam unten rechts (gleiches `face.mp4`, kein Zoom).
+     große runde Facecam unten rechts. Gesichtsspur pro Reel: `node render.cjs facebase facebase.mp4`
+     (HeyGen-Zwilling `assets/face/twin.mp4` + lächelndes Outro `assets/face/outro.mp4` ab letzter Phrase),
+     dann Veed-Lipsync → `face.mp4`. Optional `BIG_OUTRO=1`: Bubble wächst im Outro zur Großaufnahme.
    - **Alternative Stil „reel3“ (Split, echter Jonas) – nur nutzen, wenn Jonas ihn als Standard freigibt:**
      Vorlage `engine/reel3/scene.html`. `SEG` pro Phrase: `split` (oben Code-Grafik, unten Jonas,
      Einzelwort-Untertitel auf der Trennlinie), `full` (Grafik + großes kursives Wort). **Keine
