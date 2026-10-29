@@ -149,9 +149,12 @@ function headline(t,k){const hook=k===0;if(hook){const s=1+.22*(1-ease(t/.28));g
   const p=PH[k];const ws=WORDS.slice(p.a,p.b+1);
   font(800,30);g.fillStyle=L(C.violetL,'#6b55d9');g.textAlign='left';g.fillText(p.label.toUpperCase(),70,170);
   counter(t);
-  const maxW=940,lh=86;let x=70,y=262,ai=0;
+  const maxW=940;let x=70,y=262,ai=0;
   // Akzentwörter: kursive Serifenschrift, farbig (dunkel: Gelb/Lavendel, hell: Rot/Violett)
-  const setF=acc=>acc?g.font="italic 400 84px 'Instrument Serif'":font(800,68);
+  // Lange Phrasen (mehr als 2 Zeilen) automatisch kleiner, damit nichts in die Grafik darunter ragt
+  let sc=1;const lines=f=>{let n=1,xx=0;ws.forEach(w=>{const a=p.acc.includes(clean(w.text));g.font=a?`italic 400 ${84*f}px 'Instrument Serif'`:`800 ${68*f}px Manrope`;const tw=g.measureText(w.text+' ').width;if(xx+tw>maxW+g.measureText(' ').width){n++;xx=0;}xx+=tw;});return n;};
+  while(sc>.7&&lines(sc)>2)sc-=.05;const lh=86*sc;
+  const setF=acc=>g.font=acc?`italic 400 ${84*sc}px 'Instrument Serif'`:`800 ${68*sc}px Manrope`;
   ws.forEach(w=>{const txt=w.text;const isAcc=p.acc.includes(clean(txt));setF(isAcc);const tw=g.measureText(txt).width;setF(false);const sp=g.measureText(' ').width;
     if(x+tw>70+maxW){x=70;y+=lh;}
     const a=hook?ease(t/.12):ease((t-w.start+.06)/.14);
