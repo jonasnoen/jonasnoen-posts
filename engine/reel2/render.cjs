@@ -39,7 +39,11 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
     await run(['-y','-v','error',...inputs,'-filter_complex',fc,'-map',last,'-an','-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-r','30','-t',END.toFixed(3),out]);
     console.log('Avatar-Spur',out,segs.map(s=>s.loop+'@'+s.t.toFixed(2)).join(' '));return;}
   const SYNC=fs.existsSync(dir+'/lipsync.mp4');if(SYNC)await p.evaluate(()=>{window.SYNC=true;});
-  if(!SYNC&&fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
+  // Echtes Gesichtsvideo (Stil reel3, z. B. lippensynchroner HeyGen-Zwilling): face.mp4 im Arbeitsordner,
+  // ohne Freistellen, Einzelbilder als JPEG, zeitgenau zur Stimme.
+  if(fs.existsSync(dir+'/face.mp4')){const cache=`${dir}/_face`;if(!fs.existsSync(cache+'/0001.jpg')){fs.mkdirSync(cache,{recursive:true});execFileSync('ffmpeg',['-v','error','-i',dir+'/face.mp4','-vf','fps=30,scale=1280:-2','-q:v','3',cache+'/%04d.jpg']);}
+    loops.face=fs.readdirSync(cache).filter(x=>x.endsWith('.jpg')).sort().map(x=>`${cache}/${x}`);await p.evaluate(()=>{window.FACE=true;});}
+  if(!SYNC&&!loops.face&&fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
     if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(A,'..','engine','avatar','key_loop.py'),`${ldir}/${f}`,cache],{stdio:'inherit'});
     loops[nm]=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
   // Lippensynchrones Avatar-Video dieses Reels (lipsync.mp4 im Arbeitsordner, Greenscreen, startet bei t=0):
@@ -48,9 +52,9 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
     if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(A,'..','engine','avatar','key_loop.py'),dir+'/lipsync.mp4',cache],{stdio:'inherit'});
     loops.sync=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
   // Ping-Pong (vor, zurück, vor ...) mit zufälligem Startpunkt je Reel -> keine sichtbare Naht, nie identisch
-  const pick=(nm,t)=>{const L=loops[nm];if(!L)return null;if(nm==='sync')return L[Math.min(L.length-1,Math.round(t*30))];const n=L.length,i=(seed+Math.round(t*30))%(2*n-2);return L[i<n?i:2*n-2-i];};
+  const pick=(nm,t)=>{const L=loops[nm];if(!L)return null;if(nm==='sync'||nm==='face')return L[Math.min(L.length-1,Math.round(t*30))];const n=L.length,i=(seed+Math.round(t*30))%(2*n-2);return L[i<n?i:2*n-2-i];};
   const frameAt=async(t)=>{const nm=await p.evaluate(t=>window.loopNeeded?window.loopNeeded(t):null,t);const f=nm&&pick(nm,t);
-    return p.evaluate(async([t,d])=>{if(d)await window.setLoop(d);return render(t);},[t,f?'data:image/png;base64,'+fs.readFileSync(f).toString('base64'):null]);};
+    return p.evaluate(async([t,d])=>{if(d)await window.setLoop(d);return render(t);},[t,f?`data:image/${f.endsWith('.jpg')?'jpeg':'png'};base64,`+fs.readFileSync(f).toString('base64'):null]);};
   if(mode==='stills'){const ts=(process.env.TS||'0.1,1.5,3.6,5.3,8.9,10.5,12.6,15,17.8').split(',').map(Number);for(const t of ts){fs.writeFileSync(`${out}/s_${t}.jpg`,dec(await frameAt(t)));}await b.close();return;}
   const cues=await p.evaluate(()=>window.CUES||[]);
   const fps=30,dur=Math.round(END*30)/30,n=Math.round(fps*dur);const vid=dir+'/_video.mp4';

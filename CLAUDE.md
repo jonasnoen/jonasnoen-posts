@@ -96,6 +96,11 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
    - Kein Roboterkopf, keine erfundenen echten Produkt-Screenshots, keine fremden Logos.
    - 1080×1920, 30 fps. Kerninhalte nicht ganz rechts oben (Plattform-UI), Text nicht hinter Avatar.
    - Alter Stil (Cartoon-`guy()` + große Untertitel) liegt in `reels/R001/source/` – nur noch Archiv.
+   - **Alternative Stil „reel3“ (Split, echter Jonas) – nur nutzen, wenn Jonas ihn als Standard freigibt:**
+     Vorlage `engine/reel3/scene.html`. `SEG` pro Phrase: `split` (oben Code-Grafik, unten Jonas,
+     Einzelwort-Untertitel auf der Trennlinie), `full` (Grafik + großes kursives Wort), `face` (Jonas
+     im Vollbild). Gesicht = Vorschau-Video seines HeyGen-Zwillings (`assets/face/twin.mp4`), pro
+     Reel mit Veed-Lipsync an die Stimme angepasst und als `face.mp4` in den Arbeitsordner gelegt.
 7. **Sound.** Effekte und Musik liegen fertig in `assets/sfx/` und `assets/music/` und werden
    **immer wiederverwendet**. Nur wenn ein benötigter Sound fehlt: einmal mit ElevenLabs
    erzeugen (`eleven_text_to_sound_v2`, ca. 0,3 Cent; Musik `eleven_music_v2_5`, ca. 15 Cent,
