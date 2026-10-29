@@ -11,10 +11,12 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
 
 | Mo | Di | Mi | Do | Fr | Sa | So |
 |---|---|---|---|---|---|---|
-| Tipp-Reel | Tipp-Reel* | Tipp-Reel | Karussell | Tipp-Reel | Tipp-Reel* | Tipp-Reel |
+| Tipp-Reel | Tipp-Reel | Tipp-Reel | Karussell | Tipp-Reel | Tipp-Reel | Tipp-Reel |
 
-\* Gibt es einen **neuen YouTube-Short** von Jonas (≤ 14 Tage alt, noch nicht gepostet, siehe
-„Clips“ unten), ersetzt er an Di/Sa das Tipp-Reel. Sonst normales Tipp-Reel.
+**YouTube-Shorts nicht automatisch posten** (vom Nutzer entschieden: sind meist nur Auszüge aus
+Long-Form-Videos und zu langsam fürs Kurzformat). Ausnahme: Jonas legt einen Short ausdrücklich
+als Eintrag mit `type: "clip"` und Status `ready` in `register.json` an – dann ersetzt er das
+nächste Tipp-Reel (Ablauf siehe „Clips“ unten).
 
 - Veröffentlichungszeit: **18:30 Uhr** (über Metricool planen, autoPublish).
 - **Höchstens ein Post pro Tag.** Vorher prüfen, ob heute schon etwas in `register.json` oder
@@ -162,8 +164,8 @@ Das vidIQ-Konto hat auch den Kanal „Cryptocat-Guru“ (`UC09Itc3_iZi9BCNp-oZ21
 Davon NIEMALS Videos, Clips, Titel oder Inhalte verwenden. Vor jedem Clip die Channel-ID
 des Quellvideos prüfen; passt sie nicht exakt, abbrechen.
 
-Bevorzugt: **bereits auf YouTube veröffentlichte Shorts** von Jonas wiederverwenden
-(vom Nutzer so gewünscht). Ablauf:
+**Nur auf ausdrücklichen Wunsch von Jonas** (Eintrag `type: "clip"`, Status `ready`), nicht
+automatisch. Ablauf:
 1. `vidiq_user_videos` mit `channelId: "UC2fWOn9AWZjHZyHaxoXS3wQ"`, `videoType: ["short"]`,
    `privacyStatus: ["public"]`. Nur Videos aus genau dieser Liste sind erlaubt.
 2. Einen Short wählen, der noch nicht in `register.json` steht (Feld `sourceVideoId`)
