@@ -25,7 +25,7 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   // dann pro Frame das passende Einzelbild an die Szene geben. Pose 'loop:<name>' in AVP nutzt sie.
   const loops={};const ldir=A+'/avatar/loops';const seed=(parseInt((process.env.REEL||'').replace(/\D/g,''))||0)*97;
   if(fs.existsSync(ldir))for(const f of fs.readdirSync(ldir).filter(f=>f.endsWith('.mp4'))){const nm=f.replace('.mp4','');const cache=`${dir}/_loop_${nm}`;
-    if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(__dirname,'..','avatar','key_loop.py'),`${ldir}/${f}`,cache],{stdio:'inherit'});
+    if(!fs.existsSync(cache+'/0000.png'))execFileSync('python3',[path.join(A,'..','engine','avatar','key_loop.py'),`${ldir}/${f}`,cache],{stdio:'inherit'});
     loops[nm]=fs.readdirSync(cache).filter(x=>x.endsWith('.png')).sort().map(x=>`${cache}/${x}`);}
   // Ping-Pong (vor, zurück, vor ...) mit zufälligem Startpunkt je Reel -> keine sichtbare Naht, nie identisch
   const pick=(nm,t)=>{const L=loops[nm];if(!L)return null;const n=L.length,i=(seed+Math.round(t*30))%(2*n-2);return L[i<n?i:2*n-2-i];};

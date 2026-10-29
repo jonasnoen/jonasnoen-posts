@@ -40,3 +40,12 @@ Erzeugt mit ElevenLabs `eleven_text_to_sound_v2` (ca. 0,3 Cent pro Effekt), gesc
 
 Erzeugt mit ElevenLabs `eleven_music_v2_5` (ca. 15 Cent pro Track), rein instrumental
 (per Transkription geprüft: kein Gesang). Wechselt automatisch nach Reel-Nummer.
+
+## avatar/loops/
+| Datei | Inhalt | Einsatz |
+|---|---|---|
+| `talk.mp4` | 10 s Memoji spricht, gestikuliert (Zeigefinger), Greenscreen | Pose `loop:talk` in `AVP` – Standard für alle Erklär-Phrasen |
+
+Erzeugt mit HeyGen Avatar 4 über ElevenLabs (ca. 1 US-Dollar, einmalig) aus `point.png` und
+`loopsrc/talk10.mp3`. Der Renderer stellt den Loop frei (`engine/avatar/key_loop.py`), spielt ihn
+vor/zurück ab und startet je Reel an anderer Stelle. Lippen sind nicht wortgenau, aber natürlich.

@@ -70,9 +70,10 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
      Avatar startet mit der Pose `surprised`. Keine langsame Einblendung am Anfang.
    - **Schnelle Schnitte:** neue Phrase alle 1–3 Sekunden, leichter Push-in, Wechsel nur per
      kurzem Abblenden ins Dunkle (`rgba(23,20,31,…)`). KEINE weißen Blitze.
-   - **Avatar:** Posen aus `assets/avatar/` (siehe `assets/README.md`): `point`, `think`,
-     `surprised`, `thumbs`, `wave`, jeweils mit `_talk`-Version (Mund offen). Der Mund wechselt im
-     0,1-s-Takt nur während gesprochener Wörter. **Nie** die Figur skalieren/pulsieren lassen
+   - **Avatar:** Für Erklär-Phrasen den Sprech-Loop `loop:talk` (`assets/avatar/loops/talk.mp4`)
+     nutzen – er gestikuliert, nickt und blinzelt. Standbild-Posen aus `assets/avatar/` (siehe
+     `assets/README.md`) für Akzente: `surprised` (Hook), `thumbs` (Ergebnis), `wave` (Outro),
+     `think`, `point`; jeweils mit `_talk`-Version, deren Mund der Lautstärke der Stimme folgt. **Nie** die Figur skalieren/pulsieren lassen
      (wirkt wie Zittern) – nur sanftes Auf-und-ab `sin(t*1.6)*4` und Pop beim Posenwechsel.
      Typische Zuordnung: Problem → `surprised`/`think`, Schritte → `point`, Ergebnis → `thumbs`,
      Outro → `wave`. Bilder kommen als data-URIs über `render.cjs` (keine file://-Bilder im Canvas).
