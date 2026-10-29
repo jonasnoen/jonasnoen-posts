@@ -255,10 +255,12 @@ function bubble(t){const r=180,cx=1080-r-60,cy=1550;const a=back(t,0,.45);if(a<=
     o.drawImage(im,D/2-dw*.5,dy,dw,dh);o.globalCompositeOperation='destination-in';const gr=o.createLinearGradient(0,dy,0,dy+14);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,1)');o.fillStyle=gr;o.fillRect(0,0,D,D);o.globalCompositeOperation='source-over';
     g.drawImage(BOFF,cx-r,cy-r);}
   g.restore();}
-function outroCard(t,t0){const a=back(t,t0+.15,.45);if(a<=0)return;scaleAt(540,950,a,()=>{g.save();g.shadowColor='rgba(0,0,0,.35)';g.shadowBlur=40;g.shadowOffsetY=14;rr(110,700,860,520,44);g.fillStyle=C.violet;g.fill();g.restore();
-  const wv=Math.sin((t-t0)*9)*.35;g.save();g.translate(540,810);g.rotate(wv);font(400,110);g.textAlign='center';g.fillText('👋',0,40);g.restore();
-  font(400,96,'Anton');g.textAlign='center';g.fillStyle='#fff';g.fillText('FOLG MIR FÜR MEHR',540,1000);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',540,1105);
-  font(800,46);g.fillStyle='rgba(255,255,255,.85)';g.fillText('@jonas.noen',540,1178);});}
+function outroCard(t,t0){const a=back(t,t0+.15,.45);if(a<=0)return;
+  // Memoji winkt hinter der Karte hervor (Unterkante verdeckt), statt 👋-Emoji
+  const im=IM.wave;if(im){const w=580,h=w*im.height/im.width,m=back(t,t0+.35,.5);if(m>0){g.save();g.beginPath();g.rect(0,0,W,820);g.clip();g.drawImage(im,540-w/2,880-h*m,w,h);g.restore();}}
+  scaleAt(540,1000,a,()=>{g.save();g.shadowColor='rgba(0,0,0,.25)';g.shadowBlur=40;g.shadowOffsetY=14;rr(110,800,860,440,44);g.fillStyle=C.violet;g.fill();g.restore();
+  font(400,96,'Anton');g.textAlign='center';g.fillStyle='#fff';g.fillText('FOLG MIR FÜR MEHR',540,960);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',540,1065);
+  font(800,46);g.fillStyle='rgba(255,255,255,.85)';g.fillText('@jonas.noen',540,1150);});}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);if(window.BIG_OUTRO||k<PH.length-1){g.save();g.translate(30,125);scaleAt(470,805,1.1*push,()=>PROPS[k](t));g.restore();}
   // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild
