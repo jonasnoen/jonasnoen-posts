@@ -44,8 +44,12 @@ Erzeugt mit ElevenLabs `eleven_music_v2_5` (ca. 15 Cent pro Track), rein instrum
 ## avatar/loops/
 | Datei | Inhalt | Einsatz |
 |---|---|---|
-| `talk.mp4` | 10 s Memoji spricht, gestikuliert (Zeigefinger), Greenscreen | Pose `loop:talk` in `AVP` – Standard für alle Erklär-Phrasen |
+| `talk.mp4` | Zeigefinger oben | `loop:talk` – Schritte |
+| `think.mp4` | Hand am Kinn | `loop:think` – Problem, Frage |
+| `explain.mp4` | offene Hände, erklärt | `loop:explain` – Erklärung, Trick |
+| `neutral.mp4` | ruhig, Hände unten | `loop:neutral` – Merksatz, Outro |
 
-Erzeugt mit HeyGen Avatar 4 über ElevenLabs (ca. 1 US-Dollar, einmalig) aus `point.png` und
+Alle 10 s, Greenscreen. Erzeugt mit HeyGen Avatar 4 über ElevenLabs (ca. 1 US-Dollar je Loop, einmalig) aus den Posen und
 `loopsrc/talk10.mp3`. Der Renderer stellt den Loop frei (`engine/avatar/key_loop.py`), spielt ihn
-vor/zurück ab und startet je Reel an anderer Stelle. Lippen sind nicht wortgenau, aber natürlich.
+vor/zurück ab und startet je Reel an anderer Stelle. Für lippensynchrone Reels baut `render.cjs track`
+daraus die Avatar-Spur, die dann mit Veed Lipsync an die Stimme angepasst wird (siehe CLAUDE.md).

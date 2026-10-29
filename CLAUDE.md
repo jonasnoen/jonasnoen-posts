@@ -62,21 +62,32 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
    Vorlage: `engine/reel2/scene.html` (Beispiel-Thema „Zeig Claude deinen Stil“). Für jedes neue
    Thema `PH` (Phrasen), die Szenen `p0…pN`, `AVP` (Posen) und `EXTRA_CUES` (Sounds) neu
    schreiben; Hintergrund, Überschrift, Avatar, Übergänge und Mischung beibehalten.
-   - **Aufbau:** Oben Label (`// SCHRITT 1 · KOPIEREN`) + große Überschrift (Manrope 800, 68 px),
-     Wörter erscheinen synchron zur Stimme, 1–3 Schlüsselwörter pro Phrase farbig unterstrichen
-     (abwechselnd Gelb / Lavendel). Mitte (y≈450–1180): eine klare Grafik pro Phrase mit
-     nummerierten Badges (1/2/3), Stempeln, Karten, Mini-Chatfenster. Unten rechts: großer Avatar.
-   - **Hook:** In Phrase 0 steht die komplette Überschrift ab Frame 0 und knallt mit `impact` rein,
-     Avatar startet mit der Pose `surprised`. Keine langsame Einblendung am Anfang.
+   - **Aufbau (wie adilet.fndr):** Oben links Label (`// SCHRITT 1 · KOPIEREN`), oben rechts Zähler
+     (`SCHRITT 1/3`, aus `PROGRESS`), große Überschrift (Manrope 800) Wort für Wort synchron zur
+     Stimme; 1–3 Akzentwörter pro Phrase in **kursiver Serifenschrift** (Instrument Serif) farbig
+     (dunkel: Gelb/Lavendel, hell: Rot/Violett). Mitte (y≈450–1180): eine klare Code-Grafik pro
+     Phrase (Badges 1/2/3, Stempel, Karten, Mini-Chat) – **keine KI-Illustrationen**.
+     Unten links die **Fortschritts-Karte** (`PROGRESS`: Titel + 3–4 Schritte, füllt sich mit Haken).
+     Unten rechts der Avatar. Kapitel wechseln zwischen **hell und dunkel** (`light:true` in `PH`,
+     typisch: Problem/Trick hell, Schritte dunkel, Merksatz/Outro hell).
+   - **Hook:** In Phrase 0 steht die komplette Überschrift ab Frame 0 und knallt mit `impact` rein.
    - **Schnelle Schnitte:** neue Phrase alle 1–3 Sekunden, leichter Push-in, Wechsel nur per
      kurzem Abblenden ins Dunkle (`rgba(23,20,31,…)`). KEINE weißen Blitze.
-   - **Avatar:** Für Erklär-Phrasen den Sprech-Loop `loop:talk` (`assets/avatar/loops/talk.mp4`)
-     nutzen – er gestikuliert, nickt und blinzelt. Standbild-Posen aus `assets/avatar/` (siehe
-     `assets/README.md`) für Akzente: `surprised` (Hook), `thumbs` (Ergebnis), `wave` (Outro),
-     `think`, `point`; jeweils mit `_talk`-Version, deren Mund der Lautstärke der Stimme folgt. **Nie** die Figur skalieren/pulsieren lassen
-     (wirkt wie Zittern) – nur sanftes Auf-und-ab `sin(t*1.6)*4` und Pop beim Posenwechsel.
-     Typische Zuordnung: Problem → `surprised`/`think`, Schritte → `point`, Ergebnis → `thumbs`,
-     Outro → `wave`. Bilder kommen als data-URIs über `render.cjs` (keine file://-Bilder im Canvas).
+   - **Avatar = lippensynchrones Video aus Gesten-Loops (Standard):**
+     `AVP` legt pro Phrase einen Loop fest: `loop:think` (Problem/Frage), `loop:explain` (offene
+     Hände, Erklärung), `loop:talk` (Zeigefinger, Schritte), `loop:neutral` (ruhig, Merksatz/Outro).
+     Ablauf pro Reel (ca. 13 Cent):
+     1. `node render.cjs track base.mp4` → Avatar-Spur (Greenscreen) aus den Loops, weich überblendet.
+     2. `base.mp4` und `voice.mp3` nach `reels/R###/source/` committen + pushen, beide per
+        `creative_attach_reference_file` (Raw-URL mit Commit-SHA) auf einen ElevenLabs-Flow legen.
+     3. `creative_generate_in_flow` mit `node_type: video-generation`, `model_id: veed-lipsync`,
+        `connect_from: [Video-Node, Audio-Node]` (vorher `estimate_only`, ca. 0,65 Cent/Sekunde).
+     4. Ergebnis als `lipsync.mp4` in den Arbeitsordner → `render.cjs` nutzt es automatisch für das
+        ganze Reel (Greenscreen wird freigestellt).
+     Klappt Lipsync nicht: ohne `lipsync.mp4` rendern (Loops ohne Lippensynchronität) und in der
+     Push-Nachricht erwähnen. Standbild-Posen (`surprised`, `thumbs`, `wave`, `think`, `point`) nur
+     als Notlösung; deren Mund folgt dezent der Lautstärke. **Nie** die Figur skalieren/pulsieren
+     lassen (wirkt wie Zittern). Posenwechsel weich überblenden, kein Pop.
    - Farben: lila Grundton (`#1f1a2c → #110e17`, violetter Schein, Lampe, Staub), helle Karten
      `#f6efe4` / Chat `#f7f3fb` mit dunkler Schrift, Akzente Violett `#8b6cf0`/`#b9a6ff`, sparsam
      Gelb `#ffc65c`, Grün `#3ccf8e`, Rot `#ef5a4c`. **Nicht nur Lila.**
@@ -145,8 +156,9 @@ Engagement-Bait, keine Reichweitenversprechen.
 
 ## Kosten pro Reel
 
-ElevenLabs-Stimme ca. 7 US-Cent, Transkription ca. 1–3 Cent. Avatar, Sounds, Musik: 0 (liegen in
-`assets/`, einmalig ca. 1,05 US-Dollar). Rendern, GitHub, Metricool: 0.
+ElevenLabs-Stimme ca. 7 US-Cent, Transkription ca. 1–3 Cent, Lipsync (Veed) ca. 13 Cent → zusammen
+ca. 23 Cent. Avatar-Posen, Gesten-Loops, Sounds, Musik: 0 (liegen in `assets/`, einmalig ca. 5 US-Dollar).
+Rendern, GitHub, Metricool: 0.
 
 ## Weitere Referenzen
 
