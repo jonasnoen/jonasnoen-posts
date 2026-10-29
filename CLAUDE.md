@@ -29,19 +29,28 @@ nächste Tipp-Reel (Ablauf siehe „Clips“ unten).
 
 ## Format-Test (bis Auswertung am 19.11.2026)
 
-Tipp-Reels wechseln der Reihe nach zwischen drei Formaten – **Split → Bubble → Memoji → Split …**
-(nächstes Format = das auf das Format des letzten Tipp-Reels in `register.json` folgt; erstes Reel: Split):
+Tipp-Reels wechseln der Reihe nach zwischen zwei Formaten – **Creme → Memoji → Creme …**
+(nächstes Format = das auf das Format des letzten Tipp-Reels in `register.json` folgt; erstes Reel: Creme):
 
 | Format | Vorlage | Avatar |
 |---|---|---|
-| `split` | `engine/reel3/scene.html` | Jonas (HeyGen-Zwilling) unten, Grafik oben, Einzelwort-Untertitel |
-| `bubble` | `engine/reel4/scene.html` | Jonas als runde Facecam unten rechts, Schluss mit Folgen-Karte |
+| `creme` | `engine/reel5/scene.html` | **echter Jonas** aus seinem Raw Cut (`assets/face/raw_teil1.mp4`, stumm, 720×720) mit Veed-Lipsync, kleine runde Bubble unten rechts |
 | `memoji` | `engine/reel2/scene.html` | Memoji mit Gesten-Loops |
 
-Alle drei mit Veed-Lipsync (ca. 13 Cent). Gesicht für split/bubble: `node render.cjs facebase facebase.mp4`
-(schnittfreies `assets/face/twin_clean.mp4`), dann Lipsync → `face.mp4`. Memoji: `track` → Lipsync →
-`lipsync.mp4`. Jeder Reel-Eintrag in `register.json` bekommt **`"format": "split"|"bubble"|"memoji"`**.
-Gleiche Hook-Regeln für alle Formate (siehe Skript). Nach dem Test: Gewinner wird Standard.
+Split (reel3) und Bubble mit HeyGen-Zwilling (reel4) sind seit 29.10.2026 raus (vom Nutzer: echter Raw Cut ist besser).
+Jeder Reel-Eintrag in `register.json` bekommt **`"format": "creme"|"memoji"`**, bei `creme` zusätzlich `faceOffset` (Startsekunde).
+
+**Stil `creme` (reel5, vom Nutzer freigegeben):** durchgehend **einfarbiger** Creme-Grund `#f6efe4` (kein lila Verlauf,
+kein Hell/Dunkel-Wechsel), Grafik groß in der Mitte, oben großes Label und **nur das Kernwort** der Phrase (`kw` in `PH`,
+kursiv) – kein Wort-für-Wort-Mitschreiben; nur der Hook in Phrase 0 steht als ganzer Satz. Bubble ca. 1/3 Bildbreite
+unten rechts. **30 fps** (`FPS=30`, Takt des Raw Cuts). Schluss: Bubble blendet aus, Folgen-Karte, **Memoji `wave` winkt
+hinter der Karte hervor** (kein Emoji). Keine Großaufnahme am Schluss (Mund bewegt sich nach dem letzten Wort weiter, vom Nutzer verworfen).
+Gesichtsspur pro Reel: `FACE_SRC=raw_teil1.mp4 FPS=30 REEL=R### node render.cjs facebase facebase.mp4` (Ausschnitt läuft
+automatisch im Kreis durchs Material: Start = Reelnummer × 27 s; Wiederholungen sind ok), dann Veed-Lipsync mit der
+Stimme → `face.mp4`. Rendern mit `FPS=30`. Neues Rohmaterial von Jonas: stumm, Kopf-Ausschnitt 720×720, 30 fps als
+`assets/face/raw_<name>.mp4` ablegen (niemals mit Originalton ins öffentliche Repo).
+
+Memoji (reel2) bleibt wie unten beschrieben (25 fps). Nach dem Test: Gewinner wird Standard.
 
 ## Ablauf eines Karussells
 

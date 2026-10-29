@@ -29,6 +29,12 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   // ---- Sprech-Loops (assets/avatar/loops/<name>.mp4, Greenscreen): einmal freistellen (Cache im Arbeitsordner),
   // dann pro Frame das passende Einzelbild an die Szene geben. Pose 'loop:<name>' in AVP nutzt sie.
   const loops={};const ldir=A+'/avatar/loops';const seed=(parseInt((process.env.REEL||'').replace(/\D/g,''))||0)*97;
+  if(mode==='facebase'&&process.env.FACE_SRC){ // ---- reel5: echter Raw Cut (stumm, 720x720). FACE_SRC=Datei in assets/face, FACE_OFF=Startsekunde
+    await b.close();const src=A+'/face/'+process.env.FACE_SRC;const len=parseFloat(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',src]).toString());
+    // Ausschnitt läuft im Kreis durchs Material (Wiederholung ist ok): Start = Reelnummer*27 s modulo (Länge-Reel)
+    const off=process.env.FACE_OFF!==undefined?+process.env.FACE_OFF:((seedNum()*27)%Math.max(1,len-END-1));
+    await run(['-y','-v','error','-ss',off.toFixed(2),'-t',(END+.2).toFixed(3),'-i',src,'-vf',`fps=${FPS},setsar=1`,'-an','-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-r',''+FPS,out]);
+    console.log('Gesichtsspur',out,'aus',src,'ab',off,'s, Länge',END.toFixed(2));return;}
   if(mode==='facebase'){ // ---- Gesichtsspur für Stil reel3/reel4: HeyGen-Zwilling + (falls vorhanden) Lächel-Outro ab letzter Phrase
     const T=await p.evaluate(()=>WORDS[PH[PH.length-1].a].start-.12);await b.close();const tw=A+'/face/twin_clean.mp4',ou=A+'/face/outro.mp4'; // twin_clean = schnittfreies Stück, vor+zurück (Original-Vorschau hat harte Schnitte)
     const len=parseFloat(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',tw]).toString());
