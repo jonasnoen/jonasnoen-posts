@@ -30,7 +30,7 @@
     "id": "K001",
     "type": "carousel",
     "createdAt": "2026-10-29",
-    "status": "sending",
+    "status": "scheduled",
     "topic": "Prompt in vier Bausteinen",
     "angle": "Ziel, Kontext, Beispiel, Format – durchgehendes Café-Beispiel",
     "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (geprüft 2026-10-29)",
@@ -60,15 +60,20 @@
     "tiktokTitle": "Hör auf, Claude raten zu lassen",
     "platforms": {
       "instagram": {
-        "status": "not_posted"
+        "status": "scheduled",
+        "metricoolPostId": 410399087,
+        "scheduledAt": "2026-10-29T19:35:00+01:00"
       },
       "tiktok": {
-        "status": "not_posted"
+        "status": "scheduled",
+        "metricoolPostId": 410399114,
+        "scheduledAt": "2026-10-29T19:35:00+01:00"
       }
     },
     "slides": 8,
     "design": "v2-reel-look",
     "series": "Claude-Prompts Teil 1",
-    "hook": "Hör auf, Claude raten zu lassen."
+    "hook": "Hör auf, Claude raten zu lassen.",
+    "mediaCommit": "2de1f942dc8601b1ae98acfa46c9ffe7330b220c"
   }
 ]
