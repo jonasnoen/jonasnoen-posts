@@ -46,28 +46,30 @@
         "carousels/K001/ig-08.png"
       ],
       "tiktok": [
-        "carousels/K001/tt-01.png",
-        "carousels/K001/tt-02.png",
-        "carousels/K001/tt-03.png",
-        "carousels/K001/tt-04.png",
-        "carousels/K001/tt-05.png",
-        "carousels/K001/tt-06.png",
-        "carousels/K001/tt-07.png",
-        "carousels/K001/tt-08.png"
+        "carousels/K001/tt-01.jpg",
+        "carousels/K001/tt-02.jpg",
+        "carousels/K001/tt-03.jpg",
+        "carousels/K001/tt-04.jpg",
+        "carousels/K001/tt-05.jpg",
+        "carousels/K001/tt-06.jpg",
+        "carousels/K001/tt-07.jpg",
+        "carousels/K001/tt-08.jpg"
       ]
     },
     "caption": "Hör auf, Claude raten zu lassen.\n\nWenn im Prompt nur das Thema steht, muss Claude den Rest raten – und du bekommst etwas Austauschbares.\n\nVier Bausteine machen daraus eine klare Aufgabe: Ziel (was soll herauskommen), Kontext (für wen und warum), Beispiel (wie soll es klingen) und Format (wie soll es aussehen). Die Vorlage zum Ausfüllen findest du auf Slide 7.\n\nDas Café ist ein Beispiel zur Veranschaulichung, kein Test. Ergebnisse und Fakten trotzdem selbst prüfen.\n\nSpeicher dir das Karussell für deinen nächsten Prompt. Welchen Baustein vergisst du am häufigsten?\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
     "tiktokTitle": "Hör auf, Claude raten zu lassen",
     "platforms": {
       "instagram": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 410399087,
-        "scheduledAt": "2026-10-29T19:35:00+01:00"
+        "scheduledAt": "2026-10-29T19:35:00+01:00",
+        "url": "https://www.instagram.com/p/DfFqlUelWtz/"
       },
       "tiktok": {
         "status": "scheduled",
-        "metricoolPostId": 410399114,
-        "scheduledAt": "2026-10-29T19:35:00+01:00"
+        "metricoolPostId": 411118828,
+        "scheduledAt": "2026-10-30T12:55:00+01:00",
+        "note": "1. Versuch 29.10. als PNG von TikTok abgelehnt, neu als JPG (Commit 913f512)"
       }
     },
     "slides": 8,
