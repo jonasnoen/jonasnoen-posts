@@ -30,7 +30,7 @@
     "id": "K001",
     "type": "carousel",
     "createdAt": "2026-10-29",
-    "status": "scheduled",
+    "status": "published",
     "topic": "Prompt in vier Bausteinen",
     "angle": "Ziel, Kontext, Beispiel, Format – durchgehendes Café-Beispiel",
     "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (geprüft 2026-10-29)",
@@ -66,10 +66,13 @@
         "url": "https://www.instagram.com/p/DfFqlUelWtz/"
       },
       "tiktok": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 411118828,
         "scheduledAt": "2026-10-30T12:55:00+01:00",
-        "note": "1. Versuch 29.10. als PNG von TikTok abgelehnt, neu als JPG (Commit 913f512)"
+        "note": "1. Versuch 29.10. als PNG von TikTok abgelehnt, neu als JPG (Commit 913f512)",
+        "videoId": "7702428234683632918",
+        "url": "https://www.tiktok.com/@jonas.noen/video/7702428234683632918",
+        "publishedAt": "2026-10-30T12:55:00+01:00"
       }
     },
     "slides": 8,
