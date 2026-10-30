@@ -71,12 +71,12 @@ Memoji (reel2) bleibt wie unten beschrieben (25 fps). Nach dem Test: Gewinner wi
    Memoji-Posen aus `assets/avatar/*.png`). Jede Slide: `<section class="slide [light]" id="sN"><div class="in">…`.
 3. Rendern: `NODE_PATH=/opt/npm-tools/node_modules node engine/carousel/shot.cjs slides.html <outdir>`
    (Schriften per `npm i` aus `engine/package.json` als `node_modules` neben `slides.html`, nicht committen).
-   Ergibt `ig-01..NN.png` (1080×1350) und `tt-01..NN.png` (1080×1920, Inhalt nach unten versetzt).
+   Ergibt `ig-01..NN.png` (1080×1350) und `tt-01..NN.jpg` (1080×1920, Inhalt nach unten versetzt). **TikTok-Fotos nur als JPG/WebP** – PNG lehnt TikTok ab.
    Alle Bilder ansehen: nichts abgeschnitten, nichts überlappt, Figur verdeckt keinen Text.
 4. Ins Repo unter `carousels/K###/`, Eintrag in `register.json` mit `type: "carousel"`.
 5. Metricool: ZWEI Posts (Formate unterscheiden sich):
    - Instagram: `media` = alle `ig-NN.png` Raw-URLs (mit Commit-SHA), `instagramData.type: "POST"`.
-   - TikTok: `media` = alle `tt-NN.png`, `tiktokData.title` Pflicht, `privacyOption: "PUBLIC_TO_EVERYONE"`.
+   - TikTok: `media` = alle `tt-NN.jpg` (kein PNG!), `tiktokData.title` Pflicht, `privacyOption: "PUBLIC_TO_EVERYONE"`.
 
 ## Ablauf eines Reels
 

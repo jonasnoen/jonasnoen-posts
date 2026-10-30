@@ -1,4 +1,4 @@
-// Usage: node shot.cjs <slides.html> <outdir>   -> ig-01..NN.png (1080x1350) + tt-01..NN.png (1080x1920)
+// Usage: node shot.cjs <slides.html> <outdir>   -> ig-01..NN.png (1080x1350) + tt-01..NN.jpg (1080x1920, JPEG für TikTok)
 // Vorlage v2 (Slides mit <div class="in">): TikTok-Version per body.tt. Alte Vorlage (K001 v1): Stil-Patch.
 const {chromium}=require('playwright');const path=require('path');
 (async()=>{const src=path.resolve(process.argv[2]||__dirname+'/slides.html');const out=path.resolve(process.argv[3]||__dirname);
@@ -10,5 +10,5 @@ const v2=await p.evaluate(()=>!!document.querySelector('.slide .in'));
 if(v2)await p.evaluate(()=>document.body.classList.add('tt'));
 else await p.addStyleTag({content:'.slide{height:1920px!important}.pad,.lamp,.cone,.stamp,canvas.guy{transform:translateY(240px)}.stack{bottom:360px!important}.stack-l{bottom:530px!important}.foot{bottom:300px!important}'});
 await p.waitForTimeout(200);
-for(let i=1;i<=n;i++)await p.locator('#s'+i).screenshot({path:`${out}/tt-${nn(i)}.png`});
+for(let i=1;i<=n;i++)await p.locator('#s'+i).screenshot({path:`${out}/tt-${nn(i)}.jpg`,type:'jpeg',quality:92}); // TikTok-Fotos: nur JPEG/WebP erlaubt
 await b.close();})();
