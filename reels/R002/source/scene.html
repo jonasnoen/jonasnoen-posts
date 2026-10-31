@@ -172,16 +172,16 @@ function p1(t){laptop(450,880,1.7,true);const t0=K(15);if(t>t0){const s=back(t,t
 function p2(t){[0,1,2].forEach(i=>{const t0=K(17)+i*.18;if(t<t0)return;const s=back(t,t0,.3);const x=110+i*250,y=560;scaleAt(x+105,y+140,s,()=>{rr(x,y,210,280,26);g.setLineDash([14,12]);g.lineWidth=6;g.strokeStyle='#b9a6ff';g.stroke();g.setLineDash([]);font(400,150,'Anton');g.fillStyle=C.amber;g.textAlign='center';g.fillText('?',x+105,y+200);});});
   bigLabel('DEIN ZIEL FEHLT',110,1060,K(20),t,C.ink,84);}
 // p3: Dreh es um: NICHT -> WAS DU WILLST
-function p3(t){const ta=WORDS[PH[3].a].start;wcard(110,500,720,170);mark(185,585,false,40);font(800,56);g.fillStyle=C.ink;g.textAlign='left';g.fillText('was Claude lassen soll',245,605);
-  line(240,588,790,588,K(23),t,C.red,10);
+function p3(t){const ta=WORDS[PH[3].a].start;wcard(90,500,780,170);mark(165,585,false,40);font(800,50);g.fillStyle=C.ink;g.textAlign='left';g.fillText('was Claude lassen soll',225,603);
+  {const w=g.measureText('was Claude lassen soll').width;line(220,586,230+w,586,K(23),t,C.red,10);}
   if(t>K(23)){const k=ease((t-K(23))/.35);g.save();g.translate(470,760);g.rotate(Math.PI*k);g.strokeStyle=C.violet;g.lineWidth=14;g.lineCap='round';g.beginPath();g.arc(0,0,58,.3,Math.PI*1.7);g.stroke();g.fillStyle=C.violet;g.beginPath();g.moveTo(52,-50);g.lineTo(90,-6);g.lineTo(30,0);g.closePath();g.fill();g.restore();}
-  if(t>K(24)){const s=back(t,K(24),.35);scaleAt(470,935,s,()=>{wcard(110,850,720,170,C.green);mark(185,935,true,40);font(800,56);g.fillStyle=C.ink;g.textAlign='left';g.fillText('was Claude tun soll',245,955);});}}
+  if(t>K(24)){const s=back(t,K(24),.35);scaleAt(470,935,s,()=>{wcard(90,850,780,170,C.green);mark(165,935,true,40);font(800,50);g.fillStyle=C.ink;g.textAlign='left';g.fillText('was Claude tun soll',225,953);});}}
 // Schritte: STATT (rot, wird durchgestrichen) -> SCHREIB (grün, wird getippt)
 function swap(t,n,bad,good,ib,ig,ie){badge(n,120,520,[C.amber,C.violetL,C.green][n-1],K(ib-2),t);bigLabel('STATT',200,550,K(ib-1),t,C.red,84);
   if(t>K(ib)){const s=back(t,K(ib),.3);scaleAt(470,690,s,()=>{wcard(80,615,780,150);mark(150,690,false,36);font(800,52);g.fillStyle=t>K(ig)?'#a79fbd':C.ink;g.textAlign='left';g.fillText(bad,205,708);
     if(t>K(ig)){const w=g.measureText(bad).width;line(200,690,200+w+10,690,K(ig),t,C.red,9);}});}
   if(t>K(ig)){bigLabel('SCHREIB',80,880,K(ig),t,C.green,84);const s=back(t,K(ig)+.1,.3);scaleAt(470,1000,s,()=>{wcard(80,915,780,175,C.green);mark(150,1002,true,36);
-    const p=Math.min(1,Math.max(0,(t-K(ig+1)+.1)/Math.max(.3,KE(ie)-K(ig+1))));const tx=good.slice(0,Math.round(good.length*p));font(800,52);g.fillStyle=C.ink;g.textAlign='left';g.fillText(tx+(p<1&&((t*3|0)%2)?'|':''),205,1020);});}}
+    const p=Math.min(1,Math.max(0,(t-K(ig+1)+.1)/Math.max(.3,KE(ie)-K(ig+1))));const tx=good.slice(0,Math.round(good.length*p));font(800,52);g.fillStyle=C.ink;g.textAlign='left';g.fillText(tx,205,1020);});}}
 function p4(t){swap(t,1,'keine langen Sätze','kurze Sätze, wie gesprochen',28,31,35);}
 const p5=p4;
 function p6(t){swap(t,2,'kein Fachchinesisch','erklär es wie einem Freund',38,40,45);}

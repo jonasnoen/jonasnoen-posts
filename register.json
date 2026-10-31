@@ -90,5 +90,38 @@
       "text": "Ziel: Schreib ___, das ___ erreicht.\nKontext: Für ___, weil ___.\nBeispiel: So soll es klingen: ___\nFormat: ___ Wörter, ___ Varianten.",
       "hinweis": "Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten."
     }
+  },
+  {
+    "id": "R002",
+    "type": "reel",
+    "createdAt": "2026-10-31",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 58.0,
+    "series": "Claude-Codes Teil 2",
+    "topic": "Positiv formulieren statt Verbote",
+    "angle": "Drei Verbote umdrehen: 'keine langen Sätze' → 'kurze Sätze, wie gesprochen', 'kein Fachchinesisch' → 'erklär es wie einem Freund', 'keine Aufzählungen' → 'in Fließtext'",
+    "hook": "Hör auf, Claude zu sagen, was es nicht tun soll.",
+    "source": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices (Abschnitt 'Tell Claude what to do instead of what not to do', geprüft 2026-10-31)",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R002/reel.mp4",
+    "sha256": "93c4b0ffdeec4df3485663701209b43448806b8526e4ca8b81412761b75cc71e",
+    "durationSec": 23.7,
+    "caption": "Hör auf, Claude zu sagen, was es nicht tun soll.\n\n„Keine langen Sätze“ verrät Claude nur, was falsch ist – aber nicht, was du willst. Dreh die Anweisung einfach um:\n\nStatt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“\nStatt „kein Fachchinesisch“ → „erklär es wie einem Freund“\nStatt „keine Aufzählungen“ → „in Fließtext“\n\nGenau das steht auch in Anthropics eigenen Prompting-Tipps: sag, was Claude tun soll, statt was es lassen soll.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+    "tiktokTitle": "Sag Claude, was es tun soll",
+    "vorlage": {
+      "titel": "Verbote umdrehen",
+      "text": "Statt: keine ___\nSchreib: ___ (was stattdessen rauskommen soll)\n\nBeispiele:\nStatt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“\nStatt „kein Fachchinesisch“ → „erklär es wie einem Freund“\nStatt „keine Aufzählungen“ → „in Fließtext“",
+      "hinweis": "Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll."
+    },
+    "platforms": {
+      "instagram": {
+        "status": "sending"
+      },
+      "tiktok": {
+        "status": "sending"
+      }
+    }
   }
 ]
