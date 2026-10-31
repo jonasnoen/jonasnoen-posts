@@ -24,7 +24,12 @@
         "publishedAt": "2026-10-29T00:26:00+01:00"
       }
     },
-    "tiktokTitle": "Der eine Satz vor jedem Claude-Prompt"
+    "tiktokTitle": "Der eine Satz vor jedem Claude-Prompt",
+    "vorlage": {
+      "titel": "Der eine Satz vor jedem Prompt",
+      "text": "Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.",
+      "hinweis": "Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten."
+    }
   },
   {
     "id": "K001",
@@ -79,6 +84,11 @@
     "design": "v2-reel-look",
     "series": "Claude-Prompts Teil 1",
     "hook": "Hör auf, Claude raten zu lassen.",
-    "mediaCommit": "2de1f942dc8601b1ae98acfa46c9ffe7330b220c"
+    "mediaCommit": "2de1f942dc8601b1ae98acfa46c9ffe7330b220c",
+    "vorlage": {
+      "titel": "Hör auf, Claude raten zu lassen",
+      "text": "Ziel: Schreib ___, das ___ erreicht.\nKontext: Für ___, weil ___.\nBeispiel: So soll es klingen: ___\nFormat: ___ Wörter, ___ Varianten.",
+      "hinweis": "Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten."
+    }
   }
 ]

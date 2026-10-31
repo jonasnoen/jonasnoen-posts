@@ -201,6 +201,15 @@ automatisch. Ablauf:
 Alternative, falls keine passenden Shorts mehr übrig sind: `vidiq_generate_clips` mit dem
 YouTube-Link eines Long-Form-Videos desselben Kanals (9 vidIQ-Credits pro Minute).
 
+## Vorlagen-Sammlung + Kommentar-Automatik (seit 31.10.2026)
+
+Öffentliche Seite **https://jonasnoen.github.io/jonasnoen-posts/** (GitHub Pages aus `docs/`). In Metricool läuft ein
+Flow (vom Nutzer angelegt): Kommentar mit **PROMPT** unter einem beliebigen Post → DM → Button → Link zu dieser Seite.
+**Jeder neue Reel/Karussell-Eintrag bekommt in `register.json` das Feld `vorlage`:** `{"titel": …, "text": <der Prompt
+wörtlich zum Kopieren, Lücken als ___>, "hinweis": <1 Satz, wie man ihn nutzt>}`. Danach `python3 engine/site/build.py`
+ausführen und `docs/` mitcommitten (neueste Vorlage steht automatisch oben). Caption endet mit
+„Kommentiere PROMPT und ich schick dir die Vorlage.“ (nur wenn `vorlage` gesetzt ist).
+
 ## Caption
 
 Deutsch, 3–5 kurze Absätze: Problem → der konkrete Tipp (wörtlich zum Abschreiben) → was dann
