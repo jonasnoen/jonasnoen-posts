@@ -95,7 +95,7 @@
     "id": "R002",
     "type": "reel",
     "createdAt": "2026-10-31",
-    "status": "scheduled",
+    "status": "published",
     "format": "creme",
     "faceOffset": 58.0,
     "series": "Claude-Codes Teil 2",
@@ -117,14 +117,17 @@
     },
     "platforms": {
       "instagram": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 412312290,
-        "scheduledAt": "2026-10-31T18:30:00+01:00"
+        "scheduledAt": "2026-10-31T18:30:00+01:00",
+        "url": "https://www.instagram.com/reel/DfKsz73iAbz/"
       },
       "tiktok": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 412312290,
-        "scheduledAt": "2026-10-31T18:30:00+01:00"
+        "scheduledAt": "2026-10-31T18:30:00+01:00",
+        "videoId": "7702886088410402081",
+        "url": "https://www.tiktok.com/@jonas.noen/video/7702886088410402081"
       }
     },
     "mediaCommit": "ad7f47a0f9357b6c8f1fbda4597d64053db7a0b8"
@@ -155,5 +158,30 @@
       ]
     },
     "music": "assets/music/japan-lofi.mp3 (Lautstärke 0.11)"
+  },
+  {
+    "id": "R004",
+    "type": "reel",
+    "createdAt": "2026-11-01",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude-Codes Teil 3",
+    "topic": "Begründung zur Anweisung geben (\"weil\")",
+    "angle": "Regel + 'weil' anhängen: 'Schreib kurz, weil ich es am Handy lese' – Claude kennt das Ziel und denkt mit",
+    "hook": "Ein Wort macht deine Claude-Prompts besser: weil.",
+    "source": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices (Abschnitt 'Add context to improve performance', geprüft 2026-11-01 per Suche)",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R004/reel.mp4",
+    "sha256": "0b15b2d2d8c26a5606097dc06aae076e3a9dfbebbbe04cb3ba9f8187a8e5353a",
+    "durationSec": 24.8,
+    "caption": "Ein Wort macht deine Claude-Prompts besser: weil.\n\nDie meisten schreiben nur Regeln wie „Schreib kurz.“ Claude weiß dann nicht, wie kurz – und wofür.\n\nHäng einfach die Begründung dran:\n„Schreib kurz, weil ich es am Handy lese.“\n\nJetzt kennt Claude dein Ziel und kann mitdenken. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps: erklären, warum eine Anweisung wichtig ist.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+    "tiktokTitle": "Das Wort, das deine Prompts besser macht",
+    "vorlage": {
+      "titel": "Regel + weil",
+      "text": "___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).\n\nBeispiel:\nSchreib kurz, weil ich es am Handy lese.",
+      "hinweis": "Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken."
+    },
+    "plannedFor": "2026-11-01T18:30:00+01:00"
   }
 ]
