@@ -163,7 +163,7 @@
     "id": "R004",
     "type": "reel",
     "createdAt": "2026-11-01",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude-Codes Teil 3",
     "topic": "Begründung zur Anweisung geben (\"weil\")",
@@ -182,6 +182,19 @@
       "text": "___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).\n\nBeispiel:\nSchreib kurz, weil ich es am Handy lese.",
       "hinweis": "Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken."
     },
-    "plannedFor": "2026-11-01T18:30:00+01:00"
+    "plannedFor": "2026-11-01T18:30:00+01:00",
+    "mediaCommit": "dc42e4cab5c2c90806557eeb3051ab7550a59ddd",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 413101189,
+        "scheduledAt": "2026-11-01T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 413101189,
+        "scheduledAt": "2026-11-01T18:30:00+01:00"
+      }
+    }
   }
 ]
