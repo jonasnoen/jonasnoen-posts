@@ -56,3 +56,4 @@ vor/zurück ab und startet je Reel an anderer Stelle. Für lippensynchrone Reels
 daraus die Avatar-Spur, die dann mit Veed Lipsync an die Stimme angepasst wird (siehe CLAUDE.md).
 
 - `music/japan-koto.mp3` – japanisch (Koto, Shakuhachi), ruhig, 92 s, ElevenLabs Music v2.5, instrumental. Erstellt für R003 (Ukiyo-e-Stil). Leise gemastert (-19.5 LUFS) → im Mix ca. 0.25 statt 0.10.
+- `music/japan-lofi.mp3` – japanischer Lo-Fi (Beat, Rhodes, Koto, Shakuhachi), 85 BPM, 92 s, ElevenLabs Music v2.5. Von Jonas für R003 gewählt (Mix 0.11).
