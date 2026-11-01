@@ -133,7 +133,7 @@
     "id": "R003",
     "type": "reel",
     "createdAt": "2026-11-01",
-    "status": "sending",
+    "status": "scheduled",
     "format": "dub",
     "note": "Deutsche Fassung von Jonas' Video 'Video-67558' (Ukiyo-e-Stil), auf Wunsch von Jonas am 1.11. für 3.11. geplant. Kein Tipp-Reel und nicht Teil des Format-Tests creme/memoji – Rotation zählt ab dem letzten creme/memoji-Eintrag weiter.",
     "topic": "Fünf Claude-Skills für Videos",
@@ -144,6 +144,15 @@
     "durationSec": 90.8,
     "caption": "Alle haben dieselbe KI. Wie machst du trotzdem etwas anderes?\n\nFünf Claude-Skills für Videos, jeder mit seinem eigenen Look:\n1. HyperFrames von HeyGen – aus HTML werden Motion Graphics\n2. OneTake – die ganze Geschichte in einer einzigen Kamerafahrt\n3. Collage B-Roll – Papierschnitte und Rastertexturen\n4. Claude Animation Base – handgemalte Cartoons\n5. Lemo Opuscar – 43 Filmstile, ganze Filme nur aus Code\n\nAlle fünf liegen auf GitHub.\n\nSpeicher dir das Video für dein nächstes Projekt. Welchen Stil würdest du zuerst ausprobieren?\n#Claude #ClaudeSkills #KIVideo #KI #JonasNoen",
     "tiktokTitle": "5 Claude-Skills, 5 Welten",
-    "plannedFor": "2026-11-03T18:30:00+01:00"
+    "plannedFor": "2026-11-03T18:30:00+01:00",
+    "metricool": {
+      "postId": 412885011,
+      "uuid": "-6150441279442039422",
+      "publishAt": "2026-11-03T18:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    }
   }
 ]
