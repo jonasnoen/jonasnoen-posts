@@ -147,7 +147,7 @@ for k, (s, e) in enumerate(seg):
     d = int((N[k] + LEAD) * 1000)
     aparts.append(f'[{ai}:a]atrim={max(0,s-0.04):.3f}:{e+0.12:.3f},asetpts=PTS-STARTPTS,adelay={d}|{d}[s{k}]')
 afc = ';'.join(aparts) + ';' + ''.join(f'[s{k}]' for k in range(len(seg))) + f'amix=inputs={len(seg)}:normalize=0[vo];'
-afc += f'[{ai+1}:a]volume=0.10,atrim=0:{TOTAL:.3f},afade=t=out:st={TOTAL-1.5:.3f}:d=1.5[mu];[vo][mu]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
+afc += f'[{ai+1}:a]volume={os.environ.get('MUSVOL','0.10')},atrim=0:{TOTAL:.3f},afade=t=out:st={TOTAL-1.5:.3f}:d=1.5[mu];[vo][mu]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
 fc2 = for_ov.rstrip(';') + ';' + afc
 subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', fc2.replace(chain + ';', chain + ';', 1), '-map', chain, '-map', '[a]', '-t', f'{TOTAL:.3f}',
                 '-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-r', '30', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', 'final_de.mp4'], check=True)

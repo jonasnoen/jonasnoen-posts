@@ -140,7 +140,7 @@
     "angle": "Märchen-Erzählung: fünf Skills, fünf Welten (HyperFrames, OneTake, Collage B-Roll, Claude Animation Base, Lemo Opuscar)",
     "voice": "ElevenLabs 'Clay' (ed7QNPkbQjEAYxYSuzmM), Deutsch",
     "file": "reels/R003/reel.mp4",
-    "sha256": "74a7a447752293a14c72cff4340a0b70345f38199a815c9580cd0bdf850fc842",
+    "sha256": "034cca70aedd7262cbe18fa0a01533e69012a12e41e8840195e76fab19e69dfe",
     "durationSec": 90.8,
     "caption": "Alle haben dieselbe KI. Wie machst du trotzdem etwas anderes?\n\nFünf Claude-Skills für Videos, jeder mit seinem eigenen Look:\n1. HyperFrames von HeyGen – aus HTML werden Motion Graphics\n2. OneTake – die ganze Geschichte in einer einzigen Kamerafahrt\n3. Collage B-Roll – Papierschnitte und Rastertexturen\n4. Claude Animation Base – handgemalte Cartoons\n5. Lemo Opuscar – 43 Filmstile, ganze Filme nur aus Code\n\nAlle fünf liegen auf GitHub.\n\nSpeicher dir das Video für dein nächstes Projekt. Welchen Stil würdest du zuerst ausprobieren?\n#Claude #ClaudeSkills #KIVideo #KI #JonasNoen",
     "tiktokTitle": "5 Claude-Skills, 5 Welten",
@@ -153,6 +153,7 @@
         "instagram",
         "tiktok"
       ]
-    }
+    },
+    "music": "assets/music/japan-koto.mp3 (Lautstärke 0.25)"
   }
 ]

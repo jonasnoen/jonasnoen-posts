@@ -54,3 +54,5 @@ Alle 10 s, Greenscreen. Erzeugt mit HeyGen Avatar 4 über ElevenLabs (ca. 1 US-D
 `loopsrc/talk10.mp3`. Der Renderer stellt den Loop frei (`engine/avatar/key_loop.py`), spielt ihn
 vor/zurück ab und startet je Reel an anderer Stelle. Für lippensynchrone Reels baut `render.cjs track`
 daraus die Avatar-Spur, die dann mit Veed Lipsync an die Stimme angepasst wird (siehe CLAUDE.md).
+
+- `music/japan-koto.mp3` – japanisch (Koto, Shakuhachi), ruhig, 92 s, ElevenLabs Music v2.5, instrumental. Erstellt für R003 (Ukiyo-e-Stil). Leise gemastert (-19.5 LUFS) → im Mix ca. 0.25 statt 0.10.
