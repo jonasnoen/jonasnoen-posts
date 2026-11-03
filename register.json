@@ -213,7 +213,7 @@
     "id": "R005",
     "type": "reel",
     "createdAt": "2026-11-03",
-    "status": "scheduled",
+    "status": "published",
     "format": "creme",
     "faceOffset": 135.0,
     "series": "Claude-Codes Teil 4",
@@ -239,14 +239,17 @@
     "mediaCommit": "da8fdf59f4998be9b7fbc11dc296f5ff154b1f1e",
     "platforms": {
       "instagram": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 415116002,
-        "scheduledAt": "2026-11-03T12:30:00+01:00"
+        "scheduledAt": "2026-11-03T12:30:00+01:00",
+        "url": "https://www.instagram.com/reel/DfRyANyAM4F/"
       },
       "tiktok": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 415116002,
-        "scheduledAt": "2026-11-03T12:30:00+01:00"
+        "scheduledAt": "2026-11-03T12:30:00+01:00",
+        "videoId": "7703906582333000992",
+        "url": "https://www.tiktok.com/@jonas.noen/video/7703906582333000992"
       }
     }
   }

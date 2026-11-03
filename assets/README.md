@@ -30,7 +30,8 @@ Reihenfolge in der Vorschau: impact, riser, whoosh ×3, pop, click, stamp, typin
 | `outro.mp3` | 1,2 s | Folgen-Karte im Outro (automatisch) |
 | `riser.mp3` | 0,85 s | Spannung vor einer Auflösung („Der Trick:“), Cue ca. 0,8 s VOR dem Wort setzen |
 | `sparkle.mp3` | 0,8 s | Ergebnis / Aha-Moment wird gezeigt |
-| `pop.mp3` | 0,5 s | Badge / Karte erscheint |
+| `pop.mp3` | 0,3 s | Badge / Karte erscheint – hell und luftig (seit 03.11. auf Wunsch von Jonas) |
+| `pop_soft.mp3` | 0,5 s | weicher, tieferer Pop (vorherige Version), nur gezielt einsetzen |
 | `click.mp3` | 0,07 s | Auswahl, Häkchen setzen, Button |
 | `stamp.mp3` | 0,5 s | Stempel („FALSCH“, „RICHTIG“), Einsatz setzt ca. 0,1 s verzögert ein |
 | `typing.mp3` | 0,7 s | Tippen im Chatfenster (mehrfach hintereinander) |
