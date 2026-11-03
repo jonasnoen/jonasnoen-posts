@@ -148,7 +148,8 @@ inputs += ['-i', 'voice_de.mp3', '-stream_loop', '-1', '-i', MUSIC] + (['-i', 'c
 aparts = []
 for k, (s, e) in enumerate(seg):
     d = int((N[k] + LEAD) * 1000)
-    aparts.append(f'[{ai}:a]atrim={max(0,s-0.04):.3f}:{e+0.12:.3f},asetpts=PTS-STARTPTS,adelay={d}|{d}[s{k}]')
+    ee = min(e + 0.12, S[k + 1] - 0.03) if k + 1 < len(S) else e + 0.12  # nie in den Anfang des nächsten Satzes schneiden
+    aparts.append(f'[{ai}:a]atrim={max(0,s-0.04):.3f}:{ee:.3f},asetpts=PTS-STARTPTS,adelay={d}|{d}[s{k}]')
 nv = len(seg)
 if CTA:
     dc = int((TOTAL + 0.25) * 1000); aparts.append(f'[{ai+2}:a]aresample=44100,adelay={dc}|{dc}[s{nv}]'); nv += 1
