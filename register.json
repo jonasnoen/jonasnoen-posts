@@ -149,7 +149,7 @@
     "tiktokTitle": "5 Claude-Skills, 5 Welten",
     "plannedFor": "2026-11-03T18:30:00+01:00",
     "metricool": {
-      "postId": 415169487,
+      "postId": 415179676,
       "uuid": "-6150441279442039422",
       "publishAt": "2026-11-03T18:30:00+01:00",
       "providers": [
@@ -164,7 +164,8 @@
         "metricoolPostId": 415111908,
         "uuid": "-366337785578959498",
         "scheduledAt": "2026-11-03T18:30:00+01:00",
-        "note": "eigene LinkedIn-Caption, Video ohne PROMPT-CTA (Commit 34da76e), weil es auf LinkedIn keine Kommentar-Automatik gibt"
+        "note": "eigene LinkedIn-Caption, Video ohne PROMPT-CTA (keine Kommentar-Automatik auf LinkedIn)",
+        "file": "reels/R003/reel_linkedin.mp4"
       }
     },
     "vorlage": {
