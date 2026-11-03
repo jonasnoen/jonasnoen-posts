@@ -149,7 +149,7 @@
     "tiktokTitle": "5 Claude-Skills, 5 Welten",
     "plannedFor": "2026-11-03T18:30:00+01:00",
     "metricool": {
-      "postId": 415179676,
+      "postId": 415216798,
       "uuid": "-6150441279442039422",
       "publishAt": "2026-11-03T18:30:00+01:00",
       "providers": [
@@ -173,7 +173,7 @@
       "text": "Die Skills aus dem Video:\nHyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar\n\nStart-Prompt:\nIch möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.\nSchreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.",
       "hinweis": "Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut."
     },
-    "mediaCommit": "a9f673e22997e27caaa8d781bb18b0c93e300739"
+    "mediaCommit": "5c3788566b37e7012c867bfa275b04070a53fb52"
   },
   {
     "id": "R004",
