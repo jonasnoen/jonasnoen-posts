@@ -225,7 +225,7 @@
     "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
     "lipsync": "veed-lipsync",
     "file": "reels/R005/reel.mp4",
-    "sha256": "a34818f51f0b8bf21149b84c654ce6d4e2803f9da7911f5476f03ebdc729a0b8",
+    "sha256": "b10b5490d1d06bc495b31bc2e581f09ce51eec4c335e18d23c2b3fb5c6d6e262",
     "durationSec": 26.9,
     "music": "assets/music/lofi-105.mp3",
     "caption": "Ein Satz am Anfang verändert deine Claude-Antworten.\n\nOhne Rolle antwortet Claude wie für irgendwen – allgemein und beliebig. Stell deshalb drei Dinge in dieser Reihenfolge in deinen Prompt:\n\n1. Wer soll Claude sein? „Du bist Steuerberater.“\n2. Für wen ist die Antwort? „Erklär es einem Studenten ohne Vorwissen.“\n3. Erst dann kommt deine Frage.\n\nAnthropic schreibt in seinen eigenen Prompting-Tipps: Schon ein einziger Satz zur Rolle macht einen Unterschied.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
