@@ -129,7 +129,15 @@ for k, t in enumerate(DE):
     b = (N[k + 1] - 0.05) if k + 1 < len(N) else (TOTAL - 0.05 if CTA else TOTAL + 1)
     ovs.append((p, a, b))
 if CTA:
-    caption('Kommentiere PROMPT und ich schick dir die Vorlage.', 'ov/cta.png'); ovs.append(('ov/cta.png', TOTAL - 0.05, T2 + 1))
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    x0, y0, x1, y1 = 20, 860, 700, 1110
+    d.rectangle([x0, y0, x1, y1], fill=FILL, outline=INK, width=3); d.rectangle([x0 + 6, y0 + 6, x1 - 6, y1 - 6], outline=INK, width=1)
+    seal(d, x0 + 24, y0 + 24, 34)
+    cx = (x0 + x1) / 2
+    d.text((cx, y0 + 62), 'Kommentiere', font=ImageFont.truetype(F5, 40), fill=INK, anchor='mm')
+    d.text((cx, y0 + 138), '„PROMPT“', font=ImageFont.truetype(F5, 96), fill=(178, 52, 40), anchor='mm')
+    d.text((cx, y0 + 212), 'und ich schick dir die Vorlage.', font=ImageFont.truetype(F4, 32), fill=INK, anchor='mm')
+    im.save('ov/cta.png'); ovs.append(('ov/cta.png', TOTAL - 0.05, T2 + 1))
 label('Fünf Skills, fünf Welten', (118, 128, 603, 191), 'ov/h1.png', size=34, spacing=2.2)
 label('Entdecke sie auf GitHub', (118, 695, 603, 749), 'ov/h2.png', size=31, spacing=2.0, gh=True)
 label('Filmstile', (262, 766, 458, 804), 'ov/h3.png', size=26, spacing=0.5, inner=False, fill=(243, 235, 214))
@@ -154,7 +162,7 @@ nv = len(seg)
 if CTA:
     dc = int((TOTAL + 0.25) * 1000); aparts.append(f'[{ai+2}:a]aresample=44100,adelay={dc}|{dc}[s{nv}]'); nv += 1
 afc = ';'.join(aparts) + ';' + ''.join(f'[s{k}]' for k in range(nv)) + f'amix=inputs={nv}:normalize=0[vo];'
-afc += f'[{ai+1}:a]volume={os.environ.get('MUSVOL','0.10')},atrim=0:{T2:.3f},afade=t=out:st={T2-1.5:.3f}:d=1.5[mu];[vo][mu]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
+afc += f'[{ai+1}:a]volume={os.environ.get('MUSVOL','0.10')},atempo={os.environ.get('MUSTEMPO','1.0')},atrim=0:{T2:.3f},afade=t=out:st={T2-1.5:.3f}:d=1.5[mu];[vo][mu]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
 fc2 = for_ov.rstrip(';') + ';' + afc
 subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', fc2.replace(chain + ';', chain + ';', 1), '-map', chain, '-map', '[a]', '-t', f'{T2:.3f}',
                 '-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-r', '30', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', 'final_de.mp4'], check=True)
