@@ -247,6 +247,7 @@ function avatar(t,k){const bob=Math.sin(t*1.6)*4;g.save();g.translate(0,bob);
 function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
   add(0,'impact',.9);
   for(let k=1;k<PH.length;k++)add(WORDS[PH[k].a].start-.2,'whoosh',.55);
+  add(WORDS[PH[PH.length-1].a].start+.1,'outro',.6);
   (window.EXTRA_CUES?window.EXTRA_CUES():[]).forEach(c=>add(c.t,c.name,c.vol));
   q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const p=PH[k];const t0=WORDS[p.a].start-.12;

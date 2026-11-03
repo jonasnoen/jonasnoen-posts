@@ -91,6 +91,8 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   const num=parseInt((process.env.REEL||'').replace(/\D/g,''))||0;const music=process.env.MUSIC||tracks[num%tracks.length];
   const mvol=process.env.MUSIC_VOL||'0.10';
   const inputs=['-i',vid,'-i',dir+'/voice.mp3','-stream_loop','-1','-i',A+'/music/'+music];
+  // Varianten: gibt es sfx/<name>_2.mp3, _3 ... werden sie reihum benutzt (klingt nicht bei jedem Schnitt gleich)
+  {const cnt={};cues.forEach(c=>{const v=[c.name,...[2,3,4,5,6].map(k=>`${c.name}_${k}`).filter(n=>fs.existsSync(`${A}/sfx/${n}.mp3`))];const i=(cnt[c.name]=(cnt[c.name]||0)+1)-1;c.name=v[i%v.length];});}
   const used=[...new Set(cues.map(c=>c.name))].filter(nm=>fs.existsSync(`${A}/sfx/${nm}.mp3`));
   used.forEach(nm=>inputs.push('-i',`${A}/sfx/${nm}.mp3`));
   let fc=`[1:a]aresample=48000,apad[v];[2:a]aresample=48000,volume=${mvol},afade=t=in:d=0.3,afade=t=out:st=${(dur-1.2).toFixed(2)}:d=1.2[m];`;

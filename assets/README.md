@@ -20,17 +20,26 @@ pixelgleich). Neue Pose: auf Grün `#00B140` mit Referenzbild erzeugen, Mund-off
 Bildbearbeitung, dann `python3 engine/avatar/key.py pose.png pose_offen.png <name> assets/avatar`.
 Kosten ca. 7 Cent pro Bild.
 
-## sfx/
+## sfx/  (Version 2, seit 03.11.2026)
+Reihenfolge in der Vorschau: impact, riser, whoosh ×3, pop, click, stamp, typing, ding, sparkle, outro.
+
 | Datei | Länge | Einsatz |
 |---|---|---|
-| `whoosh.mp3` | 0,7 s | jeder Phrasenwechsel (automatisch) |
-| `impact.mp3` | 1,0 s | Hook bei Sekunde 0 (automatisch) |
-| `pop.mp3` | 0,4 s | Badge / Karte erscheint |
-| `click.mp3` | 0,2 s | Stempel, Auswahl |
-| `typing.mp3` | 0,5 s | Tippen im Chatfenster (mehrfach hintereinander) |
-| `ding.mp3` | 0,6 s | Haken / richtig |
+| `whoosh.mp3`, `whoosh_2.mp3`, `whoosh_3.mp3` | 0,4–0,5 s | jeder Phrasenwechsel (automatisch, die drei Varianten reihum) |
+| `impact.mp3` | 1,2 s | Hook bei Sekunde 0 (automatisch), tiefer Kino-Schlag |
+| `outro.mp3` | 1,2 s | Folgen-Karte im Outro (automatisch) |
+| `riser.mp3` | 0,85 s | Spannung vor einer Auflösung („Der Trick:“), Cue ca. 0,8 s VOR dem Wort setzen |
+| `sparkle.mp3` | 0,8 s | Ergebnis / Aha-Moment wird gezeigt |
+| `pop.mp3` | 0,5 s | Badge / Karte erscheint |
+| `click.mp3` | 0,07 s | Auswahl, Häkchen setzen, Button |
+| `stamp.mp3` | 0,5 s | Stempel („FALSCH“, „RICHTIG“), Einsatz setzt ca. 0,1 s verzögert ein |
+| `typing.mp3` | 0,7 s | Tippen im Chatfenster (mehrfach hintereinander) |
+| `ding.mp3` | 0,8 s | Haken / richtig |
 
-Erzeugt mit ElevenLabs `eleven_text_to_sound_v2` (ca. 0,3 Cent pro Effekt), geschnitten und normalisiert.
+Varianten: Gibt es `<name>_2.mp3`, `<name>_3.mp3` …, wechselt `render.cjs` sie automatisch reihum ab.
+Erzeugt mit ElevenLabs `eleven_text_to_sound_v2` (Flow „SFX-Bibliothek v2“, zusammen ca. 0,5 US-Cent), Stille
+abgeschnitten, Lautheit an die alte Bibliothek angeglichen (Spitze max. −1 dBFS). Die alte Version liegt in `sfx/v1/`.
+Fehlt ein Sound: einmal erzeugen, gleich bearbeiten (`silenceremove` + Pegel), hier eintragen.
 
 ## music/
 | Datei | Stil |

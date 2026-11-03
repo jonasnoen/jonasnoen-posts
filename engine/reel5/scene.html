@@ -234,6 +234,7 @@ function hookText(t){if(t>1.9)return;font(800,58);g.textAlign='center';g.fillSty
 function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
   add(0,'impact',.9);
   for(let k=1;k<PH.length;k++)add(WORDS[PH[k].a].start-.2,'whoosh',.55);
+  add(WORDS[PH[PH.length-1].a].start+.1,'outro',.6);
   (window.EXTRA_CUES?window.EXTRA_CUES():[]).forEach(c=>add(c.t,c.name,c.vol));
   q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
 // ================= Stil reel4: Bubble-Sprecher =================
