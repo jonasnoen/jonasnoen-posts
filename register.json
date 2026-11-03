@@ -157,13 +157,13 @@
         "tiktok"
       ]
     },
-    "music": "assets/music/japan-lofi.mp3 (Lautstärke 0.11)"
+    "music": "assets/music/special/japan-lofi.mp3 (Lautstärke 0.11)"
   },
   {
     "id": "R004",
     "type": "reel",
     "createdAt": "2026-11-01",
-    "status": "scheduled",
+    "status": "published",
     "format": "memoji",
     "series": "Claude-Codes Teil 3",
     "topic": "Begründung zur Anweisung geben (\"weil\")",
@@ -186,15 +186,46 @@
     "mediaCommit": "dc42e4cab5c2c90806557eeb3051ab7550a59ddd",
     "platforms": {
       "instagram": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 413101189,
-        "scheduledAt": "2026-11-01T18:30:00+01:00"
+        "scheduledAt": "2026-11-01T18:30:00+01:00",
+        "url": "https://www.instagram.com/reel/DfNRm7tEdzR/"
       },
       "tiktok": {
-        "status": "scheduled",
+        "status": "published",
         "metricoolPostId": 413101189,
-        "scheduledAt": "2026-11-01T18:30:00+01:00"
+        "scheduledAt": "2026-11-01T18:30:00+01:00",
+        "videoId": "7703257203947441441",
+        "url": "https://www.tiktok.com/@jonas.noen/video/7703257203947441441"
       }
     }
+  },
+  {
+    "id": "R005",
+    "type": "reel",
+    "createdAt": "2026-11-03",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 135.0,
+    "series": "Claude-Codes Teil 4",
+    "topic": "Claude eine Rolle geben",
+    "angle": "Rolle + Publikum vor die Frage: 'Du bist Steuerberater.' + 'Erklär es einem Studenten ohne Vorwissen.' + dann die Frage",
+    "hook": "Ein Satz am Anfang verändert deine Claude-Antworten.",
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (Abschnitt 'Give Claude a role': 'Even a single sentence makes a difference', geprüft 2026-11-03)",
+    "note": "Nachgeholt für den ausgefallenen 2.11. (tägliche Aufgabe scheiterte am Nutzungslimit), auf Wunsch von Jonas am 3.11. zusätzlich gepostet. Erstes Reel mit Sound-Bibliothek v2.",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R005/reel.mp4",
+    "sha256": "714bb6ab179a38e0824bd9962432a4e2eff7c2a9430fddd518177671bbaabda6",
+    "durationSec": 26.9,
+    "music": "assets/music/lofi-105.mp3",
+    "caption": "Ein Satz am Anfang verändert deine Claude-Antworten.\n\nOhne Rolle antwortet Claude wie für irgendwen – allgemein und beliebig. Stell deshalb drei Dinge in dieser Reihenfolge in deinen Prompt:\n\n1. Wer soll Claude sein? „Du bist Steuerberater.“\n2. Für wen ist die Antwort? „Erklär es einem Studenten ohne Vorwissen.“\n3. Erst dann kommt deine Frage.\n\nAnthropic schreibt in seinen eigenen Prompting-Tipps: Schon ein einziger Satz zur Rolle macht einen Unterschied.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+    "tiktokTitle": "Ein Satz, der Claude besser macht",
+    "vorlage": {
+      "titel": "Rolle + Publikum + Frage",
+      "text": "Du bist ___ (Rolle, z. B. Steuerberater).\nErklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).\n\nMeine Frage: ___",
+      "hinweis": "Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort."
+    },
+    "costUsd": 0.26
   }
 ]
