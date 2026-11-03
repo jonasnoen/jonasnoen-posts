@@ -204,7 +204,7 @@
     "id": "R005",
     "type": "reel",
     "createdAt": "2026-11-03",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 135.0,
     "series": "Claude-Codes Teil 4",
@@ -226,6 +226,19 @@
       "text": "Du bist ___ (Rolle, z. B. Steuerberater).\nErklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).\n\nMeine Frage: ___",
       "hinweis": "Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort."
     },
-    "costUsd": 0.26
+    "costUsd": 0.26,
+    "mediaCommit": "8b27c00341f01da70a1ee83a68c20031bca743d9",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 415107098,
+        "scheduledAt": "2026-11-03T12:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 415107098,
+        "scheduledAt": "2026-11-03T12:30:00+01:00"
+      }
+    }
   }
 ]
