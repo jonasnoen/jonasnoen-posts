@@ -65,6 +65,7 @@ for k in range(1, len(DE)):
 last_need = LEAD + (seg[-1][1] - seg[-1][0]) + 0.9
 TOTAL = N[-1] + max(last_need, 0.8 * (VEND - ORIG[-1]))
 bounds = ORIG + [VEND]; nb = N + [TOTAL]
+CTA = os.path.exists('cta.mp3'); EXTRA = 4.0 if CTA else 0.0; T2 = TOTAL + EXTRA
 def remap(t):
     for k in range(len(bounds) - 1):
         if bounds[k] <= t <= bounds[k + 1]:
@@ -76,7 +77,7 @@ parts = []
 for k in range(len(bounds) - 1):
     f = (nb[k + 1] - nb[k]) / (bounds[k + 1] - bounds[k])
     parts.append(f'[0:v]trim={bounds[k]:.3f}:{bounds[k+1]:.3f},setpts=(PTS-STARTPTS)*{f:.5f}[v{k}]')
-fc = ';'.join(parts) + ';' + ''.join(f'[v{k}]' for k in range(len(parts))) + f'concat=n={len(parts)}:v=1:a=0,fps=30,setsar=1[v]'
+fc = ';'.join(parts) + ';' + ''.join(f'[v{k}]' for k in range(len(parts))) + f'concat=n={len(parts)}:v=1:a=0,fps=30,setsar=1,tpad=stop_mode=clone:stop_duration={EXTRA:.2f}[v]'
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', SRC, '-filter_complex', fc, '-map', '[v]', '-an', '-c:v', 'libx264', '-crf', '16', '-preset', 'veryfast', '-pix_fmt', 'yuv420p', 'retimed.mp4'], check=True)
 
 # --- Untertitel-Tafeln ---
@@ -125,8 +126,10 @@ ovs = []
 for k, t in enumerate(DE):
     p = f'ov/c{k:02d}.png'; caption(t, p)
     a = 0.0 if k == 0 else N[k] - 0.05
-    b = (N[k + 1] - 0.05) if k + 1 < len(N) else TOTAL + 1
+    b = (N[k + 1] - 0.05) if k + 1 < len(N) else (TOTAL - 0.05 if CTA else TOTAL + 1)
     ovs.append((p, a, b))
+if CTA:
+    caption('Kommentiere PROMPT und ich schick dir die Vorlage.', 'ov/cta.png'); ovs.append(('ov/cta.png', TOTAL - 0.05, T2 + 1))
 label('Fünf Skills, fünf Welten', (118, 128, 603, 191), 'ov/h1.png', size=34, spacing=2.2)
 label('Entdecke sie auf GitHub', (118, 695, 603, 749), 'ov/h2.png', size=31, spacing=2.0, gh=True)
 label('Filmstile', (262, 766, 458, 804), 'ov/h3.png', size=26, spacing=0.5, inner=False, fill=(243, 235, 214))
@@ -141,15 +144,18 @@ for j, (p, a, b) in enumerate(ovs):
     out = f'[o{j}]'
     for_ov += f'{chain}[{j+1}:v]overlay=0:0:enable=\'between(t,{a:.3f},{b:.3f})\'{out};'; chain = out
 ai = len(ovs) + 1
-inputs += ['-i', 'voice_de.mp3', '-stream_loop', '-1', '-i', MUSIC]
+inputs += ['-i', 'voice_de.mp3', '-stream_loop', '-1', '-i', MUSIC] + (['-i', 'cta.mp3'] if CTA else [])
 aparts = []
 for k, (s, e) in enumerate(seg):
     d = int((N[k] + LEAD) * 1000)
     aparts.append(f'[{ai}:a]atrim={max(0,s-0.04):.3f}:{e+0.12:.3f},asetpts=PTS-STARTPTS,adelay={d}|{d}[s{k}]')
-afc = ';'.join(aparts) + ';' + ''.join(f'[s{k}]' for k in range(len(seg))) + f'amix=inputs={len(seg)}:normalize=0[vo];'
-afc += f'[{ai+1}:a]volume={os.environ.get('MUSVOL','0.10')},atrim=0:{TOTAL:.3f},afade=t=out:st={TOTAL-1.5:.3f}:d=1.5[mu];[vo][mu]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
+nv = len(seg)
+if CTA:
+    dc = int((TOTAL + 0.25) * 1000); aparts.append(f'[{ai+2}:a]aresample=44100,adelay={dc}|{dc}[s{nv}]'); nv += 1
+afc = ';'.join(aparts) + ';' + ''.join(f'[s{k}]' for k in range(nv)) + f'amix=inputs={nv}:normalize=0[vo];'
+afc += f'[{ai+1}:a]volume={os.environ.get('MUSVOL','0.10')},atrim=0:{T2:.3f},afade=t=out:st={T2-1.5:.3f}:d=1.5[mu];[vo][mu]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
 fc2 = for_ov.rstrip(';') + ';' + afc
-subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', fc2.replace(chain + ';', chain + ';', 1), '-map', chain, '-map', '[a]', '-t', f'{TOTAL:.3f}',
+subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', fc2.replace(chain + ';', chain + ';', 1), '-map', chain, '-map', '[a]', '-t', f'{T2:.3f}',
                 '-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-r', '30', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', 'final_de.mp4'], check=True)
 json.dump({'N': N, 'TOTAL': TOTAL, 'factors': [(nb[k+1]-nb[k])/(bounds[k+1]-bounds[k]) for k in range(len(bounds)-1)]}, open('timing.json', 'w'), indent=1)
 print('fertig', round(TOTAL, 2), 's; Streckfaktoren', [round(x, 2) for x in json.load(open('timing.json'))['factors']])

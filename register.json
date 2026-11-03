@@ -138,14 +138,14 @@
     "createdAt": "2026-11-01",
     "status": "scheduled",
     "format": "dub",
-    "note": "Deutsche Fassung von Jonas' Video 'Video-67558' (Ukiyo-e-Stil), auf Wunsch von Jonas am 1.11. für 3.11. geplant. Kein Tipp-Reel und nicht Teil des Format-Tests creme/memoji – Rotation zählt ab dem letzten creme/memoji-Eintrag weiter.",
+    "note": "Deutsche Fassung von Jonas' Video 'Video-67558' (Ukiyo-e-Stil), auf Wunsch von Jonas am 1.11. für 3.11. geplant. Kein Tipp-Reel und nicht Teil des Format-Tests creme/memoji – Rotation zählt ab dem letzten creme/memoji-Eintrag weiter. CTA 'Kommentiere PROMPT' am 3.11. ergänzt (gesprochen + Tafel, Video 4 s länger).",
     "topic": "Fünf Claude-Skills für Videos",
     "angle": "Märchen-Erzählung: fünf Skills, fünf Welten (HyperFrames, OneTake, Collage B-Roll, Claude Animation Base, Lemo Opuscar)",
     "voice": "ElevenLabs 'Clay' (ed7QNPkbQjEAYxYSuzmM), Deutsch",
     "file": "reels/R003/reel.mp4",
-    "sha256": "1a3d82218b2364a412a8846e3a1094afe62f84ffd9392cb9dcd9703b5e812b97",
-    "durationSec": 90.8,
-    "caption": "Alle haben dieselbe KI. Wie machst du trotzdem etwas anderes?\n\nFünf Claude-Skills für Videos, jeder mit seinem eigenen Look:\n1. HyperFrames von HeyGen – aus HTML werden Motion Graphics\n2. OneTake – die ganze Geschichte in einer einzigen Kamerafahrt\n3. Collage B-Roll – Papierschnitte und Rastertexturen\n4. Claude Animation Base – handgemalte Cartoons\n5. Lemo Opuscar – 43 Filmstile, ganze Filme nur aus Code\n\nAlle fünf liegen auf GitHub.\n\nSpeicher dir das Video für dein nächstes Projekt. Welchen Stil würdest du zuerst ausprobieren?\n#Claude #ClaudeSkills #KIVideo #KI #JonasNoen",
+    "sha256": "e3b804634cad312b8cee31fbcd4d07b9cc18791a07519165636ce4cb8ee14b3d",
+    "durationSec": 94.9,
+    "caption": "Alle haben dieselbe KI. Wie machst du trotzdem etwas anderes?\n\nFünf Claude-Skills für Videos, jeder mit seinem eigenen Look:\n1. HyperFrames von HeyGen – aus HTML werden Motion Graphics\n2. OneTake – die ganze Geschichte in einer einzigen Kamerafahrt\n3. Collage B-Roll – Papierschnitte und Rastertexturen\n4. Claude Animation Base – handgemalte Cartoons\n5. Lemo Opuscar – 43 Filmstile, ganze Filme nur aus Code\n\nAlle fünf liegen auf GitHub.\n\nSpeicher dir das Video für dein nächstes Projekt. Welchen Stil würdest du zuerst ausprobieren?\n\nKommentiere PROMPT und ich schick dir die Vorlage.\n#Claude #ClaudeSkills #KIVideo #KI #JonasNoen",
     "tiktokTitle": "5 Claude-Skills, 5 Welten",
     "plannedFor": "2026-11-03T18:30:00+01:00",
     "metricool": {
@@ -166,6 +166,11 @@
         "scheduledAt": "2026-11-03T18:30:00+01:00",
         "note": "eigene LinkedIn-Caption"
       }
+    },
+    "vorlage": {
+      "titel": "Die 5 Video-Skills für Claude",
+      "text": "Die Skills aus dem Video:\nHyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar\n\nStart-Prompt:\nIch möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.\nSchreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.",
+      "hinweis": "Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut."
     }
   },
   {
