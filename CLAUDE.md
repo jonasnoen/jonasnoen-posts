@@ -87,7 +87,11 @@ Memoji (reel2) bleibt wie unten beschrieben (25 fps). Nach dem Test: Gewinner wi
    Keine Duplikate: Thema UND Blickwinkel mit allen Einträgen in `register.json` vergleichen.
    Keine erfundenen Zahlen, Tests, Zeitersparnisse oder Ergebnisse. Aktuelle Produktaussagen
    mit einer frischen offiziellen Quelle prüfen.
-3. **Skript.** 20–30 Sekunden, ca. 60–75 Wörter. Ende: „Folg mir für mehr Claude-Tipps.“
+3. **Skript.** 20–30 Sekunden, ca. 60–75 Wörter. Ende (beide Sätze, gesprochen, in der letzten Phrase `PH`):
+   „Kommentiere PROMPT und ich schick dir die Vorlage. Folg mir für mehr Claude-Tipps.“ – der Call-to-Action gehört
+   **ins Video**, nicht nur in die Caption (vom Nutzer gewünscht, 03.11.2026). Die Vorlagen (reel2/reel5) blenden beim
+   gesprochenen Wort „PROMPT“ automatisch die Pille „Kommentiere PROMPT → Vorlage per DM“ ein (abschalten nur mit
+   `window.NO_PROMPT_CTA=true`, z. B. wenn ein Reel keine `vorlage` hat).
    **Hook (aus viralen Reels abgeleitet):** eine Behauptung statt einer Frage, die Neugier weckt,
    z. B. „3 Claude-Befehle, die kaum jemand kennt“, „Das kann Claude – und fast niemand nutzt es“,
    „Hör auf, Claude so zu benutzen“. Zahl im Hook, wenn es passt. Serie: Titel/Label

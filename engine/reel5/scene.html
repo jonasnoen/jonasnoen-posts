@@ -261,7 +261,15 @@ function outroCard(t,t0){const a=back(t,t0+.15,.45);if(a<=0)return;
   const im=IM.wave;if(im){const w=580,h=w*im.height/im.width,m=back(t,t0+.35,.5);if(m>0){g.save();g.beginPath();g.rect(0,0,W,820);g.clip();g.drawImage(im,540-w/2,880-h*m,w,h);g.restore();}}
   scaleAt(540,1000,a,()=>{g.save();g.shadowColor='rgba(0,0,0,.25)';g.shadowBlur=40;g.shadowOffsetY=14;rr(110,800,860,440,44);g.fillStyle=C.violet;g.fill();g.restore();
   font(400,96,'Anton');g.textAlign='center';g.fillStyle='#fff';g.fillText('FOLG MIR FÜR MEHR',540,960);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',540,1065);
-  font(800,46);g.fillStyle='rgba(255,255,255,.85)';g.fillText('@jonas.noen',540,1150);});}
+  font(800,46);g.fillStyle='rgba(255,255,255,.85)';g.fillText('@jonas.noen',540,1150);});
+  promptCta(t,t0+.5);}
+// CTA im Video: "Kommentiere PROMPT" als weiße Kommentar-Pille unter der Folgen-Karte (Kommentar-Automatik in Metricool)
+function promptCta(t,t1){if(window.NO_PROMPT_CTA)return;const ki=WORDS.findIndex(w=>/prompt/i.test(w.text));const ts=ki>=0?WORDS[ki].start-.1:t1;const a=back(t,ts,.4);if(a<=0)return;
+  scaleAt(540,1340,a,()=>{g.save();g.shadowColor='rgba(60,40,20,.25)';g.shadowBlur=30;g.shadowOffsetY=10;rr(100,1275,880,130,65);g.fillStyle='#fff';g.fill();g.restore();
+    g.beginPath();g.moveTo(200,1395);g.lineTo(180,1440);g.lineTo(240,1400);g.closePath();g.fillStyle='#fff';g.fill();
+    font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText('Kommentiere',150,1356);const w1=g.measureText('Kommentiere ').width;
+    font(400,64,'Anton');g.fillStyle=C.red;g.fillText('PROMPT',150+w1,1360);const w2=g.measureText('PROMPT ').width;
+    font(800,30);g.fillStyle='#8a7fa6';g.fillText('→ Vorlage per DM',150+w1+w2,1353);g.textAlign='left';});}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);if(window.BIG_OUTRO||k<PH.length-1){g.save();g.translate(30,125);scaleAt(470,805,1.1*push,()=>PROPS[k](t));g.restore();}
   // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild
