@@ -11,7 +11,7 @@ hier ablegen. Nur fertige, freigegebene Medien, die Post-Liste und Quellcode der
 
 | Mo | Di | Mi | Do | Fr | Sa | So |
 |---|---|---|---|---|---|---|
-| Tipp-Reel | Tipp-Reel | Tipp-Reel | Karussell | Tipp-Reel | Tipp-Reel | Tipp-Reel |
+| Tipp-Reel | Tipp-Reel | Tipp-Reel | Karussell | Tipp-Reel | Tipp-Reel | **Stil-Experiment** |
 
 **YouTube-Shorts nicht automatisch posten** (vom Nutzer entschieden: sind meist nur Auszüge aus
 Long-Form-Videos und zu langsam fürs Kurzformat). Ausnahme: Jonas legt einen Short ausdrücklich
@@ -52,6 +52,23 @@ Stimme → `face.mp4`. Rendern mit `FPS=30`. Neues Rohmaterial von Jonas: stumm,
 `assets/face/raw_<name>.mp4` ablegen (niemals mit Originalton ins öffentliche Repo).
 
 Memoji (reel2) bleibt wie unten beschrieben (25 fps). Nach dem Test: Gewinner wird Standard.
+
+## Stil-Experimente (sonntags, seit 03.11.2026, vom Nutzer gewünscht)
+
+Jeden **Sonntag** ersetzt ein Stil-Experiment das Tipp-Reel. Ziel: testen, ob ein ganz anderer Look/Erzählform besser
+läuft (Anlass: R003, Ukiyo-e-Märchen). Die Creme/Memoji-Rotation zählt an Sonntagen nicht weiter.
+- **Inhalt bleibt ein Claude-Tipp** (Thema/Quelle/Duplikat-Regeln wie beim Reel) mit `vorlage` und dem PROMPT-CTA
+  gesprochen + eingeblendet. Nur die Verpackung wechselt.
+- **Stil:** jedes Mal ein anderer, noch nicht genutzter aus der Liste (Feld `format: "experiment"`, Feld `style`):
+  `maerchen-holzschnitt` (Erzähler „Es war einmal …“, Ukiyo-e-Look wie R003), `papier-collage`, `kreidetafel`,
+  `comic-sprechblasen`, `one-take` (eine durchgehende Kamerafahrt, keine Schnitte), `mini-doku` (Erzählerstimme,
+  Zeitleiste, Archiv-Look). Neue Stile dürfen ergänzt werden.
+- **Gebaut per Code** (eigene `scene.html` im Reel-Ordner auf Basis von `engine/reel5/render.cjs`, Playwright + ffmpeg,
+  Sounds aus `assets/sfx`), keine KI-Videogeneratoren, keine KI-Bilder von echten Personen, keine fremden Logos/Figuren.
+  Stimme: bei Erzähl-Stilen eine passende ElevenLabs-Stimme aus `creative_list_voices` (z. B. „Clay“
+  `ed7QNPkbQjEAYxYSuzmM`), sonst Jonas' Klon. Lipsync/Gesicht nicht nötig. 25–40 Sekunden. Kosten wie ein Reel
+  (ca. 10–50 Cent). Musik passend zum Stil (Sondertracks in `assets/music/special/`, `MUSIC=special/<datei>`).
+- Klappt das Experiment nicht sauber: normales Tipp-Reel im nächsten Rotationsformat posten.
 
 ## Ablauf eines Karussells
 
