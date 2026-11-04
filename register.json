@@ -264,7 +264,7 @@
     "id": "R006",
     "type": "reel",
     "createdAt": "2026-11-04",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude-Codes Teil 5",
     "topic": "Lange Dokumente richtig prompten",
@@ -285,6 +285,28 @@
     "plannedFor": "2026-11-04T18:30:00+01:00",
     "sha256": "a165d0107d1c03b0613c869eb5e026086b9cc8aff8293f6300f49b3457a8ed2c",
     "durationSec": 23.2,
-    "costUsd": 0.23
+    "costUsd": 0.23,
+    "mediaCommit": "bc4bec53cd60ed7b83d880733f5d5699fea6d842",
+    "metricool": {
+      "postId": 416790053,
+      "uuid": "523268852802997945",
+      "publishAt": "2026-11-04T18:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 416790053,
+        "scheduledAt": "2026-11-04T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 416790053,
+        "scheduledAt": "2026-11-04T18:30:00+01:00"
+      }
+    }
   }
 ]
