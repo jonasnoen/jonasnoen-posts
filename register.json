@@ -259,5 +259,32 @@
         "url": "https://www.tiktok.com/@jonas.noen/video/7703906582333000992"
       }
     }
+  },
+  {
+    "id": "R006",
+    "type": "reel",
+    "createdAt": "2026-11-04",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude-Codes Teil 5",
+    "topic": "Lange Dokumente richtig prompten",
+    "angle": "Reihenfolge bei langen Dokumenten: Dokument ganz oben, Frage ans Ende, dazu 'Such zuerst die passenden Zitate raus.'",
+    "hook": "Die meisten stellen Claude die Frage an der falschen Stelle.",
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (Abschnitt 'Long context prompting': 'Put longform data at the top', 'Ground responses in quotes', geprüft 2026-11-04)",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R006/reel.mp4",
+    "caption": "Die meisten stellen Claude die Frage an der falschen Stelle.\n\nWenn du Claude einen langen Text gibst – Vertrag, Bericht, Protokoll – kommt es auf die Reihenfolge an:\n\n1. Das Dokument kommt ganz nach oben.\n2. Deine Frage kommt ans Ende.\n3. Schreib dazu: „Such zuerst die passenden Zitate raus.“\n\nSo stützt sich Claude auf den Text statt aufs Raten. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps für lange Dokumente.\n\nSpeicher dir das für dein nächstes langes PDF. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+    "tiktokTitle": "Frag Claude an der richtigen Stelle",
+    "vorlage": {
+      "titel": "Lange Dokumente: Dokument oben, Frage unten",
+      "text": "<dokument>\n___ (hier den ganzen Text einfügen)\n</dokument>\n\nSuch zuerst die passenden Zitate aus dem Dokument raus.\nBeantworte dann meine Frage: ___",
+      "hinweis": "Bei langen Texten immer zuerst das Dokument, ganz am Ende die Frage – und Claude erst die passenden Zitate raussuchen lassen."
+    },
+    "music": "assets/music/groove-115.mp3",
+    "plannedFor": "2026-11-04T18:30:00+01:00",
+    "sha256": "a165d0107d1c03b0613c869eb5e026086b9cc8aff8293f6300f49b3457a8ed2c",
+    "durationSec": 23.2,
+    "costUsd": 0.23
   }
 ]
