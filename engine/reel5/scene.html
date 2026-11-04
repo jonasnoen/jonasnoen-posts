@@ -269,7 +269,7 @@ function promptCta(t,t1){if(window.NO_PROMPT_CTA)return;const ki=WORDS.findIndex
     g.beginPath();g.moveTo(200,1395);g.lineTo(180,1440);g.lineTo(240,1400);g.closePath();g.fillStyle='#fff';g.fill();
     font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText('Kommentiere',150,1356);const w1=g.measureText('Kommentiere ').width;
     font(400,64,'Anton');g.fillStyle=C.red;g.fillText('PROMPT',150+w1,1360);const w2=g.measureText('PROMPT ').width;
-    font(800,30);g.fillStyle='#8a7fa6';g.fillText('→ Vorlage per DM',150+w1+w2,1353);g.textAlign='left';});}
+    font(800,30);g.fillStyle='#8a7fa6';g.fillText('→ Guide per DM',150+w1+w2,1353);g.textAlign='left';});}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);if(window.BIG_OUTRO||k<PH.length-1){g.save();g.translate(30,125);scaleAt(470,805,1.1*push,()=>PROPS[k](t));g.restore();}
   // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild

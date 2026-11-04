@@ -22,85 +22,112 @@ h2{font:800 22px/1.25 Manrope;margin:12px 0}
 pre{white-space:pre-wrap;word-break:break-word;background:var(--code);border-radius:14px;padding:16px;margin:0 0 12px;font:500 16px/1.6 Manrope}
 button{font:800 15px Manrope;border:0;border-radius:12px;padding:12px 18px;background:var(--ink);color:var(--bg);cursor:pointer;min-height:44px}
 .hint{color:var(--muted);font-size:15px;margin:12px 0 0}
+h3{font:800 16px Manrope;margin:22px 0 8px;color:var(--violet)}
+.goal{margin:0 0 4px;color:var(--muted)}
+.steps,.check{margin:0;padding-left:22px}.steps li,.check li{margin:0 0 8px}
+.ex{background:var(--code);border-radius:14px;padding:14px 16px;margin:0;font-size:15px}
 footer{color:var(--muted);font-size:14px;margin-top:32px}
 footer a{color:var(--violet)}
 </style></head><body><main>
 <div class="kick">// Claude-Vorlagen</div>
 <h1>Kopieren, <em>einfügen</em>, fertig.</h1>
-<p class="lead">Alle Prompts aus meinen Reels und Karussells. Die neueste Vorlage steht oben.</p>
-<article class="card new">
-  <div class="meta"><span class="tag">Neu</span><span>Reel R006</span></div>
-  <h2>Lange Dokumente auswerten (mit Zitaten)</h2>
-  <pre id="v0">Ich gebe dir ein langes Dokument. Arbeite genau so:
-
-&lt;dokument&gt;
-___ (hier den ganzen Text einfügen: Vertrag, Bericht, Protokoll …)
+<p class="lead">Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.</p>
+<article class="card new" id="R006">
+  <div class="meta"><span class="tag">Neu · Guide</span><span>Reel R006</span></div>
+  <h2>Guide: Lange Dokumente mit Claude auswerten</h2>
+  <p class="goal">Für Verträge, Berichte, Protokolle und PDFs: Claude soll nur sagen, was wirklich im Text steht – mit Beleg.</p>
+  <h3>So gehst du vor</h3>
+  <ol class="steps"><li><b>Dokument rein.</b> Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen.</li><li><b>Erst Überblick holen.</b> Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind.</li><li><b>Gezielt fragen.</b> Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis.</li><li><b>Gegenprüfen.</b> Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist.</li></ol>
+  <h3>Prompt 1: Überblick</h3>
+  <pre id="v1">&lt;dokument&gt;
+___ (ganzen Text einfügen)
 &lt;/dokument&gt;
 
-So gehst du vor:
-1. Such zuerst alle Stellen aus dem Dokument, die für meine Frage wichtig sind. Schreib sie wörtlich und nummeriert in &lt;zitate&gt;-Tags.
-2. Beantworte meine Frage dann nur auf Basis dieser Zitate. Setz hinter jede Aussage die Zitat-Nummer, z. B. [2].
-3. Wenn das Dokument etwas nicht beantwortet, schreib „Steht nicht im Dokument“, statt zu raten.
-4. Zum Schluss: die 3 wichtigsten Punkte in einfachen Worten, ohne Fachbegriffe.
+Lies das Dokument komplett. Gib mir dann:
+1. In einem Satz: Was ist das für ein Dokument und wer sind die Beteiligten?
+2. Die 5 wichtigsten Stellen, jeweils als wörtliches Zitat mit Abschnitt oder Seitenzahl.
+3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.
+4. Was fehlt oder unklar formuliert ist.
+Erfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.</pre>
+  <button type="button" data-copy="v1">Kopieren</button>
+  <p class="hint">Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest.</p>
+  <h3>Prompt 2: Frage mit Zitaten</h3>
+  <pre id="v2">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
+1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in &lt;zitate&gt;-Tags.
+2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].
+3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.
+4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.
 
-Meine Frage: ___ (z. B. Welche Kündigungsfristen und Kosten stehen im Vertrag?)</pre>
-  <button type="button" data-copy="v0">Kopieren</button>
+Meine Frage: ___</pre>
+  <button type="button" data-copy="v2">Kopieren</button>
+  <p class="hint">Für jede konkrete Frage. Die Frage steht immer ganz unten.</p>
+  <h3>Prompt 3: Gegencheck</h3>
+  <pre id="v3">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
+- Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).
+- Korrigiere alle ⚠️ und ❌ oder streich sie.
+- Gib mir am Ende die bereinigte Antwort.</pre>
+  <button type="button" data-copy="v3">Kopieren</button>
+  <p class="hint">Bei allem, was wichtig ist: Geld, Fristen, Verträge.</p>
+  <h3>Beispiel</h3>
+  <p class="ex">Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.</p>
+  <h3>Check vor dem Abschicken</h3>
+  <ul class="check"><li>Dokument steht oben, Frage unten</li><li>Bei langen PDFs: Seitenzahlen mitgeben lassen</li><li>Wichtige Entscheidungen (Recht, Geld) trotzdem von einem Menschen prüfen lassen</li></ul>
   <p class="hint">Dokument oben, Frage ganz unten – und Claude belegt jede Aussage mit einem Zitat aus deinem Text.</p>
-</article><article class="card">
-  <div class="meta"><span class="tag">Reel</span><span>R005</span></div>
+</article><article class="card" id="R005">
+  <div class="meta"><span class="tag">Reel</span><span>Reel R005</span></div>
   <h2>Rolle + Publikum + Frage</h2>
-  <pre id="v1">Du bist ___ (Rolle, z. B. Steuerberater).
+  <pre id="v4">Du bist ___ (Rolle, z. B. Steuerberater).
 Erklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v1">Kopieren</button>
+  <button type="button" data-copy="v4">Kopieren</button>
   <p class="hint">Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort.</p>
-</article><article class="card">
-  <div class="meta"><span class="tag">Reel</span><span>R004</span></div>
+</article><article class="card" id="R004">
+  <div class="meta"><span class="tag">Reel</span><span>Reel R004</span></div>
   <h2>Regel + weil</h2>
-  <pre id="v2">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
+  <pre id="v5">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
 
 Beispiel:
 Schreib kurz, weil ich es am Handy lese.</pre>
-  <button type="button" data-copy="v2">Kopieren</button>
+  <button type="button" data-copy="v5">Kopieren</button>
   <p class="hint">Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken.</p>
-</article><article class="card">
-  <div class="meta"><span class="tag">Reel</span><span>R003</span></div>
+</article><article class="card" id="R003">
+  <div class="meta"><span class="tag">Reel</span><span>Reel R003</span></div>
   <h2>Die 5 Video-Skills für Claude</h2>
-  <pre id="v3">Die Skills aus dem Video:
+  <pre id="v6">Die Skills aus dem Video:
 HyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar
 
 Start-Prompt:
 Ich möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.
 Schreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.</pre>
-  <button type="button" data-copy="v3">Kopieren</button>
+  <button type="button" data-copy="v6">Kopieren</button>
   <p class="hint">Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut.</p>
-</article><article class="card">
-  <div class="meta"><span class="tag">Reel</span><span>R002</span></div>
+</article><article class="card" id="R002">
+  <div class="meta"><span class="tag">Reel</span><span>Reel R002</span></div>
   <h2>Verbote umdrehen</h2>
-  <pre id="v4">Statt: keine ___
+  <pre id="v7">Statt: keine ___
 Schreib: ___ (was stattdessen rauskommen soll)
 
 Beispiele:
 Statt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“
 Statt „kein Fachchinesisch“ → „erklär es wie einem Freund“
 Statt „keine Aufzählungen“ → „in Fließtext“</pre>
-  <button type="button" data-copy="v4">Kopieren</button>
+  <button type="button" data-copy="v7">Kopieren</button>
   <p class="hint">Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll.</p>
-</article><article class="card">
-  <div class="meta"><span class="tag">Karussell</span><span>K001</span></div>
+</article><article class="card" id="K001">
+  <div class="meta"><span class="tag">Karussell</span><span>Karussell K001</span></div>
   <h2>Hör auf, Claude raten zu lassen</h2>
-  <pre id="v5">Ziel: Schreib ___, das ___ erreicht.
+  <pre id="v8">Ziel: Schreib ___, das ___ erreicht.
 Kontext: Für ___, weil ___.
 Beispiel: So soll es klingen: ___
 Format: ___ Wörter, ___ Varianten.</pre>
-  <button type="button" data-copy="v5">Kopieren</button>
+  <button type="button" data-copy="v8">Kopieren</button>
   <p class="hint">Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten.</p>
-</article><article class="card">
-  <div class="meta"><span class="tag">Reel</span><span>R001</span></div>
+</article><article class="card" id="R001">
+  <div class="meta"><span class="tag">Reel</span><span>Reel R001</span></div>
   <h2>Der eine Satz vor jedem Prompt</h2>
-  <pre id="v6">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
-  <button type="button" data-copy="v6">Kopieren</button>
+  <pre id="v9">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
+  <button type="button" data-copy="v9">Kopieren</button>
   <p class="hint">Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten.</p>
 </article>
 <footer>Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a></footer>

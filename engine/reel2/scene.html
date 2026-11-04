@@ -219,7 +219,7 @@ function p8(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.
   font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText('FOLGEN FÜR MEHR',470,660);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',470,770);});
   {const ki=WORDS.findIndex(w=>/prompt/i.test(w.text));if(ki>=0&&!window.NO_PROMPT_CTA){const a=back(t,WORDS[ki].start-.1,.4);if(a>0)scaleAt(470,955,a,()=>{rr(90,890,760,130,65);g.fillStyle='#fff';g.fill();
     font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText('Kommentiere',140,970);const w1=g.measureText('Kommentiere ').width;font(400,62,'Anton');g.fillStyle=C.red;g.fillText('PROMPT',140+w1,974);
-    const w2=g.measureText('PROMPT ').width;font(800,32);g.fillStyle='#8a7fa6';g.fillText('→ DM',140+w1+w2,968);});}}
+    const w2=g.measureText('PROMPT ').width;font(800,32);g.fillStyle='#8a7fa6';g.fillText('→ Guide per DM',140+w1+w2,968);});}}
   if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=L(C.violetL,C.violet);g.textAlign='center';g.fillText('@jonas.noen',470,940);});}}
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8];
 // Avatar pro Phrase. 'loop:<name>' = Sprech-Loop aus assets/avatar/loops (neutral, explain, talk=Zeigen, think, happy=lachend fürs Outro);

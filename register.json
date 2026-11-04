@@ -277,7 +277,7 @@
     "caption": "Die meisten stellen Claude die Frage an der falschen Stelle.\n\nWenn du Claude einen langen Text gibst – Vertrag, Bericht, Protokoll – kommt es auf die Reihenfolge an:\n\n1. Das Dokument kommt ganz nach oben.\n2. Deine Frage kommt ans Ende.\n3. Schreib dazu: „Such zuerst die passenden Zitate raus.“\n\nSo stützt sich Claude auf den Text statt aufs Raten. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps für lange Dokumente.\n\nSpeicher dir das für dein nächstes langes PDF. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
     "tiktokTitle": "Frag Claude an der richtigen Stelle",
     "vorlage": {
-      "titel": "Lange Dokumente auswerten (mit Zitaten)",
+      "titel": "Lange Dokumente auswerten (Guide mit 3 Prompts)",
       "text": "Ich gebe dir ein langes Dokument. Arbeite genau so:\n\n<dokument>\n___ (hier den ganzen Text einfügen: Vertrag, Bericht, Protokoll …)\n</dokument>\n\nSo gehst du vor:\n1. Such zuerst alle Stellen aus dem Dokument, die für meine Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte meine Frage dann nur auf Basis dieser Zitate. Setz hinter jede Aussage die Zitat-Nummer, z. B. [2].\n3. Wenn das Dokument etwas nicht beantwortet, schreib „Steht nicht im Dokument“, statt zu raten.\n4. Zum Schluss: die 3 wichtigsten Punkte in einfachen Worten, ohne Fachbegriffe.\n\nMeine Frage: ___ (z. B. Welche Kündigungsfristen und Kosten stehen im Vertrag?)",
       "hinweis": "Dokument oben, Frage ganz unten – und Claude belegt jede Aussage mit einem Zitat aus deinem Text."
     },
@@ -308,6 +308,51 @@
         "scheduledAt": "2026-11-04T18:30:00+01:00"
       }
     },
-    "note": "Vorlage am 05.11. zu einem kompletten Prompt ausgebaut (Nutzer-Feedback: Einzeiler-Tipps machen den PROMPT-CTA zu schwach)."
+    "note": "Vorlage am 05.11. zu einem Guide ausgebaut (Nutzer-Feedback: Einzeiler machen den PROMPT-CTA zu schwach; Vorbild claudebyseb: Keyword → kompletter Guide).",
+    "guide": {
+      "titel": "Guide: Lange Dokumente mit Claude auswerten",
+      "ziel": "Für Verträge, Berichte, Protokolle und PDFs: Claude soll nur sagen, was wirklich im Text steht – mit Beleg.",
+      "schritte": [
+        {
+          "titel": "Dokument rein.",
+          "text": "Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen."
+        },
+        {
+          "titel": "Erst Überblick holen.",
+          "text": "Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind."
+        },
+        {
+          "titel": "Gezielt fragen.",
+          "text": "Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis."
+        },
+        {
+          "titel": "Gegenprüfen.",
+          "text": "Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Überblick",
+          "text": "<dokument>\n___ (ganzen Text einfügen)\n</dokument>\n\nLies das Dokument komplett. Gib mir dann:\n1. In einem Satz: Was ist das für ein Dokument und wer sind die Beteiligten?\n2. Die 5 wichtigsten Stellen, jeweils als wörtliches Zitat mit Abschnitt oder Seitenzahl.\n3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.\n4. Was fehlt oder unklar formuliert ist.\nErfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.",
+          "wann": "Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest."
+        },
+        {
+          "titel": "Frage mit Zitaten",
+          "text": "Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:\n1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].\n3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.\n4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.\n\nMeine Frage: ___",
+          "wann": "Für jede konkrete Frage. Die Frage steht immer ganz unten."
+        },
+        {
+          "titel": "Gegencheck",
+          "text": "Prüf deine letzte Antwort Satz für Satz gegen das Dokument.\n- Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).\n- Korrigiere alle ⚠️ und ❌ oder streich sie.\n- Gib mir am Ende die bereinigte Antwort.",
+          "wann": "Bei allem, was wichtig ist: Geld, Fristen, Verträge."
+        }
+      ],
+      "beispiel": "Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.",
+      "check": [
+        "Dokument steht oben, Frage unten",
+        "Bei langen PDFs: Seitenzahlen mitgeben lassen",
+        "Wichtige Entscheidungen (Recht, Geld) trotzdem von einem Menschen prüfen lassen"
+      ]
+    }
   }
 ]

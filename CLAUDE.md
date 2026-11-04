@@ -109,9 +109,10 @@ läuft (Anlass: R003, Ukiyo-e-Märchen). Die Creme/Memoji-Rotation zählt an Son
    Keine erfundenen Zahlen, Tests, Zeitersparnisse oder Ergebnisse. Aktuelle Produktaussagen
    mit einer frischen offiziellen Quelle prüfen.
 3. **Skript.** 20–30 Sekunden, ca. 60–75 Wörter. Ende (beide Sätze, gesprochen, in der letzten Phrase `PH`):
-   „Kommentiere PROMPT und ich schick dir die Vorlage. Folg mir für mehr Claude-Tipps.“ – der Call-to-Action gehört
+   „Kommentiere PROMPT und ich schick dir den Guide. Folg mir für mehr Claude-Tipps.“ (seit 05.11.2026 „den Guide“ statt „die Vorlage“; Keyword bleibt
+   immer **PROMPT** – so ist der Metricool-Flow eingestellt, keine anderen Keywords) – der Call-to-Action gehört
    **ins Video**, nicht nur in die Caption (vom Nutzer gewünscht, 03.11.2026). Die Vorlagen (reel2/reel5) blenden beim
-   gesprochenen Wort „PROMPT“ automatisch die Pille „Kommentiere PROMPT → Vorlage per DM“ ein (abschalten nur mit
+   gesprochenen Wort „PROMPT“ automatisch die Pille „Kommentiere PROMPT → Guide per DM“ ein (abschalten nur mit
    `window.NO_PROMPT_CTA=true`, z. B. wenn ein Reel keine `vorlage` hat).
    **Hook (aus viralen Reels abgeleitet):** eine Behauptung statt einer Frage, die Neugier weckt,
    z. B. „3 Claude-Befehle, die kaum jemand kennt“, „Das kann Claude – und fast niemand nutzt es“,
@@ -233,7 +234,15 @@ Flow (vom Nutzer angelegt): Kommentar mit **PROMPT** unter einem beliebigen Post
 **Jeder neue Reel/Karussell-Eintrag bekommt in `register.json` das Feld `vorlage`:** `{"titel": …, "text": <der Prompt
 wörtlich zum Kopieren, Lücken als ___>, "hinweis": <1 Satz, wie man ihn nutzt>}`. Danach `python3 engine/site/build.py`
 ausführen und `docs/` mitcommitten (neueste Vorlage steht automatisch oben). Caption endet mit
-„Kommentiere PROMPT und ich schick dir die Vorlage.“ (nur wenn `vorlage` gesetzt ist).
+„Kommentiere PROMPT und ich schick dir den Guide.“ (nur wenn `vorlage` gesetzt ist; Keyword immer PROMPT).
+
+**Guide statt Einzel-Vorlage (vom Nutzer, 05.11.2026, Vorbild claudebyseb: Keyword → kompletter Guide):** Jeder neue
+Eintrag bekommt zusätzlich das Feld `guide` – das, was man per DM bekommt, muss deutlich mehr sein als im Video:
+`{"titel": "Guide: …", "ziel": 1 Satz, "schritte": [{"titel","text"}] (3–5), "prompts": [{"titel","text","wann"}] (2–4
+fertige Prompts, die aufeinander aufbauen), "beispiel": 1 durchgehendes Beispiel, "check": [2–4 Punkte]}`.
+`vorlage.text` = der Haupt-Prompt (Prompt 1). `build.py` zeigt Guides als ausführliche Karte mit Kopier-Knöpfen pro Prompt.
+Im Video ehrlich ankündigen, was im Guide steckt („Ich hab dir den kompletten Ablauf mit 3 Prompts gebaut“) – nur
+versprechen, was wirklich drin ist. Keine Hype-Behauptungen (Millionen, Hedgefonds, „verdient Geld von allein“).
 
 **Die Vorlage muss den Kommentar wert sein (vom Nutzer, 05.11.2026).** Thema immer von der Vorlage aus planen, nicht umgekehrt:
 - Ein **kompletter, sofort nutzbarer Prompt für eine konkrete Aufgabe** (z. B. Vertrag/Mietvertrag prüfen, Bewerbung gegen

@@ -21,16 +21,42 @@ items = [e for e in entries if e.get('vorlage')][::-1]  # Reihenfolge in registe
 TYP = {'reel': 'Reel', 'carousel': 'Karussell', 'clip': 'Video'}
 
 cards = []
+n = 0
+
+
+def copybox(text):
+    global n
+    n += 1
+    return (f'<pre id="v{n}">{html.escape(text)}</pre>\n'
+            f'  <button type="button" data-copy="v{n}">Kopieren</button>')
+
+
 for i, e in enumerate(items):
     v = e['vorlage']
-    tag = 'Neu' if i == 0 else TYP.get(e.get('type'), 'Post')
-    cards.append(f'''<article class="card{' new' if i == 0 else ''}">
-  <div class="meta"><span class="tag">{html.escape(tag)}</span><span>{html.escape(TYP.get(e.get('type'), 'Post') if i == 0 else e.get('id', ''))}{(' ' + html.escape(e.get('id', ''))) if i == 0 else ''}</span></div>
-  <h2>{html.escape(v['titel'])}</h2>
-  <pre id="v{i}">{html.escape(v['text'])}</pre>
-  <button type="button" data-copy="v{i}">Kopieren</button>
-  <p class="hint">{html.escape(v.get('hinweis', ''))}</p>
-</article>''')
+    gd = e.get('guide')
+    tag = ('Neu' if i == 0 else '') + (' · Guide' if gd else '')
+    tag = tag.strip(' ·') or TYP.get(e.get('type'), 'Post')
+    head = (f'<article class="card{' new' if i == 0 else ''}" id="{html.escape(e.get('id', ''))}">\n'
+            f'  <div class="meta"><span class="tag">{html.escape(tag)}</span><span>{html.escape(TYP.get(e.get('type'), 'Post'))} {html.escape(e.get('id', ''))}</span></div>\n'
+            f'  <h2>{html.escape((gd or {}).get('titel') or v['titel'])}</h2>')
+    if gd:
+        body = [f'  <p class="goal">{html.escape(gd.get('ziel', ''))}</p>']
+        if gd.get('schritte'):
+            body.append('  <h3>So gehst du vor</h3>\n  <ol class="steps">' + ''.join(
+                f'<li><b>{html.escape(st['titel'])}</b> {html.escape(st.get('text', ''))}</li>' for st in gd['schritte']) + '</ol>')
+        prompts = gd.get('prompts') or [{'titel': v['titel'], 'text': v['text']}]
+        for k, pr in enumerate(prompts, 1):
+            body.append(f'  <h3>Prompt {k}: {html.escape(pr['titel'])}</h3>\n  ' + copybox(pr['text']))
+            if pr.get('wann'):
+                body.append(f'  <p class="hint">{html.escape(pr['wann'])}</p>')
+        if gd.get('beispiel'):
+            body.append(f'  <h3>Beispiel</h3>\n  <p class="ex">{html.escape(gd['beispiel'])}</p>')
+        if gd.get('check'):
+            body.append('  <h3>Check vor dem Abschicken</h3>\n  <ul class="check">' + ''.join(f'<li>{html.escape(c)}</li>' for c in gd['check']) + '</ul>')
+        body.append(f'  <p class="hint">{html.escape(v.get('hinweis', ''))}</p>')
+    else:
+        body = ['  ' + copybox(v['text']), f'  <p class="hint">{html.escape(v.get('hinweis', ''))}</p>']
+    cards.append(head + '\n' + '\n'.join(body) + '\n</article>')
 
 page = f'''<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -56,12 +82,16 @@ h2{{font:800 22px/1.25 Manrope;margin:12px 0}}
 pre{{white-space:pre-wrap;word-break:break-word;background:var(--code);border-radius:14px;padding:16px;margin:0 0 12px;font:500 16px/1.6 Manrope}}
 button{{font:800 15px Manrope;border:0;border-radius:12px;padding:12px 18px;background:var(--ink);color:var(--bg);cursor:pointer;min-height:44px}}
 .hint{{color:var(--muted);font-size:15px;margin:12px 0 0}}
+h3{{font:800 16px Manrope;margin:22px 0 8px;color:var(--violet)}}
+.goal{{margin:0 0 4px;color:var(--muted)}}
+.steps,.check{{margin:0;padding-left:22px}}.steps li,.check li{{margin:0 0 8px}}
+.ex{{background:var(--code);border-radius:14px;padding:14px 16px;margin:0;font-size:15px}}
 footer{{color:var(--muted);font-size:14px;margin-top:32px}}
 footer a{{color:var(--violet)}}
 </style></head><body><main>
 <div class="kick">// Claude-Vorlagen</div>
 <h1>Kopieren, <em>einfügen</em>, fertig.</h1>
-<p class="lead">Alle Prompts aus meinen Reels und Karussells. Die neueste Vorlage steht oben.</p>
+<p class="lead">Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.</p>
 {''.join(cards)}
 <footer>Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a></footer>
 </main>
