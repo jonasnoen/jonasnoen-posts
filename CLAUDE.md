@@ -118,7 +118,8 @@ läuft (Anlass: R003, Ukiyo-e-Märchen). Die Creme/Memoji-Rotation zählt an Son
    z. B. „3 Claude-Befehle, die kaum jemand kennt“, „Das kann Claude – und fast niemand nutzt es“,
    „Hör auf, Claude so zu benutzen“. Zahl im Hook, wenn es passt. Serie: Titel/Label
    **„Claude-Codes Teil N“** (N fortlaufend aus `register.json`, Feld `series`). Lieber 2–3 kurze,
-   sofort nachmachbare Tipps pro Reel als einer. Keine Clickbait-Versprechen, die das Reel nicht hält.
+   sofort nachmachbare Tipps pro Reel als einer. Hooks dürfen hypen und zuspitzen (siehe „Hype ja, Lügen nein“ unten), aber
+   nichts versprechen, was Reel und Guide nicht halten.
 4. **Stimme.** ElevenLabs, Jonas' eigener Klon **„Jonas Noen“, voice_id `74F3tCXf85gKkgYnJulQ`**,
    Modell `eleven_v4`, genau 1 Generation (ca. 7 US-Cent). Danach mit ffmpeg
    `atempo=1.15` beschleunigen (Jonas spricht sonst zu langsam). Pausen zwischen Sätzen
@@ -241,8 +242,15 @@ Eintrag bekommt zusätzlich das Feld `guide` – das, was man per DM bekommt, mu
 `{"titel": "Guide: …", "ziel": 1 Satz, "schritte": [{"titel","text"}] (3–5), "prompts": [{"titel","text","wann"}] (2–4
 fertige Prompts, die aufeinander aufbauen), "beispiel": 1 durchgehendes Beispiel, "check": [2–4 Punkte]}`.
 `vorlage.text` = der Haupt-Prompt (Prompt 1). `build.py` zeigt Guides als ausführliche Karte mit Kopier-Knöpfen pro Prompt.
-Im Video ehrlich ankündigen, was im Guide steckt („Ich hab dir den kompletten Ablauf mit 3 Prompts gebaut“) – nur
-versprechen, was wirklich drin ist. Keine Hype-Behauptungen (Millionen, Hedgefonds, „verdient Geld von allein“).
+**Hype ja, Lügen nein (vom Nutzer, 05.11.2026: „muss man ja bisschen verkaufen“).** Hooks, Ton und Guide-Ankündigung dürfen
+richtig verkaufen: laut, zugespitzt, mit Neugier-Lücke, Dringlichkeit und starken Wörtern – z. B. „Dieser Prompt liest
+jeden Vertrag für dich“, „Die meisten nutzen Claude komplett falsch“, „Ich hab dir den kompletten Ablauf gebaut – 3 Prompts,
+einfach kopieren“, „Speicher das, bevor du's vergisst“, „Das ist der Prompt, den ich jedem schicke“, „Kein Mensch erklärt
+dir das“. Superlative, Meinung und Begeisterung sind erlaubt. **Nicht erlaubt bleibt nur, was faktisch falsch ist oder
+sich nicht belegen lässt:** erfundene Zahlen/Statistiken („spart 10 Stunden“, „90 % machen es falsch“), erfundene
+Personen/Firmen/Zitate („Hedgefonds zahlen Millionen dafür“), falsche Fähigkeiten („verbessert sich selbst“, „verdient
+Geld von allein“), Ergebnisse/Tests, die nicht gemacht wurden, und Versprechen, die der Guide nicht einlöst. Faustregel:
+Gefühl und Zuspitzung frei – jede Tatsachenbehauptung muss stimmen.
 
 **Die Vorlage muss den Kommentar wert sein (vom Nutzer, 05.11.2026).** Thema immer von der Vorlage aus planen, nicht umgekehrt:
 - Ein **kompletter, sofort nutzbarer Prompt für eine konkrete Aufgabe** (z. B. Vertrag/Mietvertrag prüfen, Bewerbung gegen
@@ -257,8 +265,8 @@ versprechen, was wirklich drin ist. Keine Hype-Behauptungen (Millionen, Hedgefon
 ## Caption
 
 Deutsch, 3–5 kurze Absätze: Problem → der konkrete Tipp (wörtlich zum Abschreiben) → was dann
-passiert → Aufforderung zum Speichern. 4–6 Hashtags, immer `#JonasNoen`. Kein künstliches
-Engagement-Bait, keine Reichweitenversprechen.
+passiert → Aufforderung zum Speichern. 4–6 Hashtags, immer `#JonasNoen`. Darf verkaufen und hypen (siehe
+„Hype ja, Lügen nein“), aber keine falschen Tatsachen und keine Reichweitenversprechen.
 
 ## Kosten pro Reel
 
