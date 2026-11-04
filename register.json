@@ -277,9 +277,9 @@
     "caption": "Die meisten stellen Claude die Frage an der falschen Stelle.\n\nWenn du Claude einen langen Text gibst – Vertrag, Bericht, Protokoll – kommt es auf die Reihenfolge an:\n\n1. Das Dokument kommt ganz nach oben.\n2. Deine Frage kommt ans Ende.\n3. Schreib dazu: „Such zuerst die passenden Zitate raus.“\n\nSo stützt sich Claude auf den Text statt aufs Raten. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps für lange Dokumente.\n\nSpeicher dir das für dein nächstes langes PDF. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
     "tiktokTitle": "Frag Claude an der richtigen Stelle",
     "vorlage": {
-      "titel": "Lange Dokumente: Dokument oben, Frage unten",
-      "text": "<dokument>\n___ (hier den ganzen Text einfügen)\n</dokument>\n\nSuch zuerst die passenden Zitate aus dem Dokument raus.\nBeantworte dann meine Frage: ___",
-      "hinweis": "Bei langen Texten immer zuerst das Dokument, ganz am Ende die Frage – und Claude erst die passenden Zitate raussuchen lassen."
+      "titel": "Lange Dokumente auswerten (mit Zitaten)",
+      "text": "Ich gebe dir ein langes Dokument. Arbeite genau so:\n\n<dokument>\n___ (hier den ganzen Text einfügen: Vertrag, Bericht, Protokoll …)\n</dokument>\n\nSo gehst du vor:\n1. Such zuerst alle Stellen aus dem Dokument, die für meine Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte meine Frage dann nur auf Basis dieser Zitate. Setz hinter jede Aussage die Zitat-Nummer, z. B. [2].\n3. Wenn das Dokument etwas nicht beantwortet, schreib „Steht nicht im Dokument“, statt zu raten.\n4. Zum Schluss: die 3 wichtigsten Punkte in einfachen Worten, ohne Fachbegriffe.\n\nMeine Frage: ___ (z. B. Welche Kündigungsfristen und Kosten stehen im Vertrag?)",
+      "hinweis": "Dokument oben, Frage ganz unten – und Claude belegt jede Aussage mit einem Zitat aus deinem Text."
     },
     "music": "assets/music/groove-115.mp3",
     "plannedFor": "2026-11-04T18:30:00+01:00",
@@ -307,6 +307,7 @@
         "metricoolPostId": 416790053,
         "scheduledAt": "2026-11-04T18:30:00+01:00"
       }
-    }
+    },
+    "note": "Vorlage am 05.11. zu einem kompletten Prompt ausgebaut (Nutzer-Feedback: Einzeiler-Tipps machen den PROMPT-CTA zu schwach)."
   }
 ]

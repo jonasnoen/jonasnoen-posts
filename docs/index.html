@@ -30,15 +30,22 @@ footer a{color:var(--violet)}
 <p class="lead">Alle Prompts aus meinen Reels und Karussells. Die neueste Vorlage steht oben.</p>
 <article class="card new">
   <div class="meta"><span class="tag">Neu</span><span>Reel R006</span></div>
-  <h2>Lange Dokumente: Dokument oben, Frage unten</h2>
-  <pre id="v0">&lt;dokument&gt;
-___ (hier den ganzen Text einfügen)
+  <h2>Lange Dokumente auswerten (mit Zitaten)</h2>
+  <pre id="v0">Ich gebe dir ein langes Dokument. Arbeite genau so:
+
+&lt;dokument&gt;
+___ (hier den ganzen Text einfügen: Vertrag, Bericht, Protokoll …)
 &lt;/dokument&gt;
 
-Such zuerst die passenden Zitate aus dem Dokument raus.
-Beantworte dann meine Frage: ___</pre>
+So gehst du vor:
+1. Such zuerst alle Stellen aus dem Dokument, die für meine Frage wichtig sind. Schreib sie wörtlich und nummeriert in &lt;zitate&gt;-Tags.
+2. Beantworte meine Frage dann nur auf Basis dieser Zitate. Setz hinter jede Aussage die Zitat-Nummer, z. B. [2].
+3. Wenn das Dokument etwas nicht beantwortet, schreib „Steht nicht im Dokument“, statt zu raten.
+4. Zum Schluss: die 3 wichtigsten Punkte in einfachen Worten, ohne Fachbegriffe.
+
+Meine Frage: ___ (z. B. Welche Kündigungsfristen und Kosten stehen im Vertrag?)</pre>
   <button type="button" data-copy="v0">Kopieren</button>
-  <p class="hint">Bei langen Texten immer zuerst das Dokument, ganz am Ende die Frage – und Claude erst die passenden Zitate raussuchen lassen.</p>
+  <p class="hint">Dokument oben, Frage ganz unten – und Claude belegt jede Aussage mit einem Zitat aus deinem Text.</p>
 </article><article class="card">
   <div class="meta"><span class="tag">Reel</span><span>R005</span></div>
   <h2>Rolle + Publikum + Frage</h2>

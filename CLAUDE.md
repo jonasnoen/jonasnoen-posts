@@ -101,6 +101,10 @@ läuft (Anlass: R003, Ukiyo-e-Märchen). Die Creme/Memoji-Rotation zählt an Son
    `blogId 7001759`) prüfen, was geplant oder veröffentlicht ist. Einträge mit Status `sending`
    oder `unknown` zuerst klären, nie blind erneut senden.
 2. **Thema.** Ein praktischer Claude-/KI-Tipp auf Deutsch, den man sofort nachmachen kann.
+   **Prompt-Pflicht (vom Nutzer, 05.11.2026):** Jedes Reel/Karussell dreht sich um einen konkreten, fertigen Prompt
+   für eine bestimmte Aufgabe, den man wirklich haben will (siehe „Vorlagen-Sammlung“ unten). Allgemeine Tipps,
+   die man sich nach dem Video einfach merkt („Frage ans Ende“, „gib eine Rolle“), reichen NICHT – dann ist der
+   PROMPT-CTA zu schwach. Das Video zeigt, was der Prompt macht, und nur einen Ausschnitt davon; der komplette Prompt kommt per DM.
    Keine Duplikate: Thema UND Blickwinkel mit allen Einträgen in `register.json` vergleichen.
    Keine erfundenen Zahlen, Tests, Zeitersparnisse oder Ergebnisse. Aktuelle Produktaussagen
    mit einer frischen offiziellen Quelle prüfen.
@@ -230,6 +234,16 @@ Flow (vom Nutzer angelegt): Kommentar mit **PROMPT** unter einem beliebigen Post
 wörtlich zum Kopieren, Lücken als ___>, "hinweis": <1 Satz, wie man ihn nutzt>}`. Danach `python3 engine/site/build.py`
 ausführen und `docs/` mitcommitten (neueste Vorlage steht automatisch oben). Caption endet mit
 „Kommentiere PROMPT und ich schick dir die Vorlage.“ (nur wenn `vorlage` gesetzt ist).
+
+**Die Vorlage muss den Kommentar wert sein (vom Nutzer, 05.11.2026).** Thema immer von der Vorlage aus planen, nicht umgekehrt:
+- Ein **kompletter, sofort nutzbarer Prompt für eine konkrete Aufgabe** (z. B. Vertrag/Mietvertrag prüfen, Bewerbung gegen
+  Stellenanzeige abgleichen, Meeting-Notizen → Aufgabenliste, Wochenplan/Essensplan, E-Mail-Antwort im eigenen Ton,
+  Angebot/Rechnung prüfen, Lernplan, Social-Post aus Notizen). Ca. 80–250 Wörter, klare Schritte, Ausgabeformat, Lücken `___`.
+- **Test vor dem Bauen:** Könnte man den Prompt nach einmal Anschauen aus dem Kopf abtippen? Wenn ja → zu dünn, Thema wechseln
+  oder Prompt ausbauen. Ein Einzeiler („Schreib kurz, weil …“) ist keine Vorlage.
+- Im Video: Problem → was der Prompt macht/liefert (Ergebnis zeigen) → Prompt-Karte nur angeschnitten oder ausgeblendet
+  → CTA. Ehrlich bleiben: das Video muss trotzdem verständlich sein, keine Versprechen, die der Prompt nicht hält.
+- `vorlage.text` = genau dieser komplette Prompt; Caption verrät den Kern, aber nicht den ganzen Prompt.
 
 ## Caption
 
