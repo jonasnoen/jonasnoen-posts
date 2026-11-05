@@ -359,7 +359,7 @@
     "id": "K002",
     "type": "carousel",
     "createdAt": "2026-11-05",
-    "status": "sending",
+    "status": "scheduled",
     "series": "Claude-Prompts Teil 2",
     "slides": 8,
     "design": "v2-reel-look",
@@ -450,6 +450,22 @@
         "Kein Satz, der nicht stimmt – Claude formuliert nur um",
         "Persönliche Daten vorher gelöscht, Anschreiben laut gelesen: klingt es nach dir?"
       ]
+    },
+    "mediaCommit": "466aa93345614c56b700202f06208a6080035c98",
+    "plannedFor": "2026-11-05T18:30:00+01:00",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 417992715,
+        "uuid": "-195671121191219709",
+        "scheduledAt": "2026-11-05T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 417992776,
+        "uuid": "2973580675985262995",
+        "scheduledAt": "2026-11-05T18:30:00+01:00"
+      }
     }
   }
 ]
