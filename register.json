@@ -354,5 +354,102 @@
         "Wichtige Entscheidungen (Recht, Geld) trotzdem von einem Menschen prüfen lassen"
       ]
     }
+  },
+  {
+    "id": "K002",
+    "type": "carousel",
+    "createdAt": "2026-11-05",
+    "status": "sending",
+    "series": "Claude-Prompts Teil 2",
+    "slides": 8,
+    "design": "v2-reel-look",
+    "topic": "Bewerbung gegen Stellenanzeige abgleichen",
+    "angle": "4 aufeinander aufbauende Prompts: Abgleich-Tabelle (✅/⚠️/❌) → Rückfragen statt Erfinden → Anschreiben aus Belegen → Recruiter-Check; durchgehendes Beispiel Marketing-Stelle (SEO, Budget, Google Ads)",
+    "hook": "Dieser Prompt prüft deine Bewerbung vor dem Recruiter.",
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (XML-Tags für Dokumente, Long-context: Daten oben – bereits am 04.11. geprüft; keine neuen Produktaussagen)",
+    "files": {
+      "instagram": [
+        "carousels/K002/ig-01.png",
+        "carousels/K002/ig-02.png",
+        "carousels/K002/ig-03.png",
+        "carousels/K002/ig-04.png",
+        "carousels/K002/ig-05.png",
+        "carousels/K002/ig-06.png",
+        "carousels/K002/ig-07.png",
+        "carousels/K002/ig-08.png"
+      ],
+      "tiktok": [
+        "carousels/K002/tt-01.jpg",
+        "carousels/K002/tt-02.jpg",
+        "carousels/K002/tt-03.jpg",
+        "carousels/K002/tt-04.jpg",
+        "carousels/K002/tt-05.jpg",
+        "carousels/K002/tt-06.jpg",
+        "carousels/K002/tt-07.jpg",
+        "carousels/K002/tt-08.jpg"
+      ]
+    },
+    "tiktokTitle": "Dieser Prompt prüft deine Bewerbung",
+    "caption": "Dieser Prompt prüft deine Bewerbung, bevor es der Recruiter tut.\n\n„Verbessere meinen Lebenslauf“ bringt dir nur allgemeine Tipps. Claude kennt die Stelle ja nicht.\n\nGib Claude die Stellenanzeige UND deinen Lebenslauf – dann hakt es jede Anforderung ab: erfüllt, teilweise oder fehlt. Danach fragt es dich nach den Lücken, statt etwas zu erfinden, schreibt das Anschreiben aus echten Belegen und liest am Ende alles wie jemand aus dem Recruiting.\n\nWichtig: Adresse, Telefonnummer und Geburtsdatum vorher rauslöschen. Und nur reinschreiben, was stimmt.\n\nSpeicher dir das für deine nächste Bewerbung. Für welche Stelle bewirbst du dich gerade?\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Bewerbung #ClaudeAI #JonasNoen",
+    "vorlage": {
+      "titel": "Bewerbung gegen Stellenanzeige abgleichen (Guide mit 4 Prompts)",
+      "text": "Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.\n\n<stellenanzeige>\n___ (komplette Anzeige einfügen)\n</stellenanzeige>\n\n<lebenslauf>\n___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)\n</lebenslauf>\n\nSo gehst du vor:\n1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.\n2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.\n3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.\n4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.\n\nWichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.",
+      "hinweis": "Anzeige und Lebenslauf einfügen – Claude zeigt dir, welche Anforderung du belegst und wo noch Lücken sind."
+    },
+    "guide": {
+      "titel": "Guide: Bewerbung mit Claude auf die Stelle zuschneiden",
+      "ziel": "Lebenslauf und Anschreiben passgenau auf eine Stellenanzeige ausrichten – ohne etwas zu erfinden.",
+      "schritte": [
+        {
+          "titel": "Daten vorbereiten.",
+          "text": "Stellenanzeige komplett kopieren. Lebenslauf als Text einfügen und vorher Adresse, Telefonnummer und Geburtsdatum löschen."
+        },
+        {
+          "titel": "Abgleich holen.",
+          "text": "Prompt 1 schicken: Claude macht eine Tabelle mit jeder Anforderung, deinem Beleg und ✅/⚠️/❌."
+        },
+        {
+          "titel": "Lücken schließen.",
+          "text": "Prompt 2 schicken und die Fragen ehrlich beantworten. Oft hast du die Erfahrung, sie steht nur nicht im Lebenslauf."
+        },
+        {
+          "titel": "Anschreiben bauen.",
+          "text": "Prompt 3: Claude schreibt aus deinen Belegen. Alles mit [ERGÄNZEN] füllst du selbst."
+        },
+        {
+          "titel": "Recruiter-Check.",
+          "text": "Prompt 4: Claude liest alles mit wenig Zeit und zeigt dir die schwächsten Sätze."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Abgleich",
+          "text": "Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.\n\n<stellenanzeige>\n___ (komplette Anzeige einfügen)\n</stellenanzeige>\n\n<lebenslauf>\n___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)\n</lebenslauf>\n\nSo gehst du vor:\n1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.\n2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.\n3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.\n4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.\n\nWichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.",
+          "wann": "Für jede neue Stelle als Erstes."
+        },
+        {
+          "titel": "Lücken schließen",
+          "text": "Geh alle ⚠️ und ❌ aus deiner Tabelle durch.\n1. Stell mir zu jedem Punkt genau eine Frage, ob ich dazu Erfahrung habe – Job, Praktikum, Studium, Ehrenamt oder eigene Projekte zählen.\n2. Stell die Fragen als nummerierte Liste und warte auf meine Antworten.\n3. Formulier danach aus meinen Antworten neue Lebenslauf-Stichpunkte: Verb am Anfang, konkretes Ergebnis, nur Fakten, die ich wirklich genannt habe.\n4. Sag mir, an welche Stelle im Lebenslauf jeder Stichpunkt gehört.",
+          "wann": "Direkt nach dem Abgleich, wenn es ⚠️ oder ❌ gibt."
+        },
+        {
+          "titel": "Anschreiben aus Belegen",
+          "text": "Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.\n- Einstieg: warum genau diese Stelle. Nutz nur, was in der Anzeige steht, und markiere mit [ERGÄNZEN], wo ich etwas Persönliches einfügen soll.\n- Hauptteil: die 3 Muss-Anforderungen, die ich am besten belegen kann, jeweils mit einem konkreten Beispiel aus meinem Lebenslauf.\n- Ton: ___ (z. B. freundlich und direkt). Keine Floskeln wie „hiermit bewerbe ich mich“ oder „mit großem Interesse“.\n- Schluss: ein selbstbewusster Satz zum Gespräch.\nErfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.",
+          "wann": "Wenn der Lebenslauf passt."
+        },
+        {
+          "titel": "Recruiter-Check",
+          "text": "Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.\n1. Was bleibt nach 30 Sekunden hängen? (3 Stichpunkte)\n2. Welche Muss-Anforderung aus der Anzeige ist immer noch nicht klar belegt?\n3. Nenn die 2 schwächsten Sätze und gib mir für jeden eine bessere Version.\n4. Gib mir am Ende die überarbeitete Fassung des Anschreibens.",
+          "wann": "Bevor du auf Senden drückst."
+        }
+      ],
+      "beispiel": "Stelle im Online-Marketing: Anzeige + Lebenslauf rein → Prompt 1 zeigt SEO ✅, Budgetverantwortung ⚠️, Google Ads ❌ → Prompt 2 fragt nach: Ads-Kampagnen im Praktikum betreut → neuer Stichpunkt → Prompt 3 schreibt das Anschreiben mit diesen Belegen → Prompt 4 ersetzt die 2 schwächsten Sätze.",
+      "check": [
+        "Jede Muss-Anforderung hat einen Beleg im Lebenslauf",
+        "Die Schlüsselbegriffe der Anzeige kommen vor",
+        "Kein Satz, der nicht stimmt – Claude formuliert nur um",
+        "Persönliche Daten vorher gelöscht, Anschreiben laut gelesen: klingt es nach dir?"
+      ]
+    }
   }
 ]

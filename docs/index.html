@@ -32,14 +32,70 @@ footer a{color:var(--violet)}
 <div class="kick">// Claude-Vorlagen</div>
 <h1>Kopieren, <em>einfügen</em>, fertig.</h1>
 <p class="lead">Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.</p>
-<article class="card new" id="R006">
-  <div class="meta"><span class="tag">Neu · Guide</span><span>Reel R006</span></div>
+<article class="card new" id="K002">
+  <div class="meta"><span class="tag">Neu · Guide</span><span>Karussell K002</span></div>
+  <h2>Guide: Bewerbung mit Claude auf die Stelle zuschneiden</h2>
+  <p class="goal">Lebenslauf und Anschreiben passgenau auf eine Stellenanzeige ausrichten – ohne etwas zu erfinden.</p>
+  <h3>So gehst du vor</h3>
+  <ol class="steps"><li><b>Daten vorbereiten.</b> Stellenanzeige komplett kopieren. Lebenslauf als Text einfügen und vorher Adresse, Telefonnummer und Geburtsdatum löschen.</li><li><b>Abgleich holen.</b> Prompt 1 schicken: Claude macht eine Tabelle mit jeder Anforderung, deinem Beleg und ✅/⚠️/❌.</li><li><b>Lücken schließen.</b> Prompt 2 schicken und die Fragen ehrlich beantworten. Oft hast du die Erfahrung, sie steht nur nicht im Lebenslauf.</li><li><b>Anschreiben bauen.</b> Prompt 3: Claude schreibt aus deinen Belegen. Alles mit [ERGÄNZEN] füllst du selbst.</li><li><b>Recruiter-Check.</b> Prompt 4: Claude liest alles mit wenig Zeit und zeigt dir die schwächsten Sätze.</li></ol>
+  <h3>Prompt 1: Abgleich</h3>
+  <pre id="v1">Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.
+
+&lt;stellenanzeige&gt;
+___ (komplette Anzeige einfügen)
+&lt;/stellenanzeige&gt;
+
+&lt;lebenslauf&gt;
+___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)
+&lt;/lebenslauf&gt;
+
+So gehst du vor:
+1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.
+2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.
+3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.
+4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.
+
+Wichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.</pre>
+  <button type="button" data-copy="v1">Kopieren</button>
+  <p class="hint">Für jede neue Stelle als Erstes.</p>
+  <h3>Prompt 2: Lücken schließen</h3>
+  <pre id="v2">Geh alle ⚠️ und ❌ aus deiner Tabelle durch.
+1. Stell mir zu jedem Punkt genau eine Frage, ob ich dazu Erfahrung habe – Job, Praktikum, Studium, Ehrenamt oder eigene Projekte zählen.
+2. Stell die Fragen als nummerierte Liste und warte auf meine Antworten.
+3. Formulier danach aus meinen Antworten neue Lebenslauf-Stichpunkte: Verb am Anfang, konkretes Ergebnis, nur Fakten, die ich wirklich genannt habe.
+4. Sag mir, an welche Stelle im Lebenslauf jeder Stichpunkt gehört.</pre>
+  <button type="button" data-copy="v2">Kopieren</button>
+  <p class="hint">Direkt nach dem Abgleich, wenn es ⚠️ oder ❌ gibt.</p>
+  <h3>Prompt 3: Anschreiben aus Belegen</h3>
+  <pre id="v3">Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.
+- Einstieg: warum genau diese Stelle. Nutz nur, was in der Anzeige steht, und markiere mit [ERGÄNZEN], wo ich etwas Persönliches einfügen soll.
+- Hauptteil: die 3 Muss-Anforderungen, die ich am besten belegen kann, jeweils mit einem konkreten Beispiel aus meinem Lebenslauf.
+- Ton: ___ (z. B. freundlich und direkt). Keine Floskeln wie „hiermit bewerbe ich mich“ oder „mit großem Interesse“.
+- Schluss: ein selbstbewusster Satz zum Gespräch.
+Erfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.</pre>
+  <button type="button" data-copy="v3">Kopieren</button>
+  <p class="hint">Wenn der Lebenslauf passt.</p>
+  <h3>Prompt 4: Recruiter-Check</h3>
+  <pre id="v4">Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.
+1. Was bleibt nach 30 Sekunden hängen? (3 Stichpunkte)
+2. Welche Muss-Anforderung aus der Anzeige ist immer noch nicht klar belegt?
+3. Nenn die 2 schwächsten Sätze und gib mir für jeden eine bessere Version.
+4. Gib mir am Ende die überarbeitete Fassung des Anschreibens.</pre>
+  <button type="button" data-copy="v4">Kopieren</button>
+  <p class="hint">Bevor du auf Senden drückst.</p>
+  <h3>Beispiel</h3>
+  <p class="ex">Stelle im Online-Marketing: Anzeige + Lebenslauf rein → Prompt 1 zeigt SEO ✅, Budgetverantwortung ⚠️, Google Ads ❌ → Prompt 2 fragt nach: Ads-Kampagnen im Praktikum betreut → neuer Stichpunkt → Prompt 3 schreibt das Anschreiben mit diesen Belegen → Prompt 4 ersetzt die 2 schwächsten Sätze.</p>
+  <h3>Check vor dem Abschicken</h3>
+  <ul class="check"><li>Jede Muss-Anforderung hat einen Beleg im Lebenslauf</li><li>Die Schlüsselbegriffe der Anzeige kommen vor</li><li>Kein Satz, der nicht stimmt – Claude formuliert nur um</li><li>Persönliche Daten vorher gelöscht, Anschreiben laut gelesen: klingt es nach dir?</li></ul>
+  <p class="hint">Anzeige und Lebenslauf einfügen – Claude zeigt dir, welche Anforderung du belegst und wo noch Lücken sind.</p>
+</article><article class="card" id="R006">
+  <div class="meta"><span class="tag">Guide</span><span>Reel R006</span></div>
   <h2>Guide: Lange Dokumente mit Claude auswerten</h2>
   <p class="goal">Für Verträge, Berichte, Protokolle und PDFs: Claude soll nur sagen, was wirklich im Text steht – mit Beleg.</p>
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Dokument rein.</b> Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen.</li><li><b>Erst Überblick holen.</b> Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind.</li><li><b>Gezielt fragen.</b> Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis.</li><li><b>Gegenprüfen.</b> Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist.</li></ol>
   <h3>Prompt 1: Überblick</h3>
-  <pre id="v1">&lt;dokument&gt;
+  <pre id="v5">&lt;dokument&gt;
 ___ (ganzen Text einfügen)
 &lt;/dokument&gt;
 
@@ -49,24 +105,24 @@ Lies das Dokument komplett. Gib mir dann:
 3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.
 4. Was fehlt oder unklar formuliert ist.
 Erfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.</pre>
-  <button type="button" data-copy="v1">Kopieren</button>
+  <button type="button" data-copy="v5">Kopieren</button>
   <p class="hint">Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest.</p>
   <h3>Prompt 2: Frage mit Zitaten</h3>
-  <pre id="v2">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
+  <pre id="v6">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
 1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in &lt;zitate&gt;-Tags.
 2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].
 3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.
 4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v2">Kopieren</button>
+  <button type="button" data-copy="v6">Kopieren</button>
   <p class="hint">Für jede konkrete Frage. Die Frage steht immer ganz unten.</p>
   <h3>Prompt 3: Gegencheck</h3>
-  <pre id="v3">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
+  <pre id="v7">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
 - Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).
 - Korrigiere alle ⚠️ und ❌ oder streich sie.
 - Gib mir am Ende die bereinigte Antwort.</pre>
-  <button type="button" data-copy="v3">Kopieren</button>
+  <button type="button" data-copy="v7">Kopieren</button>
   <p class="hint">Bei allem, was wichtig ist: Geld, Fristen, Verträge.</p>
   <h3>Beispiel</h3>
   <p class="ex">Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.</p>
@@ -76,58 +132,58 @@ Meine Frage: ___</pre>
 </article><article class="card" id="R005">
   <div class="meta"><span class="tag">Reel</span><span>Reel R005</span></div>
   <h2>Rolle + Publikum + Frage</h2>
-  <pre id="v4">Du bist ___ (Rolle, z. B. Steuerberater).
+  <pre id="v8">Du bist ___ (Rolle, z. B. Steuerberater).
 Erklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v4">Kopieren</button>
+  <button type="button" data-copy="v8">Kopieren</button>
   <p class="hint">Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort.</p>
 </article><article class="card" id="R004">
   <div class="meta"><span class="tag">Reel</span><span>Reel R004</span></div>
   <h2>Regel + weil</h2>
-  <pre id="v5">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
+  <pre id="v9">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
 
 Beispiel:
 Schreib kurz, weil ich es am Handy lese.</pre>
-  <button type="button" data-copy="v5">Kopieren</button>
+  <button type="button" data-copy="v9">Kopieren</button>
   <p class="hint">Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken.</p>
 </article><article class="card" id="R003">
   <div class="meta"><span class="tag">Reel</span><span>Reel R003</span></div>
   <h2>Die 5 Video-Skills für Claude</h2>
-  <pre id="v6">Die Skills aus dem Video:
+  <pre id="v10">Die Skills aus dem Video:
 HyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar
 
 Start-Prompt:
 Ich möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.
 Schreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.</pre>
-  <button type="button" data-copy="v6">Kopieren</button>
+  <button type="button" data-copy="v10">Kopieren</button>
   <p class="hint">Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut.</p>
 </article><article class="card" id="R002">
   <div class="meta"><span class="tag">Reel</span><span>Reel R002</span></div>
   <h2>Verbote umdrehen</h2>
-  <pre id="v7">Statt: keine ___
+  <pre id="v11">Statt: keine ___
 Schreib: ___ (was stattdessen rauskommen soll)
 
 Beispiele:
 Statt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“
 Statt „kein Fachchinesisch“ → „erklär es wie einem Freund“
 Statt „keine Aufzählungen“ → „in Fließtext“</pre>
-  <button type="button" data-copy="v7">Kopieren</button>
+  <button type="button" data-copy="v11">Kopieren</button>
   <p class="hint">Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll.</p>
 </article><article class="card" id="K001">
   <div class="meta"><span class="tag">Karussell</span><span>Karussell K001</span></div>
   <h2>Hör auf, Claude raten zu lassen</h2>
-  <pre id="v8">Ziel: Schreib ___, das ___ erreicht.
+  <pre id="v12">Ziel: Schreib ___, das ___ erreicht.
 Kontext: Für ___, weil ___.
 Beispiel: So soll es klingen: ___
 Format: ___ Wörter, ___ Varianten.</pre>
-  <button type="button" data-copy="v8">Kopieren</button>
+  <button type="button" data-copy="v12">Kopieren</button>
   <p class="hint">Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten.</p>
 </article><article class="card" id="R001">
   <div class="meta"><span class="tag">Reel</span><span>Reel R001</span></div>
   <h2>Der eine Satz vor jedem Prompt</h2>
-  <pre id="v9">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
-  <button type="button" data-copy="v9">Kopieren</button>
+  <pre id="v13">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
+  <button type="button" data-copy="v13">Kopieren</button>
   <p class="hint">Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten.</p>
 </article>
 <footer>Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a></footer>

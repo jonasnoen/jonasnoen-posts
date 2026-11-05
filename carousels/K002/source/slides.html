@@ -1,0 +1,178 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Karussell-Vorlage v2 (Reel-Look): Manrope 800 + kursive Akzente (Instrument Serif), hell/dunkel im Wechsel,
+     Memoji-Posen aus assets/avatar. Je Slide <section class="slide [light]"><div class="in">…</div></section>.
+     shot.cjs rendert 1080×1350 (Instagram) und mit body.tt 1080×1920 (TikTok, Inhalt nach unten versetzt). -->
+<style>
+@font-face{font-family:Manrope;font-weight:500;src:url(node_modules/@fontsource/manrope/files/manrope-latin-500-normal.woff2)}
+@font-face{font-family:Manrope;font-weight:800;src:url(node_modules/@fontsource/manrope/files/manrope-latin-800-normal.woff2)}
+@font-face{font-family:Serif;font-style:italic;src:url(node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2)}
+:root{--ink:#17141f;--warm:#f6efe4;--chat:#f7f3fb;--violet:#8b6cf0;--violetL:#b9a6ff;--amber:#ffc65c;--green:#3ccf8e;--red:#ef5a4c;--coral:#ff8f6b;--grey:#b8b1c8}
+*{box-sizing:border-box}html,body{margin:0;background:#000}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Manrope,sans-serif;color:var(--warm);margin-bottom:20px;
+  background:radial-gradient(760px 640px at 540px 560px,rgba(139,108,240,.26),rgba(139,108,240,0)),linear-gradient(#1f1a2c,#110e17)}
+.slide.light{background:radial-gradient(800px 600px at 540px 500px,rgba(139,108,240,.10),rgba(139,108,240,0)),var(--warm);color:var(--ink)}
+.in{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.tt .slide{height:1920px}.tt .in{top:270px}.tt .av{bottom:-270px!important}.tt #s1 .swipe{visibility:hidden}
+.top{position:absolute;left:84px;right:84px;top:70px;display:flex;justify-content:space-between;align-items:center;font:800 26px Manrope;letter-spacing:.12em;text-transform:uppercase;color:var(--violetL)}
+.light .top{color:var(--violet)}
+.cnt{letter-spacing:.06em;padding:10px 20px;border-radius:30px;background:rgba(185,166,255,.16)}
+.light .cnt{background:rgba(139,108,240,.12)}
+.body{position:absolute;left:84px;right:84px;top:170px;display:flex;flex-direction:column;gap:34px}
+.h{font:800 92px/1.04 Manrope;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.s{font:400 1.14em/0.9 Serif;font-style:italic;letter-spacing:0;color:var(--amber)}
+.s.v{color:var(--violetL)}.s.g{color:var(--green)}.s.c{color:var(--coral)}
+.light .s{color:var(--red)}.light .s.v{color:var(--violet)}
+.sub{font:500 40px/1.38 Manrope;color:var(--grey);margin:0}
+.light .sub{color:#5d566d}
+.card{background:var(--warm);color:var(--ink);border-radius:30px;padding:42px 46px;font:500 44px/1.42 Manrope;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.light .card{background:#fff;box-shadow:0 16px 40px rgba(60,40,110,.14)}
+.card b{font-weight:800}
+.chat{background:var(--chat);color:var(--ink);border-radius:30px;overflow:hidden;box-shadow:0 16px 40px rgba(60,40,110,.16)}
+.chat .bar{background:#ece5f7;padding:20px 30px;font:800 28px Manrope;color:#5b4bb8;display:flex;gap:12px;align-items:center}
+.dot{width:16px;height:16px;border-radius:50%}
+.chat .msgs{padding:32px;display:flex;flex-direction:column;gap:22px}
+.me{align-self:flex-end;background:var(--violet);color:#fff;border-radius:26px;padding:22px 28px;font:800 34px/1.35 Manrope;max-width:88%}
+.ai{background:#e9e3f3;border-radius:26px;padding:22px 28px;font:500 32px/1.4 Manrope;max-width:92%;color:#4a4458}
+.stamp{position:absolute;font:800 50px Manrope;color:var(--red);border:9px solid var(--red);border-radius:20px;padding:10px 26px;transform:rotate(-9deg);background:rgba(246,239,228,.85)}
+.badge{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;font:800 70px Manrope;color:var(--ink);flex:0 0 118px}
+.row{display:flex;gap:30px;align-items:center}
+.foot{z-index:2;position:absolute;left:84px;right:84px;bottom:52px;display:flex;justify-content:space-between;align-items:center;font:800 26px Manrope;letter-spacing:.08em;color:#8e86a3}
+.light .foot{color:#9a93a8}
+.swipe{color:var(--amber);font-size:32px;letter-spacing:.02em}
+.light .swipe{color:var(--red)}
+.av{position:absolute;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
+/* Fortschritts-Karte wie in den Reels */
+.prog{position:absolute;left:84px;right:84px;bottom:120px;background:rgba(255,255,255,.06);border:2px solid rgba(185,166,255,.22);border-radius:28px;padding:26px 30px}
+.prog .t{font:800 24px Manrope;letter-spacing:.14em;color:var(--violetL);margin-bottom:18px}
+.prog .g{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.prog .g div{height:92px;border-radius:20px;border:3px dashed #4a4166;display:flex;gap:10px;align-items:center;justify-content:center;font:800 27px Manrope;color:#6d6488}
+.prog .g div.on{border:none;color:var(--ink)}
+.prog .g div.now{outline:4px solid #fff;outline-offset:4px}
+.slots{display:grid;grid-template-columns:repeat(2,250px);gap:18px}
+.slots div{height:120px;border-radius:24px;border:4px dashed #5a5078;display:grid;place-items:center;font:800 64px Manrope;color:#8e86a3}
+.tpl{font:500 40px/1.55 Manrope}
+.tpl p{margin:0 0 22px}.tpl p:last-child{margin:0}
+.tpl b{font-weight:800}
+.blank{display:inline-block;min-width:120px;border-bottom:4px solid #c9c2d6;color:#9a93a8;text-align:center}
+.chk{flex:0 0 60px;height:60px;border-radius:50%;display:grid;place-items:center;font:800 36px Manrope;color:#fff}
+.tbl{font:500 38px/1.3 Manrope;display:flex;flex-direction:column;gap:18px}
+.tbl .r{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.tbl .r span:last-child{font:800 30px Manrope;padding:8px 18px;border-radius:16px;white-space:nowrap}
+.ok{background:#d6f5e6;color:#137a4c}.mid{background:#fff0cc;color:#8a5b00}.no{background:#fde0dc;color:#b3261e}
+.strike{text-decoration:line-through;text-decoration-thickness:5px;text-decoration-color:var(--red);color:#9a93a8}
+.cta{display:inline-block;background:var(--amber);color:var(--ink);font:800 34px Manrope;padding:18px 28px;border-radius:22px}
+</style></head><body>
+
+<!-- 1 Cover -->
+<section class="slide" id="s1"><div class="in">
+ <div class="top"><span>// Claude-Prompts · Teil 2</span><span class="cnt">1/8</span></div>
+ <div class="body" style="top:230px;gap:40px">
+  <h1 class="h" style="font-size:108px">Dieser Prompt prüft deine Bewerbung <span class="s">vor</span> dem Recruiter.</h1>
+  <p class="sub" style="font-size:44px;color:#e6dff5">4 Prompts. Anzeige und<br>Lebenslauf rein, fertig.</p>
+  <div class="slots"><div>?</div><div>?</div><div>?</div><div>?</div></div>
+ </div>
+ <img class="av" src="../../../assets/avatar/surprised.png" style="width:440px;right:-30px;bottom:90px">
+ <div class="foot"><span>JONAS NOEN</span><span class="swipe">Wischen →</span></div>
+</div></section>
+
+<!-- 2 Problem -->
+<section class="slide light" id="s2"><div class="in">
+ <div class="top"><span>// Das Problem</span><span class="cnt">2/8</span></div>
+ <div class="body">
+  <h2 class="h" style="font-size:80px">Ein Lebenslauf für <span class="s">jede</span> Stelle passt zu keiner.</h2>
+  <div class="chat"><div class="bar"><span class="dot" style="background:#ef5a4c"></span><span class="dot" style="background:#ffc65c"></span><span class="dot" style="background:#3ccf8e"></span>&nbsp;Claude</div>
+   <div class="msgs"><div class="me">Verbessere meinen Lebenslauf.</div>
+   <div class="ai">Gern! Ein paar allgemeine Tipps: Nutze aktive Verben, halte ihn übersichtlich, hebe deine Erfolge hervor …</div></div></div>
+  <p class="h" style="font-size:54px;margin-top:44px">Claude kennt die <span class="s v">Stelle</span> nicht.<br>Gib sie ihm →</p>
+ </div>
+ <div class="stamp" style="right:90px;top:1080px">ZU ALLGEMEIN</div>
+ <div class="foot"><span>JONAS NOEN</span><span class="swipe">Wischen →</span></div>
+</div></section>
+
+<!-- 3 Abgleich -->
+<section class="slide" id="s3"><div class="in">
+ <div class="top"><span>// Prompt 1 · Abgleich</span><span class="cnt">3/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--amber)">1</div><h2 class="h" style="font-size:80px">Claude hakt <span class="s">jede</span> Anforderung ab.</h2></div>
+  <div class="card tbl">
+   <div class="r"><span>SEO-Erfahrung</span><span class="ok">✅ erfüllt</span></div>
+   <div class="r"><span>Budgetverantwortung</span><span class="mid">⚠️ teilweise</span></div>
+   <div class="r"><span>Google Ads</span><span class="no">❌ fehlt</span></div>
+  </div>
+  <p class="sub" style="font-size:40px">Mit Beleg aus deinem Lebenslauf – und den Schlüsselbegriffen, die dir fehlen.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN ABLAUF</div><div class="g"><div class="on now" style="background:var(--amber)">✓ ABGLEICH</div><div>LÜCKEN</div><div>BRIEF</div><div>CHECK</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
+
+<!-- 4 Lücken -->
+<section class="slide" id="s4"><div class="in">
+ <div class="top"><span>// Prompt 2 · Lücken</span><span class="cnt">4/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--violetL)">2</div><h2 class="h" style="font-size:80px">Claude <span class="s v">fragt nach</span>, statt zu erfinden.</h2></div>
+  <div class="chat" style="box-shadow:0 20px 50px rgba(0,0,0,.35)"><div class="msgs">
+   <div class="ai">Hast du schon Google-Ads-Kampagnen betreut? Praktikum oder Projekt zählt auch.</div>
+   <div class="me">Ja, im Praktikum.</div>
+   <div class="ai"><b style="color:#137a4c">Neuer Stichpunkt:</b> „Google-Ads-Kampagnen im Praktikum betreut.“</div>
+  </div></div>
+ </div>
+ <div class="prog"><div class="t">DEIN ABLAUF</div><div class="g"><div class="on" style="background:var(--amber)">✓ ABGLEICH</div><div class="on now" style="background:var(--violetL)">✓ LÜCKEN</div><div>BRIEF</div><div>CHECK</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
+
+<!-- 5 Anschreiben -->
+<section class="slide" id="s5"><div class="in">
+ <div class="top"><span>// Prompt 3 · Anschreiben</span><span class="cnt">5/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--green)">3</div><h2 class="h" style="font-size:80px">Anschreiben aus <span class="s g">Belegen</span>, nicht aus Floskeln.</h2></div>
+  <div class="card" style="font-size:40px"><span class="strike">„Hiermit bewerbe ich mich auf …“</span><br><br>„Sie suchen jemanden mit SEO-Erfahrung. <b>Genau daran habe ich in meinem letzten Job gearbeitet</b> …“</div>
+  <p class="sub" style="font-size:40px">Persönliches markiert Claude mit [ERGÄNZEN] – das schreibst du.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN ABLAUF</div><div class="g"><div class="on" style="background:var(--amber)">✓ ABGLEICH</div><div class="on" style="background:var(--violetL)">✓ LÜCKEN</div><div class="on now" style="background:var(--green)">✓ BRIEF</div><div>CHECK</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
+
+<!-- 6 Recruiter-Check -->
+<section class="slide" id="s6"><div class="in">
+ <div class="top"><span>// Prompt 4 · Check</span><span class="cnt">6/8</span></div>
+ <div class="body">
+  <div class="row"><div class="badge" style="background:var(--coral)">4</div><h2 class="h" style="font-size:80px">Claude liest es wie ein <span class="s c">Recruiter</span>.</h2></div>
+  <div class="card" style="font-size:40px">„Lies alles wie jemand mit 30 Sekunden Zeit. <b>Welche 2 Sätze sind am schwächsten?</b> Gib mir bessere.“</div>
+  <p class="sub" style="font-size:40px">Du siehst die Schwachstellen, bevor es jemand anders tut.</p>
+ </div>
+ <div class="prog"><div class="t">DEIN ABLAUF</div><div class="g"><div class="on" style="background:var(--amber)">✓ ABGLEICH</div><div class="on" style="background:var(--violetL)">✓ LÜCKEN</div><div class="on" style="background:var(--green)">✓ BRIEF</div><div class="on now" style="background:var(--coral)">✓ CHECK</div></div></div>
+ <div class="foot"><span>JONAS NOEN</span><span>Wischen →</span></div>
+</div></section>
+
+<!-- 7 Speicher-Slide: Checkliste -->
+<section class="slide light" id="s7"><div class="in">
+ <div class="top"><span>// Zum Speichern 📌</span><span class="cnt">7/8</span></div>
+ <div class="body">
+  <h2 class="h" style="font-size:84px">Check <span class="s">vor</span> dem Abschicken</h2>
+  <div class="card" style="font-size:38px;line-height:1.35">
+   <div class="row" style="align-items:flex-start"><div class="chk" style="background:var(--green)">✓</div><div>Jede <b>Muss-Anforderung</b> hat einen Beleg im Lebenslauf.</div></div>
+   <div class="row" style="align-items:flex-start;margin-top:26px"><div class="chk" style="background:var(--green)">✓</div><div>Die <b>Schlüsselbegriffe</b> der Anzeige kommen vor.</div></div>
+   <div class="row" style="align-items:flex-start;margin-top:26px"><div class="chk" style="background:var(--green)">✓</div><div>Kein Satz, der nicht <b>stimmt</b> – nur umformuliert.</div></div>
+   <div class="row" style="align-items:flex-start;margin-top:26px"><div class="chk" style="background:var(--amber);color:var(--ink)">!</div><div>Adresse, Telefon, Geburtsdatum <b>vorher löschen</b>.</div></div>
+  </div>
+  <p class="sub" style="font-size:40px">Pro Stelle neu abgleichen – nicht eine Version für alle.</p>
+ </div>
+ <div class="foot"><span>JONAS NOEN</span><span class="swipe">Noch eins →</span></div>
+</div></section>
+
+<!-- 8 Schluss -->
+<section class="slide" id="s8"><div class="in">
+ <div class="top"><span>// Praxischeck</span><span class="cnt">8/8</span></div>
+ <div class="body" style="gap:30px">
+  <h2 class="h" style="font-size:82px">Jetzt siehst du die Lücken <span class="s">zuerst</span>.</h2>
+  <div class="card" style="font-size:34px;max-width:660px">
+   <div class="row" style="align-items:flex-start"><div class="chk" style="background:var(--green)">✓</div><div>Claude formuliert um. Erfinden darf es nichts.</div></div>
+   <div class="row" style="align-items:flex-start;margin-top:22px"><div class="chk" style="background:var(--amber);color:var(--ink)">!</div><div>Am Ende entscheidest du, was rausgeht. Laut lesen: klingt es nach dir?</div></div>
+  </div>
+  <p class="h" style="font-size:48px;max-width:600px">Für welche Stelle <span class="s v">bewirbst</span> du dich gerade?</p>
+  <div><span class="cta">Kommentiere PROMPT → alle 4 Prompts per DM</span></div>
+ </div>
+ <img class="av" src="../../../assets/avatar/wave.png" style="width:420px;right:-30px;bottom:0">
+ <div class="foot"><span>@jonas.noen</span><span></span></div>
+</div></section>
+</body></html>
