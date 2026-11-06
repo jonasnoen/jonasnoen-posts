@@ -19,6 +19,13 @@ als Eintrag mit `type: "clip"` und Status `ready` in `register.json` an – dann
 nächste Tipp-Reel (Ablauf siehe „Clips“ unten).
 
 - Veröffentlichungszeit: **18:30 Uhr** (über Metricool planen, autoPublish).
+- **LinkedIn (seit 06.11.2026, vom Nutzer gewünscht):** jedes Reel zusätzlich auf LinkedIn (Marke 7001759, Provider `linkedin`,
+  gleiche Zeit) als **eigene Fassung ohne PROMPT** – dort gibt es keine Kommentar-Automatik: `NO_CTA=1 … node render.cjs full
+  final_nocta.mp4` (+ gleiche Lautheits-Korrektur), dann `python3 engine/tools/cut_cta.py final_nocta.mp4 words.json
+  reels/R###/reel_linkedin.mp4` (schneidet den gesprochenen PROMPT-Satz raus, Lippen bleiben synchron). Eigene sachlichere
+  Caption (Mehrwert, eine Frage am Ende), endet mit „Den kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇“;
+  `firstCommentText` = „Hier ist der komplette Guide mit allen Prompts zum Kopieren: https://jonasnoen.github.io/jonasnoen-posts/“.
+  Karussell-Tage: LinkedIn-Post mit den `ig-NN.png` und derselben Logik (kein PROMPT in der Caption). Metricool-ID unter `platforms.linkedin`.
 - **Höchstens ein Post pro Tag.** Vorher prüfen, ob heute schon etwas in `register.json` oder
   in Metricool geplant/veröffentlicht ist. Wenn ja: nichts tun.
 - **Niemals Duplikate:** Kein Short, dessen `sourceVideoId` schon in `register.json` steht.
