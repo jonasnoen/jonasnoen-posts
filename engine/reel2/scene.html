@@ -8,6 +8,10 @@ html,body{margin:0;background:#000}canvas{display:block}
 </style></head><body>
 <canvas id="c" width="1080" height="1920"></canvas>
 <script>
+// Sprache der festen Texte (Outro-Karte, PROMPT-Pille). Englischer Kanal (@jonasnoen.ai): LANG='en' setzen.
+const LANG='de';
+const UI=LANG==='en'?{follow1:'FOLLOW FOR MORE',follow2:'CLAUDE PROMPTS',handle:'@jonasnoen.ai',comment:'Comment',dm:'→ get the guide'}
+  :{follow1:'FOLG MIR FÜR MEHR',follow2:'CLAUDE-TIPPS',handle:'@jonas.noen',comment:'Kommentiere',dm:'→ Guide per DM'};
 const W=1080,H=1920,c=document.getElementById('c'),g=c.getContext('2d');
 const C={bg:'#17141f',bg2:'#221d30',wall:'#1d1928',violet:'#8b6cf0',violetL:'#b9a6ff',warm:'#f6efe4',ink:'#141019',red:'#ef5a4c',green:'#3ccf8e',amber:'#ffc65c',skin:'#f2c7a5',hair:'#3a2a22',desk:'#6b4a35',deskTop:'#8a6146',grey:'#c9c4d4'};
 let WORDS=[],K=i=>0,KE=i=>0,END=27;
@@ -216,11 +220,11 @@ function p7(t){const k1=KW('beispiel'),k2=KW('zehn'),km=KW('mehr');
   if(t>km){withAlpha(ease((t-km)/.2),()=>{font(400,170,'Anton');g.fillStyle=L(C.amber,C.red);g.textAlign='center';g.fillText('>',480,830);});}
   if(t>k2){['locker','direkt','witzig','klar','nahbar','frech','ruhig','modern','ehrlich','kurz'].forEach((w,i)=>{const a=ease((t-k2-i*.035)/.18);withAlpha(a*.9,()=>{const x=560+(i%2)*190,y=520+Math.floor(i/2)*84;rr(x,y,172,62,31);g.fillStyle='#3a3155';g.fill();font(800,28);g.fillStyle=C.grey;g.textAlign='center';g.fillText(w,x+86,y+41);});});}}
 function p8(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.save();g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=30;g.shadowOffsetY=12;rr(80,520,780,330,34);g.fillStyle=C.violet;g.fill();g.restore();
-  font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText('FOLGEN FÜR MEHR',470,660);g.fillStyle=C.amber;g.fillText('CLAUDE-TIPPS',470,770);});
+  font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText(UI.follow1,470,660);g.fillStyle=C.amber;g.fillText(UI.follow2,470,770);});
   {const ki=WORDS.findIndex(w=>/prompt/i.test(w.text));if(ki>=0&&!window.NO_PROMPT_CTA){const a=back(t,WORDS[ki].start-.1,.4);if(a>0)scaleAt(470,955,a,()=>{rr(90,890,760,130,65);g.fillStyle='#fff';g.fill();
-    font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText('Kommentiere',140,970);const w1=g.measureText('Kommentiere ').width;font(400,62,'Anton');g.fillStyle=C.red;g.fillText('PROMPT',140+w1,974);
-    const w2=g.measureText('PROMPT ').width;font(800,32);g.fillStyle='#8a7fa6';g.fillText('→ Guide per DM',140+w1+w2,968);});}}
-  if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=L(C.violetL,C.violet);g.textAlign='center';g.fillText('@jonas.noen',470,940);});}}
+    font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText(UI.comment,140,970);const w1=g.measureText(UI.comment+' ').width;font(400,62,'Anton');g.fillStyle=C.red;g.fillText('PROMPT',140+w1,974);
+    const w2=g.measureText('PROMPT ').width;font(800,32);g.fillStyle='#8a7fa6';g.fillText(UI.dm,140+w1+w2,968);});}}
+  if(t>KW('für')){withAlpha(ease((t-KW('für'))/.3),()=>{font(800,56);g.fillStyle=L(C.violetL,C.violet);g.textAlign='center';g.fillText(UI.handle,470,940);});}}
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8];
 // Avatar pro Phrase. 'loop:<name>' = Sprech-Loop aus assets/avatar/loops (neutral, explain, talk=Zeigen, think, happy=lachend fürs Outro);
 // sonst Standbild-Pose (surprised, thumbs, wave, think, point). Mit lipsync.mp4 (siehe CLAUDE.md) wird alles
