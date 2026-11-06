@@ -32,14 +32,55 @@ footer a{color:var(--violet)}
 <div class="kick">// Claude guides</div>
 <h1>Copy, <em>paste</em>, done.</h1>
 <p class="lead">Every guide and prompt from my posts. Newest on top.</p>
-<article class="card new" id="G002">
-  <div class="meta"><span class="tag">New · Guide</span><span>Guide G002</span></div>
+<article class="card new" id="E001">
+  <div class="meta"><span class="tag">New · Guide</span><span>Reel E001</span></div>
+  <h2>Guide: Analyze long documents with Claude</h2>
+  <p class="goal">For contracts, reports, minutes and PDFs: Claude only tells you what&#x27;s actually in the text – with proof.</p>
+  <h3>How it works</h3>
+  <ol class="steps"><li><b>Paste the document.</b> Copy the full text into the chat or upload the file – at the very top, before anything else.</li><li><b>Get the overview first.</b> Send prompt 1: Claude tells you what kind of document it is and which parts matter.</li><li><b>Ask your question.</b> Send prompt 2 with your question at the very bottom. Claude pulls out quotes first and answers only from them.</li><li><b>Double-check.</b> Send prompt 3: Claude checks its own answer against the text and flags anything that isn&#x27;t backed up.</li></ol>
+  <h3>Prompt 1: Overview</h3>
+  <pre id="v1">&lt;document&gt;
+___ (paste the full text)
+&lt;/document&gt;
+
+Read the whole document. Then give me:
+1. In one sentence: what kind of document is this and who are the parties?
+2. The 5 most important passages, each as a word-for-word quote with section or page number.
+3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.
+4. What&#x27;s missing or vaguely worded.
+Don&#x27;t make anything up. If something isn&#x27;t in the text, write &quot;Not in the document&quot;.</pre>
+  <button type="button" data-copy="v1">Copy</button>
+  <p class="hint">Right after pasting – so you know what to ask.</p>
+  <h3>Prompt 2: Question with quotes</h3>
+  <pre id="v2">Answer my question using only the document above. Work like this:
+1. First find every passage relevant to the question. Write them word for word and numbered inside &lt;quotes&gt; tags.
+2. Then answer the question using only those quotes. Put the number after each statement, e.g. [2].
+3. If the document doesn&#x27;t answer the question, say so clearly instead of guessing.
+4. Finally: the answer in 3 simple sentences, no jargon.
+
+My question: ___</pre>
+  <button type="button" data-copy="v2">Copy</button>
+  <p class="hint">For every specific question. The question always goes at the very bottom.</p>
+  <h3>Prompt 3: Double-check</h3>
+  <pre id="v3">Check your last answer sentence by sentence against the document.
+- Mark each statement ✅ (quoted directly), ⚠️ (only indirectly supported) or ❌ (not supported).
+- Fix or delete every ⚠️ and ❌.
+- Then give me the cleaned-up answer.</pre>
+  <button type="button" data-copy="v3">Copy</button>
+  <p class="hint">For anything important: money, deadlines, contracts.</p>
+  <h3>Example</h3>
+  <p class="ex">Paste a rental lease → prompt 1 shows deposit, notice period and utilities as a table → prompt 2: &quot;Am I allowed to sublet?&quot; → answer with a quote from the lease → prompt 3 checks everything is backed up.</p>
+  <h3>Check before you send</h3>
+  <ul class="check"><li>Document at the top, question at the bottom</li><li>For long PDFs: ask for page numbers</li><li>Important decisions (legal, money): still have a human check</li></ul>
+  <p class="hint">Paste the document first, then ask – Claude only answers from the text, with quotes.</p>
+</article><article class="card" id="G002">
+  <div class="meta"><span class="tag">Guide</span><span>Guide G002</span></div>
   <h2>Guide: Tailor your job application to the role with Claude</h2>
   <p class="goal">Match your resume and cover letter to a specific job posting – without making anything up.</p>
   <h3>How it works</h3>
   <ol class="steps"><li><b>Prepare your data.</b> Copy the full job posting. Paste your resume as text and remove your address, phone number and date of birth first.</li><li><b>Get the match.</b> Send prompt 1: Claude builds a table with every requirement, your proof and ✅/⚠️/❌.</li><li><b>Close the gaps.</b> Send prompt 2 and answer the questions honestly. Often you have the experience – it&#x27;s just not in your resume.</li><li><b>Build the cover letter.</b> Prompt 3: Claude writes from your proof points. You fill in everything marked [ADD].</li><li><b>Recruiter check.</b> Prompt 4: Claude reads everything like a busy recruiter and shows you the weakest sentences.</li></ol>
   <h3>Prompt 1: Match</h3>
-  <pre id="v1">Help me tailor my application to a specific job.
+  <pre id="v4">Help me tailor my application to a specific job.
 
 &lt;job_posting&gt;
 ___ (paste the full posting)
@@ -56,79 +97,38 @@ How to work:
 4. Give me the 3 most important changes to my resume, each as a before/after sentence.
 
 Important: don&#x27;t invent experience, numbers or degrees. If you&#x27;re missing info for a requirement, ask me instead of guessing.</pre>
-  <button type="button" data-copy="v1">Copy</button>
+  <button type="button" data-copy="v4">Copy</button>
   <p class="hint">First thing for every new job.</p>
   <h3>Prompt 2: Close the gaps</h3>
-  <pre id="v2">Go through every ⚠️ and ❌ in your table.
+  <pre id="v5">Go through every ⚠️ and ❌ in your table.
 1. Ask me exactly one question per point about whether I have experience with it – jobs, internships, studies, volunteering or side projects all count.
 2. Ask the questions as a numbered list and wait for my answers.
 3. Then turn my answers into new resume bullet points: action verb first, concrete result, only facts I actually mentioned.
 4. Tell me where in the resume each bullet belongs.</pre>
-  <button type="button" data-copy="v2">Copy</button>
+  <button type="button" data-copy="v5">Copy</button>
   <p class="hint">Right after the match, if there are ⚠️ or ❌.</p>
   <h3>Prompt 3: Cover letter from proof</h3>
-  <pre id="v3">Now write a cover letter for this role, max 250 words.
+  <pre id="v6">Now write a cover letter for this role, max 250 words.
 - Opening: why exactly this role. Use only what&#x27;s in the posting and mark with [ADD] where I should add something personal.
 - Body: the 3 must-have requirements I can prove best, each with a concrete example from my resume.
 - Tone: ___ (e.g. friendly and direct). No clichés like &quot;I am writing to apply&quot; or &quot;I am very excited&quot;.
 - Closing: one confident sentence about the interview.
 Don&#x27;t invent anything that isn&#x27;t in my resume or my answers.</pre>
-  <button type="button" data-copy="v3">Copy</button>
+  <button type="button" data-copy="v6">Copy</button>
   <p class="hint">Once the resume fits.</p>
   <h3>Prompt 4: Recruiter check</h3>
-  <pre id="v4">Now read my resume and cover letter like a recruiter who has 30 seconds per application.
+  <pre id="v7">Now read my resume and cover letter like a recruiter who has 30 seconds per application.
 1. What sticks after 30 seconds? (3 bullet points)
 2. Which must-have requirement from the posting is still not clearly proven?
 3. Name the 2 weakest sentences and give me a better version of each.
 4. Finally give me the revised cover letter.</pre>
-  <button type="button" data-copy="v4">Copy</button>
+  <button type="button" data-copy="v7">Copy</button>
   <p class="hint">Before you hit send.</p>
   <h3>Example</h3>
   <p class="ex">Online marketing role: posting + resume in → prompt 1 shows SEO ✅, budget ownership ⚠️, Google Ads ❌ → prompt 2 asks: ran ad campaigns during an internship → new bullet point → prompt 3 writes the cover letter from that proof → prompt 4 replaces the 2 weakest sentences.</p>
   <h3>Check before you send</h3>
   <ul class="check"><li>Every must-have requirement has proof in the resume</li><li>The posting&#x27;s keywords show up</li><li>No sentence that isn&#x27;t true – Claude only rewords</li><li>Personal data removed; read the cover letter out loud: does it sound like you?</li></ul>
   <p class="hint">Paste posting and resume – Claude shows which requirements you prove and where the gaps are.</p>
-</article><article class="card" id="G001">
-  <div class="meta"><span class="tag">Guide</span><span>Guide G001</span></div>
-  <h2>Guide: Analyze long documents with Claude</h2>
-  <p class="goal">For contracts, reports, minutes and PDFs: Claude only tells you what&#x27;s actually in the text – with proof.</p>
-  <h3>How it works</h3>
-  <ol class="steps"><li><b>Paste the document.</b> Copy the full text into the chat or upload the file – at the very top, before anything else.</li><li><b>Get the overview first.</b> Send prompt 1: Claude tells you what kind of document it is and which parts matter.</li><li><b>Ask your question.</b> Send prompt 2 with your question at the very bottom. Claude pulls out quotes first and answers only from them.</li><li><b>Double-check.</b> Send prompt 3: Claude checks its own answer against the text and flags anything that isn&#x27;t backed up.</li></ol>
-  <h3>Prompt 1: Overview</h3>
-  <pre id="v5">&lt;document&gt;
-___ (paste the full text)
-&lt;/document&gt;
-
-Read the whole document. Then give me:
-1. In one sentence: what kind of document is this and who are the parties?
-2. The 5 most important passages, each as a word-for-word quote with section or page number.
-3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.
-4. What&#x27;s missing or vaguely worded.
-Don&#x27;t make anything up. If something isn&#x27;t in the text, write &quot;Not in the document&quot;.</pre>
-  <button type="button" data-copy="v5">Copy</button>
-  <p class="hint">Right after pasting – so you know what to ask.</p>
-  <h3>Prompt 2: Question with quotes</h3>
-  <pre id="v6">Answer my question using only the document above. Work like this:
-1. First find every passage relevant to the question. Write them word for word and numbered inside &lt;quotes&gt; tags.
-2. Then answer the question using only those quotes. Put the number after each statement, e.g. [2].
-3. If the document doesn&#x27;t answer the question, say so clearly instead of guessing.
-4. Finally: the answer in 3 simple sentences, no jargon.
-
-My question: ___</pre>
-  <button type="button" data-copy="v6">Copy</button>
-  <p class="hint">For every specific question. The question always goes at the very bottom.</p>
-  <h3>Prompt 3: Double-check</h3>
-  <pre id="v7">Check your last answer sentence by sentence against the document.
-- Mark each statement ✅ (quoted directly), ⚠️ (only indirectly supported) or ❌ (not supported).
-- Fix or delete every ⚠️ and ❌.
-- Then give me the cleaned-up answer.</pre>
-  <button type="button" data-copy="v7">Copy</button>
-  <p class="hint">For anything important: money, deadlines, contracts.</p>
-  <h3>Example</h3>
-  <p class="ex">Paste a rental lease → prompt 1 shows deposit, notice period and utilities as a table → prompt 2: &quot;Am I allowed to sublet?&quot; → answer with a quote from the lease → prompt 3 checks everything is backed up.</p>
-  <h3>Check before you send</h3>
-  <ul class="check"><li>Document at the top, question at the bottom</li><li>For long PDFs: ask for page numbers</li><li>Important decisions (legal, money): still have a human check</li></ul>
-  <p class="hint">Paste the document first, then ask – Claude only answers from the text, with quotes.</p>
 </article>
 <footer>A new Claude guide every day.</footer>
 </main>

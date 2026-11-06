@@ -1,61 +1,5 @@
 [
   {
-    "id": "G001",
-    "type": "guide",
-    "createdAt": "2026-11-06",
-    "note": "Starter guide, translated from R006 (DE)",
-    "vorlage": {
-      "titel": "Analyze long documents (guide with 3 prompts)",
-      "text": "<document>\n___ (paste the full text)\n</document>\n\nRead the whole document. Then give me:\n1. In one sentence: what kind of document is this and who are the parties?\n2. The 5 most important passages, each as a word-for-word quote with section or page number.\n3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.\n4. What's missing or vaguely worded.\nDon't make anything up. If something isn't in the text, write \"Not in the document\".",
-      "hinweis": "Paste the document first, then ask – Claude only answers from the text, with quotes."
-    },
-    "guide": {
-      "titel": "Guide: Analyze long documents with Claude",
-      "ziel": "For contracts, reports, minutes and PDFs: Claude only tells you what's actually in the text – with proof.",
-      "schritte": [
-        {
-          "titel": "Paste the document.",
-          "text": "Copy the full text into the chat or upload the file – at the very top, before anything else."
-        },
-        {
-          "titel": "Get the overview first.",
-          "text": "Send prompt 1: Claude tells you what kind of document it is and which parts matter."
-        },
-        {
-          "titel": "Ask your question.",
-          "text": "Send prompt 2 with your question at the very bottom. Claude pulls out quotes first and answers only from them."
-        },
-        {
-          "titel": "Double-check.",
-          "text": "Send prompt 3: Claude checks its own answer against the text and flags anything that isn't backed up."
-        }
-      ],
-      "prompts": [
-        {
-          "titel": "Overview",
-          "text": "<document>\n___ (paste the full text)\n</document>\n\nRead the whole document. Then give me:\n1. In one sentence: what kind of document is this and who are the parties?\n2. The 5 most important passages, each as a word-for-word quote with section or page number.\n3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.\n4. What's missing or vaguely worded.\nDon't make anything up. If something isn't in the text, write \"Not in the document\".",
-          "wann": "Right after pasting – so you know what to ask."
-        },
-        {
-          "titel": "Question with quotes",
-          "text": "Answer my question using only the document above. Work like this:\n1. First find every passage relevant to the question. Write them word for word and numbered inside <quotes> tags.\n2. Then answer the question using only those quotes. Put the number after each statement, e.g. [2].\n3. If the document doesn't answer the question, say so clearly instead of guessing.\n4. Finally: the answer in 3 simple sentences, no jargon.\n\nMy question: ___",
-          "wann": "For every specific question. The question always goes at the very bottom."
-        },
-        {
-          "titel": "Double-check",
-          "text": "Check your last answer sentence by sentence against the document.\n- Mark each statement ✅ (quoted directly), ⚠️ (only indirectly supported) or ❌ (not supported).\n- Fix or delete every ⚠️ and ❌.\n- Then give me the cleaned-up answer.",
-          "wann": "For anything important: money, deadlines, contracts."
-        }
-      ],
-      "beispiel": "Paste a rental lease → prompt 1 shows deposit, notice period and utilities as a table → prompt 2: \"Am I allowed to sublet?\" → answer with a quote from the lease → prompt 3 checks everything is backed up.",
-      "check": [
-        "Document at the top, question at the bottom",
-        "For long PDFs: ask for page numbers",
-        "Important decisions (legal, money): still have a human check"
-      ]
-    }
-  },
-  {
     "id": "G002",
     "type": "guide",
     "createdAt": "2026-11-06",
@@ -120,5 +64,77 @@
         "Personal data removed; read the cover letter out loud: does it sound like you?"
       ]
     }
+  },
+  {
+    "id": "E001",
+    "type": "reel",
+    "createdAt": "2026-11-06",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 40.0,
+    "series": "Claude Codes Part 1",
+    "fromDe": "R006",
+    "topic": "Analyze long documents with Claude",
+    "hook": "These three prompts read any contract for you.",
+    "file": "en/reels/E001/reel.mp4",
+    "sha256": "6b0d3998e4f2f4165b5de2e01e69c779d521666873992561411355f860cd7e0a",
+    "durationSec": 29.2,
+    "music": "assets/music/lofi-105.mp3",
+    "caption": "These 3 prompts read any contract for you. 📄\n\nPaste a long document into Claude and just ask a question? It might fill the gaps with guesses.\n\nThe fix is a 3-step chain:\n1️⃣ Overview – every deadline, amount and duty in one table\n2️⃣ Your question – but Claude has to quote the document first\n3️⃣ Double-check – every claim gets a ✅ or it gets deleted\n\nWorks for leases, contracts, reports, terms & conditions, meeting minutes.\n\nSave this for the next time you have to read the fine print. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PromptEngineering #AITools #Productivity",
+    "tiktokTitle": "3 prompts that read any contract for you",
+    "captionX": "These 3 Claude prompts read any contract for you: overview table → question answered only with quotes → double-check every claim. Comment PROMPT for the guide 📄",
+    "captionLinkedIn": "Most people paste a long contract into an AI chat and just ask. The answer sounds confident – but it may fill gaps with guesses.\n\nWhat works better is a 3-step chain:\n1. Overview: every deadline, amount and obligation in one table, each with a quote.\n2. The question: the model has to quote the relevant passages first and may only answer from them.\n3. Double-check: every statement is checked against the text – unsupported claims get removed.\n\nI use this for leases, service agreements and long reports. For anything with legal or financial consequences, a human still signs off.\n\nHow do you make sure an AI summary of a document is actually correct?",
+    "costUsd": 0.28,
+    "vorlage": {
+      "titel": "Analyze long documents (guide with 3 prompts)",
+      "text": "<document>\n___ (paste the full text)\n</document>\n\nRead the whole document. Then give me:\n1. In one sentence: what kind of document is this and who are the parties?\n2. The 5 most important passages, each as a word-for-word quote with section or page number.\n3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.\n4. What's missing or vaguely worded.\nDon't make anything up. If something isn't in the text, write \"Not in the document\".",
+      "hinweis": "Paste the document first, then ask – Claude only answers from the text, with quotes."
+    },
+    "guide": {
+      "titel": "Guide: Analyze long documents with Claude",
+      "ziel": "For contracts, reports, minutes and PDFs: Claude only tells you what's actually in the text – with proof.",
+      "schritte": [
+        {
+          "titel": "Paste the document.",
+          "text": "Copy the full text into the chat or upload the file – at the very top, before anything else."
+        },
+        {
+          "titel": "Get the overview first.",
+          "text": "Send prompt 1: Claude tells you what kind of document it is and which parts matter."
+        },
+        {
+          "titel": "Ask your question.",
+          "text": "Send prompt 2 with your question at the very bottom. Claude pulls out quotes first and answers only from them."
+        },
+        {
+          "titel": "Double-check.",
+          "text": "Send prompt 3: Claude checks its own answer against the text and flags anything that isn't backed up."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Overview",
+          "text": "<document>\n___ (paste the full text)\n</document>\n\nRead the whole document. Then give me:\n1. In one sentence: what kind of document is this and who are the parties?\n2. The 5 most important passages, each as a word-for-word quote with section or page number.\n3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.\n4. What's missing or vaguely worded.\nDon't make anything up. If something isn't in the text, write \"Not in the document\".",
+          "wann": "Right after pasting – so you know what to ask."
+        },
+        {
+          "titel": "Question with quotes",
+          "text": "Answer my question using only the document above. Work like this:\n1. First find every passage relevant to the question. Write them word for word and numbered inside <quotes> tags.\n2. Then answer the question using only those quotes. Put the number after each statement, e.g. [2].\n3. If the document doesn't answer the question, say so clearly instead of guessing.\n4. Finally: the answer in 3 simple sentences, no jargon.\n\nMy question: ___",
+          "wann": "For every specific question. The question always goes at the very bottom."
+        },
+        {
+          "titel": "Double-check",
+          "text": "Check your last answer sentence by sentence against the document.\n- Mark each statement ✅ (quoted directly), ⚠️ (only indirectly supported) or ❌ (not supported).\n- Fix or delete every ⚠️ and ❌.\n- Then give me the cleaned-up answer.",
+          "wann": "For anything important: money, deadlines, contracts."
+        }
+      ],
+      "beispiel": "Paste a rental lease → prompt 1 shows deposit, notice period and utilities as a table → prompt 2: \"Am I allowed to sublet?\" → answer with a quote from the lease → prompt 3 checks everything is backed up.",
+      "check": [
+        "Document at the top, question at the bottom",
+        "For long PDFs: ask for page numbers",
+        "Important decisions (legal, money): still have a human check"
+      ]
+    },
+    "note": "Erster Post des englischen Kanals, Guide = G001"
   }
 ]
