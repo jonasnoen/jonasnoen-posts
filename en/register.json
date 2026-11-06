@@ -1,0 +1,124 @@
+[
+  {
+    "id": "G001",
+    "type": "guide",
+    "createdAt": "2026-11-06",
+    "note": "Starter guide, translated from R006 (DE)",
+    "vorlage": {
+      "titel": "Analyze long documents (guide with 3 prompts)",
+      "text": "<document>\n___ (paste the full text)\n</document>\n\nRead the whole document. Then give me:\n1. In one sentence: what kind of document is this and who are the parties?\n2. The 5 most important passages, each as a word-for-word quote with section or page number.\n3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.\n4. What's missing or vaguely worded.\nDon't make anything up. If something isn't in the text, write \"Not in the document\".",
+      "hinweis": "Paste the document first, then ask – Claude only answers from the text, with quotes."
+    },
+    "guide": {
+      "titel": "Guide: Analyze long documents with Claude",
+      "ziel": "For contracts, reports, minutes and PDFs: Claude only tells you what's actually in the text – with proof.",
+      "schritte": [
+        {
+          "titel": "Paste the document.",
+          "text": "Copy the full text into the chat or upload the file – at the very top, before anything else."
+        },
+        {
+          "titel": "Get the overview first.",
+          "text": "Send prompt 1: Claude tells you what kind of document it is and which parts matter."
+        },
+        {
+          "titel": "Ask your question.",
+          "text": "Send prompt 2 with your question at the very bottom. Claude pulls out quotes first and answers only from them."
+        },
+        {
+          "titel": "Double-check.",
+          "text": "Send prompt 3: Claude checks its own answer against the text and flags anything that isn't backed up."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Overview",
+          "text": "<document>\n___ (paste the full text)\n</document>\n\nRead the whole document. Then give me:\n1. In one sentence: what kind of document is this and who are the parties?\n2. The 5 most important passages, each as a word-for-word quote with section or page number.\n3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.\n4. What's missing or vaguely worded.\nDon't make anything up. If something isn't in the text, write \"Not in the document\".",
+          "wann": "Right after pasting – so you know what to ask."
+        },
+        {
+          "titel": "Question with quotes",
+          "text": "Answer my question using only the document above. Work like this:\n1. First find every passage relevant to the question. Write them word for word and numbered inside <quotes> tags.\n2. Then answer the question using only those quotes. Put the number after each statement, e.g. [2].\n3. If the document doesn't answer the question, say so clearly instead of guessing.\n4. Finally: the answer in 3 simple sentences, no jargon.\n\nMy question: ___",
+          "wann": "For every specific question. The question always goes at the very bottom."
+        },
+        {
+          "titel": "Double-check",
+          "text": "Check your last answer sentence by sentence against the document.\n- Mark each statement ✅ (quoted directly), ⚠️ (only indirectly supported) or ❌ (not supported).\n- Fix or delete every ⚠️ and ❌.\n- Then give me the cleaned-up answer.",
+          "wann": "For anything important: money, deadlines, contracts."
+        }
+      ],
+      "beispiel": "Paste a rental lease → prompt 1 shows deposit, notice period and utilities as a table → prompt 2: \"Am I allowed to sublet?\" → answer with a quote from the lease → prompt 3 checks everything is backed up.",
+      "check": [
+        "Document at the top, question at the bottom",
+        "For long PDFs: ask for page numbers",
+        "Important decisions (legal, money): still have a human check"
+      ]
+    }
+  },
+  {
+    "id": "G002",
+    "type": "guide",
+    "createdAt": "2026-11-06",
+    "note": "Starter guide, translated from the DE job-application guide",
+    "vorlage": {
+      "titel": "Tailor your application (guide with 4 prompts)",
+      "text": "Help me tailor my application to a specific job.\n\n<job_posting>\n___ (paste the full posting)\n</job_posting>\n\n<resume>\n___ (paste your resume as text – without address, phone number, date of birth)\n</resume>\n\nHow to work:\n1. Pull every requirement from the posting and split them into \"Must have\" and \"Nice to have\".\n2. Make a table: Requirement – Proof from my resume (word for word) – Rating ✅ met / ⚠️ partly / ❌ missing.\n3. List the 5 most important keywords from the posting that aren't in my resume yet.\n4. Give me the 3 most important changes to my resume, each as a before/after sentence.\n\nImportant: don't invent experience, numbers or degrees. If you're missing info for a requirement, ask me instead of guessing.",
+      "hinweis": "Paste posting and resume – Claude shows which requirements you prove and where the gaps are."
+    },
+    "guide": {
+      "titel": "Guide: Tailor your job application to the role with Claude",
+      "ziel": "Match your resume and cover letter to a specific job posting – without making anything up.",
+      "schritte": [
+        {
+          "titel": "Prepare your data.",
+          "text": "Copy the full job posting. Paste your resume as text and remove your address, phone number and date of birth first."
+        },
+        {
+          "titel": "Get the match.",
+          "text": "Send prompt 1: Claude builds a table with every requirement, your proof and ✅/⚠️/❌."
+        },
+        {
+          "titel": "Close the gaps.",
+          "text": "Send prompt 2 and answer the questions honestly. Often you have the experience – it's just not in your resume."
+        },
+        {
+          "titel": "Build the cover letter.",
+          "text": "Prompt 3: Claude writes from your proof points. You fill in everything marked [ADD]."
+        },
+        {
+          "titel": "Recruiter check.",
+          "text": "Prompt 4: Claude reads everything like a busy recruiter and shows you the weakest sentences."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Match",
+          "text": "Help me tailor my application to a specific job.\n\n<job_posting>\n___ (paste the full posting)\n</job_posting>\n\n<resume>\n___ (paste your resume as text – without address, phone number, date of birth)\n</resume>\n\nHow to work:\n1. Pull every requirement from the posting and split them into \"Must have\" and \"Nice to have\".\n2. Make a table: Requirement – Proof from my resume (word for word) – Rating ✅ met / ⚠️ partly / ❌ missing.\n3. List the 5 most important keywords from the posting that aren't in my resume yet.\n4. Give me the 3 most important changes to my resume, each as a before/after sentence.\n\nImportant: don't invent experience, numbers or degrees. If you're missing info for a requirement, ask me instead of guessing.",
+          "wann": "First thing for every new job."
+        },
+        {
+          "titel": "Close the gaps",
+          "text": "Go through every ⚠️ and ❌ in your table.\n1. Ask me exactly one question per point about whether I have experience with it – jobs, internships, studies, volunteering or side projects all count.\n2. Ask the questions as a numbered list and wait for my answers.\n3. Then turn my answers into new resume bullet points: action verb first, concrete result, only facts I actually mentioned.\n4. Tell me where in the resume each bullet belongs.",
+          "wann": "Right after the match, if there are ⚠️ or ❌."
+        },
+        {
+          "titel": "Cover letter from proof",
+          "text": "Now write a cover letter for this role, max 250 words.\n- Opening: why exactly this role. Use only what's in the posting and mark with [ADD] where I should add something personal.\n- Body: the 3 must-have requirements I can prove best, each with a concrete example from my resume.\n- Tone: ___ (e.g. friendly and direct). No clichés like \"I am writing to apply\" or \"I am very excited\".\n- Closing: one confident sentence about the interview.\nDon't invent anything that isn't in my resume or my answers.",
+          "wann": "Once the resume fits."
+        },
+        {
+          "titel": "Recruiter check",
+          "text": "Now read my resume and cover letter like a recruiter who has 30 seconds per application.\n1. What sticks after 30 seconds? (3 bullet points)\n2. Which must-have requirement from the posting is still not clearly proven?\n3. Name the 2 weakest sentences and give me a better version of each.\n4. Finally give me the revised cover letter.",
+          "wann": "Before you hit send."
+        }
+      ],
+      "beispiel": "Online marketing role: posting + resume in → prompt 1 shows SEO ✅, budget ownership ⚠️, Google Ads ❌ → prompt 2 asks: ran ad campaigns during an internship → new bullet point → prompt 3 writes the cover letter from that proof → prompt 4 replaces the 2 weakest sentences.",
+      "check": [
+        "Every must-have requirement has proof in the resume",
+        "The posting's keywords show up",
+        "No sentence that isn't true – Claude only rewords",
+        "Personal data removed; read the cover letter out loud: does it sound like you?"
+      ]
+    }
+  }
+]

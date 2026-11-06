@@ -5,10 +5,24 @@ Jeder Eintrag mit Feld "vorlage" ({titel, text, hinweis}) wird eine Karte, neues
 Aufruf (im Repo-Hauptordner): python3 engine/site/build.py
 Ziel-URL: https://jonasnoen.github.io/jonasnoen-posts/
 """
-import html, json, os, re
+import html, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-data = json.load(open(os.path.join(ROOT, 'register.json'), encoding='utf-8'))
+LANG = sys.argv[1] if len(sys.argv) > 1 else 'de'   # 'de' (Standard) oder 'en' (englischer Kanal, komplett getrennt)
+EN = LANG == 'en'
+T = {k: (en if EN else de) for k, de, en in [
+    ('copy', 'Kopieren', 'Copy'), ('copied', 'Kopiert ✓', 'Copied ✓'), ('sel', 'Bitte markieren und kopieren', 'Please select and copy'),
+    ('new', 'Neu', 'New'), ('steps', 'So gehst du vor', 'How it works'), ('ex', 'Beispiel', 'Example'),
+    ('check', 'Check vor dem Abschicken', 'Check before you send'), ('kick', '// Claude-Vorlagen', '// Claude guides'),
+    ('h1', 'Kopieren, <em>einfügen</em>, fertig.', 'Copy, <em>paste</em>, done.'),
+    ('lead', 'Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.', 'Every guide and prompt from my posts. Newest on top.'),
+    ('title', 'Claude-Vorlagen von Jonas', 'Claude Guides – copy & paste prompts'),
+    ('desc', 'Alle Prompt-Vorlagen aus den Reels und Karussells von @jonas.noen zum Kopieren.', 'Step-by-step Claude guides with copy-paste prompts for real tasks.'),
+    ('foot', 'Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a>',
+             'A new Claude guide every day.')]}
+REG = os.path.join(ROOT, 'en', 'register.json') if EN else os.path.join(ROOT, 'register.json')
+OUT = os.path.join(ROOT, 'docs', 'en') if EN else os.path.join(ROOT, 'docs')
+data = json.load(open(REG, encoding='utf-8'))
 entries = data if isinstance(data, list) else data['entries']
 
 
@@ -18,7 +32,7 @@ def num(e):
 
 
 items = [e for e in entries if e.get('vorlage')][::-1]  # Reihenfolge in register.json = zeitlich; neueste zuerst
-TYP = {'reel': 'Reel', 'carousel': 'Karussell', 'clip': 'Video'}
+TYP = {'reel': 'Reel', 'carousel': 'Carousel' if EN else 'Karussell', 'clip': 'Video', 'guide': 'Guide'}
 
 cards = []
 n = 0
@@ -28,13 +42,13 @@ def copybox(text):
     global n
     n += 1
     return (f'<pre id="v{n}">{html.escape(text)}</pre>\n'
-            f'  <button type="button" data-copy="v{n}">Kopieren</button>')
+            f'  <button type="button" data-copy="v{n}">{T["copy"]}</button>')
 
 
 for i, e in enumerate(items):
     v = e['vorlage']
     gd = e.get('guide')
-    tag = ('Neu' if i == 0 else '') + (' · Guide' if gd else '')
+    tag = (T['new'] if i == 0 else '') + (' · Guide' if gd else '')
     tag = tag.strip(' ·') or TYP.get(e.get('type'), 'Post')
     head = (f'<article class="card{' new' if i == 0 else ''}" id="{html.escape(e.get('id', ''))}">\n'
             f'  <div class="meta"><span class="tag">{html.escape(tag)}</span><span>{html.escape(TYP.get(e.get('type'), 'Post'))} {html.escape(e.get('id', ''))}</span></div>\n'
@@ -42,7 +56,7 @@ for i, e in enumerate(items):
     if gd:
         body = [f'  <p class="goal">{html.escape(gd.get('ziel', ''))}</p>']
         if gd.get('schritte'):
-            body.append('  <h3>So gehst du vor</h3>\n  <ol class="steps">' + ''.join(
+            body.append(f'  <h3>{T["steps"]}</h3>\n  <ol class="steps">' + ''.join(
                 f'<li><b>{html.escape(st['titel'])}</b> {html.escape(st.get('text', ''))}</li>' for st in gd['schritte']) + '</ol>')
         prompts = gd.get('prompts') or [{'titel': v['titel'], 'text': v['text']}]
         for k, pr in enumerate(prompts, 1):
@@ -50,18 +64,18 @@ for i, e in enumerate(items):
             if pr.get('wann'):
                 body.append(f'  <p class="hint">{html.escape(pr['wann'])}</p>')
         if gd.get('beispiel'):
-            body.append(f'  <h3>Beispiel</h3>\n  <p class="ex">{html.escape(gd['beispiel'])}</p>')
+            body.append(f'  <h3>{T["ex"]}</h3>\n  <p class="ex">{html.escape(gd['beispiel'])}</p>')
         if gd.get('check'):
-            body.append('  <h3>Check vor dem Abschicken</h3>\n  <ul class="check">' + ''.join(f'<li>{html.escape(c)}</li>' for c in gd['check']) + '</ul>')
+            body.append(f'  <h3>{T["check"]}</h3>\n  <ul class="check">' + ''.join(f'<li>{html.escape(c)}</li>' for c in gd['check']) + '</ul>')
         body.append(f'  <p class="hint">{html.escape(v.get('hinweis', ''))}</p>')
     else:
         body = ['  ' + copybox(v['text']), f'  <p class="hint">{html.escape(v.get('hinweis', ''))}</p>']
     cards.append(head + '\n' + '\n'.join(body) + '\n</article>')
 
 page = f'''<!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Claude-Vorlagen von Jonas</title>
-<meta name="description" content="Alle Prompt-Vorlagen aus den Reels und Karussells von @jonas.noen zum Kopieren.">
+<html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{T["title"]}</title>
+<meta name="description" content="{T["desc"]}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Manrope:wght@500;800&display=swap" rel="stylesheet">
 <style>
@@ -89,21 +103,21 @@ h3{{font:800 16px Manrope;margin:22px 0 8px;color:var(--violet)}}
 footer{{color:var(--muted);font-size:14px;margin-top:32px}}
 footer a{{color:var(--violet)}}
 </style></head><body><main>
-<div class="kick">// Claude-Vorlagen</div>
-<h1>Kopieren, <em>einfügen</em>, fertig.</h1>
-<p class="lead">Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.</p>
+<div class="kick">{T["kick"]}</div>
+<h1>{T["h1"]}</h1>
+<p class="lead">{T["lead"]}</p>
 {''.join(cards)}
-<footer>Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a></footer>
+<footer>{T["foot"]}</footer>
 </main>
 <script>
 document.querySelectorAll('button[data-copy]').forEach(b=>b.addEventListener('click',async()=>{{
   const t=document.getElementById(b.dataset.copy).innerText;
-  try{{await navigator.clipboard.writeText(t);b.textContent='Kopiert ✓';}}catch(e){{b.textContent='Bitte markieren und kopieren';}}
-  setTimeout(()=>b.textContent='Kopieren',2000);}}));
+  try{{await navigator.clipboard.writeText(t);b.textContent='{T["copied"]}';}}catch(e){{b.textContent='{T["sel"]}';}}
+  setTimeout(()=>b.textContent='{T["copy"]}',2000);}}));
 </script>
 </body></html>
 '''
-os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
-open(os.path.join(ROOT, 'docs', 'index.html'), 'w', encoding='utf-8').write(page)
+os.makedirs(OUT, exist_ok=True)
+open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(page)
 open(os.path.join(ROOT, 'docs', '.nojekyll'), 'w').write('')
-print(len(items), 'Vorlagen -> docs/index.html')
+print(len(items), 'Vorlagen ->', os.path.relpath(os.path.join(OUT, 'index.html'), ROOT))
