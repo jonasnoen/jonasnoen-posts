@@ -69,7 +69,7 @@
     "id": "E001",
     "type": "reel",
     "createdAt": "2026-11-06",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 40.0,
     "series": "Claude Codes Part 1",
@@ -135,6 +135,26 @@
         "Important decisions (legal, money): still have a human check"
       ]
     },
-    "note": "Erster Post des englischen Kanals, Guide = G001"
+    "note": "Erster Post des englischen Kanals, Guide = G001",
+    "mediaCommit": "07ed8f6b8a8cc776a6d6a3c26830be124e0c03f2",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 418761524
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 418761524
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 418761541
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 418761549
+      },
+      "scheduledAt": "2026-11-06T20:30:00+01:00"
+    }
   }
 ]
