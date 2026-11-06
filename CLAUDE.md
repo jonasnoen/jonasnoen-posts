@@ -70,6 +70,16 @@ läuft (Anlass: R003, Ukiyo-e-Märchen). Die Creme/Memoji-Rotation zählt an Son
   (ca. 10–50 Cent). Musik passend zum Stil (Sondertracks in `assets/music/special/`, `MUSIC=special/<datei>`).
 - Klappt das Experiment nicht sauber: normales Tipp-Reel im nächsten Rotationsformat posten.
 
+## Themen-Radar (wöchentlicher vidIQ-Check, seit 06.11.2026)
+
+Jeden **Montag** sucht eine eigene geplante Aufgabe mit `vidiq_instagram_tiktok_outlier_search` nach Instagram-/TikTok-
+Ausreißern (letzte 14 Tage) zu Claude, KI-Prompts und KI-Workflows im deutschsprachigen Raum und schreibt daraus
+`themen/de.md` neu: 6–10 Themenideen, jeweils mit konkretem Guide-Prompt-Kern, Hook-Muster und Format-Muster
+(in eigenen Worten). **Die tägliche Aufgabe nimmt zuerst ein offenes Thema aus `themen/de.md`** (passend zum Typ des
+Tages, Regeln von unten gelten weiter: Prompt-Pflicht, Guide, keine Duplikate, „Hype ja, Lügen nein“) und markiert es als
+`genutzt R###`. Ist nichts Passendes offen: eigenes Thema wie bisher. **Öffentliches Repo:** keine vidIQ-Rohdaten
+(Aufrufzahlen, fremde Handles, Titel, Links) ablegen – nur eigene Ideen und Muster. Obergrenze 40 vidIQ-Credits pro Lauf.
+
 ## Ablauf eines Karussells
 
 1. Thema wie beim Reel prüfen (keine Duplikate, Fakten mit offizieller Quelle, keine
