@@ -1,471 +1,545 @@
 [
-  {
-    "id": "R001",
-    "type": "reel",
-    "createdAt": "2026-10-29",
-    "topic": "Claude vor dem Start Rückfragen stellen lassen",
-    "angle": "Ein Satz unter dem Prompt: 'Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.'",
-    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
-    "file": "reels/R001/reel.mp4",
-    "sha256": "a862eee15c67fe74f38f9e2f0b217353f7ea1348c78b8855c50ecbbdb9c67189",
-    "durationSec": 23.1,
-    "caption": "Dein Prompt ist lang, aber das Ergebnis passt trotzdem nicht? Schreib diesen einen Satz unter deine Aufgabe:\n\n„Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.“\n\nClaude fragt dann nach Zielgruppe, Länge oder Tonfall, statt zu raten. Du antwortest kurz, und erst dann legt es los.\n\nSpeicher dir den Tipp für deinen nächsten Prompt.\n#Claude #KI #PromptTipps #KIProjekte #JonasNoen",
-    "platforms": {
-      "instagram": {
-        "status": "published",
-        "metricoolPostId": 409523025,
-        "url": "https://www.instagram.com/reel/DfDnB8WCapf/",
-        "publishedAt": "2026-10-29T00:26:00+01:00"
-      },
-      "tiktok": {
-        "status": "published",
-        "metricoolPostId": 409523025,
-        "videoId": "7701864182941011203",
-        "publishedAt": "2026-10-29T00:26:00+01:00"
-      }
-    },
-    "tiktokTitle": "Der eine Satz vor jedem Claude-Prompt",
-    "vorlage": {
-      "titel": "Der eine Satz vor jedem Prompt",
-      "text": "Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.",
-      "hinweis": "Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten."
-    }
-  },
-  {
-    "id": "K001",
-    "type": "carousel",
-    "createdAt": "2026-10-29",
+ {
+  "id": "R001",
+  "type": "reel",
+  "createdAt": "2026-10-29",
+  "topic": "Claude vor dem Start Rückfragen stellen lassen",
+  "angle": "Ein Satz unter dem Prompt: 'Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.'",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "file": "reels/R001/reel.mp4",
+  "sha256": "a862eee15c67fe74f38f9e2f0b217353f7ea1348c78b8855c50ecbbdb9c67189",
+  "durationSec": 23.1,
+  "caption": "Dein Prompt ist lang, aber das Ergebnis passt trotzdem nicht? Schreib diesen einen Satz unter deine Aufgabe:\n\n„Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.“\n\nClaude fragt dann nach Zielgruppe, Länge oder Tonfall, statt zu raten. Du antwortest kurz, und erst dann legt es los.\n\nSpeicher dir den Tipp für deinen nächsten Prompt.\n#Claude #KI #PromptTipps #KIProjekte #JonasNoen",
+  "platforms": {
+   "instagram": {
     "status": "published",
-    "topic": "Prompt in vier Bausteinen",
-    "angle": "Ziel, Kontext, Beispiel, Format – durchgehendes Café-Beispiel",
-    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (geprüft 2026-10-29)",
-    "files": {
-      "instagram": [
-        "carousels/K001/ig-01.png",
-        "carousels/K001/ig-02.png",
-        "carousels/K001/ig-03.png",
-        "carousels/K001/ig-04.png",
-        "carousels/K001/ig-05.png",
-        "carousels/K001/ig-06.png",
-        "carousels/K001/ig-07.png",
-        "carousels/K001/ig-08.png"
-      ],
-      "tiktok": [
-        "carousels/K001/tt-01.jpg",
-        "carousels/K001/tt-02.jpg",
-        "carousels/K001/tt-03.jpg",
-        "carousels/K001/tt-04.jpg",
-        "carousels/K001/tt-05.jpg",
-        "carousels/K001/tt-06.jpg",
-        "carousels/K001/tt-07.jpg",
-        "carousels/K001/tt-08.jpg"
-      ]
-    },
-    "caption": "Hör auf, Claude raten zu lassen.\n\nWenn im Prompt nur das Thema steht, muss Claude den Rest raten – und du bekommst etwas Austauschbares.\n\nVier Bausteine machen daraus eine klare Aufgabe: Ziel (was soll herauskommen), Kontext (für wen und warum), Beispiel (wie soll es klingen) und Format (wie soll es aussehen). Die Vorlage zum Ausfüllen findest du auf Slide 7.\n\nDas Café ist ein Beispiel zur Veranschaulichung, kein Test. Ergebnisse und Fakten trotzdem selbst prüfen.\n\nSpeicher dir das Karussell für deinen nächsten Prompt. Welchen Baustein vergisst du am häufigsten?\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
-    "tiktokTitle": "Hör auf, Claude raten zu lassen",
-    "platforms": {
-      "instagram": {
-        "status": "published",
-        "metricoolPostId": 410399087,
-        "scheduledAt": "2026-10-29T19:35:00+01:00",
-        "url": "https://www.instagram.com/p/DfFqlUelWtz/"
-      },
-      "tiktok": {
-        "status": "published",
-        "metricoolPostId": 411118828,
-        "scheduledAt": "2026-10-30T12:55:00+01:00",
-        "note": "1. Versuch 29.10. als PNG von TikTok abgelehnt, neu als JPG (Commit 913f512)",
-        "videoId": "7702428234683632918",
-        "url": "https://www.tiktok.com/@jonas.noen/video/7702428234683632918",
-        "publishedAt": "2026-10-30T12:55:00+01:00"
-      }
-    },
-    "slides": 8,
-    "design": "v2-reel-look",
-    "series": "Claude-Prompts Teil 1",
-    "hook": "Hör auf, Claude raten zu lassen.",
-    "mediaCommit": "2de1f942dc8601b1ae98acfa46c9ffe7330b220c",
-    "vorlage": {
-      "titel": "Hör auf, Claude raten zu lassen",
-      "text": "Ziel: Schreib ___, das ___ erreicht.\nKontext: Für ___, weil ___.\nBeispiel: So soll es klingen: ___\nFormat: ___ Wörter, ___ Varianten.",
-      "hinweis": "Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten."
-    }
-  },
-  {
-    "id": "R002",
-    "type": "reel",
-    "createdAt": "2026-10-31",
+    "metricoolPostId": 409523025,
+    "url": "https://www.instagram.com/reel/DfDnB8WCapf/",
+    "publishedAt": "2026-10-29T00:26:00+01:00"
+   },
+   "tiktok": {
     "status": "published",
-    "format": "creme",
-    "faceOffset": 58.0,
-    "series": "Claude-Codes Teil 2",
-    "topic": "Positiv formulieren statt Verbote",
-    "angle": "Drei Verbote umdrehen: 'keine langen Sätze' → 'kurze Sätze, wie gesprochen', 'kein Fachchinesisch' → 'erklär es wie einem Freund', 'keine Aufzählungen' → 'in Fließtext'",
-    "hook": "Hör auf, Claude zu sagen, was es nicht tun soll.",
-    "source": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices (Abschnitt 'Tell Claude what to do instead of what not to do', geprüft 2026-10-31)",
-    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
-    "lipsync": "veed-lipsync",
-    "file": "reels/R002/reel.mp4",
-    "sha256": "93c4b0ffdeec4df3485663701209b43448806b8526e4ca8b81412761b75cc71e",
-    "durationSec": 23.7,
-    "caption": "Hör auf, Claude zu sagen, was es nicht tun soll.\n\n„Keine langen Sätze“ verrät Claude nur, was falsch ist – aber nicht, was du willst. Dreh die Anweisung einfach um:\n\nStatt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“\nStatt „kein Fachchinesisch“ → „erklär es wie einem Freund“\nStatt „keine Aufzählungen“ → „in Fließtext“\n\nGenau das steht auch in Anthropics eigenen Prompting-Tipps: sag, was Claude tun soll, statt was es lassen soll.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
-    "tiktokTitle": "Sag Claude, was es tun soll",
-    "vorlage": {
-      "titel": "Verbote umdrehen",
-      "text": "Statt: keine ___\nSchreib: ___ (was stattdessen rauskommen soll)\n\nBeispiele:\nStatt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“\nStatt „kein Fachchinesisch“ → „erklär es wie einem Freund“\nStatt „keine Aufzählungen“ → „in Fließtext“",
-      "hinweis": "Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll."
-    },
-    "platforms": {
-      "instagram": {
-        "status": "published",
-        "metricoolPostId": 412312290,
-        "scheduledAt": "2026-10-31T18:30:00+01:00",
-        "url": "https://www.instagram.com/reel/DfKsz73iAbz/"
-      },
-      "tiktok": {
-        "status": "published",
-        "metricoolPostId": 412312290,
-        "scheduledAt": "2026-10-31T18:30:00+01:00",
-        "videoId": "7702886088410402081",
-        "url": "https://www.tiktok.com/@jonas.noen/video/7702886088410402081"
-      }
-    },
-    "mediaCommit": "ad7f47a0f9357b6c8f1fbda4597d64053db7a0b8"
+    "metricoolPostId": 409523025,
+    "videoId": "7701864182941011203",
+    "publishedAt": "2026-10-29T00:26:00+01:00"
+   }
   },
-  {
-    "id": "R003",
-    "type": "reel",
-    "createdAt": "2026-11-01",
-    "status": "scheduled",
-    "format": "dub",
-    "note": "Deutsche Fassung von Jonas' Video 'Video-67558' (Ukiyo-e-Stil), auf Wunsch von Jonas am 1.11. für 3.11. geplant. Kein Tipp-Reel und nicht Teil des Format-Tests creme/memoji – Rotation zählt ab dem letzten creme/memoji-Eintrag weiter. CTA 'Kommentiere PROMPT' am 3.11. ergänzt (gesprochen + Tafel, Video 4 s länger).",
-    "topic": "Fünf Claude-Skills für Videos",
-    "angle": "Märchen-Erzählung: fünf Skills, fünf Welten (HyperFrames, OneTake, Collage B-Roll, Claude Animation Base, Lemo Opuscar)",
-    "voice": "ElevenLabs 'Clay' (ed7QNPkbQjEAYxYSuzmM), Deutsch",
-    "file": "reels/R003/reel.mp4",
-    "sha256": "f932d4266bda5d78fdf005aab47a4779317503ccd63c11b8dc28885948a5025b",
-    "durationSec": 94.9,
-    "caption": "Alle haben dieselbe KI. Wie machst du trotzdem etwas anderes?\n\nFünf Claude-Skills für Videos, jeder mit seinem eigenen Look:\n1. HyperFrames von HeyGen – aus HTML werden Motion Graphics\n2. OneTake – die ganze Geschichte in einer einzigen Kamerafahrt\n3. Collage B-Roll – Papierschnitte und Rastertexturen\n4. Claude Animation Base – handgemalte Cartoons\n5. Lemo Opuscar – 43 Filmstile, ganze Filme nur aus Code\n\nAlle fünf liegen auf GitHub.\n\nSpeicher dir das Video für dein nächstes Projekt. Welchen Stil würdest du zuerst ausprobieren?\n\nKommentiere PROMPT und ich schick dir die Vorlage.\n#Claude #ClaudeSkills #KIVideo #KI #JonasNoen",
-    "tiktokTitle": "5 Claude-Skills, 5 Welten",
-    "plannedFor": "2026-11-03T18:30:00+01:00",
-    "metricool": {
-      "postId": 415216798,
-      "uuid": "-6150441279442039422",
-      "publishAt": "2026-11-03T18:30:00+01:00",
-      "providers": [
-        "instagram",
-        "tiktok"
-      ]
-    },
-    "music": "assets/music/special/japan-lofi.mp3 (Lautstärke 0.11, atempo 0.953 damit sie bis zum Ende reicht)",
-    "platforms": {
-      "linkedin": {
-        "status": "scheduled",
-        "metricoolPostId": 415182510,
-        "uuid": "-366337785578959498",
-        "scheduledAt": "2026-11-03T18:30:00+01:00",
-        "note": "eigene LinkedIn-Caption, Video ohne PROMPT-CTA (keine Kommentar-Automatik auf LinkedIn)",
-        "file": "reels/R003/reel_linkedin.mp4"
-      }
-    },
-    "vorlage": {
-      "titel": "Die 5 Video-Skills für Claude",
-      "text": "Die Skills aus dem Video:\nHyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar\n\nStart-Prompt:\nIch möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.\nSchreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.",
-      "hinweis": "Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut."
-    },
-    "mediaCommit": "5c3788566b37e7012c867bfa275b04070a53fb52"
-  },
-  {
-    "id": "R004",
-    "type": "reel",
-    "createdAt": "2026-11-01",
-    "status": "published",
-    "format": "memoji",
-    "series": "Claude-Codes Teil 3",
-    "topic": "Begründung zur Anweisung geben (\"weil\")",
-    "angle": "Regel + 'weil' anhängen: 'Schreib kurz, weil ich es am Handy lese' – Claude kennt das Ziel und denkt mit",
-    "hook": "Ein Wort macht deine Claude-Prompts besser: weil.",
-    "source": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices (Abschnitt 'Add context to improve performance', geprüft 2026-11-01 per Suche)",
-    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
-    "lipsync": "veed-lipsync",
-    "file": "reels/R004/reel.mp4",
-    "sha256": "0b15b2d2d8c26a5606097dc06aae076e3a9dfbebbbe04cb3ba9f8187a8e5353a",
-    "durationSec": 24.8,
-    "caption": "Ein Wort macht deine Claude-Prompts besser: weil.\n\nDie meisten schreiben nur Regeln wie „Schreib kurz.“ Claude weiß dann nicht, wie kurz – und wofür.\n\nHäng einfach die Begründung dran:\n„Schreib kurz, weil ich es am Handy lese.“\n\nJetzt kennt Claude dein Ziel und kann mitdenken. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps: erklären, warum eine Anweisung wichtig ist.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
-    "tiktokTitle": "Das Wort, das deine Prompts besser macht",
-    "vorlage": {
-      "titel": "Regel + weil",
-      "text": "___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).\n\nBeispiel:\nSchreib kurz, weil ich es am Handy lese.",
-      "hinweis": "Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken."
-    },
-    "plannedFor": "2026-11-01T18:30:00+01:00",
-    "mediaCommit": "dc42e4cab5c2c90806557eeb3051ab7550a59ddd",
-    "platforms": {
-      "instagram": {
-        "status": "published",
-        "metricoolPostId": 413101189,
-        "scheduledAt": "2026-11-01T18:30:00+01:00",
-        "url": "https://www.instagram.com/reel/DfNRm7tEdzR/"
-      },
-      "tiktok": {
-        "status": "published",
-        "metricoolPostId": 413101189,
-        "scheduledAt": "2026-11-01T18:30:00+01:00",
-        "videoId": "7703257203947441441",
-        "url": "https://www.tiktok.com/@jonas.noen/video/7703257203947441441"
-      }
-    }
-  },
-  {
-    "id": "R005",
-    "type": "reel",
-    "createdAt": "2026-11-03",
-    "status": "published",
-    "format": "creme",
-    "faceOffset": 135.0,
-    "series": "Claude-Codes Teil 4",
-    "topic": "Claude eine Rolle geben",
-    "angle": "Rolle + Publikum vor die Frage: 'Du bist Steuerberater.' + 'Erklär es einem Studenten ohne Vorwissen.' + dann die Frage",
-    "hook": "Ein Satz am Anfang verändert deine Claude-Antworten.",
-    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (Abschnitt 'Give Claude a role': 'Even a single sentence makes a difference', geprüft 2026-11-03)",
-    "note": "Nachgeholt für den ausgefallenen 2.11. (tägliche Aufgabe scheiterte am Nutzungslimit), auf Wunsch von Jonas am 3.11. zusätzlich gepostet. Erstes Reel mit Sound-Bibliothek v2.",
-    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
-    "lipsync": "veed-lipsync",
-    "file": "reels/R005/reel.mp4",
-    "sha256": "b10b5490d1d06bc495b31bc2e581f09ce51eec4c335e18d23c2b3fb5c6d6e262",
-    "durationSec": 26.9,
-    "music": "assets/music/lofi-105.mp3",
-    "caption": "Ein Satz am Anfang verändert deine Claude-Antworten.\n\nOhne Rolle antwortet Claude wie für irgendwen – allgemein und beliebig. Stell deshalb drei Dinge in dieser Reihenfolge in deinen Prompt:\n\n1. Wer soll Claude sein? „Du bist Steuerberater.“\n2. Für wen ist die Antwort? „Erklär es einem Studenten ohne Vorwissen.“\n3. Erst dann kommt deine Frage.\n\nAnthropic schreibt in seinen eigenen Prompting-Tipps: Schon ein einziger Satz zur Rolle macht einen Unterschied.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
-    "tiktokTitle": "Ein Satz, der Claude besser macht",
-    "vorlage": {
-      "titel": "Rolle + Publikum + Frage",
-      "text": "Du bist ___ (Rolle, z. B. Steuerberater).\nErklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).\n\nMeine Frage: ___",
-      "hinweis": "Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort."
-    },
-    "costUsd": 0.26,
-    "mediaCommit": "da8fdf59f4998be9b7fbc11dc296f5ff154b1f1e",
-    "platforms": {
-      "instagram": {
-        "status": "published",
-        "metricoolPostId": 415116002,
-        "scheduledAt": "2026-11-03T12:30:00+01:00",
-        "url": "https://www.instagram.com/reel/DfRyANyAM4F/"
-      },
-      "tiktok": {
-        "status": "published",
-        "metricoolPostId": 415116002,
-        "scheduledAt": "2026-11-03T12:30:00+01:00",
-        "videoId": "7703906582333000992",
-        "url": "https://www.tiktok.com/@jonas.noen/video/7703906582333000992"
-      }
-    }
-  },
-  {
-    "id": "R006",
-    "type": "reel",
-    "createdAt": "2026-11-04",
-    "status": "scheduled",
-    "format": "memoji",
-    "series": "Claude-Codes Teil 5",
-    "topic": "Lange Dokumente richtig prompten",
-    "angle": "Reihenfolge bei langen Dokumenten: Dokument ganz oben, Frage ans Ende, dazu 'Such zuerst die passenden Zitate raus.'",
-    "hook": "Die meisten stellen Claude die Frage an der falschen Stelle.",
-    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (Abschnitt 'Long context prompting': 'Put longform data at the top', 'Ground responses in quotes', geprüft 2026-11-04)",
-    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
-    "lipsync": "veed-lipsync",
-    "file": "reels/R006/reel.mp4",
-    "caption": "Die meisten stellen Claude die Frage an der falschen Stelle.\n\nWenn du Claude einen langen Text gibst – Vertrag, Bericht, Protokoll – kommt es auf die Reihenfolge an:\n\n1. Das Dokument kommt ganz nach oben.\n2. Deine Frage kommt ans Ende.\n3. Schreib dazu: „Such zuerst die passenden Zitate raus.“\n\nSo stützt sich Claude auf den Text statt aufs Raten. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps für lange Dokumente.\n\nSpeicher dir das für dein nächstes langes PDF. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
-    "tiktokTitle": "Frag Claude an der richtigen Stelle",
-    "vorlage": {
-      "titel": "Lange Dokumente auswerten (Guide mit 3 Prompts)",
-      "text": "Ich gebe dir ein langes Dokument. Arbeite genau so:\n\n<dokument>\n___ (hier den ganzen Text einfügen: Vertrag, Bericht, Protokoll …)\n</dokument>\n\nSo gehst du vor:\n1. Such zuerst alle Stellen aus dem Dokument, die für meine Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte meine Frage dann nur auf Basis dieser Zitate. Setz hinter jede Aussage die Zitat-Nummer, z. B. [2].\n3. Wenn das Dokument etwas nicht beantwortet, schreib „Steht nicht im Dokument“, statt zu raten.\n4. Zum Schluss: die 3 wichtigsten Punkte in einfachen Worten, ohne Fachbegriffe.\n\nMeine Frage: ___ (z. B. Welche Kündigungsfristen und Kosten stehen im Vertrag?)",
-      "hinweis": "Dokument oben, Frage ganz unten – und Claude belegt jede Aussage mit einem Zitat aus deinem Text."
-    },
-    "music": "assets/music/groove-115.mp3",
-    "plannedFor": "2026-11-04T18:30:00+01:00",
-    "sha256": "a165d0107d1c03b0613c869eb5e026086b9cc8aff8293f6300f49b3457a8ed2c",
-    "durationSec": 23.2,
-    "costUsd": 0.23,
-    "mediaCommit": "bc4bec53cd60ed7b83d880733f5d5699fea6d842",
-    "metricool": {
-      "postId": 416790053,
-      "uuid": "523268852802997945",
-      "publishAt": "2026-11-04T18:30:00+01:00",
-      "providers": [
-        "instagram",
-        "tiktok"
-      ]
-    },
-    "platforms": {
-      "instagram": {
-        "status": "scheduled",
-        "metricoolPostId": 416790053,
-        "scheduledAt": "2026-11-04T18:30:00+01:00"
-      },
-      "tiktok": {
-        "status": "scheduled",
-        "metricoolPostId": 416790053,
-        "scheduledAt": "2026-11-04T18:30:00+01:00"
-      }
-    },
-    "note": "Vorlage am 05.11. zu einem Guide ausgebaut (Nutzer-Feedback: Einzeiler machen den PROMPT-CTA zu schwach; Vorbild claudebyseb: Keyword → kompletter Guide).",
-    "guide": {
-      "titel": "Guide: Lange Dokumente mit Claude auswerten",
-      "ziel": "Für Verträge, Berichte, Protokolle und PDFs: Claude soll nur sagen, was wirklich im Text steht – mit Beleg.",
-      "schritte": [
-        {
-          "titel": "Dokument rein.",
-          "text": "Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen."
-        },
-        {
-          "titel": "Erst Überblick holen.",
-          "text": "Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind."
-        },
-        {
-          "titel": "Gezielt fragen.",
-          "text": "Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis."
-        },
-        {
-          "titel": "Gegenprüfen.",
-          "text": "Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist."
-        }
-      ],
-      "prompts": [
-        {
-          "titel": "Überblick",
-          "text": "<dokument>\n___ (ganzen Text einfügen)\n</dokument>\n\nLies das Dokument komplett. Gib mir dann:\n1. In einem Satz: Was ist das für ein Dokument und wer sind die Beteiligten?\n2. Die 5 wichtigsten Stellen, jeweils als wörtliches Zitat mit Abschnitt oder Seitenzahl.\n3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.\n4. Was fehlt oder unklar formuliert ist.\nErfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.",
-          "wann": "Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest."
-        },
-        {
-          "titel": "Frage mit Zitaten",
-          "text": "Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:\n1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].\n3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.\n4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.\n\nMeine Frage: ___",
-          "wann": "Für jede konkrete Frage. Die Frage steht immer ganz unten."
-        },
-        {
-          "titel": "Gegencheck",
-          "text": "Prüf deine letzte Antwort Satz für Satz gegen das Dokument.\n- Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).\n- Korrigiere alle ⚠️ und ❌ oder streich sie.\n- Gib mir am Ende die bereinigte Antwort.",
-          "wann": "Bei allem, was wichtig ist: Geld, Fristen, Verträge."
-        }
-      ],
-      "beispiel": "Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.",
-      "check": [
-        "Dokument steht oben, Frage unten",
-        "Bei langen PDFs: Seitenzahlen mitgeben lassen",
-        "Wichtige Entscheidungen (Recht, Geld) trotzdem von einem Menschen prüfen lassen"
-      ]
-    }
-  },
-  {
-    "id": "K002",
-    "type": "carousel",
-    "createdAt": "2026-11-05",
-    "status": "scheduled",
-    "series": "Claude-Prompts Teil 2",
-    "slides": 8,
-    "design": "v2-reel-look",
-    "topic": "Bewerbung gegen Stellenanzeige abgleichen",
-    "angle": "4 aufeinander aufbauende Prompts: Abgleich-Tabelle (✅/⚠️/❌) → Rückfragen statt Erfinden → Anschreiben aus Belegen → Recruiter-Check; durchgehendes Beispiel Marketing-Stelle (SEO, Budget, Google Ads)",
-    "hook": "Dieser Prompt prüft deine Bewerbung vor dem Recruiter.",
-    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (XML-Tags für Dokumente, Long-context: Daten oben – bereits am 04.11. geprüft; keine neuen Produktaussagen)",
-    "files": {
-      "instagram": [
-        "carousels/K002/ig-01.png",
-        "carousels/K002/ig-02.png",
-        "carousels/K002/ig-03.png",
-        "carousels/K002/ig-04.png",
-        "carousels/K002/ig-05.png",
-        "carousels/K002/ig-06.png",
-        "carousels/K002/ig-07.png",
-        "carousels/K002/ig-08.png"
-      ],
-      "tiktok": [
-        "carousels/K002/tt-01.jpg",
-        "carousels/K002/tt-02.jpg",
-        "carousels/K002/tt-03.jpg",
-        "carousels/K002/tt-04.jpg",
-        "carousels/K002/tt-05.jpg",
-        "carousels/K002/tt-06.jpg",
-        "carousels/K002/tt-07.jpg",
-        "carousels/K002/tt-08.jpg"
-      ]
-    },
-    "tiktokTitle": "Dieser Prompt prüft deine Bewerbung",
-    "caption": "Dieser Prompt prüft deine Bewerbung, bevor es der Recruiter tut.\n\n„Verbessere meinen Lebenslauf“ bringt dir nur allgemeine Tipps. Claude kennt die Stelle ja nicht.\n\nGib Claude die Stellenanzeige UND deinen Lebenslauf – dann hakt es jede Anforderung ab: erfüllt, teilweise oder fehlt. Danach fragt es dich nach den Lücken, statt etwas zu erfinden, schreibt das Anschreiben aus echten Belegen und liest am Ende alles wie jemand aus dem Recruiting.\n\nWichtig: Adresse, Telefonnummer und Geburtsdatum vorher rauslöschen. Und nur reinschreiben, was stimmt.\n\nSpeicher dir das für deine nächste Bewerbung. Für welche Stelle bewirbst du dich gerade?\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Bewerbung #ClaudeAI #JonasNoen",
-    "vorlage": {
-      "titel": "Bewerbung gegen Stellenanzeige abgleichen (Guide mit 4 Prompts)",
-      "text": "Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.\n\n<stellenanzeige>\n___ (komplette Anzeige einfügen)\n</stellenanzeige>\n\n<lebenslauf>\n___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)\n</lebenslauf>\n\nSo gehst du vor:\n1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.\n2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.\n3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.\n4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.\n\nWichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.",
-      "hinweis": "Anzeige und Lebenslauf einfügen – Claude zeigt dir, welche Anforderung du belegst und wo noch Lücken sind."
-    },
-    "guide": {
-      "titel": "Guide: Bewerbung mit Claude auf die Stelle zuschneiden",
-      "ziel": "Lebenslauf und Anschreiben passgenau auf eine Stellenanzeige ausrichten – ohne etwas zu erfinden.",
-      "schritte": [
-        {
-          "titel": "Daten vorbereiten.",
-          "text": "Stellenanzeige komplett kopieren. Lebenslauf als Text einfügen und vorher Adresse, Telefonnummer und Geburtsdatum löschen."
-        },
-        {
-          "titel": "Abgleich holen.",
-          "text": "Prompt 1 schicken: Claude macht eine Tabelle mit jeder Anforderung, deinem Beleg und ✅/⚠️/❌."
-        },
-        {
-          "titel": "Lücken schließen.",
-          "text": "Prompt 2 schicken und die Fragen ehrlich beantworten. Oft hast du die Erfahrung, sie steht nur nicht im Lebenslauf."
-        },
-        {
-          "titel": "Anschreiben bauen.",
-          "text": "Prompt 3: Claude schreibt aus deinen Belegen. Alles mit [ERGÄNZEN] füllst du selbst."
-        },
-        {
-          "titel": "Recruiter-Check.",
-          "text": "Prompt 4: Claude liest alles mit wenig Zeit und zeigt dir die schwächsten Sätze."
-        }
-      ],
-      "prompts": [
-        {
-          "titel": "Abgleich",
-          "text": "Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.\n\n<stellenanzeige>\n___ (komplette Anzeige einfügen)\n</stellenanzeige>\n\n<lebenslauf>\n___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)\n</lebenslauf>\n\nSo gehst du vor:\n1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.\n2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.\n3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.\n4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.\n\nWichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.",
-          "wann": "Für jede neue Stelle als Erstes."
-        },
-        {
-          "titel": "Lücken schließen",
-          "text": "Geh alle ⚠️ und ❌ aus deiner Tabelle durch.\n1. Stell mir zu jedem Punkt genau eine Frage, ob ich dazu Erfahrung habe – Job, Praktikum, Studium, Ehrenamt oder eigene Projekte zählen.\n2. Stell die Fragen als nummerierte Liste und warte auf meine Antworten.\n3. Formulier danach aus meinen Antworten neue Lebenslauf-Stichpunkte: Verb am Anfang, konkretes Ergebnis, nur Fakten, die ich wirklich genannt habe.\n4. Sag mir, an welche Stelle im Lebenslauf jeder Stichpunkt gehört.",
-          "wann": "Direkt nach dem Abgleich, wenn es ⚠️ oder ❌ gibt."
-        },
-        {
-          "titel": "Anschreiben aus Belegen",
-          "text": "Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.\n- Einstieg: warum genau diese Stelle. Nutz nur, was in der Anzeige steht, und markiere mit [ERGÄNZEN], wo ich etwas Persönliches einfügen soll.\n- Hauptteil: die 3 Muss-Anforderungen, die ich am besten belegen kann, jeweils mit einem konkreten Beispiel aus meinem Lebenslauf.\n- Ton: ___ (z. B. freundlich und direkt). Keine Floskeln wie „hiermit bewerbe ich mich“ oder „mit großem Interesse“.\n- Schluss: ein selbstbewusster Satz zum Gespräch.\nErfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.",
-          "wann": "Wenn der Lebenslauf passt."
-        },
-        {
-          "titel": "Recruiter-Check",
-          "text": "Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.\n1. Was bleibt nach 30 Sekunden hängen? (3 Stichpunkte)\n2. Welche Muss-Anforderung aus der Anzeige ist immer noch nicht klar belegt?\n3. Nenn die 2 schwächsten Sätze und gib mir für jeden eine bessere Version.\n4. Gib mir am Ende die überarbeitete Fassung des Anschreibens.",
-          "wann": "Bevor du auf Senden drückst."
-        }
-      ],
-      "beispiel": "Stelle im Online-Marketing: Anzeige + Lebenslauf rein → Prompt 1 zeigt SEO ✅, Budgetverantwortung ⚠️, Google Ads ❌ → Prompt 2 fragt nach: Ads-Kampagnen im Praktikum betreut → neuer Stichpunkt → Prompt 3 schreibt das Anschreiben mit diesen Belegen → Prompt 4 ersetzt die 2 schwächsten Sätze.",
-      "check": [
-        "Jede Muss-Anforderung hat einen Beleg im Lebenslauf",
-        "Die Schlüsselbegriffe der Anzeige kommen vor",
-        "Kein Satz, der nicht stimmt – Claude formuliert nur um",
-        "Persönliche Daten vorher gelöscht, Anschreiben laut gelesen: klingt es nach dir?"
-      ]
-    },
-    "mediaCommit": "466aa93345614c56b700202f06208a6080035c98",
-    "plannedFor": "2026-11-05T18:30:00+01:00",
-    "platforms": {
-      "instagram": {
-        "status": "scheduled",
-        "metricoolPostId": 417992715,
-        "uuid": "-195671121191219709",
-        "scheduledAt": "2026-11-05T18:30:00+01:00"
-      },
-      "tiktok": {
-        "status": "scheduled",
-        "metricoolPostId": 417992776,
-        "uuid": "2973580675985262995",
-        "scheduledAt": "2026-11-05T18:30:00+01:00"
-      }
-    }
+  "tiktokTitle": "Der eine Satz vor jedem Claude-Prompt",
+  "vorlage": {
+   "titel": "Der eine Satz vor jedem Prompt",
+   "text": "Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.",
+   "hinweis": "Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten."
   }
+ },
+ {
+  "id": "K001",
+  "type": "carousel",
+  "createdAt": "2026-10-29",
+  "status": "published",
+  "topic": "Prompt in vier Bausteinen",
+  "angle": "Ziel, Kontext, Beispiel, Format – durchgehendes Café-Beispiel",
+  "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (geprüft 2026-10-29)",
+  "files": {
+   "instagram": [
+    "carousels/K001/ig-01.png",
+    "carousels/K001/ig-02.png",
+    "carousels/K001/ig-03.png",
+    "carousels/K001/ig-04.png",
+    "carousels/K001/ig-05.png",
+    "carousels/K001/ig-06.png",
+    "carousels/K001/ig-07.png",
+    "carousels/K001/ig-08.png"
+   ],
+   "tiktok": [
+    "carousels/K001/tt-01.jpg",
+    "carousels/K001/tt-02.jpg",
+    "carousels/K001/tt-03.jpg",
+    "carousels/K001/tt-04.jpg",
+    "carousels/K001/tt-05.jpg",
+    "carousels/K001/tt-06.jpg",
+    "carousels/K001/tt-07.jpg",
+    "carousels/K001/tt-08.jpg"
+   ]
+  },
+  "caption": "Hör auf, Claude raten zu lassen.\n\nWenn im Prompt nur das Thema steht, muss Claude den Rest raten – und du bekommst etwas Austauschbares.\n\nVier Bausteine machen daraus eine klare Aufgabe: Ziel (was soll herauskommen), Kontext (für wen und warum), Beispiel (wie soll es klingen) und Format (wie soll es aussehen). Die Vorlage zum Ausfüllen findest du auf Slide 7.\n\nDas Café ist ein Beispiel zur Veranschaulichung, kein Test. Ergebnisse und Fakten trotzdem selbst prüfen.\n\nSpeicher dir das Karussell für deinen nächsten Prompt. Welchen Baustein vergisst du am häufigsten?\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+  "tiktokTitle": "Hör auf, Claude raten zu lassen",
+  "platforms": {
+   "instagram": {
+    "status": "published",
+    "metricoolPostId": 410399087,
+    "scheduledAt": "2026-10-29T19:35:00+01:00",
+    "url": "https://www.instagram.com/p/DfFqlUelWtz/"
+   },
+   "tiktok": {
+    "status": "published",
+    "metricoolPostId": 411118828,
+    "scheduledAt": "2026-10-30T12:55:00+01:00",
+    "note": "1. Versuch 29.10. als PNG von TikTok abgelehnt, neu als JPG (Commit 913f512)",
+    "videoId": "7702428234683632918",
+    "url": "https://www.tiktok.com/@jonas.noen/video/7702428234683632918",
+    "publishedAt": "2026-10-30T12:55:00+01:00"
+   }
+  },
+  "slides": 8,
+  "design": "v2-reel-look",
+  "series": "Claude-Prompts Teil 1",
+  "hook": "Hör auf, Claude raten zu lassen.",
+  "mediaCommit": "2de1f942dc8601b1ae98acfa46c9ffe7330b220c",
+  "vorlage": {
+   "titel": "Hör auf, Claude raten zu lassen",
+   "text": "Ziel: Schreib ___, das ___ erreicht.\nKontext: Für ___, weil ___.\nBeispiel: So soll es klingen: ___\nFormat: ___ Wörter, ___ Varianten.",
+   "hinweis": "Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten."
+  }
+ },
+ {
+  "id": "R002",
+  "type": "reel",
+  "createdAt": "2026-10-31",
+  "status": "published",
+  "format": "creme",
+  "faceOffset": 58.0,
+  "series": "Claude-Codes Teil 2",
+  "topic": "Positiv formulieren statt Verbote",
+  "angle": "Drei Verbote umdrehen: 'keine langen Sätze' → 'kurze Sätze, wie gesprochen', 'kein Fachchinesisch' → 'erklär es wie einem Freund', 'keine Aufzählungen' → 'in Fließtext'",
+  "hook": "Hör auf, Claude zu sagen, was es nicht tun soll.",
+  "source": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices (Abschnitt 'Tell Claude what to do instead of what not to do', geprüft 2026-10-31)",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R002/reel.mp4",
+  "sha256": "93c4b0ffdeec4df3485663701209b43448806b8526e4ca8b81412761b75cc71e",
+  "durationSec": 23.7,
+  "caption": "Hör auf, Claude zu sagen, was es nicht tun soll.\n\n„Keine langen Sätze“ verrät Claude nur, was falsch ist – aber nicht, was du willst. Dreh die Anweisung einfach um:\n\nStatt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“\nStatt „kein Fachchinesisch“ → „erklär es wie einem Freund“\nStatt „keine Aufzählungen“ → „in Fließtext“\n\nGenau das steht auch in Anthropics eigenen Prompting-Tipps: sag, was Claude tun soll, statt was es lassen soll.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+  "tiktokTitle": "Sag Claude, was es tun soll",
+  "vorlage": {
+   "titel": "Verbote umdrehen",
+   "text": "Statt: keine ___\nSchreib: ___ (was stattdessen rauskommen soll)\n\nBeispiele:\nStatt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“\nStatt „kein Fachchinesisch“ → „erklär es wie einem Freund“\nStatt „keine Aufzählungen“ → „in Fließtext“",
+   "hinweis": "Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll."
+  },
+  "platforms": {
+   "instagram": {
+    "status": "published",
+    "metricoolPostId": 412312290,
+    "scheduledAt": "2026-10-31T18:30:00+01:00",
+    "url": "https://www.instagram.com/reel/DfKsz73iAbz/"
+   },
+   "tiktok": {
+    "status": "published",
+    "metricoolPostId": 412312290,
+    "scheduledAt": "2026-10-31T18:30:00+01:00",
+    "videoId": "7702886088410402081",
+    "url": "https://www.tiktok.com/@jonas.noen/video/7702886088410402081"
+   }
+  },
+  "mediaCommit": "ad7f47a0f9357b6c8f1fbda4597d64053db7a0b8"
+ },
+ {
+  "id": "R003",
+  "type": "reel",
+  "createdAt": "2026-11-01",
+  "status": "scheduled",
+  "format": "dub",
+  "note": "Deutsche Fassung von Jonas' Video 'Video-67558' (Ukiyo-e-Stil), auf Wunsch von Jonas am 1.11. für 3.11. geplant. Kein Tipp-Reel und nicht Teil des Format-Tests creme/memoji – Rotation zählt ab dem letzten creme/memoji-Eintrag weiter. CTA 'Kommentiere PROMPT' am 3.11. ergänzt (gesprochen + Tafel, Video 4 s länger).",
+  "topic": "Fünf Claude-Skills für Videos",
+  "angle": "Märchen-Erzählung: fünf Skills, fünf Welten (HyperFrames, OneTake, Collage B-Roll, Claude Animation Base, Lemo Opuscar)",
+  "voice": "ElevenLabs 'Clay' (ed7QNPkbQjEAYxYSuzmM), Deutsch",
+  "file": "reels/R003/reel.mp4",
+  "sha256": "f932d4266bda5d78fdf005aab47a4779317503ccd63c11b8dc28885948a5025b",
+  "durationSec": 94.9,
+  "caption": "Alle haben dieselbe KI. Wie machst du trotzdem etwas anderes?\n\nFünf Claude-Skills für Videos, jeder mit seinem eigenen Look:\n1. HyperFrames von HeyGen – aus HTML werden Motion Graphics\n2. OneTake – die ganze Geschichte in einer einzigen Kamerafahrt\n3. Collage B-Roll – Papierschnitte und Rastertexturen\n4. Claude Animation Base – handgemalte Cartoons\n5. Lemo Opuscar – 43 Filmstile, ganze Filme nur aus Code\n\nAlle fünf liegen auf GitHub.\n\nSpeicher dir das Video für dein nächstes Projekt. Welchen Stil würdest du zuerst ausprobieren?\n\nKommentiere PROMPT und ich schick dir die Vorlage.\n#Claude #ClaudeSkills #KIVideo #KI #JonasNoen",
+  "tiktokTitle": "5 Claude-Skills, 5 Welten",
+  "plannedFor": "2026-11-03T18:30:00+01:00",
+  "metricool": {
+   "postId": 415216798,
+   "uuid": "-6150441279442039422",
+   "publishAt": "2026-11-03T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "music": "assets/music/special/japan-lofi.mp3 (Lautstärke 0.11, atempo 0.953 damit sie bis zum Ende reicht)",
+  "platforms": {
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 415182510,
+    "uuid": "-366337785578959498",
+    "scheduledAt": "2026-11-03T18:30:00+01:00",
+    "note": "eigene LinkedIn-Caption, Video ohne PROMPT-CTA (keine Kommentar-Automatik auf LinkedIn)",
+    "file": "reels/R003/reel_linkedin.mp4"
+   }
+  },
+  "vorlage": {
+   "titel": "Die 5 Video-Skills für Claude",
+   "text": "Die Skills aus dem Video:\nHyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar\n\nStart-Prompt:\nIch möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.\nSchreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.",
+   "hinweis": "Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut."
+  },
+  "mediaCommit": "5c3788566b37e7012c867bfa275b04070a53fb52"
+ },
+ {
+  "id": "R004",
+  "type": "reel",
+  "createdAt": "2026-11-01",
+  "status": "published",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 3",
+  "topic": "Begründung zur Anweisung geben (\"weil\")",
+  "angle": "Regel + 'weil' anhängen: 'Schreib kurz, weil ich es am Handy lese' – Claude kennt das Ziel und denkt mit",
+  "hook": "Ein Wort macht deine Claude-Prompts besser: weil.",
+  "source": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices (Abschnitt 'Add context to improve performance', geprüft 2026-11-01 per Suche)",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R004/reel.mp4",
+  "sha256": "0b15b2d2d8c26a5606097dc06aae076e3a9dfbebbbe04cb3ba9f8187a8e5353a",
+  "durationSec": 24.8,
+  "caption": "Ein Wort macht deine Claude-Prompts besser: weil.\n\nDie meisten schreiben nur Regeln wie „Schreib kurz.“ Claude weiß dann nicht, wie kurz – und wofür.\n\nHäng einfach die Begründung dran:\n„Schreib kurz, weil ich es am Handy lese.“\n\nJetzt kennt Claude dein Ziel und kann mitdenken. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps: erklären, warum eine Anweisung wichtig ist.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+  "tiktokTitle": "Das Wort, das deine Prompts besser macht",
+  "vorlage": {
+   "titel": "Regel + weil",
+   "text": "___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).\n\nBeispiel:\nSchreib kurz, weil ich es am Handy lese.",
+   "hinweis": "Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken."
+  },
+  "plannedFor": "2026-11-01T18:30:00+01:00",
+  "mediaCommit": "dc42e4cab5c2c90806557eeb3051ab7550a59ddd",
+  "platforms": {
+   "instagram": {
+    "status": "published",
+    "metricoolPostId": 413101189,
+    "scheduledAt": "2026-11-01T18:30:00+01:00",
+    "url": "https://www.instagram.com/reel/DfNRm7tEdzR/"
+   },
+   "tiktok": {
+    "status": "published",
+    "metricoolPostId": 413101189,
+    "scheduledAt": "2026-11-01T18:30:00+01:00",
+    "videoId": "7703257203947441441",
+    "url": "https://www.tiktok.com/@jonas.noen/video/7703257203947441441"
+   }
+  }
+ },
+ {
+  "id": "R005",
+  "type": "reel",
+  "createdAt": "2026-11-03",
+  "status": "published",
+  "format": "creme",
+  "faceOffset": 135.0,
+  "series": "Claude-Codes Teil 4",
+  "topic": "Claude eine Rolle geben",
+  "angle": "Rolle + Publikum vor die Frage: 'Du bist Steuerberater.' + 'Erklär es einem Studenten ohne Vorwissen.' + dann die Frage",
+  "hook": "Ein Satz am Anfang verändert deine Claude-Antworten.",
+  "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (Abschnitt 'Give Claude a role': 'Even a single sentence makes a difference', geprüft 2026-11-03)",
+  "note": "Nachgeholt für den ausgefallenen 2.11. (tägliche Aufgabe scheiterte am Nutzungslimit), auf Wunsch von Jonas am 3.11. zusätzlich gepostet. Erstes Reel mit Sound-Bibliothek v2.",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R005/reel.mp4",
+  "sha256": "b10b5490d1d06bc495b31bc2e581f09ce51eec4c335e18d23c2b3fb5c6d6e262",
+  "durationSec": 26.9,
+  "music": "assets/music/lofi-105.mp3",
+  "caption": "Ein Satz am Anfang verändert deine Claude-Antworten.\n\nOhne Rolle antwortet Claude wie für irgendwen – allgemein und beliebig. Stell deshalb drei Dinge in dieser Reihenfolge in deinen Prompt:\n\n1. Wer soll Claude sein? „Du bist Steuerberater.“\n2. Für wen ist die Antwort? „Erklär es einem Studenten ohne Vorwissen.“\n3. Erst dann kommt deine Frage.\n\nAnthropic schreibt in seinen eigenen Prompting-Tipps: Schon ein einziger Satz zur Rolle macht einen Unterschied.\n\nSpeicher dir das für deinen nächsten Prompt. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+  "tiktokTitle": "Ein Satz, der Claude besser macht",
+  "vorlage": {
+   "titel": "Rolle + Publikum + Frage",
+   "text": "Du bist ___ (Rolle, z. B. Steuerberater).\nErklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).\n\nMeine Frage: ___",
+   "hinweis": "Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort."
+  },
+  "costUsd": 0.26,
+  "mediaCommit": "da8fdf59f4998be9b7fbc11dc296f5ff154b1f1e",
+  "platforms": {
+   "instagram": {
+    "status": "published",
+    "metricoolPostId": 415116002,
+    "scheduledAt": "2026-11-03T12:30:00+01:00",
+    "url": "https://www.instagram.com/reel/DfRyANyAM4F/"
+   },
+   "tiktok": {
+    "status": "published",
+    "metricoolPostId": 415116002,
+    "scheduledAt": "2026-11-03T12:30:00+01:00",
+    "videoId": "7703906582333000992",
+    "url": "https://www.tiktok.com/@jonas.noen/video/7703906582333000992"
+   }
+  }
+ },
+ {
+  "id": "R006",
+  "type": "reel",
+  "createdAt": "2026-11-04",
+  "status": "scheduled",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 5",
+  "topic": "Lange Dokumente richtig prompten",
+  "angle": "Reihenfolge bei langen Dokumenten: Dokument ganz oben, Frage ans Ende, dazu 'Such zuerst die passenden Zitate raus.'",
+  "hook": "Die meisten stellen Claude die Frage an der falschen Stelle.",
+  "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (Abschnitt 'Long context prompting': 'Put longform data at the top', 'Ground responses in quotes', geprüft 2026-11-04)",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R006/reel.mp4",
+  "caption": "Die meisten stellen Claude die Frage an der falschen Stelle.\n\nWenn du Claude einen langen Text gibst – Vertrag, Bericht, Protokoll – kommt es auf die Reihenfolge an:\n\n1. Das Dokument kommt ganz nach oben.\n2. Deine Frage kommt ans Ende.\n3. Schreib dazu: „Such zuerst die passenden Zitate raus.“\n\nSo stützt sich Claude auf den Text statt aufs Raten. Genau das empfiehlt Anthropic in seinen eigenen Prompting-Tipps für lange Dokumente.\n\nSpeicher dir das für dein nächstes langes PDF. Kommentiere PROMPT und ich schick dir die Vorlage.\n\n#Claude #KI #PromptTipps #ClaudeAI #JonasNoen",
+  "tiktokTitle": "Frag Claude an der richtigen Stelle",
+  "vorlage": {
+   "titel": "Lange Dokumente auswerten (Guide mit 3 Prompts)",
+   "text": "Ich gebe dir ein langes Dokument. Arbeite genau so:\n\n<dokument>\n___ (hier den ganzen Text einfügen: Vertrag, Bericht, Protokoll …)\n</dokument>\n\nSo gehst du vor:\n1. Such zuerst alle Stellen aus dem Dokument, die für meine Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte meine Frage dann nur auf Basis dieser Zitate. Setz hinter jede Aussage die Zitat-Nummer, z. B. [2].\n3. Wenn das Dokument etwas nicht beantwortet, schreib „Steht nicht im Dokument“, statt zu raten.\n4. Zum Schluss: die 3 wichtigsten Punkte in einfachen Worten, ohne Fachbegriffe.\n\nMeine Frage: ___ (z. B. Welche Kündigungsfristen und Kosten stehen im Vertrag?)",
+   "hinweis": "Dokument oben, Frage ganz unten – und Claude belegt jede Aussage mit einem Zitat aus deinem Text."
+  },
+  "music": "assets/music/groove-115.mp3",
+  "plannedFor": "2026-11-04T18:30:00+01:00",
+  "sha256": "a165d0107d1c03b0613c869eb5e026086b9cc8aff8293f6300f49b3457a8ed2c",
+  "durationSec": 23.2,
+  "costUsd": 0.23,
+  "mediaCommit": "bc4bec53cd60ed7b83d880733f5d5699fea6d842",
+  "metricool": {
+   "postId": 416790053,
+   "uuid": "523268852802997945",
+   "publishAt": "2026-11-04T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 416790053,
+    "scheduledAt": "2026-11-04T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 416790053,
+    "scheduledAt": "2026-11-04T18:30:00+01:00"
+   }
+  },
+  "note": "Vorlage am 05.11. zu einem Guide ausgebaut (Nutzer-Feedback: Einzeiler machen den PROMPT-CTA zu schwach; Vorbild claudebyseb: Keyword → kompletter Guide).",
+  "guide": {
+   "titel": "Guide: Lange Dokumente mit Claude auswerten",
+   "ziel": "Für Verträge, Berichte, Protokolle und PDFs: Claude soll nur sagen, was wirklich im Text steht – mit Beleg.",
+   "schritte": [
+    {
+     "titel": "Dokument rein.",
+     "text": "Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen."
+    },
+    {
+     "titel": "Erst Überblick holen.",
+     "text": "Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind."
+    },
+    {
+     "titel": "Gezielt fragen.",
+     "text": "Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis."
+    },
+    {
+     "titel": "Gegenprüfen.",
+     "text": "Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Überblick",
+     "text": "<dokument>\n___ (ganzen Text einfügen)\n</dokument>\n\nLies das Dokument komplett. Gib mir dann:\n1. In einem Satz: Was ist das für ein Dokument und wer sind die Beteiligten?\n2. Die 5 wichtigsten Stellen, jeweils als wörtliches Zitat mit Abschnitt oder Seitenzahl.\n3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.\n4. Was fehlt oder unklar formuliert ist.\nErfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.",
+     "wann": "Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest."
+    },
+    {
+     "titel": "Frage mit Zitaten",
+     "text": "Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:\n1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in <zitate>-Tags.\n2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].\n3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.\n4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.\n\nMeine Frage: ___",
+     "wann": "Für jede konkrete Frage. Die Frage steht immer ganz unten."
+    },
+    {
+     "titel": "Gegencheck",
+     "text": "Prüf deine letzte Antwort Satz für Satz gegen das Dokument.\n- Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).\n- Korrigiere alle ⚠️ und ❌ oder streich sie.\n- Gib mir am Ende die bereinigte Antwort.",
+     "wann": "Bei allem, was wichtig ist: Geld, Fristen, Verträge."
+    }
+   ],
+   "beispiel": "Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.",
+   "check": [
+    "Dokument steht oben, Frage unten",
+    "Bei langen PDFs: Seitenzahlen mitgeben lassen",
+    "Wichtige Entscheidungen (Recht, Geld) trotzdem von einem Menschen prüfen lassen"
+   ]
+  }
+ },
+ {
+  "id": "K002",
+  "type": "carousel",
+  "createdAt": "2026-11-05",
+  "status": "scheduled",
+  "series": "Claude-Prompts Teil 2",
+  "slides": 8,
+  "design": "v2-reel-look",
+  "topic": "Bewerbung gegen Stellenanzeige abgleichen",
+  "angle": "4 aufeinander aufbauende Prompts: Abgleich-Tabelle (✅/⚠️/❌) → Rückfragen statt Erfinden → Anschreiben aus Belegen → Recruiter-Check; durchgehendes Beispiel Marketing-Stelle (SEO, Budget, Google Ads)",
+  "hook": "Dieser Prompt prüft deine Bewerbung vor dem Recruiter.",
+  "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (XML-Tags für Dokumente, Long-context: Daten oben – bereits am 04.11. geprüft; keine neuen Produktaussagen)",
+  "files": {
+   "instagram": [
+    "carousels/K002/ig-01.png",
+    "carousels/K002/ig-02.png",
+    "carousels/K002/ig-03.png",
+    "carousels/K002/ig-04.png",
+    "carousels/K002/ig-05.png",
+    "carousels/K002/ig-06.png",
+    "carousels/K002/ig-07.png",
+    "carousels/K002/ig-08.png"
+   ],
+   "tiktok": [
+    "carousels/K002/tt-01.jpg",
+    "carousels/K002/tt-02.jpg",
+    "carousels/K002/tt-03.jpg",
+    "carousels/K002/tt-04.jpg",
+    "carousels/K002/tt-05.jpg",
+    "carousels/K002/tt-06.jpg",
+    "carousels/K002/tt-07.jpg",
+    "carousels/K002/tt-08.jpg"
+   ]
+  },
+  "tiktokTitle": "Dieser Prompt prüft deine Bewerbung",
+  "caption": "Dieser Prompt prüft deine Bewerbung, bevor es der Recruiter tut.\n\n„Verbessere meinen Lebenslauf“ bringt dir nur allgemeine Tipps. Claude kennt die Stelle ja nicht.\n\nGib Claude die Stellenanzeige UND deinen Lebenslauf – dann hakt es jede Anforderung ab: erfüllt, teilweise oder fehlt. Danach fragt es dich nach den Lücken, statt etwas zu erfinden, schreibt das Anschreiben aus echten Belegen und liest am Ende alles wie jemand aus dem Recruiting.\n\nWichtig: Adresse, Telefonnummer und Geburtsdatum vorher rauslöschen. Und nur reinschreiben, was stimmt.\n\nSpeicher dir das für deine nächste Bewerbung. Für welche Stelle bewirbst du dich gerade?\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Bewerbung #ClaudeAI #JonasNoen",
+  "vorlage": {
+   "titel": "Bewerbung gegen Stellenanzeige abgleichen (Guide mit 4 Prompts)",
+   "text": "Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.\n\n<stellenanzeige>\n___ (komplette Anzeige einfügen)\n</stellenanzeige>\n\n<lebenslauf>\n___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)\n</lebenslauf>\n\nSo gehst du vor:\n1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.\n2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.\n3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.\n4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.\n\nWichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.",
+   "hinweis": "Anzeige und Lebenslauf einfügen – Claude zeigt dir, welche Anforderung du belegst und wo noch Lücken sind."
+  },
+  "guide": {
+   "titel": "Guide: Bewerbung mit Claude auf die Stelle zuschneiden",
+   "ziel": "Lebenslauf und Anschreiben passgenau auf eine Stellenanzeige ausrichten – ohne etwas zu erfinden.",
+   "schritte": [
+    {
+     "titel": "Daten vorbereiten.",
+     "text": "Stellenanzeige komplett kopieren. Lebenslauf als Text einfügen und vorher Adresse, Telefonnummer und Geburtsdatum löschen."
+    },
+    {
+     "titel": "Abgleich holen.",
+     "text": "Prompt 1 schicken: Claude macht eine Tabelle mit jeder Anforderung, deinem Beleg und ✅/⚠️/❌."
+    },
+    {
+     "titel": "Lücken schließen.",
+     "text": "Prompt 2 schicken und die Fragen ehrlich beantworten. Oft hast du die Erfahrung, sie steht nur nicht im Lebenslauf."
+    },
+    {
+     "titel": "Anschreiben bauen.",
+     "text": "Prompt 3: Claude schreibt aus deinen Belegen. Alles mit [ERGÄNZEN] füllst du selbst."
+    },
+    {
+     "titel": "Recruiter-Check.",
+     "text": "Prompt 4: Claude liest alles mit wenig Zeit und zeigt dir die schwächsten Sätze."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Abgleich",
+     "text": "Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.\n\n<stellenanzeige>\n___ (komplette Anzeige einfügen)\n</stellenanzeige>\n\n<lebenslauf>\n___ (Lebenslauf als Text einfügen – ohne Adresse, Telefonnummer, Geburtsdatum)\n</lebenslauf>\n\nSo gehst du vor:\n1. Zieh alle Anforderungen aus der Anzeige raus und teil sie in „Muss“ und „Wünschenswert“.\n2. Mach eine Tabelle: Anforderung – Beleg aus meinem Lebenslauf (wörtlich) – Bewertung ✅ erfüllt / ⚠️ teilweise / ❌ fehlt.\n3. Nenn die 5 wichtigsten Schlüsselbegriffe der Anzeige, die in meinem Lebenslauf noch nicht vorkommen.\n4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.\n\nWichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.",
+     "wann": "Für jede neue Stelle als Erstes."
+    },
+    {
+     "titel": "Lücken schließen",
+     "text": "Geh alle ⚠️ und ❌ aus deiner Tabelle durch.\n1. Stell mir zu jedem Punkt genau eine Frage, ob ich dazu Erfahrung habe – Job, Praktikum, Studium, Ehrenamt oder eigene Projekte zählen.\n2. Stell die Fragen als nummerierte Liste und warte auf meine Antworten.\n3. Formulier danach aus meinen Antworten neue Lebenslauf-Stichpunkte: Verb am Anfang, konkretes Ergebnis, nur Fakten, die ich wirklich genannt habe.\n4. Sag mir, an welche Stelle im Lebenslauf jeder Stichpunkt gehört.",
+     "wann": "Direkt nach dem Abgleich, wenn es ⚠️ oder ❌ gibt."
+    },
+    {
+     "titel": "Anschreiben aus Belegen",
+     "text": "Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.\n- Einstieg: warum genau diese Stelle. Nutz nur, was in der Anzeige steht, und markiere mit [ERGÄNZEN], wo ich etwas Persönliches einfügen soll.\n- Hauptteil: die 3 Muss-Anforderungen, die ich am besten belegen kann, jeweils mit einem konkreten Beispiel aus meinem Lebenslauf.\n- Ton: ___ (z. B. freundlich und direkt). Keine Floskeln wie „hiermit bewerbe ich mich“ oder „mit großem Interesse“.\n- Schluss: ein selbstbewusster Satz zum Gespräch.\nErfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.",
+     "wann": "Wenn der Lebenslauf passt."
+    },
+    {
+     "titel": "Recruiter-Check",
+     "text": "Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.\n1. Was bleibt nach 30 Sekunden hängen? (3 Stichpunkte)\n2. Welche Muss-Anforderung aus der Anzeige ist immer noch nicht klar belegt?\n3. Nenn die 2 schwächsten Sätze und gib mir für jeden eine bessere Version.\n4. Gib mir am Ende die überarbeitete Fassung des Anschreibens.",
+     "wann": "Bevor du auf Senden drückst."
+    }
+   ],
+   "beispiel": "Stelle im Online-Marketing: Anzeige + Lebenslauf rein → Prompt 1 zeigt SEO ✅, Budgetverantwortung ⚠️, Google Ads ❌ → Prompt 2 fragt nach: Ads-Kampagnen im Praktikum betreut → neuer Stichpunkt → Prompt 3 schreibt das Anschreiben mit diesen Belegen → Prompt 4 ersetzt die 2 schwächsten Sätze.",
+   "check": [
+    "Jede Muss-Anforderung hat einen Beleg im Lebenslauf",
+    "Die Schlüsselbegriffe der Anzeige kommen vor",
+    "Kein Satz, der nicht stimmt – Claude formuliert nur um",
+    "Persönliche Daten vorher gelöscht, Anschreiben laut gelesen: klingt es nach dir?"
+   ]
+  },
+  "mediaCommit": "466aa93345614c56b700202f06208a6080035c98",
+  "plannedFor": "2026-11-05T18:30:00+01:00",
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 417992715,
+    "uuid": "-195671121191219709",
+    "scheduledAt": "2026-11-05T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 417992776,
+    "uuid": "2973580675985262995",
+    "scheduledAt": "2026-11-05T18:30:00+01:00"
+   }
+  }
+ },
+ {
+  "id": "R007",
+  "type": "reel",
+  "createdAt": "2026-11-06",
+  "status": "sending",
+  "format": "creme",
+  "faceOffset": 193.0,
+  "series": "Claude-Codes Teil 6",
+  "topic": "Meeting-Notizen in eine To-do-Liste verwandeln",
+  "angle": "Ein Prompt-Ablauf: Notizen rein → Tabelle Wer/Was/Bis wann + offene Fragen → bei fehlendem Namen/Frist Rückfrage statt Raten → Follow-up-Mail ans Team",
+  "hook": "Dieser Prompt macht aus jedem Meeting eine fertige To-do-Liste.",
+  "source": "Keine neuen Produktaussagen (nur Prompt-Technik: Text in Tags oben, Rückfragen statt Raten); Prompting-Grundlagen siehe https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R007/reel.mp4",
+  "tiktokTitle": "Aus jedem Meeting eine To-do-Liste",
+  "caption": "Dieser Prompt macht aus jedem Meeting eine fertige To-do-Liste. ✅\n\nNach dem Meeting hast du Notizen voller Halbsätze – und eine Woche später weiß keiner mehr, wer was machen sollte.\n\nKopier die Notizen (oder das Transkript) in Claude und lass dir genau drei Dinge rausziehen:\n👉 Wer macht was?\n👉 Bis wann?\n👉 Was ist noch offen?\n\nDer Trick: Fehlt ein Name oder eine Frist, soll Claude nicht raten, sondern „❓ fehlt“ eintragen und dich fragen. Danach schreibt es dir die Follow-up-Mail ans ganze Team.\n\nSpeicher dir das für dein nächstes Meeting. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Produktivität #PromptTipps #JonasNoen",
+  "captionLinkedin": "Nach fast jedem Meeting dasselbe: Notizen voller Halbsätze, und eine Woche später ist unklar, wer was bis wann erledigen sollte.\n\nIch lasse daraus inzwischen mit Claude eine Aufgabenliste bauen – in drei Schritten:\n1. Notizen oder Transkript einfügen. Claude erstellt eine Tabelle: Was – Wer – Bis wann – mit kurzem Zitat als Quelle. Dazu Entscheidungen und offene Fragen.\n2. Wichtig: Fehlt ein Name oder eine Frist, wird nichts erfunden. Claude markiert die Lücke und stellt eine konkrete Rückfrage.\n3. Aus der bereinigten Liste entsteht die Follow-up-Mail an alle Teilnehmer, plus Kurzfassung für den Team-Chat.\n\nDer Mehrwert liegt vor allem in Schritt 2: Lücken werden sichtbar, statt im Protokoll zu verschwinden.\n\nWie haltet ihr nach Meetings fest, wer was übernimmt?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Meeting-Notizen → To-do-Liste (Guide mit 3 Prompts)",
+   "text": "Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.\n\n<notizen>\n___ (Notizen oder Transkript hier einfügen)\n</notizen>\n\nMeeting: ___ (Thema, Datum, wer war dabei)\n\nMach daraus eine klare Aufgabenliste. So gehst du vor:\n1. Lies alles komplett und sammle jede Aufgabe, jede Entscheidung und jede offene Frage – auch wenn sie nur nebenbei erwähnt wurde.\n2. Aufgaben als Tabelle: Nr. – Was genau ist zu tun (mit Verb am Anfang) – Wer – Bis wann – Quelle (kurzes Zitat aus den Notizen).\n3. Erfinde keine Namen und keine Fristen. Steht etwas nicht in den Notizen, schreib „❓ fehlt“ in die Zelle.\n4. Darunter: „Entscheidungen“ als kurze Liste (was wurde beschlossen?).\n5. Darunter: „Offene Fragen“ – alles, was noch geklärt werden muss.\n6. Zum Schluss: Stell mir zu jedem „❓ fehlt“ eine konkrete Rückfrage, nummeriert, damit ich sie schnell beantworten kann.",
+   "hinweis": "Notizen oder Transkript oben einfügen – Claude baut die Tabelle Wer/Was/Bis wann und fragt nach, statt Lücken zu erfinden."
+  },
+  "guide": {
+   "titel": "Guide: Aus jedem Meeting eine fertige To-do-Liste",
+   "ziel": "Aus chaotischen Meeting-Notizen oder einem Transkript wird eine klare Aufgabenliste mit Wer, Was und Bis wann – ohne erfundene Namen oder Fristen – plus fertige Follow-up-Mail.",
+   "schritte": [
+    {
+     "titel": "Notizen sammeln.",
+     "text": "Direkt nach dem Meeting alles zusammenkopieren: eigene Stichpunkte, Chat-Nachrichten, Transkript. Unsortiert ist okay."
+    },
+    {
+     "titel": "Liste bauen lassen.",
+     "text": "Prompt 1 schicken. Claude macht die Tabelle Was – Wer – Bis wann, listet Entscheidungen und offene Fragen und markiert Lücken mit „❓ fehlt“."
+    },
+    {
+     "titel": "Lücken schließen.",
+     "text": "Die Rückfragen beantworten und Prompt 2 schicken. Claude sortiert nach Frist und baut pro Person eine eigene Liste."
+    },
+    {
+     "titel": "Mail raus.",
+     "text": "Prompt 3 schicken, Ton einsetzen, kurz drüberlesen und an alle senden – plus 3-Zeilen-Version für den Team-Chat."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Aufgaben rausziehen",
+     "text": "Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.\n\n<notizen>\n___ (Notizen oder Transkript hier einfügen)\n</notizen>\n\nMeeting: ___ (Thema, Datum, wer war dabei)\n\nMach daraus eine klare Aufgabenliste. So gehst du vor:\n1. Lies alles komplett und sammle jede Aufgabe, jede Entscheidung und jede offene Frage – auch wenn sie nur nebenbei erwähnt wurde.\n2. Aufgaben als Tabelle: Nr. – Was genau ist zu tun (mit Verb am Anfang) – Wer – Bis wann – Quelle (kurzes Zitat aus den Notizen).\n3. Erfinde keine Namen und keine Fristen. Steht etwas nicht in den Notizen, schreib „❓ fehlt“ in die Zelle.\n4. Darunter: „Entscheidungen“ als kurze Liste (was wurde beschlossen?).\n5. Darunter: „Offene Fragen“ – alles, was noch geklärt werden muss.\n6. Zum Schluss: Stell mir zu jedem „❓ fehlt“ eine konkrete Rückfrage, nummeriert, damit ich sie schnell beantworten kann.",
+     "wann": "Direkt nach dem Meeting, mit allen Notizen."
+    },
+    {
+     "titel": "Lücken schließen & sortieren",
+     "text": "Hier sind meine Antworten auf deine Rückfragen:\n___ (z. B. 1. Tom ruft den Kunden an, bis Mittwoch. 2. Budget: noch offen.)\n\nAktualisiere die Aufgabenliste damit:\n- Trag die Antworten in die Tabelle ein.\n- Was weiterhin unklar ist, bleibt „❓ fehlt“.\n- Sortiere nach Frist, das Dringendste oben.\n- Markiere Aufgaben, die von einer anderen abhängen, mit „⏳ wartet auf Nr. X“.\n- Gib mir für jede Person eine eigene kurze Liste: „Name: Aufgabe – bis wann“.",
+     "wann": "Wenn Claude Rückfragen gestellt hat."
+    },
+    {
+     "titel": "Follow-up-Mail",
+     "text": "Schreib jetzt die Follow-up-Mail an alle Teilnehmer.\n\n- Betreff: kurz, mit Meeting-Thema und Datum.\n- Ton: ___ (z. B. locker und per Du / förmlich und per Sie)\n- Aufbau: 1 Satz Dank → Entscheidungen (Stichpunkte) → Aufgaben pro Person mit Frist → offene Fragen mit der Bitte um Antwort bis ___ → kurzer Gruß.\n- Höchstens 150 Wörter, keine Floskeln.\n- Nur Inhalte aus der Aufgabenliste oben, nichts dazuerfinden.\nGib mir danach zusätzlich eine Kurzfassung mit 3 Zeilen für den Team-Chat.",
+     "wann": "Wenn die Liste steht – am besten am selben Tag."
+    }
+   ],
+   "beispiel": "Team-Meeting zum Produktlaunch: Notizen einfügen → Prompt 1 liefert „Lisa – Angebot schicken – Fr“, „Tom – Folien updaten – Mo“ und „❓ fehlt – Kunde anrufen – ❓ fehlt“ plus Rückfrage „Wer ruft den Kunden an, und bis wann?“ → Antwort „Tom, Mittwoch“ → Prompt 2 sortiert alles nach Frist → Prompt 3 schreibt die Mail ans Team.",
+   "check": [
+    "Jede Aufgabe hat eine Person und eine Frist – oder ist klar als „❓ fehlt“ markiert",
+    "Nichts in der Mail, was nicht im Meeting besprochen wurde",
+    "Vertrauliche Inhalte vor dem Einfügen prüfen (Firmenregeln beachten)"
+   ]
+  },
+  "sha256": "e11f673b6b28ab9cf585ed4e101f482e6bc54f91746243fb23b71d899bc7ccec",
+  "durationSec": 20.8,
+  "music": "assets/music/lofi-105.mp3",
+  "costUsd": 0.21,
+  "plannedFor": "2026-11-06T18:30:00+01:00"
+ }
 ]
