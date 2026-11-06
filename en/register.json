@@ -152,7 +152,9 @@
       },
       "linkedin": {
         "status": "scheduled",
-        "metricoolPostId": 418761549
+        "metricoolPostId": 418782747,
+        "file": "en/reels/E001/reel_linkedin.mp4",
+        "firstComment": true
       },
       "scheduledAt": "2026-11-06T20:30:00+01:00"
     }
