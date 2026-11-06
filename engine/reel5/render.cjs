@@ -24,6 +24,7 @@ const run=(args)=>new Promise((res,rej)=>{const p=spawn('ffmpeg',args,{stdio:['i
   await p.addInitScript(([d,e,f,bo])=>{window.AVDATA=d;window.ENV=e;window.FPS=f;window.BIG_OUTRO=bo;},[av,ENV,FPS,process.env.BIG_OUTRO==='1']);
   await p.goto('file://'+dir+'/scene.html');await p.evaluate(()=>document.fonts.ready);
   await p.evaluate(async()=>{await Promise.all(['800 40px Manrope','500 40px Manrope','40px Anton',"italic 40px 'Instrument Serif'"].map(f=>document.fonts.load(f)))});
+  if(process.env.NO_CTA)await p.evaluate(()=>{window.NO_PROMPT_CTA=true;}); // LinkedIn-Fassung: PROMPT-Pille aus (danach engine/tools/cut_cta.py)
   const END=await p.evaluate(w=>setup(w),words);await p.waitForFunction(()=>window.IMGS_READY===true,null,{timeout:30000});
   const dec=d=>Buffer.from(d.split(',')[1],'base64');
   // ---- Sprech-Loops (assets/avatar/loops/<name>.mp4, Greenscreen): einmal freistellen (Cache im Arbeitsordner),
