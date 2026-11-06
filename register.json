@@ -472,7 +472,7 @@
   "id": "R007",
   "type": "reel",
   "createdAt": "2026-11-06",
-  "status": "sending",
+  "status": "scheduled",
   "format": "creme",
   "faceOffset": 193.0,
   "series": "Claude-Codes Teil 6",
@@ -485,7 +485,7 @@
   "file": "reels/R007/reel.mp4",
   "tiktokTitle": "Aus jedem Meeting eine To-do-Liste",
   "caption": "Dieser Prompt macht aus jedem Meeting eine fertige To-do-Liste. ✅\n\nNach dem Meeting hast du Notizen voller Halbsätze – und eine Woche später weiß keiner mehr, wer was machen sollte.\n\nKopier die Notizen (oder das Transkript) in Claude und lass dir genau drei Dinge rausziehen:\n👉 Wer macht was?\n👉 Bis wann?\n👉 Was ist noch offen?\n\nDer Trick: Fehlt ein Name oder eine Frist, soll Claude nicht raten, sondern „❓ fehlt“ eintragen und dich fragen. Danach schreibt es dir die Follow-up-Mail ans ganze Team.\n\nSpeicher dir das für dein nächstes Meeting. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Produktivität #PromptTipps #JonasNoen",
-  "captionLinkedin": "Nach fast jedem Meeting dasselbe: Notizen voller Halbsätze, und eine Woche später ist unklar, wer was bis wann erledigen sollte.\n\nIch lasse daraus inzwischen mit Claude eine Aufgabenliste bauen – in drei Schritten:\n1. Notizen oder Transkript einfügen. Claude erstellt eine Tabelle: Was – Wer – Bis wann – mit kurzem Zitat als Quelle. Dazu Entscheidungen und offene Fragen.\n2. Wichtig: Fehlt ein Name oder eine Frist, wird nichts erfunden. Claude markiert die Lücke und stellt eine konkrete Rückfrage.\n3. Aus der bereinigten Liste entsteht die Follow-up-Mail an alle Teilnehmer, plus Kurzfassung für den Team-Chat.\n\nDer Mehrwert liegt vor allem in Schritt 2: Lücken werden sichtbar, statt im Protokoll zu verschwinden.\n\nWie haltet ihr nach Meetings fest, wer was übernimmt?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "captionLinkedin": "Nach fast jedem Meeting dasselbe: Notizen voller Halbsätze, und eine Woche später ist unklar, wer was bis wann erledigen sollte.\n\nMit Claude lässt sich daraus eine saubere Aufgabenliste bauen – in drei Schritten:\n1. Notizen oder Transkript einfügen. Claude erstellt eine Tabelle: Was – Wer – Bis wann – mit kurzem Zitat als Quelle. Dazu Entscheidungen und offene Fragen.\n2. Wichtig: Fehlt ein Name oder eine Frist, wird nichts erfunden. Claude markiert die Lücke und stellt eine konkrete Rückfrage.\n3. Aus der bereinigten Liste entsteht die Follow-up-Mail an alle Teilnehmer, plus Kurzfassung für den Team-Chat.\n\nDer Mehrwert liegt vor allem in Schritt 2: Lücken werden sichtbar, statt im Protokoll zu verschwinden.\n\nWie haltet ihr nach Meetings fest, wer was übernimmt?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
   "vorlage": {
    "titel": "Meeting-Notizen → To-do-Liste (Guide mit 3 Prompts)",
    "text": "Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.\n\n<notizen>\n___ (Notizen oder Transkript hier einfügen)\n</notizen>\n\nMeeting: ___ (Thema, Datum, wer war dabei)\n\nMach daraus eine klare Aufgabenliste. So gehst du vor:\n1. Lies alles komplett und sammle jede Aufgabe, jede Entscheidung und jede offene Frage – auch wenn sie nur nebenbei erwähnt wurde.\n2. Aufgaben als Tabelle: Nr. – Was genau ist zu tun (mit Verb am Anfang) – Wer – Bis wann – Quelle (kurzes Zitat aus den Notizen).\n3. Erfinde keine Namen und keine Fristen. Steht etwas nicht in den Notizen, schreib „❓ fehlt“ in die Zelle.\n4. Darunter: „Entscheidungen“ als kurze Liste (was wurde beschlossen?).\n5. Darunter: „Offene Fragen“ – alles, was noch geklärt werden muss.\n6. Zum Schluss: Stell mir zu jedem „❓ fehlt“ eine konkrete Rückfrage, nummeriert, damit ich sie schnell beantworten kann.",
@@ -540,6 +540,36 @@
   "durationSec": 20.8,
   "music": "assets/music/lofi-105.mp3",
   "costUsd": 0.21,
-  "plannedFor": "2026-11-06T18:30:00+01:00"
+  "plannedFor": "2026-11-06T18:30:00+01:00",
+  "mediaCommit": "78be85c00512e9b4d849f047803c9c29ba6e9814",
+  "metricool": {
+   "postId": 419181067,
+   "uuid": "279344916374765762",
+   "publishAt": "2026-11-06T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 419181067,
+    "scheduledAt": "2026-11-06T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 419181067,
+    "scheduledAt": "2026-11-06T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 419181226,
+    "uuid": "-7418642050438313781",
+    "scheduledAt": "2026-11-06T18:30:00+01:00",
+    "file": "reels/R007/reel_linkedin.mp4",
+    "firstComment": true
+   }
+  }
  }
 ]
