@@ -1,0 +1,352 @@
+[
+{
+"text": "Dieser",
+"start": 0.0,
+"end": 0.278
+},
+{
+"text": "Prompt",
+"start": 0.348,
+"end": 0.696
+},
+{
+"text": "liest",
+"start": 0.835,
+"end": 0.974
+},
+{
+"text": "jeden",
+"start": 1.043,
+"end": 1.252
+},
+{
+"text": "Vertrag",
+"start": 1.322,
+"end": 1.739
+},
+{
+"text": "für",
+"start": 1.774,
+"end": 1.809
+},
+{
+"text": "dich.",
+"start": 1.878,
+"end": 2.226
+},
+{
+"text": "Niemand",
+"start": 2.365,
+"end": 2.713
+},
+{
+"text": "liest",
+"start": 2.817,
+"end": 2.922
+},
+{
+"text": "das",
+"start": 2.991,
+"end": 3.061
+},
+{
+"text": "Kleingedruckte.",
+"start": 3.096,
+"end": 3.757
+},
+{
+"text": "Genau",
+"start": 3.948,
+"end": 4.226
+},
+{
+"text": "da",
+"start": 4.365,
+"end": 4.574
+},
+{
+"text": "stehen",
+"start": 4.643,
+"end": 4.852
+},
+{
+"text": "die",
+"start": 4.887,
+"end": 4.922
+},
+{
+"text": "Fallen.",
+"start": 4.991,
+"end": 5.513
+},
+{
+"text": "Schritt",
+"start": 5.687,
+"end": 5.896
+},
+{
+"text": "eins:",
+"start": 5.965,
+"end": 6.313
+},
+{
+"text": "Claude",
+"start": 6.504,
+"end": 6.783
+},
+{
+"text": "fasst",
+"start": 6.852,
+"end": 6.991
+},
+{
+"text": "den",
+"start": 7.061,
+"end": 7.13
+},
+{
+"text": "Vertrag",
+"start": 7.2,
+"end": 7.548
+},
+{
+"text": "in",
+"start": 7.652,
+"end": 7.757
+},
+{
+"text": "fünf",
+"start": 7.791,
+"end": 7.965
+},
+{
+"text": "Sätzen",
+"start": 8.035,
+"end": 8.313
+},
+{
+"text": "zusammen.",
+"start": 8.383,
+"end": 8.8
+},
+{
+"text": "Schritt",
+"start": 8.991,
+"end": 9.2
+},
+{
+"text": "zwei:",
+"start": 9.27,
+"end": 9.826
+},
+{
+"text": "jede",
+"start": 9.861,
+"end": 10.035
+},
+{
+"text": "Frist",
+"start": 10.104,
+"end": 10.452
+},
+{
+"text": "und",
+"start": 10.522,
+"end": 10.661
+},
+{
+"text": "jede",
+"start": 10.73,
+"end": 10.939
+},
+{
+"text": "Kostenfalle,",
+"start": 11.009,
+"end": 11.843
+},
+{
+"text": "mit",
+"start": 11.913,
+"end": 11.983
+},
+{
+"text": "Zitat.",
+"start": 12.052,
+"end": 12.609
+},
+{
+"text": "Schritt",
+"start": 12.748,
+"end": 12.957
+},
+{
+"text": "drei:",
+"start": 13.026,
+"end": 13.513
+},
+{
+"text": "eine",
+"start": 13.548,
+"end": 13.722
+},
+{
+"text": "Ampel.",
+"start": 13.791,
+"end": 14.139
+},
+{
+"text": "Rot",
+"start": 14.33,
+"end": 14.539
+},
+{
+"text": "heißt:",
+"start": 14.574,
+"end": 14.887
+},
+{
+"text": "nachfragen.",
+"start": 15.078,
+"end": 15.739
+},
+{
+"text": "Dazu",
+"start": 15.843,
+"end": 16.122
+},
+{
+"text": "die",
+"start": 16.191,
+"end": 16.261
+},
+{
+"text": "fertige",
+"start": 16.33,
+"end": 16.678
+},
+{
+"text": "Mail",
+"start": 16.783,
+"end": 16.887
+},
+{
+"text": "mit",
+"start": 16.957,
+"end": 17.026
+},
+{
+"text": "deinen",
+"start": 17.061,
+"end": 17.235
+},
+{
+"text": "Fragen.",
+"start": 17.304,
+"end": 17.757
+},
+{
+"text": "Kein",
+"start": 17.861,
+"end": 18.0
+},
+{
+"text": "Anwalt,",
+"start": 18.07,
+"end": 18.626
+},
+{
+"text": "aber",
+"start": 18.696,
+"end": 18.765
+},
+{
+"text": "du",
+"start": 18.835,
+"end": 18.904
+},
+{
+"text": "weißt,",
+"start": 18.974,
+"end": 19.298
+},
+{
+"text": "was",
+"start": 19.345,
+"end": 19.391
+},
+{
+"text": "du",
+"start": 19.426,
+"end": 19.461
+},
+{
+"text": "unterschreibst.",
+"start": 19.53,
+"end": 20.191
+},
+{
+"text": "Kommentiere",
+"start": 20.296,
+"end": 20.713
+},
+{
+"text": "PROMPT",
+"start": 20.783,
+"end": 21.13
+},
+{
+"text": "und",
+"start": 21.2,
+"end": 21.339
+},
+{
+"text": "ich",
+"start": 21.409,
+"end": 21.548
+},
+{
+"text": "schick",
+"start": 21.583,
+"end": 21.757
+},
+{
+"text": "dir",
+"start": 21.791,
+"end": 21.826
+},
+{
+"text": "den",
+"start": 21.896,
+"end": 21.965
+},
+{
+"text": "Guide.",
+"start": 22.035,
+"end": 22.522
+},
+{
+"text": "Folg",
+"start": 22.557,
+"end": 22.73
+},
+{
+"text": "mir",
+"start": 22.835,
+"end": 22.939
+},
+{
+"text": "für",
+"start": 23.009,
+"end": 23.078
+},
+{
+"text": "mehr",
+"start": 23.148,
+"end": 23.287
+},
+{
+"text": "Claude-Tipps.",
+"start": 23.357,
+"end": 24.122
+}
+]
