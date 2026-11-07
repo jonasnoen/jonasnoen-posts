@@ -32,14 +32,59 @@ footer a{color:var(--violet)}
 <div class="kick">// Claude-Vorlagen</div>
 <h1>Kopieren, <em>einfügen</em>, fertig.</h1>
 <p class="lead">Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.</p>
-<article class="card new" id="R007">
-  <div class="meta"><span class="tag">Neu · Guide</span><span>Reel R007</span></div>
+<article class="card new" id="R008">
+  <div class="meta"><span class="tag">Neu · Guide</span><span>Reel R008</span></div>
+  <h2>Guide: Jeden Vertrag verstehen, bevor du unterschreibst</h2>
+  <p class="goal">Aus einem langen Vertrag wird in wenigen Minuten ein klarer Überblick: 5-Satz-Zusammenfassung, alle Fristen und Kosten mit Zitat, eine Ampel pro Klausel, fertige Rückfrage-Mail und eine Fristen-Liste für den Kalender.</p>
+  <h3>So gehst du vor</h3>
+  <ol class="steps"><li><b>Vertrag reingeben.</b> Den Vertrag als PDF hochladen oder den Text kopieren. Dazu kurz sagen, was für ein Vertrag es ist und welche Rolle du hast (Kunde, Mieter, Freelancer).</li><li><b>Überblick + Ampel holen.</b> Prompt 1 schicken. Du bekommst 5 Sätze Überblick, eine Tabelle mit allen Fristen und Kosten samt wörtlichem Zitat und eine Ampel pro Klausel.</li><li><b>Zitate gegenchecken.</b> Die roten und gelben Punkte im Original nachlesen – die Zitate zeigen dir genau, wo. So merkst du sofort, falls Claude etwas falsch verstanden hat.</li><li><b>Rückfragen stellen.</b> Prompt 2 schicken, Mail kurz anpassen und an den Anbieter senden. Erst unterschreiben, wenn die roten Punkte geklärt sind.</li><li><b>Fristen sichern.</b> Prompt 3 schicken und die Termine in deinen Kalender eintragen – vor allem den letzten Kündigungstag.</li></ol>
+  <h3>Prompt 1: Vertrag verstehen: Überblick, Zitate, Ampel</h3>
+  <pre id="v1">Ich möchte diesen Vertrag verstehen, bevor ich unterschreibe. Ich bin kein Jurist – erklär mir alles in einfachem Deutsch.
+
+&lt;vertrag&gt;
+___ (Vertragstext einfügen oder PDF hochladen)
+&lt;/vertrag&gt;
+
+Worum es geht: ___ (z. B. Handyvertrag, Fitnessstudio, Mietvertrag, Software-Abo)
+Meine Rolle: ___ (z. B. Kunde, Mieter, Freelancer)
+
+So gehst du vor:
+1. Fass den Vertrag in genau 5 Sätzen zusammen: Was bekomme ich, was zahle ich, wie lange bin ich gebunden, wie komme ich raus, was passiert bei Problemen.
+2. Liste jede Frist, jede automatische Verlängerung und jeden Kostenpunkt als Tabelle: Punkt – Was steht drin – Wörtliches Zitat aus dem Vertrag – Was das für mich bedeutet.
+3. Gib jeder Klausel, die für mich riskant oder ungewöhnlich sein könnte, eine Ampel: 🔴 vor der Unterschrift klären, 🟡 genau lesen, 🟢 passt. Begründe jede Ampel in einem Satz.
+4. Erfinde nichts. Steht etwas nicht im Vertrag, schreib „steht nicht drin“. Wenn du dir unsicher bist, sag das.
+5. Zum Schluss: die 3 wichtigsten Fragen, die ich vor der Unterschrift stellen sollte.</pre>
+  <button type="button" data-copy="v1">Kopieren</button>
+  <p class="hint">Bevor du irgendetwas unterschreibst – mit dem kompletten Vertrag.</p>
+  <h3>Prompt 2: Rückfrage-Mail schreiben</h3>
+  <pre id="v2">Schreib mir jetzt eine kurze, freundliche E-Mail an ___ (Anbieter/Vermieter/Kunde), in der ich die Punkte mit 🔴 und 🟡 kläre.
+- Pro Punkt eine nummerierte Frage, mit Verweis auf die Stelle im Vertrag (Paragraf oder Zitat).
+- Wo es sinnvoll ist, schlag eine konkrete Änderung vor (z. B. kürzere Kündigungsfrist).
+- Ton: ___ (z. B. sachlich, locker), höchstens 150 Wörter.
+- Betreffzeile dazu.</pre>
+  <button type="button" data-copy="v2">Kopieren</button>
+  <p class="hint">Direkt nach Prompt 1, wenn es rote oder gelbe Punkte gibt.</p>
+  <h3>Prompt 3: Fristen für den Kalender</h3>
+  <pre id="v3">Mach mir aus dem Vertrag eine Fristen-Liste für meinen Kalender:
+- Jedes Datum und jede Frist (Start, Mindestlaufzeit, letzter Kündigungstag, Preisänderungen, Zahlungstermine).
+- Rechne konkrete Daten aus, wenn der Vertrag am ___ beginnt. Zeig kurz, wie du gerechnet hast.
+- Format: Datum – Was – Erinnerung (wie viele Tage vorher ich daran denken sollte).
+- Wenn etwas nicht eindeutig ist, markier es mit ❓ statt zu raten.</pre>
+  <button type="button" data-copy="v3">Kopieren</button>
+  <p class="hint">Nach der Unterschrift (oder vorher, um die Bindung zu sehen).</p>
+  <h3>Beispiel</h3>
+  <p class="ex">Fitnessstudio-Vertrag, 24 Monate: Claude fasst ihn in 5 Sätzen zusammen, findet die Klausel zur automatischen Verlängerung und die Servicepauschale (jeweils mit Zitat), markiert beides rot, schreibt eine Mail mit zwei Fragen ans Studio und rechnet den letzten Kündigungstag aus.</p>
+  <h3>Check vor dem Abschicken</h3>
+  <ul class="check"><li>Jeder rote Punkt hat ein wörtliches Zitat – im Original nachgelesen?</li><li>Nichts erfunden: Wo „steht nicht drin“ steht, wirklich nachgeschaut?</li><li>Rote Punkte vor der Unterschrift geklärt?</li><li>Bei hohen Summen oder Unsicherheit: Beratung (z. B. Anwalt, Verbraucherzentrale) fragen – Claude ersetzt keine Rechtsberatung.</li></ul>
+  <p class="hint">Vertrag als Text oder PDF einfügen, Art und deine Rolle ergänzen – Claude liefert Überblick, Fristen mit Zitat, Ampel und Rückfragen.</p>
+</article><article class="card" id="R007">
+  <div class="meta"><span class="tag">Guide</span><span>Reel R007</span></div>
   <h2>Guide: Aus jedem Meeting eine fertige To-do-Liste</h2>
   <p class="goal">Aus chaotischen Meeting-Notizen oder einem Transkript wird eine klare Aufgabenliste mit Wer, Was und Bis wann – ohne erfundene Namen oder Fristen – plus fertige Follow-up-Mail.</p>
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Notizen sammeln.</b> Direkt nach dem Meeting alles zusammenkopieren: eigene Stichpunkte, Chat-Nachrichten, Transkript. Unsortiert ist okay.</li><li><b>Liste bauen lassen.</b> Prompt 1 schicken. Claude macht die Tabelle Was – Wer – Bis wann, listet Entscheidungen und offene Fragen und markiert Lücken mit „❓ fehlt“.</li><li><b>Lücken schließen.</b> Die Rückfragen beantworten und Prompt 2 schicken. Claude sortiert nach Frist und baut pro Person eine eigene Liste.</li><li><b>Mail raus.</b> Prompt 3 schicken, Ton einsetzen, kurz drüberlesen und an alle senden – plus 3-Zeilen-Version für den Team-Chat.</li></ol>
   <h3>Prompt 1: Aufgaben rausziehen</h3>
-  <pre id="v1">Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.
+  <pre id="v4">Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.
 
 &lt;notizen&gt;
 ___ (Notizen oder Transkript hier einfügen)
@@ -54,10 +99,10 @@ Mach daraus eine klare Aufgabenliste. So gehst du vor:
 4. Darunter: „Entscheidungen“ als kurze Liste (was wurde beschlossen?).
 5. Darunter: „Offene Fragen“ – alles, was noch geklärt werden muss.
 6. Zum Schluss: Stell mir zu jedem „❓ fehlt“ eine konkrete Rückfrage, nummeriert, damit ich sie schnell beantworten kann.</pre>
-  <button type="button" data-copy="v1">Kopieren</button>
+  <button type="button" data-copy="v4">Kopieren</button>
   <p class="hint">Direkt nach dem Meeting, mit allen Notizen.</p>
   <h3>Prompt 2: Lücken schließen &amp; sortieren</h3>
-  <pre id="v2">Hier sind meine Antworten auf deine Rückfragen:
+  <pre id="v5">Hier sind meine Antworten auf deine Rückfragen:
 ___ (z. B. 1. Tom ruft den Kunden an, bis Mittwoch. 2. Budget: noch offen.)
 
 Aktualisiere die Aufgabenliste damit:
@@ -66,10 +111,10 @@ Aktualisiere die Aufgabenliste damit:
 - Sortiere nach Frist, das Dringendste oben.
 - Markiere Aufgaben, die von einer anderen abhängen, mit „⏳ wartet auf Nr. X“.
 - Gib mir für jede Person eine eigene kurze Liste: „Name: Aufgabe – bis wann“.</pre>
-  <button type="button" data-copy="v2">Kopieren</button>
+  <button type="button" data-copy="v5">Kopieren</button>
   <p class="hint">Wenn Claude Rückfragen gestellt hat.</p>
   <h3>Prompt 3: Follow-up-Mail</h3>
-  <pre id="v3">Schreib jetzt die Follow-up-Mail an alle Teilnehmer.
+  <pre id="v6">Schreib jetzt die Follow-up-Mail an alle Teilnehmer.
 
 - Betreff: kurz, mit Meeting-Thema und Datum.
 - Ton: ___ (z. B. locker und per Du / förmlich und per Sie)
@@ -77,7 +122,7 @@ Aktualisiere die Aufgabenliste damit:
 - Höchstens 150 Wörter, keine Floskeln.
 - Nur Inhalte aus der Aufgabenliste oben, nichts dazuerfinden.
 Gib mir danach zusätzlich eine Kurzfassung mit 3 Zeilen für den Team-Chat.</pre>
-  <button type="button" data-copy="v3">Kopieren</button>
+  <button type="button" data-copy="v6">Kopieren</button>
   <p class="hint">Wenn die Liste steht – am besten am selben Tag.</p>
   <h3>Beispiel</h3>
   <p class="ex">Team-Meeting zum Produktlaunch: Notizen einfügen → Prompt 1 liefert „Lisa – Angebot schicken – Fr“, „Tom – Folien updaten – Mo“ und „❓ fehlt – Kunde anrufen – ❓ fehlt“ plus Rückfrage „Wer ruft den Kunden an, und bis wann?“ → Antwort „Tom, Mittwoch“ → Prompt 2 sortiert alles nach Frist → Prompt 3 schreibt die Mail ans Team.</p>
@@ -91,7 +136,7 @@ Gib mir danach zusätzlich eine Kurzfassung mit 3 Zeilen für den Team-Chat.</pr
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Daten vorbereiten.</b> Stellenanzeige komplett kopieren. Lebenslauf als Text einfügen und vorher Adresse, Telefonnummer und Geburtsdatum löschen.</li><li><b>Abgleich holen.</b> Prompt 1 schicken: Claude macht eine Tabelle mit jeder Anforderung, deinem Beleg und ✅/⚠️/❌.</li><li><b>Lücken schließen.</b> Prompt 2 schicken und die Fragen ehrlich beantworten. Oft hast du die Erfahrung, sie steht nur nicht im Lebenslauf.</li><li><b>Anschreiben bauen.</b> Prompt 3: Claude schreibt aus deinen Belegen. Alles mit [ERGÄNZEN] füllst du selbst.</li><li><b>Recruiter-Check.</b> Prompt 4: Claude liest alles mit wenig Zeit und zeigt dir die schwächsten Sätze.</li></ol>
   <h3>Prompt 1: Abgleich</h3>
-  <pre id="v4">Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.
+  <pre id="v7">Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.
 
 &lt;stellenanzeige&gt;
 ___ (komplette Anzeige einfügen)
@@ -108,32 +153,32 @@ So gehst du vor:
 4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.
 
 Wichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.</pre>
-  <button type="button" data-copy="v4">Kopieren</button>
+  <button type="button" data-copy="v7">Kopieren</button>
   <p class="hint">Für jede neue Stelle als Erstes.</p>
   <h3>Prompt 2: Lücken schließen</h3>
-  <pre id="v5">Geh alle ⚠️ und ❌ aus deiner Tabelle durch.
+  <pre id="v8">Geh alle ⚠️ und ❌ aus deiner Tabelle durch.
 1. Stell mir zu jedem Punkt genau eine Frage, ob ich dazu Erfahrung habe – Job, Praktikum, Studium, Ehrenamt oder eigene Projekte zählen.
 2. Stell die Fragen als nummerierte Liste und warte auf meine Antworten.
 3. Formulier danach aus meinen Antworten neue Lebenslauf-Stichpunkte: Verb am Anfang, konkretes Ergebnis, nur Fakten, die ich wirklich genannt habe.
 4. Sag mir, an welche Stelle im Lebenslauf jeder Stichpunkt gehört.</pre>
-  <button type="button" data-copy="v5">Kopieren</button>
+  <button type="button" data-copy="v8">Kopieren</button>
   <p class="hint">Direkt nach dem Abgleich, wenn es ⚠️ oder ❌ gibt.</p>
   <h3>Prompt 3: Anschreiben aus Belegen</h3>
-  <pre id="v6">Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.
+  <pre id="v9">Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.
 - Einstieg: warum genau diese Stelle. Nutz nur, was in der Anzeige steht, und markiere mit [ERGÄNZEN], wo ich etwas Persönliches einfügen soll.
 - Hauptteil: die 3 Muss-Anforderungen, die ich am besten belegen kann, jeweils mit einem konkreten Beispiel aus meinem Lebenslauf.
 - Ton: ___ (z. B. freundlich und direkt). Keine Floskeln wie „hiermit bewerbe ich mich“ oder „mit großem Interesse“.
 - Schluss: ein selbstbewusster Satz zum Gespräch.
 Erfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.</pre>
-  <button type="button" data-copy="v6">Kopieren</button>
+  <button type="button" data-copy="v9">Kopieren</button>
   <p class="hint">Wenn der Lebenslauf passt.</p>
   <h3>Prompt 4: Recruiter-Check</h3>
-  <pre id="v7">Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.
+  <pre id="v10">Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.
 1. Was bleibt nach 30 Sekunden hängen? (3 Stichpunkte)
 2. Welche Muss-Anforderung aus der Anzeige ist immer noch nicht klar belegt?
 3. Nenn die 2 schwächsten Sätze und gib mir für jeden eine bessere Version.
 4. Gib mir am Ende die überarbeitete Fassung des Anschreibens.</pre>
-  <button type="button" data-copy="v7">Kopieren</button>
+  <button type="button" data-copy="v10">Kopieren</button>
   <p class="hint">Bevor du auf Senden drückst.</p>
   <h3>Beispiel</h3>
   <p class="ex">Stelle im Online-Marketing: Anzeige + Lebenslauf rein → Prompt 1 zeigt SEO ✅, Budgetverantwortung ⚠️, Google Ads ❌ → Prompt 2 fragt nach: Ads-Kampagnen im Praktikum betreut → neuer Stichpunkt → Prompt 3 schreibt das Anschreiben mit diesen Belegen → Prompt 4 ersetzt die 2 schwächsten Sätze.</p>
@@ -147,7 +192,7 @@ Erfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.</pre>
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Dokument rein.</b> Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen.</li><li><b>Erst Überblick holen.</b> Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind.</li><li><b>Gezielt fragen.</b> Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis.</li><li><b>Gegenprüfen.</b> Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist.</li></ol>
   <h3>Prompt 1: Überblick</h3>
-  <pre id="v8">&lt;dokument&gt;
+  <pre id="v11">&lt;dokument&gt;
 ___ (ganzen Text einfügen)
 &lt;/dokument&gt;
 
@@ -157,24 +202,24 @@ Lies das Dokument komplett. Gib mir dann:
 3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.
 4. Was fehlt oder unklar formuliert ist.
 Erfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.</pre>
-  <button type="button" data-copy="v8">Kopieren</button>
+  <button type="button" data-copy="v11">Kopieren</button>
   <p class="hint">Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest.</p>
   <h3>Prompt 2: Frage mit Zitaten</h3>
-  <pre id="v9">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
+  <pre id="v12">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
 1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in &lt;zitate&gt;-Tags.
 2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].
 3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.
 4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v9">Kopieren</button>
+  <button type="button" data-copy="v12">Kopieren</button>
   <p class="hint">Für jede konkrete Frage. Die Frage steht immer ganz unten.</p>
   <h3>Prompt 3: Gegencheck</h3>
-  <pre id="v10">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
+  <pre id="v13">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
 - Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).
 - Korrigiere alle ⚠️ und ❌ oder streich sie.
 - Gib mir am Ende die bereinigte Antwort.</pre>
-  <button type="button" data-copy="v10">Kopieren</button>
+  <button type="button" data-copy="v13">Kopieren</button>
   <p class="hint">Bei allem, was wichtig ist: Geld, Fristen, Verträge.</p>
   <h3>Beispiel</h3>
   <p class="ex">Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.</p>
@@ -184,58 +229,58 @@ Meine Frage: ___</pre>
 </article><article class="card" id="R005">
   <div class="meta"><span class="tag">Reel</span><span>Reel R005</span></div>
   <h2>Rolle + Publikum + Frage</h2>
-  <pre id="v11">Du bist ___ (Rolle, z. B. Steuerberater).
+  <pre id="v14">Du bist ___ (Rolle, z. B. Steuerberater).
 Erklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v11">Kopieren</button>
+  <button type="button" data-copy="v14">Kopieren</button>
   <p class="hint">Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort.</p>
 </article><article class="card" id="R004">
   <div class="meta"><span class="tag">Reel</span><span>Reel R004</span></div>
   <h2>Regel + weil</h2>
-  <pre id="v12">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
+  <pre id="v15">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
 
 Beispiel:
 Schreib kurz, weil ich es am Handy lese.</pre>
-  <button type="button" data-copy="v12">Kopieren</button>
+  <button type="button" data-copy="v15">Kopieren</button>
   <p class="hint">Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken.</p>
 </article><article class="card" id="R003">
   <div class="meta"><span class="tag">Reel</span><span>Reel R003</span></div>
   <h2>Die 5 Video-Skills für Claude</h2>
-  <pre id="v13">Die Skills aus dem Video:
+  <pre id="v16">Die Skills aus dem Video:
 HyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar
 
 Start-Prompt:
 Ich möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.
 Schreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.</pre>
-  <button type="button" data-copy="v13">Kopieren</button>
+  <button type="button" data-copy="v16">Kopieren</button>
   <p class="hint">Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut.</p>
 </article><article class="card" id="R002">
   <div class="meta"><span class="tag">Reel</span><span>Reel R002</span></div>
   <h2>Verbote umdrehen</h2>
-  <pre id="v14">Statt: keine ___
+  <pre id="v17">Statt: keine ___
 Schreib: ___ (was stattdessen rauskommen soll)
 
 Beispiele:
 Statt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“
 Statt „kein Fachchinesisch“ → „erklär es wie einem Freund“
 Statt „keine Aufzählungen“ → „in Fließtext“</pre>
-  <button type="button" data-copy="v14">Kopieren</button>
+  <button type="button" data-copy="v17">Kopieren</button>
   <p class="hint">Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll.</p>
 </article><article class="card" id="K001">
   <div class="meta"><span class="tag">Karussell</span><span>Karussell K001</span></div>
   <h2>Hör auf, Claude raten zu lassen</h2>
-  <pre id="v15">Ziel: Schreib ___, das ___ erreicht.
+  <pre id="v18">Ziel: Schreib ___, das ___ erreicht.
 Kontext: Für ___, weil ___.
 Beispiel: So soll es klingen: ___
 Format: ___ Wörter, ___ Varianten.</pre>
-  <button type="button" data-copy="v15">Kopieren</button>
+  <button type="button" data-copy="v18">Kopieren</button>
   <p class="hint">Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten.</p>
 </article><article class="card" id="R001">
   <div class="meta"><span class="tag">Reel</span><span>Reel R001</span></div>
   <h2>Der eine Satz vor jedem Prompt</h2>
-  <pre id="v16">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
-  <button type="button" data-copy="v16">Kopieren</button>
+  <pre id="v19">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
+  <button type="button" data-copy="v19">Kopieren</button>
   <p class="hint">Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten.</p>
 </article>
 <footer>Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a></footer>

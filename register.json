@@ -571,5 +571,83 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R008",
+  "type": "reel",
+  "createdAt": "2026-11-07",
+  "status": "sending",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 7",
+  "topic": "Vertrag prüfen lassen, bevor man unterschreibt",
+  "angle": "Ein Prompt-Ablauf für jeden Vertrag: 5-Satz-Überblick → jede Frist/Kostenfalle mit wörtlichem Zitat → Ampel pro Klausel → fertige Mail mit Rückfragen; ehrlich: kein Anwalt-Ersatz",
+  "hook": "Dieser Prompt liest jeden Vertrag für dich.",
+  "source": "PDF-/Datei-Upload in Claude: https://support.claude.com/de/articles/8241126-dateien-zu-claude-hochladen (geprüft 2026-11-07); sonst nur Prompt-Technik (Text oben in Tags, Zitate, nichts erfinden), siehe https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R008/reel.mp4",
+  "tiktokTitle": "Dieser Prompt liest jeden Vertrag für dich",
+  "caption": "Dieser Prompt liest jeden Vertrag für dich. 📄\n\nHandyvertrag, Fitnessstudio, Mietvertrag, Abo – niemand liest das Kleingedruckte. Und genau da stehen Verlängerungen, Fristen und Zusatzkosten.\n\nLade den Vertrag in Claude hoch und lass dir drei Dinge geben:\n👉 Den ganzen Vertrag in 5 Sätzen\n👉 Jede Frist und jede Kostenfalle – mit wörtlichem Zitat\n👉 Eine Ampel: Rot heißt „vor der Unterschrift nachfragen“\n\nDazu schreibt Claude dir die fertige Mail mit deinen Fragen. Ersetzt keinen Anwalt – aber du weißt endlich, was du unterschreibst.\n\nSpeicher dir das, bevor du den nächsten Vertrag unterschreibst. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Vertrag #PromptTipps #JonasNoen",
+  "captionLinkedin": "Verträge werden selten komplett gelesen – vor allem nicht das Kleingedruckte. Dort stehen aber genau die Punkte, die später Geld kosten: automatische Verlängerungen, Kündigungsfristen, Zusatzgebühren.\n\nMit Claude lässt sich ein Vertrag in wenigen Minuten strukturiert durchgehen:\n1. Überblick in fünf Sätzen: Leistung, Kosten, Laufzeit, Ausstieg, Haftung.\n2. Jede Frist und jeder Kostenpunkt als Tabelle – mit wörtlichem Zitat, damit man die Stelle sofort im Original findet.\n3. Eine Ampel pro Klausel: Rot = vor der Unterschrift klären, Gelb = genau lesen, Grün = passt.\n4. Aus den roten Punkten entsteht eine kurze Mail mit konkreten Rückfragen.\n\nWichtig: Das ersetzt keine Rechtsberatung. Aber man geht deutlich besser vorbereitet in das Gespräch – und weiß, was man unterschreibt.\n\nLest ihr Verträge vor der Unterschrift komplett – oder eher quer?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Vertrags-Check vor der Unterschrift (Guide mit 3 Prompts)",
+   "text": "Ich möchte diesen Vertrag verstehen, bevor ich unterschreibe. Ich bin kein Jurist – erklär mir alles in einfachem Deutsch.\n\n<vertrag>\n___ (Vertragstext einfügen oder PDF hochladen)\n</vertrag>\n\nWorum es geht: ___ (z. B. Handyvertrag, Fitnessstudio, Mietvertrag, Software-Abo)\nMeine Rolle: ___ (z. B. Kunde, Mieter, Freelancer)\n\nSo gehst du vor:\n1. Fass den Vertrag in genau 5 Sätzen zusammen: Was bekomme ich, was zahle ich, wie lange bin ich gebunden, wie komme ich raus, was passiert bei Problemen.\n2. Liste jede Frist, jede automatische Verlängerung und jeden Kostenpunkt als Tabelle: Punkt – Was steht drin – Wörtliches Zitat aus dem Vertrag – Was das für mich bedeutet.\n3. Gib jeder Klausel, die für mich riskant oder ungewöhnlich sein könnte, eine Ampel: 🔴 vor der Unterschrift klären, 🟡 genau lesen, 🟢 passt. Begründe jede Ampel in einem Satz.\n4. Erfinde nichts. Steht etwas nicht im Vertrag, schreib „steht nicht drin“. Wenn du dir unsicher bist, sag das.\n5. Zum Schluss: die 3 wichtigsten Fragen, die ich vor der Unterschrift stellen sollte.",
+   "hinweis": "Vertrag als Text oder PDF einfügen, Art und deine Rolle ergänzen – Claude liefert Überblick, Fristen mit Zitat, Ampel und Rückfragen."
+  },
+  "guide": {
+   "titel": "Guide: Jeden Vertrag verstehen, bevor du unterschreibst",
+   "ziel": "Aus einem langen Vertrag wird in wenigen Minuten ein klarer Überblick: 5-Satz-Zusammenfassung, alle Fristen und Kosten mit Zitat, eine Ampel pro Klausel, fertige Rückfrage-Mail und eine Fristen-Liste für den Kalender.",
+   "schritte": [
+    {
+     "titel": "Vertrag reingeben.",
+     "text": "Den Vertrag als PDF hochladen oder den Text kopieren. Dazu kurz sagen, was für ein Vertrag es ist und welche Rolle du hast (Kunde, Mieter, Freelancer)."
+    },
+    {
+     "titel": "Überblick + Ampel holen.",
+     "text": "Prompt 1 schicken. Du bekommst 5 Sätze Überblick, eine Tabelle mit allen Fristen und Kosten samt wörtlichem Zitat und eine Ampel pro Klausel."
+    },
+    {
+     "titel": "Zitate gegenchecken.",
+     "text": "Die roten und gelben Punkte im Original nachlesen – die Zitate zeigen dir genau, wo. So merkst du sofort, falls Claude etwas falsch verstanden hat."
+    },
+    {
+     "titel": "Rückfragen stellen.",
+     "text": "Prompt 2 schicken, Mail kurz anpassen und an den Anbieter senden. Erst unterschreiben, wenn die roten Punkte geklärt sind."
+    },
+    {
+     "titel": "Fristen sichern.",
+     "text": "Prompt 3 schicken und die Termine in deinen Kalender eintragen – vor allem den letzten Kündigungstag."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Vertrag verstehen: Überblick, Zitate, Ampel",
+     "text": "Ich möchte diesen Vertrag verstehen, bevor ich unterschreibe. Ich bin kein Jurist – erklär mir alles in einfachem Deutsch.\n\n<vertrag>\n___ (Vertragstext einfügen oder PDF hochladen)\n</vertrag>\n\nWorum es geht: ___ (z. B. Handyvertrag, Fitnessstudio, Mietvertrag, Software-Abo)\nMeine Rolle: ___ (z. B. Kunde, Mieter, Freelancer)\n\nSo gehst du vor:\n1. Fass den Vertrag in genau 5 Sätzen zusammen: Was bekomme ich, was zahle ich, wie lange bin ich gebunden, wie komme ich raus, was passiert bei Problemen.\n2. Liste jede Frist, jede automatische Verlängerung und jeden Kostenpunkt als Tabelle: Punkt – Was steht drin – Wörtliches Zitat aus dem Vertrag – Was das für mich bedeutet.\n3. Gib jeder Klausel, die für mich riskant oder ungewöhnlich sein könnte, eine Ampel: 🔴 vor der Unterschrift klären, 🟡 genau lesen, 🟢 passt. Begründe jede Ampel in einem Satz.\n4. Erfinde nichts. Steht etwas nicht im Vertrag, schreib „steht nicht drin“. Wenn du dir unsicher bist, sag das.\n5. Zum Schluss: die 3 wichtigsten Fragen, die ich vor der Unterschrift stellen sollte.",
+     "wann": "Bevor du irgendetwas unterschreibst – mit dem kompletten Vertrag."
+    },
+    {
+     "titel": "Rückfrage-Mail schreiben",
+     "text": "Schreib mir jetzt eine kurze, freundliche E-Mail an ___ (Anbieter/Vermieter/Kunde), in der ich die Punkte mit 🔴 und 🟡 kläre.\n- Pro Punkt eine nummerierte Frage, mit Verweis auf die Stelle im Vertrag (Paragraf oder Zitat).\n- Wo es sinnvoll ist, schlag eine konkrete Änderung vor (z. B. kürzere Kündigungsfrist).\n- Ton: ___ (z. B. sachlich, locker), höchstens 150 Wörter.\n- Betreffzeile dazu.",
+     "wann": "Direkt nach Prompt 1, wenn es rote oder gelbe Punkte gibt."
+    },
+    {
+     "titel": "Fristen für den Kalender",
+     "text": "Mach mir aus dem Vertrag eine Fristen-Liste für meinen Kalender:\n- Jedes Datum und jede Frist (Start, Mindestlaufzeit, letzter Kündigungstag, Preisänderungen, Zahlungstermine).\n- Rechne konkrete Daten aus, wenn der Vertrag am ___ beginnt. Zeig kurz, wie du gerechnet hast.\n- Format: Datum – Was – Erinnerung (wie viele Tage vorher ich daran denken sollte).\n- Wenn etwas nicht eindeutig ist, markier es mit ❓ statt zu raten.",
+     "wann": "Nach der Unterschrift (oder vorher, um die Bindung zu sehen)."
+    }
+   ],
+   "beispiel": "Fitnessstudio-Vertrag, 24 Monate: Claude fasst ihn in 5 Sätzen zusammen, findet die Klausel zur automatischen Verlängerung und die Servicepauschale (jeweils mit Zitat), markiert beides rot, schreibt eine Mail mit zwei Fragen ans Studio und rechnet den letzten Kündigungstag aus.",
+   "check": [
+    "Jeder rote Punkt hat ein wörtliches Zitat – im Original nachgelesen?",
+    "Nichts erfunden: Wo „steht nicht drin“ steht, wirklich nachgeschaut?",
+    "Rote Punkte vor der Unterschrift geklärt?",
+    "Bei hohen Summen oder Unsicherheit: Beratung (z. B. Anwalt, Verbraucherzentrale) fragen – Claude ersetzt keine Rechtsberatung."
+   ]
+  },
+  "costUsd": 0.24,
+  "sha256": "bceb4d052b2c3e728c8cbe6501f5aab2616003cfdeddc8aca88c4632a4785b94",
+  "durationSec": 24.8,
+  "music": "assets/music/groove-115.mp3",
+  "plannedFor": "2026-11-07T18:30:00+01:00"
  }
 ]
