@@ -158,5 +158,80 @@
       },
       "scheduledAt": "2026-11-06T20:30:00+01:00"
     }
+  },
+  {
+    "id": "E002",
+    "type": "reel",
+    "createdAt": "2026-11-07",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 2",
+    "fromDe": "R007",
+    "topic": "Turn meeting notes into a to-do list",
+    "angle": "One prompt chain after every meeting: task table Who/What/By when with quotes → Claude asks instead of guessing missing names/deadlines → follow-up email for the team",
+    "hook": "This prompt turns any meeting into a finished to-do list.",
+    "source": "Paste text or upload files in Claude: https://support.claude.com/en/articles/8241126-uploading-files-to-claude (checked 2026-11-07); otherwise prompt technique only (XML tags, quotes, don't invent), see https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "note": "R008 (contract check) skipped for now: too close to E001 (contracts/documents). Adapted R007 instead.",
+    "voice": "Jonas Noen (ElevenLabs clone), eleven_v4, tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E002/reel.mp4",
+    "tiktokTitle": "This prompt turns any meeting into a to-do list",
+    "caption": "This prompt turns any meeting into a finished to-do list. ✅\n\nAfter a meeting you've got notes full of half sentences – and a week later nobody remembers who was supposed to do what.\n\nPaste your notes (or the transcript) into Claude and have it pull out exactly three things:\n👉 Who does what?\n👉 By when?\n👉 What's still open?\n\nThe trick: if a name or deadline is missing, Claude doesn't guess – it writes \"❓ missing\" and asks you. Then it writes the follow-up email for your whole team.\n\nSave this for your next meeting. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #Productivity #AITools #MeetingNotes",
+    "captionX": "This Claude prompt turns any meeting into a to-do list: who – what – by when, asks instead of guessing missing names/deadlines, then writes the follow-up email. Comment PROMPT for the guide ✅",
+    "captionLinkedIn": "Most meetings end with notes full of half sentences. A week later, nobody is quite sure who owns which task.\n\nA simple prompt chain fixes this:\n1. Paste the notes or transcript and have the AI extract every task as a table: what – who – by when – with a short quote from the notes as the source.\n2. Missing names or deadlines are not guessed. They're marked \"missing\", and the model asks you one concrete question for each.\n3. Once the gaps are filled, it drafts the follow-up email: decisions, tasks per person, open questions.\n\nOne caveat: check your company's rules before pasting confidential meeting content into any AI tool.\n\nHow do you make sure meeting action items actually get done?\n\nFull guide with all prompts → link in the first comment 👇",
+    "costUsd": 0.23,
+    "vorlage": {
+      "titel": "Meeting notes → to-do list (guide with 3 prompts)",
+      "text": "Here are my notes from a meeting. They're messy and incomplete.\n\n<notes>\n___ (paste your notes or the transcript here)\n</notes>\n\nMeeting: ___ (topic, date, who was there)\n\nTurn this into a clear task list. Work like this:\n1. Read everything and collect every task, every decision and every open question – even if it was only mentioned in passing.\n2. Tasks as a table: No. – What exactly needs to be done (start with a verb) – Who – By when – Source (short quote from the notes).\n3. Don't invent names or deadlines. If something isn't in the notes, write \"❓ missing\" in that cell.\n4. Below the table: \"Decisions\" as a short list (what was agreed?).\n5. Below that: \"Open questions\" – everything that still needs to be clarified.\n6. Finally: ask me one concrete question for every \"❓ missing\", numbered, so I can answer quickly.",
+      "hinweis": "Paste your notes or transcript at the top – Claude builds the Who/What/By when table and asks instead of inventing gaps."
+    },
+    "guide": {
+      "titel": "Guide: Turn every meeting into a finished to-do list",
+      "ziel": "Messy meeting notes or a transcript become a clear task list with who, what and by when – no invented names or deadlines – plus a ready-to-send follow-up email.",
+      "schritte": [
+        {
+          "titel": "Collect your notes.",
+          "text": "Right after the meeting, copy everything together: your bullet points, chat messages, the transcript. Messy is fine."
+        },
+        {
+          "titel": "Build the list.",
+          "text": "Send prompt 1. Claude builds the table What – Who – By when, lists decisions and open questions, and marks gaps with \"❓ missing\"."
+        },
+        {
+          "titel": "Close the gaps.",
+          "text": "Answer Claude's questions and send prompt 2. Claude sorts everything by deadline and gives each person their own list."
+        },
+        {
+          "titel": "Send the email.",
+          "text": "Send prompt 3, pick your tone, read it over once and send it to everyone – plus a 3-line version for the team chat."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Pull out the tasks",
+          "text": "Here are my notes from a meeting. They're messy and incomplete.\n\n<notes>\n___ (paste your notes or the transcript here)\n</notes>\n\nMeeting: ___ (topic, date, who was there)\n\nTurn this into a clear task list. Work like this:\n1. Read everything and collect every task, every decision and every open question – even if it was only mentioned in passing.\n2. Tasks as a table: No. – What exactly needs to be done (start with a verb) – Who – By when – Source (short quote from the notes).\n3. Don't invent names or deadlines. If something isn't in the notes, write \"❓ missing\" in that cell.\n4. Below the table: \"Decisions\" as a short list (what was agreed?).\n5. Below that: \"Open questions\" – everything that still needs to be clarified.\n6. Finally: ask me one concrete question for every \"❓ missing\", numbered, so I can answer quickly.",
+          "wann": "Right after the meeting, with all your notes."
+        },
+        {
+          "titel": "Close the gaps & sort",
+          "text": "Here are my answers to your questions:\n___ (e.g. 1. Tom calls the client, by Wednesday. 2. Budget: still open.)\n\nUpdate the task list with them:\n- Add the answers to the table.\n- Anything still unclear stays \"❓ missing\".\n- Sort by deadline, most urgent first.\n- Mark tasks that depend on another one with \"⏳ waiting for No. X\".\n- Give me a short list for each person: \"Name: task – by when\".",
+          "wann": "When Claude has asked you questions."
+        },
+        {
+          "titel": "Follow-up email",
+          "text": "Now write the follow-up email to everyone who was in the meeting.\n\n- Subject: short, with the meeting topic and date.\n- Tone: ___ (e.g. casual and friendly / formal)\n- Structure: 1 sentence of thanks → decisions (bullet points) → tasks per person with deadline → open questions with a request to reply by ___ → short sign-off.\n- Max 150 words, no filler phrases.\n- Only use what's in the task list above, don't add anything.\nThen also give me a 3-line version for the team chat (Slack, Teams or similar).",
+          "wann": "Once the list is done – ideally the same day."
+        }
+      ],
+      "beispiel": "Product launch meeting: paste the notes → prompt 1 gives \"Lisa – send offer – Fri\", \"Tom – update slides – Mon\" and \"❓ missing – call client – ❓ missing\" plus the question \"Who calls the client, and by when?\" → answer \"Ana, Wednesday\" → prompt 2 sorts everything by deadline → prompt 3 writes the email to the team.",
+      "check": [
+        "Every task has a person and a deadline – or is clearly marked \"❓ missing\"",
+        "Nothing in the email that wasn't discussed in the meeting",
+        "Check confidential content before pasting (follow your company's rules)"
+      ]
+    },
+    "sha256": "6c41c8fb9c446486b90d8c7d9d40eeccf98dc6f5a1c3d36818daae8be2500fc1",
+    "durationSec": 23.9,
+    "music": "assets/music/groove-115.mp3"
   }
 ]
