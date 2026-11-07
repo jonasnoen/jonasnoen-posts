@@ -576,7 +576,7 @@
   "id": "R008",
   "type": "reel",
   "createdAt": "2026-11-07",
-  "status": "sending",
+  "status": "scheduled",
   "format": "memoji",
   "series": "Claude-Codes Teil 7",
   "topic": "Vertrag prüfen lassen, bevor man unterschreibt",
@@ -648,6 +648,36 @@
   "sha256": "bceb4d052b2c3e728c8cbe6501f5aab2616003cfdeddc8aca88c4632a4785b94",
   "durationSec": 24.8,
   "music": "assets/music/groove-115.mp3",
-  "plannedFor": "2026-11-07T18:30:00+01:00"
+  "plannedFor": "2026-11-07T18:30:00+01:00",
+  "mediaCommit": "7653d66c23ece3aa218e3b4b94cec8bb2045e1f1",
+  "metricool": {
+   "postId": 420112262,
+   "uuid": "-2343611152554832404",
+   "publishAt": "2026-11-07T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 420112262,
+    "scheduledAt": "2026-11-07T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 420112262,
+    "scheduledAt": "2026-11-07T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 420112348,
+    "uuid": "-4177252841466673676",
+    "scheduledAt": "2026-11-07T18:30:00+01:00",
+    "file": "reels/R008/reel_linkedin.mp4",
+    "firstComment": true
+   }
+  }
  }
 ]
