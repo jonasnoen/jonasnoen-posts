@@ -163,7 +163,7 @@
     "id": "E002",
     "type": "reel",
     "createdAt": "2026-11-07",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude Codes Part 2",
     "fromDe": "R007",
@@ -232,6 +232,28 @@
     },
     "sha256": "6c41c8fb9c446486b90d8c7d9d40eeccf98dc6f5a1c3d36818daae8be2500fc1",
     "durationSec": 23.9,
-    "music": "assets/music/groove-115.mp3"
+    "music": "assets/music/groove-115.mp3",
+    "mediaCommit": "0238c1bccf2c3f1766cf17265eb0f0e3a5614270",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 420158370
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 420158370
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 420158493
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 420158511,
+        "file": "en/reels/E002/reel_linkedin.mp4",
+        "firstComment": true
+      },
+      "scheduledAt": "2026-11-07T20:30:00+01:00"
+    }
   }
 ]
