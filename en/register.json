@@ -260,7 +260,7 @@
     "id": "E003",
     "type": "reel",
     "createdAt": "2026-11-08",
-    "status": "sending",
+    "status": "scheduled",
     "format": "experiment",
     "style": "kreidetafel",
     "series": "Claude Codes Part 3",
@@ -339,6 +339,28 @@
     },
     "costUsd": 0.1,
     "sha256": "3d3eaf48d02909ac3115d9fe852572e10d663576ba3d8e81f587efb58d829837",
-    "durationSec": 27.4
+    "durationSec": 27.4,
+    "mediaCommit": "6d97d77de82931c43e87dc19edc6a509c292433f",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 420965733
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 420965733
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 420965907
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 420965923,
+        "file": "en/reels/E003/reel_linkedin.mp4",
+        "firstComment": true
+      },
+      "scheduledAt": "2026-11-08T20:30:00+01:00"
+    }
   }
 ]
