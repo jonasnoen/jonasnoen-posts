@@ -1,0 +1,442 @@
+[
+{
+"text": "This",
+"start": 0.0,
+"end": 0.139
+},
+{
+"text": "prompt",
+"start": 0.209,
+"end": 0.487
+},
+{
+"text": "turns",
+"start": 0.591,
+"end": 0.765
+},
+{
+"text": "Claude",
+"start": 0.835,
+"end": 1.183
+},
+{
+"text": "into",
+"start": 1.287,
+"end": 1.391
+},
+{
+"text": "your",
+"start": 1.461,
+"end": 1.53
+},
+{
+"text": "personal",
+"start": 1.6,
+"end": 1.948
+},
+{
+"text": "tutor.",
+"start": 2.087,
+"end": 2.609
+},
+{
+"text": "Most",
+"start": 2.783,
+"end": 2.922
+},
+{
+"text": "people",
+"start": 2.991,
+"end": 3.2
+},
+{
+"text": "just",
+"start": 3.27,
+"end": 3.409
+},
+{
+"text": "ask",
+"start": 3.513,
+"end": 3.617
+},
+{
+"text": "for",
+"start": 3.687,
+"end": 3.757
+},
+{
+"text": "summaries.",
+"start": 3.826,
+"end": 4.417
+},
+{
+"text": "Feels",
+"start": 4.522,
+"end": 4.73
+},
+{
+"text": "like",
+"start": 4.8,
+"end": 4.87
+},
+{
+"text": "studying,",
+"start": 4.939,
+"end": 5.496
+},
+{
+"text": "but",
+"start": 5.53,
+"end": 5.565
+},
+{
+"text": "it",
+"start": 5.635,
+"end": 5.774
+},
+{
+"text": "barely",
+"start": 5.878,
+"end": 6.052
+},
+{
+"text": "sticks.",
+"start": 6.122,
+"end": 6.713
+},
+{
+"text": "My",
+"start": 6.887,
+"end": 7.026
+},
+{
+"text": "prompt",
+"start": 7.096,
+"end": 7.304
+},
+{
+"text": "does",
+"start": 7.374,
+"end": 7.583
+},
+{
+"text": "three",
+"start": 7.652,
+"end": 7.791
+},
+{
+"text": "things.",
+"start": 7.861,
+"end": 8.383
+},
+{
+"text": "One:",
+"start": 8.557,
+"end": 9.113
+},
+{
+"text": "Claude",
+"start": 9.183,
+"end": 9.391
+},
+{
+"text": "builds",
+"start": 9.461,
+"end": 9.635
+},
+{
+"text": "a",
+"start": 9.67,
+"end": 9.739
+},
+{
+"text": "study",
+"start": 9.809,
+"end": 10.017
+},
+{
+"text": "plan",
+"start": 10.087,
+"end": 10.296
+},
+{
+"text": "from",
+"start": 10.365,
+"end": 10.435
+},
+{
+"text": "your",
+"start": 10.504,
+"end": 10.643
+},
+{
+"text": "own",
+"start": 10.713,
+"end": 10.783
+},
+{
+"text": "material,",
+"start": 10.852,
+"end": 11.478
+},
+{
+"text": "right",
+"start": 11.548,
+"end": 11.757
+},
+{
+"text": "up",
+"start": 11.826,
+"end": 11.896
+},
+{
+"text": "to",
+"start": 11.965,
+"end": 12.0
+},
+{
+"text": "exam",
+"start": 12.035,
+"end": 12.313
+},
+{
+"text": "day.",
+"start": 12.383,
+"end": 12.87
+},
+{
+"text": "Two:",
+"start": 13.009,
+"end": 13.426
+},
+{
+"text": "Claude",
+"start": 13.496,
+"end": 13.704
+},
+{
+"text": "quizzes",
+"start": 13.774,
+"end": 14.052
+},
+{
+"text": "you,",
+"start": 14.122,
+"end": 14.47
+},
+{
+"text": "one",
+"start": 14.539,
+"end": 14.678
+},
+{
+"text": "question",
+"start": 14.748,
+"end": 15.026
+},
+{
+"text": "at",
+"start": 15.096,
+"end": 15.165
+},
+{
+"text": "a",
+"start": 15.189,
+"end": 15.211
+},
+{
+"text": "time,",
+"start": 15.235,
+"end": 15.652
+},
+{
+"text": "and",
+"start": 15.687,
+"end": 15.722
+},
+{
+"text": "the",
+"start": 15.791,
+"end": 15.826
+},
+{
+"text": "answer",
+"start": 15.861,
+"end": 16.209
+},
+{
+"text": "only",
+"start": 16.348,
+"end": 16.557
+},
+{
+"text": "comes",
+"start": 16.626,
+"end": 16.835
+},
+{
+"text": "after.",
+"start": 16.904,
+"end": 17.53
+},
+{
+"text": "Three:",
+"start": 17.67,
+"end": 18.157
+},
+{
+"text": "anything",
+"start": 18.296,
+"end": 18.435
+},
+{
+"text": "you",
+"start": 18.504,
+"end": 18.574
+},
+{
+"text": "don't",
+"start": 18.609,
+"end": 18.783
+},
+{
+"text": "get,",
+"start": 18.887,
+"end": 19.2
+},
+{
+"text": "Claude",
+"start": 19.27,
+"end": 19.478
+},
+{
+"text": "explains",
+"start": 19.548,
+"end": 19.965
+},
+{
+"text": "like",
+"start": 20.035,
+"end": 20.174
+},
+{
+"text": "you're",
+"start": 20.209,
+"end": 20.383
+},
+{
+"text": "five.",
+"start": 20.557,
+"end": 21.078
+},
+{
+"text": "I",
+"start": 21.148,
+"end": 21.217
+},
+{
+"text": "built",
+"start": 21.287,
+"end": 21.357
+},
+{
+"text": "the",
+"start": 21.426,
+"end": 21.496
+},
+{
+"text": "full",
+"start": 21.565,
+"end": 21.704
+},
+{
+"text": "system",
+"start": 21.774,
+"end": 22.122
+},
+{
+"text": "with",
+"start": 22.226,
+"end": 22.33
+},
+{
+"text": "four",
+"start": 22.435,
+"end": 22.539
+},
+{
+"text": "prompts.",
+"start": 22.609,
+"end": 23.235
+},
+{
+"text": "Comment",
+"start": 23.374,
+"end": 23.513
+},
+{
+"text": "PROMPT",
+"start": 23.583,
+"end": 24.0
+},
+{
+"text": "and",
+"start": 24.035,
+"end": 24.07
+},
+{
+"text": "I'll",
+"start": 24.139,
+"end": 24.278
+},
+{
+"text": "send",
+"start": 24.348,
+"end": 24.417
+},
+{
+"text": "you",
+"start": 24.452,
+"end": 24.487
+},
+{
+"text": "the",
+"start": 24.557,
+"end": 24.696
+},
+{
+"text": "full",
+"start": 24.765,
+"end": 24.835
+},
+{
+"text": "guide.",
+"start": 24.904,
+"end": 25.461
+},
+{
+"text": "Follow",
+"start": 25.6,
+"end": 25.739
+},
+{
+"text": "for",
+"start": 25.809,
+"end": 25.878
+},
+{
+"text": "more",
+"start": 25.948,
+"end": 26.017
+},
+{
+"text": "Claude",
+"start": 26.087,
+"end": 26.296
+},
+{
+"text": "prompts.",
+"start": 26.365,
+"end": 26.852
+}
+]

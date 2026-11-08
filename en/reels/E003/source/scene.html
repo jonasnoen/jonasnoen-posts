@@ -1,0 +1,217 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Manrope;font-weight:800;src:url(node_modules/@fontsource/manrope/files/manrope-latin-800-normal.woff2)}
+@font-face{font-family:Manrope;font-weight:500;src:url(node_modules/@fontsource/manrope/files/manrope-latin-500-normal.woff2)}
+@font-face{font-family:Anton;src:url(node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2)}
+@font-face{font-family:'Instrument Serif';font-style:italic;src:url(node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:'Cabin Sketch';font-weight:700;src:url(node_modules/@fontsource/cabin-sketch/files/cabin-sketch-latin-700-normal.woff2)}
+@font-face{font-family:'Cabin Sketch';font-weight:400;src:url(node_modules/@fontsource/cabin-sketch/files/cabin-sketch-latin-400-normal.woff2)}
+@font-face{font-family:Caveat;font-weight:700;src:url(node_modules/@fontsource/caveat/files/caveat-latin-700-normal.woff2)}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// ===== E003 · style experiment "kreidetafel" (chalkboard, EN, adapted from R009) =====
+// Alles ist Kreide auf einer grünen Schultafel: Texte werden "angeschrieben" (Aufdecken von links nach rechts),
+// Zeichnungen entstehen Strich für Strich, eine feste Kreide-Körnung (Löcher) liegt über allem.
+// Schnittstelle wie engine/reel5: setup(words) -> END, render(t) -> JPEG, CUES, PH.
+const LANG='en';
+const UI={follow1:'FOLLOW FOR MORE',follow2:'CLAUDE PROMPTS',handle:'@jonasnoen.ai',comment:'Comment',dm:'→ get the guide'};
+const W=1080,H=1920,main=document.getElementById('c').getContext('2d');let g=main;
+const LAY=document.createElement('canvas');LAY.width=W;LAY.height=H;const lctx=LAY.getContext('2d');
+const CK={w:'#f3f0e6',y:'#f6dc7c',p:'#f4a3b5',b:'#9fd4f2',gr:'#a9e3a0',dim:'rgba(243,240,230,.45)',board:'#22312a'};
+let WORDS=[],END=28;
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const cl=x=>Math.min(1,Math.max(0,x));
+const back=(t,t0,d=.4)=>{let x=cl((t-t0)/d);const s=1.7;return 1+(s+1)*Math.pow(x-1,3)+s*Math.pow(x-1,2);};
+function prand(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
+function KW(word,n=1){let c=0;for(const w of WORDS){if(w.text.replace(/[.,?:!]/g,'').toLowerCase()===word.toLowerCase()){c++;if(c===n)return w.start;}}return 999;}
+function withAlpha(a,fn){g.save();g.globalAlpha*=cl(a);fn();g.restore();}
+function scaleAt(cx,cy,s,fn){g.save();g.translate(cx,cy);g.scale(s,s);g.translate(-cx,-cy);fn();g.restore();}
+const FH="700 Xpx 'Cabin Sketch'",FC="700 Xpx Caveat";
+const F=(f,s)=>f.replace('X',s);
+
+// ---------- Tafel (einmal vorberechnet) ----------
+const BOARD=document.createElement('canvas');BOARD.width=W;BOARD.height=H;
+(function(){const b=BOARD.getContext('2d');
+  const gr=b.createRadialGradient(540,800,100,540,900,1300);gr.addColorStop(0,'#2c4036');gr.addColorStop(1,'#1b2721');b.fillStyle=gr;b.fillRect(0,0,W,H);
+  // alte Wischspuren (Schwamm-Bögen)
+  for(let i=0;i<14;i++){const x=prand(i)*W,y=prand(i+40)*H,rw=180+prand(i+9)*320,rh=50+prand(i+3)*90;
+    const sg=b.createRadialGradient(x,y,10,x,y,rw);sg.addColorStop(0,'rgba(230,235,225,.055)');sg.addColorStop(1,'rgba(230,235,225,0)');b.fillStyle=sg;b.save();b.translate(x,y);b.scale(1,rh/rw);b.beginPath();b.arc(0,0,rw,0,7);b.fill();b.restore();}
+  // feiner Staub
+  const id=b.getImageData(0,0,W,H),d=id.data;for(let i=0;i<d.length;i+=4){const n=(Math.random()-.5)*14;d[i]+=n;d[i+1]+=n;d[i+2]+=n;}b.putImageData(id,0,0);
+  // Holzrahmen
+  const wood=(x,y,w,h,vert)=>{const lg=vert?b.createLinearGradient(x,0,x+w,0):b.createLinearGradient(0,y,0,y+h);lg.addColorStop(0,'#8a5c36');lg.addColorStop(.5,'#a06c40');lg.addColorStop(1,'#6e4527');b.fillStyle=lg;b.fillRect(x,y,w,h);
+    b.strokeStyle='rgba(60,35,18,.35)';b.lineWidth=2;for(let k=0;k<6;k++){b.beginPath();if(vert){const xx=x+4+k*(w-8)/5;b.moveTo(xx,y);b.bezierCurveTo(xx+3,y+h*.3,xx-3,y+h*.6,xx+2,y+h);}else{const yy=y+4+k*(h-8)/5;b.moveTo(x,yy);b.bezierCurveTo(x+w*.3,yy+3,x+w*.6,yy-3,x+w,yy+2);}b.stroke();}};
+  wood(0,0,W,34,false);wood(0,0,30,H,true);wood(W-30,0,30,H,true);wood(0,H-34,W,34,false);
+  b.fillStyle='rgba(0,0,0,.35)';b.fillRect(30,34,W-60,8);b.fillRect(30,34,8,H-68);
+})();
+// Kreide-Körnung: zufällige Löcher, die aus allem Gezeichneten "herausgekratzt" werden
+const NOISE=document.createElement('canvas');NOISE.width=512;NOISE.height=512;
+(function(){const n=NOISE.getContext('2d'),id=n.createImageData(512,512),d=id.data;for(let i=0;i<d.length;i+=4){const r=Math.random();d[i+3]=r<.22?120+Math.random()*135:(r<.4?40:0);}n.putImageData(id,0,0);})();
+let NPAT=null;
+
+// ---------- Kreide-Werkzeuge ----------
+function wob(pts,amp,seed){return pts.map(([x,y],i)=>[x+(prand(i*3+seed)-.5)*amp,y+(prand(i*7+seed+50)-.5)*amp]);}
+function rectPts(x,y,w,h,n=10){const p=[];for(let i=0;i<=n;i++)p.push([x+w*i/n,y]);for(let i=1;i<=n;i++)p.push([x+w,y+h*i/n]);for(let i=1;i<=n;i++)p.push([x+w-w*i/n,y+h]);for(let i=1;i<=n+1;i++)p.push([x,y+h-h*Math.min(i,n)/n+(i>n?-8:0)]);return p;}
+function circPts(cx,cy,r,ry=r,turn=1.08,n=46){const p=[];for(let i=0;i<=n;i++){const a=-Math.PI*.6+turn*Math.PI*2*i/n;p.push([cx+Math.cos(a)*r,cy+Math.sin(a)*ry]);}return p;}
+// Polyline bis zum Anteil prog zeichnen (wirkt wie mit Kreide gezogen)
+function chalkLine(pts,prog,col=CK.w,lw=7,seed=1,amp=3){if(prog<=0)return;const P=wob(pts,amp,seed);let L=0;const seg=[];for(let i=1;i<P.length;i++){const d=Math.hypot(P[i][0]-P[i-1][0],P[i][1]-P[i-1][1]);seg.push(d);L+=d;}
+  let rem=L*cl(prog);g.strokeStyle=col;g.lineWidth=lw;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(P[0][0],P[0][1]);
+  for(let i=1;i<P.length&&rem>0;i++){const d=seg[i-1];if(rem>=d){g.lineTo(P[i][0],P[i][1]);rem-=d;}else{const f=rem/d;g.lineTo(P[i-1][0]+(P[i][0]-P[i-1][0])*f,P[i-1][1]+(P[i][1]-P[i-1][1])*f);rem=0;}}
+  g.stroke();g.globalAlpha*=.35;g.lineWidth=lw*.5;g.save();g.translate(1.5,-1);g.stroke();g.restore();g.globalAlpha/=.35;}
+const draw=(t,pts,t0,dur,col,lw,seed,amp)=>chalkLine(pts,(t-t0)/dur,col,lw,seed,amp);
+// Text anschreiben: deckt sich von links nach rechts auf
+function ctext(t,txt,x,y,size,col,t0,dur=.45,align='left',f=FH){if(t<t0)return 0;g.font=F(f,size);const w=g.measureText(txt).width;const x0=align==='center'?x-w/2:align==='right'?x-w:x;
+  const pr=dur<=0?1:ease((t-t0)/dur);g.save();g.beginPath();g.rect(x0-10,y-size*1.1,(w+20)*pr,size*1.5);g.clip();g.fillStyle=col;g.textAlign='left';g.fillText(txt,x0,y);
+  g.globalAlpha*=.3;g.fillText(txt,x0+2,y-1.5);g.restore();return w;}
+function arrow(t,x1,y1,x2,y2,t0,dur,col=CK.w,lw=7,seed=3){draw(t,[[x1,y1],[(x1+x2)/2,(y1+y2)/2-10],[x2,y2]],t0,dur,col,lw,seed,2);
+  if(t>t0+dur*.8){const a=Math.atan2(y2-y1,x2-x1);const h=[[x2-Math.cos(a-.5)*34,y2-Math.sin(a-.5)*34],[x2,y2],[x2-Math.cos(a+.5)*34,y2-Math.sin(a+.5)*34]];draw(t,h,t0+dur*.8,.15,col,lw,seed+9,1);}}
+function tick(t,x,y,s,t0,col=CK.gr,lw=9){draw(t,[[x-s*.5,y],[x-s*.15,y+s*.38],[x+s*.55,y-s*.45]],t0,.22,col,lw,x|0,1.5);}
+function cross(t,x,y,s,t0,col=CK.p,lw=9){draw(t,[[x-s/2,y-s/2],[x+s/2,y+s/2]],t0,.14,col,lw,7,1.5);draw(t,[[x+s/2,y-s/2],[x-s/2,y+s/2]],t0+.12,.14,col,lw,8,1.5);}
+function lines(t,x,y,w,n,gap,t0,step=.06,col=CK.dim,lw=6){for(let i=0;i<n;i++){const ww=i%3===2?w*.55:w;draw(t,[[x,y+i*gap],[x+ww,y+i*gap]],t0+i*step,.18,col,lw,i+11,2);}}
+
+// ---------- Phrasen ----------
+const PH=[
+ {a:0,b:7,label:'// LESSON 3 · STUDYING',acc:['tutor']},
+ {kw:'Summaries?',a:8,b:13,label:'// THE PROBLEM'},
+ {kw:'Barely sticks.',a:14,b:20,label:'// THE PROBLEM'},
+ {kw:'3 things',a:21,b:25,label:'// THE PROMPT'},
+ {kw:'Study plan',a:26,b:40,label:'// 1 · PLAN',col:CK.y},
+ {kw:'Quiz mode',a:41,b:55,label:'// 2 · QUIZ',col:CK.b},
+ {kw:'Explained simply',a:56,b:65,label:'// 3 · UNDERSTAND',col:CK.gr},
+ {kw:'4 prompts',a:66,b:73,label:'// THE GUIDE',col:CK.p},
+ {kw:'',a:74,b:87,label:'// HOMEWORK'}];
+const clean=s=>s.replace(/[.,?:!]/g,'').toLowerCase();
+const T0=k=>WORDS[PH[k].a].start-.12;
+function phraseAt(t){let k=0;for(let i=0;i<PH.length;i++){if(t>=T0(i))k=i;}return k;}
+function headline(t,k){const p=PH[k];
+  ctext(t,p.label,72,178,48,CK.y,k===0?-1:T0(k),k===0?0:.3,'left',FC);
+  if(k===0){// Hook: ganzer Satz ab Frame 0, kurzer Schlag (Skalierung) statt Anschreiben
+    const s=1+.14*(1-ease(t/.3));scaleAt(540,330,s,()=>{const ws=WORDS.slice(p.a,p.b+1);let x=72,y=300;
+      ws.forEach(w=>{const acc=p.acc.includes(clean(w.text));g.font=acc?F(FC,120):F(FH,86);const tw=g.measureText(w.text).width;if(x+tw>1010){x=72;y+=acc?118:100;}
+        g.fillStyle=acc?CK.y:CK.w;g.textAlign='left';g.fillText(w.text,x,y);g.globalAlpha=.3;g.fillText(w.text,x+2,y-1.5);g.globalAlpha=1;x+=tw+g.measureText(' ').width;});
+      // Unterstreichung des Akzentworts
+      draw(t,[[72,y+26],[560,y+20],[700,y+30]],.25,.35,CK.y,7,5,3);});return;}
+  if(!p.kw)return;let sz=150;g.font=F(FH,sz);while(g.measureText(p.kw).width>930&&sz>80){sz-=6;g.font=F(FH,sz);}
+  ctext(t,p.kw,72,340,sz,p.col||CK.w,T0(k)+.05,.45);}
+function stepsDone(t){return PROGRESS.items.filter(it=>t>=it.t()).length;}
+function counter(t){g.font=F(FC,44);g.textAlign='right';g.fillStyle=CK.dim;g.fillText(`Part 3 · ${stepsDone(t)}/3`,1000,178);g.textAlign='left';}
+const PROGRESS={items:[{label:'Plan',t:()=>KW('one')},{label:'Quiz',t:()=>KW('two')},{label:'Explain',t:()=>KW('three',2)}]};
+function progressCard(t){const x=70,y=1400,w=630,h=200;
+  chalkLine(rectPts(x,y,w,h),1,CK.dim,5,77,3);
+  g.font=F(FC,40);g.fillStyle=CK.y;g.textAlign='left';g.fillText('Your study prompt',x+26,y+56);
+  PROGRESS.items.forEach((it,i)=>{const bx=x+26+i*196,by=y+88;chalkLine(rectPts(bx,by,58,58,4),1,CK.w,5,90+i,2);
+    if(t>=it.t())tick(t,bx+30,by+30,52,it.t());g.font=F(FC,34);g.fillStyle=t>=it.t()?CK.w:CK.dim;g.fillText(it.label,bx+68,by+44);});}
+
+// Hintergrund-Zeichnungen pro Phrase (Zone y≈430–1330)
+function p0(t){// Prompt-Zettel mit Doktorhut
+  const s0=.05;draw(t,rectPts(300,890,480,420),s0,.55,CK.w,7,21,4);
+  ctext(t,'PROMPT',540,975,70,CK.w,.35,.3,'center');lines(t,350,1035,380,5,52,.45,.04);
+  // Doktorhut
+  const hx=540,hy=700;draw(t,[[hx-210,hy],[hx,hy-80],[hx+210,hy],[hx,hy+80],[hx-210,hy]],.15,.45,CK.y,8,31,3);
+  draw(t,[[hx-120,hy+46],[hx-120,hy+120],[hx,hy+160],[hx+120,hy+120],[hx+120,hy+46]],.35,.35,CK.y,8,32,3);
+  draw(t,[[hx,hy],[hx+170,hy+30],[hx+180,hy+150]],.55,.3,CK.p,6,33,2);if(t>.8){g.fillStyle=CK.p;g.beginPath();g.arc(hx+180,hy+160,14,0,7);g.fill();}}
+function p1(t){const t0=T0(1)+.15;// Stapel "Zusammenfassung"
+  for(let i=0;i<4;i++){const x=200+i*34,y=520+i*70,tt=t0+i*.18;draw(t,rectPts(x,y,560,300,6),tt,.35,i===3?CK.w:CK.dim,6,40+i,4);
+    if(i===3){ctext(t,'Summary',x+40,y+80,58,CK.w,tt+.25,.35,'left',FC);lines(t,x+40,y+130,460,3,50,tt+.4,.05);}}
+  const t1=KW('summaries')+.35;ctext(t,'Chapter 1–12 … read it again',190,1210,56,CK.dim,t1,.5,'left',FC);}
+function p2(t){// Gefühl vs. was hängen bleibt: zwei Balken, rein illustrativ, ohne Zahlen
+  const t0=KW('feels'),t1=KW('barely');const base=1150;
+  draw(t,[[150,base],[930,base]],t0,.3,CK.w,7,51,2);
+  const bar=(x,hh,col,ta,lab)=>{const pr=ease((t-ta)/.55);if(pr<=0)return;const top=base-hh*pr;chalkLine([[x,base],[x,top],[x+200,top],[x+200,base]],1,col,7,x|0,3);
+    g.save();g.beginPath();g.rect(x,top,200,base-top);g.clip();for(let k=-40;k<12;k++){g.strokeStyle=col;g.globalAlpha=.35;g.lineWidth=5;g.beginPath();g.moveTo(x+k*24,base);g.lineTo(x+k*24+600,base-720);g.stroke();}g.restore();
+    ctext(t,lab,x+100,base+80,52,col,ta+.2,.35,'center',FC);};
+  bar(220,560,CK.y,t0+.15,'felt like learning');bar(640,130,CK.p,t1,'actually stuck');
+  if(t>KW('sticks'))cross(t,740,900,90,KW('sticks'));}
+function p3(t){const t0=T0(3)+.1;// große umkreiste 3 + drei leere Kästchen
+  ctext(t,'3',300,940,420,CK.y,t0,.3,'center');draw(t,circPts(300,800,210,230),t0+.2,.4,CK.w,8,61,6);
+  const td=KW('three');['Plan','Quiz','Explain'].forEach((s,i)=>{const y=600+i*170;draw(t,rectPts(560,y,90,90,4),td-.3+i*.12,.2,CK.w,6,62+i,3);ctext(t,s,680,y+70,64,CK.w,td-.2+i*.12,.25,'left',FC);});}
+function p4(t){const t0=KW('one');// Kalender bis zum Prüfungstag
+  const x=150,y=560,cw=156,chh=120;draw(t,rectPts(x,y,cw*5,chh*4+70,8),t0,.5,CK.w,7,71,3);
+  ['Mon','Tue','Wed','Thu','Fri'].forEach((d,i)=>ctext(t,d,x+cw*i+cw/2,y+52,48,CK.dim,t0+.3+i*.04,.15,'center',FC));
+  draw(t,[[x,y+70],[x+cw*5,y+70]],t0+.3,.3,CK.w,5,72,2);
+  for(let i=1;i<5;i++)draw(t,[[x+cw*i,y+70],[x+cw*i,y+70+chh*4]],t0+.35+i*.04,.25,CK.dim,4,73+i,2);
+  for(let j=1;j<4;j++)draw(t,[[x,y+70+chh*j],[x+cw*5,y+70+chh*j]],t0+.45+j*.04,.25,CK.dim,4,80+j,2);
+  const tp=KW('material');const topics=['Ch.1','Ch.2','Drill','Ch.3','Review','Ch.4','Drill','Review','Ch.5','Mix','Review','Ch.6','Mock','Review','Break','Review','Mix','Mock','Review'];
+  topics.forEach((s,i)=>{const c=i%5,r=Math.floor(i/5);ctext(t,s,x+cw*c+cw/2,y+70+chh*r+78,44,i%3===2?CK.b:CK.w,tp+i*.07,.15,'center',FC);});
+  const tg=KW('exam');const cx=x+cw*4+cw/2,cy=y+70+chh*3+chh/2;draw(t,circPts(cx,cy,74,58),tg,.4,CK.p,8,91,4);
+  if(t>tg)ctext(t,'EXAM!',cx-40,cy+135,60,CK.p,tg+.25,.3,'center',FH);}
+function p5(t){const t0=KW('two');// Abfrage: Frage -> deine Antwort -> erst dann Lösung
+  const box=(y,h,col,ta,title,sub,sc)=>{draw(t,rectPts(110,y,860,h,8),ta,.35,col,6,sc,4);ctext(t,title,150,y+76,58,col,ta+.15,.3,'left',FC);if(sub)ctext(t,sub,150,y+146,50,CK.w,ta+.35,.4,'left',FC);};
+  box(520,190,CK.b,KW('quizzes'),'Question 3 of 10:','What do mitochondria do?',101);
+  box(760,190,CK.w,KW('time'),'Your answer:','"Energy for the cell …"',102);
+  const tl=KW('answer');box(1000,190,CK.gr,tl,'Answer + feedback:','almost – missing: ATP',103);
+  if(t>tl)tick(t,900,1080,70,tl+.3);
+  // Schloss-Symbol vor der Lösung: "erst danach"
+  if(t<tl){const lx=860,ly=1090;draw(t,rectPts(lx-40,ly-20,80,70,3),KW('question')+.2,.25,CK.dim,5,104,2);draw(t,circPts(lx,ly-26,26,30,.52,20),KW('question')+.35,.25,CK.dim,5,105,2);}}
+function p6(t){const t0=KW('three',2);// Wirrwarr -> einfach (Glühbirne)
+  const tw=KW('get');for(let i=0;i<5;i++){const pts=[];for(let k=0;k<26;k++){const a=k*.9+i;pts.push([270+Math.cos(a)*(60+prand(k+i*30)*90),760+Math.sin(a*1.3)*(50+prand(k+i*40)*110)]);}draw(t,pts,tw+i*.08,.4,CK.dim,4,110+i,2);}
+  ctext(t,'Jargon',270,1000,52,CK.dim,tw+.3,.35,'center',FC);
+  arrow(t,450,770,600,770,KW('explains'),.35,CK.w,8);
+  const te=KW('like',2);// Glühbirne
+  const bx=790,by=720;draw(t,circPts(bx,by,110,120,1.0,40),te,.45,CK.y,8,120,4);draw(t,rectPts(bx-50,by+120,100,70,3),te+.3,.25,CK.y,7,121,2);
+  draw(t,[[bx-35,by+60],[bx-15,by-10],[bx,by+50],[bx+15,by-10],[bx+35,by+60]],te+.4,.3,CK.y,5,122,1);
+  for(let i=0;i<7;i++){const a=-Math.PI*.95+i*Math.PI*.9/6;draw(t,[[bx+Math.cos(a)*150,by+Math.sin(a)*160],[bx+Math.cos(a)*195,by+Math.sin(a)*205]],te+.5+i*.03,.12,CK.y,6,130+i,1);}
+  ctext(t,'Aha!',bx,1000,64,CK.y,te+.5,.3,'center',FC);
+  const tk=KW('five');if(t>tk)ctext(t,'like you\'re five',540,1160,60,CK.w,tk-.3,.45,'center',FC);}
+function p7(t){const t0=KW('full');// vier Karteikarten, Inhalt verwischt (Teaser)
+  const names=['1 · Study plan','2 · Quiz mode','3 · Explain simply','4 · Mock exam'];
+  names.forEach((n,i)=>{const x=110+(i%2)*440,y=520+Math.floor(i/2)*360,ta=t0+i*.22;draw(t,rectPts(x,y,400,300,6),ta,.3,CK.p,6,140+i,4);
+    ctext(t,n,x+30,y+70,50,CK.w,ta+.15,.3,'left',FC);
+    if(t>ta+.3){g.save();g.filter='blur(7px)';g.globalAlpha=.55;g.fillStyle=CK.w;for(let k=0;k<4;k++){g.fillRect(x+30,y+110+k*42,k%2?240:320,14);}g.restore();}});
+  const tb=KW('built');if(t>tb)ctext(t,'the full guide →',540,1290,66,CK.y,tb,.4,'center',FC);}
+function outro(t,t0){// Folgen-Karte mit Kreiderahmen, Memoji winkt dahinter (auf der Haupt-Ebene gezeichnet)
+  const a=ease((t-t0-.1)/.25);if(a<=0)return;
+  withAlpha(a,()=>{g.fillStyle=CK.board;g.fillRect(110,800,860,440);});
+  draw(t,rectPts(110,800,860,440,10),t0+.1,.4,CK.w,8,150,4);draw(t,rectPts(126,816,828,408,10),t0+.25,.4,CK.y,4,151,3);
+  ctext(t,UI.follow1,540,960,88,CK.w,KW('follow'),.35,'center');ctext(t,UI.follow2,540,1072,96,CK.y,KW('more')-.1,.35,'center');
+  ctext(t,UI.handle,540,1172,62,CK.w,KW('prompts',2),.3,'center',FC);
+  promptCta(t);}
+// CTA: "Kommentiere PROMPT" als Kreide-Pille (abschaltbar mit window.NO_PROMPT_CTA für LinkedIn)
+function promptCta(t){if(window.NO_PROMPT_CTA)return;const ts=KW('prompt',3)-.1;const a=back(t,ts,.4);if(a<=0)return;
+  scaleAt(540,1340,a,()=>{g.beginPath();g.roundRect(100,1275,880,130,65);g.fillStyle=CK.w;g.fill();
+    g.beginPath();g.moveTo(200,1395);g.lineTo(180,1440);g.lineTo(240,1400);g.closePath();g.fill();
+    g.font=F(FH,46);g.textAlign='left';g.fillStyle=CK.board;g.fillText(UI.comment,150,1358);const w1=g.measureText(UI.comment+' ').width;
+    g.font=F(FH,66);g.fillStyle='#c2344b';g.fillText('PROMPT',150+w1,1362);const w2=g.measureText('PROMPT ').width;
+    g.font=F(FC,40);g.fillStyle='#4a5a52';g.fillText(UI.dm,150+w1+w2,1356);});}
+// vor der Folgen-Karte (Outro Teil 1, "Kommentiere PROMPT ..."): Kreide-Hausaufgabe
+function p8a(t){const t0=KW('comment');ctext(t,'Homework:',540,620,90,CK.y,t0,.35,'center');
+  ctext(t,'comment "PROMPT"',540,760,84,CK.w,KW('prompt',3),.4,'center');draw(t,[[220,800],[860,795]],KW('prompt',3)+.35,.3,CK.p,7,160,3);
+  ctext(t,'→ I send you the guide',540,1100,60,CK.w,KW('guide'),.35,'center',FC);promptCta(t);}
+const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7];
+const IM={};window.IMGS_READY=false;Promise.all(Object.keys(window.AVDATA||{}).filter(n=>n==='wave').map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
+window.loopNeeded=()=>null;window.setLoop=()=>Promise.resolve();window.avatarPlan=()=>[];
+function frame(t){main.clearRect(0,0,W,H);main.drawImage(BOARD,0,0);const k=phraseAt(t),t0=T0(k);
+  const tf=KW('follow')-.12,outroOn=t>=tf;
+  // Memoji (nicht Kreide) winkt hinter der Folgen-Karte hervor
+  if(outroOn&&IM.wave){const im=IM.wave,w=580,h=w*im.height/im.width,m=back(t,tf+.35,.5);if(m>0){main.save();main.beginPath();main.rect(0,0,W,808);main.clip();main.drawImage(im,540-w/2,880-h*m,w,h);main.restore();}}
+  g=lctx;g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,W,H);g.globalAlpha=1;
+  headline(t,k);counter(t);
+  if(k<PROPS.length){// leichter Push-in wie reel5
+    const push=1+.02*cl((t-t0)/2.5);scaleAt(540,880,push,()=>PROPS[k](t));progressCard(t);}
+  else{if(!outroOn){p8a(t);}else outro(t,tf);}
+  // Kreidekörnung herauskratzen
+  if(!NPAT)NPAT=g.createPattern(NOISE,'repeat');g.save();g.globalCompositeOperation='destination-out';g.fillStyle=NPAT;g.fillRect(0,0,W,H);g.restore();
+  g=main;
+  // Schwamm-Wisch beim Phrasenwechsel: kurzer Kreidestaub-Schleier
+  const d=t-t0;if(k>0&&d>=0&&d<.25){main.fillStyle=`rgba(200,210,200,${.10*(1-d/.25)})`;main.fillRect(0,0,W,H);}
+  main.drawImage(LAY,0,0);
+  // Kreide-Ablage unten (Deko)
+  main.fillStyle='#6e4527';main.fillRect(30,1846,W-60,40);[[160,'#f3f0e6'],[260,'#f6dc7c'],[330,'#f4a3b5']].forEach(([x,c])=>{main.fillStyle=c;main.beginPath();main.roundRect(x,1830,80,18,9);main.fill();});
+  main.fillStyle='#4a3a2a';main.beginPath();main.roundRect(800,1814,170,36,8);main.fill();main.fillStyle='#d8cfc0';main.fillRect(800,1838,170,12);}
+// Sounds
+function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
+  add(0,'impact',.9);add(.15,'chalk',.9);
+  for(let k=1;k<PH.length;k++)add(T0(k)-.08,'whoosh',.35);
+  [1,2,3,4,5,6,7].forEach(k=>add(T0(k)+.05,'chalk',.8));
+  add(KW('sticks'),'stamp',.6);add(KW('three'),'pop',.6);
+  add(KW('exam'),'chalk',.8);add(KW('quizzes'),'pop',.5);add(KW('time'),'pop',.5);add(KW('answer')+.3,'ding',.6);
+  add(KW('like',2),'sparkle',.6);add(KW('built'),'chalk',.7);
+  add(KW('one'),'ding',.4);add(KW('two'),'ding',.4);add(KW('three',2),'ding',.4);
+  add(KW('comment'),'chalk',.8);add(KW('prompt',3)-.1,'pop',.7);
+  add(KW('follow')+.1,'outro',.6);
+  q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
+window.setup=(words)=>{WORDS=words;END=WORDS[WORDS.length-1].end+.45;window.CUES=buildCues();return END;};
+window.render=(t)=>{frame(t);return main.canvas.toDataURL('image/jpeg',.9);};
+</script></body></html>

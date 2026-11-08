@@ -255,5 +255,90 @@
       },
       "scheduledAt": "2026-11-07T20:30:00+01:00"
     }
+  },
+  {
+    "id": "E003",
+    "type": "reel",
+    "createdAt": "2026-11-08",
+    "status": "sending",
+    "format": "experiment",
+    "style": "kreidetafel",
+    "series": "Claude Codes Part 3",
+    "fromDe": "R009",
+    "topic": "Claude as your personal tutor: study for an exam with your own material",
+    "angle": "Instead of reading summaries: study plan up to exam day → quiz mode (one question, answer only after) → anything unclear explained in 3 levels → mock exam; style experiment chalkboard (everything written/drawn in chalk on a green school board)",
+    "hook": "This prompt turns Claude into your personal tutor.",
+    "source": "Uploading files to Claude: https://support.claude.com/en/articles/8241126-uploading-files-to-claude (checked 2026-11-07, E002); otherwise prompt technique only, no product claims",
+    "voice": "Jonas Noen (ElevenLabs clone), eleven_v4, tempo 1.15",
+    "lipsync": "none (style experiment without face; Memoji only waves in the outro)",
+    "file": "en/reels/E003/reel.mp4",
+    "music": "assets/music/lofi-105.mp3",
+    "tiktokTitle": "This prompt turns Claude into your personal tutor",
+    "caption": "This prompt turns Claude into your personal tutor. 🎓\n\nMost people just ask AI for summaries. Feels like studying – but reading alone barely sticks.\n\nHere's how to actually learn with Claude:\n👉 A study plan from your own material, right up to exam day\n👉 Quiz mode: one question at a time, the answer only comes after you've tried\n👉 Anything you don't get, explained like you're five\n\nI built the full system for you – 4 prompts including a mock exam, just copy and paste.\n\nSave this for your next exam. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #StudyTips #StudyWithAI #AITools",
+    "captionX": "This Claude prompt turns it into your personal tutor: study plan up to exam day → quizzes you one question at a time → explains anything like you're five. 4 prompts incl. mock exam. Comment PROMPT for the guide 🎓",
+    "captionLinkedIn": "For many people, studying with AI means generating summaries and reading them. It feels productive – but recognizing something isn't the same as being able to recall it yourself.\n\nA better workflow with Claude, e.g. for an exam, a certification or a course:\n1. A study plan from your own material: topic blocks, your real time per day, reviews at growing intervals, a buffer before the date.\n2. Get quizzed instead of rereading: one question at a time, the answer only after you've tried. Mistakes come back later.\n3. Close gaps: anything unclear is explained in three levels – simple, with the correct terms, exam-style – and you explain it back.\n4. A mock exam with grading and the three topics you still need to review.\n\nHow are you preparing for certifications right now – with AI or the classic way?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Claude as your tutor (guide with 4 prompts)",
+      "text": "You're my study coach. I have an exam in ___ (subject) on ___ (date). Today is ___. I can study about ___ minutes a day, and not at all on these days: ___.\n\n<material>\n___ (paste the table of contents, your notes or slides – or upload them as a file)\n</material>\n\nHow to work:\n1. Split the material into topic blocks and estimate how big each one is (small / medium / large) – based only on what's in the material.\n2. Briefly ask me which topics I already know well and where I'm unsure. Wait for my answer.\n3. Then build a study plan as a table: Date – Topic – What I do (learn new / get quizzed / review) – Duration.\n4. Schedule reviews at growing intervals (e.g. after 1, 3 and 7 days) and keep the last 2 days before the exam free for a mock exam and gaps.\n5. Stick to my time per day. If it isn't enough, tell me honestly what I should shorten or drop.",
+      "hinweis": "Fill in exam date, subject, study time and your material – Claude asks a quick question and builds your study plan up to exam day."
+    },
+    "guide": {
+      "titel": "Guide: Claude as your personal tutor – from your material to a mock exam",
+      "ziel": "Your own study material becomes a plan up to exam day – and Claude quizzes you, explains gaps simply and tests you with a mock exam at the end, instead of you just reading summaries.",
+      "schritte": [
+        {
+          "titel": "Add your material.",
+          "text": "Upload or paste your notes, slides or table of contents. The more precise the material, the better the plan and the questions fit."
+        },
+        {
+          "titel": "Build the study plan.",
+          "text": "Send prompt 1 with the date, subject and your time per day. Claude asks what you already know, then builds the plan with reviews and a buffer."
+        },
+        {
+          "titel": "Get quizzed every day.",
+          "text": "Instead of rereading: prompt 2 with the topic of the day. Answer yourself first, then you get the solution. Mistakes come back later."
+        },
+        {
+          "titel": "Close the gaps.",
+          "text": "Anything that doesn't stick: prompt 3 – first explained super simply, then with the technical terms – and explain it back in your own words."
+        },
+        {
+          "titel": "Take a mock exam.",
+          "text": "Two days before: prompt 4. Questions without answers, grading with points, the 3 most important topics to review."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Study plan up to exam day",
+          "text": "You're my study coach. I have an exam in ___ (subject) on ___ (date). Today is ___. I can study about ___ minutes a day, and not at all on these days: ___.\n\n<material>\n___ (paste the table of contents, your notes or slides – or upload them as a file)\n</material>\n\nHow to work:\n1. Split the material into topic blocks and estimate how big each one is (small / medium / large) – based only on what's in the material.\n2. Briefly ask me which topics I already know well and where I'm unsure. Wait for my answer.\n3. Then build a study plan as a table: Date – Topic – What I do (learn new / get quizzed / review) – Duration.\n4. Schedule reviews at growing intervals (e.g. after 1, 3 and 7 days) and keep the last 2 days before the exam free for a mock exam and gaps.\n5. Stick to my time per day. If it isn't enough, tell me honestly what I should shorten or drop.",
+          "wann": "Once at the start, as soon as you know the exam date."
+        },
+        {
+          "titel": "Quiz mode",
+          "text": "Quiz me on ___ (topic) now – like a strict but friendly tutor.\nRules:\n- Only ONE question at a time, then wait for my answer.\n- Only after my answer: correct / partly / wrong, the right answer in 2–3 sentences and what I was missing.\n- Mix the question types: explain a term, give an example, the difference between two things, a small application task.\n- Anything I got wrong, ask again later in a different way.\n- After 10 questions: a short review – what I know, what I need to go over again.\nOnly use content from my material. If something isn't in it, don't ask about it.",
+          "wann": "Every study day, in the same chat as prompt 1 (so Claude knows your material)."
+        },
+        {
+          "titel": "Explain it like I'm five",
+          "text": "I don't understand ___. Explain it in three levels:\n1. Like I'm five – with a comparison from everyday life.\n2. A bit more precise, with the correct technical terms (each term explained in one sentence).\n3. The way it could come up in the exam.\nThen ask me one check question and I'll explain it back to you in my own words. Tell me what's still wrong or vague in my explanation.",
+          "wann": "Whenever something doesn't stick during the quiz."
+        },
+        {
+          "titel": "Mock exam with grading",
+          "text": "Make me a mock exam on ___ from my material, about as long as the real one (___ minutes, question types: ___).\n- First give me only the questions, no answers.\n- I'll send you my answers. Then grade every question with points and a short reason.\n- Finally: the 3 topics I still need to review before the exam, each with one practice question.",
+          "wann": "1–2 days before the exam."
+        }
+      ],
+      "beispiel": "Biology exam in 12 days, 45 minutes a day: Claude splits your notes into topic blocks, asks about your weak spots and plans cell biology, genetics and metabolism with reviews. During the quiz you miss the keyword ATP for \"mitochondria\" – Claude explains it with a power-plant comparison, asks again two days later and puts it into the mock exam.",
+      "check": [
+        "Does the plan fit your real time per day – even on busy days?",
+        "When you get quizzed, do you really answer yourself before reading the solution?",
+        "Do the facts match your own material? If in doubt, check the original – Claude can make mistakes.",
+        "Mock exam planned 1–2 days before?"
+      ]
+    },
+    "costUsd": 0.1,
+    "sha256": "3d3eaf48d02909ac3115d9fe852572e10d663576ba3d8e81f587efb58d829837",
+    "durationSec": 27.4
   }
 ]
