@@ -684,7 +684,7 @@
   "id": "R009",
   "type": "reel",
   "createdAt": "2026-11-08",
-  "status": "sending",
+  "status": "scheduled",
   "format": "experiment",
   "style": "kreidetafel",
   "series": "Claude-Codes Teil 8",
@@ -759,9 +759,39 @@
    ]
   },
   "music": "assets/music/lofi-105.mp3",
-  "plannedFor": null,
+  "plannedFor": "2026-11-08T18:30:00+01:00",
   "sha256": "bdb56fd1bae9ff24f3527270aa0279895d6a32c43dee88777600b5adf13c6cf9",
   "durationSec": 29.0,
-  "costUsd": 0.1
+  "costUsd": 0.1,
+  "mediaCommit": "5f9766bbb9d3cf17c043251e725856745913509a",
+  "metricool": {
+   "postId": 420913259,
+   "uuid": "-160589814404395246",
+   "publishAt": "2026-11-08T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 420913259,
+    "scheduledAt": "2026-11-08T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 420913259,
+    "scheduledAt": "2026-11-08T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 420913418,
+    "uuid": "5109698312966325339",
+    "scheduledAt": "2026-11-08T18:30:00+01:00",
+    "file": "reels/R009/reel_linkedin.mp4",
+    "firstComment": true
+   }
+  }
  }
 ]
