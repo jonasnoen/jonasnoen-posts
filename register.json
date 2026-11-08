@@ -679,5 +679,89 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R009",
+  "type": "reel",
+  "createdAt": "2026-11-08",
+  "status": "sending",
+  "format": "experiment",
+  "style": "kreidetafel",
+  "series": "Claude-Codes Teil 8",
+  "topic": "Claude als Nachhilfelehrer: mit eigenem Stoff für eine Prüfung lernen",
+  "angle": "Statt Zusammenfassungen: Lernplan bis zum Prüfungstag → Abfrage (eine Frage, Lösung erst danach) → Unverstandenes in 3 Stufen einfach erklärt → Probeprüfung; Stil-Experiment Kreidetafel (alles als Kreide auf grüner Schultafel angeschrieben/gezeichnet)",
+  "hook": "Dieser Prompt macht Claude zu deinem Nachhilfelehrer.",
+  "source": "Datei-Upload in Claude: https://support.claude.com/de/articles/8241126-dateien-zu-claude-hochladen (wie R008); sonst reine Prompt-Technik, keine Produktaussagen",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "keine (Stil-Experiment ohne Gesicht; Memoji winkt nur im Outro)",
+  "file": "reels/R009/reel.mp4",
+  "tiktokTitle": "Dieser Prompt macht Claude zu deinem Nachhilfelehrer",
+  "caption": "Dieser Prompt macht Claude zu deinem Nachhilfelehrer. 🎓\n\nDie meisten lassen sich von Claude nur Zusammenfassungen schreiben. Fühlt sich nach Lernen an – aber vom Durchlesen allein bleibt wenig hängen.\n\nSo lernst du mit Claude richtig:\n👉 Lernplan bis zum Prüfungstag – aus deinem eigenen Stoff\n👉 Abfrage-Modus: eine Frage nach der anderen, die Lösung kommt erst nach deiner Antwort\n👉 Alles, was du nicht verstehst, so einfach erklärt wie für ein Kind\n\nIch hab dir den kompletten Ablauf gebaut – 4 Prompts inklusive Probeprüfung, einfach kopieren.\n\nSpeicher dir das für die nächste Prüfungsphase. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Lernen #Prüfung #PromptTipps #JonasNoen",
+  "captionLinkedin": "Mit KI lernen heißt bei vielen: Zusammenfassungen generieren lassen und durchlesen. Das fühlt sich produktiv an – aber etwas wiederzuerkennen ist nicht dasselbe, wie es selbst abrufen zu können.\n\nEin besserer Ablauf mit Claude, etwa für eine Prüfung, ein Zertifikat oder eine Weiterbildung:\n1. Lernplan aus dem eigenen Stoff: Themenblöcke, verfügbare Zeit pro Tag, Wiederholungen in wachsenden Abständen, Puffer vor dem Termin.\n2. Abfragen statt Lesen: Claude stellt eine Frage nach der anderen und zeigt die Lösung erst nach der eigenen Antwort. Was falsch war, kommt später noch einmal dran.\n3. Lücken schließen: Was nicht sitzt, erklärt Claude in drei Stufen – ganz einfach, mit Fachbegriffen, prüfungsnah – und lässt es sich zurückerklären.\n4. Probeprüfung mit Bewertung und den drei Themen, die noch fehlen.\n\nWie lernt ihr gerade für Zertifikate oder Weiterbildungen – mit KI oder klassisch?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Claude als Nachhilfelehrer (Guide mit 4 Prompts)",
+   "text": "Du bist mein Lerncoach. Ich habe am ___ (Datum) eine Prüfung in ___ (Fach). Heute ist der ___. Ich kann ungefähr ___ Minuten pro Tag lernen, an diesen Tagen gar nicht: ___.\n\n<stoff>\n___ (Inhaltsverzeichnis, Skript oder Folien einfügen bzw. als Datei hochladen)\n</stoff>\n\nSo gehst du vor:\n1. Teil den Stoff in Themenblöcke und schätz für jeden ein, wie umfangreich er ist (klein / mittel / groß) – nur anhand dessen, was im Stoff steht.\n2. Frag mich kurz, welche Themen ich schon gut kann und wo ich unsicher bin. Warte auf meine Antwort.\n3. Bau dann einen Lernplan als Tabelle: Datum – Thema – Was ich tue (neu lernen / abfragen lassen / wiederholen) – Dauer.\n4. Plane Wiederholungen in wachsenden Abständen ein (z. B. nach 1, 3 und 7 Tagen) und halte die letzten 2 Tage vor der Prüfung für Probeprüfung und Lücken frei.\n5. Halte dich an meine Zeit pro Tag. Wenn sie nicht reicht, sag ehrlich, was ich kürzen oder weglassen sollte.",
+   "hinweis": "Prüfungsdatum, Fach, Lernzeit und deinen Stoff einsetzen – Claude fragt kurz nach und baut dir den Lernplan bis zum Prüfungstag."
+  },
+  "guide": {
+   "titel": "Guide: Claude als Nachhilfelehrer – vom Stoff bis zur Probeprüfung",
+   "ziel": "Aus deinem eigenen Lernstoff wird ein Lernplan bis zum Prüfungstag, und Claude fragt dich ab, erklärt Lücken einfach und testet dich am Ende mit einer Probeprüfung – statt dass du nur Zusammenfassungen liest.",
+   "schritte": [
+    {
+     "titel": "Stoff reingeben.",
+     "text": "Skript, Folien oder Inhaltsverzeichnis hochladen oder reinkopieren. Je genauer der Stoff, desto besser passen Plan und Fragen."
+    },
+    {
+     "titel": "Lernplan bauen.",
+     "text": "Prompt 1 mit Datum, Fach und deiner Zeit pro Tag schicken. Claude fragt nach, was du schon kannst, und baut dann den Plan mit Wiederholungen und Puffer."
+    },
+    {
+     "titel": "Jeden Tag abfragen lassen.",
+     "text": "Statt zu lesen: Prompt 2 mit dem Thema des Tages. Erst selbst antworten, dann kommt die Lösung. Fehler kommen später noch mal dran."
+    },
+    {
+     "titel": "Lücken schließen.",
+     "text": "Was nicht sitzt, mit Prompt 3 erklären lassen – erst ganz einfach, dann mit Fachbegriffen – und es Claude in eigenen Worten zurückerklären."
+    },
+    {
+     "titel": "Probeprüfung schreiben.",
+     "text": "Zwei Tage vorher Prompt 4: Aufgaben ohne Lösungen, Bewertung mit Punkten, die 3 wichtigsten Wiederholungsthemen."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Lernplan bis zum Prüfungstag",
+     "text": "Du bist mein Lerncoach. Ich habe am ___ (Datum) eine Prüfung in ___ (Fach). Heute ist der ___. Ich kann ungefähr ___ Minuten pro Tag lernen, an diesen Tagen gar nicht: ___.\n\n<stoff>\n___ (Inhaltsverzeichnis, Skript oder Folien einfügen bzw. als Datei hochladen)\n</stoff>\n\nSo gehst du vor:\n1. Teil den Stoff in Themenblöcke und schätz für jeden ein, wie umfangreich er ist (klein / mittel / groß) – nur anhand dessen, was im Stoff steht.\n2. Frag mich kurz, welche Themen ich schon gut kann und wo ich unsicher bin. Warte auf meine Antwort.\n3. Bau dann einen Lernplan als Tabelle: Datum – Thema – Was ich tue (neu lernen / abfragen lassen / wiederholen) – Dauer.\n4. Plane Wiederholungen in wachsenden Abständen ein (z. B. nach 1, 3 und 7 Tagen) und halte die letzten 2 Tage vor der Prüfung für Probeprüfung und Lücken frei.\n5. Halte dich an meine Zeit pro Tag. Wenn sie nicht reicht, sag ehrlich, was ich kürzen oder weglassen sollte.",
+     "wann": "Einmal am Anfang, sobald du das Prüfungsdatum kennst."
+    },
+    {
+     "titel": "Abfrage-Modus",
+     "text": "Frag mich jetzt zum Thema ___ ab – wie ein strenger, aber freundlicher Nachhilfelehrer.\nRegeln:\n- Immer nur EINE Frage, dann wartest du auf meine Antwort.\n- Erst nach meiner Antwort: richtig / teilweise / falsch, die richtige Lösung in 2–3 Sätzen und was mir gefehlt hat.\n- Misch die Fragetypen: Begriff erklären, Beispiel nennen, Unterschied zwischen zwei Dingen, kleine Anwendungsaufgabe.\n- Was ich falsch hatte, fragst du später noch einmal anders formuliert.\n- Nach 10 Fragen: kurze Auswertung – was sitzt, was ich wiederholen muss.\nNimm nur Inhalte aus meinem Stoff. Wenn etwas nicht drinsteht, frag es nicht ab.",
+     "wann": "Jeden Lerntag, im selben Chat wie Prompt 1 (damit Claude deinen Stoff kennt)."
+    },
+    {
+     "titel": "So einfach wie für ein Kind",
+     "text": "Ich verstehe ___ nicht. Erklär es mir in drei Stufen:\n1. So, dass es ein Kind versteht – mit einem Vergleich aus dem Alltag.\n2. Etwas genauer, mit den richtigen Fachbegriffen (jeden Begriff in einem Satz erklärt).\n3. So, wie es in der Prüfung abgefragt werden könnte.\nDanach stellst du mir eine Kontrollfrage, und ich erkläre es dir in eigenen Worten zurück. Sag mir, was an meiner Erklärung noch falsch oder ungenau ist.",
+     "wann": "Immer, wenn bei der Abfrage etwas nicht sitzt."
+    },
+    {
+     "titel": "Probeprüfung mit Bewertung",
+     "text": "Mach mir aus meinem Stoff eine Probeprüfung zu ___, ungefähr so lang wie die echte (___ Minuten, Aufgabenart: ___).\n- Gib mir zuerst nur die Aufgaben, ohne Lösungen.\n- Ich schicke dir meine Antworten. Dann bewertest du jede Aufgabe mit Punkten und einer kurzen Begründung.\n- Zum Schluss: die 3 Themen, die ich vor der Prüfung noch wiederholen muss, mit je einer Übungsaufgabe.",
+     "wann": "1–2 Tage vor der Prüfung."
+    }
+   ],
+   "beispiel": "Biologie-Klausur in 12 Tagen, 45 Minuten pro Tag: Claude teilt das Skript in Themenblöcke, fragt nach den Schwachstellen und plant Zellbiologie, Genetik und Stoffwechsel mit Wiederholungen. Beim Abfragen fehlt bei „Mitochondrien“ das Stichwort ATP – Claude erklärt es mit einem Kraftwerk-Vergleich, fragt es zwei Tage später erneut ab und baut es in die Probeprüfung ein.",
+   "check": [
+    "Passt der Plan zu deiner echten Zeit pro Tag – auch an vollen Tagen?",
+    "Antwortest du beim Abfragen wirklich selbst, bevor du die Lösung liest?",
+    "Stimmen Fachinhalte mit deinem Skript überein? Bei Zweifeln im Original nachschauen – Claude kann sich irren.",
+    "Probeprüfung 1–2 Tage vorher eingeplant?"
+   ]
+  },
+  "music": "assets/music/lofi-105.mp3",
+  "plannedFor": null,
+  "sha256": "bdb56fd1bae9ff24f3527270aa0279895d6a32c43dee88777600b5adf13c6cf9",
+  "durationSec": 29.0,
+  "costUsd": 0.1
  }
 ]

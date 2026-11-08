@@ -36,6 +36,7 @@ Reihenfolge in der Vorschau: impact, riser, whoosh ×3, pop, click, stamp, typin
 | `stamp.mp3` | 0,5 s | Stempel („FALSCH“, „RICHTIG“), Einsatz setzt ca. 0,1 s verzögert ein |
 | `typing.mp3` | 0,7 s | Tippen im Chatfenster (mehrfach hintereinander) |
 | `ding.mp3` | 0,8 s | Haken / richtig |
+| `chalk.mp3` | 1,0 s | Kreide kratzt auf der Tafel (seit 08.11.2026, R009 Stil `kreidetafel`), beim Anschreiben/Zeichnen |
 
 Varianten: Gibt es `<name>_2.mp3`, `<name>_3.mp3` …, wechselt `render.cjs` sie automatisch reihum ab.
 Erzeugt mit ElevenLabs `eleven_text_to_sound_v2` (Flow „SFX-Bibliothek v2“, zusammen ca. 0,5 US-Cent), Stille
