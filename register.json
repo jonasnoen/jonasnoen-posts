@@ -798,7 +798,7 @@
   "id": "R010",
   "type": "reel",
   "createdAt": "2026-11-10",
-  "status": "sending",
+  "status": "scheduled",
   "format": "creme",
   "faceOffset": 27.6,
   "series": "Claude-Codes Teil 9",
@@ -868,6 +868,36 @@
   "durationSec": 23.0,
   "music": "assets/music/groove-115.mp3",
   "costUsd": 0.22,
-  "plannedFor": "2026-11-10T18:30:00+01:00"
+  "plannedFor": "2026-11-10T18:30:00+01:00",
+  "mediaCommit": "2ebb7fa8d4f4c2c4a5a40caaac4b1f2bec086fd8",
+  "metricool": {
+   "postId": 423434362,
+   "uuid": "8902215868424536522",
+   "publishAt": "2026-11-10T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 423434362,
+    "scheduledAt": "2026-11-10T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 423434362,
+    "scheduledAt": "2026-11-10T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 423434452,
+    "uuid": "1832397534193468959",
+    "scheduledAt": "2026-11-10T18:30:00+01:00",
+    "file": "reels/R010/reel_linkedin.mp4",
+    "firstComment": true
+   }
+  }
  }
 ]
