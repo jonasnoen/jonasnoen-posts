@@ -367,7 +367,7 @@
     "id": "E004",
     "type": "reel",
     "createdAt": "2026-11-10",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 121.0,
     "series": "Claude Codes Part 4",
@@ -438,6 +438,28 @@
     "sha256": "7be81fb8ad11961c7e8b1808a831993259c8af6e99af73348b3a025654fa19c2",
     "durationSec": 20.9,
     "music": "assets/music/groove-115.mp3",
-    "costUsd": 0.21
+    "costUsd": 0.21,
+    "mediaCommit": "98fb0ba59036853425dee6d722337637ee390775",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 423512120
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 423512120
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 423512266
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 423512355,
+        "file": "en/reels/E004/reel_linkedin.mp4",
+        "firstComment": true
+      },
+      "scheduledAt": "2026-11-10T20:30:00+01:00"
+    }
   }
 ]
