@@ -179,7 +179,7 @@ function chatMsg(x,y,w,txt,who,t0,t,out=false,size=40){if(t<t0)return 0;const s=
 // p0: Chef fragt, Antwort-Entwurf stockt
 function p0(t){g.save();g.translate(0,110);chatMsg(70,560,700,'Kannst du am Samstag einspringen?','CHEF',.15,t);
   const draft='Ähm, also, eigentlich …';const tx=typed(draft,t,.7,1.9);if(t>.6){wcard(190,800,700,150,C.amber);font(800,26);g.fillStyle='#8a7fa6';g.textAlign='left';g.fillText('DEINE ANTWORT',230,850);font(800,42);g.fillStyle=C.ink;g.fillText(tx+((t*2|0)%2?'|':''),230,910);}
-  if(t>K(5)){stamp('SCHREIBT CLAUDE',470,1080,-.06,K(5),t,C.violet,48);}g.restore();}
+  if(t>K(5)){stamp('SCHREIBT CLAUDE',420,1000,-.06,K(5),t,C.violet,48);}g.restore();}
 // p1: drei unangenehme Fälle
 function p1(t){[['ABSAGEN',K(8),C.amber,-.05],['NEIN SAGEN',K(9),C.violetL,.04],['GRENZEN SETZEN',K(11),C.green,-.03]].forEach(([txt,t0,col,rot],i)=>{if(t<t0)return;const s=back(t,t0,.35);const cx=470,cy=600+i*190;
   scaleAt(cx,cy,s,()=>{g.save();g.translate(cx,cy);g.rotate(rot);g.save();g.shadowColor='rgba(60,40,20,.2)';g.shadowBlur=24;g.shadowOffsetY=10;rr(-380,-75,760,150,40);g.fillStyle=col;g.fill();g.restore();
@@ -190,7 +190,7 @@ function p2(t){bigLabel('3 INFOS',150,640,K(17),t,C.ink,140);[0,1,2].forEach(i=>
 function infoCard(t,rows){wcard(70,520,820,560,C.violetL);font(800,26);g.fillStyle='#8a7fa6';g.textAlign='left';g.fillText('DEIN INPUT FÜR CLAUDE',110,580);
   rows.forEach((r,i)=>{const y=620+i*150;const on=t>=r.t;if(!on){rr(110,y,740,120,24);g.fillStyle='#f3eee6';g.fill();font(400,64,'Anton');g.fillStyle='#d6cdbf';g.fillText('?',140,y+84);return;}
     const s=back(t,r.t,.3);scaleAt(480,y+60,s,()=>{rr(110,y,740,120,24);g.fillStyle=r.bg;g.fill();font(800,26);g.fillStyle='#8a7fa6';g.fillText(r.k,140,y+44);font(800,38);g.fillStyle=C.ink;g.fillText(r.v,140,y+94);tick(810,y+60,true,.8);});});}
-const INFO=()=>[{t:K(19),k:'SITUATION',v:'Chef will, dass ich Samstag einspringe',bg:'#fff4dc'},{t:K(20),k:'WER',v:'mein Chef · gutes Verhältnis',bg:'#efe9ff'},{t:K(26),k:'ZIEL',v:'Nein sagen, ohne Stress danach',bg:'#e3f7ee'}];
+const INFO=()=>[{t:K(19),k:'SITUATION',v:'Chef fragt: Samstag einspringen?',bg:'#fff4dc'},{t:K(20),k:'WER',v:'mein Chef · gutes Verhältnis',bg:'#efe9ff'},{t:K(26),k:'ZIEL',v:'Nein sagen, ohne Stress danach',bg:'#e3f7ee'}];
 function p3(t){infoCard(t,INFO());}
 function p4(t){infoCard(t,INFO());}
 // p5: drei Varianten fächern auf
@@ -204,13 +204,13 @@ function p6(t){VAR.forEach(([lab,col,txt,wi],i)=>{const t0=K(wi);if(t<t0)return;
 // p7: der Satz, den man nicht schreiben sollte
 function p7(t){if(t>=K(38)){const s=back(t,K(38),.3);scaleAt(480,800,s,()=>{wcard(70,560,820,420,C.red);font(800,28);g.fillStyle=C.red;g.textAlign='left';g.fillText('BLOSS NICHT SCHREIBEN:',120,630);
     font(800,50);g.fillStyle=C.ink;wrap('„Ich hab eigentlich nichts vor, aber …“',120,730,720,70);});}
-  line(110,740,850,800,K(43),t,C.red,12,.3);line(110,820,700,860,K(44)+.1,t,C.red,12,.3);
+  line(110,718,770,718,K(43),t,C.red,10,.3);line(110,788,420,788,K(44)+.1,t,C.red,10,.3);
   if(t>K(45)){const s=back(t,K(45),.3);scaleAt(800,1010,s,()=>mark(800,1010,false,56));}}
 // p8: abschicken
 function p8(t){g.save();g.translate(0,40);chatMsg(70,500,620,'Kannst du am Samstag einspringen?','CHEF',0,t,false,36);
   chatMsg(220,720,670,'Samstag kann ich nicht. Montag früh helfe ich dir gern.','DU',K(48),t,true,38);
-  if(t>K(49)){const pr=t<K(50)+.15?.94:1;const s=back(t,K(49),.3)*pr;scaleAt(750,1013,s,()=>{rr(630,970,240,86,43);g.fillStyle=C.green;g.fill();font(800,38);g.fillStyle='#fff';g.textAlign='center';g.fillText('Senden',750,1026);g.textAlign='left';});}
-  if(t>K(51)){const a=ease((t-K(51))/.2);withAlpha(a,()=>{font(800,32);g.fillStyle=C.green;g.textAlign='right';g.fillText('Zugestellt ✓✓',870,950);g.textAlign='left';});}g.restore();}
+  if(t>K(49)&&t<K(51)){const pr=t<K(50)+.15?.94:1;const s=back(t,K(49),.3)*pr;scaleAt(750,1013,s,()=>{rr(630,970,240,86,43);g.fillStyle=C.green;g.fill();font(800,38);g.fillStyle='#fff';g.textAlign='center';g.fillText('Senden',750,1026);g.textAlign='left';});}
+  if(t>K(51)){const a=ease((t-K(51))/.2);withAlpha(a,()=>{font(800,32);g.fillStyle=C.green;g.textAlign='right';g.fillText('Zugestellt ✓✓',870,1000);g.textAlign='left';});}g.restore();}
 function p9(t){}
 const PROPS=[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9];
 // ================= Stil reel3: geteilter Bildschirm (oben Grafik, unten echtes Gesicht) =================

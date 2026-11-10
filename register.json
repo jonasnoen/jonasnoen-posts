@@ -793,5 +793,81 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R010",
+  "type": "reel",
+  "createdAt": "2026-11-10",
+  "status": "sending",
+  "format": "creme",
+  "faceOffset": 27.6,
+  "series": "Claude-Codes Teil 9",
+  "topic": "Heikle Nachricht schreiben (absagen, Nein sagen, Grenze setzen)",
+  "angle": "Ein Prompt: 3 Infos (Situation, Empfänger, Ziel) rein → 3 Varianten (freundlich/klar/knapp) + No-Go-Satz → Feinschliff mit Empfänger-Check → auf Antwort reagieren",
+  "hook": "Dieser Prompt schreibt jede unangenehme Nachricht für dich.",
+  "themaQuelle": "themen/de.md T02",
+  "source": "Keine neuen Produktaussagen (nur Prompt-Technik: Rückfragen bei fehlenden Infos, Varianten, klares Ausgabeformat); Prompting-Grundlagen siehe https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R010/reel.mp4",
+  "tiktokTitle": "Dieser Prompt schreibt deine Absage",
+  "caption": "Dieser Prompt schreibt jede unangenehme Nachricht für dich. 💬\n\nAbsagen. Nein sagen. Eine Grenze setzen. Und dann sitzt du ewig vor dem leeren Chatfenster.\n\nGib Claude nur drei Infos:\n👉 Was ist die Situation?\n👉 Wer bekommt die Nachricht?\n👉 Was willst du erreichen?\n\nZurück kommen drei Varianten – freundlich, klar oder ganz knapp – plus der eine Satz, den du auf keinen Fall schreiben solltest. Aussuchen, abschicken, fertig.\n\nSpeicher dir das für die nächste Absage. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Kommunikation #PromptTipps #JonasNoen",
+  "captionLinkedin": "Absagen, Nein sagen, Grenzen setzen: Viele Nachrichten schieben wir vor uns her, weil der richtige Ton schwer zu treffen ist.\n\nMit Claude lässt sich das in drei Schritten lösen:\n1. Drei Infos geben: Situation, Empfänger (und wie man zueinander steht), Ziel. Fehlt etwas, fragt Claude zuerst nach.\n2. Drei Varianten bekommen: freundlich, klar oder knapp. Das Nein steht jeweils im ersten oder zweiten Satz, ohne erfundene Ausreden.\n3. Dazu der eine Satz, den man besser nicht schreibt – z. B. „Ich hab eigentlich nichts vor, aber …“, weil er zum Nachverhandeln einlädt.\n\nHilfreich ist danach eine Gegenprobe: Claude liest die Nachricht aus Sicht des Empfängers und markiert Stellen, die doch noch nach „Ja, vielleicht“ klingen.\n\nWelche Nachricht schiebt ihr gerade vor euch her?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Heikle Nachricht schreiben (Guide mit 3 Prompts)",
+   "text": "Ich muss eine unangenehme Nachricht schreiben und will dabei klar, aber fair bleiben.\n\nSituation: ___ (was ist passiert / was wird von mir verlangt?)\nEmpfänger: ___ (wer ist es, wie ist unser Verhältnis – z. B. Chefin, Kollege, Freundin, Kunde)\nMein Ziel: ___ (z. B. absagen, Nein sagen, eine Grenze setzen – und was danach gut bleiben soll)\nKanal: ___ (WhatsApp, E-Mail, Slack …)\n\nSo gehst du vor:\n1. Wenn eine dieser Angaben fehlt oder unklar ist, stell mir zuerst höchstens 3 kurze Rückfragen und warte auf meine Antwort.\n2. Schreib dann 3 Varianten der Nachricht:\n   – FREUNDLICH: warm, mit Dank oder Verständnis, aber trotzdem eindeutig.\n   – KLAR: sachlich und direkt, mit einem konkreten Alternativ-Angebot, falls es eines gibt.\n   – KNAPP: höchstens 2 Sätze.\n3. Regeln für alle Varianten: Die Absage bzw. das Nein steht im ersten oder zweiten Satz. Keine Ausreden erfinden, keine übertriebenen Entschuldigungen, keine Formulierung, die eine Hintertür offen lässt („vielleicht“, „eigentlich“, „mal sehen“). Passend zum Kanal und zu unserem Verhältnis (Du/Sie).\n4. Nenn mir danach den einen Satz, den ich in dieser Situation auf keinen Fall schreiben sollte, und erklär in einem Satz, warum er schadet.\n5. Sag mir am Ende in einem Satz, welche Variante du hier empfehlen würdest und warum.",
+   "hinweis": "Situation, Empfänger und Ziel eintragen – Claude liefert drei Varianten (freundlich, klar, knapp) plus den Satz, den du besser nicht schreibst."
+  },
+  "guide": {
+   "titel": "Guide: Jede unangenehme Nachricht – klar und fair",
+   "ziel": "Absagen, Nein sagen oder eine Grenze setzen – mit einer Nachricht, die klar ist, fair klingt und keine Hintertür offen lässt.",
+   "schritte": [
+    {
+     "titel": "Drei Infos sammeln.",
+     "text": "Was ist die Situation, wer bekommt die Nachricht (und wie steht ihr zueinander), was willst du erreichen? Dazu der Kanal: WhatsApp klingt anders als eine E-Mail."
+    },
+    {
+     "titel": "Drei Varianten holen.",
+     "text": "Prompt 1 schicken. Fehlt etwas, fragt Claude erst nach. Dann bekommst du freundlich, klar und knapp – plus den Satz, den du dir sparen solltest."
+    },
+    {
+     "titel": "Feinschliff mit Gegenprobe.",
+     "text": "Prompt 2: Variante wählen, Ton anpassen und Claude die Nachricht aus Sicht des Empfängers lesen lassen. So fällt auf, wo sie doch noch nach „Ja, vielleicht“ klingt."
+    },
+    {
+     "titel": "Abschicken – und dabei bleiben.",
+     "text": "Kommt eine Antwort mit Druck oder schlechtem Gewissen, hilft Prompt 3, freundlich beim Nein zu bleiben oder einen echten Kompromiss anzubieten."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "3 Varianten + No-Go-Satz",
+     "text": "Ich muss eine unangenehme Nachricht schreiben und will dabei klar, aber fair bleiben.\n\nSituation: ___ (was ist passiert / was wird von mir verlangt?)\nEmpfänger: ___ (wer ist es, wie ist unser Verhältnis – z. B. Chefin, Kollege, Freundin, Kunde)\nMein Ziel: ___ (z. B. absagen, Nein sagen, eine Grenze setzen – und was danach gut bleiben soll)\nKanal: ___ (WhatsApp, E-Mail, Slack …)\n\nSo gehst du vor:\n1. Wenn eine dieser Angaben fehlt oder unklar ist, stell mir zuerst höchstens 3 kurze Rückfragen und warte auf meine Antwort.\n2. Schreib dann 3 Varianten der Nachricht:\n   – FREUNDLICH: warm, mit Dank oder Verständnis, aber trotzdem eindeutig.\n   – KLAR: sachlich und direkt, mit einem konkreten Alternativ-Angebot, falls es eines gibt.\n   – KNAPP: höchstens 2 Sätze.\n3. Regeln für alle Varianten: Die Absage bzw. das Nein steht im ersten oder zweiten Satz. Keine Ausreden erfinden, keine übertriebenen Entschuldigungen, keine Formulierung, die eine Hintertür offen lässt („vielleicht“, „eigentlich“, „mal sehen“). Passend zum Kanal und zu unserem Verhältnis (Du/Sie).\n4. Nenn mir danach den einen Satz, den ich in dieser Situation auf keinen Fall schreiben sollte, und erklär in einem Satz, warum er schadet.\n5. Sag mir am Ende in einem Satz, welche Variante du hier empfehlen würdest und warum.",
+     "wann": "Sobald du merkst, dass du eine Nachricht vor dir herschiebst."
+    },
+    {
+     "titel": "Feinschliff + Empfänger-Check",
+     "text": "Ich nehme Variante ___. Passe sie so an:\n– Ton: ___ (z. B. etwas wärmer / noch direkter / weniger förmlich)\n– Das muss unbedingt drin sein: ___\n– Das soll raus: ___\n\nLies die Nachricht danach einmal aus Sicht von ___ (Empfänger) und sag mir ehrlich:\n1. Wie kommt sie wahrscheinlich an?\n2. Gibt es eine Stelle, die falsch verstanden werden könnte oder doch noch nach „Ja“ klingt?\nGib mir dann die finale Fassung, fertig zum Kopieren.",
+     "wann": "Nach Prompt 1, bevor du abschickst."
+    },
+    {
+     "titel": "Auf die Antwort reagieren",
+     "text": "Ich habe die Nachricht abgeschickt. Das ist die Antwort:\n<antwort>\n___ (Antwort hier einfügen)\n</antwort>\n\nHilf mir, dabei zu bleiben:\n1. Fass in einem Satz zusammen, was die andere Person eigentlich will.\n2. Schreib 2 kurze Antworten: eine, die freundlich bei meinem Nein bleibt, und eine mit einem Kompromiss, den ich wirklich anbieten kann: ___ (oder „keiner“).\n3. Wenn die Antwort Druck macht oder ein schlechtes Gewissen erzeugen will, sag mir das offen und schreib eine ruhige Antwort, die nicht darauf eingeht.",
+     "wann": "Wenn die andere Person nachhakt oder Druck macht."
+    }
+   ],
+   "beispiel": "Der Chef fragt Freitagabend: „Kannst du am Samstag einspringen?“ Du willst nicht, das Verhältnis ist aber gut. Input: Situation = Chef fragt nach Samstag, Empfänger = Chef, gutes Verhältnis, Ziel = Nein sagen ohne Stress danach, Kanal = WhatsApp. Claude liefert z. B. KLAR: „Samstag kann ich nicht. Montag früh helfe ich dir gern.“ und warnt vor dem Satz „Ich hab eigentlich nichts vor, aber …“ – der lädt zum Nachverhandeln ein.",
+   "check": [
+    "Das Nein steht im ersten oder zweiten Satz.",
+    "Keine erfundene Ausrede, keine dreifache Entschuldigung.",
+    "Kein „vielleicht“ oder „eigentlich“, das doch noch nach Ja klingt.",
+    "Ton passt zum Kanal und zur Beziehung (Du/Sie)."
+   ]
+  },
+  "sha256": "dd73aad7df38c182c1e27e55a4767dab4eec7247b74dcddbb09c453f36f70c17",
+  "durationSec": 23.0,
+  "music": "assets/music/groove-115.mp3",
+  "costUsd": 0.22,
+  "plannedFor": "2026-11-10T18:30:00+01:00"
  }
 ]
