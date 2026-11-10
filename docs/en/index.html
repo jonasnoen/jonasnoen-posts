@@ -32,14 +32,68 @@ footer a{color:var(--violet)}
 <div class="kick">// Claude guides</div>
 <h1>Copy, <em>paste</em>, done.</h1>
 <p class="lead">Every guide and prompt from my posts. Newest on top.</p>
-<article class="card new" id="E003">
-  <div class="meta"><span class="tag">New · Guide</span><span>Reel E003</span></div>
+<article class="card new" id="E004">
+  <div class="meta"><span class="tag">New · Guide</span><span>Reel E004</span></div>
+  <h2>Guide: Any awkward message – clear and fair</h2>
+  <p class="goal">Say no, cancel or set a boundary with a message that&#x27;s clear, sounds fair and leaves no back door open.</p>
+  <h3>How it works</h3>
+  <ol class="steps"><li><b>Collect three inputs.</b> What&#x27;s the situation, who gets the message (and how do you know each other), what do you want to achieve? Add the channel: a text reads differently from an email.</li><li><b>Get three versions.</b> Send Prompt 1. If something&#x27;s missing, Claude asks first. Then you get friendly, clear and short – plus the sentence you should skip.</li><li><b>Polish with a reality check.</b> Prompt 2: pick a version, adjust the tone and let Claude read it from the recipient&#x27;s side. That shows where it still sounds like &quot;yes, maybe&quot;.</li><li><b>Send it – and stick to it.</b> If the reply pushes back or guilt-trips you, Prompt 3 helps you stay kind and firm, or offer a real compromise.</li></ol>
+  <h3>Prompt 1: 3 versions + the never-send line</h3>
+  <pre id="v1">I need to write an awkward message and want to stay clear but fair.
+
+Situation: ___ (what happened / what is being asked of me?)
+Recipient: ___ (who is it and what&#x27;s our relationship – e.g. my manager, a coworker, a friend, a client)
+My goal: ___ (e.g. say no, cancel, set a boundary – and what should stay good afterwards)
+Channel: ___ (text message, email, Slack …)
+
+Here&#x27;s how to do it:
+1. If any of this is missing or unclear, first ask me up to 3 short questions and wait for my answer.
+2. Then write 3 versions of the message:
+   – FRIENDLY: warm, with thanks or understanding, but still unmistakable.
+   – CLEAR: matter-of-fact and direct, with a concrete alternative if there is one.
+   – SHORT: 2 sentences max.
+3. Rules for all versions: the no (or cancellation) comes in the first or second sentence. Don&#x27;t invent excuses, don&#x27;t over-apologise, and avoid anything that leaves a back door open (&quot;maybe&quot;, &quot;actually&quot;, &quot;we&#x27;ll see&quot;). Match the channel and our relationship (formal or casual).
+4. Then give me the one sentence I should never send in this situation and explain in one sentence why it backfires.
+5. Finish with one sentence on which version you&#x27;d recommend here and why.</pre>
+  <button type="button" data-copy="v1">Copy</button>
+  <p class="hint">As soon as you notice you&#x27;re putting a message off.</p>
+  <h3>Prompt 2: Polish + recipient check</h3>
+  <pre id="v2">I&#x27;ll take version ___. Adjust it like this:
+– Tone: ___ (e.g. a bit warmer / more direct / less formal)
+– Must stay in: ___
+– Take out: ___
+
+Then read the message once from the point of view of ___ (recipient) and tell me honestly:
+1. How will it most likely land?
+2. Is there any part that could be misread or still sounds like a &quot;yes&quot;?
+Then give me the final version, ready to copy.</pre>
+  <button type="button" data-copy="v2">Copy</button>
+  <p class="hint">After Prompt 1, before you hit send.</p>
+  <h3>Prompt 3: Handle the reply</h3>
+  <pre id="v3">I sent the message. Here&#x27;s the reply:
+&lt;reply&gt;
+___ (paste the reply here)
+&lt;/reply&gt;
+
+Help me hold my ground:
+1. Sum up in one sentence what the other person actually wants.
+2. Write 2 short replies: one that kindly sticks to my no, and one with a compromise I can genuinely offer: ___ (or &quot;none&quot;).
+3. If the reply puts pressure on me or tries to guilt-trip me, tell me plainly and write a calm reply that doesn&#x27;t take the bait.</pre>
+  <button type="button" data-copy="v3">Copy</button>
+  <p class="hint">When the other person pushes back or applies pressure.</p>
+  <h3>Example</h3>
+  <p class="ex">Your manager texts on Friday evening: &quot;Can you cover this Saturday?&quot; You don&#x27;t want to, but you get along well. Input: situation = manager asks me to cover Saturday, recipient = my manager, good relationship, goal = say no without tension afterwards, channel = text message. Claude returns e.g. CLEAR: &quot;I can&#x27;t do Saturday. Happy to help first thing Monday.&quot; – and warns you against &quot;I don&#x27;t really have plans, but …&quot;, because it invites negotiation.</p>
+  <h3>Check before you send</h3>
+  <ul class="check"><li>The no is in the first or second sentence.</li><li>No invented excuse, no triple apology.</li><li>No &quot;maybe&quot; or &quot;actually&quot; that still sounds like a yes.</li><li>The tone fits the channel and the relationship.</li></ul>
+  <p class="hint">Fill in the situation, recipient and goal – Claude gives you three versions (friendly, clear, short) plus the line you should never send.</p>
+</article><article class="card" id="E003">
+  <div class="meta"><span class="tag">Guide</span><span>Reel E003</span></div>
   <h2>Guide: Claude as your personal tutor – from your material to a mock exam</h2>
   <p class="goal">Your own study material becomes a plan up to exam day – and Claude quizzes you, explains gaps simply and tests you with a mock exam at the end, instead of you just reading summaries.</p>
   <h3>How it works</h3>
   <ol class="steps"><li><b>Add your material.</b> Upload or paste your notes, slides or table of contents. The more precise the material, the better the plan and the questions fit.</li><li><b>Build the study plan.</b> Send prompt 1 with the date, subject and your time per day. Claude asks what you already know, then builds the plan with reviews and a buffer.</li><li><b>Get quizzed every day.</b> Instead of rereading: prompt 2 with the topic of the day. Answer yourself first, then you get the solution. Mistakes come back later.</li><li><b>Close the gaps.</b> Anything that doesn&#x27;t stick: prompt 3 – first explained super simply, then with the technical terms – and explain it back in your own words.</li><li><b>Take a mock exam.</b> Two days before: prompt 4. Questions without answers, grading with points, the 3 most important topics to review.</li></ol>
   <h3>Prompt 1: Study plan up to exam day</h3>
-  <pre id="v1">You&#x27;re my study coach. I have an exam in ___ (subject) on ___ (date). Today is ___. I can study about ___ minutes a day, and not at all on these days: ___.
+  <pre id="v4">You&#x27;re my study coach. I have an exam in ___ (subject) on ___ (date). Today is ___. I can study about ___ minutes a day, and not at all on these days: ___.
 
 &lt;material&gt;
 ___ (paste the table of contents, your notes or slides – or upload them as a file)
@@ -51,10 +105,10 @@ How to work:
 3. Then build a study plan as a table: Date – Topic – What I do (learn new / get quizzed / review) – Duration.
 4. Schedule reviews at growing intervals (e.g. after 1, 3 and 7 days) and keep the last 2 days before the exam free for a mock exam and gaps.
 5. Stick to my time per day. If it isn&#x27;t enough, tell me honestly what I should shorten or drop.</pre>
-  <button type="button" data-copy="v1">Copy</button>
+  <button type="button" data-copy="v4">Copy</button>
   <p class="hint">Once at the start, as soon as you know the exam date.</p>
   <h3>Prompt 2: Quiz mode</h3>
-  <pre id="v2">Quiz me on ___ (topic) now – like a strict but friendly tutor.
+  <pre id="v5">Quiz me on ___ (topic) now – like a strict but friendly tutor.
 Rules:
 - Only ONE question at a time, then wait for my answer.
 - Only after my answer: correct / partly / wrong, the right answer in 2–3 sentences and what I was missing.
@@ -62,22 +116,22 @@ Rules:
 - Anything I got wrong, ask again later in a different way.
 - After 10 questions: a short review – what I know, what I need to go over again.
 Only use content from my material. If something isn&#x27;t in it, don&#x27;t ask about it.</pre>
-  <button type="button" data-copy="v2">Copy</button>
+  <button type="button" data-copy="v5">Copy</button>
   <p class="hint">Every study day, in the same chat as prompt 1 (so Claude knows your material).</p>
   <h3>Prompt 3: Explain it like I&#x27;m five</h3>
-  <pre id="v3">I don&#x27;t understand ___. Explain it in three levels:
+  <pre id="v6">I don&#x27;t understand ___. Explain it in three levels:
 1. Like I&#x27;m five – with a comparison from everyday life.
 2. A bit more precise, with the correct technical terms (each term explained in one sentence).
 3. The way it could come up in the exam.
 Then ask me one check question and I&#x27;ll explain it back to you in my own words. Tell me what&#x27;s still wrong or vague in my explanation.</pre>
-  <button type="button" data-copy="v3">Copy</button>
+  <button type="button" data-copy="v6">Copy</button>
   <p class="hint">Whenever something doesn&#x27;t stick during the quiz.</p>
   <h3>Prompt 4: Mock exam with grading</h3>
-  <pre id="v4">Make me a mock exam on ___ from my material, about as long as the real one (___ minutes, question types: ___).
+  <pre id="v7">Make me a mock exam on ___ from my material, about as long as the real one (___ minutes, question types: ___).
 - First give me only the questions, no answers.
 - I&#x27;ll send you my answers. Then grade every question with points and a short reason.
 - Finally: the 3 topics I still need to review before the exam, each with one practice question.</pre>
-  <button type="button" data-copy="v4">Copy</button>
+  <button type="button" data-copy="v7">Copy</button>
   <p class="hint">1–2 days before the exam.</p>
   <h3>Example</h3>
   <p class="ex">Biology exam in 12 days, 45 minutes a day: Claude splits your notes into topic blocks, asks about your weak spots and plans cell biology, genetics and metabolism with reviews. During the quiz you miss the keyword ATP for &quot;mitochondria&quot; – Claude explains it with a power-plant comparison, asks again two days later and puts it into the mock exam.</p>
@@ -91,7 +145,7 @@ Then ask me one check question and I&#x27;ll explain it back to you in my own wo
   <h3>How it works</h3>
   <ol class="steps"><li><b>Collect your notes.</b> Right after the meeting, copy everything together: your bullet points, chat messages, the transcript. Messy is fine.</li><li><b>Build the list.</b> Send prompt 1. Claude builds the table What – Who – By when, lists decisions and open questions, and marks gaps with &quot;❓ missing&quot;.</li><li><b>Close the gaps.</b> Answer Claude&#x27;s questions and send prompt 2. Claude sorts everything by deadline and gives each person their own list.</li><li><b>Send the email.</b> Send prompt 3, pick your tone, read it over once and send it to everyone – plus a 3-line version for the team chat.</li></ol>
   <h3>Prompt 1: Pull out the tasks</h3>
-  <pre id="v5">Here are my notes from a meeting. They&#x27;re messy and incomplete.
+  <pre id="v8">Here are my notes from a meeting. They&#x27;re messy and incomplete.
 
 &lt;notes&gt;
 ___ (paste your notes or the transcript here)
@@ -106,10 +160,10 @@ Turn this into a clear task list. Work like this:
 4. Below the table: &quot;Decisions&quot; as a short list (what was agreed?).
 5. Below that: &quot;Open questions&quot; – everything that still needs to be clarified.
 6. Finally: ask me one concrete question for every &quot;❓ missing&quot;, numbered, so I can answer quickly.</pre>
-  <button type="button" data-copy="v5">Copy</button>
+  <button type="button" data-copy="v8">Copy</button>
   <p class="hint">Right after the meeting, with all your notes.</p>
   <h3>Prompt 2: Close the gaps &amp; sort</h3>
-  <pre id="v6">Here are my answers to your questions:
+  <pre id="v9">Here are my answers to your questions:
 ___ (e.g. 1. Tom calls the client, by Wednesday. 2. Budget: still open.)
 
 Update the task list with them:
@@ -118,10 +172,10 @@ Update the task list with them:
 - Sort by deadline, most urgent first.
 - Mark tasks that depend on another one with &quot;⏳ waiting for No. X&quot;.
 - Give me a short list for each person: &quot;Name: task – by when&quot;.</pre>
-  <button type="button" data-copy="v6">Copy</button>
+  <button type="button" data-copy="v9">Copy</button>
   <p class="hint">When Claude has asked you questions.</p>
   <h3>Prompt 3: Follow-up email</h3>
-  <pre id="v7">Now write the follow-up email to everyone who was in the meeting.
+  <pre id="v10">Now write the follow-up email to everyone who was in the meeting.
 
 - Subject: short, with the meeting topic and date.
 - Tone: ___ (e.g. casual and friendly / formal)
@@ -129,7 +183,7 @@ Update the task list with them:
 - Max 150 words, no filler phrases.
 - Only use what&#x27;s in the task list above, don&#x27;t add anything.
 Then also give me a 3-line version for the team chat (Slack, Teams or similar).</pre>
-  <button type="button" data-copy="v7">Copy</button>
+  <button type="button" data-copy="v10">Copy</button>
   <p class="hint">Once the list is done – ideally the same day.</p>
   <h3>Example</h3>
   <p class="ex">Product launch meeting: paste the notes → prompt 1 gives &quot;Lisa – send offer – Fri&quot;, &quot;Tom – update slides – Mon&quot; and &quot;❓ missing – call client – ❓ missing&quot; plus the question &quot;Who calls the client, and by when?&quot; → answer &quot;Ana, Wednesday&quot; → prompt 2 sorts everything by deadline → prompt 3 writes the email to the team.</p>
@@ -143,7 +197,7 @@ Then also give me a 3-line version for the team chat (Slack, Teams or similar).<
   <h3>How it works</h3>
   <ol class="steps"><li><b>Paste the document.</b> Copy the full text into the chat or upload the file – at the very top, before anything else.</li><li><b>Get the overview first.</b> Send prompt 1: Claude tells you what kind of document it is and which parts matter.</li><li><b>Ask your question.</b> Send prompt 2 with your question at the very bottom. Claude pulls out quotes first and answers only from them.</li><li><b>Double-check.</b> Send prompt 3: Claude checks its own answer against the text and flags anything that isn&#x27;t backed up.</li></ol>
   <h3>Prompt 1: Overview</h3>
-  <pre id="v8">&lt;document&gt;
+  <pre id="v11">&lt;document&gt;
 ___ (paste the full text)
 &lt;/document&gt;
 
@@ -153,24 +207,24 @@ Read the whole document. Then give me:
 3. Everything with a date, deadline, amount or obligation as a table: What – Who – By when – Quote.
 4. What&#x27;s missing or vaguely worded.
 Don&#x27;t make anything up. If something isn&#x27;t in the text, write &quot;Not in the document&quot;.</pre>
-  <button type="button" data-copy="v8">Copy</button>
+  <button type="button" data-copy="v11">Copy</button>
   <p class="hint">Right after pasting – so you know what to ask.</p>
   <h3>Prompt 2: Question with quotes</h3>
-  <pre id="v9">Answer my question using only the document above. Work like this:
+  <pre id="v12">Answer my question using only the document above. Work like this:
 1. First find every passage relevant to the question. Write them word for word and numbered inside &lt;quotes&gt; tags.
 2. Then answer the question using only those quotes. Put the number after each statement, e.g. [2].
 3. If the document doesn&#x27;t answer the question, say so clearly instead of guessing.
 4. Finally: the answer in 3 simple sentences, no jargon.
 
 My question: ___</pre>
-  <button type="button" data-copy="v9">Copy</button>
+  <button type="button" data-copy="v12">Copy</button>
   <p class="hint">For every specific question. The question always goes at the very bottom.</p>
   <h3>Prompt 3: Double-check</h3>
-  <pre id="v10">Check your last answer sentence by sentence against the document.
+  <pre id="v13">Check your last answer sentence by sentence against the document.
 - Mark each statement ✅ (quoted directly), ⚠️ (only indirectly supported) or ❌ (not supported).
 - Fix or delete every ⚠️ and ❌.
 - Then give me the cleaned-up answer.</pre>
-  <button type="button" data-copy="v10">Copy</button>
+  <button type="button" data-copy="v13">Copy</button>
   <p class="hint">For anything important: money, deadlines, contracts.</p>
   <h3>Example</h3>
   <p class="ex">Paste a rental lease → prompt 1 shows deposit, notice period and utilities as a table → prompt 2: &quot;Am I allowed to sublet?&quot; → answer with a quote from the lease → prompt 3 checks everything is backed up.</p>
@@ -184,7 +238,7 @@ My question: ___</pre>
   <h3>How it works</h3>
   <ol class="steps"><li><b>Prepare your data.</b> Copy the full job posting. Paste your resume as text and remove your address, phone number and date of birth first.</li><li><b>Get the match.</b> Send prompt 1: Claude builds a table with every requirement, your proof and ✅/⚠️/❌.</li><li><b>Close the gaps.</b> Send prompt 2 and answer the questions honestly. Often you have the experience – it&#x27;s just not in your resume.</li><li><b>Build the cover letter.</b> Prompt 3: Claude writes from your proof points. You fill in everything marked [ADD].</li><li><b>Recruiter check.</b> Prompt 4: Claude reads everything like a busy recruiter and shows you the weakest sentences.</li></ol>
   <h3>Prompt 1: Match</h3>
-  <pre id="v11">Help me tailor my application to a specific job.
+  <pre id="v14">Help me tailor my application to a specific job.
 
 &lt;job_posting&gt;
 ___ (paste the full posting)
@@ -201,32 +255,32 @@ How to work:
 4. Give me the 3 most important changes to my resume, each as a before/after sentence.
 
 Important: don&#x27;t invent experience, numbers or degrees. If you&#x27;re missing info for a requirement, ask me instead of guessing.</pre>
-  <button type="button" data-copy="v11">Copy</button>
+  <button type="button" data-copy="v14">Copy</button>
   <p class="hint">First thing for every new job.</p>
   <h3>Prompt 2: Close the gaps</h3>
-  <pre id="v12">Go through every ⚠️ and ❌ in your table.
+  <pre id="v15">Go through every ⚠️ and ❌ in your table.
 1. Ask me exactly one question per point about whether I have experience with it – jobs, internships, studies, volunteering or side projects all count.
 2. Ask the questions as a numbered list and wait for my answers.
 3. Then turn my answers into new resume bullet points: action verb first, concrete result, only facts I actually mentioned.
 4. Tell me where in the resume each bullet belongs.</pre>
-  <button type="button" data-copy="v12">Copy</button>
+  <button type="button" data-copy="v15">Copy</button>
   <p class="hint">Right after the match, if there are ⚠️ or ❌.</p>
   <h3>Prompt 3: Cover letter from proof</h3>
-  <pre id="v13">Now write a cover letter for this role, max 250 words.
+  <pre id="v16">Now write a cover letter for this role, max 250 words.
 - Opening: why exactly this role. Use only what&#x27;s in the posting and mark with [ADD] where I should add something personal.
 - Body: the 3 must-have requirements I can prove best, each with a concrete example from my resume.
 - Tone: ___ (e.g. friendly and direct). No clichés like &quot;I am writing to apply&quot; or &quot;I am very excited&quot;.
 - Closing: one confident sentence about the interview.
 Don&#x27;t invent anything that isn&#x27;t in my resume or my answers.</pre>
-  <button type="button" data-copy="v13">Copy</button>
+  <button type="button" data-copy="v16">Copy</button>
   <p class="hint">Once the resume fits.</p>
   <h3>Prompt 4: Recruiter check</h3>
-  <pre id="v14">Now read my resume and cover letter like a recruiter who has 30 seconds per application.
+  <pre id="v17">Now read my resume and cover letter like a recruiter who has 30 seconds per application.
 1. What sticks after 30 seconds? (3 bullet points)
 2. Which must-have requirement from the posting is still not clearly proven?
 3. Name the 2 weakest sentences and give me a better version of each.
 4. Finally give me the revised cover letter.</pre>
-  <button type="button" data-copy="v14">Copy</button>
+  <button type="button" data-copy="v17">Copy</button>
   <p class="hint">Before you hit send.</p>
   <h3>Example</h3>
   <p class="ex">Online marketing role: posting + resume in → prompt 1 shows SEO ✅, budget ownership ⚠️, Google Ads ❌ → prompt 2 asks: ran ad campaigns during an internship → new bullet point → prompt 3 writes the cover letter from that proof → prompt 4 replaces the 2 weakest sentences.</p>

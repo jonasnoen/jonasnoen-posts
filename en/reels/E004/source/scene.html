@@ -202,9 +202,9 @@ const VAR=[['FRIENDLY',C.amber,'Thanks for thinking of me! Saturday won\'t work 
 function p6(t){VAR.forEach(([lab,col,txt,wi],i)=>{const t0=K(wi);if(t<t0)return;const s=back(t,t0,.3);const y=500+i*215;
   scaleAt(480,y+95,s,()=>{wcard(70,y,820,190,col);rr(70,y,22,190,[28,0,0,28]);g.fillStyle=col;g.fill();font(800,26);g.fillStyle='#8a7fa6';g.textAlign='left';g.fillText(lab,120,y+46);font(800,34);g.fillStyle=C.ink;wrap(txt,120,y+96,720,46);});});}
 // p7: der Satz, den man nicht schreiben sollte
-function p7(t){if(t>=K(38)){const s=back(t,K(38),.3);scaleAt(480,800,s,()=>{wcard(70,560,820,420,C.red);font(800,28);g.fillStyle=C.red;g.textAlign='left';g.fillText('NEVER SEND THIS:',120,630);
-    font(800,50);g.fillStyle=C.ink;wrap('“I don\'t really have plans, but …”',120,730,720,70);});}
-  line(110,718,770,718,K(41),t,C.red,10,.3);line(110,788,420,788,K(42)+.1,t,C.red,10,.3);
+function p7(t){font(800,50);const W1=g.measureText('“I don\'t really have').width,W2=g.measureText('plans, but …”').width;if(t>=K(36)+.15){const s=back(t,K(36)+.15,.3);scaleAt(480,800,s,()=>{wcard(70,560,820,420,C.red);font(800,28);g.fillStyle=C.red;g.textAlign='left';g.fillText('NEVER SEND THIS:',120,630);
+    font(800,50);g.fillStyle=C.ink;wrap('“I don\'t really have plans, but …”',120,730,600,70);});}
+  line(110,718,W1+130,718,K(41),t,C.red,10,.3);line(110,788,W2+130,788,K(42)+.1,t,C.red,10,.3);
   if(t>K(43)){const s=back(t,K(43),.3);scaleAt(800,1010,s,()=>mark(800,1010,false,56));}}
 // p8: abschicken
 function p8(t){g.save();g.translate(0,40);chatMsg(70,500,620,'Can you cover this Saturday?','BOSS',0,t,false,36);
@@ -294,7 +294,7 @@ window.EXTRA_CUES=()=>[
   {t:K(20),name:'click',vol:.55},{t:K(21),name:'click',vol:.55},{t:K(25),name:'ding',vol:.5},
   {t:K(30),name:'pop',vol:.6},{t:K(31),name:'whoosh',vol:.4},
   {t:K(32),name:'pop',vol:.6},{t:K(33),name:'pop',vol:.6},{t:K(35),name:'pop',vol:.6},
-  {t:K(38),name:'pop',vol:.6},{t:K(41),name:'click',vol:.6},{t:K(43),name:'stamp',vol:.7},
+  {t:K(36)+.15,name:'pop',vol:.6},{t:K(41),name:'click',vol:.6},{t:K(43),name:'stamp',vol:.7},
   {t:K(44),name:'pop',vol:.6},{t:K(46),name:'click',vol:.6},{t:K(48),name:'ding',vol:.55}];
 window.setup=(words)=>{WORDS=words;K=i=>WORDS[i].start;KE=i=>WORDS[i].end;END=WORDS[WORDS.length-1].end+.35;window.CUES=buildCues();return END;};
 window.render=(t)=>{frame(t);return c.toDataURL('image/jpeg',.9);};

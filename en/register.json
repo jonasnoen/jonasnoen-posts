@@ -362,5 +362,82 @@
       },
       "scheduledAt": "2026-11-08T20:30:00+01:00"
     }
+  },
+  {
+    "id": "E004",
+    "type": "reel",
+    "createdAt": "2026-11-10",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 121.0,
+    "series": "Claude Codes Part 4",
+    "fromDe": "R010",
+    "topic": "Write any awkward message (say no, cancel, set a boundary)",
+    "angle": "One prompt: 3 inputs (situation, recipient, goal) → 3 versions (friendly/clear/short) + the never-send line → polish with a recipient check → handle the reply",
+    "hook": "This prompt writes every awkward message for you.",
+    "themaQuelle": "DE R010 (overlaps themen/en.md T02)",
+    "source": "No product claims, prompt technique only (clarifying questions, variants, clear output format); prompting basics: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E004/reel.mp4",
+    "tiktokTitle": "This prompt writes your awkward messages",
+    "caption": "This prompt writes every awkward message for you. 💬\n\nSaying no. Cancelling. Setting a boundary. And then you stare at an empty chat for 20 minutes.\n\nGive Claude just three things:\n👉 What's the situation?\n👉 Who's it for?\n👉 What do you want?\n\nYou get three versions back – friendly, clear or short – plus the one sentence you should never send. Pick one, hit send, done.\n\nSave this for the next time you need to say no. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PromptEngineering #Communication #AITools",
+    "captionX": "This Claude prompt writes every awkward message: 3 inputs → friendly, clear and short versions + the one line you should never send. Comment PROMPT for the guide 💬",
+    "captionLinkedIn": "Saying no, cancelling, setting a boundary: many of us put off these messages because the tone is hard to get right.\n\nWith Claude it takes three steps:\n1. Give three inputs: the situation, the recipient (and your relationship), your goal. If something's missing, Claude asks first.\n2. Get three versions: friendly, clear or short. The no comes in the first or second sentence – no invented excuses.\n3. Plus the one sentence you'd better not send, e.g. \"I don't really have plans, but …\", because it invites negotiation.\n\nA useful last step: let Claude read the message from the recipient's point of view and flag anything that still sounds like \"maybe\".\n\nWhich message are you putting off right now?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Write any awkward message (guide with 3 prompts)",
+      "text": "I need to write an awkward message and want to stay clear but fair.\n\nSituation: ___ (what happened / what is being asked of me?)\nRecipient: ___ (who is it and what's our relationship – e.g. my manager, a coworker, a friend, a client)\nMy goal: ___ (e.g. say no, cancel, set a boundary – and what should stay good afterwards)\nChannel: ___ (text message, email, Slack …)\n\nHere's how to do it:\n1. If any of this is missing or unclear, first ask me up to 3 short questions and wait for my answer.\n2. Then write 3 versions of the message:\n   – FRIENDLY: warm, with thanks or understanding, but still unmistakable.\n   – CLEAR: matter-of-fact and direct, with a concrete alternative if there is one.\n   – SHORT: 2 sentences max.\n3. Rules for all versions: the no (or cancellation) comes in the first or second sentence. Don't invent excuses, don't over-apologise, and avoid anything that leaves a back door open (\"maybe\", \"actually\", \"we'll see\"). Match the channel and our relationship (formal or casual).\n4. Then give me the one sentence I should never send in this situation and explain in one sentence why it backfires.\n5. Finish with one sentence on which version you'd recommend here and why.",
+      "hinweis": "Fill in the situation, recipient and goal – Claude gives you three versions (friendly, clear, short) plus the line you should never send."
+    },
+    "guide": {
+      "titel": "Guide: Any awkward message – clear and fair",
+      "ziel": "Say no, cancel or set a boundary with a message that's clear, sounds fair and leaves no back door open.",
+      "schritte": [
+        {
+          "titel": "Collect three inputs.",
+          "text": "What's the situation, who gets the message (and how do you know each other), what do you want to achieve? Add the channel: a text reads differently from an email."
+        },
+        {
+          "titel": "Get three versions.",
+          "text": "Send Prompt 1. If something's missing, Claude asks first. Then you get friendly, clear and short – plus the sentence you should skip."
+        },
+        {
+          "titel": "Polish with a reality check.",
+          "text": "Prompt 2: pick a version, adjust the tone and let Claude read it from the recipient's side. That shows where it still sounds like \"yes, maybe\"."
+        },
+        {
+          "titel": "Send it – and stick to it.",
+          "text": "If the reply pushes back or guilt-trips you, Prompt 3 helps you stay kind and firm, or offer a real compromise."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "3 versions + the never-send line",
+          "text": "I need to write an awkward message and want to stay clear but fair.\n\nSituation: ___ (what happened / what is being asked of me?)\nRecipient: ___ (who is it and what's our relationship – e.g. my manager, a coworker, a friend, a client)\nMy goal: ___ (e.g. say no, cancel, set a boundary – and what should stay good afterwards)\nChannel: ___ (text message, email, Slack …)\n\nHere's how to do it:\n1. If any of this is missing or unclear, first ask me up to 3 short questions and wait for my answer.\n2. Then write 3 versions of the message:\n   – FRIENDLY: warm, with thanks or understanding, but still unmistakable.\n   – CLEAR: matter-of-fact and direct, with a concrete alternative if there is one.\n   – SHORT: 2 sentences max.\n3. Rules for all versions: the no (or cancellation) comes in the first or second sentence. Don't invent excuses, don't over-apologise, and avoid anything that leaves a back door open (\"maybe\", \"actually\", \"we'll see\"). Match the channel and our relationship (formal or casual).\n4. Then give me the one sentence I should never send in this situation and explain in one sentence why it backfires.\n5. Finish with one sentence on which version you'd recommend here and why.",
+          "wann": "As soon as you notice you're putting a message off."
+        },
+        {
+          "titel": "Polish + recipient check",
+          "text": "I'll take version ___. Adjust it like this:\n– Tone: ___ (e.g. a bit warmer / more direct / less formal)\n– Must stay in: ___\n– Take out: ___\n\nThen read the message once from the point of view of ___ (recipient) and tell me honestly:\n1. How will it most likely land?\n2. Is there any part that could be misread or still sounds like a \"yes\"?\nThen give me the final version, ready to copy.",
+          "wann": "After Prompt 1, before you hit send."
+        },
+        {
+          "titel": "Handle the reply",
+          "text": "I sent the message. Here's the reply:\n<reply>\n___ (paste the reply here)\n</reply>\n\nHelp me hold my ground:\n1. Sum up in one sentence what the other person actually wants.\n2. Write 2 short replies: one that kindly sticks to my no, and one with a compromise I can genuinely offer: ___ (or \"none\").\n3. If the reply puts pressure on me or tries to guilt-trip me, tell me plainly and write a calm reply that doesn't take the bait.",
+          "wann": "When the other person pushes back or applies pressure."
+        }
+      ],
+      "beispiel": "Your manager texts on Friday evening: \"Can you cover this Saturday?\" You don't want to, but you get along well. Input: situation = manager asks me to cover Saturday, recipient = my manager, good relationship, goal = say no without tension afterwards, channel = text message. Claude returns e.g. CLEAR: \"I can't do Saturday. Happy to help first thing Monday.\" – and warns you against \"I don't really have plans, but …\", because it invites negotiation.",
+      "check": [
+        "The no is in the first or second sentence.",
+        "No invented excuse, no triple apology.",
+        "No \"maybe\" or \"actually\" that still sounds like a yes.",
+        "The tone fits the channel and the relationship."
+      ]
+    },
+    "sha256": "7be81fb8ad11961c7e8b1808a831993259c8af6e99af73348b3a025654fa19c2",
+    "durationSec": 20.9,
+    "music": "assets/music/groove-115.mp3",
+    "costUsd": 0.21
   }
 ]
