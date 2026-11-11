@@ -899,5 +899,80 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R011",
+  "type": "reel",
+  "createdAt": "2026-11-11",
+  "status": "sending",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 10",
+  "topic": "Posteingang sortieren lassen (Mail-Sortierer)",
+  "angle": "Ein Prompt: 5–15 Mails rein → Tabelle Absender/Worum/Frist/Priorität → Antwortentwürfe für die 3 dringendsten → Liste ‚kann warten‘; Fristen nur, wenn sie in der Mail stehen (nichts erfinden)",
+  "hook": "Hör auf, deine Mails von oben nach unten abzuarbeiten.",
+  "themaQuelle": "themen/de.md T04",
+  "source": "Keine neuen Produktaussagen (nur Prompt-Technik: Text in Tags, Tabelle als Ausgabeformat, Lücken statt Erfinden, Rückfragen); Prompting-Grundlagen siehe https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+  "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R011/reel.mp4",
+  "tiktokTitle": "Dieser Prompt sortiert deinen Posteingang",
+  "caption": "Hör auf, deine Mails von oben nach unten abzuarbeiten. 📥\n\nDas Dringende steckt nämlich fast immer irgendwo in der Mitte – zwischen Newsletter und Versandbestätigung.\n\nKopier deine Mails in Claude und lass dir drei Dinge bauen:\n👉 eine Tabelle: Absender, worum geht's, Frist, Priorität\n👉 fertige Antwortentwürfe für die drei dringendsten\n👉 eine Liste „kann warten“\n\nDer Trick: Steht keine Frist in der Mail, schreibt Claude „keine Frist genannt“ statt zu raten.\n\nSpeicher dir das für deinen nächsten Montagmorgen. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Produktivität #EMail #PromptTipps #JonasNoen",
+  "captionLinkedin": "Wer seinen Posteingang von oben nach unten abarbeitet, beantwortet zuerst das Neueste – nicht das Wichtigste.\n\nEin Ablauf mit Claude, der dabei hilft:\n1. 5–15 Mails einfügen. Claude erstellt eine Tabelle: Absender, worum es geht, was erwartet wird, Frist, Priorität.\n2. Für die drei dringendsten Mails entstehen direkt Antwortentwürfe – fehlende Infos bleiben als Lücke markiert, statt dass etwas erfunden wird.\n3. Alles andere landet auf einer Liste „kann warten“, jeweils mit kurzer Begründung.\n\nEntscheidend ist eine Regel im Prompt: Fristen werden nur übernommen, wenn sie wirklich in der Mail stehen. Fehlt eine, steht dort „keine Frist genannt“.\n\nWie sortiert ihr euren Posteingang – nach Eingang oder nach Priorität?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Posteingang-Sortierer (Guide mit 3 Prompts)",
+   "text": "Ich füge dir unten ___ E-Mails aus meinem Posteingang ein (5–15 Stück, jeweils mit Absender, Datum, Betreff und Text). Hilf mir, sie in der richtigen Reihenfolge abzuarbeiten.\n\nHeute ist der ___ (Datum). Besonders wichtig sind mir gerade: ___ (z. B. ein Projekt, bestimmte Kunden, Familie).\n\nSo gehst du vor:\n1. Erstelle eine Tabelle mit den Spalten: Nr. | Absender | Worum geht's (max. 8 Wörter) | Was wird von mir erwartet? | Frist | Priorität (🔴 heute / 🟡 diese Woche / 🟢 kann warten).\n2. Frist: Übernimm nur Fristen, die wirklich in der Mail stehen, und zitiere die Stelle kurz. Steht keine drin, schreib „❓ keine Frist genannt“ – nichts schätzen oder erfinden.\n3. Sortiere die Tabelle nach Priorität, bei gleicher Priorität nach Frist.\n4. Schreib für die 3 dringendsten Mails je einen kurzen Antwortentwurf (max. 5 Sätze, im Ton der ursprünglichen Mail). Wo dir Infos fehlen, setz ___ als Lücke ein, statt etwas zu erfinden.\n5. Liste darunter unter „Kann warten“ alle Mails, die keine Antwort von mir brauchen oder Zeit haben – mit je einem Satz, warum.\n6. Stell mir am Ende höchstens 3 Rückfragen, falls dir für die Priorisierung etwas fehlt.\n\nHier sind die Mails:\n<mails>\n___\n</mails>",
+   "hinweis": "5–15 Mails unten einfügen, Datum und deine Prioritäten eintragen – Claude liefert Tabelle, 3 Antwortentwürfe und eine Liste „kann warten“."
+  },
+  "guide": {
+   "titel": "Guide: Posteingang in 10 Minuten sortiert",
+   "ziel": "Aus einem vollen Posteingang eine klare Reihenfolge machen: was heute dran ist, fertige Antwortentwürfe für das Dringendste und eine Liste mit allem, was warten kann.",
+   "schritte": [
+    {
+     "titel": "Mails sammeln.",
+     "text": "5–15 Mails mit Absender, Datum, Betreff und Text kopieren. Vertrauliches (Passwörter, Kontonummern, Gesundheitsdaten) vorher schwärzen oder weglassen."
+    },
+    {
+     "titel": "Sortieren lassen.",
+     "text": "Prompt 1 mit Datum und deinen aktuellen Prioritäten schicken. Du bekommst eine Tabelle mit Frist und Ampel-Priorität, drei Antwortentwürfe und die Liste „kann warten“."
+    },
+    {
+     "titel": "Lücken füllen und antworten.",
+     "text": "Wo im Entwurf ___ steht, fehlt Claude eine Info. Mit Prompt 2 lieferst du sie nach und bekommst eine fertige Antwort plus Kurzfassung."
+    },
+    {
+     "titel": "Den Rest einplanen.",
+     "text": "Prompt 3 verteilt die „Kann warten“-Mails auf die Woche und zeigt, was du archivieren oder abbestellen kannst."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Mail-Sortierer: Tabelle + 3 Entwürfe",
+     "text": "Ich füge dir unten ___ E-Mails aus meinem Posteingang ein (5–15 Stück, jeweils mit Absender, Datum, Betreff und Text). Hilf mir, sie in der richtigen Reihenfolge abzuarbeiten.\n\nHeute ist der ___ (Datum). Besonders wichtig sind mir gerade: ___ (z. B. ein Projekt, bestimmte Kunden, Familie).\n\nSo gehst du vor:\n1. Erstelle eine Tabelle mit den Spalten: Nr. | Absender | Worum geht's (max. 8 Wörter) | Was wird von mir erwartet? | Frist | Priorität (🔴 heute / 🟡 diese Woche / 🟢 kann warten).\n2. Frist: Übernimm nur Fristen, die wirklich in der Mail stehen, und zitiere die Stelle kurz. Steht keine drin, schreib „❓ keine Frist genannt“ – nichts schätzen oder erfinden.\n3. Sortiere die Tabelle nach Priorität, bei gleicher Priorität nach Frist.\n4. Schreib für die 3 dringendsten Mails je einen kurzen Antwortentwurf (max. 5 Sätze, im Ton der ursprünglichen Mail). Wo dir Infos fehlen, setz ___ als Lücke ein, statt etwas zu erfinden.\n5. Liste darunter unter „Kann warten“ alle Mails, die keine Antwort von mir brauchen oder Zeit haben – mit je einem Satz, warum.\n6. Stell mir am Ende höchstens 3 Rückfragen, falls dir für die Priorisierung etwas fehlt.\n\nHier sind die Mails:\n<mails>\n___\n</mails>",
+     "wann": "Wenn der Posteingang voll ist und du nicht weißt, wo du anfangen sollst."
+    },
+    {
+     "titel": "Antwort fertig machen",
+     "text": "Nimm den Antwortentwurf für Mail Nr. ___ aus deiner Tabelle.\n\nMeine Infos für die Lücken: ___\nTon: ___ (locker / freundlich-förmlich / knapp)\n\nSchreib die Antwort fertig (max. 120 Wörter) und gib mir zusätzlich eine Kurzfassung mit höchstens 3 Sätzen. Übernimm nur Fakten, die in der Mail oder in meinen Infos stehen – wenn noch etwas fehlt, lass ___ stehen und sag mir, was du noch brauchst.",
+     "wann": "Nach Prompt 1, für jede der dringenden Mails."
+    },
+    {
+     "titel": "„Kann warten“ einplanen",
+     "text": "Hier ist meine „Kann warten“-Liste von vorhin: ___\n\nIch habe diese Woche ca. ___ Minuten pro Tag für Mails.\n1. Verteile die Mails auf die nächsten Tage als Tabelle: Tag | Mail | was zu tun ist | geschätzte Minuten (deine Schätzung, als solche markiert).\n2. Markiere, welche Mails ich wahrscheinlich ohne Antwort archivieren kann, und warum.\n3. Nenn mir Absender (z. B. Newsletter), bei denen sich Abmelden oder ein Filter lohnen könnte.",
+     "wann": "Wenn das Dringende erledigt ist."
+    }
+   ],
+   "beispiel": "Montagmorgen, 12 Mails: Kollegin Sara braucht die Folien bis morgen (🔴), der Steuerberater fragt nach fehlenden Unterlagen mit Frist 15.11. (🔴), der Chef schreibt „Kurz Zeit heute?“ (🟡), der Vermieter will einen Termin für die Heizung, nennt aber kein Datum (❓ keine Frist genannt). Newsletter und Versandbestätigungen landen unter „kann warten“. Claude schreibt Entwürfe für Sara, den Steuerberater und den Chef – bei Sara mit Lücke „bis ___ Uhr“.",
+   "check": [
+    "Stehen die Fristen wirklich so in den Mails (Zitat prüfen)?",
+    "Sind alle ___-Lücken ausgefüllt, bevor du sendest?",
+    "Nichts Vertrauliches eingefügt, das dort nicht hingehört?",
+    "Jede Antwort vor dem Senden selbst gelesen?"
+   ]
+  },
+  "costUsd": 0.24,
+  "music": "assets/music/lofi-105.mp3",
+  "sha256": "b1b31281d45647b4e37cc1e89d24484f4339b997b7f354d9dbf39b5fd38c6ddb",
+  "durationSec": 25.0,
+  "fileLinkedin": "reels/R011/reel_linkedin.mp4"
  }
 ]
