@@ -461,5 +461,82 @@
       },
       "scheduledAt": "2026-11-10T20:30:00+01:00"
     }
+  },
+  {
+    "id": "E005",
+    "type": "reel",
+    "createdAt": "2026-11-11",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 5",
+    "fromDe": "R011",
+    "topic": "Inbox triage: let Claude sort your inbox",
+    "angle": "One prompt: paste 5–15 emails → table sender/about/deadline/priority → reply drafts for the top 3 → 'can wait' list; deadlines only if they're in the email (nothing made up)",
+    "hook": "Stop answering your emails from top to bottom.",
+    "themaQuelle": "DE R011 (= themen/en.md T01)",
+    "source": "No product claims (prompt technique only: text in tags, table as output format, gaps instead of inventing, clarifying questions); pasting text into Claude: https://support.claude.com/en/articles/8241126-uploading-files-to-claude; prompting basics: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E005/reel.mp4",
+    "tiktokTitle": "This prompt sorts your inbox for you",
+    "caption": "Stop answering your emails from top to bottom. 📥\n\nThe urgent one is usually buried somewhere in the middle – between a newsletter and a shipping update.\n\nPaste your emails into Claude and get three things back:\n👉 a table: sender, what it's about, deadline, priority\n👉 reply drafts for the three most urgent ones\n👉 a \"can wait\" list\n\nThe trick: if there's no deadline in the email, Claude writes \"no deadline given\" instead of guessing.\n\nSave this for your next Monday morning. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #Productivity #EmailTips #AITools",
+    "captionX": "Stop answering emails top to bottom. This Claude prompt turns 10 emails into a priority table, drafts replies for the 3 most urgent and makes a 'can wait' list – no invented deadlines. Comment PROMPT for the guide 📥",
+    "captionLinkedIn": "If you work through your inbox from top to bottom, you answer the newest emails first – not the most important ones.\n\nA simple workflow with Claude that helps:\n1. Paste 5–15 emails. Claude builds a table: sender, what it's about, what's expected of you, deadline, priority.\n2. For the three most urgent emails you get reply drafts right away – missing information stays marked as a gap instead of being made up.\n3. Everything else goes on a \"can wait\" list, each with a one-line reason.\n\nThe key rule in the prompt: deadlines are only used if they're actually written in the email. If there's none, it says \"no deadline given\".\n\nHow do you sort your inbox – by arrival or by priority?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Inbox sorter (guide with 3 prompts)",
+      "text": "I'm pasting ___ emails from my inbox below (5–15, each with sender, date, subject and text). Help me work through them in the right order.\n\nToday is ___ (date). What matters most to me right now: ___ (e.g. a project, specific clients, family).\n\nHere's how to do it:\n1. Make a table with these columns: No. | Sender | What it's about (max. 8 words) | What do they expect from me? | Deadline | Priority (🔴 today / 🟡 this week / 🟢 can wait).\n2. Deadline: only use deadlines that are actually written in the email, and quote the line briefly. If there's none, write \"❓ no deadline given\" – don't estimate or make anything up.\n3. Sort the table by priority, and by deadline within the same priority.\n4. For the 3 most urgent emails, write a short reply draft each (max. 5 sentences, matching the tone of the original email). Where you're missing information, put ___ as a gap instead of inventing something.\n5. Below that, under \"Can wait\", list every email that doesn't need a reply from me or has time – with one sentence on why.\n6. At the end, ask me up to 3 questions if anything is missing for the prioritisation.\n\nHere are the emails:\n<emails>\n___\n</emails>",
+      "hinweis": "Paste 5–15 emails at the bottom, add today's date and your priorities – Claude gives you a table, 3 reply drafts and a \"can wait\" list."
+    },
+    "guide": {
+      "titel": "Guide: Sort your inbox in 10 minutes",
+      "ziel": "Turn a full inbox into a clear order: what's due today, ready-made reply drafts for the most urgent emails and a list of everything that can wait.",
+      "schritte": [
+        {
+          "titel": "Collect your emails.",
+          "text": "Copy 5–15 emails with sender, date, subject and text. Black out or leave out anything confidential first (passwords, account numbers, health data)."
+        },
+        {
+          "titel": "Let Claude sort them.",
+          "text": "Send Prompt 1 with today's date and your current priorities. You get a table with deadlines and traffic-light priority, three reply drafts and a \"can wait\" list."
+        },
+        {
+          "titel": "Fill the gaps and reply.",
+          "text": "Wherever a draft says ___, Claude is missing information. Give it with Prompt 2 and get a finished reply plus a short version."
+        },
+        {
+          "titel": "Schedule the rest.",
+          "text": "Prompt 3 spreads the \"can wait\" emails over your week and shows what you can archive or unsubscribe from."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Inbox sorter: table + 3 drafts",
+          "text": "I'm pasting ___ emails from my inbox below (5–15, each with sender, date, subject and text). Help me work through them in the right order.\n\nToday is ___ (date). What matters most to me right now: ___ (e.g. a project, specific clients, family).\n\nHere's how to do it:\n1. Make a table with these columns: No. | Sender | What it's about (max. 8 words) | What do they expect from me? | Deadline | Priority (🔴 today / 🟡 this week / 🟢 can wait).\n2. Deadline: only use deadlines that are actually written in the email, and quote the line briefly. If there's none, write \"❓ no deadline given\" – don't estimate or make anything up.\n3. Sort the table by priority, and by deadline within the same priority.\n4. For the 3 most urgent emails, write a short reply draft each (max. 5 sentences, matching the tone of the original email). Where you're missing information, put ___ as a gap instead of inventing something.\n5. Below that, under \"Can wait\", list every email that doesn't need a reply from me or has time – with one sentence on why.\n6. At the end, ask me up to 3 questions if anything is missing for the prioritisation.\n\nHere are the emails:\n<emails>\n___\n</emails>",
+          "wann": "When your inbox is full and you don't know where to start."
+        },
+        {
+          "titel": "Finish a reply",
+          "text": "Take the reply draft for email no. ___ from your table.\n\nMy info for the gaps: ___\nTone: ___ (casual / friendly-professional / brief)\n\nFinish the reply (max. 120 words) and also give me a short version of 3 sentences max. Only use facts from the email or from my info – if something is still missing, leave ___ in place and tell me what you still need.",
+          "wann": "After Prompt 1, for each of the urgent emails."
+        },
+        {
+          "titel": "Schedule the \"can wait\" list",
+          "text": "Here's my \"Can wait\" list from before: ___\n\nThis week I have about ___ minutes a day for email.\n1. Spread these emails over the next few days as a table: Day | Email | What to do | Estimated minutes (your estimate, marked as such).\n2. Mark which emails I can probably archive without replying, and why.\n3. Name senders (e.g. newsletters) where unsubscribing or a filter might be worth it.",
+          "wann": "Once the urgent stuff is done."
+        }
+      ],
+      "beispiel": "Monday morning, 12 emails: Sara from your team needs the slides by tomorrow (🔴), a client asks about an invoice and wants an answer by Friday (🔴), your boss writes \"Got a minute today?\" (🟡), your landlord wants to book a heating check but gives no date (❓ no deadline given). Newsletters and shipping updates go on the \"can wait\" list. Claude drafts replies for Sara, the client and your boss – Sara's with the gap \"by ___ pm\".",
+      "check": [
+        "Are the deadlines really written that way in the emails (check the quote)?",
+        "Have you filled every ___ gap before sending?",
+        "Nothing confidential pasted that doesn't belong there?",
+        "Read every reply yourself before you hit send?"
+      ]
+    },
+    "costUsd": 0.25,
+    "music": "assets/music/lofi-105.mp3",
+    "sha256": "acfdbac0a35b42e19b9e82fa4246c1a5b68dd2dd53798675c3d2b44a40f0d4df",
+    "durationSec": 25.3,
+    "plannedFor": "2026-11-11T20:30:00+01:00"
   }
 ]
