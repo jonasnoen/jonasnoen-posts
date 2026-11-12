@@ -565,7 +565,7 @@
     "id": "EK001",
     "type": "carousel",
     "createdAt": "2026-11-12",
-    "status": "sending",
+    "status": "scheduled",
     "series": "Claude Prompts Part 1",
     "slides": 8,
     "design": "v2-reel-look",
@@ -665,6 +665,35 @@
     },
     "tiktokTitle": "Never ask: what's for dinner?",
     "caption": "Never ask “What's for dinner?” again – this flow plans your whole week. 🍽️\n\n“Make me a meal plan” gets you salmon on a Tuesday and ingredients nobody in your house eats. Claude simply doesn't know your life.\n\nSo give it the facts first: people, time per night, budget, hard no's. Then Claude builds 7 nights as a table where ingredients carry over from one night to the next, a grocery list sorted by aisle, and recipes for whatever's left.\n\nReality check: prices are only rough guesses, and allergies you always check yourself.\n\nSave this for Sunday. What's on your plate tonight?\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #MealPlanning #MealPrep #AITools",
-    "captionLinkedIn": "“Make me a meal plan” is one of the most common things people ask an AI – and the answer is usually useless: dishes that take too long, cost too much or that nobody at home eats.\n\nThe fix is a better order of steps:\n1. Let Claude ask you first: how many people, time per night, budget, hard no's, what's already in the fridge.\n2. Then ask for 7 nights as a table, with ingredients deliberately reused from one night to the next.\n3. Turn that into a grocery list sorted by store section, with quantities added up.\n4. Finish with a prep plan and a leftover rescue prompt.\n\nTwo honest limits: price estimates are rough, and allergies always need a human check.\n\nHow do you decide what's for dinner during a busy week?\n\nFull guide with all prompts → link in the first comment 👇"
+    "captionLinkedIn": "“Make me a meal plan” is one of the most common things people ask an AI – and the answer is usually useless: dishes that take too long, cost too much or that nobody at home eats.\n\nThe fix is a better order of steps:\n1. Let Claude ask you first: how many people, time per night, budget, hard no's, what's already in the fridge.\n2. Then ask for 7 nights as a table, with ingredients deliberately reused from one night to the next.\n3. Turn that into a grocery list sorted by store section, with quantities added up.\n4. Finish with a prep plan and a leftover rescue prompt.\n\nTwo honest limits: price estimates are rough, and allergies always need a human check.\n\nHow do you decide what's for dinner during a busy week?\n\nFull guide with all prompts → link in the first comment 👇",
+    "captionX": "Never ask \"What's for dinner?\" again. 4 Claude prompts: a 7-night plan that reuses ingredients, a grocery list by aisle, prep + leftovers. Comment PROMPT for the guide 🍽️",
+    "mediaCommit": "a33953741f29e9249b8db0642c04765978f0c779",
+    "plannedFor": "2026-11-12T20:30:00+01:00",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 426048810,
+        "uuid": "658519127348167361",
+        "scheduledAt": "2026-11-12T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 426049217,
+        "uuid": "6751427821946294143",
+        "scheduledAt": "2026-11-12T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 426049274,
+        "uuid": "6970489701429495850",
+        "scheduledAt": "2026-11-12T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 426049308,
+        "uuid": "-2756147464377711128",
+        "scheduledAt": "2026-11-12T20:30:00+01:00"
+      }
+    }
   }
 ]
