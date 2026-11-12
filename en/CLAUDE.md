@@ -24,8 +24,10 @@ Sounds, Lipsync, Guide-Aufbau, „Hype ja, Lügen nein“, Prompt-Pflicht). **Hi
 - Formate wie DE (Creme ↔ Memoji im Wechsel nach dem letzten E-Reel; sonntags Stil-Experiment). In der kopierten
   `scene.html` **`const LANG='en';`** setzen (Outro „FOLLOW FOR MORE / CLAUDE PROMPTS / @jonasnoen.ai“, Pille „Comment PROMPT
   → get the guide“), Labels englisch (`// STEP 1 · …`, Zähler `counter:'STEP'`). Vorbild: `en/reels/E001/source/scene.html`.
-- Stimme: Jonas' Klon `74F3tCXf85gKkgYnJulQ`, `eleven_v4`, Text englisch, `atempo=1.15` (Ziel 25–30 s).
+- Stimme: Jonas' Klon `74F3tCXf85gKkgYnJulQ`, `eleven_v4`, Text englisch, `atempo=1.15` (Ziel **15–20 s**, ca. 45–55 Wörter).
 - Creme-Gesichtsspur: `REEL=E### FACE_OFF=<Nummer × 27 + 13>` (z. B. E002 → 67), sonst wie DE (Sperrliste gilt).
+- **Die ersten 3 Sekunden** gelten genauso wie im Deutschen (Haupt-`CLAUDE.md`): Hook-Intro mit großem Sprecher, Hook ≤ 10 Wörter,
+  ab Phrase 1 sofort das fertige Ergebnis. `scene.html` frisch aus `engine/` kopieren (nicht aus E001), dann `LANG='en'` setzen.
 - Skript-Ende (gesprochen): **„Comment PROMPT and I'll send you the full guide. Follow for more Claude prompts.“**
 
 ## Posten

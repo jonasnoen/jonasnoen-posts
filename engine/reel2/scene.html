@@ -156,8 +156,8 @@ function headline(t,k){const hook=k===0;if(hook){const s=1+.22*(1-ease(t/.28));g
   const maxW=940;let x=70,y=262,ai=0;
   // Akzentwörter: kursive Serifenschrift, farbig (dunkel: Gelb/Lavendel, hell: Rot/Violett)
   // Lange Phrasen (mehr als 2 Zeilen) automatisch kleiner, damit nichts in die Grafik darunter ragt
-  let sc=1;const lines=f=>{let n=1,xx=0;ws.forEach(w=>{const a=p.acc.includes(clean(w.text));g.font=a?`italic 400 ${84*f}px 'Instrument Serif'`:`800 ${68*f}px Manrope`;const tw=g.measureText(w.text+' ').width;if(xx+tw>maxW+g.measureText(' ').width){n++;xx=0;}xx+=tw;});return n;};
-  while(sc>.7&&lines(sc)>2)sc-=.05;const lh=86*sc;
+  let sc=BIGAV?1.35:1;const lines=f=>{let n=1,xx=0;ws.forEach(w=>{const a=p.acc.includes(clean(w.text));g.font=a?`italic 400 ${84*f}px 'Instrument Serif'`:`800 ${68*f}px Manrope`;const tw=g.measureText(w.text+' ').width;if(xx+tw>maxW+g.measureText(' ').width){n++;xx=0;}xx+=tw;});return n;};
+  while(sc>.7&&lines(sc)>(BIGAV?3:2))sc-=.05;const lh=86*sc;
   const setF=acc=>g.font=acc?`italic 400 ${84*sc}px 'Instrument Serif'`:`800 ${68*sc}px Manrope`;
   ws.forEach(w=>{const txt=w.text;const isAcc=p.acc.includes(clean(txt));setF(isAcc);const tw=g.measureText(txt).width;setF(false);const sp=g.measureText(' ').width;
     if(x+tw>70+maxW){x=70;y+=lh;}
@@ -241,8 +241,9 @@ let LOOPIMG=null;window.setLoop=d=>new Promise(r=>{const i=new Image();i.onload=
 window.loopNeeded=t=>{if(window.SYNC)return 'sync';const p=AVP[phraseAt(t)];return p.startsWith('loop:')?p.slice(5):null;};
 // Für render.cjs "track": welche Loops in welcher Zeit (Standbild-Posen -> neutral)
 window.avatarPlan=()=>PH.map((p,k)=>({t:k===0?0:WORDS[p.a].start-.12,loop:AVP[k].startsWith('loop:')?AVP[k].slice(5):'neutral'}));
-function drawAv(im,imT,open,alpha){let h=700,w=im.width*h/im.height;if(w>900){w=900;h=im.height*w/im.width;}
-  const x=1100-w,y=1925-h;g.save();g.globalAlpha=alpha;g.imageSmoothingQuality='high';g.shadowColor='rgba(0,0,0,.4)';g.shadowBlur=40;g.drawImage(im,x,y,w,h);
+let BIGAV=false; // Hook-Intro: Memoji groß und mittig
+function drawAv(im,imT,open,alpha){let h=BIGAV?1250:700,w=im.width*h/im.height;const mw=BIGAV?1800:900;if(w>mw){w=mw;h=im.height*w/im.width;}
+  const x=BIGAV?540-w/2:1100-w,y=1925-h;g.save();g.globalAlpha=alpha;g.imageSmoothingQuality='high';g.shadowColor='rgba(0,0,0,.4)';g.shadowBlur=40;g.drawImage(im,x,y,w,h);
   g.shadowColor='transparent';if(imT&&open>0.01){g.globalAlpha=alpha*open;g.drawImage(imT,x,y,w,h);}g.restore();}
 function avatar(t,k){const bob=Math.sin(t*1.6)*4;g.save();g.translate(0,bob);
   if(window.SYNC){if(LOOPIMG)drawAv(LOOPIMG,null,0,ease(t/.2));g.restore();return;}
@@ -257,7 +258,12 @@ function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(
   add(WORDS[PH[PH.length-1].a].start+.1,'outro',.6);
   (window.EXTRA_CUES?window.EXTRA_CUES():[]).forEach(c=>add(c.t,c.name,c.vol));
   q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
+// ================= Hook-Intro (seit 12.11.2026): solange der Hook läuft, Memoji groß in der Mitte, Hook-Satz darüber =================
+// Grund: 63–77 % wischten in den ersten 3 s weg. Text liegt im 3:4-Ausschnitt des Profil-Rasters (y 240–1680).
+// Ab Phrase 1 harter Schnitt in die Grafiken, Memoji wieder unten rechts. Abschalten: window.NO_HOOK_FACE=true.
+function hookOn(){return !window.NO_HOOK_FACE&&PH.length>2;}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=!!PH[k].light;bgStudio(t);const p=PH[k];const t0=WORDS[p.a].start-.12;
+  if(k===0&&hookOn()){BIGAV=true;avatar(t,k);g.save();g.translate(0,130);headline(t,k);g.restore();BIGAV=false;return;}
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);scaleAt(470,800,push,()=>PROPS[k](t));
   // big bust bottom right, gentle sway
   avatar(t,k);

@@ -247,7 +247,7 @@ function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(
 // Bubble wie im Referenz-Screenshot: groß, Kopf mittig mit Luft darüber, Schultern sichtbar, Mikro unten angeschnitten.
 // Das HeyGen-Video hat kaum Platz über dem Kopf -> Video nach unten versetzt, oben mit weichgezeichnetem Hintergrund aufgefüllt.
 const BOFF=document.createElement('canvas');const SMP=document.createElement('canvas');SMP.width=4;SMP.height=4;
-function bubble(t){const r=180,cx=1080-r-60,cy=1550;const a=back(t,0,.45);if(a<=0)return;const im=LOOPIMG;g.save();g.translate(cx,cy);g.scale(a,a);g.translate(-cx,-cy);
+function bubble(t){const r=180,cx=1080-r-60,cy=1550;const a=back(t,hookOn()?WORDS[PH[1].a].start-.12:0,.45);if(a<=0)return;const im=LOOPIMG;g.save();g.translate(cx,cy);g.scale(a,a);g.translate(-cx,-cy);
   g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=50;g.shadowOffsetY=16;g.beginPath();g.arc(cx,cy,r+8,0,7);g.fillStyle=L('#2a2338','#ffffff');g.fill();g.shadowColor='transparent';
   g.beginPath();g.arc(cx,cy,r,0,7);g.clip();
   if(im){const D=2*r;// Hintergrund: Bild stark vergrößert + weichgezeichnet
@@ -274,7 +274,19 @@ function promptCta(t,t1){if(window.NO_PROMPT_CTA)return;const ki=WORDS.findIndex
     font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText(UI.comment,150,1356);const w1=g.measureText(UI.comment+' ').width;
     font(400,64,'Anton');g.fillStyle=C.red;g.fillText('PROMPT',150+w1,1360);const w2=g.measureText('PROMPT ').width;
     font(800,30);g.fillStyle='#8a7fa6';g.fillText(UI.dm,150+w1+w2,1353);g.textAlign='left';});}
+// ================= Hook-Intro (seit 12.11.2026): Jonas groß im Bild, solange der Hook läuft =================
+// Grund: 63–77 % wischten in den ersten 3 s weg. Phrase 0 = großes Gesicht + Hook-Satz (im 3:4-Ausschnitt des Profil-Rasters,
+// y 240–1680), ab Phrase 1 harter Schnitt in die Grafiken, die Bubble ploppt rein. Abschalten: window.NO_HOOK_FACE=true.
+function hookOn(){return window.FACE&&!window.NO_HOOK_FACE&&PH.length>2;}
+function hookIntro(t){const p=PH[0];const s=1+.18*(1-ease(t/.28));
+  font(800,38);g.fillStyle='#6b55d9';g.textAlign='left';g.fillText(p.label.replace(/^\/\/\s*/,'').toUpperCase(),70,320);
+  const ws=WORDS.slice(p.a,p.b+1);const lines=[];let x=70,y=420;g.save();g.translate(540,500);g.scale(s,s);g.translate(-540,-500);
+  ws.forEach(w=>{const acc=p.acc.includes(clean(w.text));g.font=acc?"italic 400 104px 'Instrument Serif'":'800 80px Manrope';const tw=g.measureText(w.text).width;if(x+tw>1010){x=70;y+=96;}g.fillStyle=acc?C.red:C.ink;g.fillText(w.text,x,y);x+=tw+g.measureText(' ').width;});
+  g.restore();const top=Math.min(y+50,820),bot=1690,fx=60,fw=960;
+  g.save();g.shadowColor='rgba(60,40,20,.28)';g.shadowBlur=40;g.shadowOffsetY=14;rr(fx-8,top-8,fw+16,bot-top+16,56);g.fillStyle='#fff';g.fill();g.restore();
+  g.save();rr(fx,top,fw,bot-top,48);g.clip();face(fx,top,fw,bot-top,1.0);g.restore();}
 function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t);const t0=WORDS[PH[k].a].start-.12;
+  if(k===0&&hookOn()){hookIntro(t);return;}
   const push=1+.025*Math.min(Math.max((t-t0)/2.5,0),1);if(window.BIG_OUTRO||k<PH.length-1){g.save();g.translate(30,125);scaleAt(470,805,1.1*push,()=>PROPS[k](t));g.restore();}
   // Optional (window.BIG_OUTRO): beim Outro wächst die Bubble zur Großaufnahme im Vollbild
   if(window.BIG_OUTRO&&k===PH.length-1){const e=ease((t-t0)/.4),r=180+(1200-180)*e,cx=840+(540-840)*e,cy=1550+(960-1550)*e;

@@ -60,6 +60,21 @@ Stimme → `face.mp4`. Rendern mit `FPS=30`. Neues Rohmaterial von Jonas: stumm,
 
 Memoji (reel2) bleibt wie unten beschrieben (25 fps). Nach dem Test: Gewinner wird Standard.
 
+## Die ersten 3 Sekunden (seit 12.11.2026, vom Nutzer gewünscht – gilt für DE und EN)
+
+Auswertung bis 11.11.: Jedes Reel blieb bei ca. 110 Aufrufen hängen, **63–77 % wischten in den ersten 3 s weg**,
+Ø Zuschauzeit 4–5 s von ~25 s. Nur das Märchen (R003) lief besser. Deshalb ab sofort:
+1. **Hook-Intro (fest in beiden Vorlagen):** Solange Phrase 0 (der Hook) läuft, ist das Bild nur Hook-Satz + Sprecher **groß**:
+   `creme` = echter Jonas als große Kachel unter dem Hook-Satz, `memoji` = Memoji groß in der Mitte. Ab Phrase 1 harter Schnitt
+   in die Grafiken, Bubble/Memoji wieder klein unten rechts. Phrase 0 bekommt deshalb keine Grafik (`p0` wird dort nicht gezeichnet).
+   **Immer frisch aus `engine/reel5|reel2/scene.html` kopieren** (nicht aus einem alten Reel-Ordner) und prüfen, dass `hookOn` drin ist.
+2. **Hook kurz:** höchstens ca. 10 Wörter, gesprochen in ≤ 2,5 s. Hook-Text liegt im 3:4-Ausschnitt des Profil-Rasters (y 240–1680) –
+   nichts Wichtiges darüber platzieren.
+3. **Ergebnis zuerst:** Phrase 1 (ab ca. Sekunde 2–3) zeigt sofort das **fertige Ergebnis** des Prompts (die fertige Tabelle, die rot
+   markierte Klausel, die fertige Nachricht) – erst danach Problem/Schritte. Keine leere Karte, keine reine Text-Folie.
+4. **Kürzer:** 15–20 Sekunden, ca. 45–55 Wörter inkl. CTA. Lieber ein Schritt weniger zeigen – der Rest steht im Guide.
+5. Vor dem Posten Kontrollbilder bei 0,1 s, 1,5 s und 3 s ansehen: großes Gesicht/Memoji + Hook gut lesbar? Ab ~2,5 s Ergebnis-Grafik?
+
 ## Stil-Experimente (sonntags, seit 03.11.2026, vom Nutzer gewünscht)
 
 Jeden **Sonntag** ersetzt ein Stil-Experiment das Tipp-Reel. Ziel: testen, ob ein ganz anderer Look/Erzählform besser
@@ -125,7 +140,7 @@ Tages, Regeln von unten gelten weiter: Prompt-Pflicht, Guide, keine Duplikate, �
    Keine Duplikate: Thema UND Blickwinkel mit allen Einträgen in `register.json` vergleichen.
    Keine erfundenen Zahlen, Tests, Zeitersparnisse oder Ergebnisse. Aktuelle Produktaussagen
    mit einer frischen offiziellen Quelle prüfen.
-3. **Skript.** 20–30 Sekunden, ca. 60–75 Wörter. Ende (beide Sätze, gesprochen, in der letzten Phrase `PH`):
+3. **Skript.** 15–20 Sekunden, ca. 45–55 Wörter (seit 12.11.2026, siehe „Die ersten 3 Sekunden“). Ende (beide Sätze, gesprochen, in der letzten Phrase `PH`):
    „Kommentiere PROMPT und ich schick dir den Guide. Folg mir für mehr Claude-Tipps.“ (seit 05.11.2026 „den Guide“ statt „die Vorlage“; Keyword bleibt
    immer **PROMPT** – so ist der Metricool-Flow eingestellt, keine anderen Keywords) – der Call-to-Action gehört
    **ins Video**, nicht nur in die Caption (vom Nutzer gewünscht, 03.11.2026). Die Vorlagen (reel2/reel5) blenden beim
