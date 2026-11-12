@@ -560,5 +560,111 @@
       },
       "scheduledAt": "2026-11-11T20:30:00+01:00"
     }
+  },
+  {
+    "id": "EK001",
+    "type": "carousel",
+    "createdAt": "2026-11-12",
+    "status": "sending",
+    "series": "Claude Prompts Part 1",
+    "slides": 8,
+    "design": "v2-reel-look",
+    "fromDe": "K003",
+    "topic": "Weekly meal plan + grocery list",
+    "angle": "4 prompts that build on each other: Claude asks for the facts first → 7-night table with reused ingredients → grocery list by store section → meal prep/leftovers; running example 2 adults + 1 kid, 30 min, no mushrooms; budget in any currency",
+    "hook": "Never ask “What's for dinner?” again.",
+    "themaQuelle": "DE K003",
+    "source": "No product claims (prompt technique only: clarifying questions first, table as output format); prompting basics: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "files": {
+      "instagram": [
+        "en/carousels/EK001/ig-01.png",
+        "en/carousels/EK001/ig-02.png",
+        "en/carousels/EK001/ig-03.png",
+        "en/carousels/EK001/ig-04.png",
+        "en/carousels/EK001/ig-05.png",
+        "en/carousels/EK001/ig-06.png",
+        "en/carousels/EK001/ig-07.png",
+        "en/carousels/EK001/ig-08.png"
+      ],
+      "tiktok": [
+        "en/carousels/EK001/tt-01.jpg",
+        "en/carousels/EK001/tt-02.jpg",
+        "en/carousels/EK001/tt-03.jpg",
+        "en/carousels/EK001/tt-04.jpg",
+        "en/carousels/EK001/tt-05.jpg",
+        "en/carousels/EK001/tt-06.jpg",
+        "en/carousels/EK001/tt-07.jpg",
+        "en/carousels/EK001/tt-08.jpg"
+      ],
+      "linkedin": [
+        "en/carousels/EK001/ig-01.png",
+        "en/carousels/EK001/ig-02.png",
+        "en/carousels/EK001/ig-03.png",
+        "en/carousels/EK001/ig-04.png",
+        "en/carousels/EK001/ig-05.png",
+        "en/carousels/EK001/ig-06.png",
+        "en/carousels/EK001/ig-07.png",
+        "en/carousels/EK001/li-08.png"
+      ]
+    },
+    "vorlage": {
+      "titel": "Weekly meal plan + grocery list (guide with 4 prompts)",
+      "text": "You're my weekly meal planner. First ask me these questions and wait for my answers before you plan anything:\n1. How many people are you cooking for (adults/kids)?\n2. How much time do you have to cook each night?\n3. Roughly what's your budget for the week (and in which currency)?\n4. What's a hard no (allergies, intolerances, foods nobody eats)?\n5. What's already in the fridge or pantry that needs to be used up?\n6. How many nights do you want to cook, and which nights are you eating out?\n\nThen create:\n- A table with 7 nights: day – dish – cooking time – main ingredients.\n- Plan it so ingredients get used more than once (e.g. Monday's vegetables go into Tuesday's wraps) and as little as possible is left over.\n- At most one more elaborate dish per week, everything else within my time limit.\n- Use what I already have at home first.\n\nMy answers: ___",
+      "hinweis": "Send the prompt, answer Claude's 6 questions – then you get the plan as a table."
+    },
+    "guide": {
+      "titel": "Guide: Plan your whole week of dinners with Claude",
+      "ziel": "In one flow, get a 7-night meal plan, a grocery list sorted by store section and a leftovers plan that fit your actual life.",
+      "schritte": [
+        {
+          "titel": "Collect your facts.",
+          "text": "People, time per night, budget, hard no's and what's still in the fridge – the save slide helps you fill them in."
+        },
+        {
+          "titel": "Get the plan.",
+          "text": "Send prompt 1 and answer Claude's questions. You get 7 nights as a table. Don't like a dish? \"Swap Wednesday for something with rice.\""
+        },
+        {
+          "titel": "Build the grocery list.",
+          "text": "Prompt 2: a list sorted by store section, quantities added up, staples listed separately to tick off."
+        },
+        {
+          "titel": "Prep and leftovers.",
+          "text": "Prompt 3 on your prep day, prompt 4 whenever something is left over."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Weekly meal plan",
+          "text": "You're my weekly meal planner. First ask me these questions and wait for my answers before you plan anything:\n1. How many people are you cooking for (adults/kids)?\n2. How much time do you have to cook each night?\n3. Roughly what's your budget for the week (and in which currency)?\n4. What's a hard no (allergies, intolerances, foods nobody eats)?\n5. What's already in the fridge or pantry that needs to be used up?\n6. How many nights do you want to cook, and which nights are you eating out?\n\nThen create:\n- A table with 7 nights: day – dish – cooking time – main ingredients.\n- Plan it so ingredients get used more than once (e.g. Monday's vegetables go into Tuesday's wraps) and as little as possible is left over.\n- At most one more elaborate dish per week, everything else within my time limit.\n- Use what I already have at home first.\n\nMy answers: ___",
+          "wann": "Once a week, e.g. on Sunday."
+        },
+        {
+          "titel": "Grocery list by aisle",
+          "text": "Turn the meal plan into a grocery list:\n1. Sorted by store section: produce, dairy & eggs, meat/fish, bakery, pantry & canned goods, frozen, household/other.\n2. Quantities for all dishes added up, in units you can actually buy (e.g. \"zucchini ×2\", \"rice 1 kg / 2 lb\").\n3. A separate \"You probably have this already\" list (oil, salt, spices) to tick off.\n4. Anything I said I already have at home stays off the list.\n5. At the end, a rough estimate of whether this fits my budget of ___, plus 2 money-saving tips if it doesn't. Mention that prices vary by store and region.",
+          "wann": "Right after the plan."
+        },
+        {
+          "titel": "Meal prep + leftovers plan",
+          "text": "Plan my meal prep and leftovers:\n1. What can I prepare on ___ (e.g. Sunday) in max. 60 minutes so the weeknights go faster? As a step-by-step list in a sensible order.\n2. Which ingredients will probably be left over at the end of the week? Suggest a way to use each one.\n3. Roughly how long does each prepped dish keep in the fridge, and what should I freeze instead? Add a note that I should double-check food safety myself if in doubt.",
+          "wann": "When you want to plan a prep day."
+        },
+        {
+          "titel": "Leftover rescue",
+          "text": "I've still got: ___ (paste your leftovers).\nI have ___ minutes. Suggest 3 dishes that use almost only these ingredients – each with an ingredient list, what I'd need to buy extra (max. 2 things) and short instructions in 5 steps. Keep my hard no's from above in mind.",
+          "wann": "During the week, whenever ingredients are left over."
+        }
+      ],
+      "beispiel": "Two adults and one kid, max. 30 minutes per night, no mushrooms, feta and zucchini already in the fridge. Claude plans roast veggies with feta on Monday, uses the leftover vegetables for wraps on Tuesday, lentil bolognese on Wednesday and egg fried rice on Thursday – and the grocery list only includes the feta and zucchini you're still missing.",
+      "check": [
+        "Check every hard no and allergy in the plan yourself – don't just trust Claude.",
+        "Prices are rough estimates only: compare with your own store.",
+        "At least two dishes share ingredients.",
+        "If in doubt, double-check how long prepped food keeps."
+      ]
+    },
+    "tiktokTitle": "Never ask: what's for dinner?",
+    "caption": "Never ask “What's for dinner?” again – this flow plans your whole week. 🍽️\n\n“Make me a meal plan” gets you salmon on a Tuesday and ingredients nobody in your house eats. Claude simply doesn't know your life.\n\nSo give it the facts first: people, time per night, budget, hard no's. Then Claude builds 7 nights as a table where ingredients carry over from one night to the next, a grocery list sorted by aisle, and recipes for whatever's left.\n\nReality check: prices are only rough guesses, and allergies you always check yourself.\n\nSave this for Sunday. What's on your plate tonight?\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #MealPlanning #MealPrep #AITools",
+    "captionLinkedIn": "“Make me a meal plan” is one of the most common things people ask an AI – and the answer is usually useless: dishes that take too long, cost too much or that nobody at home eats.\n\nThe fix is a better order of steps:\n1. Let Claude ask you first: how many people, time per night, budget, hard no's, what's already in the fridge.\n2. Then ask for 7 nights as a table, with ingredients deliberately reused from one night to the next.\n3. Turn that into a grocery list sorted by store section, with quantities added up.\n4. Finish with a prep plan and a leftover rescue prompt.\n\nTwo honest limits: price estimates are rough, and allergies always need a human check.\n\nHow do you decide what's for dinner during a busy week?\n\nFull guide with all prompts → link in the first comment 👇"
   }
 ]
