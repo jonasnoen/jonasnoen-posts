@@ -1008,7 +1008,7 @@
     "id": "K003",
     "type": "carousel",
     "createdAt": "2026-11-12",
-    "status": "sending",
+    "status": "scheduled",
     "series": "Claude-Prompts Teil 3",
     "slides": 8,
     "design": "v2-reel-look",
@@ -1096,6 +1096,28 @@
         "Mindestens zwei Gerichte teilen sich Zutaten.",
         "Haltbarkeit vorgekochter Gerichte im Zweifel selbst nachprüfen."
       ]
+    },
+    "mediaCommit": "cf2b4b68d6fc561437b03d1b1939591099437c83",
+    "plannedFor": "2026-11-12T18:30:00+01:00",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 425964032,
+        "uuid": "3756844794891816053",
+        "scheduledAt": "2026-11-12T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 425964073,
+        "uuid": "-1123906183219819290",
+        "scheduledAt": "2026-11-12T18:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 425964111,
+        "uuid": "-6816438919777663455",
+        "scheduledAt": "2026-11-12T18:30:00+01:00"
+      }
     }
   }
 ]
