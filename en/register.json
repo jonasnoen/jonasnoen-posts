@@ -695,5 +695,87 @@
         "scheduledAt": "2026-11-12T20:30:00+01:00"
       }
     }
+  },
+  {
+    "id": "E006",
+    "type": "reel",
+    "createdAt": "2026-11-13",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 175.0,
+    "series": "Claude Codes Part 6",
+    "fromDe": "R012",
+    "topic": "Honest criticism instead of a yes-man (critical reviewer for your own idea/plan)",
+    "angle": "One prompt: idea + goal → 5 weak spots ranked by risk, a fix for each, 3 'what must be true?' assumptions with tests → counter-check → pre-mortem",
+    "hook": "Claude agrees with you too often. This prompt stops that.",
+    "themaQuelle": "DE R012 (= themen/en.md T07)",
+    "source": "No product claims, prompt technique only (clear role, clarifying questions, output format, no invented numbers). Anthropic itself describes the tendency of language models to agree (sycophancy); prompting basics: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E006/reel.mp4",
+    "fileLinkedin": "en/reels/E006/reel_linkedin.mp4",
+    "tiktokTitle": "This prompt tells you the truth",
+    "caption": "Claude agrees with you too often. This prompt stops that. 🧨\n\nYou tell Claude about your idea – and you hear \"Sounds great!\". Nice. Also useless.\n\nThis prompt turns Claude into a critical reviewer:\n👉 the 5 biggest weak spots in your plan, ranked by risk\n👉 a concrete fix for each one\n👉 and at the end: what must be true for it to work – and how to test it\n\nYou only add your idea and your goal. No praise, no fluff.\n\nSave this before you start your next plan. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PromptEngineering #Entrepreneur #AITools",
+    "captionX": "Claude agrees with you too often. This prompt flips it: 5 weak spots in your plan ranked by risk, a fix for each + what must be true for it to work. Comment PROMPT for the guide 🧨",
+    "captionLinkedIn": "Ask an AI for feedback on your idea and you often get mostly agreement. It feels good, but it rarely helps you decide.\n\nIt works better when you explicitly give Claude the role of a critical reviewer – with a fixed output format:\n1. The 5 biggest weak spots of the plan, ranked by risk (high / medium / low).\n2. For each weak spot, a fix you can test within two weeks.\n3. Finally: \"What must be true for this to work?\" – three assumptions, each with a simple test.\n\nOne rule matters: no invented numbers. Where Claude can't know something, it should say so. After that, a counter-check (\"Where could you be wrong?\") and a pre-mortem on the plan are worth it.\n\nWhich idea would you put through this review?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Critical reviewer instead of yes-man (guide with 3 prompts)",
+      "text": "Be my critical reviewer, not my fan. I don't want validation – I want an honest analysis of the weak spots.\n\nMy idea / plan: ___ (2–5 sentences: what, for whom, how, with what budget/time)\nMy goal: ___ (how I'll know it worked – as concrete as possible)\nWhat I already know or have tested: ___ (or \"nothing yet\")\n\nHere's how to do it:\n1. If you're missing information that's essential for the review, first ask me up to 3 short questions and wait.\n2. List the 5 biggest weak spots, ranked by risk (HIGH / MEDIUM / LOW). For each: one sentence on what the problem is and one sentence on why it threatens the goal.\n3. For each weak spot, give a concrete fix I can implement or test within the next 2 weeks.\n4. At the end, answer: \"What must be true for this to work?\" – 3 assumptions that have to hold, each with a simple test to check it.\n5. Rules: no praise, no intro, no phrases like \"great idea, but …\". If you can't know something (e.g. market numbers), say so openly instead of making up numbers. If the plan doesn't hold up at its core, say so clearly.\n\nOutput as a table (No. | Weak spot | Risk | Fix), followed by the 3 assumptions as a list.",
+      "hinweis": "Fill in your idea, goal and what you've tested – Claude returns 5 weak spots ranked by risk, a fix for each and the 3 assumptions that must hold."
+    },
+    "guide": {
+      "titel": "Guide: Let Claude take your plan apart – before reality does",
+      "ziel": "Get honest, structured criticism of your own idea or plan – with fixes and tests instead of just agreement.",
+      "schritte": [
+        {
+          "titel": "Write down your idea and goal.",
+          "text": "2–5 sentences on the idea (what, for whom, how, effort) and one concrete goal. The sharper the goal, the sharper the criticism."
+        },
+        {
+          "titel": "Start the critical reviewer.",
+          "text": "Send prompt 1. If something's missing, Claude asks first, then delivers 5 weak spots ranked by risk, a fix for each and 3 assumptions with a test."
+        },
+        {
+          "titel": "Check the criticism.",
+          "text": "Prompt 2: Claude names where it might be wrong itself, collects the real arguments in favour and works the best fixes into your plan."
+        },
+        {
+          "titel": "Pre-mortem.",
+          "text": "Prompt 3: Claude imagines the plan has failed – and derives early warning signs and a launch checklist from that."
+        },
+        {
+          "titel": "Decide for yourself.",
+          "text": "Claude doesn't know your market better than you do. Take the tests from step 2 and check the most important assumption in the real world before you invest money or a lot of time."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Critical reviewer: 5 weak spots + fixes",
+          "text": "Be my critical reviewer, not my fan. I don't want validation – I want an honest analysis of the weak spots.\n\nMy idea / plan: ___ (2–5 sentences: what, for whom, how, with what budget/time)\nMy goal: ___ (how I'll know it worked – as concrete as possible)\nWhat I already know or have tested: ___ (or \"nothing yet\")\n\nHere's how to do it:\n1. If you're missing information that's essential for the review, first ask me up to 3 short questions and wait.\n2. List the 5 biggest weak spots, ranked by risk (HIGH / MEDIUM / LOW). For each: one sentence on what the problem is and one sentence on why it threatens the goal.\n3. For each weak spot, give a concrete fix I can implement or test within the next 2 weeks.\n4. At the end, answer: \"What must be true for this to work?\" – 3 assumptions that have to hold, each with a simple test to check it.\n5. Rules: no praise, no intro, no phrases like \"great idea, but …\". If you can't know something (e.g. market numbers), say so openly instead of making up numbers. If the plan doesn't hold up at its core, say so clearly.\n\nOutput as a table (No. | Weak spot | Risk | Fix), followed by the 3 assumptions as a list.",
+          "wann": "Before you launch an idea, send out an offer or invest money."
+        },
+        {
+          "titel": "Counter-check + reworked plan",
+          "text": "Thanks. Now the counter-check:\n1. Which of your 5 weak spots do you consider the least solid – where could you be wrong? Explain briefly.\n2. Play devil's advocate for the other side: what still speaks FOR my plan? 3 points max, real arguments only.\n3. Then rework my plan using the fixes for points ___ and ___ and give me the new version in 5 sentences.",
+          "wann": "Right after prompt 1, so the criticism itself gets checked."
+        },
+        {
+          "titel": "Pre-mortem + launch checklist",
+          "text": "Run a pre-mortem on my (reworked) plan: imagine it's ___ (e.g. 6 months) later and the plan has failed.\n1. Write the 3 most likely reasons it failed – specific, not generic.\n2. For each reason, name one early warning sign I'd notice in the first 4 weeks.\n3. Give me a checklist of 5 items max to tick off before I launch.\n4. Finally, tell me honestly in one sentence: in my position, would you launch, adjust or drop it – and why?",
+          "wann": "When the reworked plan is ready and you're about to launch."
+        }
+      ],
+      "beispiel": "Idea: an online yoga course for $29 a month, goal: a second income on the side. Claude names, for example, \"price never tested\" (HIGH) as the biggest risk, with the fix \"run 3 trial classes for 10 people first, then set the price\". Under \"What must be true?\" you'll find e.g. \"enough people pay after the trial month\" – test: offer a trial month and count who books afterwards.",
+      "check": [
+        "The criticism is specific to your plan, not generic.",
+        "Every weak spot has a fix you can actually test.",
+        "No invented market numbers – where Claude can't know something, it says so.",
+        "You've checked the most important assumption yourself before launching."
+      ]
+    },
+    "sha256": "23e6a0b2e7066b6df48e1a1eb4cb4f2116024fd00b4bc353aef5a72ce23e5210",
+    "durationSec": 16.0,
+    "music": "assets/music/groove-115.mp3",
+    "costUsd": 0.16
   }
 ]
