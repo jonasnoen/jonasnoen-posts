@@ -700,7 +700,7 @@
     "id": "E006",
     "type": "reel",
     "createdAt": "2026-11-13",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 175.0,
     "series": "Claude Codes Part 6",
@@ -776,6 +776,35 @@
     "sha256": "23e6a0b2e7066b6df48e1a1eb4cb4f2116024fd00b4bc353aef5a72ce23e5210",
     "durationSec": 16.0,
     "music": "assets/music/groove-115.mp3",
-    "costUsd": 0.16
+    "costUsd": 0.16,
+    "mediaCommit": "140ee5566de33e721ab8adb8226d9c5fcef4343b",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 427302904,
+        "uuid": "-1561026950656669894",
+        "scheduledAt": "2026-11-13T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 427302904,
+        "uuid": "-1561026950656669894",
+        "scheduledAt": "2026-11-13T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 427303059,
+        "uuid": "7858226477959299300",
+        "scheduledAt": "2026-11-13T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 427303085,
+        "uuid": "-2059286705191825828",
+        "scheduledAt": "2026-11-13T20:30:00+01:00",
+        "file": "en/reels/E006/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    }
   }
 ]
