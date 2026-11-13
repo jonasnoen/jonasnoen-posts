@@ -1124,7 +1124,7 @@
     "id": "R012",
     "type": "reel",
     "createdAt": "2026-11-13",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 81.6,
     "series": "Claude-Codes Teil 11",
@@ -1199,6 +1199,36 @@
     "sha256": "b47f604ed7ef7b8b58b7c80c1985c5e3c8a8191fec8f80998eb2ac8fb51daf92",
     "durationSec": 17.4,
     "costUsd": 0.18,
-    "plannedFor": "2026-11-13T18:30:00+01:00"
+    "plannedFor": "2026-11-13T18:30:00+01:00",
+    "mediaCommit": "4d2f899d72286c17be852ae713df7b0ae65d9ce6",
+    "metricool": {
+      "postId": 427225373,
+      "uuid": "5871915413249999898",
+      "publishAt": "2026-11-13T18:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 427225373,
+        "scheduledAt": "2026-11-13T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 427225373,
+        "scheduledAt": "2026-11-13T18:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 427225496,
+        "uuid": "1107280255800525255",
+        "scheduledAt": "2026-11-13T18:30:00+01:00",
+        "file": "reels/R012/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    }
   }
 ]
