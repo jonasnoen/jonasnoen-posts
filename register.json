@@ -1119,5 +1119,86 @@
         "scheduledAt": "2026-11-12T18:30:00+01:00"
       }
     }
+  },
+  {
+    "id": "R012",
+    "type": "reel",
+    "createdAt": "2026-11-13",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 81.6,
+    "series": "Claude-Codes Teil 11",
+    "topic": "Ehrliche Kritik statt Ja-Sager (kritischer Prüfer für eigene Idee/Plan)",
+    "angle": "Ein Prompt: Idee + Ziel rein → 5 Schwachstellen nach Risiko sortiert, je ein Gegenvorschlag, 3 Annahmen „Was müsste stimmen?“ mit Test → Gegencheck → Vorab-Nachruf",
+    "hook": "Claude gibt dir zu oft Recht. Dieser Prompt stoppt das.",
+    "themaQuelle": "themen/de.md T03",
+    "source": "Keine neuen Produktaussagen (nur Prompt-Technik: klare Rolle, Rückfragen, Ausgabeformat, keine erfundenen Zahlen). Dass Sprachmodelle zu Zustimmung neigen (Sycophancy), beschreibt Anthropic selbst; Prompting-Grundlagen: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R012/reel.mp4",
+    "fileLinkedin": "reels/R012/reel_linkedin.mp4",
+    "tiktokTitle": "Dieser Prompt sagt dir die Wahrheit",
+    "caption": "Claude gibt dir zu oft Recht. Dieser Prompt stoppt das. 🧨\n\nDu erzählst Claude von deiner Idee – und hörst „Klingt super!“. Bringt dir nur nichts.\n\nMit diesem Prompt wird Claude zum kritischen Prüfer:\n👉 die 5 größten Schwachstellen deines Plans, sortiert nach Risiko\n👉 zu jeder ein konkreter Gegenvorschlag\n👉 am Ende: Was müsste stimmen, damit es klappt – und wie du das testest\n\nDu gibst nur deine Idee und dein Ziel. Kein Lob, keine Floskeln.\n\nSpeicher dir das, bevor du deinen nächsten Plan startest. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #PromptTipps #Selbstständigkeit #JonasNoen",
+    "captionLinkedin": "Wer eine KI um Feedback zu einer Idee bittet, bekommt oft vor allem Zustimmung. Das fühlt sich gut an, hilft aber selten bei der Entscheidung.\n\nBesser funktioniert es, Claude ausdrücklich die Rolle des kritischen Prüfers zu geben – mit festem Ausgabeformat:\n1. Die 5 größten Schwachstellen des Plans, sortiert nach Risiko (hoch / mittel / niedrig).\n2. Zu jeder Schwachstelle ein Gegenvorschlag, der sich in zwei Wochen testen lässt.\n3. Zum Schluss: „Was müsste stimmen, damit es klappt?“ – drei Annahmen, jeweils mit einem einfachen Test.\n\nWichtig ist die Regel „keine erfundenen Zahlen“: Wo Claude etwas nicht wissen kann, soll es das offen sagen. Danach lohnt sich ein Gegencheck („Wo könntest du falsch liegen?“) und ein Vorab-Nachruf auf den Plan.\n\nWelche Idee würdet ihr so einmal durchprüfen lassen?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+    "vorlage": {
+      "titel": "Kritischer Prüfer statt Ja-Sager (Guide mit 3 Prompts)",
+      "text": "Sei mein kritischer Prüfer, nicht mein Fan. Ich will keine Bestätigung, sondern die ehrliche Schwachstellen-Analyse.\n\nMeine Idee / mein Plan: ___ (in 2–5 Sätzen: was, für wen, wie, mit welchem Budget/Zeitaufwand)\nMein Ziel: ___ (woran ich merke, dass es geklappt hat – möglichst konkret)\nWas ich schon weiß oder getestet habe: ___ (oder „noch nichts“)\n\nSo gehst du vor:\n1. Fehlt dir eine Info, die für die Bewertung entscheidend ist, stell mir zuerst höchstens 3 kurze Rückfragen und warte.\n2. Nenne die 5 größten Schwachstellen, sortiert nach Risiko (HOCH / MITTEL / NIEDRIG). Pro Schwachstelle: ein Satz, was das Problem ist, und ein Satz, warum es das Ziel gefährdet.\n3. Gib zu jeder Schwachstelle einen konkreten Gegenvorschlag, den ich in den nächsten 2 Wochen umsetzen oder testen kann.\n4. Beantworte am Ende: „Was müsste stimmen, damit es klappt?“ – 3 Annahmen, die wahr sein müssen, jeweils mit einem einfachen Test, wie ich sie überprüfe.\n5. Regeln: Kein Lob, keine Einleitung, keine Floskeln wie „gute Idee, aber …“. Wenn du etwas nicht wissen kannst (z. B. Marktzahlen), sag das offen, statt Zahlen zu erfinden. Wenn der Plan im Kern nicht trägt, sag es klar.\n\nAusgabe als Tabelle (Nr. | Schwachstelle | Risiko | Gegenvorschlag), danach die 3 Annahmen als Liste.",
+      "hinweis": "Idee, Ziel und bisherigen Stand eintragen – Claude liefert 5 Schwachstellen nach Risiko, Gegenvorschläge und die 3 Annahmen, die stimmen müssen."
+    },
+    "guide": {
+      "titel": "Guide: Lass Claude deinen Plan zerlegen – bevor es die Realität tut",
+      "ziel": "Ehrliche, strukturierte Kritik an einer eigenen Idee oder einem Plan bekommen – mit Gegenvorschlägen und Tests statt bloßer Zustimmung.",
+      "schritte": [
+        {
+          "titel": "Idee und Ziel aufschreiben.",
+          "text": "2–5 Sätze zur Idee (was, für wen, wie, Aufwand) und ein konkretes Ziel. Je genauer das Ziel, desto schärfer die Kritik."
+        },
+        {
+          "titel": "Den kritischen Prüfer starten.",
+          "text": "Prompt 1 schicken. Claude fragt bei Lücken zuerst nach und liefert dann 5 Schwachstellen nach Risiko, je einen Gegenvorschlag und 3 Annahmen mit Test."
+        },
+        {
+          "titel": "Die Kritik gegenprüfen.",
+          "text": "Prompt 2: Claude benennt, wo es selbst falsch liegen könnte, sammelt echte Pro-Argumente und baut die besten Gegenvorschläge in deinen Plan ein."
+        },
+        {
+          "titel": "Vorab-Nachruf.",
+          "text": "Prompt 3: Claude stellt sich vor, der Plan ist gescheitert – und leitet daraus Frühwarnzeichen und eine Start-Checkliste ab."
+        },
+        {
+          "titel": "Selbst entscheiden.",
+          "text": "Claude kennt deinen Markt nicht besser als du. Nimm die Tests aus Schritt 2 und prüf die wichtigste Annahme in der echten Welt, bevor du Geld oder viel Zeit investierst."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Kritischer Prüfer: 5 Schwachstellen + Gegenvorschläge",
+          "text": "Sei mein kritischer Prüfer, nicht mein Fan. Ich will keine Bestätigung, sondern die ehrliche Schwachstellen-Analyse.\n\nMeine Idee / mein Plan: ___ (in 2–5 Sätzen: was, für wen, wie, mit welchem Budget/Zeitaufwand)\nMein Ziel: ___ (woran ich merke, dass es geklappt hat – möglichst konkret)\nWas ich schon weiß oder getestet habe: ___ (oder „noch nichts“)\n\nSo gehst du vor:\n1. Fehlt dir eine Info, die für die Bewertung entscheidend ist, stell mir zuerst höchstens 3 kurze Rückfragen und warte.\n2. Nenne die 5 größten Schwachstellen, sortiert nach Risiko (HOCH / MITTEL / NIEDRIG). Pro Schwachstelle: ein Satz, was das Problem ist, und ein Satz, warum es das Ziel gefährdet.\n3. Gib zu jeder Schwachstelle einen konkreten Gegenvorschlag, den ich in den nächsten 2 Wochen umsetzen oder testen kann.\n4. Beantworte am Ende: „Was müsste stimmen, damit es klappt?“ – 3 Annahmen, die wahr sein müssen, jeweils mit einem einfachen Test, wie ich sie überprüfe.\n5. Regeln: Kein Lob, keine Einleitung, keine Floskeln wie „gute Idee, aber …“. Wenn du etwas nicht wissen kannst (z. B. Marktzahlen), sag das offen, statt Zahlen zu erfinden. Wenn der Plan im Kern nicht trägt, sag es klar.\n\nAusgabe als Tabelle (Nr. | Schwachstelle | Risiko | Gegenvorschlag), danach die 3 Annahmen als Liste.",
+          "wann": "Bevor du eine Idee startest, ein Angebot rausschickst oder Geld investierst."
+        },
+        {
+          "titel": "Gegencheck + überarbeiteter Plan",
+          "text": "Danke. Jetzt der Gegencheck:\n1. Welche deiner 5 Schwachstellen hältst du selbst für am wenigsten belastbar – wo könntest du falsch liegen? Begründe kurz.\n2. Spiel den Advokaten der Gegenseite: Was spricht trotz allem FÜR meinen Plan? Höchstens 3 Punkte, nur echte Argumente.\n3. Überarbeite dann meinen Plan mit den Gegenvorschlägen zu Punkt ___ und ___ und gib mir die neue Fassung in 5 Sätzen.",
+          "wann": "Direkt nach Prompt 1, damit die Kritik selbst geprüft wird."
+        },
+        {
+          "titel": "Vorab-Nachruf + Start-Checkliste",
+          "text": "Mach einen Vorab-Nachruf auf meinen (überarbeiteten) Plan: Stell dir vor, es ist ___ (z. B. 6 Monate) später und der Plan ist gescheitert.\n1. Schreib die 3 wahrscheinlichsten Gründe, warum er gescheitert ist – konkret, nicht allgemein.\n2. Nenne zu jedem Grund ein Frühwarnzeichen, das ich in den ersten 4 Wochen bemerken würde.\n3. Gib mir eine Checkliste mit höchstens 5 Punkten, die ich vor dem Start abhaken sollte.\n4. Sag mir zum Schluss in einem Satz ehrlich: Würdest du an meiner Stelle starten, anpassen oder lassen – und warum?",
+          "wann": "Wenn der überarbeitete Plan steht und du kurz vor dem Start bist."
+        }
+      ],
+      "beispiel": "Idee: Online-Yoga-Kurs für 29 € im Monat, Ziel: nebenbei ein zweites Standbein. Claude nennt z. B. als größtes Risiko „Preis nie getestet“ (HOCH) mit dem Gegenvorschlag „erst 3 Probestunden für 10 Leute anbieten, dann den Preis festlegen“. Bei „Was müsste stimmen?“ steht u. a. „Genug Leute zahlen nach dem Probemonat“ – Test: Probemonat anbieten und zählen, wer danach bucht.",
+      "check": [
+        "Die Kritik ist konkret (bezieht sich auf deinen Plan), nicht allgemein.",
+        "Jede Schwachstelle hat einen Gegenvorschlag, den du wirklich testen kannst.",
+        "Keine erfundenen Marktzahlen – wo Claude nichts wissen kann, sagt es das.",
+        "Du hast die wichtigste Annahme selbst überprüft, bevor du startest."
+      ]
+    },
+    "music": "assets/music/groove-115.mp3",
+    "sha256": "b47f604ed7ef7b8b58b7c80c1985c5e3c8a8191fec8f80998eb2ac8fb51daf92",
+    "durationSec": 17.4,
+    "costUsd": 0.18,
+    "plannedFor": "2026-11-13T18:30:00+01:00"
   }
 ]
