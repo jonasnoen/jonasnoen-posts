@@ -806,5 +806,91 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E007",
+    "type": "reel",
+    "createdAt": "2026-11-14",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 7",
+    "fromDe": "R013",
+    "topic": "Get your data back: access & deletion requests (GDPR Art. 15/17, UK GDPR, CCPA)",
+    "angle": "One prompt pack: company + your details → finished access request with the law and deadline → same flow as deletion request → reminder after the deadline → complaint prep; Claude only writes, it doesn't send or delete anything",
+    "hook": "Companies have to tell you what data they hold on you.",
+    "themaQuelle": "DE R013 (= themen/en.md T03)",
+    "source": "GDPR (Regulation (EU) 2016/679) Art. 12(3), 15, 17, 19, 21, 77: https://eur-lex.europa.eu/eli/reg/2016/679/oj; UK: ICO right of access guidance (one month): ICO right-of-access guidance, ico.org.uk; California: CCPA regulations §7021 (45 calendar days, extendable by 45): Cal. Code Regs. tit. 11 §7021, https://oag.ca.gov/privacy/ccpa – checked 14.11.2026. No product claims about Claude.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E007/reel.mp4",
+    "fileLinkedin": "en/reels/E007/reel_linkedin.mp4",
+    "tiktokTitle": "Make any company show you your data",
+    "caption": "Companies have to tell you what data they hold on you. 🔍\n\nIn the EU and UK that's Article 15 GDPR. In California it's the CCPA. The catch: nobody enjoys writing that letter.\n\nLet Claude write it:\n👉 company, name and email in → a finished request with the right law and the deadline (1 month under GDPR, 45 days under the CCPA)\n👉 want it deleted? Same prompt, Article 17\n👉 no reply after the deadline? Claude writes the reminder too\n\nClaude writes the letters – you send them yourself. Save this for the next company that floods your inbox.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #DataPrivacy #GDPR #AITools",
+    "captionX": "Companies have to tell you what data they hold on you (GDPR Art. 15 / CCPA). This Claude prompt writes the request with law + deadline, the deletion request and the reminder. Comment PROMPT for the guide 🔍",
+    "captionLinkedIn": "Under Article 15 GDPR (and the UK GDPR), anyone can ask a company which personal data it processes about them – and get a free copy. In California, the CCPA gives a similar right to know. The request itself, though, is tedious to write.\n\nClaude can prepare the whole process:\n1. Enter the company, your name and how they know you (e.g. your email) – Claude drafts the access request with the points from Art. 15(1) and the deadline (one month under GDPR, 45 days under the CCPA).\n2. With the same details, it drafts a deletion request under Art. 17, including a question about legal retention obligations.\n3. If no reply arrives in time, it writes a factual reminder with a new deadline.\n\nImportant: Claude drafts the letters, it doesn't send anything and it's no substitute for legal advice. Missing details stay as blanks instead of being made up.\n\nHave you ever requested your data from a company – and what came back?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Get your data back: access & deletion requests (guide with 4 prompts)",
+      "text": "You help me use my right of access to my personal data. Write me a finished, factual request I can send by email or letter.\n\nMy details:\n- Company: ___ (name + privacy contact from their privacy policy)\n- My name: ___\n- How the company knows me: ___ (e.g. email address, customer number, phone number)\n- Where I live: ___ (EU/EEA → GDPR · UK → UK GDPR · California → CCPA/CPRA)\n- Today's date: ___\n\nThe request should:\n1. Use the subject line \"Subject access request under Article 15 GDPR\" (UK: \"… UK GDPR\"; California: \"Request to know under the CCPA\").\n2. Ask them to confirm whether they process personal data about me and to send me a copy of that data.\n3. Ask for: the purposes, the categories of data, who they shared it with, how long they keep it, where they got it from, and whether automated decisions or profiling are used.\n4. State the deadline: GDPR/UK GDPR – without undue delay and at the latest within one month of receipt (Art. 12(3)); CCPA – within 45 calendar days.\n5. Be polite but firm, max. 200 words, no threats.\n6. Below the request: the approximate date the deadline ends, and a short list of what I should send to prove who I am (only as much as necessary).\n\nDon't invent any data about me, addresses or reference numbers – wherever something is missing, put ___.",
+      "hinweis": "Fill in the company, your name, how they know you and where you live – Claude writes the finished access request (GDPR, UK GDPR or CCPA) with the deadline; you send it yourself."
+    },
+    "guide": {
+      "titel": "Guide: Get your data back – access, deletion, reminder",
+      "ziel": "Use four prompts to get finished privacy letters from Claude: access request, deletion request, a reminder once the deadline has passed and, if needed, a complaint to the regulator – you send them yourself.",
+      "schritte": [
+        {
+          "titel": "Find the contact.",
+          "text": "The company's privacy policy names where privacy requests go (often a dedicated email address or a data protection officer)."
+        },
+        {
+          "titel": "Request access.",
+          "text": "Prompt 1 with the company, your name, how they know you (email, customer number) and where you live. Check the letter, send it, note the date you sent it."
+        },
+        {
+          "titel": "Get it deleted.",
+          "text": "Want out? Prompt 2 in the same chat. It also asks about retention duties – some data (e.g. invoices) a company may have to keep for a while, but it has to tell you why."
+        },
+        {
+          "titel": "Watch the deadline.",
+          "text": "GDPR/UK GDPR: at the latest one month (extendable by two more months with reasons). CCPA: 45 days (extendable by 45 more). No answer? Prompt 3 writes the reminder."
+        },
+        {
+          "titel": "If nothing happens.",
+          "text": "Prompt 4 prepares a complaint to the data protection authority (EU national authority, the ICO in the UK, the California Privacy Protection Agency). If there's a dispute: ask a consumer advice service or a lawyer."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Access request (GDPR Art. 15 / CCPA)",
+          "text": "You help me use my right of access to my personal data. Write me a finished, factual request I can send by email or letter.\n\nMy details:\n- Company: ___ (name + privacy contact from their privacy policy)\n- My name: ___\n- How the company knows me: ___ (e.g. email address, customer number, phone number)\n- Where I live: ___ (EU/EEA → GDPR · UK → UK GDPR · California → CCPA/CPRA)\n- Today's date: ___\n\nThe request should:\n1. Use the subject line \"Subject access request under Article 15 GDPR\" (UK: \"… UK GDPR\"; California: \"Request to know under the CCPA\").\n2. Ask them to confirm whether they process personal data about me and to send me a copy of that data.\n3. Ask for: the purposes, the categories of data, who they shared it with, how long they keep it, where they got it from, and whether automated decisions or profiling are used.\n4. State the deadline: GDPR/UK GDPR – without undue delay and at the latest within one month of receipt (Art. 12(3)); CCPA – within 45 calendar days.\n5. Be polite but firm, max. 200 words, no threats.\n6. Below the request: the approximate date the deadline ends, and a short list of what I should send to prove who I am (only as much as necessary).\n\nDon't invent any data about me, addresses or reference numbers – wherever something is missing, put ___.",
+          "wann": "When you want to know what a company has stored about you."
+        },
+        {
+          "titel": "Deletion request (GDPR Art. 17 / CCPA)",
+          "text": "Now, with the same details, write me a deletion request (max. 180 words, factual):\n- Subject: \"Request for erasure of my personal data (Article 17 GDPR)\" (UK: UK GDPR; California: \"Request to delete under the CCPA\").\n- Ask them to delete all personal data about me without undue delay and to confirm the deletion in writing.\n- If they have to keep some data because of a legal obligation: ask them to tell me which data, on what basis and until when.\n- Objection to marketing by email/post (GDPR Art. 21(2)) / opt-out of sale or sharing (CCPA): ___ (yes/no).\n- Ask them to inform anyone they shared my data with about the deletion (GDPR Art. 19).\n- Same deadline as in the first request.\nWherever details are missing: ___ instead of inventing anything.",
+          "wann": "In the same chat, when you want your data gone (works without an access request first, too)."
+        },
+        {
+          "titel": "Reminder after the deadline",
+          "text": "My request (___ access / deletion) of ___ to ___ has gone unanswered past the deadline. They ___ (did not / did on ___) tell me they were extending the deadline.\n\nWrite me a short, firm reminder (max. 120 words):\n1. Refer to my original request with its date.\n2. Point out that the legal deadline has passed (GDPR/UK GDPR: one month, Art. 12(3); CCPA: 45 days). If they told me about a valid extension (GDPR: up to two more months; CCPA: up to 45 more days, with reasons), don't write the reminder – tell me until when I should still wait.\n3. New deadline: 14 days from today (today is ___).\n4. A factual note that otherwise I can complain to the data protection authority (EU: my national authority, Art. 77 GDPR; UK: the ICO; California: the California Privacy Protection Agency).\n\nBelow that, tell me which authority is probably responsible and mark it as something I have to double-check myself.",
+          "wann": "When the deadline has passed without an answer."
+        },
+        {
+          "titel": "Prepare a complaint",
+          "text": "The company ___ did not reply (or only partly: ___) to my request of ___ and my reminder of ___.\nHelp me prepare a complaint to the data protection authority:\n1. A factual summary as a timeline with all dates.\n2. A list of documents I should attach (request, reminder, proof of sending, their reply if any).\n3. A short complaint text (max. 200 words).\nDon't add anything that isn't true, and tell me where I'd be better off asking a consumer advice service or a lawyer.",
+          "wann": "When even the reminder gets no response."
+        }
+      ],
+      "beispiel": "Lisa keeps getting marketing emails from an online shop she ordered from once, years ago. Prompt 1 with the shop's name, her name and her email gives her a finished access request plus the date the deadline ends. Then Prompt 2 with \"objection to marketing: yes\" – the shop should delete her data and say what it still has to keep for legal reasons. If nothing comes back in time, Prompt 3 writes the reminder with a new 14-day deadline.",
+      "check": [
+        "Is the request going to the company's actual privacy contact?",
+        "Only sent the details needed to identify you?",
+        "Noted the date you sent it and put the deadline in your calendar?",
+        "Claude writes the letters but isn't legal advice – in a dispute, ask a consumer advice service or a lawyer."
+      ]
+    },
+    "costUsd": 0.17,
+    "music": "assets/music/lofi-105.mp3",
+    "durationSec": 16.0,
+    "sha256": "d042a27b1a9a35a8d247d14dca60562714a229b3bdc35659edaef66ab699f917"
   }
 ]

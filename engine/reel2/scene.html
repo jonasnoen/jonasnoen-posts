@@ -174,7 +174,7 @@ function progressCard(t){const x=40,y=1300,w=470,h=176,n=PROGRESS.items.length;
   g.save();g.shadowColor='rgba(0,0,0,.35)';g.shadowBlur=26;g.shadowOffsetY=10;rr(x,y,w,h,22);g.fillStyle='#f7f3fb';g.fill();g.restore();
   font(800,22);g.fillStyle='#8a7fa6';g.textAlign='left';g.fillText('// '+PROGRESS.kicker,x+24,y+38);
   font(800,30);g.fillStyle=C.ink;g.fillText(PROGRESS.title,x+24,y+74);
-  const live=stepsDone(t)>0;g.fillStyle=live?C.green:'#c9bfd8';g.beginPath();g.arc(x+w-92,y+34,7,0,7);g.fill();font(800,20);g.fillStyle='#5b4bb8';g.fillText(live?'läuft':'bereit',x+w-78,y+41);
+  const live=stepsDone(t)>0;g.fillStyle=live?C.green:'#c9bfd8';g.beginPath();g.arc(x+w-92,y+34,7,0,7);g.fill();font(800,20);g.fillStyle='#5b4bb8';g.fillText(live?(LANG==='en'?'live':'läuft'):(LANG==='en'?'ready':'bereit'),x+w-78,y+41);
   const sw=(w-48-(n-1)*14)/n;PROGRESS.items.forEach((it,i)=>{const sx=x+24+i*(sw+14),sy=y+92,on=t>=it.t();const s=on?back(t,it.t(),.35):1;
     scaleAt(sx+sw/2,sy+24,s,()=>{rr(sx,sy,sw,50,14);if(on){g.fillStyle=[C.amber,C.violet,C.green,C.red][i%4];g.fill();}else{g.setLineDash([6,6]);g.lineWidth=3;g.strokeStyle='#c9bfd8';g.stroke();g.setLineDash([]);}
       font(800,19);g.textAlign='center';g.fillStyle=on?C.ink:'#a79fbd';g.fillText((on?'✓ ':'')+it.label,sx+sw/2,sy+32);});});g.textAlign='left';}
