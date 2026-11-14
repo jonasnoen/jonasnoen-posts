@@ -145,7 +145,8 @@ const PH=[
 const clean=s=>s.replace(/[.,?:!]/g,'').toLowerCase();
 function phraseAt(t){let k=0;for(let i=0;i<PH.length;i++){if(t>=WORDS[PH[i].a].start-.12)k=i;}return k;}
 function headline(t,k){const hook=k===0;if(hook){const s=1+.22*(1-ease(t/.28));g.save();g.translate(540,300);g.scale(s,s);g.translate(-540,-300);}
-  const p=PH[k];const ws=WORDS.slice(p.a,p.b+1);
+  const p=PH[k];let ws=WORDS.slice(p.a,p.b+1);
+  if(window.NO_PROMPT_CTA&&k===PH.length-1){const f=ws.findIndex(w=>/^folg/i.test(w.text));if(f>0)ws=ws.slice(f);} // LinkedIn: CTA-Satz nicht einblenden
   font(800,30);g.fillStyle=L(C.violetL,'#6b55d9');g.textAlign='left';g.fillText(p.label.toUpperCase(),70,170);
   if(!hook)counter(t);
   const maxW=940;let x=70,y=262,ai=0;
@@ -197,7 +198,7 @@ function p3(t){const km=KW('monat');if(t>km){const s=back(t,km,.35);scaleAt(230,
     font(400,120,'Anton');g.fillStyle=C.ink;g.fillText('+1',235,660);font(800,30);g.fillStyle='#8a7fa6';g.fillText('MONAT',235,712);g.textAlign='left';});
     withAlpha(ease((t-km-.2)/.2),()=>{font(400,72,'Anton');g.fillStyle=C.grey;g.fillText('KEINE',440,560);g.fillStyle=C.amber;g.fillText('ANTWORT?',440,650);});}
   const a=KW('schreibt',2);if(t>a-.05){const s=back(t,a-.05,.35);scaleAt(480,960,s,()=>{miniChat(80,790,800,370,'Claude · Erinnerung');
-    const b=KWE('mit');const typed=REMIND.slice(0,Math.round(REMIND.length*Math.min(Math.max((t-a)/(b-a),0),1)));font(500,34);g.fillStyle=C.ink;wrap(typed+((t*2|0)%2?'|':''),115,905,730,48);});}}
+    const b=KWE('mit',2);const typed=REMIND.slice(0,Math.round(REMIND.length*Math.min(Math.max((t-a)/(b-a),0),1)));font(500,34);g.fillStyle=C.ink;wrap(typed+((t*2|0)%2?'|':''),115,905,730,48);});}}
 function p4(t){const k=KW('folg');const s=back(t,k,.4);scaleAt(470,700,s,()=>{g.save();g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=30;g.shadowOffsetY=12;rr(80,520,780,330,34);g.fillStyle=C.violet;g.fill();g.restore();
   font(400,92,'Anton');g.fillStyle='#fff';g.textAlign='center';g.fillText(UI.follow1,470,660);g.fillStyle=C.amber;g.fillText(UI.follow2,470,770);});
   {const ki=WORDS.findIndex(w=>/prompt/i.test(w.text)&&WORDS.indexOf(w)>=PH[PH.length-1].a);if(ki>=0&&!window.NO_PROMPT_CTA){const a=back(t,WORDS[ki].start-.1,.4);if(a>0)scaleAt(470,955,a,()=>{rr(90,890,760,130,65);g.fillStyle='#fff';g.fill();

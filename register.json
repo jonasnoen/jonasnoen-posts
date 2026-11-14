@@ -1230,5 +1230,89 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "R013",
+    "type": "reel",
+    "createdAt": "2026-11-14",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude-Codes Teil 12",
+    "topic": "DSGVO-Auskunft und Löschung beantragen (Art. 15 / Art. 17)",
+    "angle": "Ein Prompt-Paket: Firma + eigene Angaben → fertiger Auskunftsantrag mit Monatsfrist → gleicher Ablauf als Löschantrag → Erinnerung nach Fristablauf → Beschwerde vorbereiten; Claude schreibt nur, verschickt nichts",
+    "hook": "Jede Firma muss dir sagen, was sie über dich speichert.",
+    "themaQuelle": "themen/de.md T01",
+    "source": "DSGVO (Verordnung (EU) 2016/679) Art. 12 Abs. 3, 15, 17, 19, 21, 77: https://eur-lex.europa.eu/eli/reg/2016/679/oj – geprüft 14.11.2026; Digital-Omnibus-Reform der DSGVO ist noch im Verfahren, ändert die Kernrechte bisher nicht. Keine Produktaussagen zu Claude.",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R013/reel.mp4",
+    "fileLinkedin": "reels/R013/reel_linkedin.mp4",
+    "tiktokTitle": "Was speichert diese Firma über dich?",
+    "caption": "Jede Firma muss dir sagen, was sie über dich speichert. 🔍\n\nDas steht in Art. 15 DSGVO. Nur: Wer schreibt schon gern so einen Brief?\n\nLass Claude das machen:\n👉 Firma, Name und E-Mail rein → fertiger Antrag mit Artikel und Frist (spätestens 1 Monat, Art. 12 Abs. 3)\n👉 Löschen lassen? Gleicher Prompt, Art. 17\n👉 Nach einem Monat keine Antwort? Claude schreibt die Erinnerung gleich mit\n\nClaude schreibt die Briefe – abschicken tust du sie selbst. Speicher dir das für die nächste Firma, die dich mit Werbung zuschüttet.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #DSGVO #Datenschutz #PromptTipps #JonasNoen",
+    "captionLinkedin": "Nach Art. 15 DSGVO kann jede Person von einem Unternehmen Auskunft darüber verlangen, welche personenbezogenen Daten es über sie verarbeitet – samt kostenloser Kopie. Genutzt wird das selten, weil der Antrag lästig ist.\n\nMit Claude lässt sich der Ablauf gut vorbereiten:\n1. Firma, Name und Erkennungsmerkmal (z. B. E-Mail-Adresse) eingeben – Claude formuliert den Auskunftsantrag mit den Angaben aus Art. 15 Abs. 1 und dem Hinweis auf die Monatsfrist (Art. 12 Abs. 3).\n2. Mit denselben Angaben entsteht auf Wunsch ein Löschantrag nach Art. 17, inklusive Frage nach gesetzlichen Aufbewahrungspflichten.\n3. Bleibt die Antwort nach einem Monat aus, schreibt Claude eine sachliche Erinnerung mit neuer Frist.\n\nWichtig: Claude formuliert die Schreiben, verschickt aber nichts und ersetzt keine Rechtsberatung. Fehlende Angaben bleiben als Lücke stehen, statt erfunden zu werden.\n\nHabt ihr schon einmal eine DSGVO-Auskunft angefordert – und was kam dabei heraus?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+    "vorlage": {
+      "titel": "DSGVO-Auskunft & Löschung (Guide mit 4 Prompts)",
+      "text": "Du hilfst mir, mein Recht auf Auskunft nach Art. 15 DSGVO zu nutzen. Schreib mir einen fertigen, sachlichen Antrag, den ich per E-Mail oder Brief verschicken kann.\n\nMeine Angaben:\n- Firma: ___ (Name + Datenschutz-Kontakt aus Datenschutzerklärung oder Impressum)\n- Mein Name: ___\n- Woran mich die Firma erkennt: ___ (z. B. E-Mail-Adresse, Kundennummer, Telefonnummer)\n- Heutiges Datum: ___\n\nSo soll der Antrag aussehen:\n1. Betreff: „Auskunftsersuchen nach Art. 15 DSGVO“.\n2. Bitte um Bestätigung, ob personenbezogene Daten über mich verarbeitet werden, und um eine Kopie dieser Daten (Art. 15 Abs. 3).\n3. Bitte um die Angaben aus Art. 15 Abs. 1: Zwecke, Kategorien der Daten, Empfänger, geplante Speicherdauer, Herkunft der Daten und ob automatisierte Entscheidungen oder Profiling stattfinden.\n4. Hinweis auf die Frist: Antwort unverzüglich, spätestens innerhalb eines Monats nach Eingang (Art. 12 Abs. 3 DSGVO).\n5. Höflicher, bestimmter Ton, höchstens 200 Wörter, keine Drohungen.\n6. Unter dem Antrag: das Datum, an dem die Monatsfrist ungefähr endet, und eine kurze Liste, welche Angaben ich zur Identifizierung mitschicken sollte (nur so viel wie nötig).\n\nErfinde keine Daten über mich, keine Adressen und keine Aktenzeichen – wo etwas fehlt, setz ___ ein.",
+      "hinweis": "Firma, deinen Namen und deine E-Mail/Kundennummer eintragen – Claude schreibt den fertigen Auskunftsantrag nach Art. 15 DSGVO samt Fristende; abschicken tust du ihn selbst."
+    },
+    "guide": {
+      "titel": "Guide: Deine Daten zurückholen – Auskunft, Löschung, Erinnerung",
+      "ziel": "Mit vier Prompts von Claude fertige DSGVO-Schreiben bekommen: Auskunft (Art. 15), Löschung (Art. 17), Erinnerung nach Fristablauf und notfalls die Beschwerde bei der Aufsichtsbehörde – abschicken tust du sie selbst.",
+      "schritte": [
+        {
+          "titel": "Kontakt finden.",
+          "text": "In der Datenschutzerklärung oder im Impressum der Firma steht, an wen Datenschutz-Anfragen gehen (oft eine eigene E-Mail-Adresse oder ein Datenschutzbeauftragter)."
+        },
+        {
+          "titel": "Auskunft beantragen.",
+          "text": "Prompt 1 mit Firma, Name und dem, woran dich die Firma erkennt (E-Mail, Kundennummer). Antrag prüfen, abschicken, Versanddatum notieren."
+        },
+        {
+          "titel": "Löschen lassen.",
+          "text": "Willst du raus: Prompt 2 im selben Chat. Er fragt auch nach Aufbewahrungspflichten – manche Daten (z. B. Rechnungen) darf die Firma eine Zeit lang behalten, muss das aber begründen."
+        },
+        {
+          "titel": "Frist im Blick behalten.",
+          "text": "Die Firma muss spätestens innerhalb eines Monats antworten (verlängerbar um zwei Monate, mit Begründung). Kommt nichts: Prompt 3 schreibt die Erinnerung."
+        },
+        {
+          "titel": "Wenn immer noch nichts kommt.",
+          "text": "Prompt 4 bereitet eine Beschwerde bei der Datenschutz-Aufsichtsbehörde vor. Bei Streit oder Unsicherheit: Verbraucherzentrale oder Anwalt fragen."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Auskunftsantrag (Art. 15 DSGVO)",
+          "text": "Du hilfst mir, mein Recht auf Auskunft nach Art. 15 DSGVO zu nutzen. Schreib mir einen fertigen, sachlichen Antrag, den ich per E-Mail oder Brief verschicken kann.\n\nMeine Angaben:\n- Firma: ___ (Name + Datenschutz-Kontakt aus Datenschutzerklärung oder Impressum)\n- Mein Name: ___\n- Woran mich die Firma erkennt: ___ (z. B. E-Mail-Adresse, Kundennummer, Telefonnummer)\n- Heutiges Datum: ___\n\nSo soll der Antrag aussehen:\n1. Betreff: „Auskunftsersuchen nach Art. 15 DSGVO“.\n2. Bitte um Bestätigung, ob personenbezogene Daten über mich verarbeitet werden, und um eine Kopie dieser Daten (Art. 15 Abs. 3).\n3. Bitte um die Angaben aus Art. 15 Abs. 1: Zwecke, Kategorien der Daten, Empfänger, geplante Speicherdauer, Herkunft der Daten und ob automatisierte Entscheidungen oder Profiling stattfinden.\n4. Hinweis auf die Frist: Antwort unverzüglich, spätestens innerhalb eines Monats nach Eingang (Art. 12 Abs. 3 DSGVO).\n5. Höflicher, bestimmter Ton, höchstens 200 Wörter, keine Drohungen.\n6. Unter dem Antrag: das Datum, an dem die Monatsfrist ungefähr endet, und eine kurze Liste, welche Angaben ich zur Identifizierung mitschicken sollte (nur so viel wie nötig).\n\nErfinde keine Daten über mich, keine Adressen und keine Aktenzeichen – wo etwas fehlt, setz ___ ein.",
+          "wann": "Wenn du wissen willst, was eine Firma über dich gespeichert hat."
+        },
+        {
+          "titel": "Löschantrag (Art. 17 DSGVO)",
+          "text": "Schreib mir jetzt mit denselben Angaben einen Antrag auf Löschung nach Art. 17 DSGVO (höchstens 180 Wörter, sachlich):\n- Betreff: „Antrag auf Löschung meiner personenbezogenen Daten (Art. 17 DSGVO)“.\n- Bitte, alle personenbezogenen Daten über mich unverzüglich zu löschen und mir die Löschung schriftlich zu bestätigen.\n- Falls Daten wegen gesetzlicher Aufbewahrungspflichten nicht gelöscht werden dürfen: Bitte um Mitteilung, welche Daten das sind, auf welcher Grundlage und bis wann.\n- Widerspruch gegen Werbung per Post/E-Mail (Art. 21 Abs. 2 DSGVO): ___ (ja/nein).\n- Bitte, Empfänger, an die meine Daten weitergegeben wurden, über die Löschung zu informieren (Art. 19 DSGVO).\n- Frist wie im ersten Antrag: spätestens ein Monat (Art. 12 Abs. 3 DSGVO).\nWo Angaben fehlen: ___ statt etwas zu erfinden.",
+          "wann": "Im selben Chat, wenn deine Daten weg sollen (auch ohne vorherige Auskunft möglich)."
+        },
+        {
+          "titel": "Erinnerung nach Fristablauf",
+          "text": "Meine Anfrage (___ Auskunft / Löschung) vom ___ an ___ ist seit über einem Monat unbeantwortet. Eine Fristverlängerung wurde mir ___ (nicht / am ___) mitgeteilt.\n\nSchreib mir eine kurze, bestimmte Erinnerung (höchstens 120 Wörter):\n1. Bezug auf meine ursprüngliche Anfrage mit Datum.\n2. Hinweis, dass die Frist nach Art. 12 Abs. 3 DSGVO abgelaufen ist. Wurde mir eine Verlängerung (um bis zu zwei weitere Monate, mit Begründung) mitgeteilt, schreib die Erinnerung nicht, sondern sag mir, bis wann ich noch warten sollte.\n3. Neue Frist: 14 Tage ab heute (heute ist der ___).\n4. Sachlicher Hinweis, dass ich mich sonst bei der zuständigen Datenschutz-Aufsichtsbehörde beschweren kann (Art. 77 DSGVO).\n\nSag mir darunter, welche Aufsichtsbehörde wahrscheinlich zuständig ist, und markier das als Hinweis, den ich selbst prüfen muss.",
+          "wann": "Wenn nach einem Monat keine Antwort kam."
+        },
+        {
+          "titel": "Beschwerde vorbereiten",
+          "text": "Die Firma ___ hat auf meine Anfrage vom ___ und meine Erinnerung vom ___ nicht (oder nur unvollständig: ___) geantwortet.\nHilf mir, eine Beschwerde bei der Datenschutz-Aufsichtsbehörde vorzubereiten:\n1. Eine sachliche Zusammenfassung des Ablaufs mit allen Daten als Zeitleiste.\n2. Eine Liste der Unterlagen, die ich beilegen sollte (Anfrage, Erinnerung, Versandnachweise, ggf. Antwort der Firma).\n3. Einen kurzen Beschwerdetext (höchstens 200 Wörter).\nErfinde nichts dazu und weise mich darauf hin, wo ich besser eine Verbraucherzentrale oder Anwältin fragen sollte.",
+          "wann": "Wenn auch nach der Erinnerung nichts passiert."
+        }
+      ],
+      "beispiel": "Lisa bekommt seit Monaten Werbung von einem Onlineshop, bei dem sie vor Jahren einmal bestellt hat. Prompt 1 mit Shopname, ihrem Namen und ihrer E-Mail ergibt einen fertigen Auskunftsantrag samt Fristende. Danach Prompt 2 mit „Widerspruch gegen Werbung: ja“ – der Shop soll löschen und sagen, was er wegen Aufbewahrungspflichten noch behalten muss. Kommt nach einem Monat nichts, schreibt Prompt 3 die Erinnerung mit neuer Frist von 14 Tagen.",
+      "check": [
+        "Geht der Antrag an den richtigen Datenschutz-Kontakt der Firma?",
+        "Nur die Angaben mitgeschickt, die zur Identifizierung nötig sind?",
+        "Versanddatum notiert und Fristende im Kalender?",
+        "Claude schreibt die Briefe, ersetzt aber keine Rechtsberatung – im Streitfall Verbraucherzentrale oder Anwalt fragen."
+      ]
+    },
+    "sha256": "48d7307dfafffce696bd278d2e7cca5fe27f5b11312adbd227e15e219dcf72bf",
+    "durationSec": 16.2,
+    "music": "assets/music/lofi-105.mp3",
+    "costUsd": 0.17
   }
 ]
