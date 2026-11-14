@@ -1235,7 +1235,7 @@
     "id": "R013",
     "type": "reel",
     "createdAt": "2026-11-14",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude-Codes Teil 12",
     "topic": "DSGVO-Auskunft und Löschung beantragen (Art. 15 / Art. 17)",
@@ -1249,7 +1249,7 @@
     "fileLinkedin": "reels/R013/reel_linkedin.mp4",
     "tiktokTitle": "Was speichert diese Firma über dich?",
     "caption": "Jede Firma muss dir sagen, was sie über dich speichert. 🔍\n\nDas steht in Art. 15 DSGVO. Nur: Wer schreibt schon gern so einen Brief?\n\nLass Claude das machen:\n👉 Firma, Name und E-Mail rein → fertiger Antrag mit Artikel und Frist (spätestens 1 Monat, Art. 12 Abs. 3)\n👉 Löschen lassen? Gleicher Prompt, Art. 17\n👉 Nach einem Monat keine Antwort? Claude schreibt die Erinnerung gleich mit\n\nClaude schreibt die Briefe – abschicken tust du sie selbst. Speicher dir das für die nächste Firma, die dich mit Werbung zuschüttet.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #DSGVO #Datenschutz #PromptTipps #JonasNoen",
-    "captionLinkedin": "Nach Art. 15 DSGVO kann jede Person von einem Unternehmen Auskunft darüber verlangen, welche personenbezogenen Daten es über sie verarbeitet – samt kostenloser Kopie. Genutzt wird das selten, weil der Antrag lästig ist.\n\nMit Claude lässt sich der Ablauf gut vorbereiten:\n1. Firma, Name und Erkennungsmerkmal (z. B. E-Mail-Adresse) eingeben – Claude formuliert den Auskunftsantrag mit den Angaben aus Art. 15 Abs. 1 und dem Hinweis auf die Monatsfrist (Art. 12 Abs. 3).\n2. Mit denselben Angaben entsteht auf Wunsch ein Löschantrag nach Art. 17, inklusive Frage nach gesetzlichen Aufbewahrungspflichten.\n3. Bleibt die Antwort nach einem Monat aus, schreibt Claude eine sachliche Erinnerung mit neuer Frist.\n\nWichtig: Claude formuliert die Schreiben, verschickt aber nichts und ersetzt keine Rechtsberatung. Fehlende Angaben bleiben als Lücke stehen, statt erfunden zu werden.\n\nHabt ihr schon einmal eine DSGVO-Auskunft angefordert – und was kam dabei heraus?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+    "captionLinkedin": "Nach Art. 15 DSGVO kann jede Person von einem Unternehmen Auskunft darüber verlangen, welche personenbezogenen Daten es über sie verarbeitet – samt kostenloser Kopie. Der Antrag dafür ist allerdings lästig zu formulieren.\n\nMit Claude lässt sich der Ablauf gut vorbereiten:\n1. Firma, Name und Erkennungsmerkmal (z. B. E-Mail-Adresse) eingeben – Claude formuliert den Auskunftsantrag mit den Angaben aus Art. 15 Abs. 1 und dem Hinweis auf die Monatsfrist (Art. 12 Abs. 3).\n2. Mit denselben Angaben entsteht auf Wunsch ein Löschantrag nach Art. 17, inklusive Frage nach gesetzlichen Aufbewahrungspflichten.\n3. Bleibt die Antwort nach einem Monat aus, schreibt Claude eine sachliche Erinnerung mit neuer Frist.\n\nWichtig: Claude formuliert die Schreiben, verschickt aber nichts und ersetzt keine Rechtsberatung. Fehlende Angaben bleiben als Lücke stehen, statt erfunden zu werden.\n\nHabt ihr schon einmal eine DSGVO-Auskunft angefordert – und was kam dabei heraus?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
     "vorlage": {
       "titel": "DSGVO-Auskunft & Löschung (Guide mit 4 Prompts)",
       "text": "Du hilfst mir, mein Recht auf Auskunft nach Art. 15 DSGVO zu nutzen. Schreib mir einen fertigen, sachlichen Antrag, den ich per E-Mail oder Brief verschicken kann.\n\nMeine Angaben:\n- Firma: ___ (Name + Datenschutz-Kontakt aus Datenschutzerklärung oder Impressum)\n- Mein Name: ___\n- Woran mich die Firma erkennt: ___ (z. B. E-Mail-Adresse, Kundennummer, Telefonnummer)\n- Heutiges Datum: ___\n\nSo soll der Antrag aussehen:\n1. Betreff: „Auskunftsersuchen nach Art. 15 DSGVO“.\n2. Bitte um Bestätigung, ob personenbezogene Daten über mich verarbeitet werden, und um eine Kopie dieser Daten (Art. 15 Abs. 3).\n3. Bitte um die Angaben aus Art. 15 Abs. 1: Zwecke, Kategorien der Daten, Empfänger, geplante Speicherdauer, Herkunft der Daten und ob automatisierte Entscheidungen oder Profiling stattfinden.\n4. Hinweis auf die Frist: Antwort unverzüglich, spätestens innerhalb eines Monats nach Eingang (Art. 12 Abs. 3 DSGVO).\n5. Höflicher, bestimmter Ton, höchstens 200 Wörter, keine Drohungen.\n6. Unter dem Antrag: das Datum, an dem die Monatsfrist ungefähr endet, und eine kurze Liste, welche Angaben ich zur Identifizierung mitschicken sollte (nur so viel wie nötig).\n\nErfinde keine Daten über mich, keine Adressen und keine Aktenzeichen – wo etwas fehlt, setz ___ ein.",
@@ -1313,6 +1313,36 @@
     "sha256": "48d7307dfafffce696bd278d2e7cca5fe27f5b11312adbd227e15e219dcf72bf",
     "durationSec": 16.2,
     "music": "assets/music/lofi-105.mp3",
-    "costUsd": 0.17
+    "costUsd": 0.17,
+    "plannedFor": "2026-11-14T18:30:00+01:00",
+    "mediaCommit": "226b703bb2631ba08018f19fa0bf3b483b6b9b75",
+    "metricool": {
+      "postId": 428178250,
+      "uuid": "-1436977550514172498",
+      "publishAt": "2026-11-14T18:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 428178250,
+        "scheduledAt": "2026-11-14T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 428178250,
+        "scheduledAt": "2026-11-14T18:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 428178349,
+        "uuid": "-4559538490378533386",
+        "scheduledAt": "2026-11-14T18:30:00+01:00",
+        "firstComment": true
+      }
+    }
   }
 ]
