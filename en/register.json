@@ -811,7 +811,7 @@
     "id": "E007",
     "type": "reel",
     "createdAt": "2026-11-14",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude Codes Part 7",
     "fromDe": "R013",
@@ -891,6 +891,36 @@
     "costUsd": 0.17,
     "music": "assets/music/lofi-105.mp3",
     "durationSec": 16.0,
-    "sha256": "d042a27b1a9a35a8d247d14dca60562714a229b3bdc35659edaef66ab699f917"
+    "sha256": "d042a27b1a9a35a8d247d14dca60562714a229b3bdc35659edaef66ab699f917",
+    "plannedFor": "2026-11-14T20:30:00+01:00",
+    "mediaCommit": "05538bbcbb5419c3a55255fd09c2078e2b4a0298",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 428239763,
+        "uuid": "7986972670393860263",
+        "scheduledAt": "2026-11-14T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 428239763,
+        "uuid": "7986972670393860263",
+        "scheduledAt": "2026-11-14T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 428239782,
+        "uuid": "-4260443382751346477",
+        "scheduledAt": "2026-11-14T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 428239816,
+        "uuid": "2687815264088968005",
+        "scheduledAt": "2026-11-14T20:30:00+01:00",
+        "file": "en/reels/E007/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    }
   }
 ]
