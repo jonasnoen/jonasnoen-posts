@@ -922,5 +922,93 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E008",
+    "type": "reel",
+    "createdAt": "2026-11-15",
+    "status": "sending",
+    "format": "experiment",
+    "style": "comic-sprechblasen",
+    "series": "Claude Codes Part 8",
+    "fromDe": "R014",
+    "topic": "Rehearse your raise conversation with Claude (Claude plays your boss)",
+    "angle": "Prompt pack: your wins → 3 arguments + opening line + likely objections → role-play (Claude as your manager, one objection at a time) → honest feedback with better lines → plan B if the answer is no; style experiment comic (panels, speech bubbles, sound effects, boss = invented comic figure, YOU = memoji)",
+    "hook": "This prompt plays your boss when you ask for a raise.",
+    "themaQuelle": "DE R014 (= themen/en.md T09)",
+    "source": "Pure prompt technique, no product claims about Claude. Salary sources named as examples: US BLS Occupational Employment and Wage Statistics https://www.bls.gov/oes/ and UK ONS Annual Survey of Hours and Earnings https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours – checked 15.11.2026. Example (Lena, client project since March) is invented and labelled as an example.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "none (style experiment without face; memoji as 'YOU', waves in the outro)",
+    "file": "en/reels/E008/reel.mp4",
+    "fileLinkedin": "en/reels/E008/reel_linkedin.mp4",
+    "tiktokTitle": "Claude plays your boss before you ask for a raise",
+    "caption": "This prompt plays your boss when you ask for a raise. 💬\n\nYou're in the meeting, they say \"There's just no budget this year\" – and the perfect answer only hits you on the way home.\n\nRehearse it with Claude first:\n👉 your wins turn into your 3 strongest arguments plus an opening line\n👉 Claude plays your manager – one objection after another, no mercy\n👉 then honest feedback and better lines you can say word for word\n\nI built you the whole flow – 4 prompts, including a plan B if the answer is no.\n\nSave this before your next review. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #SalaryNegotiation #CareerTips #AITools",
+    "captionX": "Claude plays your boss before you ask for a raise: your 3 strongest arguments, a role-play with the usual objections, honest feedback + a plan B if it's a no. Comment PROMPT for the guide 💬",
+    "captionLinkedIn": "In a raise conversation, the best answer often comes to mind only afterwards. A dry run beforehand helps – and Claude is a good sparring partner for it.\n\nMy process in four steps:\n1. Preparation: from your results of the last 12 months, Claude builds your three strongest arguments, an opening line and a list of the most likely objections. You bring the target number yourself (industry salary surveys, official wage statistics such as the US BLS or UK ONS, a pay scale) – Claude shouldn't invent market salaries.\n2. Role-play: Claude plays your manager, raises the objections one at a time and pushes back on weak answers.\n3. Feedback: what convinced, what was too vague, and better lines to practise.\n4. Plan B: alternatives if the answer isn't yes – training, remote days, a bonus, or a fixed follow-up date with clear criteria.\n\nHow do you prepare for salary conversations – with a dry run or on the spot?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Rehearse your raise conversation (guide with 4 prompts)",
+      "text": "You're my salary negotiation coach. I'm preparing a conversation with my manager about a raise.\n\nMy situation:\n- Job / role: ___\n- How long I've been at the company / in this role: ___\n- Current salary (gross per year): ___\n- My target (gross per year): ___ – source for this number: ___ (e.g. salary surveys for my industry, official wage statistics like the US BLS or UK ONS, a pay scale or collective agreement)\n- What I achieved or took on in the last 12 months (bullet points): ___\n- What my manager is like (e.g. numbers-driven, avoids conflict, always short on time): ___\n\nHow to work:\n1. First ask me up to 3 questions if something important is missing (e.g. measurable results). Wait for my answers.\n2. Turn my bullet points into my 3 strongest arguments – each with: what I did, what it meant for the team or company, and proof (a result, a number, praise). Only use what I told you, don't invent anything.\n3. Write an opening line (2 sentences max) to start the conversation, and the sentence I use to name my target number.\n4. List the 5 objections I'm most likely to hear in my situation.\n5. Don't invent market salaries. If my target looks weakly backed by my arguments, tell me honestly.",
+      "hinweis": "Fill in your role, salary, target number with its source, and your wins – Claude builds arguments, an opening line and the objections you then practise in the role-play."
+    },
+    "guide": {
+      "titel": "Guide: Rehearse your raise with Claude – arguments, role-play, feedback, plan B",
+      "ziel": "You walk into your raise conversation prepared: three arguments from your own work, practised answers to the usual objections, and a plan B if the answer isn't yes.",
+      "schritte": [
+        {
+          "titel": "Collect your number and facts.",
+          "text": "Research your target number yourself (industry salary surveys, official wage statistics like the US BLS or UK ONS, your pay scale). Add bullet points: what you achieved or took on in the last 12 months."
+        },
+        {
+          "titel": "Build your arguments.",
+          "text": "Send Prompt 1. Claude asks where proof is missing and gives you 3 arguments, an opening line, the sentence with your target number and the 5 most likely objections."
+        },
+        {
+          "titel": "Dry run.",
+          "text": "Prompt 2 in the same chat: Claude plays your manager and brings the objections one at a time. Answer the way you'd really say it. Type \"Stop\" to end the role-play."
+        },
+        {
+          "titel": "Get feedback and go again.",
+          "text": "Prompt 3 shows what convinced, what was too vague, and gives you better lines. Then do a second round with tougher objections."
+        },
+        {
+          "titel": "Prepare plan B.",
+          "text": "Prompt 4: alternatives if the answer is no, a sentence to lock in a follow-up date, and the email after the meeting."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Arguments, opening line, objections",
+          "text": "You're my salary negotiation coach. I'm preparing a conversation with my manager about a raise.\n\nMy situation:\n- Job / role: ___\n- How long I've been at the company / in this role: ___\n- Current salary (gross per year): ___\n- My target (gross per year): ___ – source for this number: ___ (e.g. salary surveys for my industry, official wage statistics like the US BLS or UK ONS, a pay scale or collective agreement)\n- What I achieved or took on in the last 12 months (bullet points): ___\n- What my manager is like (e.g. numbers-driven, avoids conflict, always short on time): ___\n\nHow to work:\n1. First ask me up to 3 questions if something important is missing (e.g. measurable results). Wait for my answers.\n2. Turn my bullet points into my 3 strongest arguments – each with: what I did, what it meant for the team or company, and proof (a result, a number, praise). Only use what I told you, don't invent anything.\n3. Write an opening line (2 sentences max) to start the conversation, and the sentence I use to name my target number.\n4. List the 5 objections I'm most likely to hear in my situation.\n5. Don't invent market salaries. If my target looks weakly backed by my arguments, tell me honestly.",
+          "wann": "A few days before the conversation, first."
+        },
+        {
+          "titel": "Role-play: Claude plays your manager",
+          "text": "Now let's practice. You play my manager in the raise conversation – friendly, but not easy to convince. Use the objections from above and react realistically to what I say.\n\nRules:\n- Only ever say one sentence or question, then wait for my answer.\n- Bring the objections one at a time, not all at once. If my answer is weak, push back.\n- Don't give in just because I'm polite – only to good arguments.\n- Stay in character until I type \"Stop\". No feedback during the role-play.\n- Tone between us: ___ (first names and casual / formal).\n\nStart with: \"Good to see you. What's on your mind?\"",
+          "wann": "Right after, in the same chat – as often as you like."
+        },
+        {
+          "titel": "Honest feedback + better lines",
+          "text": "Stop. Step out of the role. Now give me honest feedback on my answers in the role-play:\n1. What was convincing? (max. 3 points, each with a quote from my answers)\n2. Where was I too vague, too defensive, or did I apologize? (with quotes)\n3. For the 3 weakest moments: one better line each that I can say word for word.\n4. Did I state my target number clearly? If not: the sentence for it.\n5. One thing I should do differently in the next round.\n\nThen ask me if we should do another round – this time with tougher objections.",
+          "wann": "After every round, once you've typed \"Stop\"."
+        },
+        {
+          "titel": "Plan B if the answer is no",
+          "text": "Let's say my manager says no or \"not right now\". Prepare me for that:\n1. 5 alternatives I can negotiate for instead, matched to my situation (e.g. training budget, extra days off, remote days, a bonus, more responsibility or a new title) – with one sentence each on how to bring it up.\n2. One sentence to lock in a fixed follow-up date (e.g. in 3 or 6 months), plus clear criteria for what a raise will be measured on then.\n3. A short, friendly email after the meeting that puts in writing what we agreed.\n4. Signs that it's worth quietly looking around elsewhere at the same time – factual, no drama.",
+          "wann": "At the end of your prep – and after the meeting for the email."
+        }
+      ],
+      "beispiel": "Example (invented): Lena is a project manager, three years on the team, has led a client project on her own since March, onboarded two new teammates and got written praise from the client. Prompt 1 turns that into three arguments and the opener \"I'd like to talk about my salary, because my role has changed a lot since March.\" In the dry run she hears \"There's just no budget this year\" – and practises her answer with the client project. Prompt 3 shows: \"I just want more\" was too vague; the concrete number with a reason works better. Prompt 4 gives her plan B: training now and a follow-up in six months with fixed criteria.",
+      "check": [
+        "Target number researched yourself – Claude doesn't invent salaries.",
+        "At least two rounds of role-play done.",
+        "Opening line and the sentence with your number practised out loud once.",
+        "Plan B and follow-up date written down before you walk in."
+      ]
+    },
+    "plannedFor": "2026-11-15T20:30:00+01:00",
+    "sha256": "040496cbf03e14f32b428356b8b1cf554a5714fea68f032ded33dc891fa77440",
+    "durationSec": 26.3,
+    "music": "assets/music/groove-115.mp3",
+    "costUsd": 0.09
   }
 ]
