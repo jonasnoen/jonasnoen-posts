@@ -1344,5 +1344,90 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "R014",
+    "type": "reel",
+    "createdAt": "2026-11-15",
+    "status": "sending",
+    "format": "experiment",
+    "style": "comic-sprechblasen",
+    "series": "Claude-Codes Teil 13",
+    "topic": "Gehaltsgespräch mit Claude üben (Claude spielt den Chef)",
+    "angle": "Prompt-Paket: eigene Erfolge → 3 Argumente + Einstiegssatz + wahrscheinliche Einwände → Rollenspiel (Claude als Chef, ein Einwand nach dem anderen) → ehrliches Feedback mit besseren Formulierungen → Plan B bei Nein; Stil-Experiment Comic (Panels, Sprechblasen, Lautmalerei, Chef = frei erfundene Comic-Figur, DU = Memoji)",
+    "hook": "Dieser Prompt spielt deinen Chef im Gehaltsgespräch.",
+    "themaQuelle": "themen/de.md T07",
+    "source": "Reine Prompt-Technik, keine Produktaussagen zu Claude. Entgeltatlas der Bundesagentur für Arbeit als Quelle für Gehaltsvergleiche: https://www.arbeitsagentur.de/hilfe-entgeltatlas – geprüft 15.11.2026. Beispiel (Lena, Kundenprojekt seit März) ist erfunden und als Beispiel gekennzeichnet.",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "keine (Stil-Experiment ohne Gesicht; Memoji als Figur „DU“, winkt im Outro)",
+    "file": "reels/R014/reel.mp4",
+    "fileLinkedin": "reels/R014/reel_linkedin.mp4",
+    "tiktokTitle": "Claude spielt deinen Chef im Gehaltsgespräch",
+    "caption": "Dieser Prompt spielt deinen Chef im Gehaltsgespräch. 💬\n\nDu sitzt drin, er sagt „Das Budget ist dieses Jahr leider ausgeschöpft“ – und die richtige Antwort fällt dir erst auf dem Heimweg ein.\n\nSo übst du vorher mit Claude:\n👉 Aus deinen Erfolgen werden die 3 stärksten Argumente plus Einstiegssatz\n👉 Claude spielt deinen Chef – ein Einwand nach dem anderen, ohne dich zu schonen\n👉 Danach ehrliches Feedback und bessere Formulierungen zum Nachsprechen\n\nIch hab dir den kompletten Ablauf gebaut – 4 Prompts inklusive Plan B, falls er Nein sagt.\n\nSpeicher dir das vor deinem nächsten Gespräch. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Gehaltsverhandlung #Karriere #PromptTipps #JonasNoen",
+    "captionLinkedin": "Im Gehaltsgespräch fällt einem die beste Antwort oft erst hinterher ein. Ein Probelauf vorher hilft – und dafür eignet sich Claude gut.\n\nMein Ablauf in vier Schritten:\n1. Vorbereitung: Aus den eigenen Ergebnissen der letzten 12 Monate macht Claude die drei stärksten Argumente, einen Einstiegssatz und eine Liste der wahrscheinlichsten Einwände. Die Zielzahl bringt man selbst mit (Tarifvertrag, Entgeltatlas der Bundesagentur für Arbeit, Branchenvergleich) – Claude soll keine Marktgehälter erfinden.\n2. Rollenspiel: Claude spielt die Führungskraft, bringt die Einwände einzeln und hakt bei schwachen Antworten nach.\n3. Feedback: Was überzeugt hat, was zu vage war, und bessere Formulierungen zum Nachsprechen.\n4. Plan B: Alternativen, falls es kein Ja gibt – Weiterbildung, Homeoffice, Bonus oder ein fester Folgetermin mit klaren Kriterien.\n\nWie bereitet ihr euch auf Gehaltsgespräche vor – mit Probelauf oder eher spontan?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+    "vorlage": {
+      "titel": "Gehaltsgespräch üben (Guide mit 4 Prompts)",
+      "text": "Du bist mein Coach für Gehaltsverhandlungen. Ich bereite ein Gespräch mit meiner Führungskraft vor.\n\nMeine Situation:\n- Job / Rolle: ___\n- Seit wann in der Firma / in dieser Rolle: ___\n- Aktuelles Gehalt (brutto pro Jahr): ___\n- Mein Ziel (brutto pro Jahr): ___ – Quelle für diese Zahl: ___ (z. B. Tarifvertrag, Entgeltatlas der Bundesagentur für Arbeit, Gehaltsvergleich meiner Branche)\n- Was ich in den letzten 12 Monaten erreicht oder zusätzlich übernommen habe (Stichpunkte): ___\n- Wie meine Führungskraft tickt (z. B. zahlenorientiert, harmoniebedürftig, wenig Zeit): ___\n\nSo gehst du vor:\n1. Stell mir zuerst bis zu 3 Rückfragen, wenn etwas Wichtiges fehlt (z. B. messbare Ergebnisse). Warte auf meine Antworten.\n2. Mach aus meinen Stichpunkten die 3 stärksten Argumente – jeweils: was ich getan habe, welchen Nutzen das für Team oder Firma hatte, ein Beleg (Ergebnis, Zahl, Lob). Nur aus meinen Angaben, nichts erfinden.\n3. Formuliere einen Einstiegssatz (höchstens 2 Sätze), mit dem ich das Gespräch eröffne, und den Satz, mit dem ich meine Zielzahl nenne.\n4. Liste die 5 Einwände, die in meiner Situation am wahrscheinlichsten kommen.\n5. Erfinde keine Marktgehälter. Wenn meine Zielzahl im Verhältnis zu meinen Argumenten schwach begründet wirkt, sag es mir ehrlich.",
+      "hinweis": "Deine Rolle, dein Gehalt, deine Zielzahl samt Quelle und deine Erfolge einsetzen – Claude baut daraus Argumente, Einstiegssatz und die Einwände, die du danach im Rollenspiel übst."
+    },
+    "guide": {
+      "titel": "Guide: Gehaltsgespräch mit Claude üben – Argumente, Probelauf, Feedback, Plan B",
+      "ziel": "Du gehst vorbereitet ins Gehaltsgespräch: mit drei Argumenten aus deiner eigenen Arbeit, geübten Antworten auf die typischen Einwände und einem Plan B, falls es kein Ja gibt.",
+      "schritte": [
+        {
+          "titel": "Zahl und Fakten sammeln.",
+          "text": "Deine Zielzahl recherchierst du selbst (Tarifvertrag, Entgeltatlas der Bundesagentur für Arbeit, Gehaltsvergleiche deiner Branche). Dazu Stichpunkte: was du in den letzten 12 Monaten erreicht oder zusätzlich übernommen hast."
+        },
+        {
+          "titel": "Argumente bauen.",
+          "text": "Prompt 1 schicken. Claude fragt nach, wo Belege fehlen, und liefert 3 Argumente, Einstiegssatz, den Satz mit deiner Zielzahl und die 5 wahrscheinlichsten Einwände."
+        },
+        {
+          "titel": "Probelauf.",
+          "text": "Prompt 2 im selben Chat: Claude spielt deine Führungskraft und bringt die Einwände einzeln. Antworte so, wie du es im echten Gespräch sagen würdest. Mit „Stopp“ beendest du das Rollenspiel."
+        },
+        {
+          "titel": "Feedback holen und wiederholen.",
+          "text": "Prompt 3 zeigt, was überzeugt hat, was zu vage war, und gibt dir bessere Formulierungen. Dann einen zweiten Durchlauf mit härteren Einwänden."
+        },
+        {
+          "titel": "Plan B vorbereiten.",
+          "text": "Prompt 4: Alternativen, falls es kein Ja gibt, ein Satz für einen festen Folgetermin und die Mail nach dem Gespräch."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Argumente, Einstiegssatz, Einwände",
+          "text": "Du bist mein Coach für Gehaltsverhandlungen. Ich bereite ein Gespräch mit meiner Führungskraft vor.\n\nMeine Situation:\n- Job / Rolle: ___\n- Seit wann in der Firma / in dieser Rolle: ___\n- Aktuelles Gehalt (brutto pro Jahr): ___\n- Mein Ziel (brutto pro Jahr): ___ – Quelle für diese Zahl: ___ (z. B. Tarifvertrag, Entgeltatlas der Bundesagentur für Arbeit, Gehaltsvergleich meiner Branche)\n- Was ich in den letzten 12 Monaten erreicht oder zusätzlich übernommen habe (Stichpunkte): ___\n- Wie meine Führungskraft tickt (z. B. zahlenorientiert, harmoniebedürftig, wenig Zeit): ___\n\nSo gehst du vor:\n1. Stell mir zuerst bis zu 3 Rückfragen, wenn etwas Wichtiges fehlt (z. B. messbare Ergebnisse). Warte auf meine Antworten.\n2. Mach aus meinen Stichpunkten die 3 stärksten Argumente – jeweils: was ich getan habe, welchen Nutzen das für Team oder Firma hatte, ein Beleg (Ergebnis, Zahl, Lob). Nur aus meinen Angaben, nichts erfinden.\n3. Formuliere einen Einstiegssatz (höchstens 2 Sätze), mit dem ich das Gespräch eröffne, und den Satz, mit dem ich meine Zielzahl nenne.\n4. Liste die 5 Einwände, die in meiner Situation am wahrscheinlichsten kommen.\n5. Erfinde keine Marktgehälter. Wenn meine Zielzahl im Verhältnis zu meinen Argumenten schwach begründet wirkt, sag es mir ehrlich.",
+          "wann": "Ein paar Tage vor dem Gespräch, als Erstes."
+        },
+        {
+          "titel": "Rollenspiel: Claude spielt deine Führungskraft",
+          "text": "Jetzt üben wir. Du spielst meine Führungskraft im Gehaltsgespräch – freundlich, aber nicht leicht zu überzeugen. Nutze die Einwände von oben und reagiere realistisch auf das, was ich sage.\n\nRegeln:\n- Du sagst immer nur einen Satz oder eine Frage, dann wartest du auf meine Antwort.\n- Bring die Einwände einen nach dem anderen, nicht alle auf einmal. Ist meine Antwort schwach, hak nach.\n- Gib nicht nach, nur weil ich höflich bin – nur bei guten Argumenten.\n- Bleib in der Rolle, bis ich „Stopp“ schreibe. Kein Feedback während des Rollenspiels.\n- Wir sprechen uns mit ___ (Du / Sie) an.\n\nFang an mit: „Schön, dass du da bist. Worum geht's?“",
+          "wann": "Direkt danach im selben Chat – so oft du willst."
+        },
+        {
+          "titel": "Ehrliches Feedback + bessere Formulierungen",
+          "text": "Stopp. Raus aus der Rolle. Gib mir jetzt ehrliches Feedback zu meinen Antworten im Rollenspiel:\n1. Was war überzeugend? (höchstens 3 Punkte, jeweils mit Zitat aus meinen Antworten)\n2. Wo war ich zu vage, zu defensiv oder habe mich entschuldigt? (mit Zitat)\n3. Für die 3 schwächsten Stellen: je eine bessere Formulierung, die ich wörtlich so sagen kann.\n4. Habe ich meine Zielzahl klar genannt? Wenn nein: der Satz dafür.\n5. Eine Sache, die ich im nächsten Durchlauf anders machen soll.\n\nFrag mich danach, ob wir noch einen Durchlauf machen – diesmal mit härteren Einwänden.",
+          "wann": "Nach jedem Durchlauf, wenn du „Stopp“ geschrieben hast."
+        },
+        {
+          "titel": "Plan B, wenn es ein Nein gibt",
+          "text": "Angenommen, meine Führungskraft sagt Nein oder „jetzt nicht“. Bereite mich darauf vor:\n1. 5 Alternativen, über die ich stattdessen verhandeln kann, passend zu meiner Situation (z. B. Weiterbildung, zusätzliche Urlaubstage, Homeoffice-Tage, Bonus, mehr Verantwortung oder neuer Titel) – mit je einem Satz, wie ich sie anspreche.\n2. Einen Satz, mit dem ich einen festen Folgetermin vereinbare (z. B. in 3 oder 6 Monaten), plus klare Kriterien, woran eine Erhöhung dann gemessen wird.\n3. Eine kurze, freundliche Mail nach dem Gespräch, die festhält, was wir vereinbart haben.\n4. Woran ich merke, dass es sich lohnt, mich parallel woanders umzusehen – sachlich, ohne Drama.",
+          "wann": "Zum Schluss der Vorbereitung – und nach dem Gespräch für die Mail."
+        }
+      ],
+      "beispiel": "Beispiel (erfunden): Lena ist Projektmanagerin, seit drei Jahren im Team, leitet seit März ein Kundenprojekt allein, hat zwei neue Kolleginnen eingearbeitet und ein schriftliches Kundenlob bekommen. Prompt 1 macht daraus drei Argumente und den Einstieg „Ich möchte mit dir über mein Gehalt sprechen, weil sich meine Aufgaben seit März deutlich verändert haben.“ Im Probelauf kommt „Das Budget ist dieses Jahr leider ausgeschöpft“ – Lena übt die Antwort mit dem Kundenprojekt. Prompt 3 zeigt: „Ich will einfach mehr“ war zu vage, besser ist die konkrete Zahl mit Begründung. Prompt 4 gibt ihr Plan B: Weiterbildung jetzt und ein Folgetermin in sechs Monaten mit festen Kriterien.",
+      "check": [
+        "Zielzahl selbst recherchiert – Claude erfindet keine Gehälter.",
+        "Mindestens zwei Durchläufe im Rollenspiel gemacht.",
+        "Einstiegssatz und den Satz mit der Zahl einmal laut geübt.",
+        "Plan B und Folgetermin aufgeschrieben, bevor du ins Gespräch gehst."
+      ]
+    },
+    "music": "assets/music/groove-115.mp3",
+    "durationSec": 28.7,
+    "costUsd": 0.1,
+    "sha256": "96458d891db14fa01665d9a7c5337f204f6aa6be9bb899029ef1a808e5dba9b9"
   }
 ]

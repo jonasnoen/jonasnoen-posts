@@ -1,0 +1,223 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Bangers;src:url(node_modules/@fontsource/bangers/files/bangers-latin-400-normal.woff2)}
+@font-face{font-family:'Comic Neue';font-weight:700;src:url(node_modules/@fontsource/comic-neue/files/comic-neue-latin-700-normal.woff2)}
+@font-face{font-family:'Comic Neue';font-weight:400;src:url(node_modules/@fontsource/comic-neue/files/comic-neue-latin-400-normal.woff2)}
+@font-face{font-family:Manrope;font-weight:800;src:url(node_modules/@fontsource/manrope/files/manrope-latin-800-normal.woff2)}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// ===== R014 · Stil-Experiment "comic-sprechblasen" =====
+// Comic-Seite: Papier mit Rasterpunkten, Panels mit dicken schwarzen Rahmen, die reinknallen,
+// Sprechblasen (Chef = gezeichnete Figur, DU = Jonas' Memoji), Lautmalerei-Sterne.
+// Schnittstelle wie engine/reel5: setup(words) -> END, render(t) -> JPEG, CUES, PH.
+const UI={follow1:'FOLG MIR FÜR MEHR',follow2:'CLAUDE-TIPPS',handle:'@jonas.noen',comment:'Kommentiere',dm:'→ Guide per DM'};
+const W=1080,H=1920,g=document.getElementById('c').getContext('2d');
+const C={ink:'#17141f',paper:'#f6efe4',white:'#fffdf8',y:'#ffd23f',r:'#ef5a4c',b:'#4aa3df',v:'#8b6cf0',gr:'#3ccf8e',skin:'#f2c7a5',hair:'#3a2a22',shirt:'#5b6b8c'};
+let WORDS=[],END=28;
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+const cl=x=>Math.min(1,Math.max(0,x));
+const back=(t,t0,d=.35)=>{let x=cl((t-t0)/d);if(x<=0)return 0;const s=1.9;return 1+(s+1)*Math.pow(x-1,3)+s*Math.pow(x-1,2);};
+function prand(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
+const clean=s=>s.replace(/[.,?:!']/g,'').toLowerCase();
+function KW(word,n=1){let c=0;for(const w of WORDS){if(clean(w.text)===word.toLowerCase()){c++;if(c===n)return w.start;}}return 999;}
+function KWL(word){let r=999;for(const w of WORDS){if(clean(w.text)===word.toLowerCase())r=w.start;}return r;}
+function scaleAt(cx,cy,s,fn){g.save();g.translate(cx,cy);g.scale(s,s);g.translate(-cx,-cy);fn();g.restore();}
+function rotAt(cx,cy,a,fn){g.save();g.translate(cx,cy);g.rotate(a);g.translate(-cx,-cy);fn();g.restore();}
+const FB=s=>`${s}px Bangers`,FN=s=>`700 ${s}px 'Comic Neue'`;
+
+// ---------- Papier mit Rasterpunkten (einmal vorberechnet) ----------
+const PAPER=document.createElement('canvas');PAPER.width=W;PAPER.height=H;
+(function(){const b=PAPER.getContext('2d');b.fillStyle=C.paper;b.fillRect(0,0,W,H);
+  // diagonale Rasterpunkte, zur Mitte hin kleiner
+  for(let y=0;y<H;y+=26)for(let x=(y/26%2)*13;x<W;x+=26){const d=Math.hypot(x-540,y-900)/1100;const r=1.2+3.2*Math.max(0,d-.25);b.fillStyle='rgba(139,108,240,.16)';b.beginPath();b.arc(x,y,r,0,7);b.fill();}
+  const id=b.getImageData(0,0,W,H),d=id.data;for(let i=0;i<d.length;i+=4){const n=(Math.random()-.5)*10;d[i]+=n;d[i+1]+=n;d[i+2]+=n;}b.putImageData(id,0,0);})();
+// Rasterpunkt-Füllung für Panels
+function dots(x,y,w,h,col,step=18,r=4){g.save();g.beginPath();g.rect(x,y,w,h);g.clip();g.fillStyle=col;for(let yy=y;yy<y+h+step;yy+=step)for(let xx=x+((yy-y)/step%2)*step/2;xx<x+w+step;xx+=step){g.beginPath();g.arc(xx,yy,r,0,7);g.fill();}g.restore();}
+// Speed-Lines (Hintergrund eines Panels)
+function speed(x,y,w,h,cx,cy,col,n=40){g.save();g.beginPath();g.rect(x,y,w,h);g.clip();g.fillStyle=col;for(let i=0;i<n;i++){const a=i/n*Math.PI*2+prand(i)*.08,a2=a+.035;const R=1400,r0=180+prand(i+7)*120;
+  g.beginPath();g.moveTo(cx+Math.cos(a)*r0,cy+Math.sin(a)*r0);g.lineTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R);g.lineTo(cx+Math.cos(a2)*R,cy+Math.sin(a2)*R);g.closePath();g.fill();}g.restore();}
+
+// ---------- Comic-Werkzeuge ----------
+// Panel: knallt mit Überschwinger rein, dicker Rahmen, harter Schlagschatten
+function panel(t,x,y,w,h,t0,{rot=0,fill=C.white,inside=null}={}){const s=back(t,t0,.32);if(s<=0)return;
+  rotAt(x+w/2,y+h/2,rot,()=>scaleAt(x+w/2,y+h/2,s,()=>{g.fillStyle=C.ink;g.fillRect(x+14,y+14,w,h);g.fillStyle=fill;g.fillRect(x,y,w,h);
+    if(inside){g.save();g.beginPath();g.rect(x,y,w,h);g.clip();inside();g.restore();}
+    g.lineWidth=10;g.strokeStyle=C.ink;g.strokeRect(x,y,w,h);}));}
+function wrap(txt,font,maxW){g.font=font;const out=[];let line='';for(const wd of txt.split(' ')){const tryL=line?line+' '+wd:wd;if(g.measureText(tryL).width>maxW&&line){out.push(line);line=wd;}else line=tryL;}if(line)out.push(line);return out;}
+// Sprechblase: abgerundet, Schwanz zur Figur, Text in Comic Neue
+function bubble(t,cx,cy,w,txt,size,t0,{tail=[0,0],fill=C.white,col=C.ink,think=false,hl=null}={}){const s=back(t,t0,.3);if(s<=0)return;
+  const lines=wrap(txt,FN(size),w-70),lh=size*1.2,h=lines.length*lh+56,x=cx-w/2,y=cy-h/2;
+  scaleAt(tail[0]||cx,tail[1]||cy+h/2,s,()=>{g.lineWidth=8;g.strokeStyle=C.ink;g.fillStyle=fill;
+    const path=()=>{g.beginPath();g.roundRect(x,y,w,h,Math.min(60,h/2));};
+    // Schwanz
+    if(tail[0]){const bx=Math.max(x+60,Math.min(x+w-60,tail[0]))|0,by=tail[1]>cy?y+h-4:y+4;
+      if(think){[[.45,22],[.75,14]].forEach(([f,r])=>{g.beginPath();g.arc(bx+(tail[0]-bx)*f,by+(tail[1]-by)*f,r,0,7);g.fill();g.stroke();});}
+      else{g.beginPath();g.moveTo(bx-34,by);g.lineTo(tail[0],tail[1]);g.lineTo(bx+30,by);g.closePath();g.fill();g.stroke();}}
+    path();g.fill();g.stroke();
+    if(tail[0]&&!think){const bx=Math.max(x+60,Math.min(x+w-60,tail[0]))|0,by=tail[1]>cy?y+h-4:y+4;g.fillStyle=fill;g.fillRect(bx-28,by-(tail[1]>cy?10:-2),54,10);}
+    g.fillStyle=col;g.font=FN(size);g.textAlign='center';lines.forEach((l,i)=>{const ly=y+40+size*.85+i*lh;
+      if(hl&&l.includes(hl)){const pre=l.slice(0,l.indexOf(hl)),full=g.measureText(l).width,x0=cx-full/2+g.measureText(pre).width,hw=g.measureText(hl).width;g.fillStyle=C.y;g.fillRect(x0-6,ly-size*.8,hw+12,size*1.0);g.fillStyle=col;}
+      g.fillText(l,cx,ly);});g.textAlign='left';});}
+// Lautmalerei-Stern
+function burst(t,cx,cy,r,txt,size,t0,{fill=C.y,col=C.r,rot=-.12,n=14}={}){const s=back(t,t0,.28);if(s<=0)return;
+  rotAt(cx,cy,rot,()=>scaleAt(cx,cy,s,()=>{const pts=[];for(let i=0;i<n*2;i++){const a=i/(n*2)*Math.PI*2,rr=i%2?r*.68:r*(1+prand(i+cx)*.15);pts.push([cx+Math.cos(a)*rr*1.25,cy+Math.sin(a)*rr]);}
+    g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fillStyle=C.ink;g.save();g.translate(10,10);g.fill();g.restore();g.fillStyle=fill;g.fill();g.lineWidth=8;g.strokeStyle=C.ink;g.stroke();
+    g.font=FB(size);g.textAlign='center';g.lineWidth=12;g.strokeStyle=C.ink;g.lineJoin='round';g.strokeText(txt,cx,cy+size*.36);g.fillStyle=col;g.fillText(txt,cx,cy+size*.36);g.textAlign='left';}));}
+// Comic-Schrift mit Kontur + versetztem Schatten
+function ctitle(txt,x,y,size,col,align='left',stroke=12){g.font=FB(size);g.textAlign=align;g.lineJoin='round';g.fillStyle=C.ink;g.fillText(txt,x+7,y+7);g.lineWidth=stroke;g.strokeStyle=C.ink;g.strokeText(txt,x,y);g.fillStyle=col;g.fillText(txt,x,y);g.textAlign='left';}
+
+// ---------- Figuren ----------
+// Chef: frei erfundene, flache Comic-Figur (kein bekannter Charakter)
+function boss(t,cx,cy,s,talk,{brow=1}={}){g.save();g.translate(cx,cy);g.scale(s,s);g.lineWidth=7;g.strokeStyle=C.ink;g.lineJoin='round';
+  // Oberkörper
+  g.fillStyle=C.shirt;g.beginPath();g.moveTo(-190,330);g.quadraticCurveTo(-180,150,-60,120);g.lineTo(60,120);g.quadraticCurveTo(180,150,190,330);g.closePath();g.fill();g.stroke();
+  g.fillStyle=C.white;g.beginPath();g.moveTo(-55,120);g.lineTo(0,200);g.lineTo(55,120);g.closePath();g.fill();g.stroke();
+  g.fillStyle=C.r;g.beginPath();g.moveTo(0,135);g.lineTo(-18,160);g.lineTo(0,290);g.lineTo(18,160);g.closePath();g.fill();g.stroke();
+  // Hals + Kopf
+  g.fillStyle=C.skin;g.fillRect(-36,70,72,60);g.strokeRect(-36,70,72,60);
+  g.beginPath();g.ellipse(0,-10,112,128,0,0,7);g.fill();g.stroke();
+  // Ohren
+  [-1,1].forEach(k=>{g.beginPath();g.ellipse(k*112,0,22,34,0,0,7);g.fill();g.stroke();});
+  // Haare (Seitenscheitel)
+  g.fillStyle='#8a8f99';g.beginPath();g.moveTo(-116,-20);g.quadraticCurveTo(-120,-140,0,-142);g.quadraticCurveTo(120,-142,116,-30);g.quadraticCurveTo(60,-100,-30,-92);g.quadraticCurveTo(-90,-80,-116,-20);g.closePath();g.fill();g.stroke();
+  // Brille
+  g.fillStyle='rgba(255,255,255,.55)';[-48,48].forEach(x=>{g.beginPath();g.roundRect(x-38,-36,76,56,16);g.fill();g.stroke();});g.beginPath();g.moveTo(-10,-10);g.lineTo(10,-10);g.stroke();
+  // Augen
+  g.fillStyle=C.ink;[-48,48].forEach(x=>{g.beginPath();g.arc(x,-6,9,0,7);g.fill();});
+  // Augenbrauen (streng)
+  g.lineWidth=10;g.beginPath();g.moveTo(-82,-58-6*brow);g.lineTo(-18,-48+4*brow);g.moveTo(82,-58-6*brow);g.lineTo(18,-48+4*brow);g.stroke();g.lineWidth=7;
+  // Schnurrbart + Mund (folgt der Stimme)
+  g.fillStyle='#8a8f99';g.beginPath();g.ellipse(0,46,44,14,0,0,7);g.fill();g.stroke();
+  const m=talk?Math.max(.08,(window.ENV||[])[Math.round(t*(window.FPS||25))]||0):.05;g.fillStyle='#6b2a2a';g.beginPath();g.ellipse(0,74,26,4+22*m,0,0,7);g.fill();g.stroke();
+  g.restore();}
+// Memoji (Jonas) – Posen aus assets/avatar
+function memo(name,cx,bottom,w){const im=IM[name];if(!im)return;const h=w*im.height/im.width;g.drawImage(im,cx-w/2,bottom-h,w,h);}
+
+// ---------- Phrasen ----------
+const PH=[
+ {a:0,b:6,label:'TEIL 13 · GEHALTSGESPRÄCH',acc:['chef']},
+ {kw:'DER EINWAND',a:7,b:15,label:'PANEL 1 · ER SAGT …',col:C.r},
+ {kw:'DEINE ANTWORT',a:16,b:22,label:'PANEL 2 · UND DU?',col:C.gr},
+ {kw:'ARGUMENTE',a:23,b:33,label:'SCHRITT 1 · VORBEREITEN',col:C.y},
+ {kw:'PROBELAUF',a:34,b:47,label:'SCHRITT 2 · ROLLENSPIEL',col:C.b},
+ {kw:'FEEDBACK',a:48,b:55,label:'SCHRITT 3 · NACHBESPRECHEN',col:C.v},
+ {kw:'4 PROMPTS',a:56,b:66,label:'DER GUIDE',col:C.r},
+ {kw:'',a:67,b:79,label:'FORTSETZUNG FOLGT …'}];
+const T0=k=>k===0?0:WORDS[PH[k].a].start-.12;
+function phraseAt(t){let k=0;for(let i=0;i<PH.length;i++){if(t>=T0(i))k=i;}return k;}
+const PROGRESS={items:[{label:'Argumente',t:()=>KW('erstens')},{label:'Probelauf',t:()=>KW('zweitens')},{label:'Feedback',t:()=>KW('drittens')}]};
+const done=t=>PROGRESS.items.filter(it=>t>=it.t()).length;
+function header(t,k){const p=PH[k];
+  // gelbe Erzähler-Box oben links
+  const s=k===0?1:back(t,T0(k),.25);if(s>0)rotAt(70,170,-.02,()=>scaleAt(70,170,s,()=>{g.font=FB(44);const w=g.measureText(p.label).width+48;g.fillStyle=C.ink;g.fillRect(70+8,128+8,w,70);g.fillStyle=C.y;g.fillRect(70,128,w,70);g.lineWidth=6;g.strokeStyle=C.ink;g.strokeRect(70,128,w,70);g.fillStyle=C.ink;g.fillText(p.label,94,180);}));
+  if(k>=3&&k<=6){g.font=FB(40);g.textAlign='right';g.fillStyle=C.ink;g.fillText(`SCHRITT ${done(t)}/3`,1000,180);g.textAlign='left';}
+  if(k===0||!p.kw)return;let sz=150;g.font=FB(sz);while(g.measureText(p.kw).width>930&&sz>80){sz-=6;g.font=FB(sz);}
+  const a=back(t,T0(k)+.05,.3);if(a>0)scaleAt(72+200,330,a,()=>ctitle(p.kw,72,370,sz,p.col||C.white));}
+function progressCard(t){const x=70,y=1430,w=720,h=190;g.fillStyle=C.ink;g.fillRect(x+10,y+10,w,h);g.fillStyle=C.white;g.fillRect(x,y,w,h);g.lineWidth=7;g.strokeStyle=C.ink;g.strokeRect(x,y,w,h);
+  g.font=FB(42);g.fillStyle=C.v;g.fillText('DEIN PROBELAUF',x+26,y+56);
+  PROGRESS.items.forEach((it,i)=>{const bx=x+26+i*232,by=y+86,on=t>=it.t();g.lineWidth=6;g.strokeStyle=C.ink;g.fillStyle=on?C.gr:C.white;g.fillRect(bx,by,56,56);g.strokeRect(bx,by,56,56);
+    if(on){const s=back(t,it.t(),.25);scaleAt(bx+28,by+28,s,()=>{g.lineWidth=9;g.strokeStyle=C.ink;g.lineCap='round';g.beginPath();g.moveTo(bx+12,by+30);g.lineTo(bx+24,by+43);g.lineTo(bx+46,by+14);g.stroke();});}
+    g.font=FN(34);g.fillStyle=C.ink;g.fillText(it.label,bx+66,by+40);});}
+
+// ---------- Szenen pro Phrase (Zone y≈430–1390) ----------
+function p0(t){// Hook: ganzer Satz ab Frame 0 + großes Panel: Chef gegen DU
+  const ws=WORDS.slice(PH[0].a,PH[0].b+1);const s=1+.12*(1-ease(t/.3));
+  scaleAt(540,380,s,()=>{let x=72,y=350;ws.forEach(w=>{const acc=PH[0].acc.includes(clean(w.text));const sz=acc?150:104;g.font=FB(sz);const tw=g.measureText(w.text).width;if(x+tw>1010){x=72;y+=132;}
+    ctitle(w.text,x,y,sz,acc?C.r:C.white);g.font=FB(sz);x+=tw+28;});});
+  panel(t,70,720,940,820,-1,{rot:-.012,fill:'#ffe9a8',inside:()=>{speed(70,720,940,820,540,1130,'rgba(239,90,76,.22)',46);boss(t,330,1060,1.05,false,{brow:1.6});memo('surprised',790,1545,470);}});
+  burst(t,800,820,96,'?!',110,.45,{fill:C.white,col:C.r,rot:.1});}
+function p1(t){const t0=T0(1)+.05;// Ergebnis zuerst: der Einwand als Sprechblase
+  panel(t,70,450,940,940,t0,{rot:.01,fill:C.white,inside:()=>{dots(70,450,940,940,'rgba(74,163,223,.25)',22,5);
+    g.fillStyle='#b5835a';g.fillRect(70,1250,940,140);g.lineWidth=7;g.strokeStyle=C.ink;g.beginPath();g.moveTo(70,1250);g.lineTo(1010,1250);g.stroke();
+    boss(t,540,1010,1.0,true,{brow:1.2});}});
+  bubble(t,540,560,820,'„Das Budget ist dieses Jahr leider ausgeschöpft.“',58,KW('das')-.05,{tail:[560,800],hl:'ausgeschöpft.“'});
+  burst(t,880,1180,80,'HMPF!',60,KW('ausgeschöpft')+.3,{fill:C.y,col:C.r,rot:.14});}
+function p2(t){const t0=T0(2)+.05;// DU kontert – schon geübt
+  panel(t,70,450,940,940,t0,{rot:-.01,fill:'#dff5e9',inside:()=>{speed(70,450,940,940,620,1100,'rgba(60,207,142,.28)',44);memo('thumbs',600,1395,560);}});
+  bubble(t,540,600,860,'„Verstehe. Dann lass uns über das Kundenprojekt reden, das ich seit März leite …“',50,KW('antwort')-.2,{tail:[560,880],hl:'Kundenprojekt'});
+  burst(t,230,1180,92,'ZACK!',72,KW('geübt')-.05,{fill:C.r,col:C.y,rot:-.16});}
+function p3(t){const t0=KW('erstens');// drei Argumente aus deinen Erfolgen
+  const items=[['★','Kundenprojekt seit März geleitet'],['★','2 neue Kolleginnen eingearbeitet'],['★','Lob vom Kunden schriftlich']];
+  panel(t,70,450,940,900,T0(3)+.05,{rot:.008,fill:C.white,inside:()=>{dots(70,450,940,900,'rgba(255,210,63,.35)',20,5);
+    g.font=FB(56);g.fillStyle=C.ink;g.fillText('DEINE 3 ARGUMENTE',120,550);
+    const tc=KW('erfolgen')-.2;items.forEach(([ic,txt],i)=>{const y=620+i*220,s=back(t,tc+i*.28,.3);if(s<=0)return;scaleAt(540,y+80,s,()=>{
+      g.fillStyle=C.ink;g.fillRect(130,y+10,840,170);g.fillStyle=[C.y,'#ffd9cf','#dcd2ff'][i];g.fillRect(120,y,840,170);g.lineWidth=7;g.strokeStyle=C.ink;g.strokeRect(120,y,840,170);
+      g.fillStyle=C.white;g.beginPath();g.arc(200,y+85,50,0,7);g.fill();g.stroke();g.font=FB(66);g.textAlign='center';g.fillStyle=C.ink;g.fillText(''+(i+1),200,y+108);g.textAlign='left';
+      const ls=wrap(txt,FN(48),640);ls.forEach((l,j)=>{g.font=FN(48);g.fillStyle=C.ink;g.fillText(l,280,y+(ls.length>1?72:100)+j*56);});});});}});
+  if(t>KW('starke'))burst(t,880,500,70,'STARK!',48,KW('starke'),{fill:C.r,col:C.white,rot:.15,n:12});}
+function p4(t){const t0=T0(4)+.05;// Rollenspiel: Comic-Strip, Einwände einer nach dem anderen
+  panel(t,70,450,440,470,t0,{rot:-.015,fill:'#e6f3fb',inside:()=>{dots(70,450,440,470,'rgba(74,163,223,.3)',18,4);boss(t,290,780,.72,true,{brow:1.3});}});
+  panel(t,570,450,440,470,KW('einwände')-.15,{rot:.015,fill:'#fff3cf',inside:()=>{dots(570,450,440,470,'rgba(255,210,63,.4)',18,4);memo('think',790,925,330);}});
+  bubble(t,300,1060,500,'„Warum gerade jetzt?“',46,KW('chef')-.1,{tail:[290,920]});
+  bubble(t,770,1080,480,'„Weil ich seit März mehr verantworte.“',42,KW('einwände')+.05,{tail:[790,920],hl:'März'});
+  bubble(t,540,1290,860,'„Andere im Team bekommen auch nicht mehr.“',46,KW('anderen')-.25,{fill:'#ffe1dc'});
+  const tn=KW('einen');if(t>tn){g.font=FB(44);const s=back(t,tn,.25);scaleAt(900,1220,s,()=>{g.fillStyle=C.ink;g.fillRect(780,1196,230,56);g.fillStyle=C.white;g.fillText('EINWAND 3 →',796,1238);});}}
+function p5(t){const t0=T0(5)+.05;// Feedback-Zettel: was stark war, was zu vage war, bessere Formulierung
+  panel(t,70,450,940,920,t0,{rot:-.008,fill:C.white,inside:()=>{dots(70,450,940,920,'rgba(139,108,240,.22)',20,4);
+    g.font=FB(58);g.fillStyle=C.v;g.fillText('FEEDBACK ZU DEINEN ANTWORTEN',112,550);
+    const row=(y,ok,txt,ta)=>{const s=back(t,ta,.3);if(s<=0)return;scaleAt(540,y,s,()=>{g.fillStyle=ok?C.gr:C.r;g.beginPath();g.arc(150,y,38,0,7);g.fill();g.lineWidth=6;g.strokeStyle=C.ink;g.stroke();
+      g.font=FB(54);g.textAlign='center';g.fillStyle=C.white;g.fillText(ok?'✓':'✗',150,y+19);g.textAlign='left';
+      wrap(txt,FN(44),760).forEach((l,j)=>{g.font=FN(44);g.fillStyle=C.ink;g.fillText(l,210,y+14+j*52-(txt.length>32?24:0));});});};
+    row(660,true,'Stark: konkretes Projekt genannt',KW('ehrliches'));
+    row(800,false,'Zu vage: „Ich will einfach mehr.“',KW('feedback'));
+    const tb=KW('bessere');if(t>tb-.1){const s=back(t,tb-.1,.3);scaleAt(540,1110,s,()=>{g.fillStyle=C.ink;g.fillRect(122,932,860,330);g.fillStyle='#fff3cf';g.fillRect(112,922,860,330);g.lineWidth=7;g.strokeStyle=C.ink;g.strokeRect(112,922,860,330);
+      g.font=FB(46);g.fillStyle=C.r;g.fillText('BESSER SO:',142,982);wrap('„Ich möchte über ___ € sprechen, weil ich seit März das Kundenprojekt leite.“',FN(44),790).forEach((l,j)=>{g.font=FN(44);g.fillStyle=C.ink;g.fillText(l,142,1046+j*54);});});}}});
+  burst(t,900,1300,74,'AHA!',58,KW('formulierungen')+.1,{fill:C.y,col:C.v,rot:.12});}
+function p6(t){const t0=KW('guide');// vier Comic-Hefte = vier Prompts, Inhalt angeschnitten/verwischt
+  const names=['1 · ARGUMENTE','2 · PROBELAUF','3 · FEEDBACK','4 · PLAN B'],cols=[C.y,C.b,C.v,C.r];
+  names.forEach((n,i)=>{const x=80+(i%2)*470,y=470+Math.floor(i/2)*450,ta=t0+i*.2;
+    panel(t,x,y,430,400,ta,{rot:(i%2?.02:-.02),fill:C.white,inside:()=>{g.fillStyle=cols[i];g.fillRect(x,y,430,96);g.lineWidth=6;g.strokeStyle=C.ink;g.beginPath();g.moveTo(x,y+96);g.lineTo(x+430,y+96);g.stroke();
+      g.font=FB(54);g.fillStyle=i===3?C.white:C.ink;g.fillText(n,x+26,y+68);
+      g.save();g.filter='blur(7px)';g.globalAlpha=.6;g.fillStyle=C.ink;for(let k=0;k<5;k++)g.fillRect(x+30,y+140+k*46,k%2?250:350,15);g.restore();}});});
+  const tb=KW('plan');if(t>tb-.1)burst(t,820,1300,100,'PLAN B!',62,tb-.1,{fill:C.r,col:C.y,rot:-.1});
+  const tg=KW('nein');if(t>tg)bubble(t,330,1310,440,'„Nein.“ – und dann?',44,tg-.05,{fill:C.white});}
+// CTA: "Kommentiere PROMPT → Guide per DM" als Comic-Pille (abschaltbar mit window.NO_PROMPT_CTA für LinkedIn)
+function promptCta(t){if(window.NO_PROMPT_CTA)return;const ts=KWL('prompt')-.1;const a=back(t,ts,.35);if(a<=0)return;
+  scaleAt(540,1340,a,()=>{g.fillStyle=C.ink;g.beginPath();g.roundRect(110,1287,880,130,65);g.fill();g.beginPath();g.roundRect(100,1275,880,130,65);g.fillStyle=C.white;g.fill();g.lineWidth=8;g.strokeStyle=C.ink;g.stroke();
+    g.font=FN(46);g.textAlign='left';g.fillStyle=C.ink;g.fillText(UI.comment,150,1358);const w1=g.measureText(UI.comment+' ').width;
+    g.font=FB(72);g.fillStyle=C.r;g.fillText('PROMPT',150+w1,1364);const w2=g.measureText('PROMPT ').width;
+    g.font=FN(40);g.fillStyle=C.ink;g.fillText(UI.dm,150+w1+w2,1356);});}
+function p7a(t){const t0=KW('kommentiere')-.05;// CTA-Panel vor der Folgen-Karte
+  panel(t,70,450,940,760,t0,{rot:.01,fill:'#ffe9a8',inside:()=>{speed(70,450,940,760,540,830,'rgba(239,90,76,.25)',46);}});
+  burst(t,540,760,230,'PROMPT',150,KWL('prompt')-.1,{fill:C.y,col:C.r,rot:-.06,n:16});
+  promptCta(t);}
+function outro(t,t0){// Folgen-Karte, Memoji winkt hinter der Karte hervor (wird vorher gezeichnet)
+  const a=back(t,t0+.05,.35);if(a<=0)return;
+  scaleAt(540,1020,a,()=>{g.fillStyle=C.ink;g.fillRect(124,814,860,440);g.fillStyle=C.white;g.fillRect(110,800,860,440);g.lineWidth=10;g.strokeStyle=C.ink;g.strokeRect(110,800,860,440);
+    dots(110,800,860,440,'rgba(255,210,63,.35)',20,5);g.strokeRect(110,800,860,440);
+    ctitle(UI.follow1,540,965,92,C.white,'center');ctitle(UI.follow2,540,1085,110,C.y,'center');
+    g.font=FN(60);g.textAlign='center';g.fillStyle=C.ink;g.fillText(UI.handle,540,1185);g.textAlign='left';});
+  promptCta(t);}
+const PROPS=[p0,p1,p2,p3,p4,p5,p6];
+const IM={};window.IMGS_READY=false;Promise.all(['surprised','thumbs','think','wave'].filter(n=>(window.AVDATA||{})[n]).map(n=>new Promise(r=>{const i=new Image();i.onload=r;i.src=window.AVDATA[n];IM[n]=i;}))).then(()=>window.IMGS_READY=true);
+window.loopNeeded=()=>null;window.setLoop=()=>Promise.resolve();window.avatarPlan=()=>[];
+function frame(t){g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.filter='none';g.drawImage(PAPER,0,0);const k=phraseAt(t),t0=T0(k);
+  const tf=KW('folg')-.12,outroOn=t>=tf;
+  // Seitenwechsel: neues Bild schiebt sich kurz von rechts rein
+  const sl=k>0?(1-ease((t-t0)/.18))*120:0;g.save();g.translate(sl,0);
+  if(k<PROPS.length){const push=1+.015*cl((t-t0)/2.5);scaleAt(540,900,push,()=>PROPS[k](t));}
+  else if(!outroOn)p7a(t);
+  else{// Memoji winkt hinter der Karte hervor
+    const m=back(t,tf+.3,.45);if(m>0&&IM.wave){g.save();g.beginPath();g.rect(0,0,W,806);g.clip();const im=IM.wave,w=560,h=w*im.height/im.width;g.drawImage(im,540-w/2,880-h*m,w,h);g.restore();}
+    outro(t,tf);}
+  g.restore();
+  header(t,k);if(k>=3&&k<=6)progressCard(t);}
+// Sounds
+function buildCues(){const q=[];const add=(t,n,v)=>{if(t<900)q.push({t:Math.max(0,t),name:n,vol:v||1});};
+  add(0,'impact',.9);add(.45,'pop',.6);
+  for(let k=1;k<PH.length;k++)add(T0(k)-.08,'whoosh',.35);
+  add(KW('das')-.05,'pop',.6);add(KW('ausgeschöpft')+.3,'stamp',.6);
+  add(KW('antwort')-.2,'pop',.6);add(KW('geübt')-.05,'impact',.5);
+  const tc=KW('erfolgen')-.2;[0,1,2].forEach(i=>add(tc+i*.28,'pop',.5));add(KW('starke'),'stamp',.45);
+  add(KW('chef',2)-.1,'pop',.5);add(KW('einwände')-.15,'pop',.5);add(KW('anderen')-.25,'pop',.5);add(KW('einen'),'click',.6);
+  add(KW('ehrliches'),'pop',.5);add(KW('feedback'),'pop',.5);add(KW('bessere')-.1,'sparkle',.6);add(KW('formulierungen')+.1,'stamp',.4);
+  const tg=KW('guide');[0,1,2,3].forEach(i=>add(tg+i*.2,'pop',.45));add(KW('plan')-.1,'stamp',.6);add(KW('nein')-.05,'pop',.5);
+  add(KW('erstens'),'ding',.4);add(KW('zweitens'),'ding',.4);add(KW('drittens'),'ding',.4);
+  add(KW('kommentiere')-.05,'pop',.6);add(KWL('prompt')-.1,'impact',.6);
+  add(KW('folg')+.1,'outro',.6);
+  q.sort((a,b)=>a.t-b.t);const out=[];for(const c of q){if(!out.some(o=>o.name===c.name&&Math.abs(o.t-c.t)<.15))out.push(c);}return out;}
+window.setup=(words)=>{WORDS=words;END=WORDS[WORDS.length-1].end+.6;window.CUES=buildCues();return END;};
+window.render=(t)=>{frame(t);return g.canvas.toDataURL('image/jpeg',.9);};
+</script></body></html>
