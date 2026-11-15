@@ -1349,7 +1349,7 @@
     "id": "R014",
     "type": "reel",
     "createdAt": "2026-11-15",
-    "status": "sending",
+    "status": "scheduled",
     "format": "experiment",
     "style": "comic-sprechblasen",
     "series": "Claude-Codes Teil 13",
@@ -1428,6 +1428,37 @@
     "music": "assets/music/groove-115.mp3",
     "durationSec": 28.7,
     "costUsd": 0.1,
-    "sha256": "96458d891db14fa01665d9a7c5337f204f6aa6be9bb899029ef1a808e5dba9b9"
+    "sha256": "96458d891db14fa01665d9a7c5337f204f6aa6be9bb899029ef1a808e5dba9b9",
+    "plannedFor": "2026-11-15T18:30:00+01:00",
+    "mediaCommit": "9a9612aeef750a5f09aefdf1588b50fdd6a794a8",
+    "metricool": {
+      "postId": 429075811,
+      "uuid": "593025227027139341",
+      "publishAt": "2026-11-15T18:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 429075811,
+        "scheduledAt": "2026-11-15T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 429075811,
+        "scheduledAt": "2026-11-15T18:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 429075993,
+        "uuid": "-3658665217107016378",
+        "scheduledAt": "2026-11-15T18:30:00+01:00",
+        "file": "reels/R014/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    }
   }
 ]
