@@ -927,7 +927,7 @@
     "id": "E008",
     "type": "reel",
     "createdAt": "2026-11-15",
-    "status": "sending",
+    "status": "scheduled",
     "format": "experiment",
     "style": "comic-sprechblasen",
     "series": "Claude Codes Part 8",
@@ -1009,6 +1009,35 @@
     "sha256": "040496cbf03e14f32b428356b8b1cf554a5714fea68f032ded33dc891fa77440",
     "durationSec": 26.3,
     "music": "assets/music/groove-115.mp3",
-    "costUsd": 0.09
+    "costUsd": 0.09,
+    "mediaCommit": "2c943703675b7fd54aa5e21dee2bb49055908c10",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 429139822,
+        "uuid": "-8909115548145268737",
+        "scheduledAt": "2026-11-15T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 429139822,
+        "uuid": "-8909115548145268737",
+        "scheduledAt": "2026-11-15T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 429139837,
+        "uuid": "6633862883095760312",
+        "scheduledAt": "2026-11-15T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 429139862,
+        "uuid": "7502648640095342359",
+        "scheduledAt": "2026-11-15T20:30:00+01:00",
+        "file": "en/reels/E008/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    }
   }
 ]
