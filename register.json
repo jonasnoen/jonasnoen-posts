@@ -1465,7 +1465,7 @@
     "id": "R015",
     "type": "reel",
     "createdAt": "2026-11-16",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 163.6,
     "series": "Claude-Codes Teil 14",
@@ -1480,7 +1480,7 @@
     "fileLinkedin": "reels/R015/reel_linkedin.mp4",
     "tiktokTitle": "Sag Claude nie „Schreib menschlicher“",
     "caption": "Sag Claude nie „Schreib menschlicher“. Mach das hier. ✍️\n\n„Schreib menschlicher“ bringt dir nur andere Floskeln. Claude weiß ja nicht, wie DU schreibst.\n\nDer Trick: Gib Claude 2–3 Texte, die du selbst geschrieben hast. Der Prompt macht daraus:\n👉 dein Stil-Profil: Satzlänge, Lieblingswörter, Anrede\n👉 eine Verbotsliste mit typischen KI-Floskeln („In der heutigen schnelllebigen Welt …“)\n👉 einen Gegencheck, der jeden Satz markiert, der noch generisch klingt\n\nErgebnis: Texte, die nach dir klingen – nicht nach Chatbot.\n\nSpeicher dir das, bevor du die nächste Mail schreibst. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #PromptTipps #Schreiben #JonasNoen",
-    "captionLinkedin": "„Schreib das menschlicher“ ist eine der häufigsten Bitten an KI-Tools – und bringt meist nur andere Floskeln. Das Modell kennt den eigenen Schreibstil schlicht nicht.\n\nBesser funktioniert es, Claude Beispiele zu geben statt Adjektive:\n1. Zwei, drei eigene Texte als Probe einfügen (Mail, Post, Nachricht).\n2. Claude leitet daraus ein Stil-Profil ab: Satzlänge, typische Wendungen, Anrede – jede Regel mit einem Zitat belegt.\n3. Dazu kommt eine Verbotsliste typischer KI-Floskeln („In der heutigen schnelllebigen Welt“, „Es ist wichtig zu beachten“).\n4. Zum Schluss markiert Claude jeden Satz, der noch generisch klingt, und schlägt eine Alternative vor.\n\nDas Profil lässt sich speichern und in jedem neuen Chat oder in einem Claude-Projekt wiederverwenden.\n\nWelche KI-Floskel würdet ihr sofort auf die Verbotsliste setzen?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+    "captionLinkedin": "„Schreib das menschlicher“ ist eine typische Bitte an KI-Tools – und bringt meist nur andere Floskeln. Das Modell kennt den eigenen Schreibstil schlicht nicht.\n\nBesser funktioniert es, Claude Beispiele zu geben statt Adjektive:\n1. Zwei, drei eigene Texte als Probe einfügen (Mail, Post, Nachricht).\n2. Claude leitet daraus ein Stil-Profil ab: Satzlänge, typische Wendungen, Anrede – jede Regel mit einem Zitat belegt.\n3. Dazu kommt eine Verbotsliste typischer KI-Floskeln („In der heutigen schnelllebigen Welt“, „Es ist wichtig zu beachten“).\n4. Zum Schluss markiert Claude jeden Satz, der noch generisch klingt, und schlägt eine Alternative vor.\n\nDas Profil lässt sich speichern und in jedem neuen Chat oder in einem Claude-Projekt wiederverwenden.\n\nWelche KI-Floskel würdet ihr sofort auf die Verbotsliste setzen?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
     "vorlage": {
       "titel": "Texte, die nach dir klingen (Guide mit 3 Prompts)",
       "text": "Du bist mein Ghostwriter. Ziel: Texte, die klingen, als hätte ich sie selbst geschrieben – nicht nach KI.\n\nHier sind 2–3 Texte, die ich selbst geschrieben habe (Mails, Posts, Nachrichten):\n<probe1>___</probe1>\n<probe2>___</probe2>\n<probe3>___ (optional)</probe3>\n\nText, den du in meinem Stil schreiben oder umschreiben sollst: ___\nZweck und Leser: ___ (z. B. Mail an Kunden, LinkedIn-Post, Nachricht ans Team)\n\nSo gehst du vor:\n1. Leite aus meinen Proben ein Stil-Profil mit höchstens 8 Regeln ab: typische Satzlänge, Satzanfänge, Lieblingswörter und Wendungen, Anrede (du/Sie), Ton (z. B. direkt, locker, trocken), Satzzeichen und Emojis, und was ich nie mache. Belege jede Regel mit einem kurzen Zitat aus meinen Proben.\n2. Verbotsliste: Verwende keine typischen KI-Floskeln wie „In der heutigen schnelllebigen Welt“, „Es ist wichtig zu beachten“, „eine spannende Reise“, „Tauchen wir ein“, „nahtlos“, „ganzheitlich“, „Zusammenfassend lässt sich sagen“ – und keine Wörter, die in meinen Proben nie vorkommen würden. Keine Dreier-Aufzählungen nur für den Klang, keine rhetorische Frage als Einstieg.\n3. Schreib den Text in meinem Stil. Inhalt und Fakten bleiben gleich – erfinde nichts dazu.\n4. Gegencheck: Markiere danach jeden Satz, der noch generisch oder nach KI klingt, mit [GENERISCH] und schlag eine Version in meinem Ton vor.\n\nAusgabe: 1) Stil-Profil als Liste, 2) fertiger Text, 3) markierte Sätze mit Alternative.",
@@ -1541,6 +1541,36 @@
     "durationSec": 20.4,
     "durationSecLinkedin": 18.2,
     "costUsd": 0.2,
-    "plannedFor": "2026-11-16T18:30:00+01:00"
+    "plannedFor": "2026-11-16T18:30:00+01:00",
+    "mediaCommit": "b020ee020e774187e24df9972535aec9cb99983e",
+    "metricool": {
+      "postId": 430384571,
+      "uuid": "7057705720230855464",
+      "publishAt": "2026-11-16T18:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 430384571,
+        "scheduledAt": "2026-11-16T18:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 430384571,
+        "scheduledAt": "2026-11-16T18:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 430384609,
+        "uuid": "8131353101822544404",
+        "scheduledAt": "2026-11-16T18:30:00+01:00",
+        "file": "reels/R015/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    }
   }
 ]
