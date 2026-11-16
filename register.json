@@ -1460,5 +1460,87 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "R015",
+    "type": "reel",
+    "createdAt": "2026-11-16",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 163.6,
+    "series": "Claude-Codes Teil 14",
+    "topic": "Texte, die nach dir klingen statt nach KI (Stil-Profil aus eigenen Texten + Floskel-Verbotsliste + Gegencheck)",
+    "angle": "Statt „schreib menschlicher“: 2–3 eigene Texte als Probe → Stil-Profil mit Belegen → Verbotsliste typischer KI-Floskeln → Text umschreiben → generische Sätze markieren; Profil als Baustein speichern",
+    "hook": "Sag Claude nie: Schreib menschlicher.",
+    "themaQuelle": "themen/de.md T09",
+    "source": "Keine neuen Produktaussagen (nur Prompt-Technik: Beispiele statt Beschreibungen, klares Ausgabeformat, Verbote positiv ergänzt). Anthropic empfiehlt Beispiele (Multishot) für Stil und Format: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices . Kein Versprechen, KI-Erkennung zu umgehen.",
+    "voice": "Jonas Noen (ElevenLabs-Klon), Tempo 1,15",
+    "lipsync": "veed-lipsync",
+    "file": "reels/R015/reel.mp4",
+    "fileLinkedin": "reels/R015/reel_linkedin.mp4",
+    "tiktokTitle": "Sag Claude nie „Schreib menschlicher“",
+    "caption": "Sag Claude nie „Schreib menschlicher“. Mach das hier. ✍️\n\n„Schreib menschlicher“ bringt dir nur andere Floskeln. Claude weiß ja nicht, wie DU schreibst.\n\nDer Trick: Gib Claude 2–3 Texte, die du selbst geschrieben hast. Der Prompt macht daraus:\n👉 dein Stil-Profil: Satzlänge, Lieblingswörter, Anrede\n👉 eine Verbotsliste mit typischen KI-Floskeln („In der heutigen schnelllebigen Welt …“)\n👉 einen Gegencheck, der jeden Satz markiert, der noch generisch klingt\n\nErgebnis: Texte, die nach dir klingen – nicht nach Chatbot.\n\nSpeicher dir das, bevor du die nächste Mail schreibst. Kommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #PromptTipps #Schreiben #JonasNoen",
+    "captionLinkedin": "„Schreib das menschlicher“ ist eine der häufigsten Bitten an KI-Tools – und bringt meist nur andere Floskeln. Das Modell kennt den eigenen Schreibstil schlicht nicht.\n\nBesser funktioniert es, Claude Beispiele zu geben statt Adjektive:\n1. Zwei, drei eigene Texte als Probe einfügen (Mail, Post, Nachricht).\n2. Claude leitet daraus ein Stil-Profil ab: Satzlänge, typische Wendungen, Anrede – jede Regel mit einem Zitat belegt.\n3. Dazu kommt eine Verbotsliste typischer KI-Floskeln („In der heutigen schnelllebigen Welt“, „Es ist wichtig zu beachten“).\n4. Zum Schluss markiert Claude jeden Satz, der noch generisch klingt, und schlägt eine Alternative vor.\n\nDas Profil lässt sich speichern und in jedem neuen Chat oder in einem Claude-Projekt wiederverwenden.\n\nWelche KI-Floskel würdet ihr sofort auf die Verbotsliste setzen?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+    "vorlage": {
+      "titel": "Texte, die nach dir klingen (Guide mit 3 Prompts)",
+      "text": "Du bist mein Ghostwriter. Ziel: Texte, die klingen, als hätte ich sie selbst geschrieben – nicht nach KI.\n\nHier sind 2–3 Texte, die ich selbst geschrieben habe (Mails, Posts, Nachrichten):\n<probe1>___</probe1>\n<probe2>___</probe2>\n<probe3>___ (optional)</probe3>\n\nText, den du in meinem Stil schreiben oder umschreiben sollst: ___\nZweck und Leser: ___ (z. B. Mail an Kunden, LinkedIn-Post, Nachricht ans Team)\n\nSo gehst du vor:\n1. Leite aus meinen Proben ein Stil-Profil mit höchstens 8 Regeln ab: typische Satzlänge, Satzanfänge, Lieblingswörter und Wendungen, Anrede (du/Sie), Ton (z. B. direkt, locker, trocken), Satzzeichen und Emojis, und was ich nie mache. Belege jede Regel mit einem kurzen Zitat aus meinen Proben.\n2. Verbotsliste: Verwende keine typischen KI-Floskeln wie „In der heutigen schnelllebigen Welt“, „Es ist wichtig zu beachten“, „eine spannende Reise“, „Tauchen wir ein“, „nahtlos“, „ganzheitlich“, „Zusammenfassend lässt sich sagen“ – und keine Wörter, die in meinen Proben nie vorkommen würden. Keine Dreier-Aufzählungen nur für den Klang, keine rhetorische Frage als Einstieg.\n3. Schreib den Text in meinem Stil. Inhalt und Fakten bleiben gleich – erfinde nichts dazu.\n4. Gegencheck: Markiere danach jeden Satz, der noch generisch oder nach KI klingt, mit [GENERISCH] und schlag eine Version in meinem Ton vor.\n\nAusgabe: 1) Stil-Profil als Liste, 2) fertiger Text, 3) markierte Sätze mit Alternative.",
+      "hinweis": "2–3 eigene Texte als Probe einfügen, Zieltext und Leser ergänzen – Claude liefert dein Stil-Profil, den Text in deinem Ton und markiert, was noch generisch klingt."
+    },
+    "guide": {
+      "titel": "Guide: Sag nie wieder „schreib menschlicher“ – so klingt Claude wie du",
+      "ziel": "Aus 2–3 eigenen Texten ein Stil-Profil machen, typische KI-Floskeln verbieten und jeden Entwurf so umschreiben lassen, dass er nach dir klingt.",
+      "schritte": [
+        {
+          "titel": "Proben sammeln.",
+          "text": "Such 2–3 Texte, die du selbst geschrieben hast – am besten aus demselben Kanal wie dein Zieltext (Mail zu Mail, Post zu Post). Namen, Zahlen und Vertrauliches vorher rausnehmen."
+        },
+        {
+          "titel": "Stil-Profil + Text in einem Rutsch.",
+          "text": "Prompt 1 schicken. Claude leitet bis zu 8 Stilregeln mit Belegzitaten ab, schreibt deinen Text ohne Floskeln um und markiert Sätze, die noch generisch klingen."
+        },
+        {
+          "titel": "Profil korrigieren.",
+          "text": "Stimmt eine Regel nicht? Sag es direkt („Ich schreib nie ‚Hallo zusammen‘“, „Emojis nur am Ende“). Je genauer das Profil, desto besser jeder weitere Text."
+        },
+        {
+          "titel": "Jeden neuen Entwurf gegenchecken.",
+          "text": "Prompt 2 für alles, was nach KI klingen könnte – auch für Texte aus anderen Tools. Du bekommst eine Tabelle Satz | Problem | Besser."
+        },
+        {
+          "titel": "Profil speichern.",
+          "text": "Prompt 3 macht daraus einen Baustein mit höchstens 150 Wörtern. Speicher ihn als Notiz und füg ihn in neue Chats ein – oder in die Anweisungen eines Claude-Projekts."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Stil-Profil + Text in deinem Ton",
+          "text": "Du bist mein Ghostwriter. Ziel: Texte, die klingen, als hätte ich sie selbst geschrieben – nicht nach KI.\n\nHier sind 2–3 Texte, die ich selbst geschrieben habe (Mails, Posts, Nachrichten):\n<probe1>___</probe1>\n<probe2>___</probe2>\n<probe3>___ (optional)</probe3>\n\nText, den du in meinem Stil schreiben oder umschreiben sollst: ___\nZweck und Leser: ___ (z. B. Mail an Kunden, LinkedIn-Post, Nachricht ans Team)\n\nSo gehst du vor:\n1. Leite aus meinen Proben ein Stil-Profil mit höchstens 8 Regeln ab: typische Satzlänge, Satzanfänge, Lieblingswörter und Wendungen, Anrede (du/Sie), Ton (z. B. direkt, locker, trocken), Satzzeichen und Emojis, und was ich nie mache. Belege jede Regel mit einem kurzen Zitat aus meinen Proben.\n2. Verbotsliste: Verwende keine typischen KI-Floskeln wie „In der heutigen schnelllebigen Welt“, „Es ist wichtig zu beachten“, „eine spannende Reise“, „Tauchen wir ein“, „nahtlos“, „ganzheitlich“, „Zusammenfassend lässt sich sagen“ – und keine Wörter, die in meinen Proben nie vorkommen würden. Keine Dreier-Aufzählungen nur für den Klang, keine rhetorische Frage als Einstieg.\n3. Schreib den Text in meinem Stil. Inhalt und Fakten bleiben gleich – erfinde nichts dazu.\n4. Gegencheck: Markiere danach jeden Satz, der noch generisch oder nach KI klingt, mit [GENERISCH] und schlag eine Version in meinem Ton vor.\n\nAusgabe: 1) Stil-Profil als Liste, 2) fertiger Text, 3) markierte Sätze mit Alternative.",
+          "wann": "Einmal mit deinen Proben – liefert Profil, fertigen Text und Markierungen."
+        },
+        {
+          "titel": "Floskel-Gegencheck für jeden Entwurf",
+          "text": "Prüf diesen Entwurf gegen mein Stil-Profil und die Verbotsliste von oben:\n___ (Entwurf einfügen – von dir, von Claude oder von einem anderen Tool)\n\n1. Markiere jeden Satz, der gegen eine Regel verstößt oder eine Floskel von der Verbotsliste enthält, und nenn die Regel.\n2. Gib zu jedem markierten Satz eine Alternative in meinem Ton.\n3. Sag mir zum Schluss in einem Satz, was an diesem Entwurf am meisten nach KI klingt.\n\nÄndere nichts am Inhalt. Ausgabe als Tabelle: Satz | Problem | Besser.",
+          "wann": "Im selben Chat danach, für jeden weiteren Entwurf."
+        },
+        {
+          "titel": "Stil-Baustein zum Wiederverwenden",
+          "text": "Fass mein Stil-Profil und die Verbotsliste als kompakten Baustein zusammen (höchstens 150 Wörter), den ich am Anfang neuer Chats einfügen oder in die Anweisungen eines Claude-Projekts kopieren kann.\n- Formuliere jede Regel als klare Anweisung („Schreib …“, „Vermeide …“) mit einem Mini-Beispiel aus meinen Proben.\n- Übernimm die Verbotsliste vollständig.\n- Schließe mit: „Wenn du bei Ton oder Inhalt unsicher bist, frag mich, statt zu raten.“",
+          "wann": "Wenn das Profil passt – damit du nicht jedes Mal neu anfangen musst."
+        }
+      ],
+      "beispiel": "Lena verschickt einen Newsletter für ihr Café. Als Proben nimmt sie zwei alte Instagram-Posts und eine Mail an Stammgäste. Claudes Profil: kurze Sätze, duzt immer, startet gern mit „Kurz gesagt:“, Emojis nur am Ende. Aus „In der heutigen schnelllebigen Welt freuen wir uns, dir spannende Inhalte zu bieten“ wird „Kurz gesagt: Ab sofort kommt der Newsletter jeden Freitag. Lies mal rein! ☕“ – und der Gegencheck markiert einen Satz, der noch nach Werbebroschüre klingt.",
+      "check": [
+        "Sind die Proben wirklich von dir (nicht schon KI-bearbeitet)?",
+        "Hat jede Stilregel ein Belegzitat – und stimmt sie?",
+        "Sind Fakten, Namen und Termine im fertigen Text unverändert und richtig?",
+        "Ehrlich bleiben: Der Prompt macht Texte persönlicher – er ist kein Trick, um KI-Erkennung auszutricksen."
+      ]
+    },
+    "music": "assets/music/lofi-105.mp3",
+    "sha256": "d1d36cbfeff7214dcac4802fe4b9c11b0dabf8ab8069afc9b428eb822a3cb541",
+    "durationSec": 20.4,
+    "durationSecLinkedin": 18.2,
+    "costUsd": 0.2,
+    "plannedFor": "2026-11-16T18:30:00+01:00"
   }
 ]
