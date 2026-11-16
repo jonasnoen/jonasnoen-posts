@@ -1039,5 +1039,89 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E009",
+    "type": "reel",
+    "createdAt": "2026-11-16",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 14.1,
+    "series": "Claude Codes Part 9",
+    "fromDe": "R015",
+    "topic": "Texts that sound like you, not like AI (style profile from your own texts + AI-phrase ban list + check)",
+    "angle": "Instead of 'write more human': 2–3 of your own texts as samples → style profile with quotes → ban list of typical AI phrases → rewrite → flag generic sentences; save the profile as a reusable block",
+    "hook": "Never tell Claude: write more human.",
+    "themaQuelle": "register.json R015",
+    "source": "No product claims, prompt technique only (examples instead of descriptions, clear output format). Anthropic recommends examples (multishot) for style and format: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices . No promise to beat AI detectors.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E009/reel.mp4",
+    "fileLinkedin": "en/reels/E009/reel_linkedin.mp4",
+    "tiktokTitle": "Never tell Claude \"write more human\"",
+    "caption": "Never tell Claude \"write more human\". Do this instead. ✍️\n\n\"Write more human\" just gets you different clichés. Claude doesn't know how YOU write.\n\nThe trick: give Claude 2–3 texts you wrote yourself. The prompt turns them into:\n👉 your style profile: sentence length, favorite words, tone\n👉 a ban list of typical AI phrases (\"In today's fast-paced world …\")\n👉 a check that flags every sentence that still sounds generic\n\nResult: texts that sound like you – not like a chatbot.\n\nSave this before you write your next email. Comment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PromptEngineering #WritingTips #AITools",
+    "captionX": "Never tell Claude \"write more human\". Give it 2–3 of your own texts instead: style profile, a ban list for AI phrases + a check that flags anything generic. Comment PROMPT for the guide ✍️",
+    "captionLinkedIn": "\"Make it sound more human\" is one of the most common requests to AI tools – and it usually just swaps one set of clichés for another. The model simply doesn't know your writing style.\n\nIt works better to give Claude examples instead of adjectives:\n1. Paste two or three texts you wrote yourself (an email, a post, a message).\n2. Claude derives a style profile from them: sentence length, typical phrases, tone – each rule backed by a quote.\n3. Add a ban list of typical AI phrases (\"In today's fast-paced world\", \"It's important to note\").\n4. Finally, Claude marks every sentence that still sounds generic and suggests an alternative.\n\nThe profile can be saved and reused in every new chat or in a Claude project. Anthropic's own prompting guidance also recommends examples for getting style and format right.\n\nWhich AI phrase would you put on the ban list first?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Texts that sound like you (guide with 3 prompts)",
+      "text": "You're my ghostwriter. Goal: texts that sound like I wrote them myself – not like AI.\n\nHere are 2–3 texts I wrote myself (emails, posts, messages):\n<sample1>___</sample1>\n<sample2>___</sample2>\n<sample3>___ (optional)</sample3>\n\nText you should write or rewrite in my style: ___\nPurpose and reader: ___ (e.g. email to a client, LinkedIn post, message to my team)\n\nHow to work:\n1. From my samples, derive a style profile with at most 8 rules: typical sentence length, how I start sentences, favorite words and phrases, how I address people (first name, \"Hi\", \"Hey\"…), tone (e.g. direct, casual, dry), punctuation and emojis, and what I never do. Back up each rule with a short quote from my samples.\n2. Ban list: don't use typical AI phrases like \"In today's fast-paced world\", \"It's important to note\", \"an exciting journey\", \"Let's dive in\", \"seamless\", \"holistic\", \"game-changer\", \"In conclusion\" – and no words that would never appear in my samples. No groups of three just for rhythm, no rhetorical question as the opener.\n3. Write the text in my style. Content and facts stay the same – don't add anything.\n4. Check: afterwards, mark every sentence that still sounds generic or AI-like with [GENERIC] and suggest a version in my voice.\n\nOutput: 1) style profile as a list, 2) finished text, 3) marked sentences with alternatives.",
+      "hinweis": "Paste 2–3 of your own texts as samples, add the target text and the reader – Claude gives you your style profile, the text in your voice, and flags what still sounds generic."
+    },
+    "guide": {
+      "titel": "Guide: Never say \"write more human\" again – make Claude sound like you",
+      "ziel": "Turn 2–3 of your own texts into a style profile, ban typical AI phrases, and have every draft rewritten so it sounds like you.",
+      "schritte": [
+        {
+          "titel": "Collect samples.",
+          "text": "Find 2–3 texts you wrote yourself – ideally from the same channel as your target text (email for email, post for post). Remove names, numbers and anything confidential first."
+        },
+        {
+          "titel": "Style profile + text in one go.",
+          "text": "Send prompt 1. Claude derives up to 8 style rules with supporting quotes, rewrites your text without clichés and marks sentences that still sound generic."
+        },
+        {
+          "titel": "Correct the profile.",
+          "text": "Is a rule wrong? Say so directly (\"I never write 'Hi all'\", \"Emojis only at the end\"). The more accurate the profile, the better every following text."
+        },
+        {
+          "titel": "Check every new draft.",
+          "text": "Use prompt 2 for anything that might sound like AI – including texts from other tools. You get a table: Sentence | Problem | Better."
+        },
+        {
+          "titel": "Save the profile.",
+          "text": "Prompt 3 turns it into a block of at most 150 words. Save it as a note and paste it into new chats – or into the instructions of a Claude project."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Style profile + text in your voice",
+          "text": "You're my ghostwriter. Goal: texts that sound like I wrote them myself – not like AI.\n\nHere are 2–3 texts I wrote myself (emails, posts, messages):\n<sample1>___</sample1>\n<sample2>___</sample2>\n<sample3>___ (optional)</sample3>\n\nText you should write or rewrite in my style: ___\nPurpose and reader: ___ (e.g. email to a client, LinkedIn post, message to my team)\n\nHow to work:\n1. From my samples, derive a style profile with at most 8 rules: typical sentence length, how I start sentences, favorite words and phrases, how I address people (first name, \"Hi\", \"Hey\"…), tone (e.g. direct, casual, dry), punctuation and emojis, and what I never do. Back up each rule with a short quote from my samples.\n2. Ban list: don't use typical AI phrases like \"In today's fast-paced world\", \"It's important to note\", \"an exciting journey\", \"Let's dive in\", \"seamless\", \"holistic\", \"game-changer\", \"In conclusion\" – and no words that would never appear in my samples. No groups of three just for rhythm, no rhetorical question as the opener.\n3. Write the text in my style. Content and facts stay the same – don't add anything.\n4. Check: afterwards, mark every sentence that still sounds generic or AI-like with [GENERIC] and suggest a version in my voice.\n\nOutput: 1) style profile as a list, 2) finished text, 3) marked sentences with alternatives.",
+          "wann": "Once with your samples – gives you the profile, the finished text and the flags."
+        },
+        {
+          "titel": "AI-phrase check for every draft",
+          "text": "Check this draft against my style profile and the ban list from above:\n___ (paste the draft – yours, Claude's or from another tool)\n\n1. Mark every sentence that breaks a rule or contains a phrase from the ban list, and name the rule.\n2. Give an alternative in my voice for each marked sentence.\n3. Finish with one sentence: what makes this draft sound most like AI?\n\nDon't change the content. Output as a table: Sentence | Problem | Better.",
+          "wann": "Afterwards in the same chat, for every new draft."
+        },
+        {
+          "titel": "Reusable style block",
+          "text": "Turn my style profile and the ban list into a compact block (max. 150 words) that I can paste at the start of new chats or into the instructions of a Claude project.\n- Write each rule as a clear instruction (\"Write …\", \"Avoid …\") with a mini example from my samples.\n- Include the full ban list.\n- End with: \"If you're unsure about tone or content, ask me instead of guessing.\"",
+          "wann": "Once the profile fits – so you never have to start from scratch."
+        }
+      ],
+      "beispiel": "Maya sends a newsletter for her café. As samples she uses two old Instagram posts and an email to regulars. Claude's profile: short sentences, always first names, likes to start with \"Quick version:\", emojis only at the end. \"In today's fast-paced world, we're excited to bring you engaging content\" becomes \"Quick version: the newsletter now comes out every Friday. Have a look! ☕\" – and the check flags one sentence that still sounds like a brochure.",
+      "check": [
+        "Are the samples really yours (not already AI-edited)?",
+        "Does every style rule have a supporting quote – and is it right?",
+        "Are facts, names and dates in the final text unchanged and correct?",
+        "Stay honest: the prompt makes texts more personal – it's not a trick to fool AI detectors."
+      ]
+    },
+    "music": "assets/music/lofi-105.mp3",
+    "costUsd": 0.2,
+    "platforms": {},
+    "sha256": "4003961b213c1a964678f703c70ba6fbb038233d08acac430908a7433e3361b2",
+    "durationSec": 19.2,
+    "durationSecLinkedin": 17.2
   }
 ]
