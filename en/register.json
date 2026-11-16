@@ -1044,7 +1044,7 @@
     "id": "E009",
     "type": "reel",
     "createdAt": "2026-11-16",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 14.1,
     "series": "Claude Codes Part 9",
@@ -1119,9 +1119,37 @@
     },
     "music": "assets/music/lofi-105.mp3",
     "costUsd": 0.2,
-    "platforms": {},
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 430469184,
+        "uuid": "4637182896367026956",
+        "scheduledAt": "2026-11-16T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 430469184,
+        "uuid": "4637182896367026956",
+        "scheduledAt": "2026-11-16T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 430469420,
+        "uuid": "-3575761717539682459",
+        "scheduledAt": "2026-11-16T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 430469479,
+        "uuid": "-3637975222483465586",
+        "scheduledAt": "2026-11-16T20:30:00+01:00",
+        "file": "en/reels/E009/reel_linkedin.mp4",
+        "firstComment": true
+      }
+    },
     "sha256": "4003961b213c1a964678f703c70ba6fbb038233d08acac430908a7433e3361b2",
     "durationSec": 19.2,
-    "durationSecLinkedin": 17.2
+    "durationSecLinkedin": 17.2,
+    "mediaCommit": "69bdbbfa8b6d1610352b21d96b0bfb24fc4cd0d8"
   }
 ]
