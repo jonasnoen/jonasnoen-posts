@@ -1156,7 +1156,7 @@
     "id": "E010",
     "type": "reel",
     "createdAt": "2026-11-17",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude Codes Part 10",
     "fromDe": "R016",
@@ -1227,6 +1227,13 @@
         "Reply sent with reference number, enclosure list and via the right channel – copy kept?",
         "Disagree or asked to pay money back? Get advice before you reply."
       ]
+    },
+    "scheduledFor": "2026-11-17T20:30:00+01:00",
+    "platforms": {
+      "instagram": 431850807,
+      "tiktok": 431850807,
+      "x": 431850829,
+      "linkedin": 431850868
     }
   }
 ]
