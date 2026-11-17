@@ -1577,7 +1577,7 @@
   "id": "R016",
   "type": "reel",
   "createdAt": "2026-11-17",
-  "status": "sending",
+  "status": "scheduled",
   "format": "memoji",
   "series": "Claude-Codes Teil 15",
   "topic": "Brief vom Amt in Klartext übersetzen (Frist zuerst, was wollen die, Unterlagen, Antwort, wann anrufen)",
@@ -1650,6 +1650,36 @@
   "music": "assets/music/groove-115.mp3",
   "sha256": "e785d8d33864b742b6dd55de9075ffb8adf1b9d41a82ab342505ed9b4ce576c1",
   "durationSec": 16.5,
-  "costUsd": 0.16
+  "costUsd": 0.16,
+  "plannedFor": "2026-11-17T18:30:00+01:00",
+  "mediaCommit": "09834972e93379d6fcb4b35ab2c31df42f2306bc",
+  "metricool": {
+   "postId": 431768400,
+   "uuid": "-3920488135153467270",
+   "publishAt": "2026-11-17T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 431768400,
+    "scheduledAt": "2026-11-17T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 431768400,
+    "scheduledAt": "2026-11-17T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 431768442,
+    "uuid": "-7957693881633324225",
+    "scheduledAt": "2026-11-17T18:30:00+01:00",
+    "firstComment": true
+   }
+  }
  }
 ]
