@@ -1151,5 +1151,82 @@
     "durationSec": 19.2,
     "durationSecLinkedin": 17.2,
     "mediaCommit": "69bdbbfa8b6d1610352b21d96b0bfb24fc4cd0d8"
+  },
+  {
+    "id": "E010",
+    "type": "reel",
+    "createdAt": "2026-11-17",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 10",
+    "fromDe": "R016",
+    "topic": "Official letter in plain English (deadline first, what they want, documents, reply, when to call)",
+    "angle": "One prompt pack for confusing official mail (agency, tax office, insurer, bank): photo/text in → plain English with the deadline at the top, list of requested documents with where it says so, next steps → ready reply with enclosure list → cheat sheet for the phone call; Claude explains, no legal advice",
+    "hook": "This prompt decodes any official letter.",
+    "themaQuelle": "register.json R016",
+    "source": "Claude can read photos/PDFs uploaded in the chat: https://support.claude.com/en/articles/8241126-uploading-files-to-claude (same article checked 17.11.2026 for R016). No legal claims in the video; the example letter (deadline Dec 2, proof of address, bank statements) is made up and shown as a graphic.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E010/reel.mp4",
+    "fileLinkedin": "en/reels/E010/reel_linkedin.mp4",
+    "tiktokTitle": "This prompt decodes any official letter",
+    "caption": "This prompt decodes any official letter. 📬\n\nThree pages of jargon, a deadline hidden somewhere – and you're not even sure what they want from you.\n\nSnap a photo and Claude tells you:\n👉 the DEADLINE right at the top – with the exact line quoted\n👉 what they want and which documents, each with where it says so\n👉 your next steps as a checklist\n👉 and when you should just call them instead\n\nThe guide has two more prompts: a ready-to-send reply with enclosure list and a cheat sheet for the phone call. Save this for the next letter that ruins your day. (Tip: black out ID and account numbers first.)\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PromptEngineering #AITools #Paperwork",
+    "captionX": "This prompt decodes any official letter 📬 Photo in → deadline at the top (quoted), what they want, which documents, next steps + a ready reply. Comment PROMPT for the guide",
+    "captionLinkedIn": "Official letters – from a tax office, an agency, an insurer – are often hard to read, and the most important piece of information, the deadline, is rarely where you'd look for it.\n\nClaude can structure a letter like that well: upload a photo or the text, and a structured prompt returns\n1. the deadline first – with the exact line quoted,\n2. a summary without the jargon,\n3. the requested documents, each with where the letter asks for them,\n4. the next steps as a checklist,\n5. a note on when calling the sender or getting advice makes more sense.\n\nIn a second step Claude drafts the reply including an enclosure list, in a third a cheat sheet for the phone call. Important: Claude explains, it doesn't replace legal or tax advice – and sensitive numbers like ID or account numbers should be blacked out before uploading.\n\nHow do you deal with official mail – open it right away or let it sit for a few days?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Official letter in plain English (guide with 3 prompts)",
+      "text": "I got an official letter (photo or text below) – from a government agency, tax office, court, insurer, bank or similar. Translate it into plain English for me.\n\nAnswer in exactly this order:\n1. DEADLINE FIRST: Is there a deadline? Give the date or how it's calculated (e.g. \"within 30 days of the date of this notice\") and quote the line from the letter. If there's no deadline, say so explicitly.\n2. Who is writing to me and why – in 2–3 sentences, no jargon.\n3. What do they want from me? As a list: documents, information, payments – each with where it says so in the letter.\n4. What happens if I do nothing? Only what the letter itself says.\n5. My next steps as a checklist I can tick off.\n6. Up to 5 difficult terms from the letter, briefly explained.\n7. When I should call them or get advice instead (e.g. if I don't understand something, disagree, am asked to pay money back, or the deadline is tight).\n\nRules: Don't add anything that isn't in the letter. If something is unreadable or ambiguous, write \"unclear – check the original\". Explain only – no legal or tax advice.\n\nToday's date: ___\nMy letter: ___",
+      "hinweis": "Paste a photo or the text of the letter and add today's date – Claude gives you the deadline first, then what they want and which documents, each with where it says so in the letter."
+    },
+    "guide": {
+      "titel": "Guide: Understand and answer any official letter",
+      "ziel": "Use three prompts to turn a confusing official letter into a clear overview (deadline first), get the reply drafted with an enclosure list and – if needed – prepare a phone call with the sender.",
+      "schritte": [
+        {
+          "titel": "Prepare the letter.",
+          "text": "Photograph or scan every page (including the back – that's often where deadlines and your options to appeal are). Black out ID numbers, tax numbers, account numbers and similar first."
+        },
+        {
+          "titel": "Get the plain-English version.",
+          "text": "Send prompt 1 with today's date and the letter. Read the deadline first and check it against the quoted line in the original – then put it in your calendar right away."
+        },
+        {
+          "titel": "Collect the documents.",
+          "text": "Tick off the list from point 3. If something is missing, note by when you can send it."
+        },
+        {
+          "titel": "Write the reply.",
+          "text": "Prompt 2 in the same chat. Check the draft, fill the gaps, add the enclosures and send it the way the letter asks (mail, email, portal). Keep a copy and the date you sent it."
+        },
+        {
+          "titel": "Unsure? Call.",
+          "text": "If you don't understand something, disagree, or the deadline is getting tight: prompt 3 for a call cheat sheet. For appeals, repayment demands or disputes, ask a free advice service, a tax advisor or a lawyer."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Plain English, deadline first",
+          "text": "I got an official letter (photo or text below) – from a government agency, tax office, court, insurer, bank or similar. Translate it into plain English for me.\n\nAnswer in exactly this order:\n1. DEADLINE FIRST: Is there a deadline? Give the date or how it's calculated (e.g. \"within 30 days of the date of this notice\") and quote the line from the letter. If there's no deadline, say so explicitly.\n2. Who is writing to me and why – in 2–3 sentences, no jargon.\n3. What do they want from me? As a list: documents, information, payments – each with where it says so in the letter.\n4. What happens if I do nothing? Only what the letter itself says.\n5. My next steps as a checklist I can tick off.\n6. Up to 5 difficult terms from the letter, briefly explained.\n7. When I should call them or get advice instead (e.g. if I don't understand something, disagree, am asked to pay money back, or the deadline is tight).\n\nRules: Don't add anything that isn't in the letter. If something is unreadable or ambiguous, write \"unclear – check the original\". Explain only – no legal or tax advice.\n\nToday's date: ___\nMy letter: ___",
+          "wann": "As soon as the letter arrives – before anything else."
+        },
+        {
+          "titel": "Reply to the sender",
+          "text": "Now write my reply to the sender (max. 150 words, polite and to the point):\n- From: ___ (name, address). Recipient and reference number exactly as they appear in the letter.\n- Subject line with the reference number and the date of the letter.\n- I'm enclosing: ___ (list of documents I'm sending).\n- If something is missing or will come later: ___ (reason + by when).\n- Ask for a short confirmation of receipt.\nBelow it: a list of enclosures and a note on how the letter says I should reply (mail, email or online portal). Where information is missing, put ___ instead of making something up.",
+          "wann": "In the same chat, once you have the documents together."
+        },
+        {
+          "titel": "Cheat sheet for the phone call",
+          "text": "I want to call them before I reply. Make me a cheat sheet for the call:\n1. The 3–5 questions that are still open after reading my letter – short and clear.\n2. What I should have ready (reference number, date of the letter, documents).\n3. One opening sentence (\"Hi, I'm calling about …\").\n4. A mini template for notes: date, time, name of the person, what was agreed.\nFinally, tell me whether I should ask for any extension to be confirmed in writing.",
+          "wann": "When questions are still open or you need more time."
+        }
+      ],
+      "beispiel": "Sam gets a two-page letter from the housing benefit office. Prompt 1 shows at the top: deadline Dec 2 (with the quoted line), they want bank statements for the last three months and a proof of address. The landlord has to sign the proof of address first – so prompt 3: a cheat sheet for calling to ask whether it can follow a few days later. Then prompt 2 writes the reply with an enclosure list.",
+      "check": [
+        "Deadline checked in the original and in your calendar?",
+        "Sensitive numbers blacked out before uploading?",
+        "Reply sent with reference number, enclosure list and via the right channel – copy kept?",
+        "Disagree or asked to pay money back? Get advice before you reply."
+      ]
+    }
   }
 ]
