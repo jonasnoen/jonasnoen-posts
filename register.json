@@ -1681,5 +1681,86 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R017",
+  "type": "reel",
+  "createdAt": "2026-11-18",
+  "status": "sending",
+  "format": "creme",
+  "faceOffset": 216.6,
+  "series": "Claude-Codes Teil 16",
+  "topic": "Reise in 2 Minuten durchgeplant (Tagesplan-Tabelle, Plan B, Packliste, Vor-Ort-prüfen-Liste)",
+  "angle": "Ein Prompt-Paket: Ziel/Tage/Budget/Tempo rein → Tagesplan als Tabelle (morgens/mittags/abends) mit Plan B und Budget-Schätzung → Packliste passend zum Plan → Plan unterwegs umbauen; alles Unsichere landet auf einer Liste 'vor Ort prüfen'",
+  "hook": "Dieser Prompt plant deinen ganzen Urlaub.",
+  "themaQuelle": "themen/de.md T12",
+  "source": "Claude-Websuche (optional erwähnt im Guide): https://support.claude.com/de/articles/10684626-websuche-aktivieren-und-verwenden – geprüft 18.11.2026. Sonst keine Produktaussagen; Beispielplan Lissabon ist ein Beispiel, keine geprüften Preise/Öffnungszeiten.",
+  "voice": "Jonas' Stimme als HeyGen-Klon „RawCut“ (ElevenLabs-Connector in diesem Lauf nicht verfügbar), Tempo 1,15",
+  "lipsync": "heygen-lipsync (precision)",
+  "file": "reels/R017/reel.mp4",
+  "fileLinkedin": "reels/R017/reel_linkedin.mp4",
+  "tiktokTitle": "Dieser Prompt plant deinen Urlaub",
+  "caption": "Dieser Prompt plant deinen ganzen Urlaub. ✈️\n\nStatt 20 Tabs mit „Top 10 Sehenswürdigkeiten“: Ziel, Tage, Budget und Tempo rein – Claude baut dir den Plan.\n\n👉 Tag für Tag als Tabelle: morgens, mittags, abends\n👉 Plan B für Regentage und eine Packliste, die zu deinem Programm passt\n👉 Eine ehrliche Liste, was du vor Ort prüfen musst (Öffnungszeiten, Preise, Fahrpläne) – weil Claude sowas nicht raten soll\n\nSpeicher dir das für deinen nächsten Trip.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Reiseplanung #Urlaub #PromptTipps #JonasNoen",
+  "captionLinkedin": "Reiseplanung kostet oft mehr Zeit als nötig: viele Tabs, Listen mit Sehenswürdigkeiten – und am Ende passt der Plan nicht zum eigenen Tempo.\n\nMit einem strukturierten Prompt lässt sich das gut an Claude abgeben:\n1. Ziel, Tage, Budget vor Ort, Tempo und Interessen angeben – Claude stellt höchstens drei Rückfragen und liefert dann einen Tagesplan als Tabelle (morgens, mittags, abends), mit höchstens drei Punkten pro Tag.\n2. Für Outdoor-Tage gibt es jeweils einen Plan B bei Regen, dazu eine Packliste, die sich an den Programmpunkten orientiert.\n3. Alles, was sich ändern kann – Öffnungszeiten, Preise, Fahrpläne – landet ausdrücklich auf einer Liste „vor Ort prüfen“, statt geraten zu werden.\n\nDer wichtigste Teil ist für mich Punkt 3: Ein Plan ist nur so gut wie die Fakten darin, und die prüft man am besten auf den offiziellen Seiten.\n\nWie plant ihr eure Reisen – lieber spontan oder Tag für Tag durchgetaktet?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Reise-Planer (Guide mit 3 Prompts)",
+   "text": "Du bist mein Reiseplaner. Plane mir eine Reise, die zu mir passt – nicht die Standard-Touri-Liste.\n\nMeine Angaben:\n- Ziel: ___\n- Reisedaten / Anzahl Tage: ___\n- Budget vor Ort (ohne Anreise): ___\n- Tempo: ___ (entspannt / mittel / volles Programm)\n- Interessen: ___ (z. B. Essen, Kultur, Natur, Strand, Nachtleben)\n- Wer reist mit: ___ (allein, Paar, Familie mit Kindern im Alter ___)\n- Unterkunft liegt in: ___\n- Das will ich auf keinen Fall: ___\n\nFehlt dir eine wichtige Angabe, frag zuerst nach (höchstens 3 Fragen), bevor du planst.\n\nLiefere dann:\n1. TAGESPLAN als Tabelle: Tag | Morgens | Mittags | Abends | Wege/Fahrzeit. Pro Tag höchstens 3 Programmpunkte, nah beieinander, passend zu meinem Tempo. Plane Pausen ein.\n2. Zu jedem Punkt ein kurzer Satz, warum er zu meinen Interessen passt.\n3. BUDGET-CHECK: grobe Spanne pro Tag für Essen, Eintritte und Nahverkehr – ausdrücklich als Schätzung markiert.\n4. PLAN B: Für jeden Tag mit Outdoor-Programm eine Alternative bei Regen oder Hitze.\n5. VOR ORT PRÜFEN: Liste aller Dinge, die du nicht sicher weißt (Öffnungszeiten, Ruhetage, Preise, Fahrpläne, Reservierungspflicht, Saison-Schließungen).\n\nRegeln: Erfinde keine Adressen, Preise oder Öffnungszeiten. Wenn du etwas nicht sicher weißt, schreib es in die Liste „vor Ort prüfen“ statt es zu raten.",
+   "hinweis": "Ziel, Tage, Budget, Tempo und Interessen eintragen – Claude fragt kurz nach und liefert den Tagesplan als Tabelle mit Plan B und einer Liste, was du vor Ort prüfen musst."
+  },
+  "guide": {
+   "titel": "Guide: Reise in 2 Minuten durchgeplant",
+   "ziel": "Mit drei aufeinander aufbauenden Prompts einen Reiseplan bekommen, der zu dir passt: Tagesplan als Tabelle mit Plan B, eine Packliste nach Wetter und Programm – und eine ehrliche Liste, was du vor Ort prüfen musst.",
+   "schritte": [
+    {
+     "titel": "Angaben sammeln.",
+     "text": "Ziel, Tage, Budget vor Ort, Tempo, Interessen, Mitreisende, wo die Unterkunft liegt und was du auf keinen Fall willst. Je ehrlicher du beim Tempo bist, desto besser passt der Plan."
+    },
+    {
+     "titel": "Plan holen.",
+     "text": "Prompt 1 mit deinen Angaben. Beantworte Claudes Rückfragen kurz – erst dann kommt der Tagesplan als Tabelle mit Plan B und Budget-Schätzung."
+    },
+    {
+     "titel": "Packliste dazu.",
+     "text": "Prompt 2 im selben Chat. Claude kennt dann deinen Plan und packt passend zu den Programmpunkten statt nach Standard-Liste."
+    },
+    {
+     "titel": "Vor Ort-Liste abarbeiten.",
+     "text": "Öffnungszeiten, Ruhetage, Preise und Fahrpläne vor der Reise auf den offiziellen Seiten prüfen. Ist in deinem Claude die Websuche aktiv, kann Claude beim Nachsehen helfen – die Quelle trotzdem selbst anklicken."
+    },
+    {
+     "titel": "Unterwegs anpassen.",
+     "text": "Regen, Ruhetag oder müde Beine? Prompt 3 im selben Chat – Claude baut nur die betroffenen Tage um."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Der Reiseplan als Tabelle",
+     "text": "Du bist mein Reiseplaner. Plane mir eine Reise, die zu mir passt – nicht die Standard-Touri-Liste.\n\nMeine Angaben:\n- Ziel: ___\n- Reisedaten / Anzahl Tage: ___\n- Budget vor Ort (ohne Anreise): ___\n- Tempo: ___ (entspannt / mittel / volles Programm)\n- Interessen: ___ (z. B. Essen, Kultur, Natur, Strand, Nachtleben)\n- Wer reist mit: ___ (allein, Paar, Familie mit Kindern im Alter ___)\n- Unterkunft liegt in: ___\n- Das will ich auf keinen Fall: ___\n\nFehlt dir eine wichtige Angabe, frag zuerst nach (höchstens 3 Fragen), bevor du planst.\n\nLiefere dann:\n1. TAGESPLAN als Tabelle: Tag | Morgens | Mittags | Abends | Wege/Fahrzeit. Pro Tag höchstens 3 Programmpunkte, nah beieinander, passend zu meinem Tempo. Plane Pausen ein.\n2. Zu jedem Punkt ein kurzer Satz, warum er zu meinen Interessen passt.\n3. BUDGET-CHECK: grobe Spanne pro Tag für Essen, Eintritte und Nahverkehr – ausdrücklich als Schätzung markiert.\n4. PLAN B: Für jeden Tag mit Outdoor-Programm eine Alternative bei Regen oder Hitze.\n5. VOR ORT PRÜFEN: Liste aller Dinge, die du nicht sicher weißt (Öffnungszeiten, Ruhetage, Preise, Fahrpläne, Reservierungspflicht, Saison-Schließungen).\n\nRegeln: Erfinde keine Adressen, Preise oder Öffnungszeiten. Wenn du etwas nicht sicher weißt, schreib es in die Liste „vor Ort prüfen“ statt es zu raten.",
+     "wann": "Vor der Reise, sobald Ziel und Tage feststehen."
+    },
+    {
+     "titel": "Packliste passend zum Plan",
+     "text": "Mach mir zum Reiseplan oben eine Packliste.\n\n- Reisezeit und Wetter, mit dem ich rechne: ___ (wenn ich nichts weiß: nenne, was in dieser Jahreszeit dort typisch ist, und markiere es als Schätzung)\n- Gepäck: ___ (nur Handgepäck / Koffer)\n- Besonderes: ___ (z. B. Wanderung, schickes Abendessen, Strand, Kinder)\n\nGliedere die Liste nach: Dokumente & Geld | Kleidung (passend zu den Programmpunkten im Plan) | Technik | Gesundheit | Extras für Plan B.\nSchreib hinter jeden Punkt in Klammern, für welchen Tag/Programmpunkt ich ihn brauche. Streich alles, was ich vor Ort problemlos kaufen kann, und nenne es separat als „Kann man auch dort kaufen“.\nAm Ende: 3 Dinge, die man auf so einer Reise am häufigsten vergisst.",
+     "wann": "Im selben Chat, ein paar Tage vor der Abreise."
+    },
+    {
+     "titel": "Plan unterwegs umbauen",
+     "text": "Ich bin jetzt vor Ort und habe den Plan geprüft. Folgendes hat sich geändert: ___ (z. B. Museum hat Ruhetag, es regnet, wir sind müder als gedacht, Budget ist knapper).\n\nPass den restlichen Plan an:\n1. Zeig nur die Tage, die sich ändern, als neue Tabelle (Tag | Morgens | Mittags | Abends).\n2. Halte das Tempo und die Wege kurz – lieber ein Punkt weniger.\n3. Markiere neue Punkte, die ich wieder vor Ort prüfen sollte.\n4. Sag mir in einem Satz, was ich durch die Änderung verpasse und ob es sich lohnt, es an einem anderen Tag nachzuholen.",
+     "wann": "Vor Ort, wenn sich etwas ändert."
+    }
+   ],
+   "beispiel": "Lissabon, 3 Tage, 600 € vor Ort, Tempo entspannt, Interessen Essen und Aussicht, zu zweit. Claude fragt nach, ob ihr gut zu Fuß seid, und liefert dann: Tag 1 Altstadt – Markthalle – Fado-Abend, Tag 2 Museum – Strand – Aussichtspunkt zum Sonnenuntergang, Tag 3 Tagesausflug – Picknick – Rooftop-Bar. Plan B für Tag 2: Museum und Café statt Strand. Packliste: Regenjacke (Tag 2), bequeme Schuhe (Altstadt mit Hügeln), Sonnencreme. Vor Ort prüfen: Ruhetag des Museums, Zugzeiten für den Ausflug, ob die Bar reserviert werden muss.",
+   "check": [
+    "Pro Tag höchstens 3 Programmpunkte – passt das zu deinem Tempo?",
+    "Alle Preise sind als Schätzung markiert, nichts als fester Preis.",
+    "Jede Öffnungszeit und jeder Fahrplan steht auf der Liste „vor Ort prüfen“.",
+    "Für jeden Outdoor-Tag gibt es einen Plan B."
+   ]
+  },
+  "sha256": "7f3c50e8db41e123b88c42c8011c99482bf70f92927175a668b4ec0169508135",
+  "durationSec": 16.7,
+  "music": "assets/music/lofi-105.mp3",
+  "costUsd": 0.2,
+  "plannedFor": "2026-11-18T18:30:00+01:00"
  }
 ]
