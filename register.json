@@ -1686,7 +1686,7 @@
   "id": "R017",
   "type": "reel",
   "createdAt": "2026-11-18",
-  "status": "sending",
+  "status": "scheduled",
   "format": "creme",
   "faceOffset": 216.6,
   "series": "Claude-Codes Teil 16",
@@ -1761,6 +1761,35 @@
   "durationSec": 16.7,
   "music": "assets/music/lofi-105.mp3",
   "costUsd": 0.2,
-  "plannedFor": "2026-11-18T18:30:00+01:00"
+  "plannedFor": "2026-11-18T18:30:00+01:00",
+  "mediaCommit": "fd6ea38830b20d4db6d2cde437ed570b9f11193f",
+  "metricool": {
+   "postId": 433139655,
+   "uuid": "-6448187085233895829",
+   "publishAt": "2026-11-18T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 433139655,
+    "scheduledAt": "2026-11-18T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 433139655,
+    "scheduledAt": "2026-11-18T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 433139833,
+    "uuid": "-3406627280412981222",
+    "scheduledAt": "2026-11-18T18:30:00+01:00",
+    "firstComment": true
+   }
+  }
  }
 ]
