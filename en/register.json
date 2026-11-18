@@ -1235,5 +1235,89 @@
       "x": 431850829,
       "linkedin": 431850868
     }
+  },
+  {
+    "id": "E011",
+    "type": "reel",
+    "createdAt": "2026-11-18",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 72.6,
+    "series": "Claude Codes Part 11",
+    "fromDe": "R017",
+    "topic": "Trip planned in 2 minutes (day-by-day table, plan B, packing list, check-before-you-go list)",
+    "angle": "One prompt pack: destination/days/budget/pace in → day plan as a table (morning/afternoon/evening) with plan B and budget estimate → packing list matching the plan → adjust the plan on the road; anything uncertain goes on a 'check before you go' list",
+    "hook": "This prompt plans your entire trip.",
+    "themaQuelle": "register.json R017",
+    "source": "No product claims in the video. Web search mentioned as optional in the guide: https://support.claude.com/en/articles/10684626-enabling-and-using-web-search (same article checked 18.11.2026 for R017). Lisbon plan is an example, no verified prices/opening hours.",
+    "voice": "Jonas' voice as HeyGen clone 'RawCut' (ElevenLabs connector not available in this run), language en, tempo 1.15",
+    "lipsync": "heygen-lipsync (precision)",
+    "file": "en/reels/E011/reel.mp4",
+    "fileLinkedin": "en/reels/E011/reel_linkedin.mp4",
+    "tiktokTitle": "This prompt plans your entire trip",
+    "caption": "This prompt plans your entire trip. ✈️\n\nForget 20 tabs of \"top 10 things to do\". Drop in destination, days, budget and pace – Claude builds the plan around you.\n\n👉 Day by day as a table: morning, afternoon, evening\n👉 A plan B for rainy days + a packing list that matches what you're actually doing\n👉 An honest \"check before you go\" list (opening hours, prices, train times) – because Claude shouldn't guess those\n\nThe guide has 3 prompts: the plan, the packing list and one to rebuild the plan when things change on the road. Save this for your next trip.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #TravelPlanning #TravelTips #AITools",
+    "captionX": "This prompt plans your entire trip ✈️ Destination, days, budget, pace in → day-by-day table, plan B for rain, packing list + an honest \"check before you go\" list. Comment PROMPT for the guide",
+    "captionLinkedIn": "Trip planning often takes longer than it should: dozens of tabs, generic \"top 10\" lists – and in the end the plan doesn't match your own pace.\n\nWith a structured prompt, a lot of that can be handed to Claude:\n1. Give destination, days, budget on site, pace and interests – Claude asks at most three follow-up questions and then returns a day plan as a table (morning, afternoon, evening), with no more than three activities per day.\n2. Every outdoor day gets a plan B for rain or heat, plus a packing list based on the actual activities.\n3. Everything that can change – opening hours, prices, timetables – goes explicitly on a \"check before you go\" list instead of being guessed.\n\nFor me, point 3 is the most important part: a plan is only as good as the facts in it, and those are best checked on the official websites.\n\nHow do you plan your trips – spontaneous or scheduled day by day?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Trip planner (guide with 3 prompts)",
+      "text": "You are my trip planner. Plan a trip that fits me – not the standard tourist checklist.\n\nMy details:\n- Destination: ___\n- Travel dates / number of days: ___\n- Budget on site (excluding flights/travel there): ___\n- Pace: ___ (relaxed / medium / packed)\n- Interests: ___ (e.g. food, culture, nature, beach, nightlife)\n- Who's coming: ___ (solo, couple, family with kids aged ___)\n- Where I'm staying: ___\n- Things I definitely don't want: ___\n\nIf an important detail is missing, ask me first (max. 3 questions) before you plan.\n\nThen deliver:\n1. DAY PLAN as a table: Day | Morning | Afternoon | Evening | Travel time between stops. Max. 3 activities per day, close to each other, matching my pace. Build in breaks.\n2. One short sentence per activity on why it fits my interests.\n3. BUDGET CHECK: rough range per day for food, tickets and local transport – clearly marked as an estimate.\n4. PLAN B: for every day with outdoor activities, an alternative for rain or heat.\n5. CHECK BEFORE YOU GO: a list of everything you don't know for sure (opening hours, closing days, prices, timetables, reservations needed, seasonal closures).\n\nRules: Don't invent addresses, prices or opening hours. If you're not sure about something, put it on the \"check before you go\" list instead of guessing.",
+      "hinweis": "Fill in destination, days, budget, pace and interests – Claude asks a few quick questions and returns a day-by-day table with a plan B and a list of what to check before you go."
+    },
+    "guide": {
+      "titel": "Guide: Your trip planned in 2 minutes",
+      "ziel": "Three prompts that build on each other to get a trip plan that fits you: a day-by-day table with plan B, a packing list based on weather and activities – and an honest list of what to check before you go.",
+      "schritte": [
+        {
+          "titel": "Collect your details.",
+          "text": "Destination, days, budget on site, pace, interests, who's coming, where you're staying and what you definitely don't want. The more honest you are about your pace, the better the plan fits."
+        },
+        {
+          "titel": "Get the plan.",
+          "text": "Prompt 1 with your details. Answer Claude's follow-up questions briefly – then you get the day plan as a table with plan B and a budget estimate."
+        },
+        {
+          "titel": "Add the packing list.",
+          "text": "Prompt 2 in the same chat. Claude already knows your plan and packs for your actual activities instead of a generic list."
+        },
+        {
+          "titel": "Work through the check list.",
+          "text": "Check opening hours, closing days, prices and timetables on the official websites before you travel. If web search is turned on in your Claude, it can help you look things up – still click the source yourself."
+        },
+        {
+          "titel": "Adjust on the road.",
+          "text": "Rain, a closed museum or tired legs? Prompt 3 in the same chat – Claude only rebuilds the days that are affected."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "The trip plan as a table",
+          "text": "You are my trip planner. Plan a trip that fits me – not the standard tourist checklist.\n\nMy details:\n- Destination: ___\n- Travel dates / number of days: ___\n- Budget on site (excluding flights/travel there): ___\n- Pace: ___ (relaxed / medium / packed)\n- Interests: ___ (e.g. food, culture, nature, beach, nightlife)\n- Who's coming: ___ (solo, couple, family with kids aged ___)\n- Where I'm staying: ___\n- Things I definitely don't want: ___\n\nIf an important detail is missing, ask me first (max. 3 questions) before you plan.\n\nThen deliver:\n1. DAY PLAN as a table: Day | Morning | Afternoon | Evening | Travel time between stops. Max. 3 activities per day, close to each other, matching my pace. Build in breaks.\n2. One short sentence per activity on why it fits my interests.\n3. BUDGET CHECK: rough range per day for food, tickets and local transport – clearly marked as an estimate.\n4. PLAN B: for every day with outdoor activities, an alternative for rain or heat.\n5. CHECK BEFORE YOU GO: a list of everything you don't know for sure (opening hours, closing days, prices, timetables, reservations needed, seasonal closures).\n\nRules: Don't invent addresses, prices or opening hours. If you're not sure about something, put it on the \"check before you go\" list instead of guessing.",
+          "wann": "Before the trip, as soon as destination and days are fixed."
+        },
+        {
+          "titel": "Packing list that matches the plan",
+          "text": "Make me a packing list for the trip plan above.\n\n- Travel season and the weather I expect: ___ (if I don't know: tell me what's typical there at this time of year and mark it as an estimate)\n- Luggage: ___ (carry-on only / checked bag)\n- Special plans: ___ (e.g. hike, nice dinner, beach, kids)\n\nGroup the list into: Documents & money | Clothes (matching the activities in the plan) | Tech | Health | Extras for plan B.\nAfter each item, add in brackets which day/activity I need it for. Remove anything I can easily buy there and list it separately under \"Can buy there\".\nAt the end: the 3 things people forget most often on a trip like this.",
+          "wann": "In the same chat, a few days before you leave."
+        },
+        {
+          "titel": "Rebuild the plan on the road",
+          "text": "I'm on site now and checked the plan. This has changed: ___ (e.g. the museum is closed today, it's raining, we're more tired than expected, budget is tighter).\n\nAdjust the rest of the plan:\n1. Show only the days that change, as a new table (Day | Morning | Afternoon | Evening).\n2. Keep the pace and the distances short – rather one activity less.\n3. Mark new activities I should check again before going.\n4. Tell me in one sentence what I miss because of the change and whether it's worth doing on another day.",
+          "wann": "On site, when something changes."
+        }
+      ],
+      "beispiel": "Lisbon, 3 days, around $650 on site, relaxed pace, into food and views, travelling as a couple. Claude asks whether you're fine walking uphill, then delivers: Day 1 old town – food hall – fado bar, Day 2 museum – beach – viewpoint at sunset, Day 3 day trip – picnic – rooftop bar. Plan B for day 2: museum and café instead of the beach. Packing list: rain jacket (day 2), comfy shoes (hilly old town), sunscreen. Check before you go: the museum's closing day, train times for the day trip, whether the bar needs a reservation.",
+      "check": [
+        "Max. 3 activities per day – does that match your pace?",
+        "All prices are marked as estimates, none as fixed prices.",
+        "Every opening time and timetable is on the \"check before you go\" list.",
+        "Every outdoor day has a plan B."
+      ]
+    },
+    "music": "assets/music/lofi-105.mp3",
+    "costUsd": 0.2,
+    "durationSec": 17.5,
+    "durationSecLinkedin": 15.3,
+    "sha256": "14154bda1354445107b1b09c84443996cc0fe048b1542eb337281091a24727ab",
+    "plannedFor": "2026-11-18T20:30:00+01:00"
   }
 ]

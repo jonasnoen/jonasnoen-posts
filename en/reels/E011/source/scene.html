@@ -254,7 +254,7 @@ function outroCard(t,t0){const a=back(t,t0+.15,.45);if(a<=0)return;
   font(800,46);g.fillStyle='rgba(255,255,255,.85)';g.fillText(UI.handle,540,1150);});
   promptCta(t,t0+.5);}
 // CTA im Video: "Kommentiere PROMPT" als weiße Kommentar-Pille unter der Folgen-Karte (Kommentar-Automatik in Metricool)
-function promptCta(t,t1){if(window.NO_PROMPT_CTA)return;const ki=WORDS.findLastIndex(w=>/^prompt/i.test(w.text));const ts=ki>=0?WORDS[ki].start-.1:t1;const a=back(t,ts,.4);if(a<=0)return;
+function promptCta(t,t1){if(window.NO_PROMPT_CTA)return;const ki=WORDS.findLastIndex(w=>/^prompt[.,!?]?$/i.test(w.text));const ts=ki>=0?WORDS[ki].start-.1:t1;const a=back(t,ts,.4);if(a<=0)return;
   scaleAt(540,1340,a,()=>{g.save();g.shadowColor='rgba(60,40,20,.25)';g.shadowBlur=30;g.shadowOffsetY=10;rr(100,1275,880,130,65);g.fillStyle='#fff';g.fill();g.restore();
     g.beginPath();g.moveTo(200,1395);g.lineTo(180,1440);g.lineTo(240,1400);g.closePath();g.fillStyle='#fff';g.fill();
     font(800,44);g.textAlign='left';g.fillStyle=C.ink;g.fillText(UI.comment,150,1356);const w1=g.measureText(UI.comment+' ').width;
