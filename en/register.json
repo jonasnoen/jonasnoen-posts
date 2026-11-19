@@ -1348,5 +1348,117 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "EK002",
+    "type": "carousel",
+    "createdAt": "2026-11-19",
+    "status": "sending",
+    "series": "Claude Prompts Part 2",
+    "slides": 8,
+    "design": "v2-reel-look",
+    "fromDe": "K004",
+    "topic": "Holiday gift finder (the gift that actually fits)",
+    "angle": "Claude interviews you first (6 questions) → 10 ideas in 3 price tiers with 'why this fits' + 2 experiences → top-3 comparison with before-you-buy check → card message in your voice; running example Mom, 62, garden + crime novels, $30–60; budget in any currency",
+    "hook": "Never panic-buy a gift card again.",
+    "themaQuelle": "DE K004",
+    "source": "No product claims about Claude features; prompt technique only (clarifying questions first, table output, variants). Prompt and slide 8 state that Claude doesn't check prices/delivery live. Prompting basics: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+    "files": {
+      "instagram": [
+        "en/carousels/EK002/ig-01.png",
+        "en/carousels/EK002/ig-02.png",
+        "en/carousels/EK002/ig-03.png",
+        "en/carousels/EK002/ig-04.png",
+        "en/carousels/EK002/ig-05.png",
+        "en/carousels/EK002/ig-06.png",
+        "en/carousels/EK002/ig-07.png",
+        "en/carousels/EK002/ig-08.png"
+      ],
+      "tiktok": [
+        "en/carousels/EK002/tt-01.jpg",
+        "en/carousels/EK002/tt-02.jpg",
+        "en/carousels/EK002/tt-03.jpg",
+        "en/carousels/EK002/tt-04.jpg",
+        "en/carousels/EK002/tt-05.jpg",
+        "en/carousels/EK002/tt-06.jpg",
+        "en/carousels/EK002/tt-07.jpg",
+        "en/carousels/EK002/tt-08.jpg"
+      ],
+      "linkedin": [
+        "en/carousels/EK002/ig-01.png",
+        "en/carousels/EK002/ig-02.png",
+        "en/carousels/EK002/ig-03.png",
+        "en/carousels/EK002/ig-04.png",
+        "en/carousels/EK002/ig-05.png",
+        "en/carousels/EK002/ig-06.png",
+        "en/carousels/EK002/ig-07.png",
+        "en/carousels/EK002/li-08.png"
+      ]
+    },
+    "tiktokTitle": "Never panic-buy a gift card again",
+    "caption": "Never panic-buy a gift card again – this flow finds the gift that actually fits. 🎁\n\n“Gift ideas for my mom?” gets you candles and scarves. Of course: Claude doesn't know your mom.\n\nSo flip it: let Claude interview you first – budget, what they love, what they already have, what's a hard no. Then you get 10 ideas in 3 price tiers, each with “why this fits”, plus 2 experiences instead of more stuff. After that Claude compares your top 3 and writes a card message that sounds like you.\n\nReality check: Claude doesn't check prices or delivery times live – do that in the shop.\n\nSave this before the December rush. Who's the hardest person on your list?\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #GiftIdeas #ChristmasGifts #AITools",
+    "captionX": "Never panic-buy a gift card again 🎁 Claude interviews you first → 10 gift ideas in 3 price tiers with “why this fits”, a top-3 check and a card message in your voice. Comment PROMPT for the guide",
+    "captionLinkedIn": "“Gift ideas for my mom?” is a classic AI request – and the answers are usually generic: candles, scarves, gift cards.\n\nThe problem isn't the model, it's the missing context. A better order of steps:\n1. Let Claude ask you first: who it's for, budget, what they love, what they already have, what's a hard no, a shared memory.\n2. Ask for 10 ideas in 3 price tiers, each with one sentence on why it fits – plus 2 experiences instead of things.\n3. Compare your top 3 in a table, including what you have to check yourself before buying and a plan B.\n4. Finish with a card message built on a real memory, in three tones.\n\nOne honest limit: Claude doesn't check prices or delivery times live – that part stays with you.\n\nWho is the hardest person to buy for on your list?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Holiday gift finder (guide with 4 prompts)",
+      "text": "You're my gift advisor. First ask me these questions and wait for my answers before suggesting anything:\n1. Who is the gift for (relationship, age)?\n2. What's the budget?\n3. What does this person love (hobbies, favorite topics, what they do on weekends)?\n4. What do they already have, or get every year anyway?\n5. What's a hard no (decor, alcohol, allergies, more clutter)?\n6. Is there a shared memory or inside joke?\n\nThen create:\n- 10 gift ideas in 3 price tiers (below budget, within budget, slightly above) – each with one sentence \"Why this fits\", based on my answers.\n- 2 experience ideas (time instead of things).\n- No generic picks like scented candles, socks or gift cards unless I ask for them.\n- Prices only as a rough range, with a note that you can't check them live.\n\nMy answers: ___",
+      "hinweis": "Send the prompt, answer Claude's 6 questions – then you get 10 ideas in 3 price tiers plus 2 experiences."
+    },
+    "guide": {
+      "titel": "Guide: Find the gift that actually fits with Claude",
+      "ziel": "Go from “no idea” to a gift that fits, a before-you-buy check and a personal card message in one flow – for one person or your whole list.",
+      "schritte": [
+        {
+          "titel": "Fill in the gift profile.",
+          "text": "Who it's for, budget, what they love, what they already have, what's a hard no, one shared memory – the save slide helps."
+        },
+        {
+          "titel": "Get ideas.",
+          "text": "Send prompt 1 and answer Claude's questions. You get 10 ideas in 3 price tiers with reasons plus 2 experiences. Not quite right? Reply “less tech, more time together”."
+        },
+        {
+          "titel": "Compare your top 3.",
+          "text": "Prompt 2: a table with how much they'll love it, the “already has it” risk and what you must check before buying – plus a plan B."
+        },
+        {
+          "titel": "Write the card.",
+          "text": "Prompt 3 with a real memory: three versions, pick one (or mix them)."
+        },
+        {
+          "titel": "Everyone at once.",
+          "text": "Prompt 4 when you have several gifts to buy: split the budget, order of purchases, emergency ideas."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Gift advisor (ideas)",
+          "text": "You're my gift advisor. First ask me these questions and wait for my answers before suggesting anything:\n1. Who is the gift for (relationship, age)?\n2. What's the budget?\n3. What does this person love (hobbies, favorite topics, what they do on weekends)?\n4. What do they already have, or get every year anyway?\n5. What's a hard no (decor, alcohol, allergies, more clutter)?\n6. Is there a shared memory or inside joke?\n\nThen create:\n- 10 gift ideas in 3 price tiers (below budget, within budget, slightly above) – each with one sentence \"Why this fits\", based on my answers.\n- 2 experience ideas (time instead of things).\n- No generic picks like scented candles, socks or gift cards unless I ask for them.\n- Prices only as a rough range, with a note that you can't check them live.\n\nMy answers: ___",
+          "wann": "First, once per person."
+        },
+        {
+          "titel": "Compare top 3 + before-you-buy check",
+          "text": "Shortlist these 3 ideas from your list: ___\nCompare them in a table:\n1. How much will the person probably love it (with reasons from my answers)?\n2. Risk \"already has it\" or \"doesn't fit\" – and how I can find out without spoiling the surprise.\n3. What I have to check myself before buying (delivery by ___, size, availability, price in the shop).\n4. How to make the gift more personal (wrapping, a small add-on that costs very little).\nEnd with a clear recommendation and a plan B in case my first choice doesn't arrive in time.",
+          "wann": "Right after the ideas."
+        },
+        {
+          "titel": "A card message that sounds like you",
+          "text": "Write a card message for ___ to go with the gift ___.\nUse this shared memory: ___\nGive me 3 versions: warm, funny and short (max. 2 sentences).\nRules: it should sound like me, not like a store-bought greeting card – no clichés like \"warmest wishes this holiday season\" or \"with all my love\". If the memory doesn't fit the tone, tell me.",
+          "wann": "Once the gift is decided."
+        },
+        {
+          "titel": "Gift list for everyone",
+          "text": "I need gifts for several people. Total budget: ___\nPeople (each: name, relationship, 2–3 keywords): ___\nCreate:\n1. A table: person – share of the budget – 2 ideas – \"why\" in one sentence.\n2. Split the budget fairly, weighted by how close the relationship is, and show the total.\n3. A shopping order: what to order first (long delivery times), what you can buy in a store.\n4. For each person, one low-cost backup idea as an emergency plan.",
+          "wann": "When you have several gifts and one total budget."
+        }
+      ],
+      "beispiel": "Mom, 62, loves her garden and crime novels, already has every kitchen gadget, doesn't want more decor, budget $30–60. Claude suggests, among others, heirloom vegetable seeds (below budget), a murder-mystery dinner game for the family (within budget) and a day together at a garden show (experience). In the comparison the mystery game wins, the seeds are plan B, and the card message jokes that this year the whole family is on the case.",
+      "check": [
+        "Price, delivery time and availability checked in the shop yourself – Claude doesn't look them up live.",
+        "“Already has it” risk cleared without spoiling the surprise.",
+        "Plan B ready in case delivery is late.",
+        "Card message includes a real memory and sounds like you."
+      ]
+    },
+    "plannedFor": "2026-11-19T20:30:00+01:00"
   }
 ]
