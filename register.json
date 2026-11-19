@@ -1791,5 +1791,104 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "K004",
+  "type": "carousel",
+  "createdAt": "2026-11-19",
+  "status": "sending",
+  "series": "Claude-Prompts Teil 4",
+  "slides": 8,
+  "design": "v2-reel-look",
+  "topic": "Geschenke-Finder für Weihnachten",
+  "themenRadar": "T10",
+  "angle": "Steckbrief-Fragen zuerst → 10 Ideen in 3 Preisstufen mit „Warum das passt“ + 2 Erlebnisse → Top-3-Vergleich mit Vor-dem-Kauf-Check → persönlicher Kartentext; durchgehendes Beispiel Mama, 62, Garten + Krimis, 30–60 €",
+  "hook": "Nie wieder Last-Minute-Gutschein.",
+  "source": "Keine Produktaussagen über neue Claude-Funktionen; nur allgemeine Prompt-Technik (Rückfragen, Tabellen, Varianten). Hinweis im Prompt und auf Slide 8: Preise/Lieferzeiten nicht live geprüft.",
+  "files": {
+   "instagram": [
+    "carousels/K004/ig-01.png",
+    "carousels/K004/ig-02.png",
+    "carousels/K004/ig-03.png",
+    "carousels/K004/ig-04.png",
+    "carousels/K004/ig-05.png",
+    "carousels/K004/ig-06.png",
+    "carousels/K004/ig-07.png",
+    "carousels/K004/ig-08.png"
+   ],
+   "tiktok": [
+    "carousels/K004/tt-01.jpg",
+    "carousels/K004/tt-02.jpg",
+    "carousels/K004/tt-03.jpg",
+    "carousels/K004/tt-04.jpg",
+    "carousels/K004/tt-05.jpg",
+    "carousels/K004/tt-06.jpg",
+    "carousels/K004/tt-07.jpg",
+    "carousels/K004/tt-08.jpg"
+   ]
+  },
+  "tiktokTitle": "Nie wieder Last-Minute-Gutschein",
+  "caption": "Nie wieder Last-Minute-Gutschein – dieser Ablauf findet das Geschenk, das wirklich passt.\n\n„Geschenkidee für Mama?“ bringt dir Duftkerzen und Schals. Klar: Claude kennt deine Mama nicht.\n\nDreh es um: Lass Claude dich zuerst ausfragen – Budget, was sie liebt, was sie schon hat, was gar nicht geht. Dann kommen 10 Ideen in 3 Preisstufen, jede mit „Warum das passt“, dazu 2 Erlebnisse statt Kram. Danach vergleicht Claude deine Top 3 und schreibt dir einen Kartentext, der nach dir klingt.\n\nEhrlich dazu: Preise und Lieferzeiten prüft Claude nicht live – das checkst du im Shop.\n\nSpeicher dir das, bevor der Dezember-Stress losgeht. Für wen fällt dir am schwersten was ein?\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Weihnachtsgeschenke #Geschenkideen #JonasNoen",
+  "vorlage": {
+   "titel": "Geschenke-Finder für Weihnachten (Guide mit 4 Prompts)",
+   "text": "Du bist mein Geschenke-Berater. Stell mir zuerst diese Fragen und warte auf meine Antworten, bevor du Ideen vorschlägst:\n1. Für wen ist das Geschenk (Beziehung, Alter)?\n2. Wie hoch ist das Budget?\n3. Was liebt die Person (Hobbys, Lieblingsthemen, was macht sie am Wochenende)?\n4. Was hat sie schon oder bekommt sie eh jedes Jahr?\n5. Was geht gar nicht (Deko, Alkohol, Allergien, zu viel Kram)?\n6. Gibt es eine gemeinsame Erinnerung oder einen Insider?\n\nDanach erstellst du:\n- 10 Geschenkideen in 3 Preisstufen (unter dem Budget, im Budget, knapp drüber) – jeweils mit einem Satz „Warum das zu ihr/ihm passt“, der sich auf meine Antworten bezieht.\n- 2 Erlebnis-Ideen (Zeit statt Dinge).\n- Keine 0815-Vorschläge wie Duftkerzen, Socken oder Gutscheine, außer ich bitte darum.\n- Preise nur als grobe Spanne und mit dem Hinweis, dass du sie nicht live prüfen kannst.\n\nMeine Antworten: ___",
+   "hinweis": "Prompt schicken, Claudes 6 Fragen beantworten – dann kommen 10 Ideen in 3 Preisstufen plus 2 Erlebnisse."
+  },
+  "guide": {
+   "titel": "Guide: Mit Claude das Geschenk finden, das wirklich passt",
+   "ziel": "In einem Ablauf von „keine Ahnung“ zu einer passenden Geschenkidee, einem Kauf-Check und einem persönlichen Kartentext kommen – auch für mehrere Personen.",
+   "schritte": [
+    {
+     "titel": "Steckbrief ausfüllen.",
+     "text": "Für wen, Budget, was sie/er liebt, was schon da ist, was gar nicht geht, eine gemeinsame Erinnerung – die Speicher-Slide hilft."
+    },
+    {
+     "titel": "Ideen holen.",
+     "text": "Prompt 1 schicken, Claudes Fragen beantworten. Du bekommst 10 Ideen in 3 Preisstufen mit Begründung plus 2 Erlebnisse. Passt etwas nicht: „Weniger Technik, mehr Zeit zusammen“."
+    },
+    {
+     "titel": "Top 3 vergleichen.",
+     "text": "Prompt 2: Tabelle mit Freude-Faktor, Risiko „hat sie schon“ und was du vor dem Kauf selbst prüfen musst – plus Plan B."
+    },
+    {
+     "titel": "Karte schreiben.",
+     "text": "Prompt 3 mit einer echten Erinnerung: drei Varianten, eine davon nimmst du (oder mischst sie)."
+    },
+    {
+     "titel": "Für alle auf einmal.",
+     "text": "Prompt 4, wenn mehrere Geschenke anstehen: Budget aufteilen, Bestell-Reihenfolge, Notfall-Ideen."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Geschenke-Berater (Ideen)",
+     "text": "Du bist mein Geschenke-Berater. Stell mir zuerst diese Fragen und warte auf meine Antworten, bevor du Ideen vorschlägst:\n1. Für wen ist das Geschenk (Beziehung, Alter)?\n2. Wie hoch ist das Budget?\n3. Was liebt die Person (Hobbys, Lieblingsthemen, was macht sie am Wochenende)?\n4. Was hat sie schon oder bekommt sie eh jedes Jahr?\n5. Was geht gar nicht (Deko, Alkohol, Allergien, zu viel Kram)?\n6. Gibt es eine gemeinsame Erinnerung oder einen Insider?\n\nDanach erstellst du:\n- 10 Geschenkideen in 3 Preisstufen (unter dem Budget, im Budget, knapp drüber) – jeweils mit einem Satz „Warum das zu ihr/ihm passt“, der sich auf meine Antworten bezieht.\n- 2 Erlebnis-Ideen (Zeit statt Dinge).\n- Keine 0815-Vorschläge wie Duftkerzen, Socken oder Gutscheine, außer ich bitte darum.\n- Preise nur als grobe Spanne und mit dem Hinweis, dass du sie nicht live prüfen kannst.\n\nMeine Antworten: ___",
+     "wann": "Zuerst, pro Person."
+    },
+    {
+     "titel": "Top 3 vergleichen + Kauf-Check",
+     "text": "Nimm diese 3 Ideen aus deiner Liste in die engere Wahl: ___\nVergleiche sie in einer Tabelle:\n1. Wie sehr freut sich die Person wahrscheinlich (mit Begründung aus meinen Antworten)?\n2. Risiko „hat sie schon“ oder „passt nicht“ – und wie ich das unauffällig herausfinde.\n3. Was muss ich vor dem Kauf selbst prüfen (Lieferzeit bis ___, Größe, Verfügbarkeit, Preis im Shop)?\n4. Wie kann ich das Geschenk persönlicher machen (Verpackung, kleine Ergänzung unter 10 €)?\nGib am Ende eine klare Empfehlung und einen Plan B, falls die erste Wahl nicht rechtzeitig ankommt.",
+     "wann": "Direkt nach den Ideen."
+    },
+    {
+     "titel": "Kartentext, der nach dir klingt",
+     "text": "Schreib mir einen Kartentext für ___ zum Geschenk ___.\nNutze diese gemeinsame Erinnerung: ___\nGib mir 3 Varianten: herzlich, witzig und kurz (max. 2 Sätze).\nRegeln: klingt wie ich, nicht wie eine Grußkarte aus dem Laden – keine Floskeln wie „besinnliche Feiertage“ oder „von Herzen alles Gute“. Wenn die Erinnerung nicht zum Ton passt, sag es mir.",
+     "wann": "Wenn das Geschenk feststeht."
+    },
+    {
+     "titel": "Geschenkeliste für alle",
+     "text": "Ich muss Geschenke für mehrere Personen finden. Gesamtbudget: ___ €.\nPersonen (je Name, Beziehung, 2–3 Stichworte): ___\nErstelle:\n1. Eine Tabelle: Person – Budget-Anteil – 2 Ideen – „Warum“ in einem Satz.\n2. Verteile das Budget fair, aber nach Nähe der Beziehung, und zeig die Summe.\n3. Eine Einkaufs-Reihenfolge: was zuerst bestellt werden muss (lange Lieferzeit), was im Laden geht.\n4. Für jede Person eine Idee unter 15 € als Notfall-Plan.",
+     "wann": "Wenn mehrere Geschenke mit einem Gesamtbudget anstehen."
+    }
+   ],
+   "beispiel": "Mama, 62, liebt ihren Garten und Krimis, hat alles für die Küche, will keine Deko mehr, Budget 30–60 €. Claude schlägt u. a. Saatgut alter Gemüsesorten (unter Budget), ein Krimi-Dinner-Spiel für die Familie (im Budget) und einen gemeinsamen Tag auf einer Gartenschau (Erlebnis) vor. Im Vergleich gewinnt das Krimi-Dinner, Plan B ist das Saatgut, und der Kartentext spielt darauf an, dass diesmal die ganze Familie „ermittelt“.",
+   "check": [
+    "Preis, Lieferzeit und Verfügbarkeit im Shop selbst geprüft – Claude schaut nicht live nach.",
+    "Risiko „hat sie schon“ unauffällig geklärt.",
+    "Plan B für den Fall, dass die Lieferung zu spät kommt.",
+    "Kartentext enthält eine echte Erinnerung und klingt nach dir."
+   ]
+  },
+  "plannedFor": null
  }
 ]
