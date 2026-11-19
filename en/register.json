@@ -1353,7 +1353,7 @@
     "id": "EK002",
     "type": "carousel",
     "createdAt": "2026-11-19",
-    "status": "sending",
+    "status": "scheduled",
     "series": "Claude Prompts Part 2",
     "slides": 8,
     "design": "v2-reel-look",
@@ -1459,6 +1459,34 @@
         "Card message includes a real memory and sounds like you."
       ]
     },
-    "plannedFor": "2026-11-19T20:30:00+01:00"
+    "plannedFor": "2026-11-19T20:30:00+01:00",
+    "mediaCommit": "76bb529e0f487a9b77911a042f660339abd7e65c",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 434577871,
+        "uuid": "-7811701456755145981",
+        "scheduledAt": "2026-11-19T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 434578446,
+        "uuid": "-5116500127800340483",
+        "scheduledAt": "2026-11-19T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 434578476,
+        "uuid": "-3337304122820637983",
+        "scheduledAt": "2026-11-19T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 434578520,
+        "uuid": "2548815317050477164",
+        "scheduledAt": "2026-11-19T20:30:00+01:00",
+        "firstComment": true
+      }
+    }
   }
 ]
