@@ -1796,7 +1796,7 @@
   "id": "K004",
   "type": "carousel",
   "createdAt": "2026-11-19",
-  "status": "sending",
+  "status": "scheduled",
   "series": "Claude-Prompts Teil 4",
   "slides": 8,
   "design": "v2-reel-look",
@@ -1889,6 +1889,27 @@
     "Kartentext enthält eine echte Erinnerung und klingt nach dir."
    ]
   },
-  "plannedFor": null
+  "plannedFor": "2026-11-19T18:30:00+01:00",
+  "mediaCommit": "21ca9987b1bb9a2fe40761374292d7f1278e6ab3",
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 434496828,
+    "uuid": "1966531019513807729",
+    "scheduledAt": "2026-11-19T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 434497224,
+    "uuid": "-7802866933737308049",
+    "scheduledAt": "2026-11-19T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 434497247,
+    "uuid": "-2783682073292683487",
+    "scheduledAt": "2026-11-19T18:30:00+01:00"
+   }
+  }
  }
 ]
