@@ -1911,5 +1911,85 @@
     "scheduledAt": "2026-11-19T18:30:00+01:00"
    }
   }
+ },
+ {
+  "id": "R018",
+  "type": "reel",
+  "createdAt": "2026-11-20",
+  "status": "sending",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 17",
+  "topic": "Download-Ordner aufräumen mit einem Prompt (Ordnerstruktur, Namensschema, Tabelle alt→neu, Liste 'kann wahrscheinlich weg')",
+  "angle": "Dateiliste rein → Claude plant: nummerierte Ordner als Baum, Namensschema JJJJ-MM_Thema_Version, Umbenenn-Tabelle mit Sicherheit, Ausmist-Liste zum Selbst-Entscheiden; Guide-Prompt 3 schreibt optional ein Skript mit Testlauf, das nichts löscht. Ehrlich: im Chat verschiebt Claude nichts selbst (Abgrenzung zu R011 Posteingang-Sortierer: dort E-Mails, hier Dateien)",
+  "hook": "Dieser Prompt räumt deinen Download-Ordner auf.",
+  "themaQuelle": "themen/de.md T13",
+  "source": "Keine neuen Produktaussagen: Claude liest eingefügten Text (Dateiliste) und schreibt Skripte – Grundfunktion. Befehle im Guide: macOS/Linux 'ls', Windows PowerShell 'Get-ChildItem -Name' und '-WhatIf' (Standard-Parameter von Move-Item). Beispieldateien im Video sind ausgedacht.",
+  "voice": "Jonas Noen (ElevenLabs-Klon), eleven_v4, Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R018/reel.mp4",
+  "fileLinkedin": "reels/R018/reel_linkedin.mp4",
+  "tiktokTitle": "Dieser Prompt räumt deinen Download-Ordner auf",
+  "caption": "Dieser Prompt räumt deinen Download-Ordner auf. 🗂️\n\nIMG_4821.jpg, Rechnung(3).pdf, Unbenannt.docx … und irgendwo dazwischen die Datei, die du gerade brauchst.\n\nDateiliste rein, und Claude baut dir:\n👉 eine neue Ordnerstruktur (01_Rechnungen, 02_Verträge …)\n👉 ein Namensschema: Datum_Thema_Version\n👉 eine Tabelle alt → neu für jede Datei\n👉 eine Liste, was wahrscheinlich weg kann – du entscheidest\n\nIm Guide stecken drei Prompts – der letzte schreibt dir sogar ein Skript, das alles verschiebt (mit Testlauf, löscht nichts). Speicher dir das fürs nächste Aufräumen.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Ordnung #Produktivität #PromptTipps #JonasNoen",
+  "captionLinkedin": "Der Download-Ordner ist bei vielen der unaufgeräumteste Ort auf dem Rechner: Scans ohne Namen, Rechnungen mit „(3)“ am Ende, alte Installer.\n\nClaude kann das Aufräumen gut vorbereiten. Man fügt nur die Liste der Dateinamen ein, und ein strukturierter Prompt liefert:\n1. eine nummerierte Ordnerstruktur, passend zu den vorhandenen Dateien,\n2. ein einheitliches Namensschema (Datum_Thema_Version),\n3. eine Tabelle alt → neu mit Zielordner und einer Einschätzung, wie sicher die Zuordnung ist,\n4. eine Liste möglicher Duplikate und Altlasten – die Entscheidung bleibt bei einem selbst.\n\nIm Chat verschiebt Claude dabei nichts. Wer will, lässt sich im dritten Schritt ein Skript schreiben, das zuerst nur einen Testlauf zeigt und nichts löscht.\n\nWie haltet ihr Ordnung in euren Dateien – feste Regeln oder regelmäßiges Großreinemachen?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Download-Ordner aufräumen (Guide mit 3 Prompts)",
+   "text": "Ich will meinen Ordner aufräumen. Unten steht die Liste aller Dateinamen (ein Name pro Zeile). Du siehst nur die Namen, nicht den Inhalt – rate also nicht, was in einer Datei steht, sondern schließe nur aus Name und Endung.\n\nMach Folgendes:\n1. ORDNERSTRUKTUR: Schlag höchstens 6–8 Hauptordner vor (mit Nummer davor, z. B. 01_Rechnungen), passend zu dem, was in der Liste wirklich vorkommt. Zeig sie als Baum.\n2. NAMENSSCHEMA: Ein einheitliches Schema nach dem Muster JJJJ-MM_Thema_Version (z. B. 2026-03_Mietvertrag_v1.pdf). Ist kein Datum erkennbar, schreib JJJJ-MM als Lücke.\n3. TABELLE: | alter Name | neuer Name | Zielordner | Sicherheit (hoch/mittel/niedrig) |. Bei „niedrig“ kurz sagen, warum.\n4. KANN WAHRSCHEINLICH WEG: Liste möglicher Duplikate (z. B. „Datei (1).pdf“), alter Installer (.dmg/.exe/.msi) und leerer/unbenannter Dateien – jeweils mit Grund. Nichts davon selbst als „löschen“ markieren, ich entscheide.\n5. RÜCKFRAGEN: Höchstens 3 Fragen, die die Sortierung deutlich verbessern würden.\n\nMein Ordner heißt: ___\nWofür ich ihn nutze: ___\nDateiliste:\n___",
+   "hinweis": "Liste der Dateinamen einfügen (Mac: ls im Terminal, Windows: Get-ChildItem -Name in PowerShell) – Claude plant Ordner, neue Namen und was weg kann; verschieben tust du selbst."
+  },
+  "guide": {
+   "titel": "Guide: Download-Ordner aufräumen mit Claude",
+   "ziel": "Mit drei Prompts aus einer chaotischen Dateiliste einen fertigen Aufräum-Plan machen – Ordner, neue Namen, Ausmist-Liste – und ihn auf Wunsch per Skript mit Testlauf umsetzen.",
+   "schritte": [
+    {
+     "titel": "Dateiliste holen.",
+     "text": "Mac: Terminal öffnen und ls ~/Downloads | pbcopy eingeben – die Liste ist dann in der Zwischenablage. Windows: PowerShell öffnen und Get-ChildItem $HOME\\Downloads -Name | Set-Clipboard eingeben. Nur Namen, kein Inhalt verlässt deinen Rechner."
+    },
+    {
+     "titel": "Plan machen lassen.",
+     "text": "Prompt 1 mit Ordnername, Zweck und Liste. Claude liefert Baum, Namensschema, Tabelle alt → neu mit Sicherheit und eine Liste „kann wahrscheinlich weg“."
+    },
+    {
+     "titel": "Nachschärfen.",
+     "text": "Rückfragen beantworten und mit Prompt 2 die Tabelle anpassen. Alle Zeilen mit Sicherheit „niedrig“ kurz von Hand öffnen und prüfen."
+    },
+    {
+     "titel": "Umsetzen.",
+     "text": "Von Hand verschieben – oder mit Prompt 3 ein Skript schreiben lassen. Vorher eine Sicherung machen, zuerst den Testlauf ansehen, dann erst die echte Version starten."
+    },
+    {
+     "titel": "Ordnung halten.",
+     "text": "Die 5 Regeln aus Prompt 2 als Notiz speichern. Einmal im Monat die neuen Dateien wieder durch Prompt 1 schicken."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Aufräum-Plan",
+     "text": "Ich will meinen Ordner aufräumen. Unten steht die Liste aller Dateinamen (ein Name pro Zeile). Du siehst nur die Namen, nicht den Inhalt – rate also nicht, was in einer Datei steht, sondern schließe nur aus Name und Endung.\n\nMach Folgendes:\n1. ORDNERSTRUKTUR: Schlag höchstens 6–8 Hauptordner vor (mit Nummer davor, z. B. 01_Rechnungen), passend zu dem, was in der Liste wirklich vorkommt. Zeig sie als Baum.\n2. NAMENSSCHEMA: Ein einheitliches Schema nach dem Muster JJJJ-MM_Thema_Version (z. B. 2026-03_Mietvertrag_v1.pdf). Ist kein Datum erkennbar, schreib JJJJ-MM als Lücke.\n3. TABELLE: | alter Name | neuer Name | Zielordner | Sicherheit (hoch/mittel/niedrig) |. Bei „niedrig“ kurz sagen, warum.\n4. KANN WAHRSCHEINLICH WEG: Liste möglicher Duplikate (z. B. „Datei (1).pdf“), alter Installer (.dmg/.exe/.msi) und leerer/unbenannter Dateien – jeweils mit Grund. Nichts davon selbst als „löschen“ markieren, ich entscheide.\n5. RÜCKFRAGEN: Höchstens 3 Fragen, die die Sortierung deutlich verbessern würden.\n\nMein Ordner heißt: ___\nWofür ich ihn nutze: ___\nDateiliste:\n___",
+     "wann": "Zuerst: aus der Dateiliste Ordner, Namensschema, Tabelle und Ausmist-Liste machen."
+    },
+    {
+     "titel": "Feinschliff + Regeln",
+     "text": "Danke. Pass die Tabelle jetzt an meine Antworten an:\n- Meine Antworten auf deine Rückfragen: ___\n- Diese Ordner will ich anders nennen / zusammenlegen: ___\n- Diese Dateien bleiben, wo sie sind: ___\n\nGib mir danach:\n1. die aktualisierte Tabelle (alter Name | neuer Name | Zielordner),\n2. eine kurze Regel-Liste für die Zukunft (max. 5 Regeln: wohin neue Downloads kommen und wie ich sie benenne),\n3. alle Zeilen mit Sicherheit „niedrig“ noch einmal gesammelt, damit ich sie von Hand prüfe.",
+     "wann": "Direkt danach im selben Chat, wenn du Rückfragen beantwortet hast oder etwas anders willst."
+    },
+    {
+     "titel": "Skript mit Testlauf",
+     "text": "Schreib mir aus der finalen Tabelle ein Skript, das die Ordner anlegt und die Dateien umbenennt und verschiebt.\n- Mein System: ___ (Mac/Linux = Terminal-Skript, Windows = PowerShell)\n- Pfad zum Ordner: ___\n\nRegeln für das Skript:\n1. Es LÖSCHT nichts. Dateien aus „kann wahrscheinlich weg“ kommen nur in einen Ordner 99_Pruefen.\n2. Existiert ein Zielname schon, wird nichts überschrieben – hänge _2 an.\n3. Zuerst ein Testlauf, der nur anzeigt, was passieren würde (Mac/Linux: echo statt mv, Windows: -WhatIf). Erst wenn ich „los“ schreibe, gibst du die echte Version.\n4. Erklär in 3 Sätzen, wie ich das Skript starte, und dass ich vorher eine Sicherung machen soll.",
+     "wann": "Optional, wenn du nicht 200 Dateien von Hand verschieben willst. Erst Testlauf, dann echte Version."
+    }
+   ],
+   "beispiel": "Download-Ordner mit 140 Dateien (Beispiel): Claude schlägt 01_Rechnungen, 02_Verträge, 03_Fotos, 04_Programme, 05_Sonstiges vor, macht aus scan0001.pdf „2026-03_Mietvertrag_v1.pdf“ (Sicherheit mittel – nur am Namen nicht eindeutig) und sammelt setup_final2.dmg und Rechnung(3).pdf unter „kann wahrscheinlich weg“. Nach Prompt 3 zeigt der Testlauf jede geplante Verschiebung, erst danach wird verschoben.",
+   "check": [
+    "Alle Zeilen mit Sicherheit „niedrig“ von Hand geprüft?",
+    "Sicherung gemacht, bevor ein Skript läuft?",
+    "Testlauf angesehen – nichts wird gelöscht oder überschrieben?",
+    "Regeln für neue Downloads gespeichert?"
+   ]
+  },
+  "music": "assets/music/groove-115.mp3",
+  "costUsd": 0.19,
+  "plannedFor": null,
+  "sha256": "f4de921b0c10efa6742e357fee492ca8a4ae4c233aeed39e3462bed62e1587cd",
+  "durationSec": 19.0
  }
 ]
