@@ -1916,7 +1916,7 @@
   "id": "R018",
   "type": "reel",
   "createdAt": "2026-11-20",
-  "status": "sending",
+  "status": "scheduled",
   "format": "memoji",
   "series": "Claude-Codes Teil 17",
   "topic": "Download-Ordner aufräumen mit einem Prompt (Ordnerstruktur, Namensschema, Tabelle alt→neu, Liste 'kann wahrscheinlich weg')",
@@ -1988,8 +1988,37 @@
   },
   "music": "assets/music/groove-115.mp3",
   "costUsd": 0.19,
-  "plannedFor": null,
+  "plannedFor": "2026-11-20T18:30:00+01:00",
   "sha256": "f4de921b0c10efa6742e357fee492ca8a4ae4c233aeed39e3462bed62e1587cd",
-  "durationSec": 19.0
+  "durationSec": 19.0,
+  "mediaCommit": "0a892a4759d882b36e43880a039c97dcc3e2f094",
+  "metricool": {
+   "postId": 435850369,
+   "uuid": "5392616995018327567",
+   "publishAt": "2026-11-20T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 435850369,
+    "scheduledAt": "2026-11-20T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 435850369,
+    "scheduledAt": "2026-11-20T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 435850491,
+    "uuid": "4871145030379588847",
+    "scheduledAt": "2026-11-20T18:30:00+01:00",
+    "firstComment": true
+   }
+  }
  }
 ]
