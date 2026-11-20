@@ -1493,7 +1493,7 @@
     "id": "E012",
     "type": "reel",
     "createdAt": "2026-11-20",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude Codes Part 12",
     "fromDe": "R018",
@@ -1566,6 +1566,16 @@
       ]
     },
     "costUsd": 0.19,
-    "scheduledFor": "2026-11-20T20:30:00+01:00"
+    "scheduledFor": "2026-11-20T20:30:00+01:00",
+    "mediaCommit": "868c212fcd46379b94fa836b6422ab69f578f1b8",
+    "durationSec": 17.6,
+    "durationLinkedinSec": 15.5,
+    "music": "assets/music/groove-115.mp3",
+    "platforms": {
+      "instagram": 435934544,
+      "tiktok": 435934544,
+      "x": 435934693,
+      "linkedin": 435934756
+    }
   }
 ]
