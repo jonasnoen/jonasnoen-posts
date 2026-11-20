@@ -1488,5 +1488,84 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E012",
+    "type": "reel",
+    "createdAt": "2026-11-20",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 12",
+    "fromDe": "R018",
+    "topic": "Clean up your Downloads folder with one prompt (folder structure, naming scheme, old→new table, 'can probably go' list)",
+    "angle": "File list in → Claude plans: numbered folders as a tree, naming scheme YYYY-MM_Topic_Version, rename table with confidence, declutter list you decide on; guide prompt 3 optionally writes a script with a dry run that deletes nothing. Honest: in chat Claude doesn't move anything itself. International examples (lease, power bill, resume).",
+    "hook": "This prompt cleans up your Downloads folder.",
+    "themaQuelle": "register.json R018",
+    "source": "No new product claims: Claude reads pasted text (a file list) and writes scripts – core functionality. Commands in the guide: macOS 'ls ~/Downloads | pbcopy', Windows PowerShell 'Get-ChildItem $HOME\\Downloads -Name | Set-Clipboard' and '-WhatIf' (common parameter of Move-Item). Example files in the video are made up.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E012/reel.mp4",
+    "fileLinkedin": "en/reels/E012/reel_linkedin.mp4",
+    "tiktokTitle": "This prompt cleans up your Downloads folder",
+    "caption": "This prompt cleans up your Downloads folder. 🗂️\n\nIMG_4821.jpg, Invoice(3).pdf, Untitled.docx … and somewhere in between, the one file you actually need.\n\nPaste your file list, and Claude builds you:\n👉 a new folder structure (01_Invoices, 02_Contracts …)\n👉 one naming scheme: Date_Topic_Version\n👉 an old → new table for every file\n👉 a list of what can probably go – you decide\n\nThe guide has three prompts – the last one even writes you a script that moves everything (with a dry run first, deletes nothing). Save this for your next cleanup.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #Productivity #DigitalDeclutter #AITools",
+    "captionX": "This prompt cleans up your Downloads folder 🗂️ File list in → new folders, one naming scheme, old→new table + a 'can probably go' list you decide on. Bonus: a script with a dry run. Comment PROMPT for the guide",
+    "captionLinkedIn": "For many people, the Downloads folder is the messiest place on their computer: scans without names, invoices ending in \"(3)\", old installers.\n\nClaude is good at preparing the cleanup. You only paste the list of file names, and a structured prompt returns:\n1. a numbered folder structure that fits the files you actually have,\n2. one consistent naming scheme (Date_Topic_Version),\n3. an old → new table with target folder and a confidence rating for each match,\n4. a list of likely duplicates and leftovers – the decision stays with you.\n\nIn the chat, Claude doesn't move anything. If you want, a third prompt writes a script that first shows a dry run and never deletes a file.\n\nHow do you keep your files in order – fixed rules, or a big cleanup every few months?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Clean up your Downloads folder (guide with 3 prompts)",
+      "text": "I want to clean up a folder. Below is the list of all file names (one name per line). You only see the names, not the contents – so don't guess what's inside a file; only infer from the name and extension.\n\nDo the following:\n1. FOLDER STRUCTURE: Suggest at most 6–8 main folders (with a number in front, e.g. 01_Invoices) that match what's actually in the list. Show them as a tree.\n2. NAMING SCHEME: One consistent scheme following YYYY-MM_Topic_Version (e.g. 2026-03_Lease_v1.pdf). If no date is recognizable, leave YYYY-MM as a gap.\n3. TABLE: | old name | new name | target folder | confidence (high/medium/low) |. For \"low\", say briefly why.\n4. CAN PROBABLY GO: A list of likely duplicates (e.g. \"File (1).pdf\"), old installers (.dmg/.exe/.msi) and empty/untitled files – each with a reason. Don't mark anything as \"delete\" yourself, I decide.\n5. QUESTIONS: At most 3 questions that would clearly improve the sorting.\n\nMy folder is called: ___\nWhat I use it for: ___\nFile list:\n___",
+      "hinweis": "Paste the list of file names (Mac: ls in Terminal, Windows: Get-ChildItem -Name in PowerShell) – Claude plans folders, new names and what can go; you do the moving."
+    },
+    "guide": {
+      "titel": "Guide: Clean up your Downloads folder with Claude",
+      "ziel": "Turn a chaotic file list into a finished cleanup plan with three prompts – folders, new names, a declutter list – and, if you want, carry it out with a script that does a dry run first.",
+      "schritte": [
+        {
+          "titel": "Get your file list.",
+          "text": "Mac: open Terminal and type ls ~/Downloads | pbcopy – the list is now on your clipboard. Windows: open PowerShell and type Get-ChildItem $HOME\\Downloads -Name | Set-Clipboard. Only names – no file contents leave your computer."
+        },
+        {
+          "titel": "Get the plan.",
+          "text": "Prompt 1 with folder name, purpose and the list. Claude returns a tree, a naming scheme, an old → new table with confidence, and a \"can probably go\" list."
+        },
+        {
+          "titel": "Fine-tune.",
+          "text": "Answer the questions and adjust the table with Prompt 2. Quickly open and check every row rated \"low\" by hand."
+        },
+        {
+          "titel": "Carry it out.",
+          "text": "Move files by hand – or let Prompt 3 write a script. Make a backup first, look at the dry run, then run the real version."
+        },
+        {
+          "titel": "Stay tidy.",
+          "text": "Save the 5 rules from Prompt 2 as a note. Once a month, run your new files through Prompt 1 again."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Cleanup plan",
+          "text": "I want to clean up a folder. Below is the list of all file names (one name per line). You only see the names, not the contents – so don't guess what's inside a file; only infer from the name and extension.\n\nDo the following:\n1. FOLDER STRUCTURE: Suggest at most 6–8 main folders (with a number in front, e.g. 01_Invoices) that match what's actually in the list. Show them as a tree.\n2. NAMING SCHEME: One consistent scheme following YYYY-MM_Topic_Version (e.g. 2026-03_Lease_v1.pdf). If no date is recognizable, leave YYYY-MM as a gap.\n3. TABLE: | old name | new name | target folder | confidence (high/medium/low) |. For \"low\", say briefly why.\n4. CAN PROBABLY GO: A list of likely duplicates (e.g. \"File (1).pdf\"), old installers (.dmg/.exe/.msi) and empty/untitled files – each with a reason. Don't mark anything as \"delete\" yourself, I decide.\n5. QUESTIONS: At most 3 questions that would clearly improve the sorting.\n\nMy folder is called: ___\nWhat I use it for: ___\nFile list:\n___",
+          "wann": "First: turn the file list into folders, a naming scheme, a table and a declutter list."
+        },
+        {
+          "titel": "Fine-tune + rules",
+          "text": "Thanks. Now adjust the table to my answers:\n- My answers to your questions: ___\n- These folders I want renamed / merged: ___\n- These files stay where they are: ___\n\nThen give me:\n1. the updated table (old name | new name | target folder),\n2. a short rule list for the future (max. 5 rules: where new downloads go and how I name them),\n3. all rows with confidence \"low\" collected again, so I can check them by hand.",
+          "wann": "Right after, in the same chat, once you've answered the questions or want something different."
+        },
+        {
+          "titel": "Script with dry run",
+          "text": "Write me a script from the final table that creates the folders and renames and moves the files.\n- My system: ___ (Mac/Linux = shell script, Windows = PowerShell)\n- Path to the folder: ___\n\nRules for the script:\n1. It DELETES nothing. Files from \"can probably go\" only go into a folder 99_Review.\n2. If a target name already exists, nothing is overwritten – append _2.\n3. First a dry run that only shows what would happen (Mac/Linux: echo instead of mv, Windows: -WhatIf). Only when I write \"go\" do you give me the real version.\n4. Explain in 3 sentences how I run the script, and that I should make a backup first.",
+          "wann": "Optional, if you don't want to move 200 files by hand. Dry run first, then the real version."
+        }
+      ],
+      "beispiel": "Downloads folder with 140 files (example): Claude suggests 01_Invoices, 02_Contracts, 03_Photos, 04_Apps, 05_Other, turns scan0001.pdf into \"2026-03_Lease_v1.pdf\" (confidence medium – the name alone isn't clear) and collects setup_final2.dmg and Invoice(3).pdf under \"can probably go\". After Prompt 3, the dry run shows every planned move before anything is moved.",
+      "check": [
+        "Checked every row rated \"low\" by hand?",
+        "Backup made before any script runs?",
+        "Looked at the dry run – nothing gets deleted or overwritten?",
+        "Saved the rules for new downloads?"
+      ]
+    },
+    "costUsd": 0.19,
+    "scheduledFor": "2026-11-20T20:30:00+01:00"
   }
 ]
