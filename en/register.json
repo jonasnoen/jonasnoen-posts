@@ -1582,7 +1582,7 @@
     "id": "E013",
     "type": "reel",
     "createdAt": "2026-11-24",
-    "status": "sending",
+    "status": "scheduled",
     "format": "creme",
     "faceOffset": 364,
     "series": "Claude Codes Part 13",
@@ -1659,6 +1659,41 @@
     "costUsd": 0.14,
     "sha256": "bb52b0b5185464a6e099ee37dc9517db19aee13b35a6a5d6a9278fa5e5aca90b",
     "durationSec": 13.8,
-    "plannedFor": "2026-11-24T20:30:00+01:00"
+    "plannedFor": "2026-11-24T20:30:00+01:00",
+    "mediaCommit": "9291895a83c0af77c040f874d02d35020d1c9bdf",
+    "metricool": {
+      "postId": 440706988,
+      "uuid": "63351291236731178",
+      "publishAt": "2026-11-24T20:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 440706988,
+        "scheduledAt": "2026-11-24T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 440706988,
+        "scheduledAt": "2026-11-24T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 440707157,
+        "uuid": "-2219804653126467078",
+        "scheduledAt": "2026-11-24T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 440707196,
+        "uuid": "-2308499709203166372",
+        "scheduledAt": "2026-11-24T20:30:00+01:00",
+        "firstComment": true
+      }
+    }
   }
 ]
