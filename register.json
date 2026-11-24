@@ -2020,5 +2020,86 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R019",
+  "type": "reel",
+  "createdAt": "2026-11-24",
+  "status": "sending",
+  "format": "creme",
+  "faceOffset": 28.2,
+  "series": "Claude-Codes Teil 18",
+  "topic": "Aus einer Notiz ein fertiges Reel-Skript (3 Hooks, Szenen-Tabelle mit Sekunden, Text-Einblendungen, CTA, Caption) + Prompt 2 kürzt und prüft den Hook",
+  "angle": "Stichpunkte rein → Claude liefert das komplette Kurzvideo-Skript als Tabelle (Sekunde | Gesprochen | Bild | Einblendung); Prompt 2 kürzt auf die Ziel-Länge und bewertet die Hooks; Prompt 3 macht daraus eine Serie. Abgrenzung zu R015 (Texte im eigenen Stil): hier Video-Struktur statt Schreibstil.",
+  "hook": "Dieser Prompt schreibt dein nächstes Reel.",
+  "themaQuelle": "themen/de.md T08",
+  "source": "Keine aktuellen Produktaussagen: Claude schreibt Text aus eingefügten Stichpunkten (Grundfunktion). 2,5 Wörter/Sekunde ist als grober Richtwert für das Sprechtempo im Prompt formuliert, nicht als Fakt behauptet. Beispiel-Skript und -Notiz im Video sind ausgedacht und als BEISPIEL markiert.",
+  "voice": "Jonas Noen (ElevenLabs-Klon), eleven_v4, Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R019/reel.mp4",
+  "fileLinkedin": "reels/R019/reel_linkedin.mp4",
+  "tiktokTitle": "Dieser Prompt schreibt dein nächstes Reel",
+  "caption": "Dieser Prompt schreibt dein nächstes Reel. 🎬\n\nDu hast eine Idee, aber vor der Kamera wird's dann wirr? Gib Claude nur deine Stichpunkte.\n\n👉 3 Hook-Varianten für die ersten 2 Sekunden\n👉 Das ganze Skript als Tabelle: Sekunde, was du sagst, was man sieht, welche Einblendung\n👉 Prompt 2 kürzt auf 20 Sekunden und prüft knallhart deinen Hook\n\nSpeicher dir das für dein nächstes Video.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #ReelsTipps #ContentCreation #PromptTipps #JonasNoen",
+  "captionLinkedin": "Viele gute Ideen für kurze Videos scheitern nicht am Inhalt, sondern an der Struktur: Der Einstieg ist zu langsam, die Pointe kommt zu spät, und am Ende ist das Video doppelt so lang wie geplant.\n\nMit einem strukturierten Prompt lässt sich das gut an Claude abgeben. Man fügt nur die eigenen Stichpunkte ein und bekommt:\n1. drei Varianten für den Einstieg in den ersten zwei Sekunden,\n2. das Skript als Tabelle – Sekunde, gesprochener Text, Bild und Text-Einblendung,\n3. einen passenden Abschluss und eine Caption.\n\nEin zweiter Prompt arbeitet als strenger Editor: Er schätzt die Länge, kürzt auf die Zielzeit und bewertet den Einstieg. Ein dritter macht aus dem Thema eine kleine Serie.\n\nWichtig bleibt: Zahlen und Fakten, die nicht in den eigenen Notizen stehen, markiert der Prompt zum Prüfen, statt sie zu erfinden.\n\nWie entsteht bei euch ein Video – mit Skript oder lieber frei gesprochen?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Reel-Skript aus einer Notiz (Guide mit 3 Prompts)",
+   "text": "Du bist mein Skript-Autor für Kurzvideos (Reels/TikTok). Mach aus meiner Notiz ein fertiges Skript, das ich direkt aufnehmen kann.\n\nMeine Notiz (Stichpunkte reichen):\n___\n\nRahmen:\n- Plattform: ___ (Instagram Reels / TikTok / beides)\n- Länge: ___ Sekunden (Standard: 20)\n- Zielgruppe: ___\n- Ton: ___ (z. B. locker, frech, ruhig erklärend)\n- Format: ___ (ich spreche in die Kamera / nur Voiceover / nur Text auf Bild)\n- Am Ende soll der Zuschauer: ___ (z. B. speichern, kommentieren, folgen)\n\nLiefere:\n1. HOOKS: 3 Varianten für die ersten 2 Sekunden, höchstens 10 Wörter, als Behauptung statt Frage. Je eine Zeile: Hook – warum er funktioniert.\n2. SKRIPT als Tabelle: Sekunde | Gesprochen (wörtlich) | Bild/Aktion | Text-Einblendung. Spätestens ab Sekunde 2–3 das Ergebnis oder die Pointe zeigen, nicht erst am Ende.\n3. Rechne mit ca. 2,5 gesprochenen Wörtern pro Sekunde. Passt der Text nicht in die Länge, kürze lieber einen Punkt weg.\n4. CTA: ein Satz, passend zu dem, was der Zuschauer am Ende tun soll.\n5. CAPTION: 3 kurze Absätze + 4–6 Hashtags.\n\nRegeln: Erfinde keine Zahlen, Studien oder Ergebnisse, die nicht in meiner Notiz stehen. Wenn dir für eine Aussage Fakten fehlen, markiere sie mit [PRÜFEN]. Fehlt dir etwas Wichtiges, stell zuerst höchstens 2 Rückfragen.",
+   "hinweis": "Stichpunkte und Rahmen (Plattform, Länge, Zielgruppe, Ton) eintragen – Claude liefert 3 Hooks, das Skript als Tabelle mit Sekunden und Einblendungen, CTA und Caption."
+  },
+  "guide": {
+   "titel": "Guide: Aus einer Notiz ein fertiges Reel-Skript",
+   "ziel": "Mit drei aufeinander aufbauenden Prompts aus ein paar Stichpunkten ein aufnahmefertiges Kurzvideo-Skript machen – mit starkem Einstieg, passender Länge und Ideen für die nächsten Videos.",
+   "schritte": [
+    {
+     "titel": "Notiz sammeln.",
+     "text": "Schreib 3–6 Stichpunkte: Thema, die eine Aussage, die hängen bleiben soll, ein Beispiel aus deinem Alltag. Ganze Sätze sind nicht nötig."
+    },
+    {
+     "titel": "Skript holen.",
+     "text": "Prompt 1 mit Notiz und Rahmen (Plattform, Länge, Zielgruppe, Ton, Format). Claude liefert 3 Hooks, das Skript als Tabelle, CTA und Caption."
+    },
+    {
+     "titel": "Kürzen und Hook prüfen.",
+     "text": "Prompt 2 im selben Chat. Claude zählt die Wörter, kürzt auf deine Ziel-Länge und bewertet die Hooks. Nimm den besten – oder deinen eigenen, wenn er besser klingt."
+    },
+    {
+     "titel": "Laut lesen, dann aufnehmen.",
+     "text": "Lies das Skript einmal laut. Was sich komisch anfühlt, in deinen eigenen Worten umformulieren. Alles mit [PRÜFEN] vorher nachschlagen."
+    },
+    {
+     "titel": "Serie planen.",
+     "text": "Prompt 3 macht aus dem Thema 5 weitere Ideen. Jede kannst du direkt wieder in Prompt 1 geben."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Das Reel-Skript aus deiner Notiz",
+     "text": "Du bist mein Skript-Autor für Kurzvideos (Reels/TikTok). Mach aus meiner Notiz ein fertiges Skript, das ich direkt aufnehmen kann.\n\nMeine Notiz (Stichpunkte reichen):\n___\n\nRahmen:\n- Plattform: ___ (Instagram Reels / TikTok / beides)\n- Länge: ___ Sekunden (Standard: 20)\n- Zielgruppe: ___\n- Ton: ___ (z. B. locker, frech, ruhig erklärend)\n- Format: ___ (ich spreche in die Kamera / nur Voiceover / nur Text auf Bild)\n- Am Ende soll der Zuschauer: ___ (z. B. speichern, kommentieren, folgen)\n\nLiefere:\n1. HOOKS: 3 Varianten für die ersten 2 Sekunden, höchstens 10 Wörter, als Behauptung statt Frage. Je eine Zeile: Hook – warum er funktioniert.\n2. SKRIPT als Tabelle: Sekunde | Gesprochen (wörtlich) | Bild/Aktion | Text-Einblendung. Spätestens ab Sekunde 2–3 das Ergebnis oder die Pointe zeigen, nicht erst am Ende.\n3. Rechne mit ca. 2,5 gesprochenen Wörtern pro Sekunde. Passt der Text nicht in die Länge, kürze lieber einen Punkt weg.\n4. CTA: ein Satz, passend zu dem, was der Zuschauer am Ende tun soll.\n5. CAPTION: 3 kurze Absätze + 4–6 Hashtags.\n\nRegeln: Erfinde keine Zahlen, Studien oder Ergebnisse, die nicht in meiner Notiz stehen. Wenn dir für eine Aussage Fakten fehlen, markiere sie mit [PRÜFEN]. Fehlt dir etwas Wichtiges, stell zuerst höchstens 2 Rückfragen.",
+     "wann": "Sobald du eine Idee hast – auch wenn es nur drei Stichpunkte sind."
+    },
+    {
+     "titel": "Kürzen + Hook-Check",
+     "text": "Prüf das Skript oben wie ein strenger Editor für Kurzvideos.\n\n1. HOOK-CHECK für alle 3 Hooks: Ist es eine Behauptung statt einer Frage? Höchstens 10 Wörter? Weckt er Neugier, ohne zu lügen? Gib jedem Hook eine Note von 1–5 mit einem Satz Begründung und schreib den besten noch einmal schärfer.\n2. LÄNGE: Zähl die gesprochenen Wörter und schätze die Dauer (ca. 2,5 Wörter pro Sekunde). Ist das Skript länger als ___ Sekunden, kürze es auf diese Länge: streich Füllwörter, Wiederholungen und den schwächsten Punkt – nicht die Pointe.\n3. ERSTE 3 SEKUNDEN: Was sieht und hört man genau? Gibt es einen Grund, nicht weiterzuwischen? Wenn nicht: konkreter Umbau-Vorschlag.\n4. Zeig das gekürzte Skript wieder als Tabelle (Sekunde | Gesprochen | Bild/Aktion | Text-Einblendung) und darunter, was du gestrichen hast.",
+     "wann": "Im selben Chat, direkt nach Prompt 1."
+    },
+    {
+     "titel": "Aus einem Thema eine Serie",
+     "text": "Mach aus dem Thema meines Skripts eine kleine Serie.\n\n1. Schlag 5 weitere Reel-Ideen zum selben Thema vor, jede mit einem anderen Blickwinkel (z. B. Fehler, Vorher/Nachher, Mythos vs. Wahrheit, Schritt-für-Schritt, persönliche Geschichte).\n2. Für jede Idee: Arbeitstitel, Hook (Behauptung, höchstens 10 Wörter), 3 Stichpunkte für den Inhalt.\n3. Markiere die 2 Ideen, die am besten zu meiner Zielgruppe ___ passen, und begründe kurz.\n4. Schreib die Stichpunkte so, dass ich jede Idee direkt wieder in Prompt 1 einfügen kann.",
+     "wann": "Wenn das erste Skript steht und du die nächsten Videos planen willst."
+    }
+   ],
+   "beispiel": "Notiz: „Sonntags vorkochen, 3 typische Fehler, mein Trick: nur 2 Gerichte, Ziel: weniger Stress unter der Woche“. Rahmen: Instagram Reels, 20 Sekunden, Berufstätige, locker, ich spreche in die Kamera. Claude liefert Hooks wie „Hör auf, sonntags fünf Gerichte zu kochen“, dann die Tabelle: 0–2 s Hook-Satz, 2–8 s fertige Boxen im Kühlschrank zeigen, 8–15 s die drei Fehler mit Einblendung 1 · 2 · 3, 15–20 s CTA. Prompt 2 merkt an, dass der Text etwa 34 Sekunden dauern würde, streicht einen Fehler und kürzt auf 20 Sekunden.",
+   "check": [
+    "Hook ist eine Behauptung, keine Frage, und hat höchstens 10 Wörter.",
+    "Das Ergebnis oder die Pointe kommt in den ersten 2–3 Sekunden.",
+    "Gesprochener Text passt zur Länge (ca. 2,5 Wörter pro Sekunde).",
+    "Keine Zahl und keine Behauptung, die nicht aus deiner Notiz stammt – sonst [PRÜFEN]."
+   ]
+  },
+  "sha256": "43c4ec340a5bf90fe6323e77f40a29953f3c728f1e7770dc9d94a9e90e3f9589",
+  "durationSec": 15.1,
+  "music": "assets/music/lofi-105.mp3",
+  "costUsd": 0.17,
+  "plannedFor": "2026-11-24T18:30:00+01:00"
  }
 ]

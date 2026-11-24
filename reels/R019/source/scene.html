@@ -168,11 +168,11 @@ function p0(t){}
 // Phrase 1: fertiges Ergebnis zuerst – das Reel-Skript mit Hooks, Szenen und Einblendungen
 function p1(t){wcard(60,450,840,720,C.violetL);font(800,24);g.fillStyle='#8a7fa6';g.textAlign='left';g.fillText('REEL-SKRIPT · 20 SEK · BEISPIEL',100,502);
   font(800,26);g.fillStyle=C.violet;g.fillText('HOOKS',100,560);
-  ['A','B','C'].forEach((h,i)=>chip('Hook '+h,250+i*205,522,[C.amber,C.violetL,C.green][i],K(7)+i*.15,t,190));
+  ['A','B','C'].forEach((h,i)=>chip('Hook '+h,250+i*205,522,[C.amber,C.violetL,C.green][i],K(6)-.05+i*.12,t,190));
   // Kopfzeile der Szenenliste
   const hx=[100,250,560];['SEK','GESPROCHEN','EINBLENDUNG'].forEach((c,i)=>{font(800,22);g.fillStyle='#a79fbd';g.fillText(c,hx[i],640);});
   const rows=[['0–2','Hook-Satz','„Hör auf …“'],['2–8','Ergebnis zeigen','Vorher/Nachher'],['8–15','3 Schritte','1 · 2 · 3'],['15–20','CTA','Kommentiere …']];
-  rows.forEach((r,i)=>{const t0=K(8)+i*.22;if(t<t0)return;const s=back(t,t0,.3);const y=660+i*118;scaleAt(480,y+50,s,()=>{rr(90,y,780,100,20);g.fillStyle=i%2?'#faf6ef':'#f4effc';g.fill();
+  rows.forEach((r,i)=>{const t0=K(6)+.05+i*.12;if(t<t0)return;const s=back(t,t0,.3);const y=660+i*118;scaleAt(480,y+50,s,()=>{rr(90,y,780,100,20);g.fillStyle=i%2?'#faf6ef':'#f4effc';g.fill();
     font(400,40,'Anton');g.fillStyle=C.violet;g.textAlign='left';g.fillText(r[0],110,y+66);
     font(800,30);g.fillStyle=C.ink;g.fillText(r[1],250,y+62);
     const on=t>=K(12)+i*.12;rr(548,y+20,300,60,16);g.fillStyle=on?C.amber:'#efe8dd';g.fill();font(800,26);g.fillStyle=on?C.ink:'#b5abc4';g.fillText(r[2],566,y+60);});});
@@ -284,8 +284,8 @@ function frame(t){g.clearRect(0,0,W,H);const k=phraseAt(t);LIGHT=true;bgStudio(t
 window.avatarPlan=()=>[];
 // Themenspezifische Effekte (pro Reel anpassen): Pop bei Schritt-Badges, Ding bei Haken, Tippen beim Prompt, Klick bei Stempeln
 window.EXTRA_CUES=()=>[
-  {t:K(7),name:'pop_soft',vol:.5},{t:K(7)+.15,name:'pop_soft',vol:.5},{t:K(7)+.3,name:'pop_soft',vol:.5},
-  {t:K(8),name:'pop',vol:.5},{t:K(8)+.22,name:'pop',vol:.45},{t:K(8)+.44,name:'pop',vol:.45},{t:K(8)+.66,name:'pop',vol:.45},
+  {t:K(6)-.05,name:'pop_soft',vol:.5},{t:K(6)+.07,name:'pop_soft',vol:.5},{t:K(6)+.19,name:'pop_soft',vol:.5},
+  {t:K(6)+.05,name:'pop',vol:.5},{t:K(6)+.29,name:'pop',vol:.45},{t:K(6)+.41,name:'pop',vol:.45},
   {t:K(12),name:'ding',vol:.4},{t:KE(13)-.05,name:'stamp',vol:.65},
   {t:K(16),name:'typing',vol:.5},{t:K(19),name:'stamp',vol:.6},
   {t:K(22),name:'whoosh',vol:.35},{t:KE(26),name:'ding',vol:.5},
