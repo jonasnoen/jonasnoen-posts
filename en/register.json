@@ -1577,5 +1577,88 @@
       "x": 435934693,
       "linkedin": 435934756
     }
+  },
+  {
+    "id": "E013",
+    "type": "reel",
+    "createdAt": "2026-11-24",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 364,
+    "series": "Claude Codes Part 13",
+    "fromDe": "R019",
+    "topic": "Turn a note into a finished reel script (3 hooks, scene table with seconds, text overlays, CTA, caption) + prompt 2 cuts it and checks the hook",
+    "angle": "Bullet points in → Claude delivers the complete short-video script as a table (Second | Spoken | Visual | Overlay); prompt 2 cuts to the target length and rates the hooks; prompt 3 turns it into a series. Different from E009 (texts in your own style): video structure, not writing style. International example (Sunday meal prep).",
+    "hook": "This prompt writes your next reel.",
+    "themaQuelle": "register.json R019",
+    "source": "No current product claims: Claude writes text from pasted bullet points (core functionality). 2.5 words per second is phrased in the prompt as a rough rule of thumb for speaking pace, not claimed as a fact. Example script and note in the video are made up and labelled EXAMPLE.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E013/reel.mp4",
+    "fileLinkedin": "en/reels/E013/reel_linkedin.mp4",
+    "tiktokTitle": "This prompt writes your next reel",
+    "caption": "This prompt writes your next reel. 🎬\n\nYou've got the idea – but on camera it turns into rambling? Just give Claude your bullet points.\n\n👉 3 hook options for the first 2 seconds\n👉 the whole script as a table: second, what you say, what we see, which text overlay\n👉 Prompt 2 cuts it to 20 seconds and checks your hook – no mercy\n\nSave this for your next video.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #ContentCreation #ReelsTips #AITools",
+    "captionX": "This prompt writes your next reel 🎬 Bullet points in → 3 hooks + a script table (second, spoken, visual, overlay). Prompt 2 cuts it to 20 sec and checks your hook. Comment PROMPT for the guide",
+    "captionLinkedIn": "Many good ideas for short videos don't fail on content – they fail on structure: the opening is too slow, the payoff comes too late, and the video ends up twice as long as planned.\n\nA structured prompt lets you hand that part to Claude. You paste your own bullet points and get:\n1. three options for the first two seconds,\n2. the script as a table – second, spoken text, visual and text overlay,\n3. a matching call to action and a caption.\n\nA second prompt works as a strict editor: it estimates the length, cuts to the target time and rates the opening. A third turns the topic into a short series.\n\nOne rule stays important: numbers and facts that aren't in your notes get marked [CHECK] instead of being made up.\n\nHow do you make your videos – with a script, or do you prefer to speak freely?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Reel script from a note (guide with 3 prompts)",
+      "text": "You are my script writer for short videos (Reels/TikTok). Turn my note into a finished script I can record right away.\n\nMy note (bullet points are fine):\n___\n\nSetup:\n- Platform: ___ (Instagram Reels / TikTok / both)\n- Length: ___ seconds (default: 20)\n- Audience: ___\n- Tone: ___ (e.g. casual, bold, calm and explanatory)\n- Format: ___ (I talk to camera / voiceover only / text on screen only)\n- At the end, the viewer should: ___ (e.g. save, comment, follow)\n\nDeliver:\n1. HOOKS: 3 options for the first 2 seconds, 10 words max, as a statement, not a question. One line each: hook – why it works.\n2. SCRIPT as a table: Second | Spoken (word for word) | Visual/action | Text overlay. Show the result or the payoff by second 2–3 at the latest, not at the end.\n3. Assume about 2.5 spoken words per second. If the text doesn't fit the length, cut a point rather than rushing.\n4. CTA: one sentence that matches what the viewer should do at the end.\n5. CAPTION: 3 short paragraphs + 4–6 hashtags.\n\nRules: Don't invent numbers, studies or results that aren't in my note. If a claim needs facts you don't have, mark it with [CHECK]. If something important is missing, ask at most 2 questions first.",
+      "hinweis": "Fill in your bullet points and the setup (platform, length, audience, tone) – Claude returns 3 hooks, the script as a table with seconds and overlays, a CTA and a caption."
+    },
+    "guide": {
+      "titel": "Guide: Turn a note into a finished reel script",
+      "ziel": "Use three prompts that build on each other to turn a few bullet points into a ready-to-record short-video script – with a strong opening, the right length and ideas for your next videos.",
+      "schritte": [
+        {
+          "titel": "Collect your note.",
+          "text": "Write 3–6 bullet points: the topic, the one message that should stick, an example from your own life. No full sentences needed."
+        },
+        {
+          "titel": "Get the script.",
+          "text": "Prompt 1 with your note and setup (platform, length, audience, tone, format). Claude returns 3 hooks, the script as a table, a CTA and a caption."
+        },
+        {
+          "titel": "Cut it and check the hook.",
+          "text": "Prompt 2 in the same chat. Claude counts the words, cuts to your target length and rates the hooks. Take the best one – or your own, if it sounds better."
+        },
+        {
+          "titel": "Read it out loud, then record.",
+          "text": "Read the script out loud once. Anything that feels awkward, rephrase in your own words. Look up everything marked [CHECK] before you record."
+        },
+        {
+          "titel": "Plan a series.",
+          "text": "Prompt 3 turns the topic into 5 more ideas. You can paste each one straight back into Prompt 1."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "The reel script from your note",
+          "text": "You are my script writer for short videos (Reels/TikTok). Turn my note into a finished script I can record right away.\n\nMy note (bullet points are fine):\n___\n\nSetup:\n- Platform: ___ (Instagram Reels / TikTok / both)\n- Length: ___ seconds (default: 20)\n- Audience: ___\n- Tone: ___ (e.g. casual, bold, calm and explanatory)\n- Format: ___ (I talk to camera / voiceover only / text on screen only)\n- At the end, the viewer should: ___ (e.g. save, comment, follow)\n\nDeliver:\n1. HOOKS: 3 options for the first 2 seconds, 10 words max, as a statement, not a question. One line each: hook – why it works.\n2. SCRIPT as a table: Second | Spoken (word for word) | Visual/action | Text overlay. Show the result or the payoff by second 2–3 at the latest, not at the end.\n3. Assume about 2.5 spoken words per second. If the text doesn't fit the length, cut a point rather than rushing.\n4. CTA: one sentence that matches what the viewer should do at the end.\n5. CAPTION: 3 short paragraphs + 4–6 hashtags.\n\nRules: Don't invent numbers, studies or results that aren't in my note. If a claim needs facts you don't have, mark it with [CHECK]. If something important is missing, ask at most 2 questions first.",
+          "wann": "As soon as you have an idea – even if it's just three bullet points."
+        },
+        {
+          "titel": "Cut + hook check",
+          "text": "Review the script above like a strict short-form video editor.\n\n1. HOOK CHECK for all 3 hooks: Is it a statement, not a question? 10 words max? Does it spark curiosity without lying? Rate each hook 1–5 with a one-sentence reason, then rewrite the best one even sharper.\n2. LENGTH: Count the spoken words and estimate the duration (about 2.5 words per second). If the script is longer than ___ seconds, cut it to that length: remove filler words, repetition and the weakest point – not the payoff.\n3. FIRST 3 SECONDS: What exactly do you see and hear? Is there a reason not to swipe away? If not: a concrete suggestion to fix it.\n4. Show the shortened script as a table again (Second | Spoken | Visual/action | Text overlay) and list below it what you cut.",
+          "wann": "In the same chat, right after Prompt 1."
+        },
+        {
+          "titel": "Turn one topic into a series",
+          "text": "Turn the topic of my script into a short series.\n\n1. Suggest 5 more reel ideas on the same topic, each from a different angle (e.g. mistakes, before/after, myth vs. truth, step by step, personal story).\n2. For each idea: working title, hook (statement, 10 words max), 3 bullet points for the content.\n3. Mark the 2 ideas that fit my audience ___ best and explain briefly why.\n4. Write the bullet points so I can paste each idea straight back into Prompt 1.",
+          "wann": "Once the first script is done and you want to plan your next videos."
+        }
+      ],
+      "beispiel": "Note: \"Sunday meal prep, 3 common mistakes, my trick: just 2 dishes, goal: calmer weekdays\". Setup: Instagram Reels, 20 seconds, busy professionals, casual, I talk to camera. Claude suggests hooks like \"Stop cooking five dishes every Sunday\", then the table: 0–2 s hook line, 2–8 s show the finished boxes in the fridge, 8–15 s the three mistakes with overlay 1 · 2 · 3, 15–20 s CTA. Prompt 2 notes that the text would take about 34 seconds, drops one mistake and cuts it to 20 seconds.",
+      "check": [
+        "The hook is a statement, not a question, and has 10 words max.",
+        "The result or payoff comes in the first 2–3 seconds.",
+        "The spoken text fits the length (about 2.5 words per second).",
+        "No number or claim that doesn't come from your note – otherwise [CHECK]."
+      ]
+    },
+    "music": "assets/music/lofi-105.mp3",
+    "costUsd": 0.14,
+    "sha256": "bb52b0b5185464a6e099ee37dc9517db19aee13b35a6a5d6a9278fa5e5aca90b",
+    "durationSec": 13.8,
+    "plannedFor": "2026-11-24T20:30:00+01:00"
   }
 ]
