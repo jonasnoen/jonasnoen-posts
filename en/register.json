@@ -1695,5 +1695,87 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E014",
+    "type": "reel",
+    "createdAt": "2026-11-25",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 14",
+    "fromDe": "R020",
+    "topic": "Your personal Claude profile: Claude interviews you with 8 questions and writes the text for your personal instructions in settings (applies to all chats) + test prompt + sharpen prompt",
+    "angle": "Set it up once instead of re-explaining yourself in every chat: interview → profile text with concrete rules (job, tone, format, pet peeves) → into settings → test in a new chat → sharpen after a week. Different from E009 (writing style from your own texts): account-wide instructions for every chat. International example (freelance photographer).",
+    "hook": "Claude doesn't know you. After this prompt, it does.",
+    "themaQuelle": "register.json R020",
+    "source": "Claude Help Center 'Understanding Claude's personalization features' (support.claude.com/en/articles/10185728, checked 25.11.2026 via search; content as verified for R020): personal instructions are account-wide settings and apply to all your conversations; project instructions only apply inside the project. Drawn generically as 'Settings · Instructions for Claude', no screenshot. Example profile (photographer) is made up and labelled EXAMPLE.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "file": "en/reels/E014/reel.mp4",
+    "fileLinkedin": "en/reels/E014/reel_linkedin.mp4",
+    "tiktokTitle": "Claude doesn't know you – after this prompt, it does",
+    "caption": "Claude doesn't know you. After this prompt, it does. 🧠\n\nStill explaining in every single chat who you are and how you want your answers? Let Claude interview you once.\n\n👉 8 short questions: job, tone, length, format, pet peeves\n👉 A finished profile with real rules instead of \"be brief\"\n👉 Paste it into your settings once – and it applies to all your chats\n\nSave this before you forget it.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PromptEngineering #AITools #Productivity",
+    "captionX": "Claude doesn't know you. After this prompt, it does 🧠 8 questions → a finished profile (job, tone, format, pet peeves) → paste it into your settings once, it applies to every chat. Comment PROMPT for the guide",
+    "captionLinkedIn": "Many people use Claude every day – and still explain in every chat who they are, who they write for and how long an answer should be.\n\nThere's a field for personal instructions in Claude's settings. According to Claude's help center, what you put there applies to all your conversations. The real hurdle: what do you write in it?\n\nMy approach: Claude interviews me with eight questions – job, typical tasks, tone, length, format, prior knowledge, pet peeves and what should always apply. The result is a short profile with concrete rules instead of adjectives, e.g. \"5 sentences max unless I ask for more\" instead of \"be brief\".\n\nTwo things matter to me: no sensitive data in the profile – and one round of sharpening after a week, based on the answers that didn't fit.\n\nHave you set up personal instructions in your AI tools yet, or do you start every chat from zero?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Your personal Claude profile (guide with 3 prompts)",
+      "text": "You're helping me write a personal profile for Claude that I'll paste into my settings (personal instructions). It should apply in every chat.\n\nInterview me with exactly 8 questions. Ask only ONE question at a time, wait for my answer, then ask the next:\n1. What do you do for work, and what are you working on most right now?\n2. What do you mainly want to use Claude for? (3 typical tasks)\n3. How should Claude sound? (e.g. casual or formal, playful or straight to the point)\n4. How long should answers usually be?\n5. Which format do you like? (bullet points, table, prose, step by step)\n6. What do you already know well – what does Claude NOT need to explain to you?\n7. What annoys you in AI answers? (pet peeves)\n8. What should Claude always do? (e.g. ask clarifying questions, push back honestly, flag anything uncertain)\n\nIf an answer is unclear, ask one short follow-up.\n\nThen deliver:\nA) MY PROFILE: a finished text in first person, 150 words max, organised under \"About me\", \"What I use Claude for\", \"How to answer me\", \"Please never\". Concrete rules instead of adjectives (instead of \"be brief\": \"5 sentences max unless I ask for more\").\nB) 3 things you deliberately left out because they're too private or too specific for every chat.\n\nRules: Don't include sensitive data (home address, phone number, passwords, health details), even if I mention it. Don't add anything I didn't say.",
+      "hinweis": "Paste it into a new chat and answer the 8 questions briefly – copy the finished profile into Claude's settings under personal instructions; from then on it applies to all your chats."
+    },
+    "guide": {
+      "titel": "Guide: Your personal Claude profile",
+      "ziel": "Introduce yourself to Claude properly once: build a profile with an interview prompt, paste it into your settings and get better-fitting answers in every chat – without explaining yourself again each time.",
+      "schritte": [
+        {
+          "titel": "Start the interview.",
+          "text": "Paste Prompt 1 into a new chat. Claude asks 8 questions, one at a time. Keep your answers short – bullet points are fine."
+        },
+        {
+          "titel": "Get your profile text.",
+          "text": "At the end you get a finished first-person text (about 150 words max) with concrete rules – plus a list of what Claude deliberately left out."
+        },
+        {
+          "titel": "Paste it into your settings.",
+          "text": "Click your initials in the bottom left → Settings → the section for your personal instructions (depending on the version, e.g. \"Your Claude\" or \"Account\") → the instructions field. Paste, save. According to Claude's help center, it applies to all your chats."
+        },
+        {
+          "titel": "Test it.",
+          "text": "Open a new chat and send Prompt 2 with a typical task of yours. Do tone and length fit? If not: make that rule in your profile more concrete."
+        },
+        {
+          "titel": "Sharpen it after a week.",
+          "text": "Collect 2–3 answers that annoyed you and give them to Prompt 3 together with your profile. For single topics, set up a project with its own instructions instead – those only apply there."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "The interview → your profile text",
+          "text": "You're helping me write a personal profile for Claude that I'll paste into my settings (personal instructions). It should apply in every chat.\n\nInterview me with exactly 8 questions. Ask only ONE question at a time, wait for my answer, then ask the next:\n1. What do you do for work, and what are you working on most right now?\n2. What do you mainly want to use Claude for? (3 typical tasks)\n3. How should Claude sound? (e.g. casual or formal, playful or straight to the point)\n4. How long should answers usually be?\n5. Which format do you like? (bullet points, table, prose, step by step)\n6. What do you already know well – what does Claude NOT need to explain to you?\n7. What annoys you in AI answers? (pet peeves)\n8. What should Claude always do? (e.g. ask clarifying questions, push back honestly, flag anything uncertain)\n\nIf an answer is unclear, ask one short follow-up.\n\nThen deliver:\nA) MY PROFILE: a finished text in first person, 150 words max, organised under \"About me\", \"What I use Claude for\", \"How to answer me\", \"Please never\". Concrete rules instead of adjectives (instead of \"be brief\": \"5 sentences max unless I ask for more\").\nB) 3 things you deliberately left out because they're too private or too specific for every chat.\n\nRules: Don't include sensitive data (home address, phone number, passwords, health details), even if I mention it. Don't add anything I didn't say.",
+          "wann": "Once at the start, in a new chat."
+        },
+        {
+          "titel": "The test in a new chat",
+          "text": "Quick test: summarise in 3 bullet points what you know about me and how I want my answers, based on my personal instructions.\n\nThen do this typical task of mine: ___\n\nStick to my instructions and, at the end, name in one line which of them you applied.",
+          "wann": "Right after saving the profile in your settings – in a NEW chat."
+        },
+        {
+          "titel": "Sharpen your profile",
+          "text": "Here is my current Claude profile:\n___\n\nAnd here are 2–3 answers from you that I did NOT like, each with one sentence on why:\n___\n\nRevise my profile: figure out which rule was missing or too vague. Give me the new version (150 words max) and below it a short list: changed · new · removed. Keep everything that works.",
+          "wann": "After about a week, or whenever answers stop fitting again."
+        }
+      ],
+      "beispiel": "Lena is a freelance photographer (weddings, business portraits). After the interview her profile says, among other things: \"Answer me casually and briefly, 5 sentences max, bullet points preferred. Client emails: polite and warm, never cheesy. I know cameras and lighting – don't explain them to me. Please never: filler like 'Great question!', emojis, summaries at the end.\" In a new chat she sends Prompt 2 with \"Write a reply to a wedding inquiry\" and checks whether tone and length fit without further explanation.",
+      "check": [
+        "Profile is about 150 words max – concrete rules instead of adjectives",
+        "No sensitive data (address, phone number, passwords, health) in the profile",
+        "Tested in a new chat with Prompt 2",
+        "Topic-specific things (one client, one project) go into project instructions, not your profile"
+      ]
+    },
+    "music": "assets/music/groove-115.mp3",
+    "lipsync": "veed-lipsync",
+    "costUsd": 0.16,
+    "sha256": "7fe6da4f2dcb24543a08a10cd9ec3da66eb360ea4156e8611324205d24287920",
+    "durationSec": 16.9,
+    "plannedFor": "2026-11-25T20:30:00+01:00"
   }
 ]
