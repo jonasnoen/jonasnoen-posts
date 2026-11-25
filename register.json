@@ -2130,5 +2130,84 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R020",
+  "type": "reel",
+  "createdAt": "2026-11-25",
+  "status": "sending",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 19",
+  "topic": "Dein persönliches Claude-Profil: Claude interviewt dich mit 8 Fragen und schreibt daraus den Text für die persönlichen Anweisungen in den Einstellungen (gilt für alle Chats) + Test-Prompt + Nachschärf-Prompt",
+  "angle": "Einmal dauerhaft einrichten statt in jedem Chat neu erklären: Interview → Profiltext mit konkreten Regeln (Job, Ton, Format, No-Gos) → in die Einstellungen → Test im neuen Chat → nach einer Woche nachschärfen. Abgrenzung zu R005 (Rolle pro Prompt) und R015 (Schreibstil aus eigenen Texten): hier kontoweite Anweisungen für alle Chats.",
+  "hook": "Claude kennt dich nicht. Nach diesem Prompt schon.",
+  "themaQuelle": "themen/de.md T15",
+  "source": "Claude-Hilfe 'Understanding Claude's personalization features' (support.claude.com/en/articles/10185728, Stand 23.10.2026): 'Instructions' sind kontoweite Einstellungen (Initialen unten links → Settings → Your Claude bzw. Account → Instructions) und gelten laut Artikel für alle Unterhaltungen; Projekt-Anweisungen gelten nur im Projekt. Im Video als 'Einstellungen · Anweisungen für Claude' generisch gezeichnet, kein Screenshot. Beispielprofil (Fotografin) ist ausgedacht und als BEISPIEL markiert.",
+  "voice": "Jonas Noen (ElevenLabs-Klon), eleven_v4, Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R020/reel.mp4",
+  "fileLinkedin": "reels/R020/reel_linkedin.mp4",
+  "tiktokTitle": "Claude kennt dich nicht – nach diesem Prompt schon",
+  "caption": "Claude kennt dich nicht. Nach diesem Prompt schon. 🧠\n\nDu erklärst in jedem Chat aufs Neue, wer du bist und wie du Antworten willst? Lass dich einmal von Claude interviewen.\n\n👉 8 kurze Fragen: Job, Ton, Länge, Format, No-Gos\n👉 Daraus ein fertiger Profiltext mit klaren Regeln statt „sei kurz“\n👉 Einmal in die Einstellungen kopieren – dann gilt er für alle deine Chats\n\nSpeicher dir das, bevor du's vergisst.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #PromptTipps #ProduktivMitKI #ClaudeAI #JonasNoen",
+  "captionLinkedin": "Viele nutzen Claude jeden Tag – und erklären trotzdem in jedem Chat neu, wer sie sind, für wen sie schreiben und wie lang eine Antwort sein soll.\n\nDafür gibt es in den Einstellungen ein Feld für persönliche Anweisungen. Laut Claude-Hilfe gilt, was dort steht, für alle eigenen Unterhaltungen. Die eigentliche Hürde: Was schreibt man da hinein?\n\nMein Ansatz: Claude interviewt mich mit acht Fragen – Beruf, typische Aufgaben, Ton, Länge, Format, Vorwissen, No-Gos und was immer gelten soll. Daraus entsteht ein kurzer Profiltext mit konkreten Regeln statt Adjektiven, etwa „höchstens fünf Sätze, außer ich bitte um mehr“ statt „sei kurz“.\n\nZwei Dinge sind mir dabei wichtig: keine sensiblen Daten ins Profil – und nach einer Woche einmal nachschärfen, anhand der Antworten, die nicht gepasst haben.\n\nHabt ihr eure persönlichen Anweisungen in KI-Tools schon eingerichtet, oder startet ihr jeden Chat bei null?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Dein persönliches Claude-Profil (Guide mit 3 Prompts)",
+   "text": "Du hilfst mir, ein persönliches Profil für Claude zu schreiben, das ich in die Einstellungen (persönliche Anweisungen) einfüge. Es soll in jedem Chat gelten.\n\nInterviewe mich mit genau 8 Fragen. Stell immer nur EINE Frage, warte auf meine Antwort, dann die nächste:\n1. Was machst du beruflich, und woran arbeitest du gerade am meisten?\n2. Wofür willst du Claude vor allem nutzen? (3 typische Aufgaben)\n3. Wie soll Claude klingen? (z. B. locker oder sachlich, du oder Sie)\n4. Wie lang sollen Antworten normalerweise sein?\n5. Welches Format magst du? (Stichpunkte, Tabelle, Fließtext, Schritt für Schritt)\n6. Was weißt du schon gut – was muss Claude dir nicht erklären?\n7. Was nervt dich an KI-Antworten? (No-Gos)\n8. Was soll Claude immer tun? (z. B. Rückfragen stellen, ehrlich widersprechen, Unsicheres markieren)\n\nIst eine Antwort unklar, frag einmal kurz nach.\n\nDanach lieferst du:\nA) MEIN PROFIL: fertiger Text in Ich-Form, höchstens 150 Wörter, gegliedert in „Über mich“, „Wofür ich Claude nutze“, „So sollst du antworten“, „Bitte nie“. Konkrete Regeln statt Adjektive (statt „sei kurz“: „höchstens 5 Sätze, außer ich bitte um mehr“).\nB) 3 Punkte, die du bewusst weggelassen hast, weil sie zu privat oder zu speziell für jeden Chat sind.\n\nRegeln: Nimm keine sensiblen Daten auf (Adresse, Telefonnummer, Passwörter, Gesundheitsdaten), auch wenn ich sie nenne. Erfinde nichts dazu, was ich nicht gesagt habe.",
+   "hinweis": "In einen neuen Chat einfügen und die 8 Fragen kurz beantworten – den fertigen Profiltext kopierst du in Claudes Einstellungen zu den persönlichen Anweisungen; ab dann gilt er für alle Chats."
+  },
+  "guide": {
+   "titel": "Guide: Dein persönliches Claude-Profil",
+   "ziel": "Claude einmal richtig vorstellen: mit einem Interview-Prompt einen Profiltext bauen, ihn in die Einstellungen einfügen und ab dann in jedem Chat passendere Antworten bekommen – ohne dich jedes Mal neu zu erklären.",
+   "schritte": [
+    {
+     "titel": "Interview starten.",
+     "text": "Prompt 1 in einen neuen Chat. Claude stellt 8 Fragen, eine nach der anderen. Antworte kurz – Stichpunkte reichen."
+    },
+    {
+     "titel": "Profiltext holen.",
+     "text": "Am Ende bekommst du einen fertigen Text in Ich-Form (höchstens ca. 150 Wörter) mit konkreten Regeln – plus eine Liste, was Claude bewusst weggelassen hat."
+    },
+    {
+     "titel": "In die Einstellungen kopieren.",
+     "text": "Unten links auf deine Initialen → Einstellungen → Bereich für deine persönlichen Anweisungen (je nach Version „Your Claude“ oder „Konto“) → Feld „Anweisungen“. Einfügen, speichern. Laut Claude-Hilfe gilt das für alle deine Chats."
+    },
+    {
+     "titel": "Testen.",
+     "text": "Neuen Chat öffnen und Prompt 2 mit einer typischen Aufgabe von dir schicken. Passt Ton und Länge? Wenn nicht: Regel im Profil konkreter machen."
+    },
+    {
+     "titel": "Nach einer Woche nachschärfen.",
+     "text": "Sammle 2–3 Antworten, die dich genervt haben, und gib sie mit deinem Profil in Prompt 3. Für einzelne Themen lieber ein Projekt mit eigenen Anweisungen anlegen – die gelten nur dort."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Das Interview → dein Profiltext",
+     "text": "Du hilfst mir, ein persönliches Profil für Claude zu schreiben, das ich in die Einstellungen (persönliche Anweisungen) einfüge. Es soll in jedem Chat gelten.\n\nInterviewe mich mit genau 8 Fragen. Stell immer nur EINE Frage, warte auf meine Antwort, dann die nächste:\n1. Was machst du beruflich, und woran arbeitest du gerade am meisten?\n2. Wofür willst du Claude vor allem nutzen? (3 typische Aufgaben)\n3. Wie soll Claude klingen? (z. B. locker oder sachlich, du oder Sie)\n4. Wie lang sollen Antworten normalerweise sein?\n5. Welches Format magst du? (Stichpunkte, Tabelle, Fließtext, Schritt für Schritt)\n6. Was weißt du schon gut – was muss Claude dir nicht erklären?\n7. Was nervt dich an KI-Antworten? (No-Gos)\n8. Was soll Claude immer tun? (z. B. Rückfragen stellen, ehrlich widersprechen, Unsicheres markieren)\n\nIst eine Antwort unklar, frag einmal kurz nach.\n\nDanach lieferst du:\nA) MEIN PROFIL: fertiger Text in Ich-Form, höchstens 150 Wörter, gegliedert in „Über mich“, „Wofür ich Claude nutze“, „So sollst du antworten“, „Bitte nie“. Konkrete Regeln statt Adjektive (statt „sei kurz“: „höchstens 5 Sätze, außer ich bitte um mehr“).\nB) 3 Punkte, die du bewusst weggelassen hast, weil sie zu privat oder zu speziell für jeden Chat sind.\n\nRegeln: Nimm keine sensiblen Daten auf (Adresse, Telefonnummer, Passwörter, Gesundheitsdaten), auch wenn ich sie nenne. Erfinde nichts dazu, was ich nicht gesagt habe.",
+     "wann": "Einmal am Anfang, in einem neuen Chat."
+    },
+    {
+     "titel": "Der Test im neuen Chat",
+     "text": "Kurzer Test: Fass in 3 Stichpunkten zusammen, was du aus meinen persönlichen Anweisungen über mich und meine Wünsche an deine Antworten weißt.\n\nDann erledige diese typische Aufgabe von mir: ___\n\nHalte dich dabei an meine Anweisungen und nenne am Ende in einer Zeile, welche davon du angewendet hast.",
+     "wann": "Direkt nachdem du den Profiltext in den Einstellungen gespeichert hast – in einem NEUEN Chat."
+    },
+    {
+     "titel": "Profil nachschärfen",
+     "text": "Hier ist mein aktuelles Claude-Profil:\n___\n\nUnd hier 2–3 Antworten von dir, die mir NICHT gefallen haben, jeweils mit einem Satz, warum:\n___\n\nÜberarbeite mein Profil: Finde heraus, welche Regel gefehlt hat oder zu ungenau war. Gib mir die neue Fassung (höchstens 150 Wörter) und darunter eine kurze Liste: geändert · neu · gestrichen. Behalte alles, was funktioniert.",
+     "wann": "Nach ca. einer Woche oder immer, wenn Antworten wieder nicht passen."
+    }
+   ],
+   "beispiel": "Lena ist selbstständige Fotografin (Hochzeiten, Business-Porträts). Nach dem Interview steht in ihrem Profil u. a.: „Antworte mir locker und per du, höchstens 5 Sätze, lieber Stichpunkte. Kundentexte schreibst du per Sie, freundlich, nicht kitschig. Ich kenne mich mit Kamera und Licht aus – erklär mir das nicht. Bitte nie: Floskeln wie ‚Gerne helfe ich dir‘, Emojis, Zusammenfassungen am Ende.“ Im Test-Chat schickt sie Prompt 2 mit „Schreib eine Antwort auf eine Hochzeitsanfrage“ und prüft, ob Ton, Länge und Sie-Form ohne weitere Erklärung passen.",
+   "check": [
+    "Profil höchstens ca. 150 Wörter – konkrete Regeln statt Adjektive",
+    "Keine sensiblen Daten (Adresse, Telefonnummer, Passwörter, Gesundheit) im Profil",
+    "Im neuen Chat mit Prompt 2 getestet",
+    "Themenspezifisches (ein Kunde, ein Projekt) in Projekt-Anweisungen statt ins Profil"
+   ]
+  },
+  "music": "assets/music/groove-115.mp3",
+  "costUsd": 0.19,
+  "sha256": "a2e4331a73de1915beccd9929576f128049036b30e8eb539be62639ecc10efe6",
+  "durationSec": 16.7
  }
 ]
