@@ -2135,7 +2135,7 @@
   "id": "R020",
   "type": "reel",
   "createdAt": "2026-11-25",
-  "status": "sending",
+  "status": "scheduled",
   "format": "memoji",
   "series": "Claude-Codes Teil 19",
   "topic": "Dein persönliches Claude-Profil: Claude interviewt dich mit 8 Fragen und schreibt daraus den Text für die persönlichen Anweisungen in den Einstellungen (gilt für alle Chats) + Test-Prompt + Nachschärf-Prompt",
@@ -2208,6 +2208,36 @@
   "music": "assets/music/groove-115.mp3",
   "costUsd": 0.19,
   "sha256": "a2e4331a73de1915beccd9929576f128049036b30e8eb539be62639ecc10efe6",
-  "durationSec": 16.7
+  "durationSec": 16.7,
+  "plannedFor": "2026-11-25T18:30:00+01:00",
+  "mediaCommit": "f5066ecef0cdcd37e89ea3154f6818b99309b309",
+  "metricool": {
+   "postId": 442060154,
+   "uuid": "-9023710752827814362",
+   "publishAt": "2026-11-25T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 442060154,
+    "scheduledAt": "2026-11-25T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 442060154,
+    "scheduledAt": "2026-11-25T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 442060377,
+    "uuid": "-3774788378377304722",
+    "scheduledAt": "2026-11-25T18:30:00+01:00",
+    "firstComment": true
+   }
+  }
  }
 ]
