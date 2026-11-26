@@ -2244,7 +2244,7 @@
   "id": "K005",
   "type": "carousel",
   "createdAt": "2026-11-26",
-  "status": "sending",
+  "status": "scheduled",
   "series": "Claude-Prompts Teil 5",
   "slides": 8,
   "design": "v2-reel-look",
@@ -2337,6 +2337,29 @@
     "Rechnung hat alle Pflichtangaben nach § 14 Abs. 4 UStG (Slide 7).",
     "Sonderfälle (Ausland, Reverse Charge, Gutschrift) mit Steuerberatung geklärt."
    ]
+  },
+  "plannedFor": "2026-11-26T18:30:00+01:00",
+  "mediaCommit": "2c80bd164f73c7530eb684057f978ff7b11edc37",
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 443405926,
+    "uuid": "5838551282289033406",
+    "scheduledAt": "2026-11-26T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 443406143,
+    "uuid": "-5942087596641203109",
+    "scheduledAt": "2026-11-26T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 443406344,
+    "uuid": "-9036977485045021089",
+    "scheduledAt": "2026-11-26T18:30:00+01:00",
+    "firstComment": true
+   }
   }
  }
 ]
