@@ -1817,7 +1817,7 @@
     "id": "EK003",
     "type": "carousel",
     "createdAt": "2026-11-26",
-    "status": "sending",
+    "status": "scheduled",
     "series": "Claude Prompts Part 3",
     "slides": 8,
     "design": "v2-reel-look",
@@ -1922,6 +1922,36 @@
         "The invoice has all the essentials from slide 7 and matches the quote.",
         "Tax/VAT and cross-border questions checked with your tax authority or accountant."
       ]
+    },
+    "plannedFor": "2026-11-26T20:30:00+01:00",
+    "mediaCommit": "e6a2f412ff62d9791042a4143aacb89e332b74a6",
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 443483656,
+        "uuid": "5650907449334844962",
+        "scheduledAt": "2026-11-26T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 443483968,
+        "uuid": "9014674790139840606",
+        "scheduledAt": "2026-11-26T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 443483986,
+        "uuid": "7439713114967328077",
+        "scheduledAt": "2026-11-26T20:30:00+01:00",
+        "media": "ig-01..04"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 443484013,
+        "uuid": "-2524254436933087868",
+        "scheduledAt": "2026-11-26T20:30:00+01:00",
+        "firstComment": true
+      }
     }
   }
 ]
