@@ -32,14 +32,80 @@ footer a{color:var(--violet)}
 <div class="kick">// Claude-Vorlagen</div>
 <h1>Kopieren, <em>einfügen</em>, fertig.</h1>
 <p class="lead">Alle Guides und Prompts aus meinen Reels und Karussells. Das Neueste steht oben.</p>
-<article class="card new" id="R020">
-  <div class="meta"><span class="tag">Neu · Guide</span><span>Reel R020</span></div>
+<article class="card new" id="K005">
+  <div class="meta"><span class="tag">Neu · Guide</span><span>Karussell K005</span></div>
+  <h2>Guide: Angebote und Rechnungen mit Claude – ohne Word-Gebastel</h2>
+  <p class="goal">Aus ein paar Stichpunkten ein klares Angebot mit Grenzen machen, es vor dem Versand auf Lücken prüfen, sauber nachfassen und die Rechnung gegen die Pflichtangaben checken.</p>
+  <h3>So gehst du vor</h3>
+  <ol class="steps"><li><b>Stichpunkte sammeln.</b> Kunde, Leistung, dein Preis oder Stundensatz, Zeitraum, Zahlungsweise – und ob du Kleinunternehmer bist. Mehr braucht Prompt 1 nicht.</li><li><b>Angebot bauen.</b> Prompt 1 schicken, die Rückfragen beantworten. Achte auf den Abschnitt „Nicht enthalten“ – der schützt dich vor Zusatzarbeit ohne Bezahlung.</li><li><b>Lücken schließen.</b> Prompt 2 im selben Chat: Claude liest wie ein schwieriger Kunde, schlägt klarere Formulierungen vor und gibt die überarbeitete Fassung aus.</li><li><b>Nachfassen.</b> Keine Antwort? Prompt 3 liefert zwei kurze Mails für Tag 7 und Tag 14.</li><li><b>Rechnung prüfen.</b> Vor dem Versand Prompt 4: Tabelle mit allen Pflichtangaben nach § 14 Abs. 4 UStG, Rechenwerte und Abgleich mit dem Angebot. Sonderfälle mit Steuerberatung klären.</li></ol>
+  <h3>Prompt 1: Angebot aus Stichpunkten</h3>
+  <pre id="v1">Du bist mein Assistent für Angebote als Selbstständige/r. Erstelle aus meinen Stichpunkten ein fertiges, professionelles Angebot.
+
+Meine Stichpunkte:
+- Ich: ___ (Name, Beruf, Kleinunternehmer ja/nein)
+- Kunde: ___
+- Leistung: ___
+- Mein Preis bzw. Stundensatz: ___
+- Zeitraum: ___
+- Zahlung: ___
+
+Aufbau:
+1. Kurze Einleitung, die das Ziel des Kunden in einem Satz aufgreift.
+2. Positionstabelle: Nr. | Leistung | Beschreibung (was genau enthalten ist) | Menge | Preis netto. Verwende nur meine Preise und erfinde keine Beträge – fehlt etwas, schreib [PREIS FEHLT].
+3. Abschnitt „Annahmen“ (z. B. wer liefert Inhalte, wie viele Korrekturschleifen).
+4. Abschnitt „Nicht enthalten“ mit mindestens 3 Punkten, die der Kunde sonst stillschweigend erwarten könnte.
+5. Zeitplan, Zahlungsbedingungen und Gültigkeit des Angebots.
+6. Summe netto, Umsatzsteuer und brutto – oder, wenn ich Kleinunternehmer bin, ohne Steuerausweis mit Hinweis auf § 19 UStG.
+
+Ton: klar, freundlich, ohne Floskeln. Stell mir danach bis zu 5 Rückfragen zu Punkten, die noch unklar sind.</pre>
+  <button type="button" data-copy="v1">Kopieren</button>
+  <p class="hint">Zuerst, pro Anfrage.</p>
+  <h3>Prompt 2: Lücken-Check: Claude als schwieriger Kunde</h3>
+  <pre id="v2">Lies das Angebot oben wie ein kritischer Kunde, der möglichst viel für sein Geld will.
+1. Welche Formulierungen kann er so auslegen, dass mehr Arbeit für mich drinsteckt? Zitiere sie und gib mir jeweils eine klarere Fassung.
+2. Was fehlt, damit eindeutig ist, wann die Leistung „fertig“ ist (Abnahme)?
+3. Welche Zusatzwünsche sind wahrscheinlich – und wie formuliere ich, was sie kosten (z. B. pro Seite, pro Stunde)?
+4. Gib mir eine Liste mit Fragen, die ich dem Kunden vor dem Versand stellen sollte.
+Gib am Ende die überarbeitete Fassung des Angebots aus.</pre>
+  <button type="button" data-copy="v2">Kopieren</button>
+  <p class="hint">Direkt danach, im selben Chat.</p>
+  <h3>Prompt 3: Nachfass-Mails</h3>
+  <pre id="v3">Ich habe am ___ ein Angebot über ___ an ___ geschickt und noch keine Antwort bekommen.
+Schreib mir 2 kurze Nachfass-Mails (je höchstens 80 Wörter):
+1. freundlich, nach 7 Tagen,
+2. klar, nach 14 Tagen, mit Hinweis, dass das Angebot bis ___ gilt.
+Kein Druck, keine Entschuldigung, am Ende jeweils genau eine konkrete Frage, die man schnell beantworten kann.</pre>
+  <button type="button" data-copy="v3">Kopieren</button>
+  <p class="hint">Wenn nach einer Woche keine Antwort kam.</p>
+  <h3>Prompt 4: Rechnungs-Check (Pflichtangaben)</h3>
+  <pre id="v4">Prüfe diese Rechnung auf die Pflichtangaben nach § 14 Abs. 4 UStG. Geh die Liste einzeln durch und gib eine Tabelle aus: Pflichtangabe | vorhanden? (ja/nein/unklar) | Fundstelle oder was fehlt.
+1. Vollständiger Name und Anschrift von mir und vom Kunden
+2. Steuernummer oder USt-IdNr.
+3. Ausstellungsdatum
+4. Fortlaufende, einmalige Rechnungsnummer
+5. Menge und Art der Leistung
+6. Zeitpunkt bzw. Zeitraum der Leistung
+7. Entgelt netto, nach Steuersätzen aufgeschlüsselt
+8. Steuersatz und Steuerbetrag – oder Hinweis auf Steuerbefreiung bzw. Kleinunternehmerregelung
+Prüfe außerdem: Stimmen alle Rechenwerte? Passt die Rechnung zum Angebot (Positionen, Preise)?
+Wichtig: Du ersetzt keine Steuerberatung. Liegt ein Sonderfall vor (Ausland, Reverse Charge, Gutschrift, Kleinbetragsrechnung bis 250 €), sag das und empfiehl, es prüfen zu lassen.
+Rechnung: ___
+Angebot (optional): ___</pre>
+  <button type="button" data-copy="v4">Kopieren</button>
+  <p class="hint">Bevor die Rechnung rausgeht.</p>
+  <h3>Beispiel</h3>
+  <p class="ex">Webdesignerin, Kunde Bäckerei Korn, Website mit 5 Seiten für 3.300 € netto, Januar–Februar, 50 % vorab. Claude macht daraus drei Positionen (Konzept &amp; Design 1.200 €, Umsetzung 1.800 €, Einweisung 300 €) mit „Nicht enthalten: Texte schreiben, Fotos, Hosting“. Der Lücken-Check fragt: Wer liefert die Texte bis wann, was kostet jede weitere Seite, wann gilt die Website als fertig? Beim Rechnungs-Check fallen fehlende Steuernummer und fehlender Leistungszeitraum auf.</p>
+  <h3>Check vor dem Abschicken</h3>
+  <ul class="check"><li>Alle Preise stammen von dir – keine von Claude geschätzten Beträge.</li><li>„Nicht enthalten“ und Abnahme („fertig, wenn …“) stehen im Angebot.</li><li>Rechnung hat alle Pflichtangaben nach § 14 Abs. 4 UStG (Slide 7).</li><li>Sonderfälle (Ausland, Reverse Charge, Gutschrift) mit Steuerberatung geklärt.</li></ul>
+  <p class="hint">Stichpunkte einsetzen und abschicken – Claude baut das Angebot und stellt dir danach Rückfragen zu allem, was noch unklar ist.</p>
+</article><article class="card" id="R020">
+  <div class="meta"><span class="tag">Guide</span><span>Reel R020</span></div>
   <h2>Guide: Dein persönliches Claude-Profil</h2>
   <p class="goal">Claude einmal richtig vorstellen: mit einem Interview-Prompt einen Profiltext bauen, ihn in die Einstellungen einfügen und ab dann in jedem Chat passendere Antworten bekommen – ohne dich jedes Mal neu zu erklären.</p>
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Interview starten.</b> Prompt 1 in einen neuen Chat. Claude stellt 8 Fragen, eine nach der anderen. Antworte kurz – Stichpunkte reichen.</li><li><b>Profiltext holen.</b> Am Ende bekommst du einen fertigen Text in Ich-Form (höchstens ca. 150 Wörter) mit konkreten Regeln – plus eine Liste, was Claude bewusst weggelassen hat.</li><li><b>In die Einstellungen kopieren.</b> Unten links auf deine Initialen → Einstellungen → Bereich für deine persönlichen Anweisungen (je nach Version „Your Claude“ oder „Konto“) → Feld „Anweisungen“. Einfügen, speichern. Laut Claude-Hilfe gilt das für alle deine Chats.</li><li><b>Testen.</b> Neuen Chat öffnen und Prompt 2 mit einer typischen Aufgabe von dir schicken. Passt Ton und Länge? Wenn nicht: Regel im Profil konkreter machen.</li><li><b>Nach einer Woche nachschärfen.</b> Sammle 2–3 Antworten, die dich genervt haben, und gib sie mit deinem Profil in Prompt 3. Für einzelne Themen lieber ein Projekt mit eigenen Anweisungen anlegen – die gelten nur dort.</li></ol>
   <h3>Prompt 1: Das Interview → dein Profiltext</h3>
-  <pre id="v1">Du hilfst mir, ein persönliches Profil für Claude zu schreiben, das ich in die Einstellungen (persönliche Anweisungen) einfüge. Es soll in jedem Chat gelten.
+  <pre id="v5">Du hilfst mir, ein persönliches Profil für Claude zu schreiben, das ich in die Einstellungen (persönliche Anweisungen) einfüge. Es soll in jedem Chat gelten.
 
 Interviewe mich mit genau 8 Fragen. Stell immer nur EINE Frage, warte auf meine Antwort, dann die nächste:
 1. Was machst du beruflich, und woran arbeitest du gerade am meisten?
@@ -58,25 +124,25 @@ A) MEIN PROFIL: fertiger Text in Ich-Form, höchstens 150 Wörter, gegliedert in
 B) 3 Punkte, die du bewusst weggelassen hast, weil sie zu privat oder zu speziell für jeden Chat sind.
 
 Regeln: Nimm keine sensiblen Daten auf (Adresse, Telefonnummer, Passwörter, Gesundheitsdaten), auch wenn ich sie nenne. Erfinde nichts dazu, was ich nicht gesagt habe.</pre>
-  <button type="button" data-copy="v1">Kopieren</button>
+  <button type="button" data-copy="v5">Kopieren</button>
   <p class="hint">Einmal am Anfang, in einem neuen Chat.</p>
   <h3>Prompt 2: Der Test im neuen Chat</h3>
-  <pre id="v2">Kurzer Test: Fass in 3 Stichpunkten zusammen, was du aus meinen persönlichen Anweisungen über mich und meine Wünsche an deine Antworten weißt.
+  <pre id="v6">Kurzer Test: Fass in 3 Stichpunkten zusammen, was du aus meinen persönlichen Anweisungen über mich und meine Wünsche an deine Antworten weißt.
 
 Dann erledige diese typische Aufgabe von mir: ___
 
 Halte dich dabei an meine Anweisungen und nenne am Ende in einer Zeile, welche davon du angewendet hast.</pre>
-  <button type="button" data-copy="v2">Kopieren</button>
+  <button type="button" data-copy="v6">Kopieren</button>
   <p class="hint">Direkt nachdem du den Profiltext in den Einstellungen gespeichert hast – in einem NEUEN Chat.</p>
   <h3>Prompt 3: Profil nachschärfen</h3>
-  <pre id="v3">Hier ist mein aktuelles Claude-Profil:
+  <pre id="v7">Hier ist mein aktuelles Claude-Profil:
 ___
 
 Und hier 2–3 Antworten von dir, die mir NICHT gefallen haben, jeweils mit einem Satz, warum:
 ___
 
 Überarbeite mein Profil: Finde heraus, welche Regel gefehlt hat oder zu ungenau war. Gib mir die neue Fassung (höchstens 150 Wörter) und darunter eine kurze Liste: geändert · neu · gestrichen. Behalte alles, was funktioniert.</pre>
-  <button type="button" data-copy="v3">Kopieren</button>
+  <button type="button" data-copy="v7">Kopieren</button>
   <p class="hint">Nach ca. einer Woche oder immer, wenn Antworten wieder nicht passen.</p>
   <h3>Beispiel</h3>
   <p class="ex">Lena ist selbstständige Fotografin (Hochzeiten, Business-Porträts). Nach dem Interview steht in ihrem Profil u. a.: „Antworte mir locker und per du, höchstens 5 Sätze, lieber Stichpunkte. Kundentexte schreibst du per Sie, freundlich, nicht kitschig. Ich kenne mich mit Kamera und Licht aus – erklär mir das nicht. Bitte nie: Floskeln wie ‚Gerne helfe ich dir‘, Emojis, Zusammenfassungen am Ende.“ Im Test-Chat schickt sie Prompt 2 mit „Schreib eine Antwort auf eine Hochzeitsanfrage“ und prüft, ob Ton, Länge und Sie-Form ohne weitere Erklärung passen.</p>
@@ -90,7 +156,7 @@ ___
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Notiz sammeln.</b> Schreib 3–6 Stichpunkte: Thema, die eine Aussage, die hängen bleiben soll, ein Beispiel aus deinem Alltag. Ganze Sätze sind nicht nötig.</li><li><b>Skript holen.</b> Prompt 1 mit Notiz und Rahmen (Plattform, Länge, Zielgruppe, Ton, Format). Claude liefert 3 Hooks, das Skript als Tabelle, CTA und Caption.</li><li><b>Kürzen und Hook prüfen.</b> Prompt 2 im selben Chat. Claude zählt die Wörter, kürzt auf deine Ziel-Länge und bewertet die Hooks. Nimm den besten – oder deinen eigenen, wenn er besser klingt.</li><li><b>Laut lesen, dann aufnehmen.</b> Lies das Skript einmal laut. Was sich komisch anfühlt, in deinen eigenen Worten umformulieren. Alles mit [PRÜFEN] vorher nachschlagen.</li><li><b>Serie planen.</b> Prompt 3 macht aus dem Thema 5 weitere Ideen. Jede kannst du direkt wieder in Prompt 1 geben.</li></ol>
   <h3>Prompt 1: Das Reel-Skript aus deiner Notiz</h3>
-  <pre id="v4">Du bist mein Skript-Autor für Kurzvideos (Reels/TikTok). Mach aus meiner Notiz ein fertiges Skript, das ich direkt aufnehmen kann.
+  <pre id="v8">Du bist mein Skript-Autor für Kurzvideos (Reels/TikTok). Mach aus meiner Notiz ein fertiges Skript, das ich direkt aufnehmen kann.
 
 Meine Notiz (Stichpunkte reichen):
 ___
@@ -111,25 +177,25 @@ Liefere:
 5. CAPTION: 3 kurze Absätze + 4–6 Hashtags.
 
 Regeln: Erfinde keine Zahlen, Studien oder Ergebnisse, die nicht in meiner Notiz stehen. Wenn dir für eine Aussage Fakten fehlen, markiere sie mit [PRÜFEN]. Fehlt dir etwas Wichtiges, stell zuerst höchstens 2 Rückfragen.</pre>
-  <button type="button" data-copy="v4">Kopieren</button>
+  <button type="button" data-copy="v8">Kopieren</button>
   <p class="hint">Sobald du eine Idee hast – auch wenn es nur drei Stichpunkte sind.</p>
   <h3>Prompt 2: Kürzen + Hook-Check</h3>
-  <pre id="v5">Prüf das Skript oben wie ein strenger Editor für Kurzvideos.
+  <pre id="v9">Prüf das Skript oben wie ein strenger Editor für Kurzvideos.
 
 1. HOOK-CHECK für alle 3 Hooks: Ist es eine Behauptung statt einer Frage? Höchstens 10 Wörter? Weckt er Neugier, ohne zu lügen? Gib jedem Hook eine Note von 1–5 mit einem Satz Begründung und schreib den besten noch einmal schärfer.
 2. LÄNGE: Zähl die gesprochenen Wörter und schätze die Dauer (ca. 2,5 Wörter pro Sekunde). Ist das Skript länger als ___ Sekunden, kürze es auf diese Länge: streich Füllwörter, Wiederholungen und den schwächsten Punkt – nicht die Pointe.
 3. ERSTE 3 SEKUNDEN: Was sieht und hört man genau? Gibt es einen Grund, nicht weiterzuwischen? Wenn nicht: konkreter Umbau-Vorschlag.
 4. Zeig das gekürzte Skript wieder als Tabelle (Sekunde | Gesprochen | Bild/Aktion | Text-Einblendung) und darunter, was du gestrichen hast.</pre>
-  <button type="button" data-copy="v5">Kopieren</button>
+  <button type="button" data-copy="v9">Kopieren</button>
   <p class="hint">Im selben Chat, direkt nach Prompt 1.</p>
   <h3>Prompt 3: Aus einem Thema eine Serie</h3>
-  <pre id="v6">Mach aus dem Thema meines Skripts eine kleine Serie.
+  <pre id="v10">Mach aus dem Thema meines Skripts eine kleine Serie.
 
 1. Schlag 5 weitere Reel-Ideen zum selben Thema vor, jede mit einem anderen Blickwinkel (z. B. Fehler, Vorher/Nachher, Mythos vs. Wahrheit, Schritt-für-Schritt, persönliche Geschichte).
 2. Für jede Idee: Arbeitstitel, Hook (Behauptung, höchstens 10 Wörter), 3 Stichpunkte für den Inhalt.
 3. Markiere die 2 Ideen, die am besten zu meiner Zielgruppe ___ passen, und begründe kurz.
 4. Schreib die Stichpunkte so, dass ich jede Idee direkt wieder in Prompt 1 einfügen kann.</pre>
-  <button type="button" data-copy="v6">Kopieren</button>
+  <button type="button" data-copy="v10">Kopieren</button>
   <p class="hint">Wenn das erste Skript steht und du die nächsten Videos planen willst.</p>
   <h3>Beispiel</h3>
   <p class="ex">Notiz: „Sonntags vorkochen, 3 typische Fehler, mein Trick: nur 2 Gerichte, Ziel: weniger Stress unter der Woche“. Rahmen: Instagram Reels, 20 Sekunden, Berufstätige, locker, ich spreche in die Kamera. Claude liefert Hooks wie „Hör auf, sonntags fünf Gerichte zu kochen“, dann die Tabelle: 0–2 s Hook-Satz, 2–8 s fertige Boxen im Kühlschrank zeigen, 8–15 s die drei Fehler mit Einblendung 1 · 2 · 3, 15–20 s CTA. Prompt 2 merkt an, dass der Text etwa 34 Sekunden dauern würde, streicht einen Fehler und kürzt auf 20 Sekunden.</p>
@@ -143,7 +209,7 @@ Regeln: Erfinde keine Zahlen, Studien oder Ergebnisse, die nicht in meiner Notiz
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Dateiliste holen.</b> Mac: Terminal öffnen und ls ~/Downloads | pbcopy eingeben – die Liste ist dann in der Zwischenablage. Windows: PowerShell öffnen und Get-ChildItem $HOME\Downloads -Name | Set-Clipboard eingeben. Nur Namen, kein Inhalt verlässt deinen Rechner.</li><li><b>Plan machen lassen.</b> Prompt 1 mit Ordnername, Zweck und Liste. Claude liefert Baum, Namensschema, Tabelle alt → neu mit Sicherheit und eine Liste „kann wahrscheinlich weg“.</li><li><b>Nachschärfen.</b> Rückfragen beantworten und mit Prompt 2 die Tabelle anpassen. Alle Zeilen mit Sicherheit „niedrig“ kurz von Hand öffnen und prüfen.</li><li><b>Umsetzen.</b> Von Hand verschieben – oder mit Prompt 3 ein Skript schreiben lassen. Vorher eine Sicherung machen, zuerst den Testlauf ansehen, dann erst die echte Version starten.</li><li><b>Ordnung halten.</b> Die 5 Regeln aus Prompt 2 als Notiz speichern. Einmal im Monat die neuen Dateien wieder durch Prompt 1 schicken.</li></ol>
   <h3>Prompt 1: Aufräum-Plan</h3>
-  <pre id="v7">Ich will meinen Ordner aufräumen. Unten steht die Liste aller Dateinamen (ein Name pro Zeile). Du siehst nur die Namen, nicht den Inhalt – rate also nicht, was in einer Datei steht, sondern schließe nur aus Name und Endung.
+  <pre id="v11">Ich will meinen Ordner aufräumen. Unten steht die Liste aller Dateinamen (ein Name pro Zeile). Du siehst nur die Namen, nicht den Inhalt – rate also nicht, was in einer Datei steht, sondern schließe nur aus Name und Endung.
 
 Mach Folgendes:
 1. ORDNERSTRUKTUR: Schlag höchstens 6–8 Hauptordner vor (mit Nummer davor, z. B. 01_Rechnungen), passend zu dem, was in der Liste wirklich vorkommt. Zeig sie als Baum.
@@ -156,10 +222,10 @@ Mein Ordner heißt: ___
 Wofür ich ihn nutze: ___
 Dateiliste:
 ___</pre>
-  <button type="button" data-copy="v7">Kopieren</button>
+  <button type="button" data-copy="v11">Kopieren</button>
   <p class="hint">Zuerst: aus der Dateiliste Ordner, Namensschema, Tabelle und Ausmist-Liste machen.</p>
   <h3>Prompt 2: Feinschliff + Regeln</h3>
-  <pre id="v8">Danke. Pass die Tabelle jetzt an meine Antworten an:
+  <pre id="v12">Danke. Pass die Tabelle jetzt an meine Antworten an:
 - Meine Antworten auf deine Rückfragen: ___
 - Diese Ordner will ich anders nennen / zusammenlegen: ___
 - Diese Dateien bleiben, wo sie sind: ___
@@ -168,10 +234,10 @@ Gib mir danach:
 1. die aktualisierte Tabelle (alter Name | neuer Name | Zielordner),
 2. eine kurze Regel-Liste für die Zukunft (max. 5 Regeln: wohin neue Downloads kommen und wie ich sie benenne),
 3. alle Zeilen mit Sicherheit „niedrig“ noch einmal gesammelt, damit ich sie von Hand prüfe.</pre>
-  <button type="button" data-copy="v8">Kopieren</button>
+  <button type="button" data-copy="v12">Kopieren</button>
   <p class="hint">Direkt danach im selben Chat, wenn du Rückfragen beantwortet hast oder etwas anders willst.</p>
   <h3>Prompt 3: Skript mit Testlauf</h3>
-  <pre id="v9">Schreib mir aus der finalen Tabelle ein Skript, das die Ordner anlegt und die Dateien umbenennt und verschiebt.
+  <pre id="v13">Schreib mir aus der finalen Tabelle ein Skript, das die Ordner anlegt und die Dateien umbenennt und verschiebt.
 - Mein System: ___ (Mac/Linux = Terminal-Skript, Windows = PowerShell)
 - Pfad zum Ordner: ___
 
@@ -180,7 +246,7 @@ Regeln für das Skript:
 2. Existiert ein Zielname schon, wird nichts überschrieben – hänge _2 an.
 3. Zuerst ein Testlauf, der nur anzeigt, was passieren würde (Mac/Linux: echo statt mv, Windows: -WhatIf). Erst wenn ich „los“ schreibe, gibst du die echte Version.
 4. Erklär in 3 Sätzen, wie ich das Skript starte, und dass ich vorher eine Sicherung machen soll.</pre>
-  <button type="button" data-copy="v9">Kopieren</button>
+  <button type="button" data-copy="v13">Kopieren</button>
   <p class="hint">Optional, wenn du nicht 200 Dateien von Hand verschieben willst. Erst Testlauf, dann echte Version.</p>
   <h3>Beispiel</h3>
   <p class="ex">Download-Ordner mit 140 Dateien (Beispiel): Claude schlägt 01_Rechnungen, 02_Verträge, 03_Fotos, 04_Programme, 05_Sonstiges vor, macht aus scan0001.pdf „2026-03_Mietvertrag_v1.pdf“ (Sicherheit mittel – nur am Namen nicht eindeutig) und sammelt setup_final2.dmg und Rechnung(3).pdf unter „kann wahrscheinlich weg“. Nach Prompt 3 zeigt der Testlauf jede geplante Verschiebung, erst danach wird verschoben.</p>
@@ -194,7 +260,7 @@ Regeln für das Skript:
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Steckbrief ausfüllen.</b> Für wen, Budget, was sie/er liebt, was schon da ist, was gar nicht geht, eine gemeinsame Erinnerung – die Speicher-Slide hilft.</li><li><b>Ideen holen.</b> Prompt 1 schicken, Claudes Fragen beantworten. Du bekommst 10 Ideen in 3 Preisstufen mit Begründung plus 2 Erlebnisse. Passt etwas nicht: „Weniger Technik, mehr Zeit zusammen“.</li><li><b>Top 3 vergleichen.</b> Prompt 2: Tabelle mit Freude-Faktor, Risiko „hat sie schon“ und was du vor dem Kauf selbst prüfen musst – plus Plan B.</li><li><b>Karte schreiben.</b> Prompt 3 mit einer echten Erinnerung: drei Varianten, eine davon nimmst du (oder mischst sie).</li><li><b>Für alle auf einmal.</b> Prompt 4, wenn mehrere Geschenke anstehen: Budget aufteilen, Bestell-Reihenfolge, Notfall-Ideen.</li></ol>
   <h3>Prompt 1: Geschenke-Berater (Ideen)</h3>
-  <pre id="v10">Du bist mein Geschenke-Berater. Stell mir zuerst diese Fragen und warte auf meine Antworten, bevor du Ideen vorschlägst:
+  <pre id="v14">Du bist mein Geschenke-Berater. Stell mir zuerst diese Fragen und warte auf meine Antworten, bevor du Ideen vorschlägst:
 1. Für wen ist das Geschenk (Beziehung, Alter)?
 2. Wie hoch ist das Budget?
 3. Was liebt die Person (Hobbys, Lieblingsthemen, was macht sie am Wochenende)?
@@ -209,34 +275,34 @@ Danach erstellst du:
 - Preise nur als grobe Spanne und mit dem Hinweis, dass du sie nicht live prüfen kannst.
 
 Meine Antworten: ___</pre>
-  <button type="button" data-copy="v10">Kopieren</button>
+  <button type="button" data-copy="v14">Kopieren</button>
   <p class="hint">Zuerst, pro Person.</p>
   <h3>Prompt 2: Top 3 vergleichen + Kauf-Check</h3>
-  <pre id="v11">Nimm diese 3 Ideen aus deiner Liste in die engere Wahl: ___
+  <pre id="v15">Nimm diese 3 Ideen aus deiner Liste in die engere Wahl: ___
 Vergleiche sie in einer Tabelle:
 1. Wie sehr freut sich die Person wahrscheinlich (mit Begründung aus meinen Antworten)?
 2. Risiko „hat sie schon“ oder „passt nicht“ – und wie ich das unauffällig herausfinde.
 3. Was muss ich vor dem Kauf selbst prüfen (Lieferzeit bis ___, Größe, Verfügbarkeit, Preis im Shop)?
 4. Wie kann ich das Geschenk persönlicher machen (Verpackung, kleine Ergänzung unter 10 €)?
 Gib am Ende eine klare Empfehlung und einen Plan B, falls die erste Wahl nicht rechtzeitig ankommt.</pre>
-  <button type="button" data-copy="v11">Kopieren</button>
+  <button type="button" data-copy="v15">Kopieren</button>
   <p class="hint">Direkt nach den Ideen.</p>
   <h3>Prompt 3: Kartentext, der nach dir klingt</h3>
-  <pre id="v12">Schreib mir einen Kartentext für ___ zum Geschenk ___.
+  <pre id="v16">Schreib mir einen Kartentext für ___ zum Geschenk ___.
 Nutze diese gemeinsame Erinnerung: ___
 Gib mir 3 Varianten: herzlich, witzig und kurz (max. 2 Sätze).
 Regeln: klingt wie ich, nicht wie eine Grußkarte aus dem Laden – keine Floskeln wie „besinnliche Feiertage“ oder „von Herzen alles Gute“. Wenn die Erinnerung nicht zum Ton passt, sag es mir.</pre>
-  <button type="button" data-copy="v12">Kopieren</button>
+  <button type="button" data-copy="v16">Kopieren</button>
   <p class="hint">Wenn das Geschenk feststeht.</p>
   <h3>Prompt 4: Geschenkeliste für alle</h3>
-  <pre id="v13">Ich muss Geschenke für mehrere Personen finden. Gesamtbudget: ___ €.
+  <pre id="v17">Ich muss Geschenke für mehrere Personen finden. Gesamtbudget: ___ €.
 Personen (je Name, Beziehung, 2–3 Stichworte): ___
 Erstelle:
 1. Eine Tabelle: Person – Budget-Anteil – 2 Ideen – „Warum“ in einem Satz.
 2. Verteile das Budget fair, aber nach Nähe der Beziehung, und zeig die Summe.
 3. Eine Einkaufs-Reihenfolge: was zuerst bestellt werden muss (lange Lieferzeit), was im Laden geht.
 4. Für jede Person eine Idee unter 15 € als Notfall-Plan.</pre>
-  <button type="button" data-copy="v13">Kopieren</button>
+  <button type="button" data-copy="v17">Kopieren</button>
   <p class="hint">Wenn mehrere Geschenke mit einem Gesamtbudget anstehen.</p>
   <h3>Beispiel</h3>
   <p class="ex">Mama, 62, liebt ihren Garten und Krimis, hat alles für die Küche, will keine Deko mehr, Budget 30–60 €. Claude schlägt u. a. Saatgut alter Gemüsesorten (unter Budget), ein Krimi-Dinner-Spiel für die Familie (im Budget) und einen gemeinsamen Tag auf einer Gartenschau (Erlebnis) vor. Im Vergleich gewinnt das Krimi-Dinner, Plan B ist das Saatgut, und der Kartentext spielt darauf an, dass diesmal die ganze Familie „ermittelt“.</p>
@@ -250,7 +316,7 @@ Erstelle:
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Angaben sammeln.</b> Ziel, Tage, Budget vor Ort, Tempo, Interessen, Mitreisende, wo die Unterkunft liegt und was du auf keinen Fall willst. Je ehrlicher du beim Tempo bist, desto besser passt der Plan.</li><li><b>Plan holen.</b> Prompt 1 mit deinen Angaben. Beantworte Claudes Rückfragen kurz – erst dann kommt der Tagesplan als Tabelle mit Plan B und Budget-Schätzung.</li><li><b>Packliste dazu.</b> Prompt 2 im selben Chat. Claude kennt dann deinen Plan und packt passend zu den Programmpunkten statt nach Standard-Liste.</li><li><b>Vor Ort-Liste abarbeiten.</b> Öffnungszeiten, Ruhetage, Preise und Fahrpläne vor der Reise auf den offiziellen Seiten prüfen. Ist in deinem Claude die Websuche aktiv, kann Claude beim Nachsehen helfen – die Quelle trotzdem selbst anklicken.</li><li><b>Unterwegs anpassen.</b> Regen, Ruhetag oder müde Beine? Prompt 3 im selben Chat – Claude baut nur die betroffenen Tage um.</li></ol>
   <h3>Prompt 1: Der Reiseplan als Tabelle</h3>
-  <pre id="v14">Du bist mein Reiseplaner. Plane mir eine Reise, die zu mir passt – nicht die Standard-Touri-Liste.
+  <pre id="v18">Du bist mein Reiseplaner. Plane mir eine Reise, die zu mir passt – nicht die Standard-Touri-Liste.
 
 Meine Angaben:
 - Ziel: ___
@@ -272,10 +338,10 @@ Liefere dann:
 5. VOR ORT PRÜFEN: Liste aller Dinge, die du nicht sicher weißt (Öffnungszeiten, Ruhetage, Preise, Fahrpläne, Reservierungspflicht, Saison-Schließungen).
 
 Regeln: Erfinde keine Adressen, Preise oder Öffnungszeiten. Wenn du etwas nicht sicher weißt, schreib es in die Liste „vor Ort prüfen“ statt es zu raten.</pre>
-  <button type="button" data-copy="v14">Kopieren</button>
+  <button type="button" data-copy="v18">Kopieren</button>
   <p class="hint">Vor der Reise, sobald Ziel und Tage feststehen.</p>
   <h3>Prompt 2: Packliste passend zum Plan</h3>
-  <pre id="v15">Mach mir zum Reiseplan oben eine Packliste.
+  <pre id="v19">Mach mir zum Reiseplan oben eine Packliste.
 
 - Reisezeit und Wetter, mit dem ich rechne: ___ (wenn ich nichts weiß: nenne, was in dieser Jahreszeit dort typisch ist, und markiere es als Schätzung)
 - Gepäck: ___ (nur Handgepäck / Koffer)
@@ -284,17 +350,17 @@ Regeln: Erfinde keine Adressen, Preise oder Öffnungszeiten. Wenn du etwas nicht
 Gliedere die Liste nach: Dokumente &amp; Geld | Kleidung (passend zu den Programmpunkten im Plan) | Technik | Gesundheit | Extras für Plan B.
 Schreib hinter jeden Punkt in Klammern, für welchen Tag/Programmpunkt ich ihn brauche. Streich alles, was ich vor Ort problemlos kaufen kann, und nenne es separat als „Kann man auch dort kaufen“.
 Am Ende: 3 Dinge, die man auf so einer Reise am häufigsten vergisst.</pre>
-  <button type="button" data-copy="v15">Kopieren</button>
+  <button type="button" data-copy="v19">Kopieren</button>
   <p class="hint">Im selben Chat, ein paar Tage vor der Abreise.</p>
   <h3>Prompt 3: Plan unterwegs umbauen</h3>
-  <pre id="v16">Ich bin jetzt vor Ort und habe den Plan geprüft. Folgendes hat sich geändert: ___ (z. B. Museum hat Ruhetag, es regnet, wir sind müder als gedacht, Budget ist knapper).
+  <pre id="v20">Ich bin jetzt vor Ort und habe den Plan geprüft. Folgendes hat sich geändert: ___ (z. B. Museum hat Ruhetag, es regnet, wir sind müder als gedacht, Budget ist knapper).
 
 Pass den restlichen Plan an:
 1. Zeig nur die Tage, die sich ändern, als neue Tabelle (Tag | Morgens | Mittags | Abends).
 2. Halte das Tempo und die Wege kurz – lieber ein Punkt weniger.
 3. Markiere neue Punkte, die ich wieder vor Ort prüfen sollte.
 4. Sag mir in einem Satz, was ich durch die Änderung verpasse und ob es sich lohnt, es an einem anderen Tag nachzuholen.</pre>
-  <button type="button" data-copy="v16">Kopieren</button>
+  <button type="button" data-copy="v20">Kopieren</button>
   <p class="hint">Vor Ort, wenn sich etwas ändert.</p>
   <h3>Beispiel</h3>
   <p class="ex">Lissabon, 3 Tage, 600 € vor Ort, Tempo entspannt, Interessen Essen und Aussicht, zu zweit. Claude fragt nach, ob ihr gut zu Fuß seid, und liefert dann: Tag 1 Altstadt – Markthalle – Fado-Abend, Tag 2 Museum – Strand – Aussichtspunkt zum Sonnenuntergang, Tag 3 Tagesausflug – Picknick – Rooftop-Bar. Plan B für Tag 2: Museum und Café statt Strand. Packliste: Regenjacke (Tag 2), bequeme Schuhe (Altstadt mit Hügeln), Sonnencreme. Vor Ort prüfen: Ruhetag des Museums, Zugzeiten für den Ausflug, ob die Bar reserviert werden muss.</p>
@@ -308,7 +374,7 @@ Pass den restlichen Plan an:
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Brief vorbereiten.</b> Alle Seiten fotografieren oder als PDF einscannen (auch die Rückseite – dort stehen oft Rechtsbehelfsbelehrung und Frist). Steuer-ID, Kontonummer und ähnlich sensible Nummern vorher schwärzen.</li><li><b>Klartext holen.</b> Prompt 1 mit heutigem Datum und dem Brief. Lies zuerst die Frist und gleich sie mit der zitierten Stelle im Original ab – trag sie sofort in deinen Kalender ein.</li><li><b>Unterlagen sammeln.</b> Die Liste aus Punkt 3 abhaken. Fehlt etwas, notier dir, bis wann du es nachreichen kannst.</li><li><b>Antwort schreiben.</b> Prompt 2 im selben Chat. Antwort prüfen, Lücken füllen, Anlagen beilegen und auf dem Weg verschicken, den der Brief nennt (Post, Mail, Portal). Kopie und Versanddatum aufheben.</li><li><b>Unsicher? Anrufen.</b> Verstehst du etwas nicht, bist du nicht einverstanden oder wird die Frist knapp: Prompt 3 für den Telefon-Spickzettel. Bei Widerspruch, Rückforderungen oder Streit lieber eine Beratungsstelle (z. B. Verbraucherzentrale, Sozialberatung) oder einen Anwalt fragen.</li></ol>
   <h3>Prompt 1: Klartext mit Frist zuerst</h3>
-  <pre id="v17">Ich habe einen Brief von einer Behörde bekommen (Foto oder Text unten). Übersetz ihn mir in normales Deutsch.
+  <pre id="v21">Ich habe einen Brief von einer Behörde bekommen (Foto oder Text unten). Übersetz ihn mir in normales Deutsch.
 
 Antworte genau in dieser Reihenfolge:
 1. FRIST ZUERST: Gibt es eine Frist? Nenne das Datum oder wie sie berechnet wird (z. B. „innerhalb eines Monats nach Bekanntgabe“) und zitiere die Stelle im Brief. Steht keine Frist drin, schreib das ausdrücklich.
@@ -323,26 +389,26 @@ Regeln: Erfinde nichts dazu. Ist etwas unleserlich oder nicht eindeutig, schreib
 
 Heutiges Datum: ___
 Mein Brief: ___</pre>
-  <button type="button" data-copy="v17">Kopieren</button>
+  <button type="button" data-copy="v21">Kopieren</button>
   <p class="hint">Sobald der Brief da ist – vor allem anderen.</p>
   <h3>Prompt 2: Antwort ans Amt</h3>
-  <pre id="v18">Schreib mir jetzt die Antwort an das Amt (höchstens 150 Wörter, sachlich und freundlich):
+  <pre id="v22">Schreib mir jetzt die Antwort an das Amt (höchstens 150 Wörter, sachlich und freundlich):
 - Absender: ___ (Name, Adresse), Empfänger und Aktenzeichen genau so, wie sie im Brief stehen.
 - Betreff mit Aktenzeichen und Datum des Briefs.
 - Ich schicke mit: ___ (Liste der Unterlagen, die ich beilege).
 - Falls etwas fehlt oder später kommt: ___ (Grund + bis wann).
 - Bitte um kurze Eingangsbestätigung.
 Darunter: eine Liste der Anlagen und ein Hinweis, ob ich die Antwort laut Brief per Post, Mail oder Online-Portal schicken soll. Wo Angaben fehlen, setz ___ ein, statt etwas zu erfinden.</pre>
-  <button type="button" data-copy="v18">Kopieren</button>
+  <button type="button" data-copy="v22">Kopieren</button>
   <p class="hint">Im selben Chat, wenn du die Unterlagen beisammen hast.</p>
   <h3>Prompt 3: Spickzettel fürs Telefonat</h3>
-  <pre id="v19">Ich will beim Amt anrufen, bevor ich antworte. Mach mir einen Spickzettel für das Telefonat:
+  <pre id="v23">Ich will beim Amt anrufen, bevor ich antworte. Mach mir einen Spickzettel für das Telefonat:
 1. Die 3–5 Fragen, die nach meinem Brief noch offen sind – kurz und klar formuliert.
 2. Was ich griffbereit haben sollte (Aktenzeichen, Datum des Briefs, Unterlagen).
 3. Einen Satz zum Einstieg („Guten Tag, ich rufe wegen … an“).
 4. Eine Mini-Vorlage zum Mitschreiben: Datum, Uhrzeit, Name der Person, was vereinbart wurde.
 Und sag mir zum Schluss, ob ich mir eine Fristverlängerung schriftlich bestätigen lassen sollte.</pre>
-  <button type="button" data-copy="v19">Kopieren</button>
+  <button type="button" data-copy="v23">Kopieren</button>
   <p class="hint">Wenn Fragen offen sind oder du mehr Zeit brauchst.</p>
   <h3>Beispiel</h3>
   <p class="ex">Mia bekommt Post von der Wohngeldstelle: zwei Seiten Amtsdeutsch. Prompt 1 zeigt ganz oben: Frist bis 02.12. (mit Zitat aus dem Brief), gefordert sind Kontoauszüge der letzten drei Monate und eine Mietbescheinigung. Die Mietbescheinigung muss erst der Vermieter ausfüllen – also Prompt 3: Spickzettel für den Anruf, ob sie die Bescheinigung ein paar Tage später nachreichen darf. Danach schreibt Prompt 2 die Antwort mit Anlagenliste.</p>
@@ -356,7 +422,7 @@ Und sag mir zum Schluss, ob ich mir eine Fristverlängerung schriftlich bestäti
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Proben sammeln.</b> Such 2–3 Texte, die du selbst geschrieben hast – am besten aus demselben Kanal wie dein Zieltext (Mail zu Mail, Post zu Post). Namen, Zahlen und Vertrauliches vorher rausnehmen.</li><li><b>Stil-Profil + Text in einem Rutsch.</b> Prompt 1 schicken. Claude leitet bis zu 8 Stilregeln mit Belegzitaten ab, schreibt deinen Text ohne Floskeln um und markiert Sätze, die noch generisch klingen.</li><li><b>Profil korrigieren.</b> Stimmt eine Regel nicht? Sag es direkt („Ich schreib nie ‚Hallo zusammen‘“, „Emojis nur am Ende“). Je genauer das Profil, desto besser jeder weitere Text.</li><li><b>Jeden neuen Entwurf gegenchecken.</b> Prompt 2 für alles, was nach KI klingen könnte – auch für Texte aus anderen Tools. Du bekommst eine Tabelle Satz | Problem | Besser.</li><li><b>Profil speichern.</b> Prompt 3 macht daraus einen Baustein mit höchstens 150 Wörtern. Speicher ihn als Notiz und füg ihn in neue Chats ein – oder in die Anweisungen eines Claude-Projekts.</li></ol>
   <h3>Prompt 1: Stil-Profil + Text in deinem Ton</h3>
-  <pre id="v20">Du bist mein Ghostwriter. Ziel: Texte, die klingen, als hätte ich sie selbst geschrieben – nicht nach KI.
+  <pre id="v24">Du bist mein Ghostwriter. Ziel: Texte, die klingen, als hätte ich sie selbst geschrieben – nicht nach KI.
 
 Hier sind 2–3 Texte, die ich selbst geschrieben habe (Mails, Posts, Nachrichten):
 &lt;probe1&gt;___&lt;/probe1&gt;
@@ -373,10 +439,10 @@ So gehst du vor:
 4. Gegencheck: Markiere danach jeden Satz, der noch generisch oder nach KI klingt, mit [GENERISCH] und schlag eine Version in meinem Ton vor.
 
 Ausgabe: 1) Stil-Profil als Liste, 2) fertiger Text, 3) markierte Sätze mit Alternative.</pre>
-  <button type="button" data-copy="v20">Kopieren</button>
+  <button type="button" data-copy="v24">Kopieren</button>
   <p class="hint">Einmal mit deinen Proben – liefert Profil, fertigen Text und Markierungen.</p>
   <h3>Prompt 2: Floskel-Gegencheck für jeden Entwurf</h3>
-  <pre id="v21">Prüf diesen Entwurf gegen mein Stil-Profil und die Verbotsliste von oben:
+  <pre id="v25">Prüf diesen Entwurf gegen mein Stil-Profil und die Verbotsliste von oben:
 ___ (Entwurf einfügen – von dir, von Claude oder von einem anderen Tool)
 
 1. Markiere jeden Satz, der gegen eine Regel verstößt oder eine Floskel von der Verbotsliste enthält, und nenn die Regel.
@@ -384,14 +450,14 @@ ___ (Entwurf einfügen – von dir, von Claude oder von einem anderen Tool)
 3. Sag mir zum Schluss in einem Satz, was an diesem Entwurf am meisten nach KI klingt.
 
 Ändere nichts am Inhalt. Ausgabe als Tabelle: Satz | Problem | Besser.</pre>
-  <button type="button" data-copy="v21">Kopieren</button>
+  <button type="button" data-copy="v25">Kopieren</button>
   <p class="hint">Im selben Chat danach, für jeden weiteren Entwurf.</p>
   <h3>Prompt 3: Stil-Baustein zum Wiederverwenden</h3>
-  <pre id="v22">Fass mein Stil-Profil und die Verbotsliste als kompakten Baustein zusammen (höchstens 150 Wörter), den ich am Anfang neuer Chats einfügen oder in die Anweisungen eines Claude-Projekts kopieren kann.
+  <pre id="v26">Fass mein Stil-Profil und die Verbotsliste als kompakten Baustein zusammen (höchstens 150 Wörter), den ich am Anfang neuer Chats einfügen oder in die Anweisungen eines Claude-Projekts kopieren kann.
 - Formuliere jede Regel als klare Anweisung („Schreib …“, „Vermeide …“) mit einem Mini-Beispiel aus meinen Proben.
 - Übernimm die Verbotsliste vollständig.
 - Schließe mit: „Wenn du bei Ton oder Inhalt unsicher bist, frag mich, statt zu raten.“</pre>
-  <button type="button" data-copy="v22">Kopieren</button>
+  <button type="button" data-copy="v26">Kopieren</button>
   <p class="hint">Wenn das Profil passt – damit du nicht jedes Mal neu anfangen musst.</p>
   <h3>Beispiel</h3>
   <p class="ex">Lena verschickt einen Newsletter für ihr Café. Als Proben nimmt sie zwei alte Instagram-Posts und eine Mail an Stammgäste. Claudes Profil: kurze Sätze, duzt immer, startet gern mit „Kurz gesagt:“, Emojis nur am Ende. Aus „In der heutigen schnelllebigen Welt freuen wir uns, dir spannende Inhalte zu bieten“ wird „Kurz gesagt: Ab sofort kommt der Newsletter jeden Freitag. Lies mal rein! ☕“ – und der Gegencheck markiert einen Satz, der noch nach Werbebroschüre klingt.</p>
@@ -405,7 +471,7 @@ ___ (Entwurf einfügen – von dir, von Claude oder von einem anderen Tool)
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Zahl und Fakten sammeln.</b> Deine Zielzahl recherchierst du selbst (Tarifvertrag, Entgeltatlas der Bundesagentur für Arbeit, Gehaltsvergleiche deiner Branche). Dazu Stichpunkte: was du in den letzten 12 Monaten erreicht oder zusätzlich übernommen hast.</li><li><b>Argumente bauen.</b> Prompt 1 schicken. Claude fragt nach, wo Belege fehlen, und liefert 3 Argumente, Einstiegssatz, den Satz mit deiner Zielzahl und die 5 wahrscheinlichsten Einwände.</li><li><b>Probelauf.</b> Prompt 2 im selben Chat: Claude spielt deine Führungskraft und bringt die Einwände einzeln. Antworte so, wie du es im echten Gespräch sagen würdest. Mit „Stopp“ beendest du das Rollenspiel.</li><li><b>Feedback holen und wiederholen.</b> Prompt 3 zeigt, was überzeugt hat, was zu vage war, und gibt dir bessere Formulierungen. Dann einen zweiten Durchlauf mit härteren Einwänden.</li><li><b>Plan B vorbereiten.</b> Prompt 4: Alternativen, falls es kein Ja gibt, ein Satz für einen festen Folgetermin und die Mail nach dem Gespräch.</li></ol>
   <h3>Prompt 1: Argumente, Einstiegssatz, Einwände</h3>
-  <pre id="v23">Du bist mein Coach für Gehaltsverhandlungen. Ich bereite ein Gespräch mit meiner Führungskraft vor.
+  <pre id="v27">Du bist mein Coach für Gehaltsverhandlungen. Ich bereite ein Gespräch mit meiner Führungskraft vor.
 
 Meine Situation:
 - Job / Rolle: ___
@@ -421,10 +487,10 @@ So gehst du vor:
 3. Formuliere einen Einstiegssatz (höchstens 2 Sätze), mit dem ich das Gespräch eröffne, und den Satz, mit dem ich meine Zielzahl nenne.
 4. Liste die 5 Einwände, die in meiner Situation am wahrscheinlichsten kommen.
 5. Erfinde keine Marktgehälter. Wenn meine Zielzahl im Verhältnis zu meinen Argumenten schwach begründet wirkt, sag es mir ehrlich.</pre>
-  <button type="button" data-copy="v23">Kopieren</button>
+  <button type="button" data-copy="v27">Kopieren</button>
   <p class="hint">Ein paar Tage vor dem Gespräch, als Erstes.</p>
   <h3>Prompt 2: Rollenspiel: Claude spielt deine Führungskraft</h3>
-  <pre id="v24">Jetzt üben wir. Du spielst meine Führungskraft im Gehaltsgespräch – freundlich, aber nicht leicht zu überzeugen. Nutze die Einwände von oben und reagiere realistisch auf das, was ich sage.
+  <pre id="v28">Jetzt üben wir. Du spielst meine Führungskraft im Gehaltsgespräch – freundlich, aber nicht leicht zu überzeugen. Nutze die Einwände von oben und reagiere realistisch auf das, was ich sage.
 
 Regeln:
 - Du sagst immer nur einen Satz oder eine Frage, dann wartest du auf meine Antwort.
@@ -434,10 +500,10 @@ Regeln:
 - Wir sprechen uns mit ___ (Du / Sie) an.
 
 Fang an mit: „Schön, dass du da bist. Worum geht&#x27;s?“</pre>
-  <button type="button" data-copy="v24">Kopieren</button>
+  <button type="button" data-copy="v28">Kopieren</button>
   <p class="hint">Direkt danach im selben Chat – so oft du willst.</p>
   <h3>Prompt 3: Ehrliches Feedback + bessere Formulierungen</h3>
-  <pre id="v25">Stopp. Raus aus der Rolle. Gib mir jetzt ehrliches Feedback zu meinen Antworten im Rollenspiel:
+  <pre id="v29">Stopp. Raus aus der Rolle. Gib mir jetzt ehrliches Feedback zu meinen Antworten im Rollenspiel:
 1. Was war überzeugend? (höchstens 3 Punkte, jeweils mit Zitat aus meinen Antworten)
 2. Wo war ich zu vage, zu defensiv oder habe mich entschuldigt? (mit Zitat)
 3. Für die 3 schwächsten Stellen: je eine bessere Formulierung, die ich wörtlich so sagen kann.
@@ -445,15 +511,15 @@ Fang an mit: „Schön, dass du da bist. Worum geht&#x27;s?“</pre>
 5. Eine Sache, die ich im nächsten Durchlauf anders machen soll.
 
 Frag mich danach, ob wir noch einen Durchlauf machen – diesmal mit härteren Einwänden.</pre>
-  <button type="button" data-copy="v25">Kopieren</button>
+  <button type="button" data-copy="v29">Kopieren</button>
   <p class="hint">Nach jedem Durchlauf, wenn du „Stopp“ geschrieben hast.</p>
   <h3>Prompt 4: Plan B, wenn es ein Nein gibt</h3>
-  <pre id="v26">Angenommen, meine Führungskraft sagt Nein oder „jetzt nicht“. Bereite mich darauf vor:
+  <pre id="v30">Angenommen, meine Führungskraft sagt Nein oder „jetzt nicht“. Bereite mich darauf vor:
 1. 5 Alternativen, über die ich stattdessen verhandeln kann, passend zu meiner Situation (z. B. Weiterbildung, zusätzliche Urlaubstage, Homeoffice-Tage, Bonus, mehr Verantwortung oder neuer Titel) – mit je einem Satz, wie ich sie anspreche.
 2. Einen Satz, mit dem ich einen festen Folgetermin vereinbare (z. B. in 3 oder 6 Monaten), plus klare Kriterien, woran eine Erhöhung dann gemessen wird.
 3. Eine kurze, freundliche Mail nach dem Gespräch, die festhält, was wir vereinbart haben.
 4. Woran ich merke, dass es sich lohnt, mich parallel woanders umzusehen – sachlich, ohne Drama.</pre>
-  <button type="button" data-copy="v26">Kopieren</button>
+  <button type="button" data-copy="v30">Kopieren</button>
   <p class="hint">Zum Schluss der Vorbereitung – und nach dem Gespräch für die Mail.</p>
   <h3>Beispiel</h3>
   <p class="ex">Beispiel (erfunden): Lena ist Projektmanagerin, seit drei Jahren im Team, leitet seit März ein Kundenprojekt allein, hat zwei neue Kolleginnen eingearbeitet und ein schriftliches Kundenlob bekommen. Prompt 1 macht daraus drei Argumente und den Einstieg „Ich möchte mit dir über mein Gehalt sprechen, weil sich meine Aufgaben seit März deutlich verändert haben.“ Im Probelauf kommt „Das Budget ist dieses Jahr leider ausgeschöpft“ – Lena übt die Antwort mit dem Kundenprojekt. Prompt 3 zeigt: „Ich will einfach mehr“ war zu vage, besser ist die konkrete Zahl mit Begründung. Prompt 4 gibt ihr Plan B: Weiterbildung jetzt und ein Folgetermin in sechs Monaten mit festen Kriterien.</p>
@@ -467,7 +533,7 @@ Frag mich danach, ob wir noch einen Durchlauf machen – diesmal mit härteren E
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Kontakt finden.</b> In der Datenschutzerklärung oder im Impressum der Firma steht, an wen Datenschutz-Anfragen gehen (oft eine eigene E-Mail-Adresse oder ein Datenschutzbeauftragter).</li><li><b>Auskunft beantragen.</b> Prompt 1 mit Firma, Name und dem, woran dich die Firma erkennt (E-Mail, Kundennummer). Antrag prüfen, abschicken, Versanddatum notieren.</li><li><b>Löschen lassen.</b> Willst du raus: Prompt 2 im selben Chat. Er fragt auch nach Aufbewahrungspflichten – manche Daten (z. B. Rechnungen) darf die Firma eine Zeit lang behalten, muss das aber begründen.</li><li><b>Frist im Blick behalten.</b> Die Firma muss spätestens innerhalb eines Monats antworten (verlängerbar um zwei Monate, mit Begründung). Kommt nichts: Prompt 3 schreibt die Erinnerung.</li><li><b>Wenn immer noch nichts kommt.</b> Prompt 4 bereitet eine Beschwerde bei der Datenschutz-Aufsichtsbehörde vor. Bei Streit oder Unsicherheit: Verbraucherzentrale oder Anwalt fragen.</li></ol>
   <h3>Prompt 1: Auskunftsantrag (Art. 15 DSGVO)</h3>
-  <pre id="v27">Du hilfst mir, mein Recht auf Auskunft nach Art. 15 DSGVO zu nutzen. Schreib mir einen fertigen, sachlichen Antrag, den ich per E-Mail oder Brief verschicken kann.
+  <pre id="v31">Du hilfst mir, mein Recht auf Auskunft nach Art. 15 DSGVO zu nutzen. Schreib mir einen fertigen, sachlichen Antrag, den ich per E-Mail oder Brief verschicken kann.
 
 Meine Angaben:
 - Firma: ___ (Name + Datenschutz-Kontakt aus Datenschutzerklärung oder Impressum)
@@ -484,10 +550,10 @@ So soll der Antrag aussehen:
 6. Unter dem Antrag: das Datum, an dem die Monatsfrist ungefähr endet, und eine kurze Liste, welche Angaben ich zur Identifizierung mitschicken sollte (nur so viel wie nötig).
 
 Erfinde keine Daten über mich, keine Adressen und keine Aktenzeichen – wo etwas fehlt, setz ___ ein.</pre>
-  <button type="button" data-copy="v27">Kopieren</button>
+  <button type="button" data-copy="v31">Kopieren</button>
   <p class="hint">Wenn du wissen willst, was eine Firma über dich gespeichert hat.</p>
   <h3>Prompt 2: Löschantrag (Art. 17 DSGVO)</h3>
-  <pre id="v28">Schreib mir jetzt mit denselben Angaben einen Antrag auf Löschung nach Art. 17 DSGVO (höchstens 180 Wörter, sachlich):
+  <pre id="v32">Schreib mir jetzt mit denselben Angaben einen Antrag auf Löschung nach Art. 17 DSGVO (höchstens 180 Wörter, sachlich):
 - Betreff: „Antrag auf Löschung meiner personenbezogenen Daten (Art. 17 DSGVO)“.
 - Bitte, alle personenbezogenen Daten über mich unverzüglich zu löschen und mir die Löschung schriftlich zu bestätigen.
 - Falls Daten wegen gesetzlicher Aufbewahrungspflichten nicht gelöscht werden dürfen: Bitte um Mitteilung, welche Daten das sind, auf welcher Grundlage und bis wann.
@@ -495,10 +561,10 @@ Erfinde keine Daten über mich, keine Adressen und keine Aktenzeichen – wo etw
 - Bitte, Empfänger, an die meine Daten weitergegeben wurden, über die Löschung zu informieren (Art. 19 DSGVO).
 - Frist wie im ersten Antrag: spätestens ein Monat (Art. 12 Abs. 3 DSGVO).
 Wo Angaben fehlen: ___ statt etwas zu erfinden.</pre>
-  <button type="button" data-copy="v28">Kopieren</button>
+  <button type="button" data-copy="v32">Kopieren</button>
   <p class="hint">Im selben Chat, wenn deine Daten weg sollen (auch ohne vorherige Auskunft möglich).</p>
   <h3>Prompt 3: Erinnerung nach Fristablauf</h3>
-  <pre id="v29">Meine Anfrage (___ Auskunft / Löschung) vom ___ an ___ ist seit über einem Monat unbeantwortet. Eine Fristverlängerung wurde mir ___ (nicht / am ___) mitgeteilt.
+  <pre id="v33">Meine Anfrage (___ Auskunft / Löschung) vom ___ an ___ ist seit über einem Monat unbeantwortet. Eine Fristverlängerung wurde mir ___ (nicht / am ___) mitgeteilt.
 
 Schreib mir eine kurze, bestimmte Erinnerung (höchstens 120 Wörter):
 1. Bezug auf meine ursprüngliche Anfrage mit Datum.
@@ -507,16 +573,16 @@ Schreib mir eine kurze, bestimmte Erinnerung (höchstens 120 Wörter):
 4. Sachlicher Hinweis, dass ich mich sonst bei der zuständigen Datenschutz-Aufsichtsbehörde beschweren kann (Art. 77 DSGVO).
 
 Sag mir darunter, welche Aufsichtsbehörde wahrscheinlich zuständig ist, und markier das als Hinweis, den ich selbst prüfen muss.</pre>
-  <button type="button" data-copy="v29">Kopieren</button>
+  <button type="button" data-copy="v33">Kopieren</button>
   <p class="hint">Wenn nach einem Monat keine Antwort kam.</p>
   <h3>Prompt 4: Beschwerde vorbereiten</h3>
-  <pre id="v30">Die Firma ___ hat auf meine Anfrage vom ___ und meine Erinnerung vom ___ nicht (oder nur unvollständig: ___) geantwortet.
+  <pre id="v34">Die Firma ___ hat auf meine Anfrage vom ___ und meine Erinnerung vom ___ nicht (oder nur unvollständig: ___) geantwortet.
 Hilf mir, eine Beschwerde bei der Datenschutz-Aufsichtsbehörde vorzubereiten:
 1. Eine sachliche Zusammenfassung des Ablaufs mit allen Daten als Zeitleiste.
 2. Eine Liste der Unterlagen, die ich beilegen sollte (Anfrage, Erinnerung, Versandnachweise, ggf. Antwort der Firma).
 3. Einen kurzen Beschwerdetext (höchstens 200 Wörter).
 Erfinde nichts dazu und weise mich darauf hin, wo ich besser eine Verbraucherzentrale oder Anwältin fragen sollte.</pre>
-  <button type="button" data-copy="v30">Kopieren</button>
+  <button type="button" data-copy="v34">Kopieren</button>
   <p class="hint">Wenn auch nach der Erinnerung nichts passiert.</p>
   <h3>Beispiel</h3>
   <p class="ex">Lisa bekommt seit Monaten Werbung von einem Onlineshop, bei dem sie vor Jahren einmal bestellt hat. Prompt 1 mit Shopname, ihrem Namen und ihrer E-Mail ergibt einen fertigen Auskunftsantrag samt Fristende. Danach Prompt 2 mit „Widerspruch gegen Werbung: ja“ – der Shop soll löschen und sagen, was er wegen Aufbewahrungspflichten noch behalten muss. Kommt nach einem Monat nichts, schreibt Prompt 3 die Erinnerung mit neuer Frist von 14 Tagen.</p>
@@ -530,7 +596,7 @@ Erfinde nichts dazu und weise mich darauf hin, wo ich besser eine Verbraucherzen
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Idee und Ziel aufschreiben.</b> 2–5 Sätze zur Idee (was, für wen, wie, Aufwand) und ein konkretes Ziel. Je genauer das Ziel, desto schärfer die Kritik.</li><li><b>Den kritischen Prüfer starten.</b> Prompt 1 schicken. Claude fragt bei Lücken zuerst nach und liefert dann 5 Schwachstellen nach Risiko, je einen Gegenvorschlag und 3 Annahmen mit Test.</li><li><b>Die Kritik gegenprüfen.</b> Prompt 2: Claude benennt, wo es selbst falsch liegen könnte, sammelt echte Pro-Argumente und baut die besten Gegenvorschläge in deinen Plan ein.</li><li><b>Vorab-Nachruf.</b> Prompt 3: Claude stellt sich vor, der Plan ist gescheitert – und leitet daraus Frühwarnzeichen und eine Start-Checkliste ab.</li><li><b>Selbst entscheiden.</b> Claude kennt deinen Markt nicht besser als du. Nimm die Tests aus Schritt 2 und prüf die wichtigste Annahme in der echten Welt, bevor du Geld oder viel Zeit investierst.</li></ol>
   <h3>Prompt 1: Kritischer Prüfer: 5 Schwachstellen + Gegenvorschläge</h3>
-  <pre id="v31">Sei mein kritischer Prüfer, nicht mein Fan. Ich will keine Bestätigung, sondern die ehrliche Schwachstellen-Analyse.
+  <pre id="v35">Sei mein kritischer Prüfer, nicht mein Fan. Ich will keine Bestätigung, sondern die ehrliche Schwachstellen-Analyse.
 
 Meine Idee / mein Plan: ___ (in 2–5 Sätzen: was, für wen, wie, mit welchem Budget/Zeitaufwand)
 Mein Ziel: ___ (woran ich merke, dass es geklappt hat – möglichst konkret)
@@ -544,22 +610,22 @@ So gehst du vor:
 5. Regeln: Kein Lob, keine Einleitung, keine Floskeln wie „gute Idee, aber …“. Wenn du etwas nicht wissen kannst (z. B. Marktzahlen), sag das offen, statt Zahlen zu erfinden. Wenn der Plan im Kern nicht trägt, sag es klar.
 
 Ausgabe als Tabelle (Nr. | Schwachstelle | Risiko | Gegenvorschlag), danach die 3 Annahmen als Liste.</pre>
-  <button type="button" data-copy="v31">Kopieren</button>
+  <button type="button" data-copy="v35">Kopieren</button>
   <p class="hint">Bevor du eine Idee startest, ein Angebot rausschickst oder Geld investierst.</p>
   <h3>Prompt 2: Gegencheck + überarbeiteter Plan</h3>
-  <pre id="v32">Danke. Jetzt der Gegencheck:
+  <pre id="v36">Danke. Jetzt der Gegencheck:
 1. Welche deiner 5 Schwachstellen hältst du selbst für am wenigsten belastbar – wo könntest du falsch liegen? Begründe kurz.
 2. Spiel den Advokaten der Gegenseite: Was spricht trotz allem FÜR meinen Plan? Höchstens 3 Punkte, nur echte Argumente.
 3. Überarbeite dann meinen Plan mit den Gegenvorschlägen zu Punkt ___ und ___ und gib mir die neue Fassung in 5 Sätzen.</pre>
-  <button type="button" data-copy="v32">Kopieren</button>
+  <button type="button" data-copy="v36">Kopieren</button>
   <p class="hint">Direkt nach Prompt 1, damit die Kritik selbst geprüft wird.</p>
   <h3>Prompt 3: Vorab-Nachruf + Start-Checkliste</h3>
-  <pre id="v33">Mach einen Vorab-Nachruf auf meinen (überarbeiteten) Plan: Stell dir vor, es ist ___ (z. B. 6 Monate) später und der Plan ist gescheitert.
+  <pre id="v37">Mach einen Vorab-Nachruf auf meinen (überarbeiteten) Plan: Stell dir vor, es ist ___ (z. B. 6 Monate) später und der Plan ist gescheitert.
 1. Schreib die 3 wahrscheinlichsten Gründe, warum er gescheitert ist – konkret, nicht allgemein.
 2. Nenne zu jedem Grund ein Frühwarnzeichen, das ich in den ersten 4 Wochen bemerken würde.
 3. Gib mir eine Checkliste mit höchstens 5 Punkten, die ich vor dem Start abhaken sollte.
 4. Sag mir zum Schluss in einem Satz ehrlich: Würdest du an meiner Stelle starten, anpassen oder lassen – und warum?</pre>
-  <button type="button" data-copy="v33">Kopieren</button>
+  <button type="button" data-copy="v37">Kopieren</button>
   <p class="hint">Wenn der überarbeitete Plan steht und du kurz vor dem Start bist.</p>
   <h3>Beispiel</h3>
   <p class="ex">Idee: Online-Yoga-Kurs für 29 € im Monat, Ziel: nebenbei ein zweites Standbein. Claude nennt z. B. als größtes Risiko „Preis nie getestet“ (HOCH) mit dem Gegenvorschlag „erst 3 Probestunden für 10 Leute anbieten, dann den Preis festlegen“. Bei „Was müsste stimmen?“ steht u. a. „Genug Leute zahlen nach dem Probemonat“ – Test: Probemonat anbieten und zählen, wer danach bucht.</p>
@@ -573,7 +639,7 @@ Ausgabe als Tabelle (Nr. | Schwachstelle | Risiko | Gegenvorschlag), danach die 
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Infos sammeln.</b> Personen, Zeit pro Abend, Budget, No-Gos und was noch im Kühlschrank liegt – die Speicher-Slide hilft beim Ausfüllen.</li><li><b>Plan holen.</b> Prompt 1 schicken, Claudes Fragen beantworten. Du bekommst 7 Abende als Tabelle. Gefällt dir ein Gericht nicht: „Tausch Mittwoch gegen etwas mit Reis“.</li><li><b>Einkaufsliste bauen.</b> Prompt 2: eine Liste nach Supermarkt-Bereichen, Mengen zusammengerechnet, Vorräte separat zum Abhaken.</li><li><b>Vorkochen und Reste.</b> Prompt 3 am Wochenende, Prompt 4 immer dann, wenn etwas übrig ist.</li></ol>
   <h3>Prompt 1: Wochenplan</h3>
-  <pre id="v34">Du bist mein Essensplaner für die Woche. Stell mir zuerst diese Fragen und warte auf meine Antworten, bevor du planst:
+  <pre id="v38">Du bist mein Essensplaner für die Woche. Stell mir zuerst diese Fragen und warte auf meine Antworten, bevor du planst:
 1. Für wie viele Personen kochst du (Erwachsene/Kinder)?
 2. Wie viel Zeit hast du pro Abend zum Kochen?
 3. Wie hoch ist dein Budget für die Woche ungefähr?
@@ -588,28 +654,28 @@ Danach erstellst du:
 - Nutz zuerst, was ich schon zu Hause habe.
 
 Meine Antworten: ___</pre>
-  <button type="button" data-copy="v34">Kopieren</button>
+  <button type="button" data-copy="v38">Kopieren</button>
   <p class="hint">Einmal pro Woche, z. B. Sonntag.</p>
   <h3>Prompt 2: Einkaufsliste nach Gängen</h3>
-  <pre id="v35">Mach aus dem Wochenplan eine Einkaufsliste:
+  <pre id="v39">Mach aus dem Wochenplan eine Einkaufsliste:
 1. Sortiert nach Supermarkt-Bereichen: Obst &amp; Gemüse, Kühlregal, Fleisch/Fisch, Brot, Trockenware &amp; Konserven, Tiefkühl, Drogerie/Sonstiges.
 2. Mengen für alle Gerichte zusammengerechnet, in Einheiten, die man kaufen kann (z. B. „Zucchini ×2“, „Reis 1 kg“).
 3. Eine eigene Liste „Hast du wahrscheinlich schon?“ (Öl, Salz, Gewürze) zum Abhaken.
 4. Was ich laut meinen Antworten schon zu Hause habe, kommt nicht auf die Liste.
 5. Am Ende eine grobe Schätzung, ob das in mein Budget von ___ € passt, und 2 Spartipps, falls nicht. Sag dazu, dass Preise je nach Laden abweichen.</pre>
-  <button type="button" data-copy="v35">Kopieren</button>
+  <button type="button" data-copy="v39">Kopieren</button>
   <p class="hint">Direkt nach dem Plan.</p>
   <h3>Prompt 3: Vorkochen + Reste-Plan</h3>
-  <pre id="v36">Plane das Vorkochen und die Reste:
+  <pre id="v40">Plane das Vorkochen und die Reste:
 1. Was kann ich am ___ (z. B. Sonntag) in max. 60 Minuten vorbereiten, damit die Abende schneller gehen? Als Schritt-Liste in sinnvoller Reihenfolge.
 2. Welche Zutaten bleiben nach der Woche wahrscheinlich übrig? Schlag für jede eine Verwertung vor.
 3. Wie lange hält sich jedes vorgekochte Gericht ungefähr im Kühlschrank, was sollte ich lieber einfrieren? Mit dem Hinweis, im Zweifel selbst nachzuprüfen.</pre>
-  <button type="button" data-copy="v36">Kopieren</button>
+  <button type="button" data-copy="v40">Kopieren</button>
   <p class="hint">Wenn du einen Vorbereitungstag einplanen willst.</p>
   <h3>Prompt 4: Reste-Retter</h3>
-  <pre id="v37">Ich habe gerade noch: ___ (Reste einfügen).
+  <pre id="v41">Ich habe gerade noch: ___ (Reste einfügen).
 Ich habe ___ Minuten Zeit. Schlag mir 3 Gerichte vor, die fast nur diese Zutaten nutzen – jeweils mit Zutatenliste, was ich zusätzlich brauche (höchstens 2 Sachen) und Kurz-Anleitung in 5 Schritten. Denk an meine No-Gos von oben.</pre>
-  <button type="button" data-copy="v37">Kopieren</button>
+  <button type="button" data-copy="v41">Kopieren</button>
   <p class="hint">Unter der Woche, wenn Zutaten übrig sind.</p>
   <h3>Beispiel</h3>
   <p class="ex">Zwei Erwachsene und ein Kind, höchstens 30 Minuten pro Abend, keine Pilze, Feta und Zucchini liegen schon im Kühlschrank. Claude plant Ofengemüse mit Feta am Montag, nutzt das restliche Gemüse Dienstag für Wraps, Linsen-Bolognese am Mittwoch und Bratreis mit Ei am Donnerstag – und die Einkaufsliste enthält Feta und Zucchini nur noch in der fehlenden Menge.</p>
@@ -623,7 +689,7 @@ Ich habe ___ Minuten Zeit. Schlag mir 3 Gerichte vor, die fast nur diese Zutaten
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Mails sammeln.</b> 5–15 Mails mit Absender, Datum, Betreff und Text kopieren. Vertrauliches (Passwörter, Kontonummern, Gesundheitsdaten) vorher schwärzen oder weglassen.</li><li><b>Sortieren lassen.</b> Prompt 1 mit Datum und deinen aktuellen Prioritäten schicken. Du bekommst eine Tabelle mit Frist und Ampel-Priorität, drei Antwortentwürfe und die Liste „kann warten“.</li><li><b>Lücken füllen und antworten.</b> Wo im Entwurf ___ steht, fehlt Claude eine Info. Mit Prompt 2 lieferst du sie nach und bekommst eine fertige Antwort plus Kurzfassung.</li><li><b>Den Rest einplanen.</b> Prompt 3 verteilt die „Kann warten“-Mails auf die Woche und zeigt, was du archivieren oder abbestellen kannst.</li></ol>
   <h3>Prompt 1: Mail-Sortierer: Tabelle + 3 Entwürfe</h3>
-  <pre id="v38">Ich füge dir unten ___ E-Mails aus meinem Posteingang ein (5–15 Stück, jeweils mit Absender, Datum, Betreff und Text). Hilf mir, sie in der richtigen Reihenfolge abzuarbeiten.
+  <pre id="v42">Ich füge dir unten ___ E-Mails aus meinem Posteingang ein (5–15 Stück, jeweils mit Absender, Datum, Betreff und Text). Hilf mir, sie in der richtigen Reihenfolge abzuarbeiten.
 
 Heute ist der ___ (Datum). Besonders wichtig sind mir gerade: ___ (z. B. ein Projekt, bestimmte Kunden, Familie).
 
@@ -639,25 +705,25 @@ Hier sind die Mails:
 &lt;mails&gt;
 ___
 &lt;/mails&gt;</pre>
-  <button type="button" data-copy="v38">Kopieren</button>
+  <button type="button" data-copy="v42">Kopieren</button>
   <p class="hint">Wenn der Posteingang voll ist und du nicht weißt, wo du anfangen sollst.</p>
   <h3>Prompt 2: Antwort fertig machen</h3>
-  <pre id="v39">Nimm den Antwortentwurf für Mail Nr. ___ aus deiner Tabelle.
+  <pre id="v43">Nimm den Antwortentwurf für Mail Nr. ___ aus deiner Tabelle.
 
 Meine Infos für die Lücken: ___
 Ton: ___ (locker / freundlich-förmlich / knapp)
 
 Schreib die Antwort fertig (max. 120 Wörter) und gib mir zusätzlich eine Kurzfassung mit höchstens 3 Sätzen. Übernimm nur Fakten, die in der Mail oder in meinen Infos stehen – wenn noch etwas fehlt, lass ___ stehen und sag mir, was du noch brauchst.</pre>
-  <button type="button" data-copy="v39">Kopieren</button>
+  <button type="button" data-copy="v43">Kopieren</button>
   <p class="hint">Nach Prompt 1, für jede der dringenden Mails.</p>
   <h3>Prompt 3: „Kann warten“ einplanen</h3>
-  <pre id="v40">Hier ist meine „Kann warten“-Liste von vorhin: ___
+  <pre id="v44">Hier ist meine „Kann warten“-Liste von vorhin: ___
 
 Ich habe diese Woche ca. ___ Minuten pro Tag für Mails.
 1. Verteile die Mails auf die nächsten Tage als Tabelle: Tag | Mail | was zu tun ist | geschätzte Minuten (deine Schätzung, als solche markiert).
 2. Markiere, welche Mails ich wahrscheinlich ohne Antwort archivieren kann, und warum.
 3. Nenn mir Absender (z. B. Newsletter), bei denen sich Abmelden oder ein Filter lohnen könnte.</pre>
-  <button type="button" data-copy="v40">Kopieren</button>
+  <button type="button" data-copy="v44">Kopieren</button>
   <p class="hint">Wenn das Dringende erledigt ist.</p>
   <h3>Beispiel</h3>
   <p class="ex">Montagmorgen, 12 Mails: Kollegin Sara braucht die Folien bis morgen (🔴), der Steuerberater fragt nach fehlenden Unterlagen mit Frist 15.11. (🔴), der Chef schreibt „Kurz Zeit heute?“ (🟡), der Vermieter will einen Termin für die Heizung, nennt aber kein Datum (❓ keine Frist genannt). Newsletter und Versandbestätigungen landen unter „kann warten“. Claude schreibt Entwürfe für Sara, den Steuerberater und den Chef – bei Sara mit Lücke „bis ___ Uhr“.</p>
@@ -671,7 +737,7 @@ Ich habe diese Woche ca. ___ Minuten pro Tag für Mails.
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Drei Infos sammeln.</b> Was ist die Situation, wer bekommt die Nachricht (und wie steht ihr zueinander), was willst du erreichen? Dazu der Kanal: WhatsApp klingt anders als eine E-Mail.</li><li><b>Drei Varianten holen.</b> Prompt 1 schicken. Fehlt etwas, fragt Claude erst nach. Dann bekommst du freundlich, klar und knapp – plus den Satz, den du dir sparen solltest.</li><li><b>Feinschliff mit Gegenprobe.</b> Prompt 2: Variante wählen, Ton anpassen und Claude die Nachricht aus Sicht des Empfängers lesen lassen. So fällt auf, wo sie doch noch nach „Ja, vielleicht“ klingt.</li><li><b>Abschicken – und dabei bleiben.</b> Kommt eine Antwort mit Druck oder schlechtem Gewissen, hilft Prompt 3, freundlich beim Nein zu bleiben oder einen echten Kompromiss anzubieten.</li></ol>
   <h3>Prompt 1: 3 Varianten + No-Go-Satz</h3>
-  <pre id="v41">Ich muss eine unangenehme Nachricht schreiben und will dabei klar, aber fair bleiben.
+  <pre id="v45">Ich muss eine unangenehme Nachricht schreiben und will dabei klar, aber fair bleiben.
 
 Situation: ___ (was ist passiert / was wird von mir verlangt?)
 Empfänger: ___ (wer ist es, wie ist unser Verhältnis – z. B. Chefin, Kollege, Freundin, Kunde)
@@ -687,10 +753,10 @@ So gehst du vor:
 3. Regeln für alle Varianten: Die Absage bzw. das Nein steht im ersten oder zweiten Satz. Keine Ausreden erfinden, keine übertriebenen Entschuldigungen, keine Formulierung, die eine Hintertür offen lässt („vielleicht“, „eigentlich“, „mal sehen“). Passend zum Kanal und zu unserem Verhältnis (Du/Sie).
 4. Nenn mir danach den einen Satz, den ich in dieser Situation auf keinen Fall schreiben sollte, und erklär in einem Satz, warum er schadet.
 5. Sag mir am Ende in einem Satz, welche Variante du hier empfehlen würdest und warum.</pre>
-  <button type="button" data-copy="v41">Kopieren</button>
+  <button type="button" data-copy="v45">Kopieren</button>
   <p class="hint">Sobald du merkst, dass du eine Nachricht vor dir herschiebst.</p>
   <h3>Prompt 2: Feinschliff + Empfänger-Check</h3>
-  <pre id="v42">Ich nehme Variante ___. Passe sie so an:
+  <pre id="v46">Ich nehme Variante ___. Passe sie so an:
 – Ton: ___ (z. B. etwas wärmer / noch direkter / weniger förmlich)
 – Das muss unbedingt drin sein: ___
 – Das soll raus: ___
@@ -699,10 +765,10 @@ Lies die Nachricht danach einmal aus Sicht von ___ (Empfänger) und sag mir ehrl
 1. Wie kommt sie wahrscheinlich an?
 2. Gibt es eine Stelle, die falsch verstanden werden könnte oder doch noch nach „Ja“ klingt?
 Gib mir dann die finale Fassung, fertig zum Kopieren.</pre>
-  <button type="button" data-copy="v42">Kopieren</button>
+  <button type="button" data-copy="v46">Kopieren</button>
   <p class="hint">Nach Prompt 1, bevor du abschickst.</p>
   <h3>Prompt 3: Auf die Antwort reagieren</h3>
-  <pre id="v43">Ich habe die Nachricht abgeschickt. Das ist die Antwort:
+  <pre id="v47">Ich habe die Nachricht abgeschickt. Das ist die Antwort:
 &lt;antwort&gt;
 ___ (Antwort hier einfügen)
 &lt;/antwort&gt;
@@ -711,7 +777,7 @@ Hilf mir, dabei zu bleiben:
 1. Fass in einem Satz zusammen, was die andere Person eigentlich will.
 2. Schreib 2 kurze Antworten: eine, die freundlich bei meinem Nein bleibt, und eine mit einem Kompromiss, den ich wirklich anbieten kann: ___ (oder „keiner“).
 3. Wenn die Antwort Druck macht oder ein schlechtes Gewissen erzeugen will, sag mir das offen und schreib eine ruhige Antwort, die nicht darauf eingeht.</pre>
-  <button type="button" data-copy="v43">Kopieren</button>
+  <button type="button" data-copy="v47">Kopieren</button>
   <p class="hint">Wenn die andere Person nachhakt oder Druck macht.</p>
   <h3>Beispiel</h3>
   <p class="ex">Der Chef fragt Freitagabend: „Kannst du am Samstag einspringen?“ Du willst nicht, das Verhältnis ist aber gut. Input: Situation = Chef fragt nach Samstag, Empfänger = Chef, gutes Verhältnis, Ziel = Nein sagen ohne Stress danach, Kanal = WhatsApp. Claude liefert z. B. KLAR: „Samstag kann ich nicht. Montag früh helfe ich dir gern.“ und warnt vor dem Satz „Ich hab eigentlich nichts vor, aber …“ – der lädt zum Nachverhandeln ein.</p>
@@ -725,7 +791,7 @@ Hilf mir, dabei zu bleiben:
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Stoff reingeben.</b> Skript, Folien oder Inhaltsverzeichnis hochladen oder reinkopieren. Je genauer der Stoff, desto besser passen Plan und Fragen.</li><li><b>Lernplan bauen.</b> Prompt 1 mit Datum, Fach und deiner Zeit pro Tag schicken. Claude fragt nach, was du schon kannst, und baut dann den Plan mit Wiederholungen und Puffer.</li><li><b>Jeden Tag abfragen lassen.</b> Statt zu lesen: Prompt 2 mit dem Thema des Tages. Erst selbst antworten, dann kommt die Lösung. Fehler kommen später noch mal dran.</li><li><b>Lücken schließen.</b> Was nicht sitzt, mit Prompt 3 erklären lassen – erst ganz einfach, dann mit Fachbegriffen – und es Claude in eigenen Worten zurückerklären.</li><li><b>Probeprüfung schreiben.</b> Zwei Tage vorher Prompt 4: Aufgaben ohne Lösungen, Bewertung mit Punkten, die 3 wichtigsten Wiederholungsthemen.</li></ol>
   <h3>Prompt 1: Lernplan bis zum Prüfungstag</h3>
-  <pre id="v44">Du bist mein Lerncoach. Ich habe am ___ (Datum) eine Prüfung in ___ (Fach). Heute ist der ___. Ich kann ungefähr ___ Minuten pro Tag lernen, an diesen Tagen gar nicht: ___.
+  <pre id="v48">Du bist mein Lerncoach. Ich habe am ___ (Datum) eine Prüfung in ___ (Fach). Heute ist der ___. Ich kann ungefähr ___ Minuten pro Tag lernen, an diesen Tagen gar nicht: ___.
 
 &lt;stoff&gt;
 ___ (Inhaltsverzeichnis, Skript oder Folien einfügen bzw. als Datei hochladen)
@@ -737,10 +803,10 @@ So gehst du vor:
 3. Bau dann einen Lernplan als Tabelle: Datum – Thema – Was ich tue (neu lernen / abfragen lassen / wiederholen) – Dauer.
 4. Plane Wiederholungen in wachsenden Abständen ein (z. B. nach 1, 3 und 7 Tagen) und halte die letzten 2 Tage vor der Prüfung für Probeprüfung und Lücken frei.
 5. Halte dich an meine Zeit pro Tag. Wenn sie nicht reicht, sag ehrlich, was ich kürzen oder weglassen sollte.</pre>
-  <button type="button" data-copy="v44">Kopieren</button>
+  <button type="button" data-copy="v48">Kopieren</button>
   <p class="hint">Einmal am Anfang, sobald du das Prüfungsdatum kennst.</p>
   <h3>Prompt 2: Abfrage-Modus</h3>
-  <pre id="v45">Frag mich jetzt zum Thema ___ ab – wie ein strenger, aber freundlicher Nachhilfelehrer.
+  <pre id="v49">Frag mich jetzt zum Thema ___ ab – wie ein strenger, aber freundlicher Nachhilfelehrer.
 Regeln:
 - Immer nur EINE Frage, dann wartest du auf meine Antwort.
 - Erst nach meiner Antwort: richtig / teilweise / falsch, die richtige Lösung in 2–3 Sätzen und was mir gefehlt hat.
@@ -748,22 +814,22 @@ Regeln:
 - Was ich falsch hatte, fragst du später noch einmal anders formuliert.
 - Nach 10 Fragen: kurze Auswertung – was sitzt, was ich wiederholen muss.
 Nimm nur Inhalte aus meinem Stoff. Wenn etwas nicht drinsteht, frag es nicht ab.</pre>
-  <button type="button" data-copy="v45">Kopieren</button>
+  <button type="button" data-copy="v49">Kopieren</button>
   <p class="hint">Jeden Lerntag, im selben Chat wie Prompt 1 (damit Claude deinen Stoff kennt).</p>
   <h3>Prompt 3: So einfach wie für ein Kind</h3>
-  <pre id="v46">Ich verstehe ___ nicht. Erklär es mir in drei Stufen:
+  <pre id="v50">Ich verstehe ___ nicht. Erklär es mir in drei Stufen:
 1. So, dass es ein Kind versteht – mit einem Vergleich aus dem Alltag.
 2. Etwas genauer, mit den richtigen Fachbegriffen (jeden Begriff in einem Satz erklärt).
 3. So, wie es in der Prüfung abgefragt werden könnte.
 Danach stellst du mir eine Kontrollfrage, und ich erkläre es dir in eigenen Worten zurück. Sag mir, was an meiner Erklärung noch falsch oder ungenau ist.</pre>
-  <button type="button" data-copy="v46">Kopieren</button>
+  <button type="button" data-copy="v50">Kopieren</button>
   <p class="hint">Immer, wenn bei der Abfrage etwas nicht sitzt.</p>
   <h3>Prompt 4: Probeprüfung mit Bewertung</h3>
-  <pre id="v47">Mach mir aus meinem Stoff eine Probeprüfung zu ___, ungefähr so lang wie die echte (___ Minuten, Aufgabenart: ___).
+  <pre id="v51">Mach mir aus meinem Stoff eine Probeprüfung zu ___, ungefähr so lang wie die echte (___ Minuten, Aufgabenart: ___).
 - Gib mir zuerst nur die Aufgaben, ohne Lösungen.
 - Ich schicke dir meine Antworten. Dann bewertest du jede Aufgabe mit Punkten und einer kurzen Begründung.
 - Zum Schluss: die 3 Themen, die ich vor der Prüfung noch wiederholen muss, mit je einer Übungsaufgabe.</pre>
-  <button type="button" data-copy="v47">Kopieren</button>
+  <button type="button" data-copy="v51">Kopieren</button>
   <p class="hint">1–2 Tage vor der Prüfung.</p>
   <h3>Beispiel</h3>
   <p class="ex">Biologie-Klausur in 12 Tagen, 45 Minuten pro Tag: Claude teilt das Skript in Themenblöcke, fragt nach den Schwachstellen und plant Zellbiologie, Genetik und Stoffwechsel mit Wiederholungen. Beim Abfragen fehlt bei „Mitochondrien“ das Stichwort ATP – Claude erklärt es mit einem Kraftwerk-Vergleich, fragt es zwei Tage später erneut ab und baut es in die Probeprüfung ein.</p>
@@ -777,7 +843,7 @@ Danach stellst du mir eine Kontrollfrage, und ich erkläre es dir in eigenen Wor
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Vertrag reingeben.</b> Den Vertrag als PDF hochladen oder den Text kopieren. Dazu kurz sagen, was für ein Vertrag es ist und welche Rolle du hast (Kunde, Mieter, Freelancer).</li><li><b>Überblick + Ampel holen.</b> Prompt 1 schicken. Du bekommst 5 Sätze Überblick, eine Tabelle mit allen Fristen und Kosten samt wörtlichem Zitat und eine Ampel pro Klausel.</li><li><b>Zitate gegenchecken.</b> Die roten und gelben Punkte im Original nachlesen – die Zitate zeigen dir genau, wo. So merkst du sofort, falls Claude etwas falsch verstanden hat.</li><li><b>Rückfragen stellen.</b> Prompt 2 schicken, Mail kurz anpassen und an den Anbieter senden. Erst unterschreiben, wenn die roten Punkte geklärt sind.</li><li><b>Fristen sichern.</b> Prompt 3 schicken und die Termine in deinen Kalender eintragen – vor allem den letzten Kündigungstag.</li></ol>
   <h3>Prompt 1: Vertrag verstehen: Überblick, Zitate, Ampel</h3>
-  <pre id="v48">Ich möchte diesen Vertrag verstehen, bevor ich unterschreibe. Ich bin kein Jurist – erklär mir alles in einfachem Deutsch.
+  <pre id="v52">Ich möchte diesen Vertrag verstehen, bevor ich unterschreibe. Ich bin kein Jurist – erklär mir alles in einfachem Deutsch.
 
 &lt;vertrag&gt;
 ___ (Vertragstext einfügen oder PDF hochladen)
@@ -792,23 +858,23 @@ So gehst du vor:
 3. Gib jeder Klausel, die für mich riskant oder ungewöhnlich sein könnte, eine Ampel: 🔴 vor der Unterschrift klären, 🟡 genau lesen, 🟢 passt. Begründe jede Ampel in einem Satz.
 4. Erfinde nichts. Steht etwas nicht im Vertrag, schreib „steht nicht drin“. Wenn du dir unsicher bist, sag das.
 5. Zum Schluss: die 3 wichtigsten Fragen, die ich vor der Unterschrift stellen sollte.</pre>
-  <button type="button" data-copy="v48">Kopieren</button>
+  <button type="button" data-copy="v52">Kopieren</button>
   <p class="hint">Bevor du irgendetwas unterschreibst – mit dem kompletten Vertrag.</p>
   <h3>Prompt 2: Rückfrage-Mail schreiben</h3>
-  <pre id="v49">Schreib mir jetzt eine kurze, freundliche E-Mail an ___ (Anbieter/Vermieter/Kunde), in der ich die Punkte mit 🔴 und 🟡 kläre.
+  <pre id="v53">Schreib mir jetzt eine kurze, freundliche E-Mail an ___ (Anbieter/Vermieter/Kunde), in der ich die Punkte mit 🔴 und 🟡 kläre.
 - Pro Punkt eine nummerierte Frage, mit Verweis auf die Stelle im Vertrag (Paragraf oder Zitat).
 - Wo es sinnvoll ist, schlag eine konkrete Änderung vor (z. B. kürzere Kündigungsfrist).
 - Ton: ___ (z. B. sachlich, locker), höchstens 150 Wörter.
 - Betreffzeile dazu.</pre>
-  <button type="button" data-copy="v49">Kopieren</button>
+  <button type="button" data-copy="v53">Kopieren</button>
   <p class="hint">Direkt nach Prompt 1, wenn es rote oder gelbe Punkte gibt.</p>
   <h3>Prompt 3: Fristen für den Kalender</h3>
-  <pre id="v50">Mach mir aus dem Vertrag eine Fristen-Liste für meinen Kalender:
+  <pre id="v54">Mach mir aus dem Vertrag eine Fristen-Liste für meinen Kalender:
 - Jedes Datum und jede Frist (Start, Mindestlaufzeit, letzter Kündigungstag, Preisänderungen, Zahlungstermine).
 - Rechne konkrete Daten aus, wenn der Vertrag am ___ beginnt. Zeig kurz, wie du gerechnet hast.
 - Format: Datum – Was – Erinnerung (wie viele Tage vorher ich daran denken sollte).
 - Wenn etwas nicht eindeutig ist, markier es mit ❓ statt zu raten.</pre>
-  <button type="button" data-copy="v50">Kopieren</button>
+  <button type="button" data-copy="v54">Kopieren</button>
   <p class="hint">Nach der Unterschrift (oder vorher, um die Bindung zu sehen).</p>
   <h3>Beispiel</h3>
   <p class="ex">Fitnessstudio-Vertrag, 24 Monate: Claude fasst ihn in 5 Sätzen zusammen, findet die Klausel zur automatischen Verlängerung und die Servicepauschale (jeweils mit Zitat), markiert beides rot, schreibt eine Mail mit zwei Fragen ans Studio und rechnet den letzten Kündigungstag aus.</p>
@@ -822,7 +888,7 @@ So gehst du vor:
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Notizen sammeln.</b> Direkt nach dem Meeting alles zusammenkopieren: eigene Stichpunkte, Chat-Nachrichten, Transkript. Unsortiert ist okay.</li><li><b>Liste bauen lassen.</b> Prompt 1 schicken. Claude macht die Tabelle Was – Wer – Bis wann, listet Entscheidungen und offene Fragen und markiert Lücken mit „❓ fehlt“.</li><li><b>Lücken schließen.</b> Die Rückfragen beantworten und Prompt 2 schicken. Claude sortiert nach Frist und baut pro Person eine eigene Liste.</li><li><b>Mail raus.</b> Prompt 3 schicken, Ton einsetzen, kurz drüberlesen und an alle senden – plus 3-Zeilen-Version für den Team-Chat.</li></ol>
   <h3>Prompt 1: Aufgaben rausziehen</h3>
-  <pre id="v51">Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.
+  <pre id="v55">Hier sind meine Notizen aus einem Meeting. Sie sind unsortiert und unvollständig.
 
 &lt;notizen&gt;
 ___ (Notizen oder Transkript hier einfügen)
@@ -837,10 +903,10 @@ Mach daraus eine klare Aufgabenliste. So gehst du vor:
 4. Darunter: „Entscheidungen“ als kurze Liste (was wurde beschlossen?).
 5. Darunter: „Offene Fragen“ – alles, was noch geklärt werden muss.
 6. Zum Schluss: Stell mir zu jedem „❓ fehlt“ eine konkrete Rückfrage, nummeriert, damit ich sie schnell beantworten kann.</pre>
-  <button type="button" data-copy="v51">Kopieren</button>
+  <button type="button" data-copy="v55">Kopieren</button>
   <p class="hint">Direkt nach dem Meeting, mit allen Notizen.</p>
   <h3>Prompt 2: Lücken schließen &amp; sortieren</h3>
-  <pre id="v52">Hier sind meine Antworten auf deine Rückfragen:
+  <pre id="v56">Hier sind meine Antworten auf deine Rückfragen:
 ___ (z. B. 1. Tom ruft den Kunden an, bis Mittwoch. 2. Budget: noch offen.)
 
 Aktualisiere die Aufgabenliste damit:
@@ -849,10 +915,10 @@ Aktualisiere die Aufgabenliste damit:
 - Sortiere nach Frist, das Dringendste oben.
 - Markiere Aufgaben, die von einer anderen abhängen, mit „⏳ wartet auf Nr. X“.
 - Gib mir für jede Person eine eigene kurze Liste: „Name: Aufgabe – bis wann“.</pre>
-  <button type="button" data-copy="v52">Kopieren</button>
+  <button type="button" data-copy="v56">Kopieren</button>
   <p class="hint">Wenn Claude Rückfragen gestellt hat.</p>
   <h3>Prompt 3: Follow-up-Mail</h3>
-  <pre id="v53">Schreib jetzt die Follow-up-Mail an alle Teilnehmer.
+  <pre id="v57">Schreib jetzt die Follow-up-Mail an alle Teilnehmer.
 
 - Betreff: kurz, mit Meeting-Thema und Datum.
 - Ton: ___ (z. B. locker und per Du / förmlich und per Sie)
@@ -860,7 +926,7 @@ Aktualisiere die Aufgabenliste damit:
 - Höchstens 150 Wörter, keine Floskeln.
 - Nur Inhalte aus der Aufgabenliste oben, nichts dazuerfinden.
 Gib mir danach zusätzlich eine Kurzfassung mit 3 Zeilen für den Team-Chat.</pre>
-  <button type="button" data-copy="v53">Kopieren</button>
+  <button type="button" data-copy="v57">Kopieren</button>
   <p class="hint">Wenn die Liste steht – am besten am selben Tag.</p>
   <h3>Beispiel</h3>
   <p class="ex">Team-Meeting zum Produktlaunch: Notizen einfügen → Prompt 1 liefert „Lisa – Angebot schicken – Fr“, „Tom – Folien updaten – Mo“ und „❓ fehlt – Kunde anrufen – ❓ fehlt“ plus Rückfrage „Wer ruft den Kunden an, und bis wann?“ → Antwort „Tom, Mittwoch“ → Prompt 2 sortiert alles nach Frist → Prompt 3 schreibt die Mail ans Team.</p>
@@ -874,7 +940,7 @@ Gib mir danach zusätzlich eine Kurzfassung mit 3 Zeilen für den Team-Chat.</pr
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Daten vorbereiten.</b> Stellenanzeige komplett kopieren. Lebenslauf als Text einfügen und vorher Adresse, Telefonnummer und Geburtsdatum löschen.</li><li><b>Abgleich holen.</b> Prompt 1 schicken: Claude macht eine Tabelle mit jeder Anforderung, deinem Beleg und ✅/⚠️/❌.</li><li><b>Lücken schließen.</b> Prompt 2 schicken und die Fragen ehrlich beantworten. Oft hast du die Erfahrung, sie steht nur nicht im Lebenslauf.</li><li><b>Anschreiben bauen.</b> Prompt 3: Claude schreibt aus deinen Belegen. Alles mit [ERGÄNZEN] füllst du selbst.</li><li><b>Recruiter-Check.</b> Prompt 4: Claude liest alles mit wenig Zeit und zeigt dir die schwächsten Sätze.</li></ol>
   <h3>Prompt 1: Abgleich</h3>
-  <pre id="v54">Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.
+  <pre id="v58">Du hilfst mir, meine Bewerbung auf eine konkrete Stelle zuzuschneiden.
 
 &lt;stellenanzeige&gt;
 ___ (komplette Anzeige einfügen)
@@ -891,32 +957,32 @@ So gehst du vor:
 4. Gib mir die 3 wichtigsten Änderungen für meinen Lebenslauf, jeweils als Vorher/Nachher-Satz.
 
 Wichtig: Erfinde keine Erfahrungen, Zahlen oder Abschlüsse. Wenn dir für eine Anforderung Infos fehlen, frag mich, statt zu raten.</pre>
-  <button type="button" data-copy="v54">Kopieren</button>
+  <button type="button" data-copy="v58">Kopieren</button>
   <p class="hint">Für jede neue Stelle als Erstes.</p>
   <h3>Prompt 2: Lücken schließen</h3>
-  <pre id="v55">Geh alle ⚠️ und ❌ aus deiner Tabelle durch.
+  <pre id="v59">Geh alle ⚠️ und ❌ aus deiner Tabelle durch.
 1. Stell mir zu jedem Punkt genau eine Frage, ob ich dazu Erfahrung habe – Job, Praktikum, Studium, Ehrenamt oder eigene Projekte zählen.
 2. Stell die Fragen als nummerierte Liste und warte auf meine Antworten.
 3. Formulier danach aus meinen Antworten neue Lebenslauf-Stichpunkte: Verb am Anfang, konkretes Ergebnis, nur Fakten, die ich wirklich genannt habe.
 4. Sag mir, an welche Stelle im Lebenslauf jeder Stichpunkt gehört.</pre>
-  <button type="button" data-copy="v55">Kopieren</button>
+  <button type="button" data-copy="v59">Kopieren</button>
   <p class="hint">Direkt nach dem Abgleich, wenn es ⚠️ oder ❌ gibt.</p>
   <h3>Prompt 3: Anschreiben aus Belegen</h3>
-  <pre id="v56">Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.
+  <pre id="v60">Schreib jetzt ein Anschreiben für diese Stelle, maximal 250 Wörter.
 - Einstieg: warum genau diese Stelle. Nutz nur, was in der Anzeige steht, und markiere mit [ERGÄNZEN], wo ich etwas Persönliches einfügen soll.
 - Hauptteil: die 3 Muss-Anforderungen, die ich am besten belegen kann, jeweils mit einem konkreten Beispiel aus meinem Lebenslauf.
 - Ton: ___ (z. B. freundlich und direkt). Keine Floskeln wie „hiermit bewerbe ich mich“ oder „mit großem Interesse“.
 - Schluss: ein selbstbewusster Satz zum Gespräch.
 Erfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.</pre>
-  <button type="button" data-copy="v56">Kopieren</button>
+  <button type="button" data-copy="v60">Kopieren</button>
   <p class="hint">Wenn der Lebenslauf passt.</p>
   <h3>Prompt 4: Recruiter-Check</h3>
-  <pre id="v57">Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.
+  <pre id="v61">Lies jetzt Lebenslauf und Anschreiben wie jemand aus dem Recruiting, der 30 Sekunden pro Bewerbung hat.
 1. Was bleibt nach 30 Sekunden hängen? (3 Stichpunkte)
 2. Welche Muss-Anforderung aus der Anzeige ist immer noch nicht klar belegt?
 3. Nenn die 2 schwächsten Sätze und gib mir für jeden eine bessere Version.
 4. Gib mir am Ende die überarbeitete Fassung des Anschreibens.</pre>
-  <button type="button" data-copy="v57">Kopieren</button>
+  <button type="button" data-copy="v61">Kopieren</button>
   <p class="hint">Bevor du auf Senden drückst.</p>
   <h3>Beispiel</h3>
   <p class="ex">Stelle im Online-Marketing: Anzeige + Lebenslauf rein → Prompt 1 zeigt SEO ✅, Budgetverantwortung ⚠️, Google Ads ❌ → Prompt 2 fragt nach: Ads-Kampagnen im Praktikum betreut → neuer Stichpunkt → Prompt 3 schreibt das Anschreiben mit diesen Belegen → Prompt 4 ersetzt die 2 schwächsten Sätze.</p>
@@ -930,7 +996,7 @@ Erfinde nichts, was nicht im Lebenslauf oder in meinen Antworten steht.</pre>
   <h3>So gehst du vor</h3>
   <ol class="steps"><li><b>Dokument rein.</b> Den ganzen Text in den Chat kopieren oder die Datei hochladen – ganz oben, vor allem anderen.</li><li><b>Erst Überblick holen.</b> Prompt 1 schicken: Claude sagt dir, was für ein Dokument das ist und welche Stellen wichtig sind.</li><li><b>Gezielt fragen.</b> Prompt 2 mit deiner Frage ganz unten. Claude sucht zuerst Zitate raus und antwortet nur auf deren Basis.</li><li><b>Gegenprüfen.</b> Prompt 3 schicken: Claude prüft die eigene Antwort gegen den Text und markiert, was nicht belegt ist.</li></ol>
   <h3>Prompt 1: Überblick</h3>
-  <pre id="v58">&lt;dokument&gt;
+  <pre id="v62">&lt;dokument&gt;
 ___ (ganzen Text einfügen)
 &lt;/dokument&gt;
 
@@ -940,24 +1006,24 @@ Lies das Dokument komplett. Gib mir dann:
 3. Alles mit Datum, Frist, Betrag oder Pflicht als Tabelle: Was – Wer – Bis wann – Zitat.
 4. Was fehlt oder unklar formuliert ist.
 Erfinde nichts. Wenn etwas nicht im Text steht, schreib „Steht nicht im Dokument“.</pre>
-  <button type="button" data-copy="v58">Kopieren</button>
+  <button type="button" data-copy="v62">Kopieren</button>
   <p class="hint">Direkt nach dem Einfügen – damit du weißt, wonach du fragen solltest.</p>
   <h3>Prompt 2: Frage mit Zitaten</h3>
-  <pre id="v59">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
+  <pre id="v63">Beantworte meine Frage nur auf Basis des Dokuments oben. Arbeite so:
 1. Such zuerst alle Stellen, die für die Frage wichtig sind. Schreib sie wörtlich und nummeriert in &lt;zitate&gt;-Tags.
 2. Beantworte die Frage dann nur mit diesen Zitaten. Setz hinter jede Aussage die Nummer, z. B. [2].
 3. Wenn das Dokument die Frage nicht beantwortet, sag das klar, statt zu raten.
 4. Zum Schluss: die Antwort in 3 einfachen Sätzen, ohne Fachbegriffe.
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v59">Kopieren</button>
+  <button type="button" data-copy="v63">Kopieren</button>
   <p class="hint">Für jede konkrete Frage. Die Frage steht immer ganz unten.</p>
   <h3>Prompt 3: Gegencheck</h3>
-  <pre id="v60">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
+  <pre id="v64">Prüf deine letzte Antwort Satz für Satz gegen das Dokument.
 - Markiere jede Aussage mit ✅ (wörtlich belegt), ⚠️ (nur indirekt belegt) oder ❌ (nicht belegt).
 - Korrigiere alle ⚠️ und ❌ oder streich sie.
 - Gib mir am Ende die bereinigte Antwort.</pre>
-  <button type="button" data-copy="v60">Kopieren</button>
+  <button type="button" data-copy="v64">Kopieren</button>
   <p class="hint">Bei allem, was wichtig ist: Geld, Fristen, Verträge.</p>
   <h3>Beispiel</h3>
   <p class="ex">Mietvertrag einfügen → Prompt 1 zeigt Kaution, Kündigungsfrist und Nebenkosten als Tabelle → Prompt 2: „Darf ich untervermieten?“ → Antwort mit Zitat aus dem Vertrag → Prompt 3 prüft, ob alles belegt ist.</p>
@@ -967,58 +1033,58 @@ Meine Frage: ___</pre>
 </article><article class="card" id="R005">
   <div class="meta"><span class="tag">Reel</span><span>Reel R005</span></div>
   <h2>Rolle + Publikum + Frage</h2>
-  <pre id="v61">Du bist ___ (Rolle, z. B. Steuerberater).
+  <pre id="v65">Du bist ___ (Rolle, z. B. Steuerberater).
 Erklär es ___ (für wen, z. B. einem Studenten ohne Vorwissen).
 
 Meine Frage: ___</pre>
-  <button type="button" data-copy="v61">Kopieren</button>
+  <button type="button" data-copy="v65">Kopieren</button>
   <p class="hint">Rolle und Publikum immer vor die eigentliche Frage setzen – schon ein Satz zur Rolle verändert die Antwort.</p>
 </article><article class="card" id="R004">
   <div class="meta"><span class="tag">Reel</span><span>Reel R004</span></div>
   <h2>Regel + weil</h2>
-  <pre id="v62">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
+  <pre id="v66">___ (deine Anweisung), weil ___ (wofür du das Ergebnis brauchst).
 
 Beispiel:
 Schreib kurz, weil ich es am Handy lese.</pre>
-  <button type="button" data-copy="v62">Kopieren</button>
+  <button type="button" data-copy="v66">Kopieren</button>
   <p class="hint">Hinter jede wichtige Anweisung ein „weil“ setzen – dann kennt Claude dein Ziel und kann mitdenken.</p>
 </article><article class="card" id="R003">
   <div class="meta"><span class="tag">Reel</span><span>Reel R003</span></div>
   <h2>Die 5 Video-Skills für Claude</h2>
-  <pre id="v63">Die Skills aus dem Video:
+  <pre id="v67">Die Skills aus dem Video:
 HyperFrames (HeyGen) · OneTake · Collage B-Roll · Claude Animation Base · Lemo Opuscar
 
 Start-Prompt:
 Ich möchte mit dem Skill ___ ein ___ Sekunden langes Video über ___ machen. Zielgruppe: ___. Stil: ___.
 Schreib mir zuerst ein kurzes Skript mit den Szenen, bevor du loslegst.</pre>
-  <button type="button" data-copy="v63">Kopieren</button>
+  <button type="button" data-copy="v67">Kopieren</button>
   <p class="hint">Skill auf GitHub suchen und in Claude einbinden, dann den Start-Prompt ausfüllen – Claude plant erst das Skript, bevor es baut.</p>
 </article><article class="card" id="R002">
   <div class="meta"><span class="tag">Reel</span><span>Reel R002</span></div>
   <h2>Verbote umdrehen</h2>
-  <pre id="v64">Statt: keine ___
+  <pre id="v68">Statt: keine ___
 Schreib: ___ (was stattdessen rauskommen soll)
 
 Beispiele:
 Statt „keine langen Sätze“ → „kurze Sätze, wie gesprochen“
 Statt „kein Fachchinesisch“ → „erklär es wie einem Freund“
 Statt „keine Aufzählungen“ → „in Fließtext“</pre>
-  <button type="button" data-copy="v64">Kopieren</button>
+  <button type="button" data-copy="v68">Kopieren</button>
   <p class="hint">Geh deinen Prompt durch und ersetze jedes „kein/keine/nicht“ durch das, was Claude stattdessen tun soll.</p>
 </article><article class="card" id="K001">
   <div class="meta"><span class="tag">Karussell</span><span>Karussell K001</span></div>
   <h2>Hör auf, Claude raten zu lassen</h2>
-  <pre id="v65">Ziel: Schreib ___, das ___ erreicht.
+  <pre id="v69">Ziel: Schreib ___, das ___ erreicht.
 Kontext: Für ___, weil ___.
 Beispiel: So soll es klingen: ___
 Format: ___ Wörter, ___ Varianten.</pre>
-  <button type="button" data-copy="v65">Kopieren</button>
+  <button type="button" data-copy="v69">Kopieren</button>
   <p class="hint">Lücken ausfüllen und in Claude einfügen. Je genauer, desto weniger muss Claude raten.</p>
 </article><article class="card" id="R001">
   <div class="meta"><span class="tag">Reel</span><span>Reel R001</span></div>
   <h2>Der eine Satz vor jedem Prompt</h2>
-  <pre id="v66">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
-  <button type="button" data-copy="v66">Kopieren</button>
+  <pre id="v70">Bevor du anfängst, stell mir alle Fragen, die du dafür brauchst.</pre>
+  <button type="button" data-copy="v70">Kopieren</button>
   <p class="hint">Unter deine Aufgabe schreiben. Claude fragt dann nach Zielgruppe, Länge oder Ton, statt zu raten.</p>
 </article>
 <footer>Jeden Tag ein neuer Claude-Tipp: <a href="https://www.instagram.com/jonas.noen/">@jonas.noen auf Instagram</a> · <a href="https://www.tiktok.com/@jonas.noen">TikTok</a></footer>

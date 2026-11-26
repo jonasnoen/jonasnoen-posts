@@ -2239,5 +2239,104 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "K005",
+  "type": "carousel",
+  "createdAt": "2026-11-26",
+  "status": "sending",
+  "series": "Claude-Prompts Teil 5",
+  "slides": 8,
+  "design": "v2-reel-look",
+  "topic": "Angebot schreiben für Selbstständige + Rechnung auf Pflichtangaben prüfen",
+  "themenRadar": "T14",
+  "angle": "Stichpunkte → fertiges Angebot mit Positionen, Annahmen und „Nicht enthalten“ → Claude spielt den schwierigen Kunden (Lücken-Check) → Nachfass-Mail → Rechnungs-Check gegen § 14 Abs. 4 UStG; durchgehendes Beispiel: Website für Bäckerei Korn, 3.300 € netto. Abgrenzung zu R008 (Vertrag prüfen, den man bekommt) – hier eigenes Angebot/Rechnung erstellen.",
+  "hook": "Hör auf, Angebote in Word zu basteln.",
+  "source": "Pflichtangaben nach § 14 Abs. 4 UStG (gesetze-im-internet.de/ustg_1980/__14.html, geprüft 26.11.2026); Kleinbetragsrechnung bis 250 € brutto (§ 33 UStDV) und Kleinunternehmer-Hinweis § 19 UStG laut IHK Köln (Hinweis nicht Pflicht, aber empfohlen). Keine E-Rechnung-Stichtage genannt. Keine neuen Claude-Produktaussagen.",
+  "files": {
+   "instagram": [
+    "carousels/K005/ig-01.png",
+    "carousels/K005/ig-02.png",
+    "carousels/K005/ig-03.png",
+    "carousels/K005/ig-04.png",
+    "carousels/K005/ig-05.png",
+    "carousels/K005/ig-06.png",
+    "carousels/K005/ig-07.png",
+    "carousels/K005/ig-08.png"
+   ],
+   "tiktok": [
+    "carousels/K005/tt-01.jpg",
+    "carousels/K005/tt-02.jpg",
+    "carousels/K005/tt-03.jpg",
+    "carousels/K005/tt-04.jpg",
+    "carousels/K005/tt-05.jpg",
+    "carousels/K005/tt-06.jpg",
+    "carousels/K005/tt-07.jpg",
+    "carousels/K005/tt-08.jpg"
+   ]
+  },
+  "tiktokTitle": "Angebote mit Claude statt Word",
+  "caption": "Hör auf, Angebote in Word zusammenzubasteln – dieser Ablauf schreibt sie für dich.\n\n„Schreib mir ein Angebot“ bringt dir schöne Sätze und „Preis nach Vereinbarung“. Was fehlt, ist das Wichtigste: was NICHT drin ist.\n\nDer Trick: Du gibst nur Stichpunkte (Kunde, Leistung, dein Preis, Zeitraum, Zahlung). Claude baut daraus Positionen mit Beschreibung, Annahmen, „Nicht enthalten“, Zahlungsbedingungen und Gültigkeit – nur mit deinen Preisen. Danach spielt Claude den schwierigen Kunden und findet die Sätze, die zu viel versprechen.\n\nUnd bevor die Rechnung rausgeht: Check gegen die Pflichtangaben aus § 14 UStG. Ersetzt keinen Steuerberater, aber fängt die typischen Lücken ab.\n\nSpeicher dir Slide 7 für die nächste Rechnung. Was vergisst du im Angebot am häufigsten?\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Selbstständig #Freelancer #JonasNoen",
+  "captionLinkedin": "Viele Selbstständige schreiben Angebote noch von Hand in Word – und vergessen dabei oft den Teil, der später den meisten Ärger macht: was nicht im Preis enthalten ist.\n\nMein Ablauf mit Claude: Ich gebe nur Stichpunkte (Kunde, Leistung, mein Preis, Zeitraum, Zahlung). Daraus entsteht ein Angebot mit Positionen, Annahmen, einem Abschnitt „Nicht enthalten“, Zahlungsbedingungen und Gültigkeit. Wichtig dabei: Claude nutzt nur meine Preise und markiert Lücken, statt Beträge zu erfinden.\n\nIm zweiten Schritt liest Claude das Angebot wie ein kritischer Kunde und zeigt Formulierungen, die man zu weit auslegen könnte – etwa, wann eine Leistung als „fertig“ gilt.\n\nVor dem Versand der Rechnung folgt ein Check gegen die Pflichtangaben nach § 14 Abs. 4 UStG. Das ersetzt keine Steuerberatung, fängt aber typische Lücken wie fehlende Steuernummer oder Leistungszeitraum ab.\n\nWas steht bei euch fest in jedem Angebot – und was habt ihr erst durch einen schwierigen Kunden gelernt?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Angebot schreiben + Rechnung prüfen (Guide mit 4 Prompts)",
+   "text": "Du bist mein Assistent für Angebote als Selbstständige/r. Erstelle aus meinen Stichpunkten ein fertiges, professionelles Angebot.\n\nMeine Stichpunkte:\n- Ich: ___ (Name, Beruf, Kleinunternehmer ja/nein)\n- Kunde: ___\n- Leistung: ___\n- Mein Preis bzw. Stundensatz: ___\n- Zeitraum: ___\n- Zahlung: ___\n\nAufbau:\n1. Kurze Einleitung, die das Ziel des Kunden in einem Satz aufgreift.\n2. Positionstabelle: Nr. | Leistung | Beschreibung (was genau enthalten ist) | Menge | Preis netto. Verwende nur meine Preise und erfinde keine Beträge – fehlt etwas, schreib [PREIS FEHLT].\n3. Abschnitt „Annahmen“ (z. B. wer liefert Inhalte, wie viele Korrekturschleifen).\n4. Abschnitt „Nicht enthalten“ mit mindestens 3 Punkten, die der Kunde sonst stillschweigend erwarten könnte.\n5. Zeitplan, Zahlungsbedingungen und Gültigkeit des Angebots.\n6. Summe netto, Umsatzsteuer und brutto – oder, wenn ich Kleinunternehmer bin, ohne Steuerausweis mit Hinweis auf § 19 UStG.\n\nTon: klar, freundlich, ohne Floskeln. Stell mir danach bis zu 5 Rückfragen zu Punkten, die noch unklar sind.",
+   "hinweis": "Stichpunkte einsetzen und abschicken – Claude baut das Angebot und stellt dir danach Rückfragen zu allem, was noch unklar ist."
+  },
+  "guide": {
+   "titel": "Guide: Angebote und Rechnungen mit Claude – ohne Word-Gebastel",
+   "ziel": "Aus ein paar Stichpunkten ein klares Angebot mit Grenzen machen, es vor dem Versand auf Lücken prüfen, sauber nachfassen und die Rechnung gegen die Pflichtangaben checken.",
+   "schritte": [
+    {
+     "titel": "Stichpunkte sammeln.",
+     "text": "Kunde, Leistung, dein Preis oder Stundensatz, Zeitraum, Zahlungsweise – und ob du Kleinunternehmer bist. Mehr braucht Prompt 1 nicht."
+    },
+    {
+     "titel": "Angebot bauen.",
+     "text": "Prompt 1 schicken, die Rückfragen beantworten. Achte auf den Abschnitt „Nicht enthalten“ – der schützt dich vor Zusatzarbeit ohne Bezahlung."
+    },
+    {
+     "titel": "Lücken schließen.",
+     "text": "Prompt 2 im selben Chat: Claude liest wie ein schwieriger Kunde, schlägt klarere Formulierungen vor und gibt die überarbeitete Fassung aus."
+    },
+    {
+     "titel": "Nachfassen.",
+     "text": "Keine Antwort? Prompt 3 liefert zwei kurze Mails für Tag 7 und Tag 14."
+    },
+    {
+     "titel": "Rechnung prüfen.",
+     "text": "Vor dem Versand Prompt 4: Tabelle mit allen Pflichtangaben nach § 14 Abs. 4 UStG, Rechenwerte und Abgleich mit dem Angebot. Sonderfälle mit Steuerberatung klären."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Angebot aus Stichpunkten",
+     "text": "Du bist mein Assistent für Angebote als Selbstständige/r. Erstelle aus meinen Stichpunkten ein fertiges, professionelles Angebot.\n\nMeine Stichpunkte:\n- Ich: ___ (Name, Beruf, Kleinunternehmer ja/nein)\n- Kunde: ___\n- Leistung: ___\n- Mein Preis bzw. Stundensatz: ___\n- Zeitraum: ___\n- Zahlung: ___\n\nAufbau:\n1. Kurze Einleitung, die das Ziel des Kunden in einem Satz aufgreift.\n2. Positionstabelle: Nr. | Leistung | Beschreibung (was genau enthalten ist) | Menge | Preis netto. Verwende nur meine Preise und erfinde keine Beträge – fehlt etwas, schreib [PREIS FEHLT].\n3. Abschnitt „Annahmen“ (z. B. wer liefert Inhalte, wie viele Korrekturschleifen).\n4. Abschnitt „Nicht enthalten“ mit mindestens 3 Punkten, die der Kunde sonst stillschweigend erwarten könnte.\n5. Zeitplan, Zahlungsbedingungen und Gültigkeit des Angebots.\n6. Summe netto, Umsatzsteuer und brutto – oder, wenn ich Kleinunternehmer bin, ohne Steuerausweis mit Hinweis auf § 19 UStG.\n\nTon: klar, freundlich, ohne Floskeln. Stell mir danach bis zu 5 Rückfragen zu Punkten, die noch unklar sind.",
+     "wann": "Zuerst, pro Anfrage."
+    },
+    {
+     "titel": "Lücken-Check: Claude als schwieriger Kunde",
+     "text": "Lies das Angebot oben wie ein kritischer Kunde, der möglichst viel für sein Geld will.\n1. Welche Formulierungen kann er so auslegen, dass mehr Arbeit für mich drinsteckt? Zitiere sie und gib mir jeweils eine klarere Fassung.\n2. Was fehlt, damit eindeutig ist, wann die Leistung „fertig“ ist (Abnahme)?\n3. Welche Zusatzwünsche sind wahrscheinlich – und wie formuliere ich, was sie kosten (z. B. pro Seite, pro Stunde)?\n4. Gib mir eine Liste mit Fragen, die ich dem Kunden vor dem Versand stellen sollte.\nGib am Ende die überarbeitete Fassung des Angebots aus.",
+     "wann": "Direkt danach, im selben Chat."
+    },
+    {
+     "titel": "Nachfass-Mails",
+     "text": "Ich habe am ___ ein Angebot über ___ an ___ geschickt und noch keine Antwort bekommen.\nSchreib mir 2 kurze Nachfass-Mails (je höchstens 80 Wörter):\n1. freundlich, nach 7 Tagen,\n2. klar, nach 14 Tagen, mit Hinweis, dass das Angebot bis ___ gilt.\nKein Druck, keine Entschuldigung, am Ende jeweils genau eine konkrete Frage, die man schnell beantworten kann.",
+     "wann": "Wenn nach einer Woche keine Antwort kam."
+    },
+    {
+     "titel": "Rechnungs-Check (Pflichtangaben)",
+     "text": "Prüfe diese Rechnung auf die Pflichtangaben nach § 14 Abs. 4 UStG. Geh die Liste einzeln durch und gib eine Tabelle aus: Pflichtangabe | vorhanden? (ja/nein/unklar) | Fundstelle oder was fehlt.\n1. Vollständiger Name und Anschrift von mir und vom Kunden\n2. Steuernummer oder USt-IdNr.\n3. Ausstellungsdatum\n4. Fortlaufende, einmalige Rechnungsnummer\n5. Menge und Art der Leistung\n6. Zeitpunkt bzw. Zeitraum der Leistung\n7. Entgelt netto, nach Steuersätzen aufgeschlüsselt\n8. Steuersatz und Steuerbetrag – oder Hinweis auf Steuerbefreiung bzw. Kleinunternehmerregelung\nPrüfe außerdem: Stimmen alle Rechenwerte? Passt die Rechnung zum Angebot (Positionen, Preise)?\nWichtig: Du ersetzt keine Steuerberatung. Liegt ein Sonderfall vor (Ausland, Reverse Charge, Gutschrift, Kleinbetragsrechnung bis 250 €), sag das und empfiehl, es prüfen zu lassen.\nRechnung: ___\nAngebot (optional): ___",
+     "wann": "Bevor die Rechnung rausgeht."
+    }
+   ],
+   "beispiel": "Webdesignerin, Kunde Bäckerei Korn, Website mit 5 Seiten für 3.300 € netto, Januar–Februar, 50 % vorab. Claude macht daraus drei Positionen (Konzept & Design 1.200 €, Umsetzung 1.800 €, Einweisung 300 €) mit „Nicht enthalten: Texte schreiben, Fotos, Hosting“. Der Lücken-Check fragt: Wer liefert die Texte bis wann, was kostet jede weitere Seite, wann gilt die Website als fertig? Beim Rechnungs-Check fallen fehlende Steuernummer und fehlender Leistungszeitraum auf.",
+   "check": [
+    "Alle Preise stammen von dir – keine von Claude geschätzten Beträge.",
+    "„Nicht enthalten“ und Abnahme („fertig, wenn …“) stehen im Angebot.",
+    "Rechnung hat alle Pflichtangaben nach § 14 Abs. 4 UStG (Slide 7).",
+    "Sonderfälle (Ausland, Reverse Charge, Gutschrift) mit Steuerberatung geklärt."
+   ]
+  }
  }
 ]
