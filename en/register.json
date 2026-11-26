@@ -1812,5 +1812,116 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "EK003",
+    "type": "carousel",
+    "createdAt": "2026-11-26",
+    "status": "sending",
+    "series": "Claude Prompts Part 3",
+    "slides": 8,
+    "design": "v2-reel-look",
+    "fromDe": "K005",
+    "topic": "Client quotes for freelancers + invoice check before sending",
+    "angle": "Bullet points → finished quote with line items, assumptions and 'Not included' → Claude plays the difficult client (gap check) → follow-up emails → invoice checked against a general essentials list (no country-specific law, tax questions flagged for accountant); running example: web designer, fictional client Northside Coffee, 5-page website for $3,300, Jan–Feb, 50% upfront.",
+    "hook": "Stop building quotes in Word.",
+    "themaQuelle": "DE K005",
+    "source": "No Claude product claims; prompt technique only. German § 14 UStG removed; slide 7 is a general invoice checklist marked 'exact requirements depend on your country – check your tax authority's checklist' (items like invoice number, date, description, amounts, tax ID/VAT if registered are common requirements e.g. UK HMRC/GOV.UK 'Invoicing and taking payment from customers'). Example client is fictional.",
+    "files": {
+      "instagram": [
+        "en/carousels/EK003/ig-01.png",
+        "en/carousels/EK003/ig-02.png",
+        "en/carousels/EK003/ig-03.png",
+        "en/carousels/EK003/ig-04.png",
+        "en/carousels/EK003/ig-05.png",
+        "en/carousels/EK003/ig-06.png",
+        "en/carousels/EK003/ig-07.png",
+        "en/carousels/EK003/ig-08.png"
+      ],
+      "tiktok": [
+        "en/carousels/EK003/tt-01.jpg",
+        "en/carousels/EK003/tt-02.jpg",
+        "en/carousels/EK003/tt-03.jpg",
+        "en/carousels/EK003/tt-04.jpg",
+        "en/carousels/EK003/tt-05.jpg",
+        "en/carousels/EK003/tt-06.jpg",
+        "en/carousels/EK003/tt-07.jpg",
+        "en/carousels/EK003/tt-08.jpg"
+      ],
+      "linkedin": [
+        "en/carousels/EK003/ig-01.png",
+        "en/carousels/EK003/ig-02.png",
+        "en/carousels/EK003/ig-03.png",
+        "en/carousels/EK003/ig-04.png",
+        "en/carousels/EK003/ig-05.png",
+        "en/carousels/EK003/ig-06.png",
+        "en/carousels/EK003/ig-07.png",
+        "en/carousels/EK003/li-08.png"
+      ]
+    },
+    "tiktokTitle": "Stop building quotes in Word",
+    "caption": "Stop building quotes in Word – this flow writes them for you. 📄\n\n“Write me a quote” gets you nice sentences and “price to be agreed”. What's missing is the part that saves you later: what's NOT included.\n\nThe trick: you only give bullet points (client, job, your price, timeline, payment). Claude turns them into line items with descriptions, assumptions, a “Not included” section, payment terms and a valid-until date – using only your prices. Then Claude plays the difficult client and finds every line that promises too much.\n\nAnd before the invoice goes out: a check against the essentials (number, dates, amounts, due date, how to pay). It doesn't replace your accountant – but it catches the usual gaps.\n\nSave slide 7 for your next invoice. What do you forget in quotes most often?\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #Freelancer #FreelanceTips #AITools",
+    "captionX": "Stop building quotes in Word 📄 Bullet points → a finished quote with “Not included”, Claude plays the difficult client, then an invoice check before you hit send. Comment PROMPT for the guide",
+    "captionLinkedIn": "A lot of freelancers still write quotes by hand in Word – and often skip the part that causes the most trouble later: what is not included in the price.\n\nMy flow with Claude:\n1. I only give bullet points: client, job, my price, timeline, payment.\n2. Claude builds a quote with line items, assumptions, a “Not included” section, payment terms and a valid-until date. It uses only my prices and marks gaps instead of inventing numbers.\n3. Claude then reads the quote like a critical client and points out wording that could be stretched – for example, when the work counts as “done”.\n4. Before the invoice goes out, it checks it against the essentials: invoice number, dates, line items, totals, due date and payment details.\n\nOne honest limit: tax rules differ by country. Claude can flag what to double-check, but your accountant has the final word.\n\nWhat's one line you now put in every quote because of a difficult client?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Write a client quote + check your invoice (guide with 4 prompts)",
+      "text": "You're my assistant for writing client quotes as a freelancer. Turn my bullet points into a finished, professional quote.\n\nMy bullet points:\n- Me: ___ (name, what I do, registered for sales tax/VAT yes/no)\n- Client: ___\n- Job: ___\n- My price or hourly rate: ___\n- Timeline: ___\n- Payment: ___\n- Currency: ___\n\nStructure:\n1. A short intro that sums up the client's goal in one sentence.\n2. Line-item table: No. | Item | Description (exactly what's included) | Quantity | Price. Use only my prices and never invent amounts – if something is missing, write [PRICE MISSING].\n3. An \"Assumptions\" section (e.g. who provides content, how many rounds of revisions).\n4. A \"Not included\" section with at least 3 things the client might otherwise silently expect.\n5. Timeline, payment terms and how long the quote is valid.\n6. Subtotal and total – add a tax/VAT line only if I said I'm registered, and mark the rate as [CHECK RATE] unless I gave it.\n\nTone: clear, friendly, no filler. After the quote, ask me up to 5 questions about anything that's still unclear.",
+      "hinweis": "Fill in your bullet points and send – Claude builds the quote, then asks you about anything that's still unclear."
+    },
+    "guide": {
+      "titel": "Guide: Client quotes and invoices with Claude – no more Word fiddling",
+      "ziel": "Turn a few bullet points into a clear quote with limits, stress-test it before sending, follow up cleanly and check the invoice before it goes out.",
+      "schritte": [
+        {
+          "titel": "Collect your bullet points.",
+          "text": "Client, job, your price or hourly rate, timeline, payment terms, currency – and whether you're registered for sales tax/VAT. That's all Prompt 1 needs."
+        },
+        {
+          "titel": "Build the quote.",
+          "text": "Send Prompt 1 and answer the follow-up questions. Pay attention to the “Not included” section – it protects you from unpaid extra work."
+        },
+        {
+          "titel": "Close the gaps.",
+          "text": "Prompt 2 in the same chat: Claude reads it like a difficult client, suggests tighter wording and outputs the revised quote."
+        },
+        {
+          "titel": "Follow up.",
+          "text": "No reply? Prompt 3 gives you two short emails for day 7 and day 14."
+        },
+        {
+          "titel": "Check the invoice.",
+          "text": "Before sending, run Prompt 4: a table of the essentials, the math and a match against the quote. Country-specific tax questions go to your tax authority or accountant."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Quote from bullet points",
+          "text": "You're my assistant for writing client quotes as a freelancer. Turn my bullet points into a finished, professional quote.\n\nMy bullet points:\n- Me: ___ (name, what I do, registered for sales tax/VAT yes/no)\n- Client: ___\n- Job: ___\n- My price or hourly rate: ___\n- Timeline: ___\n- Payment: ___\n- Currency: ___\n\nStructure:\n1. A short intro that sums up the client's goal in one sentence.\n2. Line-item table: No. | Item | Description (exactly what's included) | Quantity | Price. Use only my prices and never invent amounts – if something is missing, write [PRICE MISSING].\n3. An \"Assumptions\" section (e.g. who provides content, how many rounds of revisions).\n4. A \"Not included\" section with at least 3 things the client might otherwise silently expect.\n5. Timeline, payment terms and how long the quote is valid.\n6. Subtotal and total – add a tax/VAT line only if I said I'm registered, and mark the rate as [CHECK RATE] unless I gave it.\n\nTone: clear, friendly, no filler. After the quote, ask me up to 5 questions about anything that's still unclear.",
+          "wann": "First, for every request."
+        },
+        {
+          "titel": "Gap check: Claude as the difficult client",
+          "text": "Read the quote above like a critical client who wants as much as possible for their money.\n1. Which lines could they read as \"more work included\"? Quote them and give me a tighter version of each.\n2. What's missing to make it clear when the work counts as \"done\" (sign-off)?\n3. Which extra requests are likely – and how do I state what they cost (e.g. per page, per hour)?\n4. Give me a list of questions I should ask the client before sending.\nAt the end, output the revised version of the quote.",
+          "wann": "Right after, in the same chat."
+        },
+        {
+          "titel": "Follow-up emails",
+          "text": "On ___ I sent a quote for ___ to ___ and haven't heard back.\nWrite 2 short follow-up emails (max 80 words each):\n1. friendly, after 7 days,\n2. clear, after 14 days, mentioning that the quote is valid until ___.\nNo pressure, no apologizing. End each one with exactly one concrete question that's quick to answer.",
+          "wann": "If there's no reply after a week."
+        },
+        {
+          "titel": "Invoice check (essentials)",
+          "text": "Check this invoice before I send it. I'm based in ___ and my client is based in ___. Go through the list one by one and output a table: Item | present? (yes/no/unclear) | where it is or what's missing.\n1. My full name/business name and address\n2. Client's full name and address\n3. Invoice date\n4. Unique, sequential invoice number\n5. Description of the work and quantity\n6. Date or period of service\n7. Line amounts, subtotal and total, currency\n8. Tax ID and tax/VAT rate + amount – only if I'm registered; otherwise check that no tax is charged by mistake\n9. Payment terms and due date\n10. How to pay me (bank details or payment link)\nAlso check: do all the numbers add up? Does the invoice match the quote (items, prices)?\nThen tell me which invoice requirements for my country you're not sure about, so I can check them with my tax authority or accountant. Important: you don't replace tax advice. If this is a special case (cross-border, reverse charge, VAT exemption), say so and recommend getting it checked.\nInvoice: ___\nQuote (optional): ___",
+          "wann": "Before the invoice goes out."
+        }
+      ],
+      "beispiel": "Web designer, client Northside Coffee (fictional), 5-page website for $3,300, January–February, 50% upfront. Claude turns it into three line items (concept & design $1,200, build $1,800, training $300) with “Not included: copywriting, photos, hosting”. The gap check asks: who delivers the copy and by when, what does each extra page cost, when is the website “done”? The invoice check flags a missing date of service and a missing due date.",
+      "check": [
+        "Every price comes from you – no amounts estimated by Claude.",
+        "“Not included” and a clear sign-off (“done when …”) are in the quote.",
+        "The invoice has all the essentials from slide 7 and matches the quote.",
+        "Tax/VAT and cross-border questions checked with your tax authority or accountant."
+      ]
+    }
   }
 ]
