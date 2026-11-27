@@ -2361,5 +2361,91 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R021",
+  "type": "reel",
+  "createdAt": "2026-11-27",
+  "status": "sending",
+  "format": "creme",
+  "faceOffset": 86.7,
+  "series": "Claude-Codes Teil 20",
+  "topic": "Vergessene Abos im Kontoauszug finden (Tabelle mit Kosten pro Jahr) + Kündigungsschreiben",
+  "angle": "Kontoauszug (CSV/PDF, Name und IBAN geschwärzt) hochladen → Claude listet alle wiederkehrenden Zahlungen mit Kosten pro Monat und Jahr und markiert Auffälliges; Prompt 2 sortiert behalten/kündigen/prüfen; Prompt 3 schreibt die Kündigungen; Prompt 4 baut einen Abo-Kalender. Neues Thema (Finanzen/Fixkosten), keine Überschneidung mit R008 (Vertrag prüfen) oder R011 (Posteingang).",
+  "hook": "Dieser Prompt findet jedes Abo, das du vergessen hast.",
+  "themaQuelle": "eigenes Thema (themen/de.md: nur T11 offen, als Sonntags-Experiment vorgesehen)",
+  "source": "Datei-Upload (PDF, CSV) in Claude laut Claude-Hilfe „Upload files to Claude“ (support.claude.com/en/articles/8241126, geprüft 27.11.2026). Kündigungsbutton bei online geschlossenen Verbraucher-Dauerverträgen: § 312k BGB (gesetze-im-internet.de/bgb/__312k.html, geprüft 27.11.2026), im Guide nur als Hinweis. Abo-Tabelle, Beträge und Summe (753,44 €) im Video sind ein ausgedachtes BEISPIEL, als solches markiert; keine Ersparnis-Versprechen.",
+  "voice": "Jonas Noen (ElevenLabs-Klon), eleven_v4, Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R021/reel.mp4",
+  "fileLinkedin": "reels/R021/reel_linkedin.mp4",
+  "tiktokTitle": "Dieser Prompt findet deine vergessenen Abos",
+  "caption": "Dieser Prompt findet jedes Abo, das du vergessen hast. 🔎\n\nDas Fitnessstudio, in dem du seit März nicht warst. Der Cloud-Speicher für 2,99 €, der dir nie aufgefallen ist. Die Zeitschrift, die einmal im Jahr abbucht.\n\n👉 Kontoauszug als CSV oder PDF hochladen – Name und IBAN vorher schwärzen\n👉 Claude listet alle wiederkehrenden Zahlungen mit Kosten pro Monat UND pro Jahr\n👉 Prompt 2 schreibt dir direkt die Kündigung\n\nSpeicher dir das für den Jahresend-Check.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #Abos #GeldSparen #PromptTipps #JonasNoen",
+  "captionLinkedin": "Kleine wiederkehrende Zahlungen fallen im Alltag kaum auf – erst in der Jahressumme wird sichtbar, was ein Abo wirklich kostet.\n\nEin Ablauf, den ich mit Claude nutze:\n1. Kontoauszug der letzten Monate als CSV oder PDF exportieren und Name, IBAN und Adresse vorher schwärzen.\n2. Claude listet alle wiederkehrenden Zahlungen in einer Tabelle – Rhythmus, Kosten pro Monat und pro Jahr – und markiert Auffälliges wie Preiserhöhungen oder doppelte Dienste.\n3. Ein zweiter Prompt sortiert in behalten, kündigen und prüfen, ein dritter formuliert die Kündigungsschreiben.\n\nWichtig: Claude soll unklare Empfänger als [UNKLAR] markieren statt zu raten, und die Rechnung bleibt nachvollziehbar, damit man sie selbst prüfen kann.\n\nWann habt ihr eure Abos zuletzt durchgesehen – und was war die größte Überraschung?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Abo-Detektiv: vergessene Abos finden + kündigen (Guide mit 4 Prompts)",
+   "text": "Du bist mein Abo-Detektiv. Ich lade dir meinen Kontoauszug der letzten ___ Monate hoch (CSV oder PDF, Name, IBAN und Adresse habe ich geschwärzt).\n\nAufgabe:\n1. Finde alle wiederkehrenden Zahlungen: Abos, Mitgliedschaften, Versicherungen, Verträge, App-Käufe, Spenden – auch jährliche und quartalsweise, und auch kleine Beträge unter 5 €.\n2. Gib sie als Tabelle aus: Empfänger | Was ist das vermutlich? | Rhythmus | Betrag pro Zahlung | Kosten pro Monat | Kosten pro Jahr | zuletzt abgebucht am.\n3. Rechne die Jahreskosten nachvollziehbar aus (z. B. 9,99 × 12) und nenne darunter die Summe pro Monat und pro Jahr.\n4. Markiere mit ⚠️ alles, was auffällig ist: Preiserhöhungen, doppelte Dienste (z. B. zwei Streaming- oder zwei Cloud-Abos), Probeabos, die in ein Bezahlabo übergegangen sind, Empfänger, die du nicht sicher zuordnen kannst.\n5. Liste am Ende 3 Fragen an mich, mit denen ich entscheiden kann, was weg kann.\n\nRegeln: Erfinde keine Zahlungen und keine Beträge. Wenn du dir bei einem Empfänger nicht sicher bist, schreib [UNKLAR] statt zu raten. Einmalige Käufe (Supermarkt, Tanken, Online-Bestellungen) gehören nicht in die Tabelle.",
+   "hinweis": "Kontoauszug als CSV oder PDF exportieren, Name/IBAN/Adresse schwärzen, hochladen und den Prompt abschicken – Claude listet alle wiederkehrenden Zahlungen mit Jahreskosten."
+  },
+  "guide": {
+   "titel": "Guide: Vergessene Abos finden und loswerden – mit Claude",
+   "ziel": "In einer Viertelstunde alle wiederkehrenden Zahlungen aus deinem Kontoauszug sehen, entscheiden, was weg kann, die Kündigungen fertig formuliert haben und fürs nächste Jahr einen Abo-Kalender bekommen.",
+   "schritte": [
+    {
+     "titel": "Kontoauszug exportieren.",
+     "text": "Im Online-Banking die Umsätze der letzten 3–12 Monate als CSV oder PDF herunterladen. Je länger der Zeitraum, desto eher tauchen auch jährliche Abbuchungen auf."
+    },
+    {
+     "titel": "Schwärzen.",
+     "text": "Name, IBAN, Adresse und Kontonummer entfernen oder schwärzen. Bei CSV reicht es, nur die Spalten Datum, Empfänger, Verwendungszweck und Betrag zu behalten."
+    },
+    {
+     "titel": "Abos finden lassen.",
+     "text": "Datei hochladen und Prompt 1 schicken. Claude baut die Tabelle mit Kosten pro Monat und pro Jahr und markiert Auffälliges mit ⚠️. Die Rechnung steht dabei – kurz nachrechnen."
+    },
+    {
+     "titel": "Entscheiden und kündigen.",
+     "text": "Prompt 2 sortiert in behalten, kündigen und prüfen. Prompt 3 schreibt die Kündigungen. Hast du online abgeschlossen, gibt es auf der Website des Anbieters in der Regel einen Kündigungsbutton (§ 312k BGB) – die Bestätigung aufheben."
+    },
+    {
+     "titel": "Abo-Kalender anlegen.",
+     "text": "Prompt 4 macht aus dem Rest einen Kalender, damit jährliche Abbuchungen dich nicht mehr überraschen. Den Check einmal im Jahr wiederholen."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Abo-Detektiv: alle wiederkehrenden Zahlungen finden",
+     "text": "Du bist mein Abo-Detektiv. Ich lade dir meinen Kontoauszug der letzten ___ Monate hoch (CSV oder PDF, Name, IBAN und Adresse habe ich geschwärzt).\n\nAufgabe:\n1. Finde alle wiederkehrenden Zahlungen: Abos, Mitgliedschaften, Versicherungen, Verträge, App-Käufe, Spenden – auch jährliche und quartalsweise, und auch kleine Beträge unter 5 €.\n2. Gib sie als Tabelle aus: Empfänger | Was ist das vermutlich? | Rhythmus | Betrag pro Zahlung | Kosten pro Monat | Kosten pro Jahr | zuletzt abgebucht am.\n3. Rechne die Jahreskosten nachvollziehbar aus (z. B. 9,99 × 12) und nenne darunter die Summe pro Monat und pro Jahr.\n4. Markiere mit ⚠️ alles, was auffällig ist: Preiserhöhungen, doppelte Dienste (z. B. zwei Streaming- oder zwei Cloud-Abos), Probeabos, die in ein Bezahlabo übergegangen sind, Empfänger, die du nicht sicher zuordnen kannst.\n5. Liste am Ende 3 Fragen an mich, mit denen ich entscheiden kann, was weg kann.\n\nRegeln: Erfinde keine Zahlungen und keine Beträge. Wenn du dir bei einem Empfänger nicht sicher bist, schreib [UNKLAR] statt zu raten. Einmalige Käufe (Supermarkt, Tanken, Online-Bestellungen) gehören nicht in die Tabelle.",
+     "wann": "Zuerst – mit hochgeladenem, geschwärztem Kontoauszug."
+    },
+    {
+     "titel": "Behalten, kündigen oder prüfen?",
+     "text": "Hier ist meine Abo-Tabelle aus dem letzten Schritt. Hilf mir zu entscheiden.\n\nFür jede Zeile: Ich sage dir in Stichpunkten, wie oft ich das wirklich nutze: ___\n\nMach daraus eine Liste mit drei Gruppen:\n- BEHALTEN (nutze ich regelmäßig, Preis okay)\n- KÜNDIGEN (kaum genutzt oder doppelt)\n- PRÜFEN (günstigerer Tarif, Jahresabo statt Monatsabo, Familien-/Teilen-Option – nur als Frage formuliert, keine erfundenen Preise)\n\nNenne darunter, wie viel ich pro Jahr spare, wenn ich alles unter KÜNDIGEN beende (Rechnung zeigen).",
+     "wann": "Im selben Chat direkt nach Prompt 1."
+    },
+    {
+     "titel": "Kündigungsschreiben in einem Rutsch",
+     "text": "Schreib mir für jedes Abo unter KÜNDIGEN ein kurzes Kündigungsschreiben (E-Mail oder Brief).\n\nMeine Daten: Name ___, Adresse ___, Kunden-/Mitgliedsnummer je Anbieter ___\n\nJedes Schreiben enthält:\n- Betreff mit dem Wort „Kündigung“ und meiner Kundennummer\n- Kündigung „fristgerecht zum nächstmöglichen Termin“\n- Bitte um schriftliche Bestätigung der Kündigung mit dem genauen Vertragsende\n- Bitte, mir keine Rückgewinnungsangebote mehr zu schicken\n- höflich, kurz, ohne Begründung\n\nFehlt eine Angabe, setze [ERGÄNZEN]. Schreib darunter in einem Satz, worauf ich beim Versand achten soll (z. B. Kündigungsbutton auf der Website nutzen, wenn ich online abgeschlossen habe, und Bestätigung aufbewahren).",
+     "wann": "Wenn feststeht, was weg soll."
+    },
+    {
+     "titel": "Abo-Kalender fürs nächste Jahr",
+     "text": "Mach aus meiner Liste BEHALTEN einen Abo-Kalender fürs nächste Jahr.\n\nTabelle: Monat | Was wird abgebucht | Betrag | Notiz.\nMarkiere jährliche Abbuchungen extra, damit sie mich nicht überraschen.\nSchreib darunter: meine Fixkosten pro Monat für Abos und einen Vorschlag, an welchem Tag im Jahr ich diesen Abo-Check wiederhole.",
+     "wann": "Zum Schluss, damit nichts mehr überrascht."
+    }
+   ],
+   "beispiel": "Beispiel (ausgedacht): Lena lädt ihre Umsätze von Mai bis Oktober hoch. Claude findet fünf wiederkehrende Zahlungen – Streaming 13,99 €, Fitnessstudio 29,90 €, Cloud-Speicher 2,99 €, Musik-App 10,99 € im Monat und eine Zeitschrift für 59 € im Jahr – zusammen 753,44 € pro Jahr. Cloud-Speicher und Zeitschrift hatte sie vergessen. Prompt 2 sortiert Fitnessstudio und Zeitschrift in KÜNDIGEN, Prompt 3 schreibt beide Kündigungen, die Kundennummern trägt sie selbst ein.",
+   "check": [
+    "Name, IBAN und Adresse vor dem Hochladen geschwärzt?",
+    "Jahreskosten kurz nachgerechnet und [UNKLAR]-Zeilen selbst zugeordnet?",
+    "Kündigungsfrist im Vertrag oder Kundenkonto geprüft und Bestätigung aufgehoben?",
+    "Abo-Kalender gespeichert und Termin für den nächsten Check eingetragen?"
+   ]
+  },
+  "sha256": "9c48675a9d40d863361ae6206c15037fd420cec60d225f47b48b6964d8252b89",
+  "durationSec": 16.5,
+  "music": "assets/music/lofi-105.mp3",
+  "costUsd": 0.16,
+  "plannedFor": "2026-11-27T18:30:00+01:00"
  }
 ]
