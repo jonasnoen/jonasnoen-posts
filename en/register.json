@@ -1953,5 +1953,92 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E015",
+    "type": "reel",
+    "createdAt": "2026-11-27",
+    "status": "sending",
+    "format": "creme",
+    "faceOffset": 176.1,
+    "series": "Claude Codes Part 15",
+    "fromDe": "R021",
+    "topic": "Find forgotten subscriptions in your bank statement (table with cost per year) + cancellation letters",
+    "angle": "Upload a bank statement (CSV/PDF, name and account number blacked out) → Claude lists every recurring payment with cost per month and per year and flags anything odd; prompt 2 sorts keep/cancel/check; prompt 3 writes the cancellation messages; prompt 4 builds a subscription calendar. New topic for the EN channel (personal finance/fixed costs), no overlap with E005 (inbox) or EK003 (quotes/invoices). International example in $, no country-specific law.",
+    "hook": "This prompt finds every subscription you forgot about.",
+    "themaQuelle": "register.json R021",
+    "source": "File upload (PDF, CSV) in Claude per Claude Help Center 'Upload files to Claude' (support.claude.com/en/articles/8241126, checked 27.11.2026 for R021). No country-specific cancellation law cited (German § 312k BGB hint dropped). Subscription table, amounts and total ($753.44) in the video are a made-up EXAMPLE, labelled as such; no savings promises.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E015/reel.mp4",
+    "fileLinkedin": "en/reels/E015/reel_linkedin.mp4",
+    "tiktokTitle": "This prompt finds your forgotten subscriptions",
+    "caption": "This prompt finds every subscription you forgot about. 🔎\n\nThe gym you haven't been to since spring. The $2.99 cloud plan you never noticed. The magazine that charges you once a year.\n\n👉 Upload your bank statement as CSV or PDF – black out your name and account number first\n👉 Claude lists every recurring payment with the cost per month AND per year\n👉 Prompt 2 writes your cancellation letters right away\n\nSave this for your year-end money check.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #PersonalFinance #Subscriptions #AITools",
+    "captionX": "This prompt finds every subscription you forgot about 🔎 Upload your bank statement (name + account no. blacked out) → every recurring payment with cost per year. Prompt 2 writes the cancellations. Comment PROMPT for the guide",
+    "captionLinkedIn": "Small recurring payments are easy to miss day to day – only the yearly total shows what a subscription really costs.\n\nA workflow I use with Claude:\n1. Export your bank statement for the last few months as CSV or PDF and black out your name, account number and address first.\n2. Claude lists every recurring payment in a table – billing cycle, cost per month and per year – and flags anything unusual, like price increases or duplicate services.\n3. A second prompt sorts everything into keep, cancel and check; a third drafts the cancellation messages.\n\nOne rule matters: Claude marks unclear payees as [UNCLEAR] instead of guessing, and shows its math so you can check it yourself.\n\nWhen did you last go through your subscriptions – and what was the biggest surprise?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Subscription detective: find and cancel forgotten subscriptions (guide with 4 prompts)",
+      "text": "You are my subscription detective. I'm uploading my bank statement for the last ___ months (CSV or PDF – I've blacked out my name, account number and address).\n\nYour task:\n1. Find every recurring payment: subscriptions, memberships, insurance, contracts, app purchases, donations – including yearly and quarterly ones, and small amounts under $5.\n2. Put them in a table: Payee | What it probably is | Billing cycle | Amount per charge | Cost per month | Cost per year | Last charged on.\n3. Show how you calculated the yearly cost (e.g. 9.99 × 12) and give the total per month and per year below the table.\n4. Flag with ⚠️ anything unusual: price increases, duplicate services (e.g. two streaming or two cloud storage plans), free trials that turned into paid plans, payees you can't identify for sure.\n5. End with 3 questions for me that help me decide what can go.\n\nRules: Don't invent payments or amounts. If you're not sure about a payee, write [UNCLEAR] instead of guessing. One-off purchases (groceries, gas, online orders) don't belong in the table.",
+      "hinweis": "Export your bank statement as CSV or PDF, black out name/account number/address, upload it and send the prompt – Claude lists every recurring payment with its yearly cost."
+    },
+    "guide": {
+      "titel": "Guide: Find and get rid of forgotten subscriptions – with Claude",
+      "ziel": "In about 15 minutes, see every recurring payment in your bank statement, decide what goes, have the cancellation messages ready and get a subscription calendar for next year.",
+      "schritte": [
+        {
+          "titel": "Export your statement.",
+          "text": "In your online banking, download your transactions for the last 3–12 months as CSV or PDF. The longer the period, the more likely yearly charges show up too."
+        },
+        {
+          "titel": "Black out personal data.",
+          "text": "Remove or black out your name, account number, card number and address. With a CSV, it's enough to keep only the columns date, payee, description and amount."
+        },
+        {
+          "titel": "Let Claude find the subscriptions.",
+          "text": "Upload the file and send prompt 1. Claude builds the table with cost per month and per year and flags anything odd with ⚠️. The math is shown – double-check it quickly."
+        },
+        {
+          "titel": "Decide and cancel.",
+          "text": "Prompt 2 sorts everything into keep, cancel and check. Prompt 3 writes the cancellation messages. Many services also let you cancel directly in your online account or app settings – keep the confirmation."
+        },
+        {
+          "titel": "Set up a subscription calendar.",
+          "text": "Prompt 4 turns what's left into a calendar so yearly charges never surprise you again. Repeat the check once a year."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "Subscription detective: find every recurring payment",
+          "text": "You are my subscription detective. I'm uploading my bank statement for the last ___ months (CSV or PDF – I've blacked out my name, account number and address).\n\nYour task:\n1. Find every recurring payment: subscriptions, memberships, insurance, contracts, app purchases, donations – including yearly and quarterly ones, and small amounts under $5.\n2. Put them in a table: Payee | What it probably is | Billing cycle | Amount per charge | Cost per month | Cost per year | Last charged on.\n3. Show how you calculated the yearly cost (e.g. 9.99 × 12) and give the total per month and per year below the table.\n4. Flag with ⚠️ anything unusual: price increases, duplicate services (e.g. two streaming or two cloud storage plans), free trials that turned into paid plans, payees you can't identify for sure.\n5. End with 3 questions for me that help me decide what can go.\n\nRules: Don't invent payments or amounts. If you're not sure about a payee, write [UNCLEAR] instead of guessing. One-off purchases (groceries, gas, online orders) don't belong in the table.",
+          "wann": "First – with your uploaded, blacked-out bank statement."
+        },
+        {
+          "titel": "Keep, cancel or check?",
+          "text": "Here's my subscription table from the last step. Help me decide.\n\nFor each line, here's how often I actually use it (bullet points): ___\n\nSort everything into three groups:\n- KEEP (I use it regularly, price is fine)\n- CANCEL (barely used or a duplicate)\n- CHECK (cheaper plan, yearly instead of monthly, family/sharing option – phrased as a question only, no made-up prices)\n\nBelow that, tell me how much I save per year if I cancel everything under CANCEL (show the math).",
+          "wann": "In the same chat, right after prompt 1."
+        },
+        {
+          "titel": "All cancellation messages in one go",
+          "text": "Write a short cancellation message (email or letter) for every subscription under CANCEL.\n\nMy details: name ___, address ___, customer/member number per provider ___\n\nEach message includes:\n- a subject line with the word \"Cancellation\" and my customer number\n- cancellation at the earliest possible date allowed by my contract\n- a request to confirm the cancellation and the exact end date in writing\n- a request not to send me any win-back offers\n- polite, short, no reason given\n\nIf a detail is missing, write [ADD]. Below, add one sentence on what to watch out for when sending (e.g. use the cancel option in my online account if there is one, and keep the confirmation).",
+          "wann": "Once you know what should go."
+        },
+        {
+          "titel": "Subscription calendar for next year",
+          "text": "Turn my KEEP list into a subscription calendar for next year.\n\nTable: Month | What gets charged | Amount | Note.\nHighlight yearly charges separately so they don't surprise me.\nBelow, give me my fixed monthly cost for subscriptions and suggest a day of the year to repeat this subscription check.",
+          "wann": "At the end, so nothing surprises you anymore."
+        }
+      ],
+      "beispiel": "Example (made up): Sam uploads transactions from May to October. Claude finds five recurring payments – streaming $13.99, gym $29.90, cloud storage $2.99, music app $10.99 per month and a magazine for $59 per year – $753.44 per year in total. Sam had forgotten about the cloud storage and the magazine. Prompt 2 puts the gym and the magazine under CANCEL, prompt 3 writes both cancellations, and Sam adds the member numbers.",
+      "check": [
+        "Name, account number and address blacked out before uploading?",
+        "Yearly costs double-checked and [UNCLEAR] lines assigned yourself?",
+        "Notice period checked in the contract or account, and confirmation kept?",
+        "Subscription calendar saved and next check in your calendar?"
+      ]
+    },
+    "music": "assets/music/lofi-105.mp3",
+    "costUsd": 0.16,
+    "durationSec": 16.0,
+    "sha256": "7596394aad5be79bb6adb506c9fe5a5074b9636f2c639a322a804be399942942"
   }
 ]
