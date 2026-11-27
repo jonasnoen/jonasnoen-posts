@@ -2366,7 +2366,7 @@
   "id": "R021",
   "type": "reel",
   "createdAt": "2026-11-27",
-  "status": "sending",
+  "status": "scheduled",
   "format": "creme",
   "faceOffset": 86.7,
   "series": "Claude-Codes Teil 20",
@@ -2446,6 +2446,35 @@
   "durationSec": 16.5,
   "music": "assets/music/lofi-105.mp3",
   "costUsd": 0.16,
-  "plannedFor": "2026-11-27T18:30:00+01:00"
+  "plannedFor": "2026-11-27T18:30:00+01:00",
+  "mediaCommit": "8fd32b6c6b8a0562de7025177799c599a03eac82",
+  "metricool": {
+   "postId": 444644221,
+   "uuid": "-2513939016847702486",
+   "publishAt": "2026-11-27T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 444644221,
+    "scheduledAt": "2026-11-27T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 444644221,
+    "scheduledAt": "2026-11-27T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 444644478,
+    "uuid": "8477235233245644993",
+    "scheduledAt": "2026-11-27T18:30:00+01:00",
+    "firstComment": true
+   }
+  }
  }
 ]
