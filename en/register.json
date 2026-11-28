@@ -2081,7 +2081,7 @@
     "id": "E016",
     "type": "reel",
     "createdAt": "2026-11-28",
-    "status": "sending",
+    "status": "scheduled",
     "format": "memoji",
     "series": "Claude Codes Part 16",
     "fromDe": "R022",
@@ -2156,6 +2156,42 @@
     "music": "assets/music/groove-115.mp3",
     "costUsd": 0.16,
     "durationSec": 17.0,
-    "sha256": "43d3523ee46754c64ff86438e112a8babe976c43ba34a75cd5dc38a32906a517"
+    "sha256": "43d3523ee46754c64ff86438e112a8babe976c43ba34a75cd5dc38a32906a517",
+    "plannedFor": "2026-11-28T20:30:00+01:00",
+    "mediaCommit": "78c65a90e3c78fd63280c6f3728eafd35f0c8be7",
+    "metricool": {
+      "postId": 445691912,
+      "uuid": "8776527840334531239",
+      "publishAt": "2026-11-28T20:30:00+01:00",
+      "providers": [
+        "instagram",
+        "tiktok"
+      ]
+    },
+    "platforms": {
+      "instagram": {
+        "status": "scheduled",
+        "metricoolPostId": 445691912,
+        "scheduledAt": "2026-11-28T20:30:00+01:00"
+      },
+      "tiktok": {
+        "status": "scheduled",
+        "metricoolPostId": 445691912,
+        "scheduledAt": "2026-11-28T20:30:00+01:00"
+      },
+      "x": {
+        "status": "scheduled",
+        "metricoolPostId": 445691995,
+        "uuid": "-3192759853754791160",
+        "scheduledAt": "2026-11-28T20:30:00+01:00"
+      },
+      "linkedin": {
+        "status": "scheduled",
+        "metricoolPostId": 445692015,
+        "uuid": "8666567445257339871",
+        "scheduledAt": "2026-11-28T20:30:00+01:00",
+        "firstComment": true
+      }
+    }
   }
 ]
