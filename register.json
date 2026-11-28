@@ -2476,5 +2476,84 @@
     "firstComment": true
    }
   }
+ },
+ {
+  "id": "R022",
+  "type": "reel",
+  "createdAt": "2026-11-28",
+  "status": "sending",
+  "format": "memoji",
+  "series": "Claude-Codes Teil 21",
+  "topic": "Kauf-Check vor dem Klick: Sale-Angebot prüfen lassen (Urteil kaufen/warten/lassen, Bedarf, Haken, Selbst-Prüf-Liste) + Vergleichs-Prompt + Impuls-Bremse",
+  "angle": "Rund um Black Friday/Cyber Monday: Ein Prompt, der nicht zum Kauf überredet, sondern Bedarf und Warnsignale prüft und ein klares Urteil gibt – plus ehrliche Liste, was man selbst prüfen muss (Claude kennt ohne Websuche keine aktuellen Preise). Neu: kein bisheriger Eintrag zu Einkaufen/Sale.",
+  "hook": "Kauf nichts im Sale, bevor du diesen Prompt nutzt.",
+  "themaQuelle": "eigenes Thema (themen/de.md: nur T11 offen, ist für ein Sonntags-Experiment vorgesehen)",
+  "source": "§ 11 Preisangabenverordnung (gesetze-im-internet.de/pangv_2022/__11.html): Bei Bekanntgabe einer Preisermäßigung muss der Händler gegenüber Verbrauchern den niedrigsten Gesamtpreis der letzten 30 Tage vor der Ermäßigung angeben. Im Guide als Prüfpunkt genutzt, im Video nur als 'Niedrigster Preis der letzten 30 Tage' (Checkliste). Beispiel (Kopfhörer, 179 € statt 299 €) ist ausgedacht und als BEISPIEL markiert.",
+  "voice": "Jonas Noen (ElevenLabs-Klon), eleven_v4, Tempo 1,15",
+  "lipsync": "veed-lipsync",
+  "file": "reels/R022/reel.mp4",
+  "fileLinkedin": "reels/R022/reel_linkedin.mp4",
+  "tiktokTitle": "Kauf nichts im Sale, bevor du diesen Prompt nutzt",
+  "caption": "Kauf nichts im Sale, bevor du diesen Prompt nutzt. 🛒\n\nBlack Friday ist durch, Cyber Monday steht vor der Tür – und überall blinken Streichpreise und Countdowns. Bevor du klickst, lass Claude einmal drüberschauen.\n\n👉 Du gibst Produkt, Preis, deinen Zweck und was du schon hast ein\n👉 Claude prüft, ob du es wirklich brauchst, und listet die Haken auf\n👉 Am Ende ein klares Urteil: kaufen, warten oder lassen – plus eine Liste, was du vor dem Klick selbst checken musst\n\nSpeicher dir das für die nächste Rabattschlacht.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #CyberMonday #PromptTipps #ClaudeAI #JonasNoen",
+  "captionLinkedin": "Rabattwochen funktionieren über Zeitdruck: Streichpreise, Countdowns, „nur noch heute“. Die eigentliche Frage – brauche ich das überhaupt? – kommt dabei oft zu kurz.\n\nIch nutze dafür inzwischen einen festen Prompt: Produkt, Preis, Zweck und das, was ich schon besitze, rein. Claude prüft dann den Bedarf, gleicht die Produktdaten mit dem Zweck ab, listet mögliche Haken auf und gibt ein klares Urteil: kaufen, warten oder lassen.\n\nWichtig ist der letzte Teil: eine Checkliste mit dem, was man selbst prüfen muss. Ohne Websuche kennt Claude keine aktuellen Preise. Bei angekündigten Preisermäßigungen müssen Händler in Deutschland übrigens den niedrigsten Preis der letzten 30 Tage angeben (§ 11 PAngV) – das ist der Vergleichswert, nicht der Streichpreis.\n\nWie geht ihr mit Rabattaktionen um – feste Liste vorab, oder entscheidet ihr spontan?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "vorlage": {
+   "titel": "Kauf-Check vor dem Klick (Guide mit 3 Prompts)",
+   "text": "Du bist mein ehrlicher Kauf-Berater. Ich überlege, im Sale etwas zu kaufen. Hilf mir, eine klare Entscheidung zu treffen – nicht, mich zum Kauf zu überreden.\n\nPRODUKT (Name, Modell, wichtigste Daten – gern aus der Produktseite kopiert):\n___\nPREIS JETZT: ___ € | angezeigter „Statt“-Preis: ___ € | Shop: ___\nWOFÜR ICH ES BRAUCHE (wie oft, wofür genau): ___\nWAS ICH SCHON HABE (ähnliches Gerät, wie alt, funktioniert es noch?): ___\nMEIN BUDGET: ___ €\n\nGeh so vor:\n1. BEDARF: Stell mir höchstens 3 kurze Rückfragen, falls etwas Wichtiges fehlt. Sonst prüfe: Löst das Produkt ein echtes Problem, oder ersetzt es nur etwas, das noch funktioniert?\n2. PASST ES? Gleiche die Produktdaten mit meinem Zweck ab: Was ist wichtig, was zahle ich mit, ohne es zu brauchen, was fehlt?\n3. DIE HAKEN: Liste mögliche Warnsignale auf (z. B. Streichpreis unklar, Countdown-Druck, älteres Modell, Zubehör/Versand nicht im Preis, Händler unbekannt). Markiere klar, was du nur vermutest.\n4. URTEIL: KAUFEN, WARTEN oder LASSEN – mit 3 Gründen in je einem Satz.\n5. SELBST PRÜFEN: Eine Checkliste mit den Dingen, die ich vor dem Klick selbst nachschauen muss, weil du keine aktuellen Preise und Shop-Bedingungen kennst.\n\nRegeln: Erfinde keine Preise, Testergebnisse oder technischen Daten. Wenn du etwas nicht weißt, schreib „bitte selbst prüfen“. Antworte kurz und in Stichpunkten.",
+   "hinweis": "Vor jedem Sale-Kauf in einen neuen Chat einfügen, die Lücken ausfüllen (gern die Produktdaten von der Shopseite reinkopieren) und das Urteil plus die Selbst-Prüf-Liste abwarten."
+  },
+  "guide": {
+   "titel": "Guide: Kauf-Check vor dem Klick",
+   "ziel": "Im Sale nur noch kaufen, was du wirklich brauchst: Claude prüft Bedarf und Haken, gibt ein klares Urteil (kaufen, warten, lassen) und sagt dir, was du selbst nachschauen musst.",
+   "schritte": [
+    {
+     "titel": "Daten sammeln.",
+     "text": "Produktname, Modell und die wichtigsten Daten von der Shopseite kopieren, dazu Preis, Statt-Preis und Shop. Schreib ehrlich auf, wofür du es brauchst und was du schon hast."
+    },
+    {
+     "titel": "Kauf-Check starten.",
+     "text": "Prompt 1 in einen neuen Chat, Lücken ausfüllen. Claude fragt höchstens 3 Dinge nach und liefert dann Bedarf, Passung, Haken, Urteil und Selbst-Prüf-Liste."
+    },
+    {
+     "titel": "Selbst prüfen.",
+     "text": "Die Liste abarbeiten: Bei angekündigten Rabatten muss der Shop laut § 11 PAngV den niedrigsten Preis der letzten 30 Tage angeben – vergleiche mit dem, nicht mit dem Streichpreis. Dazu Preis in 2–3 anderen Shops, Rückgabe, Garantie, Versand."
+    },
+    {
+     "titel": "Bei mehreren Optionen vergleichen.",
+     "text": "Schwankst du zwischen zwei Modellen (oder „gar nicht kaufen“), nimm Prompt 2 für eine Vergleichstabelle."
+    },
+    {
+     "titel": "Impuls-Bremse.",
+     "text": "Du willst trotz „Warten“ unbedingt klicken? Prompt 3 stellt dir 5 ehrliche Fragen – danach entscheidest du."
+    }
+   ],
+   "prompts": [
+    {
+     "titel": "Der Kauf-Check → Urteil + Selbst-Prüf-Liste",
+     "text": "Du bist mein ehrlicher Kauf-Berater. Ich überlege, im Sale etwas zu kaufen. Hilf mir, eine klare Entscheidung zu treffen – nicht, mich zum Kauf zu überreden.\n\nPRODUKT (Name, Modell, wichtigste Daten – gern aus der Produktseite kopiert):\n___\nPREIS JETZT: ___ € | angezeigter „Statt“-Preis: ___ € | Shop: ___\nWOFÜR ICH ES BRAUCHE (wie oft, wofür genau): ___\nWAS ICH SCHON HABE (ähnliches Gerät, wie alt, funktioniert es noch?): ___\nMEIN BUDGET: ___ €\n\nGeh so vor:\n1. BEDARF: Stell mir höchstens 3 kurze Rückfragen, falls etwas Wichtiges fehlt. Sonst prüfe: Löst das Produkt ein echtes Problem, oder ersetzt es nur etwas, das noch funktioniert?\n2. PASST ES? Gleiche die Produktdaten mit meinem Zweck ab: Was ist wichtig, was zahle ich mit, ohne es zu brauchen, was fehlt?\n3. DIE HAKEN: Liste mögliche Warnsignale auf (z. B. Streichpreis unklar, Countdown-Druck, älteres Modell, Zubehör/Versand nicht im Preis, Händler unbekannt). Markiere klar, was du nur vermutest.\n4. URTEIL: KAUFEN, WARTEN oder LASSEN – mit 3 Gründen in je einem Satz.\n5. SELBST PRÜFEN: Eine Checkliste mit den Dingen, die ich vor dem Klick selbst nachschauen muss, weil du keine aktuellen Preise und Shop-Bedingungen kennst.\n\nRegeln: Erfinde keine Preise, Testergebnisse oder technischen Daten. Wenn du etwas nicht weißt, schreib „bitte selbst prüfen“. Antworte kurz und in Stichpunkten.",
+     "wann": "Bei jedem Angebot, das dich reizt – bevor du in den Warenkorb klickst."
+    },
+    {
+     "titel": "Vergleich: A, B oder gar nicht",
+     "text": "Ich schwanke zwischen diesen Optionen:\nA) ___ (Preis: ___ €)\nB) ___ (Preis: ___ €)\nC) nichts kaufen / mein altes Gerät weiter nutzen\n\nMein Zweck: ___\nWas mir am wichtigsten ist (Reihenfolge): ___\n\nMach eine Tabelle mit den Spalten: Option | Preis | passt zu meinem Zweck (1–5) | was ich mitbezahle, aber nicht brauche | Haken. Nutze nur die Daten, die ich dir gebe, und markiere Lücken mit „fehlt“. Darunter: deine Empfehlung in 2 Sätzen und die eine Frage, die meine Entscheidung am stärksten verändern würde.",
+     "wann": "Wenn du zwischen zwei Produkten schwankst oder überlegst, dein altes Gerät zu behalten."
+    },
+    {
+     "titel": "Die Impuls-Bremse",
+     "text": "Bevor ich auf „Kaufen“ klicke: Stell mir 5 ehrliche Fragen, eine nach der anderen, die prüfen, ob ich das wirklich brauche oder nur wegen des Rabatts kaufen will (z. B. „Würdest du es auch zum normalen Preis kaufen?“, „Was machst du in 30 Tagen damit?“). Warte jeweils auf meine Antwort. Fass danach in 3 Sätzen zusammen, was meine Antworten über diesen Kauf sagen, und gib mir eine klare Empfehlung: kaufen, auf die Merkliste setzen oder lassen.",
+     "wann": "Wenn das Urteil „warten“ oder „lassen“ war und du trotzdem kaufen willst."
+    }
+   ],
+   "beispiel": "Max sieht Over-Ear-Kopfhörer für 179 € „statt 299 €“, Countdown läuft. Er pendelt täglich 2 Stunden, seine In-Ears sind ein Jahr alt und funktionieren. Prompt 1 liefert: passt zum Zweck (Geräuschunterdrückung fürs Pendeln), aber kein akutes Problem; Haken: unklar, ob 299 € je der echte Preis war, Countdown erzeugt Druck. Urteil: WARTEN – erst den angegebenen niedrigsten 30-Tage-Preis und zwei andere Shops prüfen. Ergebnis: Der 30-Tage-Preis lag bei 189 €, die Ersparnis ist kleiner als gedacht – er setzt die Kopfhörer auf die Merkliste.",
+   "check": [
+    "Urteil ist klar: kaufen, warten oder lassen – mit Gründen",
+    "Niedrigsten Preis der letzten 30 Tage selbst nachgeschaut (nicht nur Streichpreis)",
+    "Preis in 2–3 anderen Shops, Rückgabe und Garantie geprüft",
+    "Würdest du es auch ohne Rabatt kaufen? Ehrlich beantwortet"
+   ]
+  },
+  "music": "assets/music/groove-115.mp3",
+  "costUsd": 0.17,
+  "durationSec": 18.1,
+  "sha256": "5fd357d0035f4f09435d4d268f5c799dd2054163ea6eb0532ef2e18b1ca616d2"
  }
 ]
