@@ -2076,5 +2076,86 @@
         "firstComment": true
       }
     }
+  },
+  {
+    "id": "E016",
+    "type": "reel",
+    "createdAt": "2026-11-28",
+    "status": "sending",
+    "format": "memoji",
+    "series": "Claude Codes Part 16",
+    "fromDe": "R022",
+    "topic": "Buy check before you click: let Claude review a sale deal (verdict buy/wait/skip, need, catches, check-yourself list) + comparison prompt + impulse brake",
+    "angle": "Cyber Monday week: a prompt that doesn't talk you into buying but checks need and red flags and gives a clear verdict – plus an honest list of what you must check yourself (store prices and terms change). New for the EN channel (shopping/sales), no overlap with E015 (subscriptions) or EK002 (gift finder). International example in $, German § 11 PAngV replaced by a general price-history check (EU note in the guide).",
+    "hook": "Don't buy anything on sale before you run this prompt.",
+    "themaQuelle": "register.json R022",
+    "source": "EU rule in the guide: Directive 98/6/EC Art. 6a (added by Directive (EU) 2019/2161) – when a price reduction is announced, the prior price shown must be the lowest price of at least the last 30 days (German implementation § 11 PAngV, checked for R022). Headphones example ($179 'was $299') is made up and labelled EXAMPLE; no savings promises.",
+    "voice": "Jonas Noen (ElevenLabs clone, eleven_v4), tempo 1.15",
+    "lipsync": "veed-lipsync",
+    "file": "en/reels/E016/reel.mp4",
+    "fileLinkedin": "en/reels/E016/reel_linkedin.mp4",
+    "tiktokTitle": "Run this prompt before you buy anything on sale",
+    "caption": "Don't buy anything on sale before you run this prompt. 🛒\n\nCyber Monday is coming – \"was\" prices, countdown timers, \"today only\" everywhere. Before you click, let Claude take one honest look.\n\n👉 Paste the product, the price, what you need it for and what you already own\n👉 Claude checks if you really need it and lists the catches\n👉 You get a clear verdict – buy, wait or skip – plus a list of what to check yourself before you click\n\nSave this for the next sale.\n\nComment PROMPT and I'll send you the full guide.\n\n#ClaudeAI #AIPrompts #CyberMonday #SmartShopping #AITools",
+    "captionX": "Don't buy anything on sale before you run this prompt 🛒 Paste product, price + purpose → Claude checks your real need, lists the catches and says buy, wait or skip. Comment PROMPT for the guide",
+    "captionLinkedIn": "Sales work through time pressure: \"was\" prices, countdowns, \"today only\". The real question – do I actually need this? – gets lost.\n\nWhat helps me is a fixed prompt. Paste the product, the price, what you need it for and what you already own. Claude then checks the need, compares the specs with the purpose, lists possible red flags and gives a clear verdict: buy, wait or skip.\n\nThe most useful part is the last one: a checklist of what you need to verify yourself – price history, the same item in other stores, return policy, shipping. In the EU, by the way, a store announcing a discount has to show its lowest price from the previous 30 days as the reference – that's the number to compare, not the crossed-out one.\n\nHow do you handle sales – a list made in advance, or decide on the spot?\n\nFull guide with all prompts → link in the first comment 👇",
+    "vorlage": {
+      "titel": "Buy check before you click (guide with 3 prompts)",
+      "text": "You are my honest buying advisor. I'm thinking about buying something on sale. Help me make a clear decision – don't talk me into buying it.\n\nPRODUCT (name, model, key specs – feel free to paste them from the product page):\n___\nPRICE NOW: ___ | \"Was\" price shown: ___ | Store: ___\nWHAT I NEED IT FOR (how often, for what exactly): ___\nWHAT I ALREADY HAVE (similar item, how old, does it still work?): ___\nMY BUDGET: ___\n\nWork like this:\n1. NEED: Ask me up to 3 short questions if something important is missing. Otherwise check: does this product solve a real problem, or does it just replace something that still works?\n2. DOES IT FIT? Compare the specs with my purpose: what matters, what am I paying for that I don't need, what's missing?\n3. THE CATCHES: List possible red flags (e.g. unclear \"was\" price, countdown pressure, last year's model, shipping/accessories not included, unknown seller). Clearly mark what you're only guessing.\n4. VERDICT: BUY, WAIT or SKIP – with 3 reasons, one sentence each.\n5. CHECK YOURSELF: A checklist of what I need to look up myself before I click, because you may not know current prices and store terms.\n\nRules: Don't invent prices, test results or specs. If you don't know something, write \"check yourself\". Keep it short, in bullet points.",
+      "hinweis": "Before any sale purchase, paste this into a new chat, fill in the gaps (copy the specs from the product page) and wait for the verdict plus the check-yourself list."
+    },
+    "guide": {
+      "titel": "Guide: Buy check before you click",
+      "ziel": "Only buy what you really need on sale: Claude checks the need and the catches, gives a clear verdict (buy, wait, skip) and tells you what to verify yourself.",
+      "schritte": [
+        {
+          "titel": "Collect the facts.",
+          "text": "Copy the product name, model and key specs from the store page, plus the price, the \"was\" price and the store. Write down honestly what you need it for and what you already own."
+        },
+        {
+          "titel": "Run the buy check.",
+          "text": "Paste prompt 1 into a new chat and fill in the gaps. Claude asks up to 3 follow-up questions, then gives you need, fit, catches, verdict and a check-yourself list."
+        },
+        {
+          "titel": "Check it yourself.",
+          "text": "Work through the list: price history over the last weeks (compare with that, not with the crossed-out price – in the EU, stores announcing a discount must show their lowest price of the previous 30 days), the same item in 2–3 other stores, return policy, warranty, shipping."
+        },
+        {
+          "titel": "Torn between options?",
+          "text": "If you can't decide between two models (or not buying at all), use prompt 2 for a comparison table."
+        },
+        {
+          "titel": "Impulse brake.",
+          "text": "Verdict was \"wait\" but you still want to click? Prompt 3 asks you 5 honest questions – then you decide."
+        }
+      ],
+      "prompts": [
+        {
+          "titel": "The buy check → verdict + check-yourself list",
+          "text": "You are my honest buying advisor. I'm thinking about buying something on sale. Help me make a clear decision – don't talk me into buying it.\n\nPRODUCT (name, model, key specs – feel free to paste them from the product page):\n___\nPRICE NOW: ___ | \"Was\" price shown: ___ | Store: ___\nWHAT I NEED IT FOR (how often, for what exactly): ___\nWHAT I ALREADY HAVE (similar item, how old, does it still work?): ___\nMY BUDGET: ___\n\nWork like this:\n1. NEED: Ask me up to 3 short questions if something important is missing. Otherwise check: does this product solve a real problem, or does it just replace something that still works?\n2. DOES IT FIT? Compare the specs with my purpose: what matters, what am I paying for that I don't need, what's missing?\n3. THE CATCHES: List possible red flags (e.g. unclear \"was\" price, countdown pressure, last year's model, shipping/accessories not included, unknown seller). Clearly mark what you're only guessing.\n4. VERDICT: BUY, WAIT or SKIP – with 3 reasons, one sentence each.\n5. CHECK YOURSELF: A checklist of what I need to look up myself before I click, because you may not know current prices and store terms.\n\nRules: Don't invent prices, test results or specs. If you don't know something, write \"check yourself\". Keep it short, in bullet points.",
+          "wann": "For every deal that tempts you – before you add it to the cart."
+        },
+        {
+          "titel": "Compare: A, B or nothing",
+          "text": "I can't decide between these options:\nA) ___ (price: ___)\nB) ___ (price: ___)\nC) buy nothing / keep using what I have\n\nMy purpose: ___\nWhat matters most to me (in order): ___\n\nMake a table with the columns: Option | Price | Fits my purpose (1–5) | What I pay for but don't need | Catches. Only use the data I give you and mark gaps with \"missing\". Below it: your recommendation in 2 sentences and the one question that would change my decision the most.",
+          "wann": "When you're torn between two products or thinking about keeping what you have."
+        },
+        {
+          "titel": "The impulse brake",
+          "text": "Before I hit \"Buy\": ask me 5 honest questions, one at a time, that test whether I really need this or just want it because of the discount (e.g. \"Would you buy it at full price?\", \"What will you do with it in 30 days?\"). Wait for my answer each time. Then sum up in 3 sentences what my answers say about this purchase and give me a clear recommendation: buy, put it on my wishlist, or skip.",
+          "wann": "When the verdict was \"wait\" or \"skip\" and you still want to buy."
+        }
+      ],
+      "beispiel": "Sam sees over-ear headphones for $179 \"was $299\", countdown running. He commutes 2 hours a day; his earbuds are a year old and still work. Prompt 1 says: fits the purpose (noise cancelling for commuting), but no urgent problem; catches: unclear whether $299 was ever the real price, the countdown creates pressure. Verdict: WAIT – check the price history and two other stores first. Sam finds it was $189 a few weeks ago, so the saving is much smaller than it looks – it goes on his wishlist.",
+      "check": [
+        "Clear verdict: buy, wait or skip – with reasons",
+        "Checked the price history yourself (not just the crossed-out price)",
+        "Compared 2–3 other stores, return policy and warranty",
+        "Honestly answered: would you buy it at full price?"
+      ]
+    },
+    "music": "assets/music/groove-115.mp3",
+    "costUsd": 0.16,
+    "durationSec": 17.0,
+    "sha256": "43d3523ee46754c64ff86438e112a8babe976c43ba34a75cd5dc38a32906a517"
   }
 ]
