@@ -2481,7 +2481,7 @@
   "id": "R022",
   "type": "reel",
   "createdAt": "2026-11-28",
-  "status": "sending",
+  "status": "scheduled",
   "format": "memoji",
   "series": "Claude-Codes Teil 21",
   "topic": "Kauf-Check vor dem Klick: Sale-Angebot prüfen lassen (Urteil kaufen/warten/lassen, Bedarf, Haken, Selbst-Prüf-Liste) + Vergleichs-Prompt + Impuls-Bremse",
@@ -2495,7 +2495,7 @@
   "fileLinkedin": "reels/R022/reel_linkedin.mp4",
   "tiktokTitle": "Kauf nichts im Sale, bevor du diesen Prompt nutzt",
   "caption": "Kauf nichts im Sale, bevor du diesen Prompt nutzt. 🛒\n\nBlack Friday ist durch, Cyber Monday steht vor der Tür – und überall blinken Streichpreise und Countdowns. Bevor du klickst, lass Claude einmal drüberschauen.\n\n👉 Du gibst Produkt, Preis, deinen Zweck und was du schon hast ein\n👉 Claude prüft, ob du es wirklich brauchst, und listet die Haken auf\n👉 Am Ende ein klares Urteil: kaufen, warten oder lassen – plus eine Liste, was du vor dem Klick selbst checken musst\n\nSpeicher dir das für die nächste Rabattschlacht.\n\nKommentiere PROMPT und ich schick dir den Guide.\n\n#Claude #KI #CyberMonday #PromptTipps #ClaudeAI #JonasNoen",
-  "captionLinkedin": "Rabattwochen funktionieren über Zeitdruck: Streichpreise, Countdowns, „nur noch heute“. Die eigentliche Frage – brauche ich das überhaupt? – kommt dabei oft zu kurz.\n\nIch nutze dafür inzwischen einen festen Prompt: Produkt, Preis, Zweck und das, was ich schon besitze, rein. Claude prüft dann den Bedarf, gleicht die Produktdaten mit dem Zweck ab, listet mögliche Haken auf und gibt ein klares Urteil: kaufen, warten oder lassen.\n\nWichtig ist der letzte Teil: eine Checkliste mit dem, was man selbst prüfen muss. Ohne Websuche kennt Claude keine aktuellen Preise. Bei angekündigten Preisermäßigungen müssen Händler in Deutschland übrigens den niedrigsten Preis der letzten 30 Tage angeben (§ 11 PAngV) – das ist der Vergleichswert, nicht der Streichpreis.\n\nWie geht ihr mit Rabattaktionen um – feste Liste vorab, oder entscheidet ihr spontan?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
+  "captionLinkedin": "Rabattwochen funktionieren über Zeitdruck: Streichpreise, Countdowns, „nur noch heute“. Die eigentliche Frage – brauche ich das überhaupt? – kommt dabei oft zu kurz.\n\nEin Ansatz, der hilft: ein fester Prompt. Produkt, Preis, Zweck und das, was man schon besitzt, rein. Claude prüft dann den Bedarf, gleicht die Produktdaten mit dem Zweck ab, listet mögliche Haken auf und gibt ein klares Urteil: kaufen, warten oder lassen.\n\nWichtig ist der letzte Teil: eine Checkliste mit dem, was man selbst prüfen muss. Ohne Websuche kennt Claude keine aktuellen Preise. Bei angekündigten Preisermäßigungen müssen Händler in Deutschland übrigens den niedrigsten Preis der letzten 30 Tage angeben (§ 11 PAngV) – das ist der Vergleichswert, nicht der Streichpreis.\n\nWie geht ihr mit Rabattaktionen um – feste Liste vorab, oder entscheidet ihr spontan?\n\nDen kompletten Guide mit allen Prompts findest du im ersten Kommentar 👇",
   "vorlage": {
    "titel": "Kauf-Check vor dem Klick (Guide mit 3 Prompts)",
    "text": "Du bist mein ehrlicher Kauf-Berater. Ich überlege, im Sale etwas zu kaufen. Hilf mir, eine klare Entscheidung zu treffen – nicht, mich zum Kauf zu überreden.\n\nPRODUKT (Name, Modell, wichtigste Daten – gern aus der Produktseite kopiert):\n___\nPREIS JETZT: ___ € | angezeigter „Statt“-Preis: ___ € | Shop: ___\nWOFÜR ICH ES BRAUCHE (wie oft, wofür genau): ___\nWAS ICH SCHON HABE (ähnliches Gerät, wie alt, funktioniert es noch?): ___\nMEIN BUDGET: ___ €\n\nGeh so vor:\n1. BEDARF: Stell mir höchstens 3 kurze Rückfragen, falls etwas Wichtiges fehlt. Sonst prüfe: Löst das Produkt ein echtes Problem, oder ersetzt es nur etwas, das noch funktioniert?\n2. PASST ES? Gleiche die Produktdaten mit meinem Zweck ab: Was ist wichtig, was zahle ich mit, ohne es zu brauchen, was fehlt?\n3. DIE HAKEN: Liste mögliche Warnsignale auf (z. B. Streichpreis unklar, Countdown-Druck, älteres Modell, Zubehör/Versand nicht im Preis, Händler unbekannt). Markiere klar, was du nur vermutest.\n4. URTEIL: KAUFEN, WARTEN oder LASSEN – mit 3 Gründen in je einem Satz.\n5. SELBST PRÜFEN: Eine Checkliste mit den Dingen, die ich vor dem Klick selbst nachschauen muss, weil du keine aktuellen Preise und Shop-Bedingungen kennst.\n\nRegeln: Erfinde keine Preise, Testergebnisse oder technischen Daten. Wenn du etwas nicht weißt, schreib „bitte selbst prüfen“. Antworte kurz und in Stichpunkten.",
@@ -2554,6 +2554,36 @@
   "music": "assets/music/groove-115.mp3",
   "costUsd": 0.17,
   "durationSec": 18.1,
-  "sha256": "5fd357d0035f4f09435d4d268f5c799dd2054163ea6eb0532ef2e18b1ca616d2"
+  "sha256": "5fd357d0035f4f09435d4d268f5c799dd2054163ea6eb0532ef2e18b1ca616d2",
+  "plannedFor": "2026-11-28T18:30:00+01:00",
+  "mediaCommit": "07acd5cda2c7320fb890a96010fab1a953a7ae68",
+  "metricool": {
+   "postId": 445633602,
+   "uuid": "-8310521963906708069",
+   "publishAt": "2026-11-28T18:30:00+01:00",
+   "providers": [
+    "instagram",
+    "tiktok"
+   ]
+  },
+  "platforms": {
+   "instagram": {
+    "status": "scheduled",
+    "metricoolPostId": 445633602,
+    "scheduledAt": "2026-11-28T18:30:00+01:00"
+   },
+   "tiktok": {
+    "status": "scheduled",
+    "metricoolPostId": 445633602,
+    "scheduledAt": "2026-11-28T18:30:00+01:00"
+   },
+   "linkedin": {
+    "status": "scheduled",
+    "metricoolPostId": 445633650,
+    "uuid": "1052974902624404029",
+    "scheduledAt": "2026-11-28T18:30:00+01:00",
+    "firstComment": true
+   }
+  }
  }
 ]
